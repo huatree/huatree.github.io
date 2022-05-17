@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"huatree.gitee.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本文以腾讯云平台申请域名为例，为首次申请域名的用户提供一条学习的路径。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="域名申请及备案">
+<meta property="og:url" content="https://huatree.gitee.io/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="本文以腾讯云平台申请域名为例，为首次申请域名的用户提供一条学习的路径。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-01T05:24:00.000Z">
+<meta property="article:modified_time" content="2022-05-17T15:31:43.336Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="域名">
+<meta property="article:tag" content="备案">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://huatree.gitee.io/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://huatree.gitee.io/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/","path":"2022/04/01/20220401-域名申请及备案/","title":"域名申请及备案"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>域名申请及备案 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E7%90%86%E8%A7%A3"><span class="nav-text">域名理解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9F%9F%E5%90%8D"><span class="nav-text">什么是域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E6%B3%A8%E5%86%8C%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">域名注册是什么</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E6%B5%81%E7%A8%8B"><span class="nav-text">域名申请流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">我滑向冰球即将去往的地方，而不是它已经走过的地方。</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://huatree.gitee.io/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="我滑向冰球即将去往的地方，而不是它已经走过的地方。">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="域名申请及备案 | 醉梦的网络日志">
+      <meta itemprop="description" content="本文以腾讯云平台申请域名为例，为首次申请域名的用户提供一条学习的路径。">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          域名申请及备案
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-04-01 13:24:00" itemprop="dateCreated datePublished" datetime="2022-04-01T13:24:00+08:00">2022-04-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-17 23:31:43" itemprop="dateModified" datetime="2022-05-17T23:31:43+08:00">2022-05-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index"><span itemprop="name">成长经历</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>656</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+            <div class="post-description">本文以腾讯云平台申请域名为例，为首次申请域名的用户提供一条学习的路径。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>文章里的域名申请平台来自<a target="_blank" rel="noopener" href="https://cloud.tencent.com/">腾讯云</a></p>
+</blockquote>
+<h2 id="域名理解"><a href="#域名理解" class="headerlink" title="域名理解"></a>域名理解</h2><h3 id="什么是域名"><a href="#什么是域名" class="headerlink" title="什么是域名"></a>什么是域名</h3><p>在 Internet 上有千百万台主机，为了区分这些主机，每一台主机都被分配一个 IP 地址。但由于 IP 地址没有实际意义难于记忆，于是就有了域名（Domain Name）。</p>
+<h3 id="域名注册是什么"><a href="#域名注册是什么" class="headerlink" title="域名注册是什么"></a>域名注册是什么</h3><p>获得域名的方式是通过付费获得域名一年或多年内的使用权，我们称之为域名注册。</p>
+<h2 id="域名申请流程"><a href="#域名申请流程" class="headerlink" title="域名申请流程"></a>域名申请流程</h2><p>按照国际惯例，域名申请遵循 “先申请，先服务” 的原则。由于域名不允许重名，一个域名只能对应一台计算机主机，一个域名一旦被申请，注册期内该域名属于申请者，除非申请者自动放弃或转让。建议您及时申请属于自己的专属域名。</p>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>操作步骤</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>创建域名信息模板</td>
+<td><a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/domain/template">进入域名信息模板页-新建模板</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>查看域名价格</td>
+<td><a target="_blank" rel="noopener" href="https://buy.cloud.tencent.com/domain/price?type=overview">腾讯云平台-域名价格表</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>域名注册</td>
+<td>请您登录 <a target="_blank" rel="noopener" href="https://dnspod.cloud.tencent.com/">域名注册页面</a>，选择您需要的域名后缀，添加购物车，填写您的域名信息并完成支付后，进入下一步实名认证的操作。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>实名认证</td>
+<td>新注册域名使用已实名的信息模板注册域名后不需要再提交实名认证。具体操作请参考 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/242/6707">实名认证</a>。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>网站备案</td>
+<td>如果您是首次备案，请参考 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/243/37402">小程序首次备案</a>或<a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/243/18958">PC 端首次备案</a></td>
+</tr>
+<tr>
+<td>6</td>
+<td>域名解析</td>
+<td>您通过输入域名访问网站时，将域名解析到对应的 IP，找到对应服务器，打开对应的访问页面。网站域名解析请参考 <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/302/3446">快速添加域名解析</a>。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>tips</p>
+<p>关于备案审核，本文虽然没有提及，但步骤中的操作会引导你从了解到实践，最终成功审核。</p>
+</blockquote>
+<blockquote>
+<p>! 注意</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/243/61412">备案成功后处理说明</a></p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/242/8569">域名简介</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/242/18873">域名注册-购买指南-购买方式</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/242/39039">快速注册域名及实名认证</a></p>
+<p>[4] <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/243/18905">网站备案-备案准备-备案域名</a></p>
+<p>[5] <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/243/18905">网站备案-备案准备-备案流程</a></p>
+<p>[6] <a target="_blank" rel="noopener" href="https://cloud.tencent.com/document/product/243/19630">是否需要备案</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://huatree.gitee.io/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/" title="域名申请及备案">https://huatree.gitee.io/2022/04/01/20220401-域名申请及备案/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag"># 域名</a>
+              <a href="/tags/%E5%A4%87%E6%A1%88/" rel="tag"># 备案</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%BC%80%E5%A7%8B%E5%BB%BA%E7%AB%8B%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/" rel="prev" title="【转载】从输入URL开始建立前端知识体系">
+                  <i class="fa fa-chevron-left"></i> 【转载】从输入URL开始建立前端知识体系
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/" rel="next" title="七牛云+PicGo+Typora搭建图床">
+                  七牛云+PicGo+Typora搭建图床 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">97k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">1:28</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitee.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"f2eb099b566ba9a1c6ad5df0bbbbf884"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
