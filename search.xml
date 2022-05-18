@@ -49,50 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title>搞定uni-app</title>
-    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
-    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
-<p><img src="https://huatree.top/image-20220428083519310.png" alt="image-20220428083519310"></p>
-<span id="more"></span>
-
-<blockquote>
-<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
-</blockquote>
-<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
-<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
-<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
-<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
-<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
-<ul>
-<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
-</ul>
-<p><img src="https://huatree.top/image-20220430063717154.png" alt="image-20220430063717154"></p>
-<ul>
-<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
-</li>
-<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
-</li>
-</ul>
-<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
-<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
-<p>插件安装需要登录 Dcloud 账号</p>
-</blockquote>
-<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
-
-<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
-<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
-<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>uni-app</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>npm自定义包发布</title>
     <url>/2021/05/07/20210507-npm%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E5%8F%91%E5%B8%83/</url>
     <content><![CDATA[<p>本文以自定义工具函数库为例，讲解工具包项目从发布到 npm 中央仓库、维护及使用的过程。</p>
@@ -201,6 +157,74 @@
       </tags>
   </entry>
   <entry>
+    <title>搞定uni-app</title>
+    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
+    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
+<p><img src="https://huatree.top/image-20220428083519310.png" alt="image-20220428083519310"></p>
+<span id="more"></span>
+
+<blockquote>
+<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
+</blockquote>
+<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
+<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
+<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
+<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
+<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
+<ul>
+<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
+</ul>
+<p><img src="https://huatree.top/image-20220430063717154.png" alt="image-20220430063717154"></p>
+<ul>
+<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
+</li>
+<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
+</li>
+</ul>
+<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
+<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
+<p>插件安装需要登录 Dcloud 账号</p>
+</blockquote>
+<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
+
+<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
+<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>uni-app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+<span id="more"></span>
+
+<blockquote>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+</blockquote>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>npm常用命令</title>
     <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220507212813517.png" alt="image-20220507212813517"></p>
@@ -236,84 +260,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue开发工具指南</title>
-    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
-<span id="more"></span>
-
-<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
-<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
-<span id="more"></span>
-
-<blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
-</blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git常见问题与总结</title>
-    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
-
-<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
-<blockquote>
-<p>tops</p>
-<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
-</blockquote>
-<p>具体操作如下</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
-</blockquote>
-<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
-<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
-<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
-<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
-<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
-<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
-<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>混合App中H5白屏修复及样式兼容</title>
     <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
     <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
@@ -335,40 +281,6 @@
       <tags>
         <tag>H5</tag>
         <tag>混合APP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue开发应用中遇到的问题与总结</title>
-    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
-<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
-<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意</p>
-<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
-</blockquote>
-<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
-<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
-<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
-<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
-<blockquote>
-<p>! 注意</p>
-<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
-<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
-<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -839,6 +751,94 @@
         <tag>CSS</tag>
         <tag>阅读</tag>
         <tag>重构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发工具指南</title>
+    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
+<span id="more"></span>
+
+<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
+<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git常见问题与总结</title>
+    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
+
+<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
+<blockquote>
+<p>tops</p>
+<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
+</blockquote>
+<p>具体操作如下</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
+</blockquote>
+<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
+<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
+<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
+<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
+<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
+<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
+<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发应用中遇到的问题与总结</title>
+    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
+<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
+<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意</p>
+<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
+</blockquote>
+<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
+<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
+<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
+<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
+<blockquote>
+<p>! 注意</p>
+<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
+<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
+<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -1888,53 +1888,6 @@
       </tags>
   </entry>
   <entry>
-    <title>七牛云+PicGo+Typora搭建图床</title>
-    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
-<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
-</blockquote>
-<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
-<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
-<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
-<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
-<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
-<p>在自定义源站域名栏绑定域名</p>
-<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
-<blockquote>
-<p>! 注意</p>
-<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
-</blockquote>
-<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
-<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
-<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
-<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
-<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
-<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
-<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
-<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
-<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
-<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
-<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
-<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
-<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
-<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
-<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
-<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
-<p>最后，可以验证一下图片上传。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
-<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
-<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
-<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>七牛云</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>域名申请及备案</title>
     <url>/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/</url>
     <content><![CDATA[<blockquote>
@@ -2006,25 +1959,50 @@
       </tags>
   </entry>
   <entry>
-    <title>安装node-sass后报错：win32-x64-64_binding.node is not a valid Win32 application</title>
-    <url>/2022/04/14/20220414-%E5%AE%89%E8%A3%85node-sass%E5%90%8E%E6%8A%A5%E9%94%99%EF%BC%9Awin32-x64-64_binding.node-is-not-a-valid-Win32-application/</url>
-    <content><![CDATA[<h2 id="复现问题"><a href="#复现问题" class="headerlink" title="复现问题"></a>复现问题</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
-<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 binding.node 这个文件失效，需要下载替换。</p>
-<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
-<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
-<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
-<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
-<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
-<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://blog.csdn.net/weixin_39085822/article/details/121564595">uni-app 安装 scss&#x2F;sass 后报错：win32-x64-64_binding.node is not a valid Win32 application</a></p>
+    <title>七牛云+PicGo+Typora搭建图床</title>
+    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
+<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
+</blockquote>
+<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
+<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
+<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
+<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
+<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
+<p>在自定义源站域名栏绑定域名</p>
+<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
+<blockquote>
+<p>! 注意</p>
+<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
+</blockquote>
+<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
+<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
+<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
+<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
+<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
+<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
+<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
+<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
+<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
+<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
+<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
+<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
+<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
+<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
+<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
+<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
+<p>最后，可以验证一下图片上传。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
+<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
+<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
+<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
 ]]></content>
       <categories>
-        <category>工作点滴</category>
+        <category>成长经历</category>
       </categories>
       <tags>
-        <tag>npm</tag>
-        <tag>node-sass</tag>
+        <tag>七牛云</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -2071,6 +2049,28 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装node-sass后报错：win32-x64-64_binding.node is not a valid Win32 application</title>
+    <url>/2022/04/14/20220414-%E5%AE%89%E8%A3%85node-sass%E5%90%8E%E6%8A%A5%E9%94%99%EF%BC%9Awin32-x64-64_binding.node-is-not-a-valid-Win32-application/</url>
+    <content><![CDATA[<h2 id="复现问题"><a href="#复现问题" class="headerlink" title="复现问题"></a>复现问题</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
+<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 binding.node 这个文件失效，需要下载替换。</p>
+<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
+<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
+<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
+<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
+<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
+<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://blog.csdn.net/weixin_39085822/article/details/121564595">uni-app 安装 scss&#x2F;sass 后报错：win32-x64-64_binding.node is not a valid Win32 application</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node-sass</tag>
       </tags>
   </entry>
   <entry>
@@ -2495,6 +2495,66 @@
       </categories>
       <tags>
         <tag>CDN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github同步并自动部署gitee-pages</title>
+    <url>/2022/05/18/20220518-github%E5%90%8C%E6%AD%A5%E5%B9%B6%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2gitee-pages/</url>
+    <content><![CDATA[<p>由于 Gitee Pages 的访问速度很快，很多朋友会选择 Gitee Pages 部署项目（如：个人博客、开源项目国内镜像站点）。但是它不像 GitHub Pages 那样，一提交代码就能自动更新 Pages，因为 Gitee 的自动部署属于 Gitee Pages Pro 的服务。</p>
+<span id="more"></span>
+
+<h2 id="提出需求"><a href="#提出需求" class="headerlink" title="提出需求"></a>提出需求</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> github 私仓同步到 gitee 私仓（私仓放源码）</li>
+<li><input checked="" disabled="" type="checkbox"> github 公仓同步到 gitee 公仓（公仓放打包后的静态资源）</li>
+<li><input checked="" disabled="" type="checkbox"> push 到 github 公仓时，激活自动部署 gitee 公仓静态资源</li>
+</ul>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>本文以<strong>hexo</strong>框架搭建的 blog 为例，实现提出的需求。</p>
+<h3 id="流程图分析"><a href="#流程图分析" class="headerlink" title="流程图分析"></a>流程图分析</h3><p><img src="https://huatree.top/image-20220518230609385.png" alt="image-20220518230609385"></p>
+<h3 id="仓库说明"><a href="#仓库说明" class="headerlink" title="仓库说明"></a>仓库说明</h3><details class="note "><summary><p>sucess</p>
+</summary>
+<p>github 上的仓库，如果要作为 github pages 使用，创建的远程仓库就得公开，即 public。gitee 上的仓库没有要求，公仓、私仓都可以作为 gitee pages 使用。</p>
+
+</details>
+
+<p>github 平台</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 私仓（放源码），master分支</span></span><br><span class="line">huatree.blog</span><br><span class="line"><span class="comment"># 公仓（放静态资源），gh-pages分支</span></span><br><span class="line">huatree.github.io</span><br></pre></td></tr></table></figure>
+
+<p>gitee 平台</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 私仓（放源码），master分支</span></span><br><span class="line">huatree.blog</span><br><span class="line"><span class="comment"># 公仓（放静态资源），ge-pages分支</span></span><br><span class="line">huatree</span><br></pre></td></tr></table></figure>
+
+<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><h4 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h4><p>在命令行终端或 Git Bash 使用命令 <code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code> 生成 SSH Key，注意替换为自己的邮箱。生成的 <code>id_rsa</code> 是私钥，<code>id_rsa.pub</code> 是公钥。(注意此处不要设置密码，生成的公私钥用于下面 GitHub &#x2F; Gitee 的配置，以保证公私钥成对，否则从 GitHub -&gt; Gitee 的同步将会失败。)</p>
+<p>在 GitHub 项目的<code>Settings &gt; Secrets&gt;Actions</code>路径下配置好命名为 <code>GITEE_RSA_PRIVATE_KEY</code> 和 <code>GITEE_PASSWORD</code> 的两个密钥。其中：<code>GITEE_RSA_PRIVATE_KEY</code> 存放 <code>id_rsa</code> <strong>私钥</strong>；<code>GITEE_PASSWORD</code> 存放 Gitee 帐号的密码。（注意此处，是在 GitHub 项目即远程仓库的 Settings 中设置，而不是 GitHub 的个人用户 Settings。）</p>
+<p><img src="https://huatree.top/image-20220518232245555.png" alt="image-20220518232245555"></p>
+<p>在 GitHub 的个人设置页面<a href="https://github.com/settings/keys">Settings -&gt; SSH and GPG keys</a>配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
+<p>在 Gitee 的个人设置页面「<a href="https://gitee.com/profile/sshkeys">安全设置 -&gt; SSH 公钥</a>」配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
+<h4 id="关注-Gitee-公众号"><a href="#关注-Gitee-公众号" class="headerlink" title="关注 Gitee 公众号"></a>关注 Gitee 公众号</h4><p>关注 Gitee 微信官方公众号，并绑定个人 Gitee 帐号，用于接收帐号登录通知、以及绕过短信验证码校验。</p>
+<h4 id="创建-workflow"><a href="#创建-workflow" class="headerlink" title="创建 workflow"></a>创建 workflow</h4><p>在你的 GitHub 项目 <code>.github/workflows/</code> 文件夹下创建一个 <code>.yml</code> 文件，如 <code>sync.yml</code>，内容如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Sync</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [<span class="string">master</span>]</span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Sync</span> <span class="string">to</span> <span class="string">Gitee</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">wearerequired/git-mirror-action@master</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_RSA_PRIVATE_KEY</span></span><br><span class="line">          <span class="attr">SSH_PRIVATE_KEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_RSA_PRIVATE_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 GitHub 源仓库地址</span></span><br><span class="line">          <span class="attr">source-repo:</span> <span class="string">git@github.com:huatree/huatree.blog.git</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 目标仓库地址</span></span><br><span class="line">          <span class="attr">destination-repo:</span> <span class="string">git@gitee.com:huatree/huatree.blog.git</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">Gitee</span> <span class="string">Pages</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">yanglbme/gitee-pages-action@main</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 用户名</span></span><br><span class="line">          <span class="attr">gitee-username:</span> <span class="string">huatree</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_PASSWORD</span></span><br><span class="line">          <span class="attr">gitee-password:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错</span></span><br><span class="line">          <span class="attr">gitee-repo:</span> <span class="string">huatree/huatree</span></span><br><span class="line">          <span class="comment"># 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）</span></span><br><span class="line">          <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br></pre></td></tr></table></figure>
+
+<p><code>sync.yml</code>文件（末尾需空一行）中，先使用 <a href="https://github.com/wearerequired/git-mirror-action">wearerequired&#x2F;git-mirror-action</a> 将 GitHub 仓库同步到 Gitee 仓库，再使用 <a href="https://github.com/yanglbme/gitee-pages-action">yanglbme&#x2F;gitee-pages-action</a> 实现 Gitee Pages 的自动部署。</p>
+<h4 id="本地项目操作"><a href="#本地项目操作" class="headerlink" title="本地项目操作"></a>本地项目操作</h4><p>因为本文以hexo为例，所以还需配置项目根目录下的<code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:huatree/huatree.github.io.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@gitee.com:huatree/huatree.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br></pre></td></tr></table></figure>
+
+<p>在项目所在路径下，终端执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先</span></span><br><span class="line">hexo g -d</span><br><span class="line"><span class="comment"># 再</span></span><br><span class="line">git commit -m <span class="string">&quot;content&quot;</span></span><br><span class="line"><span class="comment"># 后</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>输入命令的顺序，<code>hexo g -d</code>必须放在<code>git push</code>前，不然自动部署 gitee 的时，指定的 gitee 仓库仍是之前的状态，并没有更新。</p>
+<p>自动部署的操作原理：本地仓库推送到远程仓库，通过配置的 workflow，触发<code>github actions</code>，Actions 页面上，会打印出执行 workflow 脚本结果。如果执行结果 sucess，我们会在 Gitee 微信公众号收到一条登录通知。这是 workflow 配置上的 Gitee Pages Action 插件帮我们登录到 Gitee 官网，并为我们点击了项目的部署按钮。</p>
+</div>
+
+<h4 id="查看运行结果"><a href="#查看运行结果" class="headerlink" title="查看运行结果"></a>查看运行结果</h4><p>在 github 平台的 huatree.blog 仓库的<code>Actions</code>面板中查看。✔build sucess</p>
+<p><img src="https://huatree.top/image-20220518234128162.png" alt="image-20220518234128162"></p>
+<p>稍等片刻，手机上会出现 Gitee 微信官方公众号的登录信息提示</p>
+<p><img src="https://huatree.top/image-20220518234644661.png" alt="image-20220518234644661"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/marketplace/actions/gitee-pages-action">Gitee Pages Action</a></p>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>github actions</tag>
+        <tag>static pages</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
