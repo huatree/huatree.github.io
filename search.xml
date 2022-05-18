@@ -2006,30 +2006,6 @@
       </tags>
   </entry>
   <entry>
-    <title>安装node-sass后报错：win32-x64-64_binding.node is not a valid Win32 application</title>
-    <url>/2022/04/14/20220414-%E5%AE%89%E8%A3%85node-sass%E5%90%8E%E6%8A%A5%E9%94%99%EF%BC%9Awin32-x64-64_binding.node-is-not-a-valid-Win32-application/</url>
-    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
-<span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
-<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 binding.node 这个文件失效，需要下载替换。</p>
-<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
-<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
-<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
-<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
-<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
-<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node-sass</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>移动端1px问题</title>
     <url>/2022/04/18/20220418-%E7%A7%BB%E5%8A%A8%E7%AB%AF1px%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h3 id="UI设计稿"><a href="#UI设计稿" class="headerlink" title="UI设计稿"></a>UI设计稿</h3><p>移动端H5开发中，UI设计稿中边框为1px，前端在开发过程中如果出现border:1px（或width: 1px，height: 1px，…），测试会发现在HiDPI或Retina屏机型中，1px会比较粗。</p>
@@ -2558,6 +2534,30 @@
         <tag>github actions</tag>
         <tag>static pages</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你的node-sass安装报错了吗</title>
+    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
+    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
+<span id="more"></span>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
+<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 binding.node 这个文件失效，需要下载替换。</p>
+<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
+<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
+<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
+<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
+<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
+<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node-sass</tag>
       </tags>
   </entry>
 </search>
