@@ -49,6 +49,74 @@
       </tags>
   </entry>
   <entry>
+    <title>搞定uni-app</title>
+    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
+    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
+<p><img src="https://huatree.top/image-20220428083519310.png" alt="image-20220428083519310"></p>
+<span id="more"></span>
+
+<blockquote>
+<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
+</blockquote>
+<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
+<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
+<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
+<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
+<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
+<ul>
+<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
+</ul>
+<p><img src="https://huatree.top/image-20220430063717154.png" alt="image-20220430063717154"></p>
+<ul>
+<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
+</li>
+<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
+</li>
+</ul>
+<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
+<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
+<p>插件安装需要登录 Dcloud 账号</p>
+</blockquote>
+<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
+
+<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
+<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>uni-app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+<span id="more"></span>
+
+<blockquote>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+</blockquote>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>npm自定义包发布</title>
     <url>/2021/05/07/20210507-npm%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E5%8F%91%E5%B8%83/</url>
     <content><![CDATA[<p>本文以自定义工具函数库为例，讲解工具包项目从发布到 npm 中央仓库、维护及使用的过程。</p>
@@ -157,71 +225,20 @@
       </tags>
   </entry>
   <entry>
-    <title>搞定uni-app</title>
-    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
-    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
-<p><img src="https://huatree.top/image-20220428083519310.png" alt="image-20220428083519310"></p>
+    <title>Vue开发工具指南</title>
+    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
 <span id="more"></span>
 
-<blockquote>
-<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
-</blockquote>
-<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
-<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
-<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
-<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
-<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
-<ul>
-<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
-</ul>
-<p><img src="https://huatree.top/image-20220430063717154.png" alt="image-20220430063717154"></p>
-<ul>
-<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
-</li>
-<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
-</li>
-</ul>
-<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
-<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
-<p>插件安装需要登录 Dcloud 账号</p>
-</blockquote>
-<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
-
-<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
-<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
-<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
+<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
+<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>
       </categories>
       <tags>
-        <tag>uni-app</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
-<span id="more"></span>
-
-<blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
-</blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -260,27 +277,40 @@
       </tags>
   </entry>
   <entry>
-    <title>混合App中H5白屏修复及样式兼容</title>
-    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
-    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
-<ul>
-<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
-<li>代码编译错误引起渲染失败(一直白屏)</li>
-</ul>
-<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
-<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
-<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
-<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
-<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
-<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
+    <title>Git常见问题与总结</title>
+    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
+
+<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
+<blockquote>
+<p>tops</p>
+<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
+</blockquote>
+<p>具体操作如下</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
+</blockquote>
+<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
+<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
+<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
+<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
+<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
+<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
+<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
 ]]></content>
       <categories>
         <category>工作点滴</category>
       </categories>
       <tags>
-        <tag>H5</tag>
-        <tag>混合APP</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -754,57 +784,27 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue开发工具指南</title>
-    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
-<span id="more"></span>
-
-<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
-<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git常见问题与总结</title>
-    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
-
-<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
-<blockquote>
-<p>tops</p>
-<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
-</blockquote>
-<p>具体操作如下</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
-</blockquote>
-<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
-<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
-<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
-<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
-<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
-<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
-<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
+    <title>混合App中H5白屏修复及样式兼容</title>
+    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
+    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
+<ul>
+<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
+<li>代码编译错误引起渲染失败(一直白屏)</li>
+</ul>
+<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
+<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
+<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
+<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
+<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
+<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
 ]]></content>
       <categories>
         <category>工作点滴</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>H5</tag>
+        <tag>混合APP</tag>
       </tags>
   </entry>
   <entry>
@@ -2006,52 +2006,6 @@
       </tags>
   </entry>
   <entry>
-    <title>移动端1px问题</title>
-    <url>/2022/04/18/20220418-%E7%A7%BB%E5%8A%A8%E7%AB%AF1px%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h3 id="UI设计稿"><a href="#UI设计稿" class="headerlink" title="UI设计稿"></a>UI设计稿</h3><p>移动端H5开发中，UI设计稿中边框为1px，前端在开发过程中如果出现border:1px（或width: 1px，height: 1px，…），测试会发现在HiDPI或Retina屏机型中，1px会比较粗。</p>
-<h3 id="设备像素比"><a href="#设备像素比" class="headerlink" title="设备像素比"></a>设备像素比</h3><p>设备像素比：<code>dpr=window.devicePixelRatio</code>，也就是设备的物理像素与逻辑像素的比值，它告诉浏览器应使用多少屏幕实际像素来绘制单个CSS像素。</p>
-<p>在HiDPI或Retina屏的手机上, <code>dpr</code>常见的有<code>2</code>或<code>3</code>，<code>css</code>里写的<code>1px</code>宽度映射到物理像素上就有<code>2px</code>或<code>3px</code>宽度。</p>
-<p>例如：<code>iPhone6</code>的<code>dpr</code>为<code>2</code>，物理像素是<code>750</code>（<code>x</code>轴）,它的逻辑像素为<code>375</code>。也就是说，<code>1</code>个逻辑像素，在<code>x</code>轴和<code>y</code>轴方向，需要2个物理像素来显示，即：dpr&#x3D;2时，表示1个CSS像素由4个物理像素点组成。</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy96ZXdyTGtyWWZzUFNmTkZJSU1KZnVzTWt3OHpNbFlTbEwzVXdXUWdMTXdjVGVWTDZLTVBGbjAyZ1dTMFc1RjBraWN3SUNWbUFpYVdyZ0hBR1c3b1dqQ2FnLzY0MA?x-oss-process=image/format,png" alt="img-01"></p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="伪类-transform"><a href="#伪类-transform" class="headerlink" title="伪类+transform"></a>伪类+transform</h3><p>移动端京东处理1px有用到<code>伪类+transform</code></p>
-<blockquote>
-<p>tips</p>
-<p>伪类+transform可以很好的解决部分手机不支持<code>.5px</code>显示问题，关键是利用好<code>scale()</code>。</p>
-</blockquote>
-<p>优点：所有场景都能满足，支持圆角(伪类和本体类都需要加border-radius)。<br>缺点：代码量也很大，对于已经使用伪类的元素(例如clearfix)，可能需要多层嵌套。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 手机端实现真正的1px边框 */</span></span><br><span class="line"><span class="selector-class">.border-1px</span>, </span><br><span class="line"><span class="selector-class">.border-bottom-1px</span>, </span><br><span class="line"><span class="selector-class">.border-top-1px</span>, </span><br><span class="line"><span class="selector-class">.border-left-1px</span>, </span><br><span class="line"><span class="selector-class">.border-right-1px</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 线条颜色 */</span></span><br><span class="line"><span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line"><span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line"><span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line"><span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#e9e9e9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 底边边框1px */</span></span><br><span class="line"><span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*上边边框1px*/</span></span><br><span class="line"><span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 左边边框1px */</span></span><br><span class="line"><span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 右边边框1px */</span></span><br><span class="line"><span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 边框1px */</span></span><br><span class="line"><span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  -webit-<span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#e9e9e9</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设备像素比 */</span></span><br><span class="line"><span class="comment">/* 显示屏最小dpr为2 */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">-webkit-min-device-pixel-ratio</span>: <span class="number">2</span>) &#123;</span><br><span class="line">  <span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">5</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">5</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200%</span>;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">5</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 显示屏最小dpr为3 */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">-webkit-min-device-pixel-ratio</span>: <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">333</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">333</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">333</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">333</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200%</span>;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">333</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">333</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="viewport-rem"><a href="#viewport-rem" class="headerlink" title="viewport + rem"></a>viewport + rem</h3><p>优点：所有场景都能满足，一套代码，可以兼容基本所有布局。<br>缺点：老项目修改代价过大，只适用于新项目。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">!<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> dpr = <span class="variable language_">window</span>.<span class="property">devicePixelRatio</span> || <span class="number">1</span></span><br><span class="line">  <span class="keyword">var</span> scale = <span class="number">1</span> / dpr</span><br><span class="line">  <span class="keyword">var</span> viewport = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;meta[name=viewport]&quot;</span>)</span><br><span class="line">  viewport.<span class="property">setAttribute</span> = (<span class="string">&#x27;content&#x27;</span>, <span class="string">&#x27;width=device-width,user-scalable=no,initial-scale=&#x27;</span> + scale)</span><br><span class="line">  <span class="keyword">var</span> docEl = <span class="variable language_">document</span>.<span class="property">documentElement</span></span><br><span class="line">  <span class="keyword">var</span> fontsize = docEl.<span class="property">clientWidth</span> / <span class="number">10</span> * dpr + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">  docEl.<span class="property">style</span>.<span class="property">fontSize</span> = fontsize</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
-
-<h3 id="background-image"><a href="#background-image" class="headerlink" title="background-image"></a>background-image</h3><p><code>background-image</code>跟<code>border-image</code>的方法一样，你要先准备一张符合你要求的图片。</p>
-<p>优点：可以设置单条,多条边框，没有性能瓶颈的问题。<br>缺点：修改颜色麻烦, 需要替换图片；圆角需要特殊处理，并且边缘会模糊；兼容性差。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.background-image-1px</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">../img/line.png</span>) repeat-x left bottom;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="postcss-write-svg"><a href="#postcss-write-svg" class="headerlink" title="postcss-write-svg"></a>postcss-write-svg</h3><blockquote>
-<p>在实际开发中，postcss-write-svg 用的很少，仅适合直线，一般不考虑。</p>
-</blockquote>
-<p>借助于<code>PostCSS</code>的插件<code>postcss-write-svg</code>，无需<code>background-image</code>或<code>border-image</code>的方法那样依赖图片。</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="variable">@svg</span> border1px &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="variable">@rect</span> &#123;</span><br><span class="line">    fill: var(<span class="attr">--color</span>, black);</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.example &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid transparent;</span><br><span class="line">  <span class="attribute">border-image</span>: svg(border1px param(--color <span class="number">#00b1ff</span>)) <span class="number">2</span> <span class="number">2</span> stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这样<code>PostCSS</code>会自动帮你把CSS编译出来：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.example</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid transparent;</span><br><span class="line">  <span class="attribute">border-image</span>: <span class="built_in">url</span>(<span class="string">&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; height=&#x27;2px&#x27;%3E%3Crect fill=&#x27;%2300b1ff&#x27; width=&#x27;100%25&#x27; height=&#x27;50%25&#x27;/%3E%3C/svg%3E&quot;</span>)</span><br><span class="line">    <span class="number">2</span> <span class="number">2</span> stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通常情况，伪类元素方案更好，无论是从成本还是灵活性出发。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/devicePixelRatio">MDN - Window.devicePixelRatio</a></p>
-<p>[2] <a href="https://blog.csdn.net/qq_45846359/article/details/108761345">移动端 1px 解决方案(完整版)</a></p>
-<p>[3] <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta/name">MDN - 标准元数据名称</a></p>
-<p>[4] <a href="https://blog.csdn.net/qq_43523725/article/details/114678995">前端提高篇（四十六）CSS进阶11：移动端布局(等比缩放+1px问题：viewport+rem | transform | vw+插件)</a></p>
-<p>[5] <a href="https://github.com/csstools/postcss-write-svg">postcss-write-svg</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装node-sass后报错：win32-x64-64_binding.node is not a valid Win32 application</title>
     <url>/2022/04/14/20220414-%E5%AE%89%E8%A3%85node-sass%E5%90%8E%E6%8A%A5%E9%94%99%EF%BC%9Awin32-x64-64_binding.node-is-not-a-valid-Win32-application/</url>
     <content><![CDATA[<h2 id="复现问题"><a href="#复现问题" class="headerlink" title="复现问题"></a>复现问题</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
@@ -2137,6 +2091,52 @@
       </categories>
       <tags>
         <tag>投资理财</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>移动端1px问题</title>
+    <url>/2022/04/18/20220418-%E7%A7%BB%E5%8A%A8%E7%AB%AF1px%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h3 id="UI设计稿"><a href="#UI设计稿" class="headerlink" title="UI设计稿"></a>UI设计稿</h3><p>移动端H5开发中，UI设计稿中边框为1px，前端在开发过程中如果出现border:1px（或width: 1px，height: 1px，…），测试会发现在HiDPI或Retina屏机型中，1px会比较粗。</p>
+<h3 id="设备像素比"><a href="#设备像素比" class="headerlink" title="设备像素比"></a>设备像素比</h3><p>设备像素比：<code>dpr=window.devicePixelRatio</code>，也就是设备的物理像素与逻辑像素的比值，它告诉浏览器应使用多少屏幕实际像素来绘制单个CSS像素。</p>
+<p>在HiDPI或Retina屏的手机上, <code>dpr</code>常见的有<code>2</code>或<code>3</code>，<code>css</code>里写的<code>1px</code>宽度映射到物理像素上就有<code>2px</code>或<code>3px</code>宽度。</p>
+<p>例如：<code>iPhone6</code>的<code>dpr</code>为<code>2</code>，物理像素是<code>750</code>（<code>x</code>轴）,它的逻辑像素为<code>375</code>。也就是说，<code>1</code>个逻辑像素，在<code>x</code>轴和<code>y</code>轴方向，需要2个物理像素来显示，即：dpr&#x3D;2时，表示1个CSS像素由4个物理像素点组成。</p>
+<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9tbWJpei5xcGljLmNuL21tYml6X3BuZy96ZXdyTGtyWWZzUFNmTkZJSU1KZnVzTWt3OHpNbFlTbEwzVXdXUWdMTXdjVGVWTDZLTVBGbjAyZ1dTMFc1RjBraWN3SUNWbUFpYVdyZ0hBR1c3b1dqQ2FnLzY0MA?x-oss-process=image/format,png" alt="img-01"></p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="伪类-transform"><a href="#伪类-transform" class="headerlink" title="伪类+transform"></a>伪类+transform</h3><p>移动端京东处理1px有用到<code>伪类+transform</code></p>
+<blockquote>
+<p>tips</p>
+<p>伪类+transform可以很好的解决部分手机不支持<code>.5px</code>显示问题，关键是利用好<code>scale()</code>。</p>
+</blockquote>
+<p>优点：所有场景都能满足，支持圆角(伪类和本体类都需要加border-radius)。<br>缺点：代码量也很大，对于已经使用伪类的元素(例如clearfix)，可能需要多层嵌套。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 手机端实现真正的1px边框 */</span></span><br><span class="line"><span class="selector-class">.border-1px</span>, </span><br><span class="line"><span class="selector-class">.border-bottom-1px</span>, </span><br><span class="line"><span class="selector-class">.border-top-1px</span>, </span><br><span class="line"><span class="selector-class">.border-left-1px</span>, </span><br><span class="line"><span class="selector-class">.border-right-1px</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 线条颜色 */</span></span><br><span class="line"><span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span>,</span><br><span class="line"><span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line"><span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line"><span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line"><span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#e9e9e9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 底边边框1px */</span></span><br><span class="line"><span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*上边边框1px*/</span></span><br><span class="line"><span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1px</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 左边边框1px */</span></span><br><span class="line"><span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 右边边框1px */</span></span><br><span class="line"><span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 边框1px */</span></span><br><span class="line"><span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">  -webit-<span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#e9e9e9</span>;</span><br><span class="line">  -webkit-<span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform-origin</span>: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设备像素比 */</span></span><br><span class="line"><span class="comment">/* 显示屏最小dpr为2 */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">-webkit-min-device-pixel-ratio</span>: <span class="number">2</span>) &#123;</span><br><span class="line">  <span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">5</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">5</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200%</span>;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">5</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">5</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 显示屏最小dpr为3 */</span></span><br><span class="line"><span class="keyword">@media</span> (<span class="attribute">-webkit-min-device-pixel-ratio</span>: <span class="number">3</span>) &#123;</span><br><span class="line">  <span class="selector-class">.border-bottom-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-top-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">333</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleY</span>(.<span class="number">333</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-left-1px</span><span class="selector-pseudo">::after</span>, </span><br><span class="line">  <span class="selector-class">.border-right-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">333</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scaleX</span>(.<span class="number">333</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-class">.border-1px</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">200%</span>;</span><br><span class="line">    -webkit-<span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">333</span>);</span><br><span class="line">    <span class="attribute">transform</span>: <span class="built_in">scale</span>(.<span class="number">333</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="viewport-rem"><a href="#viewport-rem" class="headerlink" title="viewport + rem"></a>viewport + rem</h3><p>优点：所有场景都能满足，一套代码，可以兼容基本所有布局。<br>缺点：老项目修改代价过大，只适用于新项目。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">!<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> dpr = <span class="variable language_">window</span>.<span class="property">devicePixelRatio</span> || <span class="number">1</span></span><br><span class="line">  <span class="keyword">var</span> scale = <span class="number">1</span> / dpr</span><br><span class="line">  <span class="keyword">var</span> viewport = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;meta[name=viewport]&quot;</span>)</span><br><span class="line">  viewport.<span class="property">setAttribute</span> = (<span class="string">&#x27;content&#x27;</span>, <span class="string">&#x27;width=device-width,user-scalable=no,initial-scale=&#x27;</span> + scale)</span><br><span class="line">  <span class="keyword">var</span> docEl = <span class="variable language_">document</span>.<span class="property">documentElement</span></span><br><span class="line">  <span class="keyword">var</span> fontsize = docEl.<span class="property">clientWidth</span> / <span class="number">10</span> * dpr + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">  docEl.<span class="property">style</span>.<span class="property">fontSize</span> = fontsize</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+
+<h3 id="background-image"><a href="#background-image" class="headerlink" title="background-image"></a>background-image</h3><p><code>background-image</code>跟<code>border-image</code>的方法一样，你要先准备一张符合你要求的图片。</p>
+<p>优点：可以设置单条,多条边框，没有性能瓶颈的问题。<br>缺点：修改颜色麻烦, 需要替换图片；圆角需要特殊处理，并且边缘会模糊；兼容性差。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.background-image-1px</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">../img/line.png</span>) repeat-x left bottom;</span><br><span class="line">  <span class="attribute">background-size</span>: <span class="number">100%</span> <span class="number">1px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="postcss-write-svg"><a href="#postcss-write-svg" class="headerlink" title="postcss-write-svg"></a>postcss-write-svg</h3><blockquote>
+<p>在实际开发中，postcss-write-svg 用的很少，仅适合直线，一般不考虑。</p>
+</blockquote>
+<p>借助于<code>PostCSS</code>的插件<code>postcss-write-svg</code>，无需<code>background-image</code>或<code>border-image</code>的方法那样依赖图片。</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="variable">@svg</span> border1px &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="variable">@rect</span> &#123;</span><br><span class="line">    fill: var(<span class="attr">--color</span>, black);</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">.example &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid transparent;</span><br><span class="line">  <span class="attribute">border-image</span>: svg(border1px param(--color <span class="number">#00b1ff</span>)) <span class="number">2</span> <span class="number">2</span> stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样<code>PostCSS</code>会自动帮你把CSS编译出来：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.example</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid transparent;</span><br><span class="line">  <span class="attribute">border-image</span>: <span class="built_in">url</span>(<span class="string">&quot;data:image/svg+xml;charset=utf-8,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; height=&#x27;2px&#x27;%3E%3Crect fill=&#x27;%2300b1ff&#x27; width=&#x27;100%25&#x27; height=&#x27;50%25&#x27;/%3E%3C/svg%3E&quot;</span>)</span><br><span class="line">    <span class="number">2</span> <span class="number">2</span> stretch;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通常情况，伪类元素方案更好，无论是从成本还是灵活性出发。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/devicePixelRatio">MDN - Window.devicePixelRatio</a></p>
+<p>[2] <a href="https://blog.csdn.net/qq_45846359/article/details/108761345">移动端 1px 解决方案(完整版)</a></p>
+<p>[3] <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/meta/name">MDN - 标准元数据名称</a></p>
+<p>[4] <a href="https://blog.csdn.net/qq_43523725/article/details/114678995">前端提高篇（四十六）CSS进阶11：移动端布局(等比缩放+1px问题：viewport+rem | transform | vw+插件)</a></p>
+<p>[5] <a href="https://github.com/csstools/postcss-write-svg">postcss-write-svg</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2501,6 +2501,7 @@
     <title>github同步并自动部署gitee-pages</title>
     <url>/2022/05/18/20220518-github%E5%90%8C%E6%AD%A5%E5%B9%B6%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2gitee-pages/</url>
     <content><![CDATA[<p>由于 Gitee Pages 的访问速度很快，很多朋友会选择 Gitee Pages 部署项目（如：个人博客、开源项目国内镜像站点）。但是它不像 GitHub Pages 那样，一提交代码就能自动更新 Pages，因为 Gitee 的自动部署属于 Gitee Pages Pro 的服务。</p>
+<p><img src="https://huatree.top/image-20220519001003845.png" alt="image-20220519001003845"></p>
 <span id="more"></span>
 
 <h2 id="提出需求"><a href="#提出需求" class="headerlink" title="提出需求"></a>提出需求</h2><ul>
@@ -2532,7 +2533,7 @@
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Sync</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [<span class="string">master</span>]</span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Sync</span> <span class="string">to</span> <span class="string">Gitee</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">wearerequired/git-mirror-action@master</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_RSA_PRIVATE_KEY</span></span><br><span class="line">          <span class="attr">SSH_PRIVATE_KEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_RSA_PRIVATE_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 GitHub 源仓库地址</span></span><br><span class="line">          <span class="attr">source-repo:</span> <span class="string">git@github.com:huatree/huatree.blog.git</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 目标仓库地址</span></span><br><span class="line">          <span class="attr">destination-repo:</span> <span class="string">git@gitee.com:huatree/huatree.blog.git</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">Gitee</span> <span class="string">Pages</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">yanglbme/gitee-pages-action@main</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 用户名</span></span><br><span class="line">          <span class="attr">gitee-username:</span> <span class="string">huatree</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_PASSWORD</span></span><br><span class="line">          <span class="attr">gitee-password:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错</span></span><br><span class="line">          <span class="attr">gitee-repo:</span> <span class="string">huatree/huatree</span></span><br><span class="line">          <span class="comment"># 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）</span></span><br><span class="line">          <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br></pre></td></tr></table></figure>
 
 <p><code>sync.yml</code>文件（末尾需空一行）中，先使用 <a href="https://github.com/wearerequired/git-mirror-action">wearerequired&#x2F;git-mirror-action</a> 将 GitHub 仓库同步到 Gitee 仓库，再使用 <a href="https://github.com/yanglbme/gitee-pages-action">yanglbme&#x2F;gitee-pages-action</a> 实现 Gitee Pages 的自动部署。</p>
-<h4 id="本地项目操作"><a href="#本地项目操作" class="headerlink" title="本地项目操作"></a>本地项目操作</h4><p>因为本文以hexo为例，所以还需配置项目根目录下的<code>_config.yml</code></p>
+<h4 id="本地项目操作"><a href="#本地项目操作" class="headerlink" title="本地项目操作"></a>本地项目操作</h4><p>因为本文以 hexo 为例，所以还需配置项目根目录下的<code>_config.yml</code></p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:huatree/huatree.github.io.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@gitee.com:huatree/huatree.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br></pre></td></tr></table></figure>
 
 <p>在项目所在路径下，终端执行命令</p>
