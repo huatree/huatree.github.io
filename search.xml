@@ -2513,11 +2513,8 @@
 </ul>
 <h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>本文以<strong>hexo</strong>框架搭建的 blog 为例，实现提出的需求。</p>
 <h3 id="流程图分析"><a href="#流程图分析" class="headerlink" title="流程图分析"></a>流程图分析</h3><p><img src="https://huatree.top/image-20220518230609385.png" alt="image-20220518230609385"></p>
-<h3 id="仓库说明"><a href="#仓库说明" class="headerlink" title="仓库说明"></a>仓库说明</h3><details class="note "><summary><p>sucess</p>
-</summary>
-<p>github 上的仓库，如果要作为 github pages 使用，创建的远程仓库就得公开，即 public。gitee 上的仓库没有要求，公仓、私仓都可以作为 gitee pages 使用。</p>
-
-</details>
+<h3 id="仓库说明"><a href="#仓库说明" class="headerlink" title="仓库说明"></a>仓库说明</h3><div class="note success"><p>github 上的仓库，如果要作为 github pages 使用，创建的远程仓库就得公开，即 public。gitee 上的仓库没有要求，公仓、私仓都可以作为 gitee pages 使用。</p>
+</div>
 
 <p>github 平台</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 私仓（放源码），master分支</span></span><br><span class="line">huatree.blog</span><br><span class="line"><span class="comment"># 公仓（放静态资源），gh-pages分支</span></span><br><span class="line">huatree.github.io</span><br></pre></td></tr></table></figure>
