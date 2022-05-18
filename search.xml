@@ -236,30 +236,6 @@
       </tags>
   </entry>
   <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
-<span id="more"></span>
-
-<blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
-</blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue开发工具指南</title>
     <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
@@ -314,6 +290,30 @@
       </tags>
   </entry>
   <entry>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+<span id="more"></span>
+
+<blockquote>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+</blockquote>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>混合App中H5白屏修复及样式兼容</title>
     <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
     <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
@@ -335,70 +335,6 @@
       <tags>
         <tag>H5</tag>
         <tag>混合APP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue开发应用中遇到的问题与总结</title>
-    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
-<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
-<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意</p>
-<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
-</blockquote>
-<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
-<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
-<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
-<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
-<blockquote>
-<p>! 注意</p>
-<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
-<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
-<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>static与new.target关键字</title>
-    <url>/2021/07/16/20220303-static%E4%B8%8Enew.target%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static 在类中定义静态方法。</p>
-<h3 id="什么时候能用"><a href="#什么时候能用" class="headerlink" title="什么时候能用"></a>什么时候能用</h3><p>看方法里，有没用到this，没用到就可以考虑用静态方法。静态方法通常用于创建实用程序函数，例如，创建或克隆对象。</p>
-<h3 id="什么时候不能用"><a href="#什么时候不能用" class="headerlink" title="什么时候不能用"></a>什么时候不能用</h3><p>不能在类的实例上调用。</p>
-<h3 id="怎么调用"><a href="#怎么调用" class="headerlink" title="怎么调用"></a>怎么调用</h3><p>以下几种情况都可调用：</p>
-<ol>
-<li><p>静态方法调用直接在类上进行。</p>
-</li>
-<li><p>静态方法调用同一个类中的其他静态方法，可使用 <code>this</code> 关键字</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Static method has been called&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">anotherStaticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">staticMethod</span>() + <span class="string">&#x27; from another static method&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">anotherStaticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called from another static method&#x27;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>非静态方法中，不能直接使用 <code>this</code> 关键字来访问静态方法。而是要用类名来调用：<code>CLASSNAME.STATIC_METHOD_NAME()</code> ，或者用构造函数的属性来调用该方法： <code>this.constructor.STATIC_METHOD_NAME()</code>.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">constructor</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;static method has been called.&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="new-target"><a href="#new-target" class="headerlink" title="new.target"></a>new.target</h2><p>**<code>new.target</code>**属性允许检测函数或构造方法是否是通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">new</a>运算符被调用的。在普通函数（没有被 new 的函数）调用中，<code>new.target</code> 的值是<code>undefined</code></p>
-<p>注意，在类的构造方法中，<code>new.target</code>指向直接被<code>new</code>执行的构造函数。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_ inherited__">A</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="title function_">A</span>(); <span class="comment">// logs &quot;A&quot;</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="title function_">B</span>(); <span class="comment">// logs &quot;B&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span> <span class="keyword">extends</span> <span class="title class_ inherited__">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="title function_">C</span>(); <span class="comment">// logs class C&#123;constructor()&#123;console.log(new.target);&#125;&#125;</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="title function_">D</span>(); <span class="comment">// logs class D extends C&#123;constructor()&#123;super();&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/static">mdn web docs - static</a></p>
-<p>[2] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target">mdn web docs - new.target</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -869,6 +805,70 @@
         <tag>CSS</tag>
         <tag>阅读</tag>
         <tag>重构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>static与new.target关键字</title>
+    <url>/2021/07/16/20220303-static%E4%B8%8Enew.target%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static 在类中定义静态方法。</p>
+<h3 id="什么时候能用"><a href="#什么时候能用" class="headerlink" title="什么时候能用"></a>什么时候能用</h3><p>看方法里，有没用到this，没用到就可以考虑用静态方法。静态方法通常用于创建实用程序函数，例如，创建或克隆对象。</p>
+<h3 id="什么时候不能用"><a href="#什么时候不能用" class="headerlink" title="什么时候不能用"></a>什么时候不能用</h3><p>不能在类的实例上调用。</p>
+<h3 id="怎么调用"><a href="#怎么调用" class="headerlink" title="怎么调用"></a>怎么调用</h3><p>以下几种情况都可调用：</p>
+<ol>
+<li><p>静态方法调用直接在类上进行。</p>
+</li>
+<li><p>静态方法调用同一个类中的其他静态方法，可使用 <code>this</code> 关键字</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Static method has been called&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">anotherStaticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">staticMethod</span>() + <span class="string">&#x27; from another static method&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">anotherStaticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called from another static method&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非静态方法中，不能直接使用 <code>this</code> 关键字来访问静态方法。而是要用类名来调用：<code>CLASSNAME.STATIC_METHOD_NAME()</code> ，或者用构造函数的属性来调用该方法： <code>this.constructor.STATIC_METHOD_NAME()</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">constructor</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;static method has been called.&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="new-target"><a href="#new-target" class="headerlink" title="new.target"></a>new.target</h2><p>**<code>new.target</code>**属性允许检测函数或构造方法是否是通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">new</a>运算符被调用的。在普通函数（没有被 new 的函数）调用中，<code>new.target</code> 的值是<code>undefined</code></p>
+<p>注意，在类的构造方法中，<code>new.target</code>指向直接被<code>new</code>执行的构造函数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_ inherited__">A</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="title function_">A</span>(); <span class="comment">// logs &quot;A&quot;</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="title function_">B</span>(); <span class="comment">// logs &quot;B&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span> <span class="keyword">extends</span> <span class="title class_ inherited__">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="title function_">C</span>(); <span class="comment">// logs class C&#123;constructor()&#123;console.log(new.target);&#125;&#125;</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="title function_">D</span>(); <span class="comment">// logs class D extends C&#123;constructor()&#123;super();&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/static">mdn web docs - static</a></p>
+<p>[2] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target">mdn web docs - new.target</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发应用中遇到的问题与总结</title>
+    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
+<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
+<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意</p>
+<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
+</blockquote>
+<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
+<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
+<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
+<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
+<blockquote>
+<p>! 注意</p>
+<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
+<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
+<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -1364,58 +1364,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
-    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
-    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
-<span id="more"></span>
-
-<div class="note info"><p>文章转载自程序员鱼皮 </p>
-</div>
-
-<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
-<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
-<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
-<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
-<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
-<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
-<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
-<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
-<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
-<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
-<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
-<p>整体的思想就是从整体到局部，由大到小吧。</p>
-<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
-<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
-<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
-<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
-<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
-<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
-<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
-<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
-<p>所以这也是为什么要多了解和积累一些技术。</p>
-<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
-<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
-<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
-<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
-<ul>
-<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
-<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
-</li>
-<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
-</li>
-</ul>
-<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
-<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
-<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
-]]></content>
-      <categories>
-        <category>经典文章</category>
-      </categories>
-      <tags>
-        <tag>职场</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【转载】从输入URL开始建立前端知识体系</title>
     <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%BC%80%E5%A7%8B%E5%BB%BA%E7%AB%8B%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/</url>
     <content><![CDATA[<p>看到这个，不借助搜索引擎，自己的心里是否有一个答案？对于某些执着于技术的大佬，大概会有一些回答吧：（猜的） - 从键盘谈起到系统交互，从浏览器到CPU，从调度机制到系统内核，从数据请求到二进制、汇编，从GPU绘图到LCD显示，然后再分析系统底层的进程、内存等等。总之，从软件到硬件，到材料，到分子，原子，量子，薛定谔的猫，人类起源，宇宙大爆炸，平行宇宙？感觉都毫无违和感。</p>
@@ -1888,50 +1836,55 @@
       </tags>
   </entry>
   <entry>
-    <title>七牛云+PicGo+Typora搭建图床</title>
-    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
-<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
-</blockquote>
-<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
-<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
-<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
-<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
-<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
-<p>在自定义源站域名栏绑定域名</p>
-<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
-<blockquote>
-<p>! 注意</p>
-<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
-</blockquote>
-<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
-<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
-<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
-<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
-<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
-<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
-<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
-<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
-<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
-<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
-<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
-<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
-<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
-<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
-<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
-<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
-<p>最后，可以验证一下图片上传。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
-<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
-<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
-<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
+    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
+    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
+    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自程序员鱼皮 </p>
+</div>
+
+<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
+<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
+<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
+<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
+<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
+<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
+<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
+<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
+<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
+<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
+<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
+<p>整体的思想就是从整体到局部，由大到小吧。</p>
+<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
+<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
+<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
+<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
+<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
+<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
+<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
+<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
+<p>所以这也是为什么要多了解和积累一些技术。</p>
+<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
+<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
+<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
+<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
+<ul>
+<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
+<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
+</li>
+<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
+</li>
+</ul>
+<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
+<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
+<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
 ]]></content>
       <categories>
-        <category>成长经历</category>
+        <category>经典文章</category>
       </categories>
       <tags>
-        <tag>七牛云</tag>
-        <tag>图床</tag>
+        <tag>职场</tag>
       </tags>
   </entry>
   <entry>
@@ -2006,6 +1959,77 @@
       </tags>
   </entry>
   <entry>
+    <title>七牛云+PicGo+Typora搭建图床</title>
+    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
+<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
+</blockquote>
+<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
+<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
+<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
+<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
+<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
+<p>在自定义源站域名栏绑定域名</p>
+<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
+<blockquote>
+<p>! 注意</p>
+<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
+</blockquote>
+<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
+<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
+<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
+<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
+<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
+<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
+<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
+<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
+<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
+<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
+<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
+<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
+<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
+<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
+<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
+<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
+<p>最后，可以验证一下图片上传。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
+<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
+<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
+<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>七牛云</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你的node-sass安装报错了吗</title>
+    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
+    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
+<span id="more"></span>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
+<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 binding.node 这个文件失效，需要下载替换。</p>
+<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
+<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
+<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
+<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
+<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
+<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node-sass</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>移动端1px问题</title>
     <url>/2022/04/18/20220418-%E7%A7%BB%E5%8A%A8%E7%AB%AF1px%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h3 id="UI设计稿"><a href="#UI设计稿" class="headerlink" title="UI设计稿"></a>UI设计稿</h3><p>移动端H5开发中，UI设计稿中边框为1px，前端在开发过程中如果出现border:1px（或width: 1px，height: 1px，…），测试会发现在HiDPI或Retina屏机型中，1px会比较粗。</p>
@@ -2049,74 +2073,6 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>github使用技巧</title>
-    <url>/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220510072148793.png" alt="image-20220510072148793"></p>
-<span id="more"></span>
-
-<h2 id="1-在线查看项目"><a href="#1-在线查看项目" class="headerlink" title="1 在线查看项目"></a>1 在线查看项目</h2><h3 id="1-1-直接在-github-后面加上-1s"><a href="#1-1-直接在-github-后面加上-1s" class="headerlink" title="1.1 直接在 github 后面加上 1s"></a>1.1 直接在 github 后面加上 1s</h3><p>找到需要看的项目的 github 地址。比如：antd-design pro</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p>只需要在地址 github 后面加上<code>1s</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github1s.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p>与 vs-code 基本一样，速度很快！再也不用担心 github 网速慢的问题了。</p>
-<p><img src="https://huatree.top/image-20220510053731103.png" alt="image-20220510053731103"></p>
-<h3 id="1-2-github-加前缀-vscode-dev-x2F"><a href="#1-2-github-加前缀-vscode-dev-x2F" class="headerlink" title="1.2 github 加前缀 vscode.dev&#x2F;"></a>1.2 github 加前缀 vscode.dev&#x2F;</h3><p><code>vscode.dev/</code>方式打开时，需要 github 在线授权</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://vscode.dev/github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://huatree.top/image-20220510054828459.png" alt="image-20220510054828459"></p>
-<h3 id="1-3-github-的后缀-com-换成-dev"><a href="#1-3-github-的后缀-com-换成-dev" class="headerlink" title="1.3 github 的后缀.com 换成.dev"></a>1.3 github 的后缀.com 换成.dev</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.dev/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p><strong>快捷键</strong>：在原<code>https://github.com/ant-design/ant-design-pro</code>地址下，按下键盘上的<code>.</code>键位，可快速在线打开项目。</p>
-<p><img src="https://huatree.top/image-20220510055416674.png" alt="image-20220510055416674"></p>
-<h3 id="1-4-通过-Chrome-插件-Octotree-GitHub-code-tree"><a href="#1-4-通过-Chrome-插件-Octotree-GitHub-code-tree" class="headerlink" title="1.4 通过 Chrome 插件 Octotree - GitHub code tree"></a>1.4 通过 Chrome 插件 Octotree - GitHub code tree</h3><p><img src="https://huatree.top/image-20220510055737787.png" alt="image-20220510055737787"></p>
-<h2 id="2-在线运行项目"><a href="#2-在线运行项目" class="headerlink" title="2 在线运行项目"></a>2 在线运行项目</h2><p>在项目地址前加上 <code>gitpod.io/#</code> 前缀，此时，可以选择 github 授权。等待几秒钟，它会自动识别项目的类型，并在线安装项目所需的依赖，并打好包。</p>
-<p>例如 vue 项目，gitpod 环境下，会当前项目根目录下创建默认配置<code>.gitpod.yml</code>文件。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This configuration file was automatically generated by Gitpod.</span></span><br><span class="line"><span class="comment"># Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)</span></span><br><span class="line"><span class="comment"># and commit this file to your remote git repository to share the goodness with others.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">init:</span> <span class="string">yarn</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">yarn</span> <span class="string">run</span> <span class="string">build</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Invalid-Host-header-问题解决"><a href="#Invalid-Host-header-问题解决" class="headerlink" title="Invalid Host header 问题解决"></a>Invalid Host header 问题解决</h3><p><strong>出现该问的原因</strong>：因为新版的 webpack-dev-server 出于安全考虑，默认检查 hostname，如果 hostname 不是配置内的就不能访问。</p>
-<p><strong>解决办法：</strong>设置跳过 host 检查。打开你的项目全局搜索 devServer ，在 devServer 里面添加 <code>disableHostCheck: true,</code></p>
-<p>disableHostCheck 设置为 true 的意思就是设置跳过 host 检查。</p>
-<div class="note success"><p>本地运行项目的操作，gitpod 环境下同样适用。</p>
-</div>
-
-<div class="note warning"><p>Gitpod 免费版支持：</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 50 小时&#x2F;月</li>
-<li><input checked="" disabled="" type="checkbox"> 公共和私人回购</li>
-<li><input checked="" disabled="" type="checkbox"> 4 个并行工作区</li>
-<li><input checked="" disabled="" type="checkbox"> 30 分钟不活动超时</li>
-</ul>
-</div>
-
-<h2 id="3-项目推送"><a href="#3-项目推送" class="headerlink" title="3 项目推送"></a>3 项目推送</h2><p>在 GitHub 的 Explorer 探索页面中，有一个非常不起眼的按钮，“获取邮件更新”。</p>
-<p>我们可以根据自己的喜好，让 GitHub 定期给我们推送自己感兴趣的优质项目，就可以持续扩大知识面、了解开源动态啦。</p>
-<p><img src="https://huatree.top/image-20220510065320331.png" alt="image-20220510065320331"></p>
-<h2 id="4-文件定位查看"><a href="#4-文件定位查看" class="headerlink" title="4 文件定位查看"></a>4 文件定位查看</h2><p>刚开始的时候，相信大多数同学是一级一级的点击项目目录去找文件，发现位置错了后呢，还要回到最初的起点，呆呆地再换一个目录去找。</p>
-<p><img src="https://huatree.top/image-20220510070107485.png" alt="image-20220510070107485"></p>
-<p>后来在<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">github 官方文档</a>中发现，我们只需按下 <code>t</code> 键，就可以快速、实时地对仓库内的所有文件进行搜索。</p>
-<p><img src="https://huatree.top/image-20220510070309131.png" alt="image-20220510070309131"></p>
-<p>点进某个文件后，还有技巧，按下 <code>L</code> 键，就可以快速跳转到某一行。</p>
-<p><img src="https://huatree.top/image-20220510070554922.png" alt="image-20220510070554922"></p>
-<p>点击行号，就可以快速复制这行的代码，生成永久链接。</p>
-<p><img src="https://huatree.top/image-20220510070627257.png" alt="image-20220510070627257"></p>
-<p>按 <code>b</code> 键还可以快速查看该文件的改动记录。</p>
-<p><img src="https://huatree.top/image-20220510070756051.png" alt="image-20220510070756051"></p>
-<p>除了上面这些，GitHub 里还隐藏了许多实用的<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">快捷键</a>，大家可以在官方文档尽情查看。</p>
-<h2 id="5-过滤搜索"><a href="#5-过滤搜索" class="headerlink" title="5 过滤搜索"></a>5 过滤搜索</h2><p>使用 GitHub <a href="https://docs.github.com/cn/search-github/getting-started-with-searching-on-github/about-searching-on-github">高级搜索</a>功能提供的 <code>搜索限定符</code>。进入 advance search 界面（搜索结果页左下角），利用可视化表单也能实现高级搜索。但这个界面展示的搜索条件有限，其实还有更多的搜索限定语法，比如按代码库名称、描述搜索，对仓库中的内容进行搜索等，这些都可以在 GitHub 官方文档查阅。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://mp.weixin.qq.com/s/P7odF1arZ1siCKvhwp6fqA">GitHub 这 5 个骚操作，99%的人不知道！</a></p>
-<p>[2] <a href="https://code.visualstudio.com/blogs/2021/10/20/vscode-dev">vscode.dev</a></p>
-<p>[3] <a href="https://www.gitpod.io/">Gitpod</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -2186,103 +2142,71 @@
       </tags>
   </entry>
   <entry>
-    <title>docker使用</title>
-    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
-<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
+    <title>github使用技巧</title>
+    <url>/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220510072148793.png" alt="image-20220510072148793"></p>
 <span id="more"></span>
 
-<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
-<ul>
-<li>使用容器开发您的应用程序及其支持组件。</li>
-<li>容器成为分发和测试应用程序的单元。</li>
-<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
-</ul>
-<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
-<p>考虑以下示例场景：</p>
-<ul>
-<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
-<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
-<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
-<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
-</ul>
-<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
-<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
-<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
-<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
-<p><img src="https://huatree.top/architecture.svg" alt="architecture"></p>
-<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
+<h2 id="1-在线查看项目"><a href="#1-在线查看项目" class="headerlink" title="1 在线查看项目"></a>1 在线查看项目</h2><h3 id="1-1-直接在-github-后面加上-1s"><a href="#1-1-直接在-github-后面加上-1s" class="headerlink" title="1.1 直接在 github 后面加上 1s"></a>1.1 直接在 github 后面加上 1s</h3><p>找到需要看的项目的 github 地址。比如：antd-design pro</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>只需要在地址 github 后面加上<code>1s</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github1s.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>与 vs-code 基本一样，速度很快！再也不用担心 github 网速慢的问题了。</p>
+<p><img src="https://huatree.top/image-20220510053731103.png" alt="image-20220510053731103"></p>
+<h3 id="1-2-github-加前缀-vscode-dev-x2F"><a href="#1-2-github-加前缀-vscode-dev-x2F" class="headerlink" title="1.2 github 加前缀 vscode.dev&#x2F;"></a>1.2 github 加前缀 vscode.dev&#x2F;</h3><p><code>vscode.dev/</code>方式打开时，需要 github 在线授权</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://vscode.dev/github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://huatree.top/image-20220510054828459.png" alt="image-20220510054828459"></p>
+<h3 id="1-3-github-的后缀-com-换成-dev"><a href="#1-3-github-的后缀-com-换成-dev" class="headerlink" title="1.3 github 的后缀.com 换成.dev"></a>1.3 github 的后缀.com 换成.dev</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.dev/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><strong>快捷键</strong>：在原<code>https://github.com/ant-design/ant-design-pro</code>地址下，按下键盘上的<code>.</code>键位，可快速在线打开项目。</p>
+<p><img src="https://huatree.top/image-20220510055416674.png" alt="image-20220510055416674"></p>
+<h3 id="1-4-通过-Chrome-插件-Octotree-GitHub-code-tree"><a href="#1-4-通过-Chrome-插件-Octotree-GitHub-code-tree" class="headerlink" title="1.4 通过 Chrome 插件 Octotree - GitHub code tree"></a>1.4 通过 Chrome 插件 Octotree - GitHub code tree</h3><p><img src="https://huatree.top/image-20220510055737787.png" alt="image-20220510055737787"></p>
+<h2 id="2-在线运行项目"><a href="#2-在线运行项目" class="headerlink" title="2 在线运行项目"></a>2 在线运行项目</h2><p>在项目地址前加上 <code>gitpod.io/#</code> 前缀，此时，可以选择 github 授权。等待几秒钟，它会自动识别项目的类型，并在线安装项目所需的依赖，并打好包。</p>
+<p>例如 vue 项目，gitpod 环境下，会当前项目根目录下创建默认配置<code>.gitpod.yml</code>文件。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This configuration file was automatically generated by Gitpod.</span></span><br><span class="line"><span class="comment"># Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)</span></span><br><span class="line"><span class="comment"># and commit this file to your remote git repository to share the goodness with others.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">init:</span> <span class="string">yarn</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">yarn</span> <span class="string">run</span> <span class="string">build</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Invalid-Host-header-问题解决"><a href="#Invalid-Host-header-问题解决" class="headerlink" title="Invalid Host header 问题解决"></a>Invalid Host header 问题解决</h3><p><strong>出现该问的原因</strong>：因为新版的 webpack-dev-server 出于安全考虑，默认检查 hostname，如果 hostname 不是配置内的就不能访问。</p>
+<p><strong>解决办法：</strong>设置跳过 host 检查。打开你的项目全局搜索 devServer ，在 devServer 里面添加 <code>disableHostCheck: true,</code></p>
+<p>disableHostCheck 设置为 true 的意思就是设置跳过 host 检查。</p>
+<div class="note success"><p>本地运行项目的操作，gitpod 环境下同样适用。</p>
 </div>
 
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
-<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
-<li>进入 BIOS 开启虚拟化技术</li>
-<li>win10 全开 Hpyer-V</li>
+<div class="note warning"><p>Gitpod 免费版支持：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 50 小时&#x2F;月</li>
+<li><input checked="" disabled="" type="checkbox"> 公共和私人回购</li>
+<li><input checked="" disabled="" type="checkbox"> 4 个并行工作区</li>
+<li><input checked="" disabled="" type="checkbox"> 30 分钟不活动超时</li>
 </ul>
-<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
-<p><img src="https://huatree.top/image-20220512073042362.png" alt="image-20220512073042362"></p>
-<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
-<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
-<p><img src="https://huatree.top/image-20220512073743673.png" alt="image-20220512073743673"></p>
-<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
-<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
-<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
-<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
-<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
-<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
-<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
-<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
-
-<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
-<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
-<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
-<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
 </div>
 
-<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
-
-<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
-<p>配置 docker-compose.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
-
-<p>执行它</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-
-<p>发现报错</p>
-<p><img src="https://huatree.top/image-20220513133508101.png" alt="image-20220513133508101"></p>
-<p>为什么？</p>
-<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
-<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
-<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
-<p><img src="https://huatree.top/image-20220513133936711.png" alt="image-20220513133936711"></p>
-<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
-<p>再次执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
-<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
-<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
-<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
+<h2 id="3-项目推送"><a href="#3-项目推送" class="headerlink" title="3 项目推送"></a>3 项目推送</h2><p>在 GitHub 的 Explorer 探索页面中，有一个非常不起眼的按钮，“获取邮件更新”。</p>
+<p>我们可以根据自己的喜好，让 GitHub 定期给我们推送自己感兴趣的优质项目，就可以持续扩大知识面、了解开源动态啦。</p>
+<p><img src="https://huatree.top/image-20220510065320331.png" alt="image-20220510065320331"></p>
+<h2 id="4-文件定位查看"><a href="#4-文件定位查看" class="headerlink" title="4 文件定位查看"></a>4 文件定位查看</h2><p>刚开始的时候，相信大多数同学是一级一级的点击项目目录去找文件，发现位置错了后呢，还要回到最初的起点，呆呆地再换一个目录去找。</p>
+<p><img src="https://huatree.top/image-20220510070107485.png" alt="image-20220510070107485"></p>
+<p>后来在<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">github 官方文档</a>中发现，我们只需按下 <code>t</code> 键，就可以快速、实时地对仓库内的所有文件进行搜索。</p>
+<p><img src="https://huatree.top/image-20220510070309131.png" alt="image-20220510070309131"></p>
+<p>点进某个文件后，还有技巧，按下 <code>L</code> 键，就可以快速跳转到某一行。</p>
+<p><img src="https://huatree.top/image-20220510070554922.png" alt="image-20220510070554922"></p>
+<p>点击行号，就可以快速复制这行的代码，生成永久链接。</p>
+<p><img src="https://huatree.top/image-20220510070627257.png" alt="image-20220510070627257"></p>
+<p>按 <code>b</code> 键还可以快速查看该文件的改动记录。</p>
+<p><img src="https://huatree.top/image-20220510070756051.png" alt="image-20220510070756051"></p>
+<p>除了上面这些，GitHub 里还隐藏了许多实用的<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">快捷键</a>，大家可以在官方文档尽情查看。</p>
+<h2 id="5-过滤搜索"><a href="#5-过滤搜索" class="headerlink" title="5 过滤搜索"></a>5 过滤搜索</h2><p>使用 GitHub <a href="https://docs.github.com/cn/search-github/getting-started-with-searching-on-github/about-searching-on-github">高级搜索</a>功能提供的 <code>搜索限定符</code>。进入 advance search 界面（搜索结果页左下角），利用可视化表单也能实现高级搜索。但这个界面展示的搜索条件有限，其实还有更多的搜索限定语法，比如按代码库名称、描述搜索，对仓库中的内容进行搜索等，这些都可以在 GitHub 官方文档查阅。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://mp.weixin.qq.com/s/P7odF1arZ1siCKvhwp6fqA">GitHub 这 5 个骚操作，99%的人不知道！</a></p>
+<p>[2] <a href="https://code.visualstudio.com/blogs/2021/10/20/vscode-dev">vscode.dev</a></p>
+<p>[3] <a href="https://www.gitpod.io/">Gitpod</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>
       </categories>
       <tags>
-        <tag>docker</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
@@ -2406,6 +2330,106 @@
       <tags>
         <tag>CI&amp;CD</tag>
         <tag>Jenkins</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>docker使用</title>
+    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
+<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
+<span id="more"></span>
+
+<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
+<ul>
+<li>使用容器开发您的应用程序及其支持组件。</li>
+<li>容器成为分发和测试应用程序的单元。</li>
+<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
+</ul>
+<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
+<p>考虑以下示例场景：</p>
+<ul>
+<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
+<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
+<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
+<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
+</ul>
+<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
+<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
+<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
+<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
+<p><img src="https://huatree.top/architecture.svg" alt="architecture"></p>
+<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
+</div>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
+<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
+<li>进入 BIOS 开启虚拟化技术</li>
+<li>win10 全开 Hpyer-V</li>
+</ul>
+<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
+<p><img src="https://huatree.top/image-20220512073042362.png" alt="image-20220512073042362"></p>
+<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
+<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
+<p><img src="https://huatree.top/image-20220512073743673.png" alt="image-20220512073743673"></p>
+<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
+<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
+<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
+<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
+<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
+<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
+<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
+<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
+<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
+<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
+<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
+</div>
+
+<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
+<p>配置 docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
+
+<p>执行它</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>发现报错</p>
+<p><img src="https://huatree.top/image-20220513133508101.png" alt="image-20220513133508101"></p>
+<p>为什么？</p>
+<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
+<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
+<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
+<p><img src="https://huatree.top/image-20220513133936711.png" alt="image-20220513133936711"></p>
+<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
+<p>再次执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
+<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
+<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
+<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -2534,30 +2558,6 @@
         <tag>github actions</tag>
         <tag>static pages</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你的node-sass安装报错了吗</title>
-    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
-    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
-<span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
-<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 binding.node 这个文件失效，需要下载替换。</p>
-<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
-<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
-<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
-<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
-<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
-<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node-sass</tag>
       </tags>
   </entry>
 </search>
