@@ -93,30 +93,6 @@
       </tags>
   </entry>
   <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
-<span id="more"></span>
-
-<blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
-</blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>npm自定义包发布</title>
     <url>/2021/05/07/20210507-npm%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E5%8F%91%E5%B8%83/</url>
     <content><![CDATA[<p>本文以自定义工具函数库为例，讲解工具包项目从发布到 npm 中央仓库、维护及使用的过程。</p>
@@ -311,6 +287,54 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+<span id="more"></span>
+
+<blockquote>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+</blockquote>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>混合App中H5白屏修复及样式兼容</title>
+    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
+    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
+<ul>
+<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
+<li>代码编译错误引起渲染失败(一直白屏)</li>
+</ul>
+<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
+<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
+<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
+<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
+<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
+<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+        <tag>混合APP</tag>
       </tags>
   </entry>
   <entry>
@@ -784,30 +808,6 @@
       </tags>
   </entry>
   <entry>
-    <title>混合App中H5白屏修复及样式兼容</title>
-    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
-    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
-<ul>
-<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
-<li>代码编译错误引起渲染失败(一直白屏)</li>
-</ul>
-<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
-<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
-<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
-<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
-<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
-<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>H5</tag>
-        <tag>混合APP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue开发应用中遇到的问题与总结</title>
     <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
@@ -869,95 +869,6 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从npm script到node调试</title>
-    <url>/2022/03/04/20220304-%E4%BB%8Enpm-script%E5%88%B0node%E8%B0%83%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="npm-script"><a href="#npm-script" class="headerlink" title="npm script"></a>npm script</h2><h3 id="初体验"><a href="#初体验" class="headerlink" title="初体验"></a>初体验</h3><p>package.json</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;serve&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node build.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>命令行下使用<code>npm run</code>命令，就可以执行这段脚本。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run serve</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">$ node build.js</span><br></pre></td></tr></table></figure>
-
-<h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p><code>package.json</code> 文件里面，使用 <code>script</code> 字段定义脚本命令。它有以下优点：</p>
-<ul>
-<li>项目的相关脚本，可以集中在一个地方。</li>
-<li>不同项目的脚本命令，只要功能相同，就可以有同样的对外接口。用户不需要知道怎么测试你的项目，只要运行<code>npm run test</code>即可。</li>
-<li>可以利用 npm 提供的很多辅助功能。</li>
-</ul>
-<p>查看当前项目的所有 npm 脚本命令，可以使用不带任何参数的<code>npm run</code>命令。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://docs.npmjs.com/cli/v8/using-npm/scripts">官方用法详见</a></p>
-<p>官方：脚本从包文件夹的根目录运行，无论<code>npm</code>调用时当前工作目录是什么。如果您希望您的脚本根据您所在的子目录使用不同的行为，您可以使用<code>INIT_CWD</code>环境变量，它包含您<strong>运行时</strong>所在的完整路径<code>npm run</code></p>
-<p>解读：INIT_CWD 好比变量 NODE_ENV，获取它的值局限于运行时所在的完整路径的文件，不能在该运行时的脚本引入的模块中使用，要想在模块当中直接使用，我们还需要一些配置</p>
-<ul>
-<li>webpack4 之前可以使用<strong>DefinePlugin</strong>插件配置</li>
-<li>webpack4 版本之后可以通过 mode 选项实现</li>
-</ul>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>每当执行<code>npm run</code>，就会自动新建一个 Shell，在这个 Shell 里面执行指定的脚本命令。因此，只要是 Shell（一般是 Bash）可以运行的命令，就可以写在 npm 脚本里面。<a href="https://www.npmjs.cn/cli/run-script/">官方用法详见</a></p>
-<p>除了 Shell 预先存在的<code>PATH</code>，<code>npm run</code>添加 <code>node_modules/.bin</code>到<code>PATH</code>提供的脚本中。本地安装的依赖项提供的任何二进制文件都可以在没有<code>node_modules/.bin</code> 前缀的情况下使用。例如，如果你的包中有一个<code>devDependency</code>on <code>tap</code>，你应该写：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>而不用写成下面这样。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node_modules/.bin/tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="npm-脚本执行顺序"><a href="#npm-脚本执行顺序" class="headerlink" title="npm 脚本执行顺序"></a>npm 脚本执行顺序</h4><p>如果 npm 脚本里面需要执行多个任务，那么需要明确它们的执行顺序。</p>
-<ul>
-<li><p>并行执行，可以使用<code>&amp;</code>符号。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run script1.js &amp; npm run script2.js</span><br></pre></td></tr></table></figure>
-
-<p>而的 package.json 中的 script 写法。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>继发执行（即只有前一个任务成功，才执行下一个任务），可以使用<code>&amp;&amp;</code>符号。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp;&amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="npm-脚本传入参数"><a href="#npm-脚本传入参数" class="headerlink" title="npm 脚本传入参数"></a>npm 脚本传入参数</h4><p>要使用<code>--</code>标明</p>
-<h2 id="node-调试"><a href="#node-调试" class="headerlink" title="node 调试"></a>node 调试</h2><p>Node.js 包含了一个命令行的调试实用工具。 Node.js 调试器客户端不是功能齐全的调试器，但可以进行简单的步进和检查。要使用它，则使用 <code>inspect</code> 参数启动 Node.js，后跟要调试的脚本的路径。</p>
-<h3 id="node-vscode-调试"><a href="#node-vscode-调试" class="headerlink" title="node + vscode 调试"></a>node + vscode 调试</h3><p>标记 debugger 位置，然后借助 vscode 的调试工具即可实现。<a href="https://code.visualstudio.com/docs/editor/debugging">官方用法详见</a></p>
-<h3 id="node-chrome-x2F-x2F-inspect-调试"><a href="#node-chrome-x2F-x2F-inspect-调试" class="headerlink" title="node + chrome:&#x2F;&#x2F;inspect 调试"></a>node + chrome:&#x2F;&#x2F;inspect 调试</h3><p>V8 检查器集成允许将 Chrome 开发者工具绑定到 Node.js 实例以进行调试和分析。</p>
-<p>V8 检查器可以通过在启动 Node.js 应用程序时传入 <code>--inspect</code> 标志来启用。 也可以使用该标志提供自定义的端口，例如 <code>--inspect=9222</code> 将接受端口 9222 上的开发者工具连接。</p>
-<p>要中断应用程序代码的第一行，则传入 <code>--inspect-brk</code> 标志而不是 <code>--inspect</code>。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ node --inspect-brk index.js</span><br><span class="line">Debugger listening on ws://127.0.0.1:9229/dc9010dd-f8b8-4ac5-a510-c1a114ec7d29</span><br><span class="line">For <span class="built_in">help</span>, see: https://nodejs.org/en/docs/inspector</span><br></pre></td></tr></table></figure>
-
-<h3 id="从-npm-script-到-node-调试"><a href="#从-npm-script-到-node-调试" class="headerlink" title="从 npm script 到 node 调试"></a>从 npm script 到 node 调试</h3><p>在实际开发调试过程中，我们有这样一个需求，nodejs 环境下使用 package.json 脚本设置项目环境变量，这时我们会使用 process.env.NODE_ENV （<a href="https://www.jianshu.com/p/83e8909fc1cd">NODE_ENV</a> 是变量名）进行获取当前的环境变量进行区分不同的运行环境。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>编辑完脚本以后当使用脚本的时候发现没有生效，这是因为 windows 不支持直接设置 <code>NODE_ENV=development</code>的方式。</p>
-<blockquote>
-<p>tips</p>
-<p>当您使用这样 package.json 中的 scripts 来设置环境变量时，大多数 Windows 命令提示符都会阻塞 <code>NODE_ENV=development</code>。（例外是<a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Windows</a>，它使用本机 Bash。）同样，windows 和 POSIX 命令使用环境变量的方式也有所不同。在 POSIX 中，您使用：<code>$ENV_VAR</code> ，在 Windows 上，您使用<code>%ENV_VAR%</code>。</p>
-</blockquote>
-<p><code>NODE_ENV=development</code>在 windows 环境下会报错，需要改为<code>set NODE_ENV=development</code>，而 Mac 环境的方式是 <code>export NODE_ENV=development</code> 。为了解决这个差异，可以使用<code>cross-env</code>跨平台的设置和使用环境变量。</p>
-<p><code>cross-env</code>使您可以拥有一个命令，而无需担心为平台正确设置或使用环境变量。就像在 POSIX 系统上运行时一样设置它，并且<code>cross-env</code>会正确设置它。<a href="https://github.com/kentcdodds/cross-env#usage">官方用法详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env</span><br></pre></td></tr></table></figure>
-
-<p>对应的 package.json script 配置如下：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cross-env NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>接着，我们来分析一下上面的 package.json 片段：</p>
-<p><code>cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0</code></p>
-<ol>
-<li>环境变量 NODE_ENV 赋值为 development，以便运行时的 webpack.dev.conf.js 下，可以通过 process.env.NODE_ENV 访问值</li>
-<li>执行 webpack-dev-server 命令，它带有–inline， –progress ， –config ，–host 四个参数，进而执行 build&#x2F;webpack.dev.conf.js</li>
-</ol>
-<p>使用 cross-env，webpack-dev-server 这 2 个命令，需要提前安装好开发依赖包。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env webpack-dev-server</span><br></pre></td></tr></table></figure>
-
-<p>cross-env 的用法，上文有提到，webpack-dev-server<a href="https://github.com/webpack/webpack-dev-server#readme">官方用法详见</a>。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html">npm scripts 使用指南</a></p>
-<p>[2] <a href="http://nodejs.cn/api/debugger.html">node - debugger 调试器</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node</tag>
-        <tag>webpack</tag>
-        <tag>debug</tag>
       </tags>
   </entry>
   <entry>
@@ -1079,6 +990,95 @@
       </categories>
       <tags>
         <tag>电脑DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>从npm script到node调试</title>
+    <url>/2022/03/04/20220304-%E4%BB%8Enpm-script%E5%88%B0node%E8%B0%83%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="npm-script"><a href="#npm-script" class="headerlink" title="npm script"></a>npm script</h2><h3 id="初体验"><a href="#初体验" class="headerlink" title="初体验"></a>初体验</h3><p>package.json</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;serve&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node build.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>命令行下使用<code>npm run</code>命令，就可以执行这段脚本。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run serve</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">$ node build.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p><code>package.json</code> 文件里面，使用 <code>script</code> 字段定义脚本命令。它有以下优点：</p>
+<ul>
+<li>项目的相关脚本，可以集中在一个地方。</li>
+<li>不同项目的脚本命令，只要功能相同，就可以有同样的对外接口。用户不需要知道怎么测试你的项目，只要运行<code>npm run test</code>即可。</li>
+<li>可以利用 npm 提供的很多辅助功能。</li>
+</ul>
+<p>查看当前项目的所有 npm 脚本命令，可以使用不带任何参数的<code>npm run</code>命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.npmjs.com/cli/v8/using-npm/scripts">官方用法详见</a></p>
+<p>官方：脚本从包文件夹的根目录运行，无论<code>npm</code>调用时当前工作目录是什么。如果您希望您的脚本根据您所在的子目录使用不同的行为，您可以使用<code>INIT_CWD</code>环境变量，它包含您<strong>运行时</strong>所在的完整路径<code>npm run</code></p>
+<p>解读：INIT_CWD 好比变量 NODE_ENV，获取它的值局限于运行时所在的完整路径的文件，不能在该运行时的脚本引入的模块中使用，要想在模块当中直接使用，我们还需要一些配置</p>
+<ul>
+<li>webpack4 之前可以使用<strong>DefinePlugin</strong>插件配置</li>
+<li>webpack4 版本之后可以通过 mode 选项实现</li>
+</ul>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>每当执行<code>npm run</code>，就会自动新建一个 Shell，在这个 Shell 里面执行指定的脚本命令。因此，只要是 Shell（一般是 Bash）可以运行的命令，就可以写在 npm 脚本里面。<a href="https://www.npmjs.cn/cli/run-script/">官方用法详见</a></p>
+<p>除了 Shell 预先存在的<code>PATH</code>，<code>npm run</code>添加 <code>node_modules/.bin</code>到<code>PATH</code>提供的脚本中。本地安装的依赖项提供的任何二进制文件都可以在没有<code>node_modules/.bin</code> 前缀的情况下使用。例如，如果你的包中有一个<code>devDependency</code>on <code>tap</code>，你应该写：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>而不用写成下面这样。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node_modules/.bin/tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="npm-脚本执行顺序"><a href="#npm-脚本执行顺序" class="headerlink" title="npm 脚本执行顺序"></a>npm 脚本执行顺序</h4><p>如果 npm 脚本里面需要执行多个任务，那么需要明确它们的执行顺序。</p>
+<ul>
+<li><p>并行执行，可以使用<code>&amp;</code>符号。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run script1.js &amp; npm run script2.js</span><br></pre></td></tr></table></figure>
+
+<p>而的 package.json 中的 script 写法。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继发执行（即只有前一个任务成功，才执行下一个任务），可以使用<code>&amp;&amp;</code>符号。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp;&amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="npm-脚本传入参数"><a href="#npm-脚本传入参数" class="headerlink" title="npm 脚本传入参数"></a>npm 脚本传入参数</h4><p>要使用<code>--</code>标明</p>
+<h2 id="node-调试"><a href="#node-调试" class="headerlink" title="node 调试"></a>node 调试</h2><p>Node.js 包含了一个命令行的调试实用工具。 Node.js 调试器客户端不是功能齐全的调试器，但可以进行简单的步进和检查。要使用它，则使用 <code>inspect</code> 参数启动 Node.js，后跟要调试的脚本的路径。</p>
+<h3 id="node-vscode-调试"><a href="#node-vscode-调试" class="headerlink" title="node + vscode 调试"></a>node + vscode 调试</h3><p>标记 debugger 位置，然后借助 vscode 的调试工具即可实现。<a href="https://code.visualstudio.com/docs/editor/debugging">官方用法详见</a></p>
+<h3 id="node-chrome-x2F-x2F-inspect-调试"><a href="#node-chrome-x2F-x2F-inspect-调试" class="headerlink" title="node + chrome:&#x2F;&#x2F;inspect 调试"></a>node + chrome:&#x2F;&#x2F;inspect 调试</h3><p>V8 检查器集成允许将 Chrome 开发者工具绑定到 Node.js 实例以进行调试和分析。</p>
+<p>V8 检查器可以通过在启动 Node.js 应用程序时传入 <code>--inspect</code> 标志来启用。 也可以使用该标志提供自定义的端口，例如 <code>--inspect=9222</code> 将接受端口 9222 上的开发者工具连接。</p>
+<p>要中断应用程序代码的第一行，则传入 <code>--inspect-brk</code> 标志而不是 <code>--inspect</code>。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ node --inspect-brk index.js</span><br><span class="line">Debugger listening on ws://127.0.0.1:9229/dc9010dd-f8b8-4ac5-a510-c1a114ec7d29</span><br><span class="line">For <span class="built_in">help</span>, see: https://nodejs.org/en/docs/inspector</span><br></pre></td></tr></table></figure>
+
+<h3 id="从-npm-script-到-node-调试"><a href="#从-npm-script-到-node-调试" class="headerlink" title="从 npm script 到 node 调试"></a>从 npm script 到 node 调试</h3><p>在实际开发调试过程中，我们有这样一个需求，nodejs 环境下使用 package.json 脚本设置项目环境变量，这时我们会使用 process.env.NODE_ENV （<a href="https://www.jianshu.com/p/83e8909fc1cd">NODE_ENV</a> 是变量名）进行获取当前的环境变量进行区分不同的运行环境。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>编辑完脚本以后当使用脚本的时候发现没有生效，这是因为 windows 不支持直接设置 <code>NODE_ENV=development</code>的方式。</p>
+<blockquote>
+<p>tips</p>
+<p>当您使用这样 package.json 中的 scripts 来设置环境变量时，大多数 Windows 命令提示符都会阻塞 <code>NODE_ENV=development</code>。（例外是<a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Windows</a>，它使用本机 Bash。）同样，windows 和 POSIX 命令使用环境变量的方式也有所不同。在 POSIX 中，您使用：<code>$ENV_VAR</code> ，在 Windows 上，您使用<code>%ENV_VAR%</code>。</p>
+</blockquote>
+<p><code>NODE_ENV=development</code>在 windows 环境下会报错，需要改为<code>set NODE_ENV=development</code>，而 Mac 环境的方式是 <code>export NODE_ENV=development</code> 。为了解决这个差异，可以使用<code>cross-env</code>跨平台的设置和使用环境变量。</p>
+<p><code>cross-env</code>使您可以拥有一个命令，而无需担心为平台正确设置或使用环境变量。就像在 POSIX 系统上运行时一样设置它，并且<code>cross-env</code>会正确设置它。<a href="https://github.com/kentcdodds/cross-env#usage">官方用法详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env</span><br></pre></td></tr></table></figure>
+
+<p>对应的 package.json script 配置如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cross-env NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，我们来分析一下上面的 package.json 片段：</p>
+<p><code>cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0</code></p>
+<ol>
+<li>环境变量 NODE_ENV 赋值为 development，以便运行时的 webpack.dev.conf.js 下，可以通过 process.env.NODE_ENV 访问值</li>
+<li>执行 webpack-dev-server 命令，它带有–inline， –progress ， –config ，–host 四个参数，进而执行 build&#x2F;webpack.dev.conf.js</li>
+</ol>
+<p>使用 cross-env，webpack-dev-server 这 2 个命令，需要提前安装好开发依赖包。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env webpack-dev-server</span><br></pre></td></tr></table></figure>
+
+<p>cross-env 的用法，上文有提到，webpack-dev-server<a href="https://github.com/webpack/webpack-dev-server#readme">官方用法详见</a>。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html">npm scripts 使用指南</a></p>
+<p>[2] <a href="http://nodejs.cn/api/debugger.html">node - debugger 调试器</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node</tag>
+        <tag>webpack</tag>
+        <tag>debug</tag>
       </tags>
   </entry>
   <entry>
@@ -1361,58 +1361,6 @@
       </categories>
       <tags>
         <tag>win10</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
-    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
-    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
-<span id="more"></span>
-
-<div class="note info"><p>文章转载自程序员鱼皮 </p>
-</div>
-
-<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
-<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
-<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
-<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
-<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
-<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
-<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
-<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
-<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
-<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
-<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
-<p>整体的思想就是从整体到局部，由大到小吧。</p>
-<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
-<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
-<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
-<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
-<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
-<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
-<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
-<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
-<p>所以这也是为什么要多了解和积累一些技术。</p>
-<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
-<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
-<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
-<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
-<ul>
-<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
-<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
-</li>
-<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
-</li>
-</ul>
-<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
-<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
-<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
-]]></content>
-      <categories>
-        <category>经典文章</category>
-      </categories>
-      <tags>
-        <tag>职场</tag>
       </tags>
   </entry>
   <entry>
@@ -1888,6 +1836,105 @@
       </tags>
   </entry>
   <entry>
+    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
+    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
+    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自程序员鱼皮 </p>
+</div>
+
+<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
+<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
+<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
+<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
+<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
+<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
+<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
+<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
+<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
+<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
+<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
+<p>整体的思想就是从整体到局部，由大到小吧。</p>
+<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
+<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
+<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
+<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
+<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
+<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
+<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
+<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
+<p>所以这也是为什么要多了解和积累一些技术。</p>
+<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
+<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
+<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
+<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
+<ul>
+<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
+<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
+</li>
+<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
+</li>
+</ul>
+<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
+<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
+<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
+]]></content>
+      <categories>
+        <category>经典文章</category>
+      </categories>
+      <tags>
+        <tag>职场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>七牛云+PicGo+Typora搭建图床</title>
+    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
+<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
+</blockquote>
+<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
+<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
+<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
+<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
+<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
+<p>在自定义源站域名栏绑定域名</p>
+<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
+<blockquote>
+<p>! 注意</p>
+<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
+</blockquote>
+<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
+<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
+<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
+<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
+<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
+<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
+<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
+<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
+<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
+<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
+<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
+<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
+<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
+<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
+<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
+<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
+<p>最后，可以验证一下图片上传。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
+<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
+<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
+<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>七牛云</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>域名申请及备案</title>
     <url>/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/</url>
     <content><![CDATA[<blockquote>
@@ -1959,53 +2006,6 @@
       </tags>
   </entry>
   <entry>
-    <title>七牛云+PicGo+Typora搭建图床</title>
-    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
-<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
-</blockquote>
-<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
-<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
-<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
-<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
-<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
-<p>在自定义源站域名栏绑定域名</p>
-<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
-<blockquote>
-<p>! 注意</p>
-<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
-</blockquote>
-<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
-<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
-<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
-<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
-<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
-<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
-<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
-<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
-<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
-<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
-<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
-<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
-<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
-<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
-<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
-<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
-<p>最后，可以验证一下图片上传。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
-<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
-<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
-<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>七牛云</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>安装node-sass后报错：win32-x64-64_binding.node is not a valid Win32 application</title>
     <url>/2022/04/14/20220414-%E5%AE%89%E8%A3%85node-sass%E5%90%8E%E6%8A%A5%E9%94%99%EF%BC%9Awin32-x64-64_binding.node-is-not-a-valid-Win32-application/</url>
     <content><![CDATA[<h2 id="复现问题"><a href="#复现问题" class="headerlink" title="复现问题"></a>复现问题</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
@@ -2017,7 +2017,6 @@
 <p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
 <p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
 <p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://blog.csdn.net/weixin_39085822/article/details/121564595">uni-app 安装 scss&#x2F;sass 后报错：win32-x64-64_binding.node is not a valid Win32 application</a></p>
 ]]></content>
       <categories>
         <category>工作点滴</category>
@@ -2308,6 +2307,39 @@
       </tags>
   </entry>
   <entry>
+    <title>使用浏览器配合手机调试&amp;使用Proxy劫持（3类真机调试技巧）</title>
+    <url>/2022/05/15/20220515-%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E5%90%88%E6%89%8B%E6%9C%BA%E8%B0%83%E8%AF%95&amp;%E4%BD%BF%E7%94%A8Proxy%E5%8A%AB%E6%8C%81%EF%BC%883%E7%B1%BB%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%EF%BC%89/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220515130434086.png" alt="image-20220515130434086"></p>
+<span id="more"></span>
+
+<h2 id="Chrome-Android-x2F-Safari-IOS"><a href="#Chrome-Android-x2F-Safari-IOS" class="headerlink" title="Chrome+Android&#x2F;Safari+IOS"></a>Chrome+Android&#x2F;Safari+IOS</h2><p>适用场景：开发环境真机调试</p>
+<h3 id="Safari-IOS"><a href="#Safari-IOS" class="headerlink" title="Safari+IOS"></a>Safari+IOS</h3><p>Mac Safari 浏览器（顶部菜单栏左上角）&gt;高级&gt;选中在菜单栏中显示“开发”菜单，此时，浏览器界面顶部菜单多出一个“开发”选项。</p>
+<p>IOS 手机&gt;设置&gt;Safari 浏览器&gt;高级&gt;打开 Web 检查器，IOS 手机需数据线连接到 Mac，回到 Mac Safari 浏览器，选择菜单栏上的开发选项，出现<code>xxx&#39; iPhone</code>，则 success。</p>
+<p>命令行输入<code>ipconfig</code>，查看 Mac 的本地局域网 IP 地址。该地址替换项目的 localhost，正常访问项目。Mac Safari 浏览器的开发选项&gt;<code>xxx&#39; iPhone</code>&gt;会出现该 IP，点击开始真机调试。</p>
+<p>没有 Mac 怎么办？苹果早期推出过在 Windows PC 上的 Safari 浏览器，很可惜，Apple 不再提供 Windows 版 Safari 浏览器更新。Windows 版 Safari 浏览器 5.1.7 是适用于 Windows 的最后一个版本，而且现已过时。<a href="https://support.apple.com/zh-cn/HT204416">官网详见</a></p>
+<h3 id="Chrome-Android"><a href="#Chrome-Android" class="headerlink" title="Chrome+Android"></a>Chrome+Android</h3><p>Android 手机打开开发者模式&gt;打开 USB 调试，Android 手机需连接到 Win PC，Win Chrome 浏览器地址栏输入<code>chrome://inspect/#devices</code>，稍等一会儿，手机会出现是否允许 USB 调试之类的弹窗，允许便是。再回到当前 Win Chrome 浏览器，就会出现当前数据线连接 win PC 的手机型号、WebView 相关信息，则 Success。点击 inspect，就可以开始真机调试了，如果界面没有反应，需要考虑手机和 PC 浏览器版本是否是最新版了。如果还是白屏无反应，则需要开启专有虚拟网络（科学上网环境）。</p>
+<p>为什么会白屏，出不来，是因为这个过程中，需要调取谷歌的某些服务，而这些服务需要科学上网环境才可以访问。</p>
+<p>本地跑的项目，IP 地址别忘了查询替换 localhost，win PC 下查询 IP，可通过 cmd 命令行输入<code>ipconfig</code>获取。</p>
+<h2 id="Fiddler-x2F-Charles"><a href="#Fiddler-x2F-Charles" class="headerlink" title="Fiddler&#x2F;Charles"></a>Fiddler&#x2F;Charles</h2><p>使用 Proxy 劫持。适用场景：线上环境调试</p>
+<p>Fiddler&#x2F;Charles 比较局限性，只能看到接口的情况。</p>
+<h2 id="Weinre-Spy-Debugger-vConsole"><a href="#Weinre-Spy-Debugger-vConsole" class="headerlink" title="Weinre,Spy-Debugger,vConsole"></a>Weinre,Spy-Debugger,vConsole</h2><p>项目里插入脚本调试，也可以说是借助依赖，可以是 cdn，也可以安装本地项目中。</p>
+<h3 id="Weinre"><a href="#Weinre" class="headerlink" title="Weinre"></a>Weinre</h3><p><a href="http://people.apache.org/~pmuellr/weinre/">Weinre(Web Inspector Remote)</a>是一款基于 Web Inspector(Webkit)的远程调试工具， 它使用 JS 编写， 可以让我们在电脑上直接调试运行在手机上的远程页面。 与传统的 Web Inspector 的使用场景不同。</p>
+<p>Weinre 的使用场景， 调试的页面在手机上， 调试工具在 PC 的 chrome， 二者通过网络连接通信。</p>
+<p><a href="https://github.com/nupthale/weinre">更多详见</a></p>
+<h3 id="Spy-Debugger"><a href="#Spy-Debugger" class="headerlink" title="Spy-Debugger"></a>Spy-Debugger</h3><p>微信调试，各种 WebView 样式调试、手机浏览器的页面真机调试。便捷的远程调试手机页面、抓包工具，支持：HTTP&#x2F;HTTPS，无需 USB 连接设备。</p>
+<p><a href="https://github.com/wuchangming/spy-debugger">更多详见</a></p>
+<h3 id="vConsole"><a href="#vConsole" class="headerlink" title="vConsole"></a>vConsole</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/vconsole@latest/dist/vconsole.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// VConsole will be exported to `window.VConsole` by default.</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> vConsole = <span class="keyword">new</span> <span class="variable language_">window</span>.<span class="title class_">VConsole</span>()</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/Tencent/vConsole">更多详见</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>调试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker+Jenkins+github</title>
     <url>/2022/05/14/20220514-docker+Jenkins+github/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220511175224561.png" alt="image-20220511175224561"></p>
@@ -2428,39 +2460,6 @@
       <tags>
         <tag>CI&amp;CD</tag>
         <tag>Jenkins</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用浏览器配合手机调试&amp;使用Proxy劫持（3类真机调试技巧）</title>
-    <url>/2022/05/15/20220515-%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E5%90%88%E6%89%8B%E6%9C%BA%E8%B0%83%E8%AF%95&amp;%E4%BD%BF%E7%94%A8Proxy%E5%8A%AB%E6%8C%81%EF%BC%883%E7%B1%BB%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%EF%BC%89/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220515130434086.png" alt="image-20220515130434086"></p>
-<span id="more"></span>
-
-<h2 id="Chrome-Android-x2F-Safari-IOS"><a href="#Chrome-Android-x2F-Safari-IOS" class="headerlink" title="Chrome+Android&#x2F;Safari+IOS"></a>Chrome+Android&#x2F;Safari+IOS</h2><p>适用场景：开发环境真机调试</p>
-<h3 id="Safari-IOS"><a href="#Safari-IOS" class="headerlink" title="Safari+IOS"></a>Safari+IOS</h3><p>Mac Safari 浏览器（顶部菜单栏左上角）&gt;高级&gt;选中在菜单栏中显示“开发”菜单，此时，浏览器界面顶部菜单多出一个“开发”选项。</p>
-<p>IOS 手机&gt;设置&gt;Safari 浏览器&gt;高级&gt;打开 Web 检查器，IOS 手机需数据线连接到 Mac，回到 Mac Safari 浏览器，选择菜单栏上的开发选项，出现<code>xxx&#39; iPhone</code>，则 success。</p>
-<p>命令行输入<code>ipconfig</code>，查看 Mac 的本地局域网 IP 地址。该地址替换项目的 localhost，正常访问项目。Mac Safari 浏览器的开发选项&gt;<code>xxx&#39; iPhone</code>&gt;会出现该 IP，点击开始真机调试。</p>
-<p>没有 Mac 怎么办？苹果早期推出过在 Windows PC 上的 Safari 浏览器，很可惜，Apple 不再提供 Windows 版 Safari 浏览器更新。Windows 版 Safari 浏览器 5.1.7 是适用于 Windows 的最后一个版本，而且现已过时。<a href="https://support.apple.com/zh-cn/HT204416">官网详见</a></p>
-<h3 id="Chrome-Android"><a href="#Chrome-Android" class="headerlink" title="Chrome+Android"></a>Chrome+Android</h3><p>Android 手机打开开发者模式&gt;打开 USB 调试，Android 手机需连接到 Win PC，Win Chrome 浏览器地址栏输入<code>chrome://inspect/#devices</code>，稍等一会儿，手机会出现是否允许 USB 调试之类的弹窗，允许便是。再回到当前 Win Chrome 浏览器，就会出现当前数据线连接 win PC 的手机型号、WebView 相关信息，则 Success。点击 inspect，就可以开始真机调试了，如果界面没有反应，需要考虑手机和 PC 浏览器版本是否是最新版了。如果还是白屏无反应，则需要开启专有虚拟网络（科学上网环境）。</p>
-<p>为什么会白屏，出不来，是因为这个过程中，需要调取谷歌的某些服务，而这些服务需要科学上网环境才可以访问。</p>
-<p>本地跑的项目，IP 地址别忘了查询替换 localhost，win PC 下查询 IP，可通过 cmd 命令行输入<code>ipconfig</code>获取。</p>
-<h2 id="Fiddler-x2F-Charles"><a href="#Fiddler-x2F-Charles" class="headerlink" title="Fiddler&#x2F;Charles"></a>Fiddler&#x2F;Charles</h2><p>使用 Proxy 劫持。适用场景：线上环境调试</p>
-<p>Fiddler&#x2F;Charles 比较局限性，只能看到接口的情况。</p>
-<h2 id="Weinre-Spy-Debugger-vConsole"><a href="#Weinre-Spy-Debugger-vConsole" class="headerlink" title="Weinre,Spy-Debugger,vConsole"></a>Weinre,Spy-Debugger,vConsole</h2><p>项目里插入脚本调试，也可以说是借助依赖，可以是 cdn，也可以安装本地项目中。</p>
-<h3 id="Weinre"><a href="#Weinre" class="headerlink" title="Weinre"></a>Weinre</h3><p><a href="http://people.apache.org/~pmuellr/weinre/">Weinre(Web Inspector Remote)</a>是一款基于 Web Inspector(Webkit)的远程调试工具， 它使用 JS 编写， 可以让我们在电脑上直接调试运行在手机上的远程页面。 与传统的 Web Inspector 的使用场景不同。</p>
-<p>Weinre 的使用场景， 调试的页面在手机上， 调试工具在 PC 的 chrome， 二者通过网络连接通信。</p>
-<p><a href="https://github.com/nupthale/weinre">更多详见</a></p>
-<h3 id="Spy-Debugger"><a href="#Spy-Debugger" class="headerlink" title="Spy-Debugger"></a>Spy-Debugger</h3><p>微信调试，各种 WebView 样式调试、手机浏览器的页面真机调试。便捷的远程调试手机页面、抓包工具，支持：HTTP&#x2F;HTTPS，无需 USB 连接设备。</p>
-<p><a href="https://github.com/wuchangming/spy-debugger">更多详见</a></p>
-<h3 id="vConsole"><a href="#vConsole" class="headerlink" title="vConsole"></a>vConsole</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/vconsole@latest/dist/vconsole.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="comment">// VConsole will be exported to `window.VConsole` by default.</span></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> vConsole = <span class="keyword">new</span> <span class="variable language_">window</span>.<span class="title class_">VConsole</span>()</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><a href="https://github.com/Tencent/vConsole">更多详见</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>调试</tag>
       </tags>
   </entry>
   <entry>
