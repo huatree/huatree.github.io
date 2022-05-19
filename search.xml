@@ -201,23 +201,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue开发工具指南</title>
-    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
-<span id="more"></span>
-
-<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
-<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>npm常用命令</title>
     <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220507212813517.png" alt="image-20220507212813517"></p>
@@ -277,6 +260,23 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue开发工具指南</title>
+    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
+<span id="more"></span>
+
+<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
+<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git常见问题与总结</title>
     <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
@@ -311,6 +311,30 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>混合App中H5白屏修复及样式兼容</title>
+    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
+    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
+<ul>
+<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
+<li>代码编译错误引起渲染失败(一直白屏)</li>
+</ul>
+<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
+<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
+<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
+<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
+<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
+<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+        <tag>混合APP</tag>
       </tags>
   </entry>
   <entry>
@@ -848,30 +872,6 @@
       </tags>
   </entry>
   <entry>
-    <title>混合App中H5白屏修复及样式兼容</title>
-    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
-    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
-<ul>
-<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
-<li>代码编译错误引起渲染失败(一直白屏)</li>
-</ul>
-<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
-<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
-<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
-<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
-<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
-<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>H5</tag>
-        <tag>混合APP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>从npm script到node调试</title>
     <url>/2022/03/04/20220304-%E4%BB%8Enpm-script%E5%88%B0node%E8%B0%83%E8%AF%95/</url>
     <content><![CDATA[<h2 id="npm-script"><a href="#npm-script" class="headerlink" title="npm script"></a>npm script</h2><h3 id="初体验"><a href="#初体验" class="headerlink" title="初体验"></a>初体验</h3><p>package.json</p>
@@ -1079,52 +1079,6 @@
       </categories>
       <tags>
         <tag>电脑DIY</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>node版本管理</title>
-    <url>/2022/03/17/20220317-node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h2 id="了解-nvm-windows"><a href="#了解-nvm-windows" class="headerlink" title="了解 nvm-windows"></a>了解 nvm-windows</h2><p><a href="https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows">Microsoft</a> &#x2F; <a href="https://docs.npmjs.com/cli/v7/configuring-npm/install#windows-node-version-managers">npm &#x2F;Google 为</a><em>Windows</em>推荐 了 Node.js 版本管理器。<em>原始<a href="https://github.com/nvm-sh/nvm">nvm</a>是一个完全独立的项目，仅适用于 Mac&#x2F;Linux。</em>该项目使用完全不同的理念，而不仅仅是 nvm 的克隆。详细信息列在<a href="https://github.com/coreybutler/nvm-windows#bulb-why-another-version-manager">为什么另一个版本管理器？</a>有<a href="https://github.com/coreybutler/nvm-windows#bulb-whats-the-big-difference">什么大的区别？</a>。</p>
-<h2 id="安装-nvm-windows"><a href="#安装-nvm-windows" class="headerlink" title="安装 nvm-windows"></a>安装 nvm-windows</h2><h3 id="卸载任何预先存在的节点安装"><a href="#卸载任何预先存在的节点安装" class="headerlink" title="卸载任何预先存在的节点安装"></a>卸载任何预先存在的节点安装</h3><p>在安装 NVM for Windows 之前卸载任何现有的 Node.js 版本（否则你会有冲突的版本）。<code>%ProgramFiles%\nodejs</code>删除任何可能保留的现有 Node.js 安装目录。（有的用户可能自定义路径了，找到 自己的 Node.js 安装目录，删除即可）</p>
-<h3 id="备份任何全局npmrc配置"><a href="#备份任何全局npmrc配置" class="headerlink" title="备份任何全局npmrc配置"></a>备份任何全局<code>npmrc</code>配置</h3><p>例如<code>%AppData%\npm\etc\npmrc</code>。或者，将设置复制到用户 config <code>%UserProfile%\.npmrc</code>。删除现有的 npm 安装位置（例如<code>%AppData%\npm</code>）以防止全局模块冲突。</p>
-<h3 id="最后安装"><a href="#最后安装" class="headerlink" title="最后安装"></a>最后安装</h3><ol>
-<li><a href="https://github.com/coreybutler/nvm-windows/releases">下载安装包</a>，选择 nvm-setup.zip，下载并解压自己想存放的文件路径。</li>
-<li>双击 nvm-setup.exe，进入安装界面，选择 nvm-windows 的安装路径，这里我给的是<code>E:\AppData\Roaming\nvm</code>（可以不用提前创建好文件路径）。</li>
-<li>点击下一步，是存放 nodejs 的路径，这里我给的是<code>E:\DevTools\nodejs</code>（<strong>必须提前创建好文件路径</strong>，否则，后面 <code>nvm use &lt;version&gt;</code>时出现 exit status 错误）。</li>
-<li>下一步， install 等待安装完成即可。</li>
-</ol>
-<blockquote>
-<p>! 注意</p>
-<p>安装 nvm-windows 时，选择存放 nodejs 的路径时，必须提前创建好想要存放它的路径，这里跟以往我们安装其他应用不一样，可能是 nvm-windows 的开发者忽略了这一点，“选择文件路径的同时会自动出创建对应的文件路径”。</p>
-<p>对于选择存放 nodejs 的路径，是否可以如默认的一样<code>C:\Program Files\nodejs</code>，该路径名含有空格，可以尝试一下，后面<code>nvm use &lt;version&gt;</code>时，是否会报错提示 exit status 及乱码。</p>
-<p>因为安装 nvm-windows 的同时，它会根据你所选的 2 个路径（一个是 nvm， 一个是 nodejs），默认配置好环境变量（包含用户环境变量和系统环境变量），所以，选择 nodejs 的有空格的路径时，是没有问题的，<strong>关键是必须提前创建好 nodejs 对应的存放路径</strong>。</p>
-</blockquote>
-<h2 id="nvm-用法"><a href="#nvm-用法" class="headerlink" title="nvm 用法"></a>nvm 用法</h2><p>NVM for Windows 是一个命令行工具。只需<code>nvm</code>在控制台中输入帮助即可。基本命令是：</p>
-<ul>
-<li>**<code>nvm arch [32|64]</code>**：显示节点是在 32 位还是 64 位模式下运行。指定 32 或 64 以覆盖默认架构。</li>
-<li>**<code>nvm current</code>**：显示活动版本。</li>
-<li>**<code>nvm install &lt;version&gt; [arch]</code>**：版本可以是特定版本，“latest”表示最新的当前版本，或“lts”表示最新的 LTS 版本。可选地指定是安装 32 位还是 64 位版本（默认为系统架构）。将 [arch] 设置为“all”以安装 32 位和 64 位版本。添加<code>--insecure</code>到此命令的末尾以绕过远程下载服务器的 SSL 验证。</li>
-<li>**<code>nvm list [available]</code>**：列出 node.js 安装。在末尾键入<code>available</code>以显示可供下载的版本列表。</li>
-<li><strong><code>nvm on</code></strong>: 启用 node.js 版本管理。</li>
-<li>**<code>nvm off</code>**：禁用 node.js 版本管理（不卸载任何东西）。</li>
-<li>**<code>nvm proxy [url]</code>**：设置用于下载的代理。留空<code>[url]</code>以查看当前代理。设置<code>[url]</code>为“无”以删除代理。</li>
-<li>**<code>nvm uninstall &lt;version&gt;</code>**：卸载特定版本。</li>
-<li>**<code>nvm use &lt;version&gt; [arch]</code>*<em>：切换到使用指定的版本。可选择使用<code>latest</code>,<code>lts</code>或<code>newest</code>. <code>newest</code>是最新</em>安装*的版本。可选择指定 32&#x2F;64 位架构。<code>nvm use &lt;arch&gt;</code>将继续使用所选版本，但切换到 32&#x2F;64 位模式。有关<code>use</code>在特定目录中使用（或使用<code>.nvmrc</code>）的信息，请参阅<a href="https://github.com/coreybutler/nvm-windows/issues/16">问题 #16</a>。</li>
-<li><strong><code>nvm root &lt;path&gt;</code></strong>: 设置 nvm 应该存放不同版本的 node.js 的目录。如果<code>&lt;path&gt;</code>未设置，将显示当前根目录。</li>
-<li>**<code>nvm version</code>**：显示当前运行的 NVM for Windows 版本。</li>
-<li>**<code>nvm node_mirror &lt;node_mirror_url&gt;</code>*<em>：设置节点镜像。国内的人可以使用</em><a href="https://npmmirror.com/mirrors/node/">https://npmmirror.com/mirrors/node/</a>*</li>
-<li>**<code>nvm npm_mirror &lt;npm_mirror_url&gt;</code>*<em>：设置 npm 镜像。中国的人可以使用</em><a href="https://npmmirror.com/mirrors/npm/">https://npmmirror.com/mirrors/npm/</a>*</li>
-</ul>
-<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>如果在使用<code>nvm use &lt;version&gt;</code>时，出现报错提示，“exit status 乱码”，那就得问问自己，nodejs 的真实存放路径是否有提前创建好；执行<code>nvm use &lt;version&gt;</code>的命令环境是否通过管理员权限打开的。另外，网友给出， nodejs 存放路径包含空格或中文了。总之，你们尽可一一尝试，改正即可。</p>
-<p>最后，如果打开 vscode 的命令行，输入 nvm、node、npm 等对应命令，是无效的，这时，重启电脑，命令即可生效，而不是重启 vscode。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/coreybutler/nvm-windows">适用于 Windows 的 NVM</a></p>
-<p>[2] <a href="https://www.runoob.com/w3cnote/nvm-manager-node-versions.html">使用 nvm 管理不同版本的 node 与 npm</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
       </tags>
   </entry>
   <entry>
@@ -1343,6 +1297,52 @@
       <tags>
         <tag>GTD</tag>
         <tag>管理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>node版本管理</title>
+    <url>/2022/03/17/20220317-node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h2 id="了解-nvm-windows"><a href="#了解-nvm-windows" class="headerlink" title="了解 nvm-windows"></a>了解 nvm-windows</h2><p><a href="https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows">Microsoft</a> &#x2F; <a href="https://docs.npmjs.com/cli/v7/configuring-npm/install#windows-node-version-managers">npm &#x2F;Google 为</a><em>Windows</em>推荐 了 Node.js 版本管理器。<em>原始<a href="https://github.com/nvm-sh/nvm">nvm</a>是一个完全独立的项目，仅适用于 Mac&#x2F;Linux。</em>该项目使用完全不同的理念，而不仅仅是 nvm 的克隆。详细信息列在<a href="https://github.com/coreybutler/nvm-windows#bulb-why-another-version-manager">为什么另一个版本管理器？</a>有<a href="https://github.com/coreybutler/nvm-windows#bulb-whats-the-big-difference">什么大的区别？</a>。</p>
+<h2 id="安装-nvm-windows"><a href="#安装-nvm-windows" class="headerlink" title="安装 nvm-windows"></a>安装 nvm-windows</h2><h3 id="卸载任何预先存在的节点安装"><a href="#卸载任何预先存在的节点安装" class="headerlink" title="卸载任何预先存在的节点安装"></a>卸载任何预先存在的节点安装</h3><p>在安装 NVM for Windows 之前卸载任何现有的 Node.js 版本（否则你会有冲突的版本）。<code>%ProgramFiles%\nodejs</code>删除任何可能保留的现有 Node.js 安装目录。（有的用户可能自定义路径了，找到 自己的 Node.js 安装目录，删除即可）</p>
+<h3 id="备份任何全局npmrc配置"><a href="#备份任何全局npmrc配置" class="headerlink" title="备份任何全局npmrc配置"></a>备份任何全局<code>npmrc</code>配置</h3><p>例如<code>%AppData%\npm\etc\npmrc</code>。或者，将设置复制到用户 config <code>%UserProfile%\.npmrc</code>。删除现有的 npm 安装位置（例如<code>%AppData%\npm</code>）以防止全局模块冲突。</p>
+<h3 id="最后安装"><a href="#最后安装" class="headerlink" title="最后安装"></a>最后安装</h3><ol>
+<li><a href="https://github.com/coreybutler/nvm-windows/releases">下载安装包</a>，选择 nvm-setup.zip，下载并解压自己想存放的文件路径。</li>
+<li>双击 nvm-setup.exe，进入安装界面，选择 nvm-windows 的安装路径，这里我给的是<code>E:\AppData\Roaming\nvm</code>（可以不用提前创建好文件路径）。</li>
+<li>点击下一步，是存放 nodejs 的路径，这里我给的是<code>E:\DevTools\nodejs</code>（<strong>必须提前创建好文件路径</strong>，否则，后面 <code>nvm use &lt;version&gt;</code>时出现 exit status 错误）。</li>
+<li>下一步， install 等待安装完成即可。</li>
+</ol>
+<blockquote>
+<p>! 注意</p>
+<p>安装 nvm-windows 时，选择存放 nodejs 的路径时，必须提前创建好想要存放它的路径，这里跟以往我们安装其他应用不一样，可能是 nvm-windows 的开发者忽略了这一点，“选择文件路径的同时会自动出创建对应的文件路径”。</p>
+<p>对于选择存放 nodejs 的路径，是否可以如默认的一样<code>C:\Program Files\nodejs</code>，该路径名含有空格，可以尝试一下，后面<code>nvm use &lt;version&gt;</code>时，是否会报错提示 exit status 及乱码。</p>
+<p>因为安装 nvm-windows 的同时，它会根据你所选的 2 个路径（一个是 nvm， 一个是 nodejs），默认配置好环境变量（包含用户环境变量和系统环境变量），所以，选择 nodejs 的有空格的路径时，是没有问题的，<strong>关键是必须提前创建好 nodejs 对应的存放路径</strong>。</p>
+</blockquote>
+<h2 id="nvm-用法"><a href="#nvm-用法" class="headerlink" title="nvm 用法"></a>nvm 用法</h2><p>NVM for Windows 是一个命令行工具。只需<code>nvm</code>在控制台中输入帮助即可。基本命令是：</p>
+<ul>
+<li>**<code>nvm arch [32|64]</code>**：显示节点是在 32 位还是 64 位模式下运行。指定 32 或 64 以覆盖默认架构。</li>
+<li>**<code>nvm current</code>**：显示活动版本。</li>
+<li>**<code>nvm install &lt;version&gt; [arch]</code>**：版本可以是特定版本，“latest”表示最新的当前版本，或“lts”表示最新的 LTS 版本。可选地指定是安装 32 位还是 64 位版本（默认为系统架构）。将 [arch] 设置为“all”以安装 32 位和 64 位版本。添加<code>--insecure</code>到此命令的末尾以绕过远程下载服务器的 SSL 验证。</li>
+<li>**<code>nvm list [available]</code>**：列出 node.js 安装。在末尾键入<code>available</code>以显示可供下载的版本列表。</li>
+<li><strong><code>nvm on</code></strong>: 启用 node.js 版本管理。</li>
+<li>**<code>nvm off</code>**：禁用 node.js 版本管理（不卸载任何东西）。</li>
+<li>**<code>nvm proxy [url]</code>**：设置用于下载的代理。留空<code>[url]</code>以查看当前代理。设置<code>[url]</code>为“无”以删除代理。</li>
+<li>**<code>nvm uninstall &lt;version&gt;</code>**：卸载特定版本。</li>
+<li>**<code>nvm use &lt;version&gt; [arch]</code>*<em>：切换到使用指定的版本。可选择使用<code>latest</code>,<code>lts</code>或<code>newest</code>. <code>newest</code>是最新</em>安装*的版本。可选择指定 32&#x2F;64 位架构。<code>nvm use &lt;arch&gt;</code>将继续使用所选版本，但切换到 32&#x2F;64 位模式。有关<code>use</code>在特定目录中使用（或使用<code>.nvmrc</code>）的信息，请参阅<a href="https://github.com/coreybutler/nvm-windows/issues/16">问题 #16</a>。</li>
+<li><strong><code>nvm root &lt;path&gt;</code></strong>: 设置 nvm 应该存放不同版本的 node.js 的目录。如果<code>&lt;path&gt;</code>未设置，将显示当前根目录。</li>
+<li>**<code>nvm version</code>**：显示当前运行的 NVM for Windows 版本。</li>
+<li>**<code>nvm node_mirror &lt;node_mirror_url&gt;</code>*<em>：设置节点镜像。国内的人可以使用</em><a href="https://npmmirror.com/mirrors/node/">https://npmmirror.com/mirrors/node/</a>*</li>
+<li>**<code>nvm npm_mirror &lt;npm_mirror_url&gt;</code>*<em>：设置 npm 镜像。中国的人可以使用</em><a href="https://npmmirror.com/mirrors/npm/">https://npmmirror.com/mirrors/npm/</a>*</li>
+</ul>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><p>如果在使用<code>nvm use &lt;version&gt;</code>时，出现报错提示，“exit status 乱码”，那就得问问自己，nodejs 的真实存放路径是否有提前创建好；执行<code>nvm use &lt;version&gt;</code>的命令环境是否通过管理员权限打开的。另外，网友给出， nodejs 存放路径包含空格或中文了。总之，你们尽可一一尝试，改正即可。</p>
+<p>最后，如果打开 vscode 的命令行，输入 nvm、node、npm 等对应命令，是无效的，这时，重启电脑，命令即可生效，而不是重启 vscode。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/coreybutler/nvm-windows">适用于 Windows 的 NVM</a></p>
+<p>[2] <a href="https://www.runoob.com/w3cnote/nvm-manager-node-versions.html">使用 nvm 管理不同版本的 node 与 npm</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>node</tag>
       </tags>
   </entry>
   <entry>
@@ -2210,6 +2210,106 @@
       </tags>
   </entry>
   <entry>
+    <title>docker使用</title>
+    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
+<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
+<span id="more"></span>
+
+<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
+<ul>
+<li>使用容器开发您的应用程序及其支持组件。</li>
+<li>容器成为分发和测试应用程序的单元。</li>
+<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
+</ul>
+<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
+<p>考虑以下示例场景：</p>
+<ul>
+<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
+<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
+<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
+<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
+</ul>
+<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
+<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
+<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
+<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
+<p><img src="https://huatree.top/architecture.svg" alt="architecture"></p>
+<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
+</div>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
+<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
+<li>进入 BIOS 开启虚拟化技术</li>
+<li>win10 全开 Hpyer-V</li>
+</ul>
+<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
+<p><img src="https://huatree.top/image-20220512073042362.png" alt="image-20220512073042362"></p>
+<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
+<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
+<p><img src="https://huatree.top/image-20220512073743673.png" alt="image-20220512073743673"></p>
+<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
+<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
+<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
+<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
+<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
+<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
+<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
+<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
+<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
+<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
+<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
+</div>
+
+<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
+<p>配置 docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
+
+<p>执行它</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>发现报错</p>
+<p><img src="https://huatree.top/image-20220513133508101.png" alt="image-20220513133508101"></p>
+<p>为什么？</p>
+<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
+<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
+<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
+<p><img src="https://huatree.top/image-20220513133936711.png" alt="image-20220513133936711"></p>
+<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
+<p>再次执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
+<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
+<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
+<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker+Jenkins+github</title>
     <url>/2022/05/14/20220514-docker+Jenkins+github/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220511175224561.png" alt="image-20220511175224561"></p>
@@ -2330,106 +2430,6 @@
       <tags>
         <tag>CI&amp;CD</tag>
         <tag>Jenkins</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>docker使用</title>
-    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
-<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
-<span id="more"></span>
-
-<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
-<ul>
-<li>使用容器开发您的应用程序及其支持组件。</li>
-<li>容器成为分发和测试应用程序的单元。</li>
-<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
-</ul>
-<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
-<p>考虑以下示例场景：</p>
-<ul>
-<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
-<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
-<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
-<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
-</ul>
-<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
-<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
-<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
-<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
-<p><img src="https://huatree.top/architecture.svg" alt="architecture"></p>
-<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
-</div>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
-<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
-<li>进入 BIOS 开启虚拟化技术</li>
-<li>win10 全开 Hpyer-V</li>
-</ul>
-<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
-<p><img src="https://huatree.top/image-20220512073042362.png" alt="image-20220512073042362"></p>
-<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
-<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
-<p><img src="https://huatree.top/image-20220512073743673.png" alt="image-20220512073743673"></p>
-<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
-<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
-<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
-<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
-<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
-<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
-<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
-<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
-
-<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
-<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
-<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
-<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
-</div>
-
-<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
-
-<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
-<p>配置 docker-compose.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
-
-<p>执行它</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-
-<p>发现报错</p>
-<p><img src="https://huatree.top/image-20220513133508101.png" alt="image-20220513133508101"></p>
-<p>为什么？</p>
-<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
-<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
-<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
-<p><img src="https://huatree.top/image-20220513133936711.png" alt="image-20220513133936711"></p>
-<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
-<p>再次执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
-<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
-<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
-<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -2556,7 +2556,7 @@
 <p><img src="https://huatree.top/image-20220519182047703.png" alt="image-20220519182047703"></p>
 </li>
 </ol>
-<p>出现内容违规情况，需根据官方要求修改提示指出的源文件（即公仓<code>huatree.blog</code>下的源文件，并非私仓下的静态资源。静态资源是源文件打包后的结果，改源文件，再打包部署，对应的静态资源自然得以修改）。</p>
+<p>出现内容违规情况，需根据官方要求修改提示指出的源文件（即 github 平台私仓<code>huatree.blog</code>下的源文件，并非公仓下的静态资源。静态资源是源文件打包后的结果，改动源文件，再打包部署，对应的静态资源自然得以更新）。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/marketplace/actions/gitee-pages-action">Gitee Pages Action</a></p>
 ]]></content>
       <categories>
