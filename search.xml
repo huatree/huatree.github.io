@@ -157,6 +157,41 @@
       </tags>
   </entry>
   <entry>
+    <title>npm常用命令</title>
+    <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220507212813517.png" alt="image-20220507212813517"></p>
+<span id="more"></span>
+
+<h2 id="UNMET-PEER-DEPENDENCY-xxx"><a href="#UNMET-PEER-DEPENDENCY-xxx" class="headerlink" title="UNMET PEER DEPENDENCY @xxx"></a>UNMET PEER DEPENDENCY @xxx</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 简单查看项目依赖库的信息</span></span><br><span class="line">npm <span class="built_in">ls</span> --depth 0</span><br><span class="line"><span class="comment"># 查看当前是否有任何（或特定）已安装的依赖包已过时</span></span><br><span class="line">npm outdated</span><br><span class="line"><span class="comment"># 查看某个依赖包的所有版本</span></span><br><span class="line">npm view [pkg name] versions</span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>简单查看项目依赖库的信息，如果遇到 UNMET PEER DEPENDENCY @xxx，会列出来并给出修复提示。</p>
+</div>
+
+<h2 id="package-json-的包依赖关系"><a href="#package-json-的包依赖关系" class="headerlink" title="package.json 的包依赖关系"></a>package.json 的包依赖关系</h2><p><code>^version</code>：与版本兼容，并非指定的版本，具体版本在 package-lock.json 文件可查，也可以在终端输入下面的命令查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> [pkg name]</span><br><span class="line"><span class="comment"># npm查看全局安装包</span></span><br><span class="line">npm <span class="built_in">ls</span> --global</span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>请不要在您的<code>dependencies</code>对象中放置测试工具或转译器。</p>
+</div>
+
+<h2 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有配置信息</span></span><br><span class="line">npm config <span class="built_in">ls</span> -l</span><br><span class="line"><span class="comment"># 查看镜像源</span></span><br><span class="line">npm get registry</span><br><span class="line"><span class="comment"># 设置镜像源</span></span><br><span class="line">npm config <span class="built_in">set</span> registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.npmjs.com/cli/v8/commands">npm Docs</a></p>
+<p>[2] <a href="https://gitee.com/link?target=https://blog.csdn.net/qq_24956515/article/details/72829051">ng2 依赖库平滑升级方案</a></p>
+<p>[3] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/ls/">npm-ls</a></p>
+<p>[4] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/outdated/">npm-outdated</a></p>
+<p>[5] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/view/">npm view</a></p>
+<p>[6] <a href="https://gitee.com/link?target=https://www.npmjs.cn/files/package.json/%23dependencies">package.json-dependencies</a></p>
+<p>[7] <a href="https://gitee.com/link?target=https://www.npmjs.cn/misc/semver/">npm - semver</a></p>
+<p>[8] <a href="https://www.runoob.com/w3cnote/npm-switch-repo.html">npm 切换镜像站点</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搞定uni-app</title>
     <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
     <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
@@ -201,38 +236,20 @@
       </tags>
   </entry>
   <entry>
-    <title>npm常用命令</title>
-    <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220507212813517.png" alt="image-20220507212813517"></p>
+    <title>Vue开发工具指南</title>
+    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
 <span id="more"></span>
 
-<h2 id="UNMET-PEER-DEPENDENCY-xxx"><a href="#UNMET-PEER-DEPENDENCY-xxx" class="headerlink" title="UNMET PEER DEPENDENCY @xxx"></a>UNMET PEER DEPENDENCY @xxx</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 简单查看项目依赖库的信息</span></span><br><span class="line">npm <span class="built_in">ls</span> --depth 0</span><br><span class="line"><span class="comment"># 查看当前是否有任何（或特定）已安装的依赖包已过时</span></span><br><span class="line">npm outdated</span><br><span class="line"><span class="comment"># 查看某个依赖包的所有版本</span></span><br><span class="line">npm view [pkg name] versions</span><br></pre></td></tr></table></figure>
-
-<div class="note warning"><p>简单查看项目依赖库的信息，如果遇到 UNMET PEER DEPENDENCY @xxx，会列出来并给出修复提示。</p>
-</div>
-
-<h2 id="package-json-的包依赖关系"><a href="#package-json-的包依赖关系" class="headerlink" title="package.json 的包依赖关系"></a>package.json 的包依赖关系</h2><p><code>^version</code>：与版本兼容，并非指定的版本，具体版本在 package-lock.json 文件可查，也可以在终端输入下面的命令查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> [pkg name]</span><br><span class="line"><span class="comment"># npm查看全局安装包</span></span><br><span class="line">npm <span class="built_in">ls</span> --global</span><br></pre></td></tr></table></figure>
-
-<div class="note warning"><p>请不要在您的<code>dependencies</code>对象中放置测试工具或转译器。</p>
-</div>
-
-<h2 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有配置信息</span></span><br><span class="line">npm config <span class="built_in">ls</span> -l</span><br><span class="line"><span class="comment"># 查看镜像源</span></span><br><span class="line">npm get registry</span><br><span class="line"><span class="comment"># 设置镜像源</span></span><br><span class="line">npm config <span class="built_in">set</span> registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.npmjs.com/cli/v8/commands">npm Docs</a></p>
-<p>[2] <a href="https://gitee.com/link?target=https://blog.csdn.net/qq_24956515/article/details/72829051">ng2 依赖库平滑升级方案</a></p>
-<p>[3] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/ls/">npm-ls</a></p>
-<p>[4] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/outdated/">npm-outdated</a></p>
-<p>[5] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/view/">npm view</a></p>
-<p>[6] <a href="https://gitee.com/link?target=https://www.npmjs.cn/files/package.json/%23dependencies">package.json-dependencies</a></p>
-<p>[7] <a href="https://gitee.com/link?target=https://www.npmjs.cn/misc/semver/">npm - semver</a></p>
-<p>[8] <a href="https://www.runoob.com/w3cnote/npm-switch-repo.html">npm 切换镜像站点</a></p>
+<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
+<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
 ]]></content>
       <categories>
-        <category>工作点滴</category>
+        <category>成长经历</category>
       </categories>
       <tags>
-        <tag>npm</tag>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -257,23 +274,6 @@
       </categories>
       <tags>
         <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue开发工具指南</title>
-    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
-<span id="more"></span>
-
-<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
-<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -311,30 +311,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>混合App中H5白屏修复及样式兼容</title>
-    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
-    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
-<ul>
-<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
-<li>代码编译错误引起渲染失败(一直白屏)</li>
-</ul>
-<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
-<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
-<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
-<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
-<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
-<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>H5</tag>
-        <tag>混合APP</tag>
       </tags>
   </entry>
   <entry>
@@ -805,6 +781,30 @@
         <tag>CSS</tag>
         <tag>阅读</tag>
         <tag>重构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>混合App中H5白屏修复及样式兼容</title>
+    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
+    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
+<ul>
+<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
+<li>代码编译错误引起渲染失败(一直白屏)</li>
+</ul>
+<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
+<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
+<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
+<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
+<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
+<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+        <tag>混合APP</tag>
       </tags>
   </entry>
   <entry>
@@ -2076,74 +2076,6 @@
       </tags>
   </entry>
   <entry>
-    <title>github使用技巧</title>
-    <url>/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220510072148793.png" alt="image-20220510072148793"></p>
-<span id="more"></span>
-
-<h2 id="1-在线查看项目"><a href="#1-在线查看项目" class="headerlink" title="1 在线查看项目"></a>1 在线查看项目</h2><h3 id="1-1-直接在-github-后面加上-1s"><a href="#1-1-直接在-github-后面加上-1s" class="headerlink" title="1.1 直接在 github 后面加上 1s"></a>1.1 直接在 github 后面加上 1s</h3><p>找到需要看的项目的 github 地址。比如：antd-design pro</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p>只需要在地址 github 后面加上<code>1s</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github1s.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p>与 vs-code 基本一样，速度很快！再也不用担心 github 网速慢的问题了。</p>
-<p><img src="https://huatree.top/image-20220510053731103.png" alt="image-20220510053731103"></p>
-<h3 id="1-2-github-加前缀-vscode-dev-x2F"><a href="#1-2-github-加前缀-vscode-dev-x2F" class="headerlink" title="1.2 github 加前缀 vscode.dev&#x2F;"></a>1.2 github 加前缀 vscode.dev&#x2F;</h3><p><code>vscode.dev/</code>方式打开时，需要 github 在线授权</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://vscode.dev/github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://huatree.top/image-20220510054828459.png" alt="image-20220510054828459"></p>
-<h3 id="1-3-github-的后缀-com-换成-dev"><a href="#1-3-github-的后缀-com-换成-dev" class="headerlink" title="1.3 github 的后缀.com 换成.dev"></a>1.3 github 的后缀.com 换成.dev</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.dev/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p><strong>快捷键</strong>：在原<code>https://github.com/ant-design/ant-design-pro</code>地址下，按下键盘上的<code>.</code>键位，可快速在线打开项目。</p>
-<p><img src="https://huatree.top/image-20220510055416674.png" alt="image-20220510055416674"></p>
-<h3 id="1-4-通过-Chrome-插件-Octotree-GitHub-code-tree"><a href="#1-4-通过-Chrome-插件-Octotree-GitHub-code-tree" class="headerlink" title="1.4 通过 Chrome 插件 Octotree - GitHub code tree"></a>1.4 通过 Chrome 插件 Octotree - GitHub code tree</h3><p><img src="https://huatree.top/image-20220510055737787.png" alt="image-20220510055737787"></p>
-<h2 id="2-在线运行项目"><a href="#2-在线运行项目" class="headerlink" title="2 在线运行项目"></a>2 在线运行项目</h2><p>在项目地址前加上 <code>gitpod.io/#</code> 前缀，此时，可以选择 github 授权。等待几秒钟，它会自动识别项目的类型，并在线安装项目所需的依赖，并打好包。</p>
-<p>例如 vue 项目，gitpod 环境下，会当前项目根目录下创建默认配置<code>.gitpod.yml</code>文件。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This configuration file was automatically generated by Gitpod.</span></span><br><span class="line"><span class="comment"># Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)</span></span><br><span class="line"><span class="comment"># and commit this file to your remote git repository to share the goodness with others.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">init:</span> <span class="string">yarn</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">yarn</span> <span class="string">run</span> <span class="string">build</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Invalid-Host-header-问题解决"><a href="#Invalid-Host-header-问题解决" class="headerlink" title="Invalid Host header 问题解决"></a>Invalid Host header 问题解决</h3><p><strong>出现该问的原因</strong>：因为新版的 webpack-dev-server 出于安全考虑，默认检查 hostname，如果 hostname 不是配置内的就不能访问。</p>
-<p><strong>解决办法：</strong>设置跳过 host 检查。打开你的项目全局搜索 devServer ，在 devServer 里面添加 <code>disableHostCheck: true,</code></p>
-<p>disableHostCheck 设置为 true 的意思就是设置跳过 host 检查。</p>
-<div class="note success"><p>本地运行项目的操作，gitpod 环境下同样适用。</p>
-</div>
-
-<div class="note warning"><p>Gitpod 免费版支持：</p>
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 50 小时&#x2F;月</li>
-<li><input checked="" disabled="" type="checkbox"> 公共和私人回购</li>
-<li><input checked="" disabled="" type="checkbox"> 4 个并行工作区</li>
-<li><input checked="" disabled="" type="checkbox"> 30 分钟不活动超时</li>
-</ul>
-</div>
-
-<h2 id="3-项目推送"><a href="#3-项目推送" class="headerlink" title="3 项目推送"></a>3 项目推送</h2><p>在 GitHub 的 Explorer 探索页面中，有一个非常不起眼的按钮，“获取邮件更新”。</p>
-<p>我们可以根据自己的喜好，让 GitHub 定期给我们推送自己感兴趣的优质项目，就可以持续扩大知识面、了解开源动态啦。</p>
-<p><img src="https://huatree.top/image-20220510065320331.png" alt="image-20220510065320331"></p>
-<h2 id="4-文件定位查看"><a href="#4-文件定位查看" class="headerlink" title="4 文件定位查看"></a>4 文件定位查看</h2><p>刚开始的时候，相信大多数同学是一级一级的点击项目目录去找文件，发现位置错了后呢，还要回到最初的起点，呆呆地再换一个目录去找。</p>
-<p><img src="https://huatree.top/image-20220510070107485.png" alt="image-20220510070107485"></p>
-<p>后来在<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">github 官方文档</a>中发现，我们只需按下 <code>t</code> 键，就可以快速、实时地对仓库内的所有文件进行搜索。</p>
-<p><img src="https://huatree.top/image-20220510070309131.png" alt="image-20220510070309131"></p>
-<p>点进某个文件后，还有技巧，按下 <code>L</code> 键，就可以快速跳转到某一行。</p>
-<p><img src="https://huatree.top/image-20220510070554922.png" alt="image-20220510070554922"></p>
-<p>点击行号，就可以快速复制这行的代码，生成永久链接。</p>
-<p><img src="https://huatree.top/image-20220510070627257.png" alt="image-20220510070627257"></p>
-<p>按 <code>b</code> 键还可以快速查看该文件的改动记录。</p>
-<p><img src="https://huatree.top/image-20220510070756051.png" alt="image-20220510070756051"></p>
-<p>除了上面这些，GitHub 里还隐藏了许多实用的<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">快捷键</a>，大家可以在官方文档尽情查看。</p>
-<h2 id="5-过滤搜索"><a href="#5-过滤搜索" class="headerlink" title="5 过滤搜索"></a>5 过滤搜索</h2><p>使用 GitHub <a href="https://docs.github.com/cn/search-github/getting-started-with-searching-on-github/about-searching-on-github">高级搜索</a>功能提供的 <code>搜索限定符</code>。进入 advance search 界面（搜索结果页左下角），利用可视化表单也能实现高级搜索。但这个界面展示的搜索条件有限，其实还有更多的搜索限定语法，比如按代码库名称、描述搜索，对仓库中的内容进行搜索等，这些都可以在 GitHub 官方文档查阅。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://mp.weixin.qq.com/s/P7odF1arZ1siCKvhwp6fqA">GitHub 这 5 个骚操作，99%的人不知道！</a></p>
-<p>[2] <a href="https://code.visualstudio.com/blogs/2021/10/20/vscode-dev">vscode.dev</a></p>
-<p>[3] <a href="https://www.gitpod.io/">Gitpod</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>github</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【转载】如何选择投资人，什么样的投资人靠谱，20个衡量指标全面分析</title>
     <url>/2022/04/25/20220425-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E6%8A%95%E8%B5%84%E4%BA%BA%EF%BC%8C%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%8A%95%E8%B5%84%E4%BA%BA%E9%9D%A0%E8%B0%B1%EF%BC%8C20%E4%B8%AA%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87%E5%85%A8%E9%9D%A2%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180928/a7b9fa5b102a43fdb61edc28ce1fc0b1.jpeg" alt="top"></p>
@@ -2310,39 +2242,104 @@
       </tags>
   </entry>
   <entry>
-    <title>docker+Jenkins+github</title>
-    <url>/2022/05/14/20220514-docker+Jenkins+github/</url>
+    <title>github使用技巧</title>
+    <url>/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220510072148793.png" alt="image-20220510072148793"></p>
+<span id="more"></span>
+
+<h2 id="1-在线查看项目"><a href="#1-在线查看项目" class="headerlink" title="1 在线查看项目"></a>1 在线查看项目</h2><h3 id="1-1-直接在-github-后面加上-1s"><a href="#1-1-直接在-github-后面加上-1s" class="headerlink" title="1.1 直接在 github 后面加上 1s"></a>1.1 直接在 github 后面加上 1s</h3><p>找到需要看的项目的 github 地址。比如：antd-design pro</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>只需要在地址 github 后面加上<code>1s</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github1s.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>与 vs-code 基本一样，速度很快！再也不用担心 github 网速慢的问题了。</p>
+<p><img src="https://huatree.top/image-20220510053731103.png" alt="image-20220510053731103"></p>
+<h3 id="1-2-github-加前缀-vscode-dev-x2F"><a href="#1-2-github-加前缀-vscode-dev-x2F" class="headerlink" title="1.2 github 加前缀 vscode.dev&#x2F;"></a>1.2 github 加前缀 vscode.dev&#x2F;</h3><p><code>vscode.dev/</code>方式打开时，需要 github 在线授权</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://vscode.dev/github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://huatree.top/image-20220510054828459.png" alt="image-20220510054828459"></p>
+<h3 id="1-3-github-的后缀-com-换成-dev"><a href="#1-3-github-的后缀-com-换成-dev" class="headerlink" title="1.3 github 的后缀.com 换成.dev"></a>1.3 github 的后缀.com 换成.dev</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.dev/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><strong>快捷键</strong>：在原<code>https://github.com/ant-design/ant-design-pro</code>地址下，按下键盘上的<code>.</code>键位，可快速在线打开项目。</p>
+<p><img src="https://huatree.top/image-20220510055416674.png" alt="image-20220510055416674"></p>
+<h3 id="1-4-通过-Chrome-插件-Octotree-GitHub-code-tree"><a href="#1-4-通过-Chrome-插件-Octotree-GitHub-code-tree" class="headerlink" title="1.4 通过 Chrome 插件 Octotree - GitHub code tree"></a>1.4 通过 Chrome 插件 Octotree - GitHub code tree</h3><p><img src="https://huatree.top/image-20220510055737787.png" alt="image-20220510055737787"></p>
+<h2 id="2-在线运行项目"><a href="#2-在线运行项目" class="headerlink" title="2 在线运行项目"></a>2 在线运行项目</h2><p>在项目地址前加上 <code>gitpod.io/#</code> 前缀，此时，可以选择 github 授权。等待几秒钟，它会自动识别项目的类型，并在线安装项目所需的依赖，并打好包。</p>
+<p>例如 vue 项目，gitpod 环境下，会当前项目根目录下创建默认配置<code>.gitpod.yml</code>文件。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This configuration file was automatically generated by Gitpod.</span></span><br><span class="line"><span class="comment"># Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)</span></span><br><span class="line"><span class="comment"># and commit this file to your remote git repository to share the goodness with others.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">init:</span> <span class="string">yarn</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">yarn</span> <span class="string">run</span> <span class="string">build</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Invalid-Host-header-问题解决"><a href="#Invalid-Host-header-问题解决" class="headerlink" title="Invalid Host header 问题解决"></a>Invalid Host header 问题解决</h3><p><strong>出现该问的原因</strong>：因为新版的 webpack-dev-server 出于安全考虑，默认检查 hostname，如果 hostname 不是配置内的就不能访问。</p>
+<p><strong>解决办法：</strong>设置跳过 host 检查。打开你的项目全局搜索 devServer ，在 devServer 里面添加 <code>disableHostCheck: true,</code></p>
+<p>disableHostCheck 设置为 true 的意思就是设置跳过 host 检查。</p>
+<div class="note success"><p>本地运行项目的操作，gitpod 环境下同样适用。</p>
+</div>
+
+<div class="note warning"><p>Gitpod 免费版支持：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 50 小时&#x2F;月</li>
+<li><input checked="" disabled="" type="checkbox"> 公共和私人回购</li>
+<li><input checked="" disabled="" type="checkbox"> 4 个并行工作区</li>
+<li><input checked="" disabled="" type="checkbox"> 30 分钟不活动超时</li>
+</ul>
+</div>
+
+<h2 id="3-项目推送"><a href="#3-项目推送" class="headerlink" title="3 项目推送"></a>3 项目推送</h2><p>在 GitHub 的 Explorer 探索页面中，有一个非常不起眼的按钮，“获取邮件更新”。</p>
+<p>我们可以根据自己的喜好，让 GitHub 定期给我们推送自己感兴趣的优质项目，就可以持续扩大知识面、了解开源动态啦。</p>
+<p><img src="https://huatree.top/image-20220510065320331.png" alt="image-20220510065320331"></p>
+<h2 id="4-文件定位查看"><a href="#4-文件定位查看" class="headerlink" title="4 文件定位查看"></a>4 文件定位查看</h2><p>刚开始的时候，相信大多数同学是一级一级的点击项目目录去找文件，发现位置错了后呢，还要回到最初的起点，呆呆地再换一个目录去找。</p>
+<p><img src="https://huatree.top/image-20220510070107485.png" alt="image-20220510070107485"></p>
+<p>后来在<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">github 官方文档</a>中发现，我们只需按下 <code>t</code> 键，就可以快速、实时地对仓库内的所有文件进行搜索。</p>
+<p><img src="https://huatree.top/image-20220510070309131.png" alt="image-20220510070309131"></p>
+<p>点进某个文件后，还有技巧，按下 <code>L</code> 键，就可以快速跳转到某一行。</p>
+<p><img src="https://huatree.top/image-20220510070554922.png" alt="image-20220510070554922"></p>
+<p>点击行号，就可以快速复制这行的代码，生成永久链接。</p>
+<p><img src="https://huatree.top/image-20220510070627257.png" alt="image-20220510070627257"></p>
+<p>按 <code>b</code> 键还可以快速查看该文件的改动记录。</p>
+<p><img src="https://huatree.top/image-20220510070756051.png" alt="image-20220510070756051"></p>
+<p>除了上面这些，GitHub 里还隐藏了许多实用的<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">快捷键</a>，大家可以在官方文档尽情查看。</p>
+<h2 id="5-过滤搜索"><a href="#5-过滤搜索" class="headerlink" title="5 过滤搜索"></a>5 过滤搜索</h2><p>使用 GitHub <a href="https://docs.github.com/cn/search-github/getting-started-with-searching-on-github/about-searching-on-github">高级搜索</a>功能提供的 <code>搜索限定符</code>。进入 advance search 界面（搜索结果页左下角），利用可视化表单也能实现高级搜索。但这个界面展示的搜索条件有限，其实还有更多的搜索限定语法，比如按代码库名称、描述搜索，对仓库中的内容进行搜索等，这些都可以在 GitHub 官方文档查阅。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://mp.weixin.qq.com/s/P7odF1arZ1siCKvhwp6fqA">GitHub 这 5 个骚操作，99%的人不知道！</a></p>
+<p>[2] <a href="https://code.visualstudio.com/blogs/2021/10/20/vscode-dev">vscode.dev</a></p>
+<p>[3] <a href="https://www.gitpod.io/">Gitpod</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker+Jenkins+GitHub</title>
+    <url>/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220511175224561.png" alt="image-20220511175224561"></p>
 <span id="more"></span>
 
-<div class="note warning"><p>本文教程基于<strong>Windows 10 系统</strong>，docker+Jenkins+github 实现 CI&amp;CD。</p>
+<div class="note warning"><p>本文教程基于<strong>Windows 10 系统</strong>Docker+Jenkins+GitHub 实现 CI&amp;CD。</p>
 </div>
 
-<h2 id="在-docker-中运行-Jenkins"><a href="#在-docker-中运行-Jenkins" class="headerlink" title="在 docker 中运行 Jenkins"></a>在 docker 中运行 Jenkins</h2><p>将 jenkins 作为 docker 容器并从 <a href="https://hub.docker.com/r/jenkinsci/blueocean/"><code>jenkinsci/blueocean</code></a> Docker 镜像中运行。</p>
-<p>要在 docker 中运行 jenkins，可参考<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cmd</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为Docker中的一个容器(记住，如果本地没有镜像，这个命令会自动下载)</span></span><br><span class="line">docker run \</span><br><span class="line">  --name jenkins-tutorials \</span><br><span class="line">  --<span class="built_in">rm</span> \</span><br><span class="line">  -u root \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -v jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  -v /d/workspace:/home \</span><br><span class="line">  jenkinsci/blueocean</span><br><span class="line"><span class="comment"># 如果需要退出当前容器的运行状态，输入快捷键ctrl + c</span></span><br></pre></td></tr></table></figure>
+<h2 id="在-Docker-中运行-Jenkins"><a href="#在-Docker-中运行-Jenkins" class="headerlink" title="在 Docker 中运行 Jenkins"></a>在 Docker 中运行 Jenkins</h2><p>将 Jenkins 作为 Docker 容器并从 <a href="https://hub.docker.com/r/jenkinsci/blueocean/"><code>jenkinsci/blueocean</code></a> Docker 镜像中运行。</p>
+<p>Docker 操作，详见<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
+<h3 id="使用-Docker-Engine-运行-Jenkins"><a href="#使用-Docker-Engine-运行-Jenkins" class="headerlink" title="使用 Docker Engine 运行 Jenkins"></a>使用 Docker Engine 运行 Jenkins</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入cmd终端</span></span><br><span class="line"><span class="comment"># 查看当前wsl版本</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为Docker中的一个容器(记住，如果本地没有镜像，这个命令会自动下载)</span></span><br><span class="line">docker run \</span><br><span class="line">  --name huatree-jenkins \</span><br><span class="line">  --<span class="built_in">rm</span> \</span><br><span class="line">  --restart \</span><br><span class="line">  -u root \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -v jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  -v /home/huatree/document:/home \</span><br><span class="line">  jenkinsci/blueocean</span><br><span class="line"><span class="comment"># 如果需要退出当前容器的运行状态，输入快捷键ctrl + c</span></span><br></pre></td></tr></table></figure>
 
 <p>说明：</p>
 <p><code>wsl</code>：windows10 子系统 Linux，这里用的是微软商店中下载的 Debian，升级到 wsl2</p>
 <p><code>\</code>：linux 环境空格输出</p>
 <p><code>--name</code>：为容器分配名称</p>
 <p><code>--rm</code>：容器退出时自动移除，可以不写，后面用<code>docker rm</code>移除该容器便可。</p>
+<p><code>--restart</code>：容器退出时应用的重启策略</p>
 <p><code>-u</code>：即<code>--user</code>，用户名或 UID（格式：&lt;name|uid&gt;[:&lt;group|gid&gt;]）</p>
 <p><code>-p</code>：即<code>--publish</code>，将容器的端口发布到主机</p>
 <p><code>-v</code>：即<code>--volume</code>，绑定挂载卷</p>
-<p><code>docker run</code> 命令更多参数使用信息，<a href="https://docs.docker.com/engine/reference/commandline/run/">详见官方文档</a></p>
 <p><code>-v jenkins-data:/var/jenkins_home</code>：将容器中的 <code>/var/jenkins_home</code> 目录映射到 Docker <a href="https://docs.docker.com/engine/admin/volumes/volumes/">volume</a> ，并将其命名为 <code>jenkins-data</code>。如果该卷不存在, 那么 <code>docker run</code> 命令会自动为你创建卷。</p>
 <p><code>-v /var/run/docker.sock:/var/run/docker.sock</code>：在前台运行并将其日志直接发送到您的终端，<a href="https://docs.docker.com/config/daemon/">详见官网文档</a></p>
-<p><code>-v /d/workspace:/home</code>：将主机上的<code>D:\workspace</code> 目录 (即你的本地)映射到容器的 <code>/home</code> 目录。</p>
-<p>因 win10 系统文件不区分大小写，所以<code>/d/workspace</code>跟<code>/D/workspace</code>效果一样，这里 wsl 中推荐用小写的<code>d</code>。</p>
-<div class="note success"><p>细心的你会发现，win10 上的磁盘挂载到 wsl 或 git 终端中，默认都是小写的盘符。</p>
-</div>
-
-<p><img src="https://huatree.top/image-20220516064234942.png" alt="image-20220516064234942"></p>
-<p>当然，每次<code>docker run...</code>，不方便，可以在需要的路径下配置<code>compose.yaml</code>文件，并在当前路径下的命令行输入<code>docker compose up</code>，它会读取<code>compose.yaml</code>文件，自动执行命令。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">huatree-jenkins:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jenkinsci/blueocean</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">jenkins-data:/var/jenkins_home</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/d/workspace:/home</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">jenkins-data:</span></span><br></pre></td></tr></table></figure>
+<p><code>docker run</code> 命令更多参数使用信息，<a href="https://docs.docker.com/engine/reference/commandline/run/">详见官方文档</a></p>
+<h3 id="使用-Docker-Compose-运行-Jenkins"><a href="#使用-Docker-Compose-运行-Jenkins" class="headerlink" title="使用 Docker Compose 运行 Jenkins"></a>使用 Docker Compose 运行 Jenkins</h3><p>当然，每次<code>docker run...</code>，不方便，可以在需要的路径下配置<code>compose.yaml</code>文件，并在当前路径下的命令行输入<code>docker compose up</code>，它会读取<code>compose.yaml</code>文件，自动执行命令。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">jenkins:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jenkinsci/blueocean</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">jenkins-data:/var/jenkins_home</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/huatree/document:/home</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">jenkins-data:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>更多<code>compse.yaml</code>参数配置，<a href="https://docs.docker.com/compose/compose-file/">详见官方文档</a></p>
+<p><code>Dhudson.model.DirectoryBrowserSupport.CSP=空格</code>：确定为 Jenkins 提供的静态文件发送的内容安全策略标头。有关更多详细信息，请参阅<a href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">配置内容安全策略</a></p>
+<p><code>Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</code>：允许本地目录验证。<a href="https://plugins.jenkins.io/git/#plugin-content-allow-local-checkout">更多信息详见</a></p>
 <h2 id="访问-Jenkins-x2F-Blue-Ocean-Docker-容器"><a href="#访问-Jenkins-x2F-Blue-Ocean-Docker-容器" class="headerlink" title="访问 Jenkins&#x2F;Blue Ocean Docker 容器"></a>访问 Jenkins&#x2F;Blue Ocean Docker 容器</h2><h3 id="解锁-Jenkins"><a href="#解锁-Jenkins" class="headerlink" title="解锁 Jenkins"></a>解锁 Jenkins</h3><p>当你第一次访问一个新的 Jenkins 实例时, 要求你使用自动生成的密码对其进行解锁。</p>
 <p>当在终端&#x2F;命令提示窗口出现两组星号时, 浏览 <code>http://localhost:8080</code> 并等待 <strong>解锁 Jenkins</strong> 页面出现。</p>
 <p><img src="https://huatree.top/image-20220516093617699.png" alt="image-20220516093617699"></p>
@@ -2364,10 +2361,10 @@
 <h3 id="停止和重启-Jenkins"><a href="#停止和重启-Jenkins" class="headerlink" title="停止和重启 Jenkins"></a>停止和重启 Jenkins</h3><p>在其他时候，如果不用了，你可以通过在终端&#x2F;命令提示窗口输入 <code>Ctrl-C</code>停止 Jenkins&#x2F;Blue Ocean Docker 容器。想用时，执行<code>docker compose start</code>。</p>
 <p>另一种场景：正常启动了 Jenkins，关掉命令行工具，该容器并没有停止运行。如果想停止，则终端执行命令<code>docker compose stop</code>。</p>
 <h2 id="Fork-和-clone-GitHub-示例仓库"><a href="#Fork-和-clone-GitHub-示例仓库" class="headerlink" title="Fork 和 clone GitHub 示例仓库"></a>Fork 和 clone GitHub 示例仓库</h2><p>通过将应用程序源代码所在的示例仓库 fork 到你自己的 Github 账号中， 并 clone 到本地， 你就可以获取一个”Welcome to React”简单 Node.js 和 React 应用程序。</p>
-<p>将示例仓库 <a href="https://github.com/jenkins-docs/simple-node-js-react-npm-app"><code>simple-node-js-react-npm-app</code></a> fork 到你的账户的 Github 仓库中。接着，将你的 GitHub 账户中的 <code>simple-node-js-react-npm-app</code> 仓库 clone 到你的本地机器。</p>
-<div class="note warning"><p>注意在上文提到的配置映射<code>/home</code>的目录<code>D:\workspace</code>下执行 clone。</p>
-</div>
+<p>将示例仓库 <a href="https://github.com/jenkins-docs/simple-node-js-react-npm-app"><code>simple-node-js-react-npm-app</code></a> fork 到你的账户的 Github 仓库中。接着，将你的 GitHub 账户中的 <code>simple-node-js-react-npm-app</code> 仓库 clone 到你本地的如下目录：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/home/huatree/document/github/simple-node-js-react-npm-app</span><br></pre></td></tr></table></figure>
 
+<p><code>/home/huatree/document</code>是上面<code>compose.yaml</code>的内容，从你主机上的<code>/home/huatree/document</code>目录映射到 Jenkins 容器的 <code>/home</code>。</p>
 <h2 id="在-Jenkins-中创建流水线项目"><a href="#在-Jenkins-中创建流水线项目" class="headerlink" title="在 Jenkins 中创建流水线项目"></a>在 Jenkins 中创建流水线项目</h2><p>回到浏览器打开的 Jenkin 页面，再次登录并点<strong>欢迎来到 Jenkins!<strong>下的</strong>create new jobs</strong> 。 如果没有看到上述内容，请点击左侧的 <strong>新建任务</strong> 。</p>
 <p>在 <strong>输入一个任务名称</strong> 域, 填写你的新的流水线项目的名称 (比如<code>simple-node-js-react-npm-app</code>)</p>
 <p>向下滚动并单击 <strong>流水线</strong>, 然后点击页面末尾的 <strong>确定</strong></p>
@@ -2375,9 +2372,12 @@
 <p>在 <strong>General&gt;描述</strong> 字域为你的流水线项目做一个简短的描述(比如. <code>An entry-level Pipeline demonstrating how to use Jenkins to build a simple Node.js and React application with npm.</code>)</p>
 <p><img src="https://huatree.top/image-20220516105429577.png" alt="image-20220516105429577"></p>
 <p>在<strong>流水线</strong>栏，在<strong>定义</strong>域，选择 <strong>Pipeline script from SCM</strong> 选项。此选项指示 Jenkins 从源代码管理（SCM）仓库获取你的流水线， 这里的仓库就是你 clone 到本地的 Git 仓库。</p>
-<p>在 <strong>SCM</strong> 域中，选择 <strong>Git</strong>。</p>
-<p>在 <strong>Repository URL</strong> 域中，填写远程仓库地址，如<code>git@github.com:huatree/simple-node-js-react-npm-app.git</code></p>
-<p>在<strong>Credentials</strong>域中，添加<strong>凭据</strong>，选择类型为<code>SSH Username with private key</code>，然后复制粘贴本地的.ssh 目录下的<strong>私钥</strong>，点击<strong>确定</strong>，再选中配置好的凭据。</p>
+<p>在 <strong>SCM</strong> 域中，选择 <strong>Git</strong>。有关<code>GitSCM</code>更多信息，<a href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/">详见</a></p>
+<p>在 <strong>Repository URL</strong> 域中，可以有如下填写操作：</p>
+<p>如果填写 clone 到本地的仓库<strong>映射路径</strong>：<code>/home/github/simple-node-js-react-npm-app</code>，<strong>Credentials</strong>项就默认即可，无需添加凭据，因为<code>compose.yaml</code>文件已经配置了如下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br></pre></td></tr></table></figure>
+
+<p>如果填写的是远程仓库路径：如<code>git@github.com:huatree/simple-node-js-react-npm-app.git</code>，则在<strong>Credentials</strong>域中，添加<strong>凭据</strong>，选择类型为<code>SSH Username with private key</code>，然后复制粘贴本地的.ssh 目录下的<strong>私钥</strong>，点击<strong>确定</strong>，再选中配置好的凭据。</p>
 <p><img src="https://huatree.top/image-20220516105841594.png" alt="image-20220516105841594"></p>
 <p>其他项默认即可（后续可根据需要自行修改配置），点击 <strong>保存</strong> 保存你的流水线项目。你现在可以开始创建你的 <code>Jenkinsfile</code>，这些文件会被添加到你的本地仓库。</p>
 <h3 id="将你的初始流水线创建为-Jenkinsfile"><a href="#将你的初始流水线创建为-Jenkinsfile" class="headerlink" title="将你的初始流水线创建为 Jenkinsfile"></a>将你的初始流水线创建为 Jenkinsfile</h3><p>在<code>simple-node-js-react-npm-app</code>项目根目录下创建<code>Jenkinsfile</code>文件，内容如下：</p>
@@ -2423,6 +2423,8 @@
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.jenkins.io/zh/doc/tutorials/build-a-node-js-and-react-app-with-npm/#%E4%BD%BF%E7%94%A8npm%E6%9E%84%E5%BB%BAnode-js%E5%92%8Creact%E5%BA%94%E7%94%A8">使用 npm 构建 Node.js 和 React 应用</a></p>
 <p>[2] <a href="https://stackoverflow.com/questions/62253474/jenkins-invalid-agent-type-docker-specified-must-be-one-of-any-label-none">Jenkins. Invalid agent type “docker” specified. Must be one of [any, label, none]</a></p>
+<p>[3] <a href="https://issues.jenkins.io/browse/JENKINS-68571?jql=text%20~%20%22ALLOW_LOCAL_CHECKOUT%22">ALLOW_LOCAL_CHECKOUT set but local checkout not available</a></p>
+<p>[4] <a href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/#pipeline-scm-step">Pipeline: SCM Step</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>

@@ -21,12 +21,11 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huatree.gitee.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="docker+Jenkins+github">
-<meta property="og:url" content="https://huatree.gitee.io/2022/05/14/20220514-docker+Jenkins+github/index.html">
+<meta property="og:title" content="Docker+Jenkins+GitHub">
+<meta property="og:url" content="https://huatree.gitee.io/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/index.html">
 <meta property="og:site_name" content="醉梦的网络日志">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://huatree.top/image-20220511175224561.png">
-<meta property="og:image" content="https://huatree.top/image-20220516064234942.png">
 <meta property="og:image" content="https://huatree.top/image-20220516093617699.png">
 <meta property="og:image" content="https://huatree.top/image-20220516093715354.png">
 <meta property="og:image" content="https://huatree.top/image-20220516094041627.png">
@@ -45,7 +44,7 @@
 <meta property="og:image" content="https://huatree.top/image-20220516130201358.png">
 <meta property="og:image" content="https://huatree.top/image-20220516130920146.png">
 <meta property="article:published_time" content="2022-05-14T05:48:36.000Z">
-<meta property="article:modified_time" content="2022-05-17T15:31:43.338Z">
+<meta property="article:modified_time" content="2022-05-20T11:01:52.234Z">
 <meta property="article:author" content="醉梦">
 <meta property="article:tag" content="CI&amp;CD">
 <meta property="article:tag" content="Jenkins">
@@ -53,14 +52,14 @@
 <meta name="twitter:image" content="https://huatree.top/image-20220511175224561.png">
 
 
-<link rel="canonical" href="https://huatree.gitee.io/2022/05/14/20220514-docker+Jenkins+github/">
+<link rel="canonical" href="https://huatree.gitee.io/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://huatree.gitee.io/2022/05/14/20220514-docker+Jenkins+github/","path":"2022/05/14/20220514-docker+Jenkins+github/","title":"docker+Jenkins+github"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://huatree.gitee.io/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/","path":"2022/05/14/20220514-Docker + Jenkins + GitHub/","title":"Docker+Jenkins+GitHub"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>docker+Jenkins+github | 醉梦的网络日志</title>
+<title>Docker+Jenkins+GitHub | 醉梦的网络日志</title>
   
 
 
@@ -162,7 +161,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-docker-%E4%B8%AD%E8%BF%90%E8%A1%8C-Jenkins"><span class="nav-text">在 docker 中运行 Jenkins</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE-Jenkins-x2F-Blue-Ocean-Docker-%E5%AE%B9%E5%99%A8"><span class="nav-text">访问 Jenkins&#x2F;Blue Ocean Docker 容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81-Jenkins"><span class="nav-text">解锁 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89-Jenkins"><span class="nav-text">使用插件自定义 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7"><span class="nav-text">创建第一个管理员用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E5%92%8C%E9%87%8D%E5%90%AF-Jenkins"><span class="nav-text">停止和重启 Jenkins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fork-%E5%92%8C-clone-GitHub-%E7%A4%BA%E4%BE%8B%E4%BB%93%E5%BA%93"><span class="nav-text">Fork 和 clone GitHub 示例仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-Jenkins-%E4%B8%AD%E5%88%9B%E5%BB%BA%E6%B5%81%E6%B0%B4%E7%BA%BF%E9%A1%B9%E7%9B%AE"><span class="nav-text">在 Jenkins 中创建流水线项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E4%BD%A0%E7%9A%84%E5%88%9D%E5%A7%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%88%9B%E5%BB%BA%E4%B8%BA-Jenkinsfile"><span class="nav-text">将你的初始流水线创建为 Jenkinsfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%B7%BB%E5%8A%A0-Test-%E9%98%B6%E6%AE%B5"><span class="nav-text">向流水线添加 Test 阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%B7%BB%E5%8A%A0%E6%9C%80%E7%BB%88%E4%BA%A4%E4%BB%98%E9%98%B6%E6%AE%B5"><span class="nav-text">给流水线添加最终交付阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-Docker-%E4%B8%AD%E8%BF%90%E8%A1%8C-Jenkins"><span class="nav-text">在 Docker 中运行 Jenkins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Docker-Engine-%E8%BF%90%E8%A1%8C-Jenkins"><span class="nav-text">使用 Docker Engine 运行 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Docker-Compose-%E8%BF%90%E8%A1%8C-Jenkins"><span class="nav-text">使用 Docker Compose 运行 Jenkins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE-Jenkins-x2F-Blue-Ocean-Docker-%E5%AE%B9%E5%99%A8"><span class="nav-text">访问 Jenkins&#x2F;Blue Ocean Docker 容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81-Jenkins"><span class="nav-text">解锁 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89-Jenkins"><span class="nav-text">使用插件自定义 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7"><span class="nav-text">创建第一个管理员用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E5%92%8C%E9%87%8D%E5%90%AF-Jenkins"><span class="nav-text">停止和重启 Jenkins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fork-%E5%92%8C-clone-GitHub-%E7%A4%BA%E4%BE%8B%E4%BB%93%E5%BA%93"><span class="nav-text">Fork 和 clone GitHub 示例仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-Jenkins-%E4%B8%AD%E5%88%9B%E5%BB%BA%E6%B5%81%E6%B0%B4%E7%BA%BF%E9%A1%B9%E7%9B%AE"><span class="nav-text">在 Jenkins 中创建流水线项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E4%BD%A0%E7%9A%84%E5%88%9D%E5%A7%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%88%9B%E5%BB%BA%E4%B8%BA-Jenkinsfile"><span class="nav-text">将你的初始流水线创建为 Jenkinsfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%B7%BB%E5%8A%A0-Test-%E9%98%B6%E6%AE%B5"><span class="nav-text">向流水线添加 Test 阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%B7%BB%E5%8A%A0%E6%9C%80%E7%BB%88%E4%BA%A4%E4%BB%98%E9%98%B6%E6%AE%B5"><span class="nav-text">给流水线添加最终交付阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -252,7 +251,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://huatree.gitee.io/2022/05/14/20220514-docker+Jenkins+github/">
+    <link itemprop="mainEntityOfPage" href="https://huatree.gitee.io/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar-huatree.jpg">
@@ -265,12 +264,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="docker+Jenkins+github | 醉梦的网络日志">
+      <meta itemprop="name" content="Docker+Jenkins+GitHub | 醉梦的网络日志">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          docker+Jenkins+github
+          Docker+Jenkins+GitHub
         </h1>
 
         <div class="post-meta-container">
@@ -288,7 +287,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-05-17 23:31:43" itemprop="dateModified" datetime="2022-05-17T23:31:43+08:00">2022-05-17</time>
+      <time title="修改时间：2022-05-20 19:01:52" itemprop="dateModified" datetime="2022-05-20T19:01:52+08:00">2022-05-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -314,14 +313,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>5.8k</span>
+      <span>6.5k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
+      <span>6 分钟</span>
     </span>
 </div>
 
@@ -335,34 +334,31 @@
         <p><img src="https://huatree.top/image-20220511175224561.png" alt="image-20220511175224561"></p>
 <span id="more"></span>
 
-<div class="note warning"><p>本文教程基于<strong>Windows 10 系统</strong>，docker+Jenkins+github 实现 CI&amp;CD。</p>
+<div class="note warning"><p>本文教程基于<strong>Windows 10 系统</strong>Docker+Jenkins+GitHub 实现 CI&amp;CD。</p>
 </div>
 
-<h2 id="在-docker-中运行-Jenkins"><a href="#在-docker-中运行-Jenkins" class="headerlink" title="在 docker 中运行 Jenkins"></a>在 docker 中运行 Jenkins</h2><p>将 jenkins 作为 docker 容器并从 <a target="_blank" rel="noopener" href="https://hub.docker.com/r/jenkinsci/blueocean/"><code>jenkinsci/blueocean</code></a> Docker 镜像中运行。</p>
-<p>要在 docker 中运行 jenkins，可参考<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># cmd</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为Docker中的一个容器(记住，如果本地没有镜像，这个命令会自动下载)</span></span><br><span class="line">docker run \</span><br><span class="line">  --name jenkins-tutorials \</span><br><span class="line">  --<span class="built_in">rm</span> \</span><br><span class="line">  -u root \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -v jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  -v /d/workspace:/home \</span><br><span class="line">  jenkinsci/blueocean</span><br><span class="line"><span class="comment"># 如果需要退出当前容器的运行状态，输入快捷键ctrl + c</span></span><br></pre></td></tr></table></figure>
+<h2 id="在-Docker-中运行-Jenkins"><a href="#在-Docker-中运行-Jenkins" class="headerlink" title="在 Docker 中运行 Jenkins"></a>在 Docker 中运行 Jenkins</h2><p>将 Jenkins 作为 Docker 容器并从 <a target="_blank" rel="noopener" href="https://hub.docker.com/r/jenkinsci/blueocean/"><code>jenkinsci/blueocean</code></a> Docker 镜像中运行。</p>
+<p>Docker 操作，详见<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
+<h3 id="使用-Docker-Engine-运行-Jenkins"><a href="#使用-Docker-Engine-运行-Jenkins" class="headerlink" title="使用 Docker Engine 运行 Jenkins"></a>使用 Docker Engine 运行 Jenkins</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入cmd终端</span></span><br><span class="line"><span class="comment"># 查看当前wsl版本</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为Docker中的一个容器(记住，如果本地没有镜像，这个命令会自动下载)</span></span><br><span class="line">docker run \</span><br><span class="line">  --name huatree-jenkins \</span><br><span class="line">  --<span class="built_in">rm</span> \</span><br><span class="line">  --restart \</span><br><span class="line">  -u root \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -v jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  -v /home/huatree/document:/home \</span><br><span class="line">  jenkinsci/blueocean</span><br><span class="line"><span class="comment"># 如果需要退出当前容器的运行状态，输入快捷键ctrl + c</span></span><br></pre></td></tr></table></figure>
 
 <p>说明：</p>
 <p><code>wsl</code>：windows10 子系统 Linux，这里用的是微软商店中下载的 Debian，升级到 wsl2</p>
 <p><code>\</code>：linux 环境空格输出</p>
 <p><code>--name</code>：为容器分配名称</p>
 <p><code>--rm</code>：容器退出时自动移除，可以不写，后面用<code>docker rm</code>移除该容器便可。</p>
+<p><code>--restart</code>：容器退出时应用的重启策略</p>
 <p><code>-u</code>：即<code>--user</code>，用户名或 UID（格式：&lt;name|uid&gt;[:&lt;group|gid&gt;]）</p>
 <p><code>-p</code>：即<code>--publish</code>，将容器的端口发布到主机</p>
 <p><code>-v</code>：即<code>--volume</code>，绑定挂载卷</p>
-<p><code>docker run</code> 命令更多参数使用信息，<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/run/">详见官方文档</a></p>
 <p><code>-v jenkins-data:/var/jenkins_home</code>：将容器中的 <code>/var/jenkins_home</code> 目录映射到 Docker <a target="_blank" rel="noopener" href="https://docs.docker.com/engine/admin/volumes/volumes/">volume</a> ，并将其命名为 <code>jenkins-data</code>。如果该卷不存在, 那么 <code>docker run</code> 命令会自动为你创建卷。</p>
 <p><code>-v /var/run/docker.sock:/var/run/docker.sock</code>：在前台运行并将其日志直接发送到您的终端，<a target="_blank" rel="noopener" href="https://docs.docker.com/config/daemon/">详见官网文档</a></p>
-<p><code>-v /d/workspace:/home</code>：将主机上的<code>D:\workspace</code> 目录 (即你的本地)映射到容器的 <code>/home</code> 目录。</p>
-<p>因 win10 系统文件不区分大小写，所以<code>/d/workspace</code>跟<code>/D/workspace</code>效果一样，这里 wsl 中推荐用小写的<code>d</code>。</p>
-<div class="note success"><p>细心的你会发现，win10 上的磁盘挂载到 wsl 或 git 终端中，默认都是小写的盘符。</p>
-</div>
-
-<p><img src="https://huatree.top/image-20220516064234942.png" alt="image-20220516064234942"></p>
-<p>当然，每次<code>docker run...</code>，不方便，可以在需要的路径下配置<code>compose.yaml</code>文件，并在当前路径下的命令行输入<code>docker compose up</code>，它会读取<code>compose.yaml</code>文件，自动执行命令。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">huatree-jenkins:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jenkinsci/blueocean</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">jenkins-data:/var/jenkins_home</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/d/workspace:/home</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">jenkins-data:</span></span><br></pre></td></tr></table></figure>
+<p><code>docker run</code> 命令更多参数使用信息，<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/run/">详见官方文档</a></p>
+<h3 id="使用-Docker-Compose-运行-Jenkins"><a href="#使用-Docker-Compose-运行-Jenkins" class="headerlink" title="使用 Docker Compose 运行 Jenkins"></a>使用 Docker Compose 运行 Jenkins</h3><p>当然，每次<code>docker run...</code>，不方便，可以在需要的路径下配置<code>compose.yaml</code>文件，并在当前路径下的命令行输入<code>docker compose up</code>，它会读取<code>compose.yaml</code>文件，自动执行命令。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">jenkins:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jenkinsci/blueocean</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">jenkins-data:/var/jenkins_home</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/huatree/document:/home</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">jenkins-data:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>更多<code>compse.yaml</code>参数配置，<a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/">详见官方文档</a></p>
+<p><code>Dhudson.model.DirectoryBrowserSupport.CSP=空格</code>：确定为 Jenkins 提供的静态文件发送的内容安全策略标头。有关更多详细信息，请参阅<a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">配置内容安全策略</a></p>
+<p><code>Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</code>：允许本地目录验证。<a target="_blank" rel="noopener" href="https://plugins.jenkins.io/git/#plugin-content-allow-local-checkout">更多信息详见</a></p>
 <h2 id="访问-Jenkins-x2F-Blue-Ocean-Docker-容器"><a href="#访问-Jenkins-x2F-Blue-Ocean-Docker-容器" class="headerlink" title="访问 Jenkins&#x2F;Blue Ocean Docker 容器"></a>访问 Jenkins&#x2F;Blue Ocean Docker 容器</h2><h3 id="解锁-Jenkins"><a href="#解锁-Jenkins" class="headerlink" title="解锁 Jenkins"></a>解锁 Jenkins</h3><p>当你第一次访问一个新的 Jenkins 实例时, 要求你使用自动生成的密码对其进行解锁。</p>
 <p>当在终端&#x2F;命令提示窗口出现两组星号时, 浏览 <code>http://localhost:8080</code> 并等待 <strong>解锁 Jenkins</strong> 页面出现。</p>
 <p><img src="https://huatree.top/image-20220516093617699.png" alt="image-20220516093617699"></p>
@@ -384,10 +380,10 @@
 <h3 id="停止和重启-Jenkins"><a href="#停止和重启-Jenkins" class="headerlink" title="停止和重启 Jenkins"></a>停止和重启 Jenkins</h3><p>在其他时候，如果不用了，你可以通过在终端&#x2F;命令提示窗口输入 <code>Ctrl-C</code>停止 Jenkins&#x2F;Blue Ocean Docker 容器。想用时，执行<code>docker compose start</code>。</p>
 <p>另一种场景：正常启动了 Jenkins，关掉命令行工具，该容器并没有停止运行。如果想停止，则终端执行命令<code>docker compose stop</code>。</p>
 <h2 id="Fork-和-clone-GitHub-示例仓库"><a href="#Fork-和-clone-GitHub-示例仓库" class="headerlink" title="Fork 和 clone GitHub 示例仓库"></a>Fork 和 clone GitHub 示例仓库</h2><p>通过将应用程序源代码所在的示例仓库 fork 到你自己的 Github 账号中， 并 clone 到本地， 你就可以获取一个”Welcome to React”简单 Node.js 和 React 应用程序。</p>
-<p>将示例仓库 <a target="_blank" rel="noopener" href="https://github.com/jenkins-docs/simple-node-js-react-npm-app"><code>simple-node-js-react-npm-app</code></a> fork 到你的账户的 Github 仓库中。接着，将你的 GitHub 账户中的 <code>simple-node-js-react-npm-app</code> 仓库 clone 到你的本地机器。</p>
-<div class="note warning"><p>注意在上文提到的配置映射<code>/home</code>的目录<code>D:\workspace</code>下执行 clone。</p>
-</div>
+<p>将示例仓库 <a target="_blank" rel="noopener" href="https://github.com/jenkins-docs/simple-node-js-react-npm-app"><code>simple-node-js-react-npm-app</code></a> fork 到你的账户的 Github 仓库中。接着，将你的 GitHub 账户中的 <code>simple-node-js-react-npm-app</code> 仓库 clone 到你本地的如下目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/huatree/document/github/simple-node-js-react-npm-app</span><br></pre></td></tr></table></figure>
 
+<p><code>/home/huatree/document</code>是上面<code>compose.yaml</code>的内容，从你主机上的<code>/home/huatree/document</code>目录映射到 Jenkins 容器的 <code>/home</code>。</p>
 <h2 id="在-Jenkins-中创建流水线项目"><a href="#在-Jenkins-中创建流水线项目" class="headerlink" title="在 Jenkins 中创建流水线项目"></a>在 Jenkins 中创建流水线项目</h2><p>回到浏览器打开的 Jenkin 页面，再次登录并点<strong>欢迎来到 Jenkins!<strong>下的</strong>create new jobs</strong> 。 如果没有看到上述内容，请点击左侧的 <strong>新建任务</strong> 。</p>
 <p>在 <strong>输入一个任务名称</strong> 域, 填写你的新的流水线项目的名称 (比如<code>simple-node-js-react-npm-app</code>)</p>
 <p>向下滚动并单击 <strong>流水线</strong>, 然后点击页面末尾的 <strong>确定</strong></p>
@@ -395,9 +391,12 @@
 <p>在 <strong>General&gt;描述</strong> 字域为你的流水线项目做一个简短的描述(比如. <code>An entry-level Pipeline demonstrating how to use Jenkins to build a simple Node.js and React application with npm.</code>)</p>
 <p><img src="https://huatree.top/image-20220516105429577.png" alt="image-20220516105429577"></p>
 <p>在<strong>流水线</strong>栏，在<strong>定义</strong>域，选择 <strong>Pipeline script from SCM</strong> 选项。此选项指示 Jenkins 从源代码管理（SCM）仓库获取你的流水线， 这里的仓库就是你 clone 到本地的 Git 仓库。</p>
-<p>在 <strong>SCM</strong> 域中，选择 <strong>Git</strong>。</p>
-<p>在 <strong>Repository URL</strong> 域中，填写远程仓库地址，如<code>git@github.com:huatree/simple-node-js-react-npm-app.git</code></p>
-<p>在<strong>Credentials</strong>域中，添加<strong>凭据</strong>，选择类型为<code>SSH Username with private key</code>，然后复制粘贴本地的.ssh 目录下的<strong>私钥</strong>，点击<strong>确定</strong>，再选中配置好的凭据。</p>
+<p>在 <strong>SCM</strong> 域中，选择 <strong>Git</strong>。有关<code>GitSCM</code>更多信息，<a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/">详见</a></p>
+<p>在 <strong>Repository URL</strong> 域中，可以有如下填写操作：</p>
+<p>如果填写 clone 到本地的仓库<strong>映射路径</strong>：<code>/home/github/simple-node-js-react-npm-app</code>，<strong>Credentials</strong>项就默认即可，无需添加凭据，因为<code>compose.yaml</code>文件已经配置了如下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br></pre></td></tr></table></figure>
+
+<p>如果填写的是远程仓库路径：如<code>git@github.com:huatree/simple-node-js-react-npm-app.git</code>，则在<strong>Credentials</strong>域中，添加<strong>凭据</strong>，选择类型为<code>SSH Username with private key</code>，然后复制粘贴本地的.ssh 目录下的<strong>私钥</strong>，点击<strong>确定</strong>，再选中配置好的凭据。</p>
 <p><img src="https://huatree.top/image-20220516105841594.png" alt="image-20220516105841594"></p>
 <p>其他项默认即可（后续可根据需要自行修改配置），点击 <strong>保存</strong> 保存你的流水线项目。你现在可以开始创建你的 <code>Jenkinsfile</code>，这些文件会被添加到你的本地仓库。</p>
 <h3 id="将你的初始流水线创建为-Jenkinsfile"><a href="#将你的初始流水线创建为-Jenkinsfile" class="headerlink" title="将你的初始流水线创建为 Jenkinsfile"></a>将你的初始流水线创建为 Jenkinsfile</h3><p>在<code>simple-node-js-react-npm-app</code>项目根目录下创建<code>Jenkinsfile</code>文件，内容如下：</p>
@@ -443,6 +442,8 @@
 </ul>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.jenkins.io/zh/doc/tutorials/build-a-node-js-and-react-app-with-npm/#%E4%BD%BF%E7%94%A8npm%E6%9E%84%E5%BB%BAnode-js%E5%92%8Creact%E5%BA%94%E7%94%A8">使用 npm 构建 Node.js 和 React 应用</a></p>
 <p>[2] <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/62253474/jenkins-invalid-agent-type-docker-specified-must-be-one-of-any-label-none">Jenkins. Invalid agent type “docker” specified. Must be one of [any, label, none]</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://issues.jenkins.io/browse/JENKINS-68571?jql=text%20~%20%22ALLOW_LOCAL_CHECKOUT%22">ALLOW_LOCAL_CHECKOUT set but local checkout not available</a></p>
+<p>[4] <a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/#pipeline-scm-step">Pipeline: SCM Step</a></p>
 
     </div>
 
@@ -474,7 +475,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://huatree.gitee.io/2022/05/14/20220514-docker+Jenkins+github/" title="docker+Jenkins+github">https://huatree.gitee.io/2022/05/14/20220514-docker+Jenkins+github/</a>
+      <a href="https://huatree.gitee.io/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/" title="Docker+Jenkins+GitHub">https://huatree.gitee.io/2022/05/14/20220514-Docker + Jenkins + GitHub/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -548,13 +549,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">100k</span>
+    <span title="站点总字数">101k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:31</span>
+    <span title="站点阅读时长">1:32</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -599,7 +600,7 @@
 
 <link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"7f41736493ec8aa6f00db8b3fdf7cee5"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"daf67834eefd9e1434d2945dd3b8cd8a"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
