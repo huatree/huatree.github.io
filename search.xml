@@ -201,6 +201,30 @@
       </tags>
   </entry>
   <entry>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+<span id="more"></span>
+
+<blockquote>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+</blockquote>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>npm常用命令</title>
     <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220507212813517.png" alt="image-20220507212813517"></p>
@@ -233,30 +257,6 @@
       </categories>
       <tags>
         <tag>npm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
-<span id="more"></span>
-
-<blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
-</blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -311,6 +311,40 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发应用中遇到的问题与总结</title>
+    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
+<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
+<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意</p>
+<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
+</blockquote>
+<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
+<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
+<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
+<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
+<blockquote>
+<p>! 注意</p>
+<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
+<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
+<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -805,40 +839,6 @@
         <tag>CSS</tag>
         <tag>阅读</tag>
         <tag>重构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue开发应用中遇到的问题与总结</title>
-    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
-<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
-<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意</p>
-<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
-</blockquote>
-<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
-<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
-<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
-<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
-<blockquote>
-<p>! 注意</p>
-<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
-<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
-<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -1364,6 +1364,105 @@
       </tags>
   </entry>
   <entry>
+    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
+    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
+    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自程序员鱼皮 </p>
+</div>
+
+<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
+<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
+<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
+<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
+<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
+<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
+<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
+<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
+<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
+<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
+<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
+<p>整体的思想就是从整体到局部，由大到小吧。</p>
+<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
+<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
+<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
+<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
+<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
+<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
+<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
+<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
+<p>所以这也是为什么要多了解和积累一些技术。</p>
+<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
+<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
+<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
+<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
+<ul>
+<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
+<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
+</li>
+<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
+</li>
+</ul>
+<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
+<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
+<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
+]]></content>
+      <categories>
+        <category>经典文章</category>
+      </categories>
+      <tags>
+        <tag>职场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>七牛云+PicGo+Typora搭建图床</title>
+    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
+<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
+</blockquote>
+<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
+<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
+<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
+<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
+<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
+<p>在自定义源站域名栏绑定域名</p>
+<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
+<blockquote>
+<p>! 注意</p>
+<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
+</blockquote>
+<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
+<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
+<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
+<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
+<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
+<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
+<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
+<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
+<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
+<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
+<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
+<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
+<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
+<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
+<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
+<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
+<p>最后，可以验证一下图片上传。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
+<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
+<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
+<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>七牛云</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【转载】从输入URL开始建立前端知识体系</title>
     <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%BC%80%E5%A7%8B%E5%BB%BA%E7%AB%8B%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB/</url>
     <content><![CDATA[<p>看到这个，不借助搜索引擎，自己的心里是否有一个答案？对于某些执着于技术的大佬，大概会有一些回答吧：（猜的） - 从键盘谈起到系统交互，从浏览器到CPU，从调度机制到系统内核，从数据请求到二进制、汇编，从GPU绘图到LCD显示，然后再分析系统底层的进程、内存等等。总之，从软件到硬件，到材料，到分子，原子，量子，薛定谔的猫，人类起源，宇宙大爆炸，平行宇宙？感觉都毫无违和感。</p>
@@ -1836,105 +1935,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
-    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
-    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
-<span id="more"></span>
-
-<div class="note info"><p>文章转载自程序员鱼皮 </p>
-</div>
-
-<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
-<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
-<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
-<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
-<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
-<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
-<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
-<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
-<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
-<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
-<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
-<p>整体的思想就是从整体到局部，由大到小吧。</p>
-<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
-<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
-<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
-<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
-<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
-<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
-<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
-<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
-<p>所以这也是为什么要多了解和积累一些技术。</p>
-<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
-<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
-<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
-<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
-<ul>
-<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
-<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
-</li>
-<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
-</li>
-</ul>
-<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
-<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
-<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
-]]></content>
-      <categories>
-        <category>经典文章</category>
-      </categories>
-      <tags>
-        <tag>职场</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>七牛云+PicGo+Typora搭建图床</title>
-    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
-<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
-</blockquote>
-<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
-<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
-<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
-<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
-<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
-<p>在自定义源站域名栏绑定域名</p>
-<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
-<blockquote>
-<p>! 注意</p>
-<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
-</blockquote>
-<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
-<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
-<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
-<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
-<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
-<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
-<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
-<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
-<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
-<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
-<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
-<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
-<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
-<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
-<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
-<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
-<p>最后，可以验证一下图片上传。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
-<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
-<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
-<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>七牛云</tag>
-        <tag>图床</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>域名申请及备案</title>
     <url>/2022/04/01/20220401-%E5%9F%9F%E5%90%8D%E7%94%B3%E8%AF%B7%E5%8F%8A%E5%A4%87%E6%A1%88/</url>
     <content><![CDATA[<blockquote>
@@ -2006,6 +2006,30 @@
       </tags>
   </entry>
   <entry>
+    <title>你的node-sass安装报错了吗</title>
+    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
+    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
+<span id="more"></span>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
+<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
+<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
+<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
+<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
+<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
+<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
+<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node-sass</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>移动端1px问题</title>
     <url>/2022/04/18/20220418-%E7%A7%BB%E5%8A%A8%E7%AB%AF1px%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h3 id="UI设计稿"><a href="#UI设计稿" class="headerlink" title="UI设计稿"></a>UI设计稿</h3><p>移动端H5开发中，UI设计稿中边框为1px，前端在开发过程中如果出现border:1px（或width: 1px，height: 1px，…），测试会发现在HiDPI或Retina屏机型中，1px会比较粗。</p>
@@ -2049,30 +2073,6 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你的node-sass安装报错了吗</title>
-    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
-    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
-<span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
-<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
-<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
-<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
-<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
-<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
-<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
-<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node-sass</tag>
       </tags>
   </entry>
   <entry>
@@ -2502,6 +2502,51 @@
       </tags>
   </entry>
   <entry>
+    <title>3种方法产生gitignore文件</title>
+    <url>/2022/05/21/20220521-3%E7%A7%8D%E6%96%B9%E6%B3%95%E4%BA%A7%E7%94%9Fgitignore%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>当项目不方便管理，偶尔有定制性需求，有冗余的内容……我们可以拥有<code>gitignore</code>陪伴。</p>
+<p><img src="https://huatree.top/image-20220521130010640.png" alt="image-20220521130010640"></p>
+<span id="more"></span>
+
+<h2 id="github-x2F-gitignore"><a href="#github-x2F-gitignore" class="headerlink" title="github&#x2F;gitignore"></a>github&#x2F;gitignore</h2><p>这是 GitHub 的<a href="http://git-scm.com/docs/gitignore"><code>.gitignore</code></a>文件模板集合。在创建新的存储库和文件时，我们使用此列表来填充<code>.gitignore</code>GitHub.com 界面中可用的模板选择器。</p>
+<p>有关<code>.gitignore</code>文件如何工作以及如何使用它们的更多信息，以下资源是一个很好的起点：</p>
+<ul>
+<li><a href="http://git-scm.com/book">Pro Git</a>书籍的<a href="https://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository#_ignoring">忽略文件章节</a>。</li>
+<li>GitHub 帮助站点上的<a href="https://help.github.com/articles/ignoring-files">忽略文件文章。</a></li>
+<li>gitignore <a href="http://git-scm.com/docs/gitignore">(5)</a>手册页。</li>
+</ul>
+<p><a href="https://github.com/github/gitignore">更多信息详见</a></p>
+<h2 id="gitignore-io"><a href="#gitignore-io" class="headerlink" title="gitignore.io"></a>gitignore.io</h2><p><code>gitignore.io</code>是一个 Web 服务，旨在帮助您为 Git 存储库创建 <code>.gitignore</code> 文件。</p>
+<p><a href="https://docs.gitignore.io/">官方使用说明</a></p>
+<p><a href="https://www.toptal.com/developers/gitignore">更多信息详见</a></p>
+<h2 id="gitignore-Generator-for-Visual-Studio-Code"><a href="#gitignore-Generator-for-Visual-Studio-Code" class="headerlink" title=".gitignore Generator for Visual Studio Code"></a>.gitignore Generator for Visual Studio Code</h2><p><a href="https://gitignore.io/">让您使用 gitignore.io</a> API 轻松快速地<code>.gitignore</code>为您的项目生成文件。</p>
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ul>
+<li><strong>便于使用</strong></li>
+<li><strong>smart</strong> - 让您更新现有<code>.gitignore</code>文件</li>
+<li><strong>自定义规则</strong>- 在更新时保留用户定义的规则</li>
+<li><strong>轻量级</strong>- 没有外部依赖！</li>
+</ul>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>此扩展程序的主要目的是生成<code>.gitignore</code>文件，但它也足够聪明，可以知道您是否已经拥有一个文件，或者您是否向其中添加了自定义规则。它也是操作系统感知的，因此它会为您预先检查该复选框。</p>
+<p>要使用扩展，请转到<strong>命令面板</strong>（<code>Shift+CMD+P</code>在 macOS 或<code>Shift+CTRL+P</code>Windows 上）并启动<code>Generate .gitignore File</code>命令。</p>
+<h3 id="案例-：您还没有-gitignore-文件"><a href="#案例-：您还没有-gitignore-文件" class="headerlink" title="案例 ：您还没有 .gitignore 文件"></a>案例 ：您还没有 .gitignore 文件</h3><p>如果您还没有<code>.gitignore</code>文件，系统会立即提示您提供所有可用工具、框架等可供选择的列表。<code>Space</code>您可以通过单击复选框来选择或取消选择项目。模糊搜索也可用于加快速度。</p>
+<p>完成后按 Return ( <code>Enter</code>)，您的<code>.gitignore</code>文件将生成并保存在磁盘上。</p>
+<p><img src="https://github.com/piotrpalarz/vscode-gitignore-generator/raw/master/images/readme/1.gif" alt="3url-01"></p>
+<p>有关更多详细信息，请参阅<a href="https://marketplace.visualstudio.com/items?itemName=piotrpalarz.vscode-gitignore-generator">.gitignore Generator</a></p>
+<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>开发中常遇到的一类问题：</p>
+<p>当我们发现已 push 的文件，本不应该 push 上去，而是走<code>.gitignore</code>，却因<code>.gitignore</code>文件中漏掉了该文件的排除。等再次加入到<code>.gitignore</code>中，<code>git status</code>时，它不起作用了。</p>
+<p>想要挽回失误，可以有如下操作：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除暂存区文件前查看工作区状态</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 删除暂存区文件（不会改变工作区和本地版本库）</span></span><br><span class="line">git <span class="built_in">rm</span> --cached -r .</span><br><span class="line"><span class="comment"># 删除暂存区文件后再次查看工作区状态</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 如果需要一次添加所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># or 添加单个或几个</span></span><br><span class="line">git add &lt;file1&gt; &lt;file2&gt; &lt;...&gt;</span><br><span class="line"><span class="comment"># 提交到本地版本库</span></span><br><span class="line">git commit -m <span class="string">&quot;content&quot;</span></span><br><span class="line"><span class="comment"># 推送到上游版本库</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>这样，你本地需要忽略的指定文件或目录仍在，上游版本库即远程仓库则没有，<code>.gitignore</code>生效。</p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>github同步并自动部署gitee-pages</title>
     <url>/2022/05/18/20220518-github%E5%90%8C%E6%AD%A5%E5%B9%B6%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2gitee-pages/</url>
     <content><![CDATA[<p>由于 Gitee Pages 的访问速度很快，很多朋友会选择 Gitee Pages 部署项目（如：个人博客、开源项目国内镜像站点）。但是它不像 GitHub Pages 那样，一提交代码就能自动更新 Pages，因为 Gitee 的自动部署属于 Gitee Pages Pro 的服务。</p>
@@ -2571,48 +2616,49 @@
       </tags>
   </entry>
   <entry>
-    <title>3种方法产生gitignore文件</title>
-    <url>/2022/05/21/20220521-3%E7%A7%8D%E6%96%B9%E6%B3%95%E4%BA%A7%E7%94%9Fgitignore%E6%96%87%E4%BB%B6/</url>
-    <content><![CDATA[<p>当项目不方便管理，偶尔有定制性需求，有冗余的内容……我们可以拥有<code>gitignore</code>陪伴。</p>
-<p><img src="https://huatree.top/image-20220521130010640.png" alt="image-20220521130010640"></p>
+    <title>gitlab搭建与使用</title>
+    <url>/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。</p>
 <span id="more"></span>
 
-<h2 id="github-x2F-gitignore"><a href="#github-x2F-gitignore" class="headerlink" title="github&#x2F;gitignore"></a>github&#x2F;gitignore</h2><p>这是 GitHub 的<a href="http://git-scm.com/docs/gitignore"><code>.gitignore</code></a>文件模板集合。在创建新的存储库和文件时，我们使用此列表来填充<code>.gitignore</code>GitHub.com 界面中可用的模板选择器。</p>
-<p>有关<code>.gitignore</code>文件如何工作以及如何使用它们的更多信息，以下资源是一个很好的起点：</p>
-<ul>
-<li><a href="http://git-scm.com/book">Pro Git</a>书籍的<a href="https://git-scm.com/book/en/Git-Basics-Recording-Changes-to-the-Repository#_ignoring">忽略文件章节</a>。</li>
-<li>GitHub 帮助站点上的<a href="https://help.github.com/articles/ignoring-files">忽略文件文章。</a></li>
-<li>gitignore <a href="http://git-scm.com/docs/gitignore">(5)</a>手册页。</li>
-</ul>
-<p><a href="https://github.com/github/gitignore">更多信息详见</a></p>
-<h2 id="gitignore-io"><a href="#gitignore-io" class="headerlink" title="gitignore.io"></a>gitignore.io</h2><p><code>gitignore.io</code>是一个 Web 服务，旨在帮助您为 Git 存储库创建 <code>.gitignore</code> 文件。</p>
-<p><a href="https://docs.gitignore.io/">官方使用说明</a></p>
-<p><a href="https://www.toptal.com/developers/gitignore">更多信息详见</a></p>
-<h2 id="gitignore-Generator-for-Visual-Studio-Code"><a href="#gitignore-Generator-for-Visual-Studio-Code" class="headerlink" title=".gitignore Generator for Visual Studio Code"></a>.gitignore Generator for Visual Studio Code</h2><p><a href="https://gitignore.io/">让您使用 gitignore.io</a> API 轻松快速地<code>.gitignore</code>为您的项目生成文件。</p>
-<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><ul>
-<li><strong>便于使用</strong></li>
-<li><strong>smart</strong> - 让您更新现有<code>.gitignore</code>文件</li>
-<li><strong>自定义规则</strong>- 在更新时保留用户定义的规则</li>
-<li><strong>轻量级</strong>- 没有外部依赖！</li>
-</ul>
-<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><p>此扩展程序的主要目的是生成<code>.gitignore</code>文件，但它也足够聪明，可以知道您是否已经拥有一个文件，或者您是否向其中添加了自定义规则。它也是操作系统感知的，因此它会为您预先检查该复选框。</p>
-<p>要使用扩展，请转到<strong>命令面板</strong>（<code>Shift+CMD+P</code>在 macOS 或<code>Shift+CTRL+P</code>Windows 上）并启动<code>Generate .gitignore File</code>命令。</p>
-<h3 id="案例-：您还没有-gitignore-文件"><a href="#案例-：您还没有-gitignore-文件" class="headerlink" title="案例 ：您还没有 .gitignore 文件"></a>案例 ：您还没有 .gitignore 文件</h3><p>如果您还没有<code>.gitignore</code>文件，系统会立即提示您提供所有可用工具、框架等可供选择的列表。<code>Space</code>您可以通过单击复选框来选择或取消选择项目。模糊搜索也可用于加快速度。</p>
-<p>完成后按 Return ( <code>Enter</code>)，您的<code>.gitignore</code>文件将生成并保存在磁盘上。</p>
-<p><img src="https://github.com/piotrpalarz/vscode-gitignore-generator/raw/master/images/readme/1.gif" alt="3url-01"></p>
-<p>有关更多详细信息，请参阅<a href="https://marketplace.visualstudio.com/items?itemName=piotrpalarz.vscode-gitignore-generator">.gitignore Generator</a></p>
-<h2 id="另外"><a href="#另外" class="headerlink" title="另外"></a>另外</h2><p>开发中常遇到的一类问题：</p>
-<p>当我们发现已 push 的文件，本不应该 push 上去，而是走<code>.gitignore</code>，却因<code>.gitignore</code>文件中漏掉了该文件的排除。等再次加入到<code>.gitignore</code>中，<code>git status</code>时，它不起作用了。</p>
-<p>想要挽回失误，可以有如下操作：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除暂存区文件前查看工作区状态</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 删除暂存区文件（不会改变工作区和本地版本库）</span></span><br><span class="line">git <span class="built_in">rm</span> --cached -r .</span><br><span class="line"><span class="comment"># 删除暂存区文件后再次查看工作区状态</span></span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 如果需要一次添加所有文件到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="comment"># or 添加单个或几个</span></span><br><span class="line">git add &lt;file1&gt; &lt;file2&gt; &lt;...&gt;</span><br><span class="line"><span class="comment"># 提交到本地版本库</span></span><br><span class="line">git commit -m <span class="string">&quot;content&quot;</span></span><br><span class="line"><span class="comment"># 推送到上游版本库</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<div class="note info"><p>GitHub 如果使用私有仓库，是需要付费的；而 GitLab 可以在上面搭建私人的免费仓库。</p>
+</div>
 
-<p>这样，你本地需要忽略的指定文件或目录仍在，上游版本库即远程仓库则没有，<code>.gitignore</code>生效。</p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>GitLab 有社区版（免费）和企业版（收费）。本文示例以 GitLab 社区版为准。</p>
+<h3 id="Docker-Compose-安装-GitLab"><a href="#Docker-Compose-安装-GitLab" class="headerlink" title="Docker Compose 安装 GitLab"></a>Docker Compose 安装 GitLab</h3><p>需用到 Docker，有关更多详细信息，请参阅<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
+<p>使用<code>docker-gitlab</code>仓库中的<a href="https://github.com/sameersbn/docker-gitlab/blob/master/docker-compose.yml">docker-compose.yml</a>。复制到本地<code>compose.yaml</code>中，修改如下部分内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13980:80&#x27;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13922:22&#x27;</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_PORT=13980</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_SSH_PORT=13922</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，在该文件所在目录下打开终端，输入<code>docker compsoe up</code>。运行成功后，浏览器打开如下 URL：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:13980</span><br><span class="line"><span class="comment"># 会自动定位到</span></span><br><span class="line">http://127.0.0.1:13980/users/sign_in</span><br></pre></td></tr></table></figure>
+
+<p><code>127.0.0.1</code>可替换成<code>localhost</code>。</p>
+<p>默认管理员账号为 <strong>root</strong>，根据页面提示<code>Please create a password for your new account.</code>设置<code>New password</code>。</p>
+<p><img src="https://huatree.top/image-20220521191137698.png" alt="image-20220521191137698"></p>
+<p>点击<strong>Change your password</strong>，跳转到登录页面，使用<code>root</code>和刚设置的密码登录。</p>
+<p><img src="https://huatree.top/image-20220521191623991.png" alt="image-20220521191623991"></p>
+<p>初次登录成功后的页面如下</p>
+<p><img src="https://huatree.top/image-20220521192006609.png" alt="image-20220521192006609"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>根据实际情况，可切换中文页面方便使用：</p>
+<p>点击右上角头像 &gt; Preferences &gt; Localization &gt; 设置简体中文并点击保存，切换其他页面生效。</p>
+<h3 id="GitLab-的权限控制"><a href="#GitLab-的权限控制" class="headerlink" title="GitLab 的权限控制"></a>GitLab 的权限控制</h3><p>以默认的<code>GitLab Instance/Monitoring</code>仓库为例剖析。进入该页面，点击<strong>邀请成员</strong>，弹窗如下所示。</p>
+<p><img src="https://huatree.top/image-20220521195929833.png" alt="image-20220521195929833"></p>
+<p>相关角色详细信息，点击<strong>了解更多</strong>。</p>
+<p>更多权限与角色信息，<a href="https://docs.gitlab.com/ee/user/permissions.html#permissions-and-roles">详见官方文档</a></p>
+<p>管理员使用 GitLab 一般会考虑的点：</p>
+<ul>
+<li>以组为单元，设置管理员</li>
+<li>熟悉 Merge Request，写好 git commit</li>
+<li>及时回收权限，或者设置过期时间</li>
+</ul>
+<p>有人可能会问，GitHub 有没有 GitLab 群组的感觉呢。答案是有的，与 GitHub 的<a href="https://github.com/organizations/plan">organizations</a>项对应。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.gitlab.com/ee/install/docker.html">GitLab Docker images</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>gitlab</tag>
       </tags>
   </entry>
 </search>
