@@ -49,50 +49,6 @@
       </tags>
   </entry>
   <entry>
-    <title>搞定uni-app</title>
-    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
-    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
-<p><img src="https://huatree.top/image-20220428083519310.png" alt="image-20220428083519310"></p>
-<span id="more"></span>
-
-<blockquote>
-<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
-</blockquote>
-<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
-<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
-<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
-<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
-<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
-<ul>
-<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
-</ul>
-<p><img src="https://huatree.top/image-20220430063717154.png" alt="image-20220430063717154"></p>
-<ul>
-<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
-</li>
-<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
-</li>
-</ul>
-<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
-<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
-<p>插件安装需要登录 Dcloud 账号</p>
-</blockquote>
-<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
-
-<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
-<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
-<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>uni-app</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>npm自定义包发布</title>
     <url>/2021/05/07/20210507-npm%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E5%8F%91%E5%B8%83/</url>
     <content><![CDATA[<p>本文以自定义工具函数库为例，讲解工具包项目从发布到 npm 中央仓库、维护及使用的过程。</p>
@@ -201,27 +157,47 @@
       </tags>
   </entry>
   <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+    <title>搞定uni-app</title>
+    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
+    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
+<p><img src="https://huatree.top/image-20220428083519310.png" alt="image-20220428083519310"></p>
 <span id="more"></span>
 
 <blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
 </blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
+<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
+<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
+<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
+<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
+<ul>
+<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
+</ul>
+<p><img src="https://huatree.top/image-20220430063717154.png" alt="image-20220430063717154"></p>
+<ul>
+<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
+</li>
+<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
+</li>
+</ul>
+<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
+<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
+<p>插件安装需要登录 Dcloud 账号</p>
+</blockquote>
+<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
+
+<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
+<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
 ]]></content>
       <categories>
-        <category>生活滋味</category>
+        <category>成长经历</category>
       </categories>
       <tags>
-        <tag>工具</tag>
+        <tag>uni-app</tag>
       </tags>
   </entry>
   <entry>
@@ -257,6 +233,30 @@
       </categories>
       <tags>
         <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+<span id="more"></span>
+
+<blockquote>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+</blockquote>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
       </tags>
   </entry>
   <entry>
@@ -311,40 +311,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue开发应用中遇到的问题与总结</title>
-    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
-<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
-<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意</p>
-<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
-</blockquote>
-<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
-<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
-<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
-<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
-<blockquote>
-<p>! 注意</p>
-<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
-<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
-<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -842,6 +808,40 @@
       </tags>
   </entry>
   <entry>
+    <title>Vue开发应用中遇到的问题与总结</title>
+    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
+<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
+<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意</p>
+<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
+</blockquote>
+<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
+<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
+<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
+<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
+<blockquote>
+<p>! 注意</p>
+<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
+<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
+<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>static与new.target关键字</title>
     <url>/2021/07/16/20220303-static%E4%B8%8Enew.target%E5%85%B3%E9%94%AE%E5%AD%97/</url>
     <content><![CDATA[<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static 在类中定义静态方法。</p>
@@ -869,216 +869,6 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>从npm script到node调试</title>
-    <url>/2022/03/04/20220304-%E4%BB%8Enpm-script%E5%88%B0node%E8%B0%83%E8%AF%95/</url>
-    <content><![CDATA[<h2 id="npm-script"><a href="#npm-script" class="headerlink" title="npm script"></a>npm script</h2><h3 id="初体验"><a href="#初体验" class="headerlink" title="初体验"></a>初体验</h3><p>package.json</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;serve&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node build.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>命令行下使用<code>npm run</code>命令，就可以执行这段脚本。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run serve</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">$ node build.js</span><br></pre></td></tr></table></figure>
-
-<h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p><code>package.json</code> 文件里面，使用 <code>script</code> 字段定义脚本命令。它有以下优点：</p>
-<ul>
-<li>项目的相关脚本，可以集中在一个地方。</li>
-<li>不同项目的脚本命令，只要功能相同，就可以有同样的对外接口。用户不需要知道怎么测试你的项目，只要运行<code>npm run test</code>即可。</li>
-<li>可以利用 npm 提供的很多辅助功能。</li>
-</ul>
-<p>查看当前项目的所有 npm 脚本命令，可以使用不带任何参数的<code>npm run</code>命令。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://docs.npmjs.com/cli/v8/using-npm/scripts">官方用法详见</a></p>
-<p>官方：脚本从包文件夹的根目录运行，无论<code>npm</code>调用时当前工作目录是什么。如果您希望您的脚本根据您所在的子目录使用不同的行为，您可以使用<code>INIT_CWD</code>环境变量，它包含您<strong>运行时</strong>所在的完整路径<code>npm run</code></p>
-<p>解读：INIT_CWD 好比变量 NODE_ENV，获取它的值局限于运行时所在的完整路径的文件，不能在该运行时的脚本引入的模块中使用，要想在模块当中直接使用，我们还需要一些配置</p>
-<ul>
-<li>webpack4 之前可以使用<strong>DefinePlugin</strong>插件配置</li>
-<li>webpack4 版本之后可以通过 mode 选项实现</li>
-</ul>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>每当执行<code>npm run</code>，就会自动新建一个 Shell，在这个 Shell 里面执行指定的脚本命令。因此，只要是 Shell（一般是 Bash）可以运行的命令，就可以写在 npm 脚本里面。<a href="https://www.npmjs.cn/cli/run-script/">官方用法详见</a></p>
-<p>除了 Shell 预先存在的<code>PATH</code>，<code>npm run</code>添加 <code>node_modules/.bin</code>到<code>PATH</code>提供的脚本中。本地安装的依赖项提供的任何二进制文件都可以在没有<code>node_modules/.bin</code> 前缀的情况下使用。例如，如果你的包中有一个<code>devDependency</code>on <code>tap</code>，你应该写：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>而不用写成下面这样。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node_modules/.bin/tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="npm-脚本执行顺序"><a href="#npm-脚本执行顺序" class="headerlink" title="npm 脚本执行顺序"></a>npm 脚本执行顺序</h4><p>如果 npm 脚本里面需要执行多个任务，那么需要明确它们的执行顺序。</p>
-<ul>
-<li><p>并行执行，可以使用<code>&amp;</code>符号。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run script1.js &amp; npm run script2.js</span><br></pre></td></tr></table></figure>
-
-<p>而的 package.json 中的 script 写法。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>继发执行（即只有前一个任务成功，才执行下一个任务），可以使用<code>&amp;&amp;</code>符号。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp;&amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<h4 id="npm-脚本传入参数"><a href="#npm-脚本传入参数" class="headerlink" title="npm 脚本传入参数"></a>npm 脚本传入参数</h4><p>要使用<code>--</code>标明</p>
-<h2 id="node-调试"><a href="#node-调试" class="headerlink" title="node 调试"></a>node 调试</h2><p>Node.js 包含了一个命令行的调试实用工具。 Node.js 调试器客户端不是功能齐全的调试器，但可以进行简单的步进和检查。要使用它，则使用 <code>inspect</code> 参数启动 Node.js，后跟要调试的脚本的路径。</p>
-<h3 id="node-vscode-调试"><a href="#node-vscode-调试" class="headerlink" title="node + vscode 调试"></a>node + vscode 调试</h3><p>标记 debugger 位置，然后借助 vscode 的调试工具即可实现。<a href="https://code.visualstudio.com/docs/editor/debugging">官方用法详见</a></p>
-<h3 id="node-chrome-x2F-x2F-inspect-调试"><a href="#node-chrome-x2F-x2F-inspect-调试" class="headerlink" title="node + chrome:&#x2F;&#x2F;inspect 调试"></a>node + chrome:&#x2F;&#x2F;inspect 调试</h3><p>V8 检查器集成允许将 Chrome 开发者工具绑定到 Node.js 实例以进行调试和分析。</p>
-<p>V8 检查器可以通过在启动 Node.js 应用程序时传入 <code>--inspect</code> 标志来启用。 也可以使用该标志提供自定义的端口，例如 <code>--inspect=9222</code> 将接受端口 9222 上的开发者工具连接。</p>
-<p>要中断应用程序代码的第一行，则传入 <code>--inspect-brk</code> 标志而不是 <code>--inspect</code>。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ node --inspect-brk index.js</span><br><span class="line">Debugger listening on ws://127.0.0.1:9229/dc9010dd-f8b8-4ac5-a510-c1a114ec7d29</span><br><span class="line">For <span class="built_in">help</span>, see: https://nodejs.org/en/docs/inspector</span><br></pre></td></tr></table></figure>
-
-<h3 id="从-npm-script-到-node-调试"><a href="#从-npm-script-到-node-调试" class="headerlink" title="从 npm script 到 node 调试"></a>从 npm script 到 node 调试</h3><p>在实际开发调试过程中，我们有这样一个需求，nodejs 环境下使用 package.json 脚本设置项目环境变量，这时我们会使用 process.env.NODE_ENV （<a href="https://www.jianshu.com/p/83e8909fc1cd">NODE_ENV</a> 是变量名）进行获取当前的环境变量进行区分不同的运行环境。</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>编辑完脚本以后当使用脚本的时候发现没有生效，这是因为 windows 不支持直接设置 <code>NODE_ENV=development</code>的方式。</p>
-<blockquote>
-<p>tips</p>
-<p>当您使用这样 package.json 中的 scripts 来设置环境变量时，大多数 Windows 命令提示符都会阻塞 <code>NODE_ENV=development</code>。（例外是<a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Windows</a>，它使用本机 Bash。）同样，windows 和 POSIX 命令使用环境变量的方式也有所不同。在 POSIX 中，您使用：<code>$ENV_VAR</code> ，在 Windows 上，您使用<code>%ENV_VAR%</code>。</p>
-</blockquote>
-<p><code>NODE_ENV=development</code>在 windows 环境下会报错，需要改为<code>set NODE_ENV=development</code>，而 Mac 环境的方式是 <code>export NODE_ENV=development</code> 。为了解决这个差异，可以使用<code>cross-env</code>跨平台的设置和使用环境变量。</p>
-<p><code>cross-env</code>使您可以拥有一个命令，而无需担心为平台正确设置或使用环境变量。就像在 POSIX 系统上运行时一样设置它，并且<code>cross-env</code>会正确设置它。<a href="https://github.com/kentcdodds/cross-env#usage">官方用法详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env</span><br></pre></td></tr></table></figure>
-
-<p>对应的 package.json script 配置如下：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cross-env NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>接着，我们来分析一下上面的 package.json 片段：</p>
-<p><code>cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0</code></p>
-<ol>
-<li>环境变量 NODE_ENV 赋值为 development，以便运行时的 webpack.dev.conf.js 下，可以通过 process.env.NODE_ENV 访问值</li>
-<li>执行 webpack-dev-server 命令，它带有–inline， –progress ， –config ，–host 四个参数，进而执行 build&#x2F;webpack.dev.conf.js</li>
-</ol>
-<p>使用 cross-env，webpack-dev-server 这 2 个命令，需要提前安装好开发依赖包。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env webpack-dev-server</span><br></pre></td></tr></table></figure>
-
-<p>cross-env 的用法，上文有提到，webpack-dev-server<a href="https://github.com/webpack/webpack-dev-server#readme">官方用法详见</a>。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html">npm scripts 使用指南</a></p>
-<p>[2] <a href="http://nodejs.cn/api/debugger.html">node - debugger 调试器</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node</tag>
-        <tag>webpack</tag>
-        <tag>debug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>记录一次DIY电脑的全过程</title>
-    <url>/2022/03/05/20220305-%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1DIY%E7%94%B5%E8%84%91%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="硬件准备"><a href="#硬件准备" class="headerlink" title="硬件准备"></a>硬件准备</h2><table>
-<thead>
-<tr>
-<th>序号</th>
-<th>硬件</th>
-<th>名称</th>
-<th>售价</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td>CPU</td>
-<td>i5-10400(版 U 套装)</td>
-<td>1799</td>
-</tr>
-<tr>
-<td>2</td>
-<td>主板</td>
-<td>微星 B560M WIFI</td>
-<td>0</td>
-</tr>
-<tr>
-<td>3</td>
-<td>显卡</td>
-<td>蓝宝石 RX6500XT 白金版</td>
-<td>1899</td>
-</tr>
-<tr>
-<td>4</td>
-<td>硬盘</td>
-<td>凯侠 RC20 M.2 NVME PCIE3.0 1T</td>
-<td>579</td>
-</tr>
-<tr>
-<td>5</td>
-<td>内存</td>
-<td>威刚 DDR4 3200 2*8G</td>
-<td>369</td>
-</tr>
-<tr>
-<td>6</td>
-<td>散热器</td>
-<td>利民 AS120 刺灵</td>
-<td>99</td>
-</tr>
-<tr>
-<td>7</td>
-<td>电源</td>
-<td>长城 额定 500W HOPE-6000DS(双 8pin)</td>
-<td>219</td>
-</tr>
-<tr>
-<td>8</td>
-<td>机箱</td>
-<td>游戏帝国 寂静岭 隔音</td>
-<td>109</td>
-</tr>
-<tr>
-<td>9</td>
-<td>显示器</td>
-<td>AOC 27 英寸 AH-IPS 广视角 75Hz HDR Mode Type-C 接口 办公节能 低蓝光不闪 旋转升降电脑显示器 I2790PC</td>
-<td>1199</td>
-</tr>
-<tr>
-<td>10</td>
-<td>键盘</td>
-<td>戴尔有线键盘 KB216 黑色</td>
-<td>40.92</td>
-</tr>
-<tr>
-<td>11</td>
-<td>鼠标</td>
-<td>牧马人无线鼠标可充电式 磨砂黑(银侧翼) 无声静音 800 毫安大锂电</td>
-<td>29.9</td>
-</tr>
-<tr>
-<td>12</td>
-<td>音箱</td>
-<td>小度智能音箱 mini 版 随身蓝牙音箱 迷你音响</td>
-<td>65</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>tips</p>
-<p>盒装 CPU 自带散热器的，对于是否有必要再购买散热器还是散片 CPU + 主板 + 散热器组合，自己权衡抉择。</p>
-</blockquote>
-<h2 id="组装"><a href="#组装" class="headerlink" title="组装"></a>组装</h2><p>这里，涉及上面硬件准备表格中的 1~8。安装步骤如下：</p>
-<ol>
-<li>打开主板上的 CPU 插槽，对准<strong>标志小三角</strong>，插入 CPU</li>
-<li>主板上找内存插槽，插入内存条</li>
-<li>主板上找 M.2 硬盘插槽，安插 M.2 硬盘</li>
-<li>CPU 上涂上硅脂，散热器安装，插 CPU 风扇线</li>
-<li>拆机箱，安装电源，整理线路</li>
-<li>主板装入机箱，插线，先插入机箱上的线（电源跳线，音频线，USB 线），再插入电源上的线（主板供电接口，CPU 供电接口）</li>
-<li>安装显卡，再插入显卡供电接口线</li>
-</ol>
-<blockquote>
-<p>! 注意</p>
-<ol>
-<li>机箱如果带有 RGB 线，直接找到主板上对应的插槽插入即可。</li>
-<li>这里没有装固态&#x2F;机械硬盘，所以没提到它怎么插线安装，固态&#x2F;机械硬盘有一个供电接口（接电源）和数据传输接口（接主板），找到对应位置插入即可。</li>
-<li>机箱除了一个 CPU 扇热器风扇，没有装其他风扇，所以没有给出机箱风扇怎么插线安装。后续如果有的话，直接主板上找对应位置插入即可。</li>
-<li>注意散热器方向，一般跟内存条方向一样，如果只有一个风扇，该风扇需安装到内存条的那一侧。</li>
-<li>机箱还是选大一点的，方面接线。另外，看看机箱规格，支持的主板大小，散热器高度，显卡长度等。</li>
-</ol>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.miaomiaozhe.com/post/240163">学会自己挑选硬件，组装一台电脑</a></p>
-<p>[2] <a href="https://www.bilibili.com/video/BV1NJ411B7kb?p=1">【H-WELL 联盟】台式电脑装机教程</a></p>
-<p>[3] <a href="https://www.bilibili.com/video/BV1nW411W76t?spm_id_from=333.880.my_history.page.click">主板接线，所有的线</a></p>
-<p>[4] <a href="https://www.bilibili.com/video/BV1nt411v79G?spm_id_from=333.337.search-card.all.click">电脑机箱篇-科普机箱尺寸和风道的知识，以后买机箱不会懵逼了</a></p>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>电脑DIY</tag>
       </tags>
   </entry>
   <entry>
@@ -1300,6 +1090,234 @@
       </tags>
   </entry>
   <entry>
+    <title>从npm script到node调试</title>
+    <url>/2022/03/04/20220304-%E4%BB%8Enpm-script%E5%88%B0node%E8%B0%83%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="npm-script"><a href="#npm-script" class="headerlink" title="npm script"></a>npm script</h2><h3 id="初体验"><a href="#初体验" class="headerlink" title="初体验"></a>初体验</h3><p>package.json</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;serve&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node build.js&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>命令行下使用<code>npm run</code>命令，就可以执行这段脚本。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run serve</span><br><span class="line"><span class="comment"># 等同于</span></span><br><span class="line">$ node build.js</span><br></pre></td></tr></table></figure>
+
+<h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p><code>package.json</code> 文件里面，使用 <code>script</code> 字段定义脚本命令。它有以下优点：</p>
+<ul>
+<li>项目的相关脚本，可以集中在一个地方。</li>
+<li>不同项目的脚本命令，只要功能相同，就可以有同样的对外接口。用户不需要知道怎么测试你的项目，只要运行<code>npm run test</code>即可。</li>
+<li>可以利用 npm 提供的很多辅助功能。</li>
+</ul>
+<p>查看当前项目的所有 npm 脚本命令，可以使用不带任何参数的<code>npm run</code>命令。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://docs.npmjs.com/cli/v8/using-npm/scripts">官方用法详见</a></p>
+<p>官方：脚本从包文件夹的根目录运行，无论<code>npm</code>调用时当前工作目录是什么。如果您希望您的脚本根据您所在的子目录使用不同的行为，您可以使用<code>INIT_CWD</code>环境变量，它包含您<strong>运行时</strong>所在的完整路径<code>npm run</code></p>
+<p>解读：INIT_CWD 好比变量 NODE_ENV，获取它的值局限于运行时所在的完整路径的文件，不能在该运行时的脚本引入的模块中使用，要想在模块当中直接使用，我们还需要一些配置</p>
+<ul>
+<li>webpack4 之前可以使用<strong>DefinePlugin</strong>插件配置</li>
+<li>webpack4 版本之后可以通过 mode 选项实现</li>
+</ul>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>每当执行<code>npm run</code>，就会自动新建一个 Shell，在这个 Shell 里面执行指定的脚本命令。因此，只要是 Shell（一般是 Bash）可以运行的命令，就可以写在 npm 脚本里面。<a href="https://www.npmjs.cn/cli/run-script/">官方用法详见</a></p>
+<p>除了 Shell 预先存在的<code>PATH</code>，<code>npm run</code>添加 <code>node_modules/.bin</code>到<code>PATH</code>提供的脚本中。本地安装的依赖项提供的任何二进制文件都可以在没有<code>node_modules/.bin</code> 前缀的情况下使用。例如，如果你的包中有一个<code>devDependency</code>on <code>tap</code>，你应该写：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>而不用写成下面这样。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;node_modules/.bin/tap test/\*.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="npm-脚本执行顺序"><a href="#npm-脚本执行顺序" class="headerlink" title="npm 脚本执行顺序"></a>npm 脚本执行顺序</h4><p>如果 npm 脚本里面需要执行多个任务，那么需要明确它们的执行顺序。</p>
+<ul>
+<li><p>并行执行，可以使用<code>&amp;</code>符号。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm run script1.js &amp; npm run script2.js</span><br></pre></td></tr></table></figure>
+
+<p>而的 package.json 中的 script 写法。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继发执行（即只有前一个任务成功，才执行下一个任务），可以使用<code>&amp;&amp;</code>符号。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;script1.js &amp;&amp; script2.js&quot;</span><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="npm-脚本传入参数"><a href="#npm-脚本传入参数" class="headerlink" title="npm 脚本传入参数"></a>npm 脚本传入参数</h4><p>要使用<code>--</code>标明</p>
+<h2 id="node-调试"><a href="#node-调试" class="headerlink" title="node 调试"></a>node 调试</h2><p>Node.js 包含了一个命令行的调试实用工具。 Node.js 调试器客户端不是功能齐全的调试器，但可以进行简单的步进和检查。要使用它，则使用 <code>inspect</code> 参数启动 Node.js，后跟要调试的脚本的路径。</p>
+<h3 id="node-vscode-调试"><a href="#node-vscode-调试" class="headerlink" title="node + vscode 调试"></a>node + vscode 调试</h3><p>标记 debugger 位置，然后借助 vscode 的调试工具即可实现。<a href="https://code.visualstudio.com/docs/editor/debugging">官方用法详见</a></p>
+<h3 id="node-chrome-x2F-x2F-inspect-调试"><a href="#node-chrome-x2F-x2F-inspect-调试" class="headerlink" title="node + chrome:&#x2F;&#x2F;inspect 调试"></a>node + chrome:&#x2F;&#x2F;inspect 调试</h3><p>V8 检查器集成允许将 Chrome 开发者工具绑定到 Node.js 实例以进行调试和分析。</p>
+<p>V8 检查器可以通过在启动 Node.js 应用程序时传入 <code>--inspect</code> 标志来启用。 也可以使用该标志提供自定义的端口，例如 <code>--inspect=9222</code> 将接受端口 9222 上的开发者工具连接。</p>
+<p>要中断应用程序代码的第一行，则传入 <code>--inspect-brk</code> 标志而不是 <code>--inspect</code>。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ node --inspect-brk index.js</span><br><span class="line">Debugger listening on ws://127.0.0.1:9229/dc9010dd-f8b8-4ac5-a510-c1a114ec7d29</span><br><span class="line">For <span class="built_in">help</span>, see: https://nodejs.org/en/docs/inspector</span><br></pre></td></tr></table></figure>
+
+<h3 id="从-npm-script-到-node-调试"><a href="#从-npm-script-到-node-调试" class="headerlink" title="从 npm script 到 node 调试"></a>从 npm script 到 node 调试</h3><p>在实际开发调试过程中，我们有这样一个需求，nodejs 环境下使用 package.json 脚本设置项目环境变量，这时我们会使用 process.env.NODE_ENV （<a href="https://www.jianshu.com/p/83e8909fc1cd">NODE_ENV</a> 是变量名）进行获取当前的环境变量进行区分不同的运行环境。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>编辑完脚本以后当使用脚本的时候发现没有生效，这是因为 windows 不支持直接设置 <code>NODE_ENV=development</code>的方式。</p>
+<blockquote>
+<p>tips</p>
+<p>当您使用这样 package.json 中的 scripts 来设置环境变量时，大多数 Windows 命令提示符都会阻塞 <code>NODE_ENV=development</code>。（例外是<a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Windows</a>，它使用本机 Bash。）同样，windows 和 POSIX 命令使用环境变量的方式也有所不同。在 POSIX 中，您使用：<code>$ENV_VAR</code> ，在 Windows 上，您使用<code>%ENV_VAR%</code>。</p>
+</blockquote>
+<p><code>NODE_ENV=development</code>在 windows 环境下会报错，需要改为<code>set NODE_ENV=development</code>，而 Mac 环境的方式是 <code>export NODE_ENV=development</code> 。为了解决这个差异，可以使用<code>cross-env</code>跨平台的设置和使用环境变量。</p>
+<p><code>cross-env</code>使您可以拥有一个命令，而无需担心为平台正确设置或使用环境变量。就像在 POSIX 系统上运行时一样设置它，并且<code>cross-env</code>会正确设置它。<a href="https://github.com/kentcdodds/cross-env#usage">官方用法详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env</span><br></pre></td></tr></table></figure>
+
+<p>对应的 package.json script 配置如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  ...</span><br><span class="line">  <span class="attr">&quot;scripts&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="attr">&quot;dev&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cross-env NODE_ENV=development webpack-dev-server --inline --progress  --config build/webpack.dev.conf.js --host 0.0.0.0&quot;</span></span><br><span class="line">    ...</span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line">  ...</span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，我们来分析一下上面的 package.json 片段：</p>
+<p><code>cross-env NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 0.0.0.0</code></p>
+<ol>
+<li>环境变量 NODE_ENV 赋值为 development，以便运行时的 webpack.dev.conf.js 下，可以通过 process.env.NODE_ENV 访问值</li>
+<li>执行 webpack-dev-server 命令，它带有–inline， –progress ， –config ，–host 四个参数，进而执行 build&#x2F;webpack.dev.conf.js</li>
+</ol>
+<p>使用 cross-env，webpack-dev-server 这 2 个命令，需要提前安装好开发依赖包。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm add -D cross-env webpack-dev-server</span><br></pre></td></tr></table></figure>
+
+<p>cross-env 的用法，上文有提到，webpack-dev-server<a href="https://github.com/webpack/webpack-dev-server#readme">官方用法详见</a>。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="http://www.ruanyifeng.com/blog/2016/10/npm_scripts.html">npm scripts 使用指南</a></p>
+<p>[2] <a href="http://nodejs.cn/api/debugger.html">node - debugger 调试器</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node</tag>
+        <tag>webpack</tag>
+        <tag>debug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>win10网络正常但网页访问失败</title>
+    <url>/2022/03/23/20220323-win10%E7%BD%91%E7%BB%9C%E6%AD%A3%E5%B8%B8%E4%BD%86%E7%BD%91%E9%A1%B5%E8%AE%BF%E9%97%AE%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<h2 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h2><p>电脑网络通过网线，WIFI，手机热点都显示正常，访问各种浏览器中的网页，都失败。</p>
+<blockquote>
+<p>Windows 10 专业工作站版</p>
+</blockquote>
+<h2 id="已解决"><a href="#已解决" class="headerlink" title="已解决"></a>已解决</h2><p>控制面板-网络和 Internet</p>
+<p>选择 管理浏览器加载项 - 高级 - 重置</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://blog.csdn.net/qq_39187959/article/details/109897929">解决电脑网络正常但是打不开网页</a></p>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>win10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>记录一次DIY电脑的全过程</title>
+    <url>/2022/03/05/20220305-%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1DIY%E7%94%B5%E8%84%91%E7%9A%84%E5%85%A8%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="硬件准备"><a href="#硬件准备" class="headerlink" title="硬件准备"></a>硬件准备</h2><table>
+<thead>
+<tr>
+<th>序号</th>
+<th>硬件</th>
+<th>名称</th>
+<th>售价</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>CPU</td>
+<td>i5-10400(版 U 套装)</td>
+<td>1799</td>
+</tr>
+<tr>
+<td>2</td>
+<td>主板</td>
+<td>微星 B560M WIFI</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>显卡</td>
+<td>蓝宝石 RX6500XT 白金版</td>
+<td>1899</td>
+</tr>
+<tr>
+<td>4</td>
+<td>硬盘</td>
+<td>凯侠 RC20 M.2 NVME PCIE3.0 1T</td>
+<td>579</td>
+</tr>
+<tr>
+<td>5</td>
+<td>内存</td>
+<td>威刚 DDR4 3200 2*8G</td>
+<td>369</td>
+</tr>
+<tr>
+<td>6</td>
+<td>散热器</td>
+<td>利民 AS120 刺灵</td>
+<td>99</td>
+</tr>
+<tr>
+<td>7</td>
+<td>电源</td>
+<td>长城 额定 500W HOPE-6000DS(双 8pin)</td>
+<td>219</td>
+</tr>
+<tr>
+<td>8</td>
+<td>机箱</td>
+<td>游戏帝国 寂静岭 隔音</td>
+<td>109</td>
+</tr>
+<tr>
+<td>9</td>
+<td>显示器</td>
+<td>AOC 27 英寸 AH-IPS 广视角 75Hz HDR Mode Type-C 接口 办公节能 低蓝光不闪 旋转升降电脑显示器 I2790PC</td>
+<td>1199</td>
+</tr>
+<tr>
+<td>10</td>
+<td>键盘</td>
+<td>戴尔有线键盘 KB216 黑色</td>
+<td>40.92</td>
+</tr>
+<tr>
+<td>11</td>
+<td>鼠标</td>
+<td>牧马人无线鼠标可充电式 磨砂黑(银侧翼) 无声静音 800 毫安大锂电</td>
+<td>29.9</td>
+</tr>
+<tr>
+<td>12</td>
+<td>音箱</td>
+<td>小度智能音箱 mini 版 随身蓝牙音箱 迷你音响</td>
+<td>65</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>tips</p>
+<p>盒装 CPU 自带散热器的，对于是否有必要再购买散热器还是散片 CPU + 主板 + 散热器组合，自己权衡抉择。</p>
+</blockquote>
+<h2 id="组装"><a href="#组装" class="headerlink" title="组装"></a>组装</h2><p>这里，涉及上面硬件准备表格中的 1~8。安装步骤如下：</p>
+<ol>
+<li>打开主板上的 CPU 插槽，对准<strong>标志小三角</strong>，插入 CPU</li>
+<li>主板上找内存插槽，插入内存条</li>
+<li>主板上找 M.2 硬盘插槽，安插 M.2 硬盘</li>
+<li>CPU 上涂上硅脂，散热器安装，插 CPU 风扇线</li>
+<li>拆机箱，安装电源，整理线路</li>
+<li>主板装入机箱，插线，先插入机箱上的线（电源跳线，音频线，USB 线），再插入电源上的线（主板供电接口，CPU 供电接口）</li>
+<li>安装显卡，再插入显卡供电接口线</li>
+</ol>
+<blockquote>
+<p>! 注意</p>
+<ol>
+<li>机箱如果带有 RGB 线，直接找到主板上对应的插槽插入即可。</li>
+<li>这里没有装固态&#x2F;机械硬盘，所以没提到它怎么插线安装，固态&#x2F;机械硬盘有一个供电接口（接电源）和数据传输接口（接主板），找到对应位置插入即可。</li>
+<li>机箱除了一个 CPU 扇热器风扇，没有装其他风扇，所以没有给出机箱风扇怎么插线安装。后续如果有的话，直接主板上找对应位置插入即可。</li>
+<li>注意散热器方向，一般跟内存条方向一样，如果只有一个风扇，该风扇需安装到内存条的那一侧。</li>
+<li>机箱还是选大一点的，方面接线。另外，看看机箱规格，支持的主板大小，散热器高度，显卡长度等。</li>
+</ol>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.miaomiaozhe.com/post/240163">学会自己挑选硬件，组装一台电脑</a></p>
+<p>[2] <a href="https://www.bilibili.com/video/BV1NJ411B7kb?p=1">【H-WELL 联盟】台式电脑装机教程</a></p>
+<p>[3] <a href="https://www.bilibili.com/video/BV1nW411W76t?spm_id_from=333.880.my_history.page.click">主板接线，所有的线</a></p>
+<p>[4] <a href="https://www.bilibili.com/video/BV1nt411v79G?spm_id_from=333.337.search-card.all.click">电脑机箱篇-科普机箱尺寸和风道的知识，以后买机箱不会懵逼了</a></p>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>电脑DIY</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>node版本管理</title>
     <url>/2022/03/17/20220317-node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h2 id="了解-nvm-windows"><a href="#了解-nvm-windows" class="headerlink" title="了解 nvm-windows"></a>了解 nvm-windows</h2><p><a href="https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows">Microsoft</a> &#x2F; <a href="https://docs.npmjs.com/cli/v7/configuring-npm/install#windows-node-version-managers">npm &#x2F;Google 为</a><em>Windows</em>推荐 了 Node.js 版本管理器。<em>原始<a href="https://github.com/nvm-sh/nvm">nvm</a>是一个完全独立的项目，仅适用于 Mac&#x2F;Linux。</em>该项目使用完全不同的理念，而不仅仅是 nvm 的克隆。详细信息列在<a href="https://github.com/coreybutler/nvm-windows#bulb-why-another-version-manager">为什么另一个版本管理器？</a>有<a href="https://github.com/coreybutler/nvm-windows#bulb-whats-the-big-difference">什么大的区别？</a>。</p>
@@ -1343,24 +1361,6 @@
       </categories>
       <tags>
         <tag>node</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>win10网络正常但网页访问失败</title>
-    <url>/2022/03/23/20220323-win10%E7%BD%91%E7%BB%9C%E6%AD%A3%E5%B8%B8%E4%BD%86%E7%BD%91%E9%A1%B5%E8%AE%BF%E9%97%AE%E5%A4%B1%E8%B4%A5/</url>
-    <content><![CDATA[<h2 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h2><p>电脑网络通过网线，WIFI，手机热点都显示正常，访问各种浏览器中的网页，都失败。</p>
-<blockquote>
-<p>Windows 10 专业工作站版</p>
-</blockquote>
-<h2 id="已解决"><a href="#已解决" class="headerlink" title="已解决"></a>已解决</h2><p>控制面板-网络和 Internet</p>
-<p>选择 管理浏览器加载项 - 高级 - 重置</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://blog.csdn.net/qq_39187959/article/details/109897929">解决电脑网络正常但是打不开网页</a></p>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>win10</tag>
       </tags>
   </entry>
   <entry>
@@ -2210,106 +2210,6 @@
       </tags>
   </entry>
   <entry>
-    <title>docker使用</title>
-    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
-<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
-<span id="more"></span>
-
-<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
-<ul>
-<li>使用容器开发您的应用程序及其支持组件。</li>
-<li>容器成为分发和测试应用程序的单元。</li>
-<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
-</ul>
-<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
-<p>考虑以下示例场景：</p>
-<ul>
-<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
-<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
-<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
-<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
-</ul>
-<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
-<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
-<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
-<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
-<p><img src="https://huatree.top/architecture.svg" alt="architecture"></p>
-<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
-</div>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
-<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
-<li>进入 BIOS 开启虚拟化技术</li>
-<li>win10 全开 Hpyer-V</li>
-</ul>
-<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
-<p><img src="https://huatree.top/image-20220512073042362.png" alt="image-20220512073042362"></p>
-<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
-<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
-<p><img src="https://huatree.top/image-20220512073743673.png" alt="image-20220512073743673"></p>
-<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
-<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
-<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
-<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
-<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
-<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
-<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
-<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
-
-<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
-<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
-<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
-<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
-</div>
-
-<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
-
-<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
-<p>配置 docker-compose.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
-
-<p>执行它</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-
-<p>发现报错</p>
-<p><img src="https://huatree.top/image-20220513133508101.png" alt="image-20220513133508101"></p>
-<p>为什么？</p>
-<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
-<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
-<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
-<p><img src="https://huatree.top/image-20220513133936711.png" alt="image-20220513133936711"></p>
-<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
-<p>再次执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
-<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
-<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
-<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker+Jenkins+GitHub</title>
     <url>/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220511175224561.png" alt="image-20220511175224561"></p>
@@ -2435,6 +2335,106 @@
       </tags>
   </entry>
   <entry>
+    <title>docker使用</title>
+    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
+<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
+<span id="more"></span>
+
+<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
+<ul>
+<li>使用容器开发您的应用程序及其支持组件。</li>
+<li>容器成为分发和测试应用程序的单元。</li>
+<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
+</ul>
+<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
+<p>考虑以下示例场景：</p>
+<ul>
+<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
+<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
+<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
+<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
+</ul>
+<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
+<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
+<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
+<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
+<p><img src="https://huatree.top/architecture.svg" alt="architecture"></p>
+<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
+</div>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
+<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
+<li>进入 BIOS 开启虚拟化技术</li>
+<li>win10 全开 Hpyer-V</li>
+</ul>
+<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
+<p><img src="https://huatree.top/image-20220512073042362.png" alt="image-20220512073042362"></p>
+<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
+<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
+<p><img src="https://huatree.top/image-20220512073743673.png" alt="image-20220512073743673"></p>
+<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
+<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
+<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
+<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
+<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
+<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
+<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
+<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
+<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
+<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
+<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
+</div>
+
+<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
+<p>配置 docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
+
+<p>执行它</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>发现报错</p>
+<p><img src="https://huatree.top/image-20220513133508101.png" alt="image-20220513133508101"></p>
+<p>为什么？</p>
+<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
+<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
+<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
+<p><img src="https://huatree.top/image-20220513133936711.png" alt="image-20220513133936711"></p>
+<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
+<p>再次执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
+<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
+<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
+<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用浏览器配合手机调试&amp;使用Proxy劫持（3类真机调试技巧）</title>
     <url>/2022/05/15/20220515-%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E5%90%88%E6%89%8B%E6%9C%BA%E8%B0%83%E8%AF%95&amp;%E4%BD%BF%E7%94%A8Proxy%E5%8A%AB%E6%8C%81%EF%BC%883%E7%B1%BB%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%EF%BC%89/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220515130434086.png" alt="image-20220515130434086"></p>
@@ -2465,6 +2465,75 @@
       </categories>
       <tags>
         <tag>调试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github同步并自动部署gitee-pages</title>
+    <url>/2022/05/18/20220518-github%E5%90%8C%E6%AD%A5%E5%B9%B6%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2gitee-pages/</url>
+    <content><![CDATA[<p>由于 Gitee Pages 的访问速度很快，很多朋友会选择 Gitee Pages 部署项目（如：个人博客、开源项目国内镜像站点）。但是它不像 GitHub Pages 那样，一提交代码就能自动更新 Pages，因为 Gitee 的自动部署属于 Gitee Pages Pro 的服务。</p>
+<p><img src="https://huatree.top/image-20220519001003845.png" alt="image-20220519001003845"></p>
+<span id="more"></span>
+
+<h2 id="提出需求"><a href="#提出需求" class="headerlink" title="提出需求"></a>提出需求</h2><ul>
+<li><input checked="" disabled="" type="checkbox"> github 私仓同步到 gitee 私仓（私仓放源码）</li>
+<li><input checked="" disabled="" type="checkbox"> github 公仓同步到 gitee 公仓（公仓放打包后的静态资源）</li>
+<li><input checked="" disabled="" type="checkbox"> push 到 github 公仓时，激活自动部署 gitee 公仓静态资源</li>
+</ul>
+<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>本文以<strong>hexo</strong>框架搭建的 blog 为例，实现提出的需求。</p>
+<h3 id="流程图分析"><a href="#流程图分析" class="headerlink" title="流程图分析"></a>流程图分析</h3><p><img src="https://huatree.top/image-20220518230609385.png" alt="image-20220518230609385"></p>
+<h3 id="仓库说明"><a href="#仓库说明" class="headerlink" title="仓库说明"></a>仓库说明</h3><div class="note success"><p>github 上的仓库，如果要作为 github pages 使用，创建的远程仓库就得公开，即 public。gitee 上的仓库没有要求，公仓、私仓都可以作为 gitee pages 使用。</p>
+</div>
+
+<h4 id="github-平台"><a href="#github-平台" class="headerlink" title="github 平台"></a>github 平台</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 私仓（放源码），master分支</span></span><br><span class="line">huatree.blog</span><br><span class="line"><span class="comment"># 公仓（放静态资源），gh-pages分支</span></span><br><span class="line">huatree.github.io</span><br></pre></td></tr></table></figure>
+
+<p>创建 GitHub Pages 站点，<a href="https://docs.github.com/cn/pages/getting-started-with-github-pages/creating-a-github-pages-site">详见官方文档</a></p>
+<h4 id="gitee-平台"><a href="#gitee-平台" class="headerlink" title="gitee 平台"></a>gitee 平台</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 私仓（放源码），master分支</span></span><br><span class="line">huatree.blog</span><br><span class="line"><span class="comment"># 公仓（放静态资源），ge-pages分支</span></span><br><span class="line">huatree</span><br></pre></td></tr></table></figure>
+
+<p>创建 Gitee Pages 站点，<a href="https://gitee.com/help/articles/4136#article-header0">详见官方文档</a></p>
+<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><h4 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h4><p>在命令行终端或 Git Bash 使用命令 <code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code> 生成 SSH Key，注意替换为自己的邮箱。生成的 <code>id_rsa</code> 是私钥，<code>id_rsa.pub</code> 是公钥。(注意此处不要设置密码，生成的公私钥用于下面 GitHub &#x2F; Gitee 的配置，以保证公私钥成对，否则从 GitHub sync Gitee 的同步将会失败。)</p>
+<p>在 GitHub 项目的<code>Settings &gt; Secrets&gt;Actions</code>路径下配置好命名为 <code>GITEE_RSA_PRIVATE_KEY</code> 和 <code>GITEE_PASSWORD</code> 的两个密钥。其中：<code>GITEE_RSA_PRIVATE_KEY</code> 存放 <code>id_rsa</code> <strong>私钥</strong>；<code>GITEE_PASSWORD</code> 存放 Gitee 帐号的密码。（注意此处，是在 GitHub 项目即远程仓库的 Settings 中设置，而不是 GitHub 的个人用户 Settings。）</p>
+<p><img src="https://huatree.top/image-20220518232245555.png" alt="image-20220518232245555"></p>
+<p>在 GitHub 的个人设置页面<a href="https://github.com/settings/keys">Settings &gt; SSH and GPG keys</a>配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
+<p>在 Gitee 的个人设置页面<a href="https://gitee.com/profile/sshkeys">安全设置 &gt; SSH 公钥</a>配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
+<h4 id="关注-Gitee-公众号"><a href="#关注-Gitee-公众号" class="headerlink" title="关注 Gitee 公众号"></a>关注 Gitee 公众号</h4><p>关注 Gitee 微信官方公众号，并绑定个人 Gitee 帐号，用于接收帐号登录通知、以及绕过短信验证码校验。</p>
+<h4 id="创建-workflow"><a href="#创建-workflow" class="headerlink" title="创建 workflow"></a>创建 workflow</h4><p>在你的 GitHub 项目 <code>.github/workflows/</code> 文件夹下创建一个 <code>.yml</code> 文件，如 <code>sync.yml</code>，内容如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Sync</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [<span class="string">master</span>]</span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Sync</span> <span class="string">to</span> <span class="string">Gitee</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">wearerequired/git-mirror-action@master</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_RSA_PRIVATE_KEY</span></span><br><span class="line">          <span class="attr">SSH_PRIVATE_KEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_RSA_PRIVATE_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 GitHub 源仓库地址</span></span><br><span class="line">          <span class="attr">source-repo:</span> <span class="string">git@github.com:huatree/huatree.blog.git</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 目标仓库地址</span></span><br><span class="line">          <span class="attr">destination-repo:</span> <span class="string">git@gitee.com:huatree/huatree.blog.git</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">Gitee</span> <span class="string">Pages</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">yanglbme/gitee-pages-action@main</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 用户名</span></span><br><span class="line">          <span class="attr">gitee-username:</span> <span class="string">huatree</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_PASSWORD</span></span><br><span class="line">          <span class="attr">gitee-password:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错</span></span><br><span class="line">          <span class="attr">gitee-repo:</span> <span class="string">huatree/huatree</span></span><br><span class="line">          <span class="comment"># 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）</span></span><br><span class="line">          <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>sync.yml</code>文件（末尾需空一行）中，先使用 <a href="https://github.com/wearerequired/git-mirror-action">wearerequired&#x2F;git-mirror-action</a> 将 GitHub 仓库同步到 Gitee 仓库，再使用 <a href="https://github.com/yanglbme/gitee-pages-action">yanglbme&#x2F;gitee-pages-action</a> 实现 Gitee Pages 的自动部署。</p>
+<h4 id="本地项目操作"><a href="#本地项目操作" class="headerlink" title="本地项目操作"></a>本地项目操作</h4><p>因为本文以 hexo 为例，所以还需配置项目根目录下的<code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:huatree/huatree.github.io.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@gitee.com:huatree/huatree.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br></pre></td></tr></table></figure>
+
+<p>在项目所在路径下，终端执行命令</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先同步推送到2个放静态资源的公仓分支（github平台：huatree.github.io/gh-pages，gitee平台：huatree/ge-pages）</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line"><span class="comment"># 再提交到本地仓库</span></span><br><span class="line">git commit -m <span class="string">&quot;content&quot;</span></span><br><span class="line"><span class="comment"># 后同步推送到2个放源码的私仓分支（github平台：huatree.blog/master，github平台：huatree.blog/master）</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>更多 hexo 命令，<a href="https://hexo.io/zh-cn/docs/commands">详见官方文档</a></p>
+<div class="note warning"><p><strong>首次</strong>需要<strong>手动</strong>登录 Gitee ，并在指定部署的仓库下选择<strong>服务&gt;Gitee Pages</strong>，启动进行 Gitee Pages 服务的部署，需勾选<strong>强制使用 HTTPS</strong>。</p>
+<p>输入命令的顺序，<code>hexo g -d</code>必须放在<code>git push</code>前，不然自动部署 gitee 的时，指定的 gitee 仓库仍是之前的状态，并没有更新。</p>
+<p>自动部署的操作原理：本地仓库推送到远程仓库，通过配置的 workflow，触发<code>github actions</code>，Actions 页面上，会打印出执行 workflow 脚本结果。如果执行结果 sucess，我们会在 Gitee 微信公众号收到一条登录通知。这是 workflow 配置上的 Gitee Pages Action 插件帮我们登录到 Gitee 官网，并为我们点击了项目的部署按钮。</p>
+</div>
+
+<h4 id="查看运行结果"><a href="#查看运行结果" class="headerlink" title="查看运行结果"></a>查看运行结果</h4><p>在 github 平台的 huatree.blog 仓库的<code>Actions</code>面板中查看。</p>
+<p><img src="https://huatree.top/image-20220518234128162.png" alt="image-20220518234128162"></p>
+<p>稍等片刻，手机上会出现 Gitee 微信官方公众号的登录信息提示</p>
+<p><img src="https://huatree.top/image-20220518234644661.png" alt="image-20220518234644661"></p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>访问<a href="https://huatree.github.io/">https://huatree.github.io/</a>和<a href="https://huatree.gitee.io/">https://huatree.gitee.io/</a>，对比部署后的页面是否同步。如果不同步，可能原因如下：</p>
+<ol>
+<li><p>gitee pages 的部署官方提示，1 分钟内不可连续部署。</p>
+</li>
+<li><p>gitee pages 部署失败，并不是自动部署的配置出错或没执行，而是部署的内容违规了。</p>
+<p><img src="https://huatree.top/image-20220519182047703.png" alt="image-20220519182047703"></p>
+</li>
+</ol>
+<p>出现内容违规情况，需根据官方要求修改提示指出的源文件（即 github 平台私仓<code>huatree.blog</code>下的源文件，并非公仓下的静态资源。静态资源是源文件打包后的结果，改动源文件，再打包部署，对应的静态资源自然得以更新）。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/marketplace/actions/gitee-pages-action">Gitee Pages Action</a></p>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>github actions</tag>
+        <tag>static pages</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -2547,78 +2616,10 @@
       </tags>
   </entry>
   <entry>
-    <title>github同步并自动部署gitee-pages</title>
-    <url>/2022/05/18/20220518-github%E5%90%8C%E6%AD%A5%E5%B9%B6%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2gitee-pages/</url>
-    <content><![CDATA[<p>由于 Gitee Pages 的访问速度很快，很多朋友会选择 Gitee Pages 部署项目（如：个人博客、开源项目国内镜像站点）。但是它不像 GitHub Pages 那样，一提交代码就能自动更新 Pages，因为 Gitee 的自动部署属于 Gitee Pages Pro 的服务。</p>
-<p><img src="https://huatree.top/image-20220519001003845.png" alt="image-20220519001003845"></p>
-<span id="more"></span>
-
-<h2 id="提出需求"><a href="#提出需求" class="headerlink" title="提出需求"></a>提出需求</h2><ul>
-<li><input checked="" disabled="" type="checkbox"> github 私仓同步到 gitee 私仓（私仓放源码）</li>
-<li><input checked="" disabled="" type="checkbox"> github 公仓同步到 gitee 公仓（公仓放打包后的静态资源）</li>
-<li><input checked="" disabled="" type="checkbox"> push 到 github 公仓时，激活自动部署 gitee 公仓静态资源</li>
-</ul>
-<h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>本文以<strong>hexo</strong>框架搭建的 blog 为例，实现提出的需求。</p>
-<h3 id="流程图分析"><a href="#流程图分析" class="headerlink" title="流程图分析"></a>流程图分析</h3><p><img src="https://huatree.top/image-20220518230609385.png" alt="image-20220518230609385"></p>
-<h3 id="仓库说明"><a href="#仓库说明" class="headerlink" title="仓库说明"></a>仓库说明</h3><div class="note success"><p>github 上的仓库，如果要作为 github pages 使用，创建的远程仓库就得公开，即 public。gitee 上的仓库没有要求，公仓、私仓都可以作为 gitee pages 使用。</p>
-</div>
-
-<h4 id="github-平台"><a href="#github-平台" class="headerlink" title="github 平台"></a>github 平台</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 私仓（放源码），master分支</span></span><br><span class="line">huatree.blog</span><br><span class="line"><span class="comment"># 公仓（放静态资源），gh-pages分支</span></span><br><span class="line">huatree.github.io</span><br></pre></td></tr></table></figure>
-
-<p>创建 GitHub Pages 站点，<a href="https://docs.github.com/cn/pages/getting-started-with-github-pages/creating-a-github-pages-site">详见官方文档</a></p>
-<h4 id="gitee-平台"><a href="#gitee-平台" class="headerlink" title="gitee 平台"></a>gitee 平台</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 私仓（放源码），master分支</span></span><br><span class="line">huatree.blog</span><br><span class="line"><span class="comment"># 公仓（放静态资源），ge-pages分支</span></span><br><span class="line">huatree</span><br></pre></td></tr></table></figure>
-
-<p>创建 Gitee Pages 站点，<a href="https://gitee.com/help/articles/4136#article-header0">详见官方文档</a></p>
-<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><h4 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h4><p>在命令行终端或 Git Bash 使用命令 <code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code> 生成 SSH Key，注意替换为自己的邮箱。生成的 <code>id_rsa</code> 是私钥，<code>id_rsa.pub</code> 是公钥。(注意此处不要设置密码，生成的公私钥用于下面 GitHub &#x2F; Gitee 的配置，以保证公私钥成对，否则从 GitHub sync Gitee 的同步将会失败。)</p>
-<p>在 GitHub 项目的<code>Settings &gt; Secrets&gt;Actions</code>路径下配置好命名为 <code>GITEE_RSA_PRIVATE_KEY</code> 和 <code>GITEE_PASSWORD</code> 的两个密钥。其中：<code>GITEE_RSA_PRIVATE_KEY</code> 存放 <code>id_rsa</code> <strong>私钥</strong>；<code>GITEE_PASSWORD</code> 存放 Gitee 帐号的密码。（注意此处，是在 GitHub 项目即远程仓库的 Settings 中设置，而不是 GitHub 的个人用户 Settings。）</p>
-<p><img src="https://huatree.top/image-20220518232245555.png" alt="image-20220518232245555"></p>
-<p>在 GitHub 的个人设置页面<a href="https://github.com/settings/keys">Settings &gt; SSH and GPG keys</a>配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
-<p>在 Gitee 的个人设置页面<a href="https://gitee.com/profile/sshkeys">安全设置 &gt; SSH 公钥</a>配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
-<h4 id="关注-Gitee-公众号"><a href="#关注-Gitee-公众号" class="headerlink" title="关注 Gitee 公众号"></a>关注 Gitee 公众号</h4><p>关注 Gitee 微信官方公众号，并绑定个人 Gitee 帐号，用于接收帐号登录通知、以及绕过短信验证码校验。</p>
-<h4 id="创建-workflow"><a href="#创建-workflow" class="headerlink" title="创建 workflow"></a>创建 workflow</h4><p>在你的 GitHub 项目 <code>.github/workflows/</code> 文件夹下创建一个 <code>.yml</code> 文件，如 <code>sync.yml</code>，内容如下：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">name:</span> <span class="string">Sync</span></span><br><span class="line"></span><br><span class="line"><span class="attr">on:</span></span><br><span class="line">  <span class="attr">push:</span></span><br><span class="line">    <span class="attr">branches:</span> [<span class="string">master</span>]</span><br><span class="line">  <span class="attr">workflow_dispatch:</span></span><br><span class="line"></span><br><span class="line"><span class="attr">jobs:</span></span><br><span class="line">  <span class="attr">build:</span></span><br><span class="line">    <span class="attr">runs-on:</span> <span class="string">ubuntu-latest</span></span><br><span class="line">    <span class="attr">steps:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Sync</span> <span class="string">to</span> <span class="string">Gitee</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">wearerequired/git-mirror-action@master</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_RSA_PRIVATE_KEY</span></span><br><span class="line">          <span class="attr">SSH_PRIVATE_KEY:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_RSA_PRIVATE_KEY</span> <span class="string">&#125;&#125;</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 GitHub 源仓库地址</span></span><br><span class="line">          <span class="attr">source-repo:</span> <span class="string">git@github.com:huatree/huatree.blog.git</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 目标仓库地址</span></span><br><span class="line">          <span class="attr">destination-repo:</span> <span class="string">git@gitee.com:huatree/huatree.blog.git</span></span><br><span class="line"></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">Build</span> <span class="string">Gitee</span> <span class="string">Pages</span></span><br><span class="line">        <span class="attr">uses:</span> <span class="string">yanglbme/gitee-pages-action@main</span></span><br><span class="line">        <span class="attr">with:</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 用户名</span></span><br><span class="line">          <span class="attr">gitee-username:</span> <span class="string">huatree</span></span><br><span class="line">          <span class="comment"># 注意在 Settings-&gt;Secrets 配置 GITEE_PASSWORD</span></span><br><span class="line">          <span class="attr">gitee-password:</span> <span class="string">$&#123;&#123;</span> <span class="string">secrets.GITEE_PASSWORD</span> <span class="string">&#125;&#125;</span></span><br><span class="line">          <span class="comment"># 注意替换为你的 Gitee 仓库，仓库名严格区分大小写，请准确填写，否则会出错</span></span><br><span class="line">          <span class="attr">gitee-repo:</span> <span class="string">huatree/huatree</span></span><br><span class="line">          <span class="comment"># 要部署的分支，默认是 master，若是其他分支，则需要指定（指定的分支必须存在）</span></span><br><span class="line">          <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><code>sync.yml</code>文件（末尾需空一行）中，先使用 <a href="https://github.com/wearerequired/git-mirror-action">wearerequired&#x2F;git-mirror-action</a> 将 GitHub 仓库同步到 Gitee 仓库，再使用 <a href="https://github.com/yanglbme/gitee-pages-action">yanglbme&#x2F;gitee-pages-action</a> 实现 Gitee Pages 的自动部署。</p>
-<h4 id="本地项目操作"><a href="#本地项目操作" class="headerlink" title="本地项目操作"></a>本地项目操作</h4><p>因为本文以 hexo 为例，所以还需配置项目根目录下的<code>_config.yml</code></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/one-command-deployment</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@github.com:huatree/huatree.github.io.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">gh-pages</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">git@gitee.com:huatree/huatree.git</span></span><br><span class="line">    <span class="attr">branch:</span> <span class="string">ge-pages</span></span><br></pre></td></tr></table></figure>
-
-<p>在项目所在路径下，终端执行命令</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先同步推送到2个放静态资源的公仓分支（github平台：huatree.github.io/gh-pages，gitee平台：huatree/ge-pages）</span></span><br><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br><span class="line"><span class="comment"># 再提交到本地仓库</span></span><br><span class="line">git commit -m <span class="string">&quot;content&quot;</span></span><br><span class="line"><span class="comment"># 后同步推送到2个放源码的私仓分支（github平台：huatree.blog/master，github平台：huatree.blog/master）</span></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-
-<p>更多 hexo 命令，<a href="https://hexo.io/zh-cn/docs/commands">详见官方文档</a></p>
-<div class="note warning"><p><strong>首次</strong>需要<strong>手动</strong>登录 Gitee ，并在指定部署的仓库下选择<strong>服务&gt;Gitee Pages</strong>，启动进行 Gitee Pages 服务的部署，需勾选<strong>强制使用 HTTPS</strong>。</p>
-<p>输入命令的顺序，<code>hexo g -d</code>必须放在<code>git push</code>前，不然自动部署 gitee 的时，指定的 gitee 仓库仍是之前的状态，并没有更新。</p>
-<p>自动部署的操作原理：本地仓库推送到远程仓库，通过配置的 workflow，触发<code>github actions</code>，Actions 页面上，会打印出执行 workflow 脚本结果。如果执行结果 sucess，我们会在 Gitee 微信公众号收到一条登录通知。这是 workflow 配置上的 Gitee Pages Action 插件帮我们登录到 Gitee 官网，并为我们点击了项目的部署按钮。</p>
-</div>
-
-<h4 id="查看运行结果"><a href="#查看运行结果" class="headerlink" title="查看运行结果"></a>查看运行结果</h4><p>在 github 平台的 huatree.blog 仓库的<code>Actions</code>面板中查看。</p>
-<p><img src="https://huatree.top/image-20220518234128162.png" alt="image-20220518234128162"></p>
-<p>稍等片刻，手机上会出现 Gitee 微信官方公众号的登录信息提示</p>
-<p><img src="https://huatree.top/image-20220518234644661.png" alt="image-20220518234644661"></p>
-<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>访问<a href="https://huatree.github.io/">https://huatree.github.io/</a>和<a href="https://huatree.gitee.io/">https://huatree.gitee.io/</a>，对比部署后的页面是否同步。如果不同步，可能原因如下：</p>
-<ol>
-<li><p>gitee pages 的部署官方提示，1 分钟内不可连续部署。</p>
-</li>
-<li><p>gitee pages 部署失败，并不是自动部署的配置出错或没执行，而是部署的内容违规了。</p>
-<p><img src="https://huatree.top/image-20220519182047703.png" alt="image-20220519182047703"></p>
-</li>
-</ol>
-<p>出现内容违规情况，需根据官方要求修改提示指出的源文件（即 github 平台私仓<code>huatree.blog</code>下的源文件，并非公仓下的静态资源。静态资源是源文件打包后的结果，改动源文件，再打包部署，对应的静态资源自然得以更新）。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/marketplace/actions/gitee-pages-action">Gitee Pages Action</a></p>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>github actions</tag>
-        <tag>static pages</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>gitlab搭建与使用</title>
     <url>/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。</p>
+<p><img src="https://huatree.top/image-20220521203606016.png" alt="image-20220521203606016"></p>
 <span id="more"></span>
 
 <div class="note info"><p>GitHub 如果使用私有仓库，是需要付费的；而 GitLab 可以在上面搭建私人的免费仓库。</p>
