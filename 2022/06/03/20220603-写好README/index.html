@@ -20,34 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"huatree.gitee.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="gitlab搭建与使用">
-<meta property="og:url" content="https://huatree.gitee.io/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="写好README">
+<meta property="og:url" content="https://huatree.gitee.io/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/index.html">
 <meta property="og:site_name" content="醉梦的网络日志">
-<meta property="og:description" content="GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://huatree.top/image-20220521203606016.png">
-<meta property="og:image" content="https://huatree.top/image-20220521191137698.png">
-<meta property="og:image" content="https://huatree.top/image-20220521191623991.png">
-<meta property="og:image" content="https://huatree.top/image-20220521192006609.png">
-<meta property="og:image" content="https://huatree.top/image-20220521195929833.png">
-<meta property="article:published_time" content="2022-05-21T07:45:36.000Z">
-<meta property="article:modified_time" content="2022-05-21T12:36:20.297Z">
+<meta property="og:image" content="https://huatree.top/image-20220603172009054.png">
+<meta property="article:published_time" content="2022-06-03T07:06:23.000Z">
+<meta property="article:modified_time" content="2022-06-03T09:21:07.199Z">
 <meta property="article:author" content="醉梦">
-<meta property="article:tag" content="gitlab">
+<meta property="article:tag" content="README">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://huatree.top/image-20220521203606016.png">
+<meta name="twitter:image" content="https://huatree.top/image-20220603172009054.png">
 
 
-<link rel="canonical" href="https://huatree.gitee.io/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="https://huatree.gitee.io/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://huatree.gitee.io/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/","path":"2022/05/21/20220521-gitlab搭建与使用/","title":"gitlab搭建与使用"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://huatree.gitee.io/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/","path":"2022/06/03/20220603-写好README/","title":"写好README"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>gitlab搭建与使用 | 醉梦的网络日志</title>
+<title>写好README | 醉梦的网络日志</title>
   
 
 
@@ -149,7 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA"><span class="nav-text">搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-Compose-%E5%AE%89%E8%A3%85-GitLab"><span class="nav-text">Docker Compose 安装 GitLab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitLab-%E7%9A%84%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="nav-text">GitLab 的权限控制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5"><span class="nav-text">从何而来</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E9%83%BD%E6%9C%89%E5%AE%83%E7%9A%84%E8%BA%AB%E5%BD%B1"><span class="nav-text">项目都有它的身影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E5%86%99"><span class="nav-text">怎么写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#README-%E6%B8%85%E5%8D%95"><span class="nav-text">README 清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -239,7 +233,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://huatree.gitee.io/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="https://huatree.gitee.io/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar-huatree.jpg">
@@ -252,12 +246,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="gitlab搭建与使用 | 醉梦的网络日志">
+      <meta itemprop="name" content="写好README | 醉梦的网络日志">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          gitlab搭建与使用
+          写好README
         </h1>
 
         <div class="post-meta-container">
@@ -269,7 +263,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2022-05-21 15:45:36 / 修改时间：20:36:20" itemprop="dateCreated datePublished" datetime="2022-05-21T15:45:36+08:00">2022-05-21</time>
+      <time title="创建时间：2022-06-03 15:06:23 / 修改时间：17:21:07" itemprop="dateCreated datePublished" datetime="2022-06-03T15:06:23+08:00">2022-06-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -295,7 +289,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>992</span>
+      <span>699</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -313,42 +307,42 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。</p>
-<p><img src="https://huatree.top/image-20220521203606016.png" alt="image-20220521203606016"></p>
+        <p><img src="https://huatree.top/image-20220603172009054.png" alt="image-20220603172009054"></p>
 <span id="more"></span>
 
-<div class="note info"><p>GitHub 如果使用私有仓库，是需要付费的；而 GitLab 可以在上面搭建私人的免费仓库。</p>
+<h2 id="从何而来"><a href="#从何而来" class="headerlink" title="从何而来"></a>从何而来</h2><p>“README”可能是来自于《爱丽丝漫游仙境》，其中一瓶药水和一个月饼上分别贴着“DRINK ME”（喝我）和“EAT ME”（吃我）的标签。 —— 来自某位读者的提议</p>
+<p>正式命名的日期可以追溯到<strong>至少</strong> 1970 年。不过也有可能是来自更早之前放在打孔卡片上的便签纸，上面潦草地写着的“READ ME!”。</p>
+<h2 id="项目都有它的身影"><a href="#项目都有它的身影" class="headerlink" title="项目都有它的身影"></a>项目都有它的身影</h2><p>为什么？没有 README 意味着开发者需要阅读源码才能理解你的模块。</p>
+<p>对于开发者，项目都是持续集成的，如果没有 README，相隔一段时间，再回来折腾项目，会感觉很陌生。</p>
+<p>对于使用者，如果没有 README，就需要耗费大量的时间去解读项目源码，或者带着复杂的心情直接抛弃，找个有 README 提供的项目替代使用。</p>
+<h2 id="怎么写"><a href="#怎么写" class="headerlink" title="怎么写"></a>怎么写</h2><p>README 的编写质量决定了是否能给人留下好的第一印象。</p>
+<p>README 是使用者首先（或唯一）审视你作品的入口。用户希望模块能满足他们的需要，所以你要清楚的说明你的模块的主要作用和优势。</p>
+<p>你要做的是：</p>
+<ol>
+<li>告诉他们这是什么 (使用场景)</li>
+<li>告诉他们在实际使用中是什么样子</li>
+<li>告诉他们使用的方法</li>
+<li>告诉他们其它相关的细节</li>
+</ol>
+<h2 id="README-清单"><a href="#README-清单" class="headerlink" title="README 清单"></a>README 清单</h2><p>一个有用的清单用来衡量你的 README</p>
+<ul>
+<li>一句话解释模块的目的</li>
+<li>必要的背景资料或链接</li>
+<li>为潜在不熟悉的术语提供到信息来源的链接</li>
+<li>简洁可运行的实例</li>
+<li>安装说明</li>
+<li>详细的 API 文档</li>
+<li>对<a target="_blank" rel="noopener" href="https://github.com/hackergrrl/art-of-readme/blob/master/README-zh.md#%E8%AE%A4%E7%9F%A5%E6%BC%8F%E6%96%97">认知漏斗</a>的执行</li>
+<li>前面提到的注意事项和限制</li>
+<li>不要依赖图片传递关键信息</li>
+<li>许可证</li>
+</ul>
+<div class="note info"><p><strong>认知漏斗</strong>， 可以想象成是一个直立的漏斗，最宽的部分相关细节最宽泛，越往下移动细节越具体，只有对你的作品足够感兴趣的人才会关注这部分内容。</p>
 </div>
 
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>GitLab 有社区版（免费）和企业版（收费）。本文示例以 GitLab 社区版为准。</p>
-<h3 id="Docker-Compose-安装-GitLab"><a href="#Docker-Compose-安装-GitLab" class="headerlink" title="Docker Compose 安装 GitLab"></a>Docker Compose 安装 GitLab</h3><p>需用到 Docker，有关更多详细信息，请参阅<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
-<p>使用<code>docker-gitlab</code>仓库中的<a target="_blank" rel="noopener" href="https://github.com/sameersbn/docker-gitlab/blob/master/docker-compose.yml">docker-compose.yml</a>。复制到本地<code>compose.yaml</code>中，修改如下部分内容：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13980:80&#x27;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13922:22&#x27;</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_PORT=13980</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_SSH_PORT=13922</span></span><br></pre></td></tr></table></figure>
-
-<p>接着，在该文件所在目录下打开终端，输入<code>docker compsoe up</code>。运行成功后，浏览器打开如下 URL：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:13980</span><br><span class="line"><span class="comment"># 会自动定位到</span></span><br><span class="line">http://127.0.0.1:13980/users/sign_in</span><br></pre></td></tr></table></figure>
-
-<p><code>127.0.0.1</code>可替换成<code>localhost</code>。</p>
-<p>默认管理员账号为 <strong>root</strong>，根据页面提示<code>Please create a password for your new account.</code>设置<code>New password</code>。</p>
-<p><img src="https://huatree.top/image-20220521191137698.png" alt="image-20220521191137698"></p>
-<p>点击<strong>Change your password</strong>，跳转到登录页面，使用<code>root</code>和刚设置的密码登录。</p>
-<p><img src="https://huatree.top/image-20220521191623991.png" alt="image-20220521191623991"></p>
-<p>初次登录成功后的页面如下</p>
-<p><img src="https://huatree.top/image-20220521192006609.png" alt="image-20220521192006609"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>根据实际情况，可切换中文页面方便使用：</p>
-<p>点击右上角头像 &gt; Preferences &gt; Localization &gt; 设置简体中文并点击保存，切换其他页面生效。</p>
-<h3 id="GitLab-的权限控制"><a href="#GitLab-的权限控制" class="headerlink" title="GitLab 的权限控制"></a>GitLab 的权限控制</h3><p>以默认的<code>GitLab Instance/Monitoring</code>仓库为例剖析。进入该页面，点击<strong>邀请成员</strong>，弹窗如下所示。</p>
-<p><img src="https://huatree.top/image-20220521195929833.png" alt="image-20220521195929833"></p>
-<p>相关角色详细信息，点击<strong>了解更多</strong>。</p>
-<p>更多权限与角色信息，<a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/user/permissions.html#permissions-and-roles">详见官方文档</a></p>
-<p>管理员使用 GitLab 一般会考虑的点：</p>
-<ul>
-<li>以组为单元，设置管理员</li>
-<li>熟悉 Merge Request，写好 git commit</li>
-<li>及时回收权限，或者设置过期时间</li>
-</ul>
-<p>有人可能会问，GitHub 有没有 GitLab 群组的感觉呢。答案是有的，与 GitHub 的<a target="_blank" rel="noopener" href="https://github.com/organizations/plan">organizations</a>项对应。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/install/docker.html">GitLab Docker images</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a target="_blank" rel="noopener" href="https://github.com/hackergrrl/art-of-readme">Art of README</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://github.com/othneildrew/Best-README-Template">Best-README-Template</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://github.com/RichardLitt/standard-readme">standard-readme</a></p>
 
     </div>
 
@@ -380,7 +374,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://huatree.gitee.io/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" title="gitlab搭建与使用">https://huatree.gitee.io/2022/05/21/20220521-gitlab搭建与使用/</a>
+      <a href="https://huatree.gitee.io/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/" title="写好README">https://huatree.gitee.io/2022/06/03/20220603-写好README/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -406,21 +400,18 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/gitlab/" rel="tag"># gitlab</a>
+              <a href="/tags/README/" rel="tag"># README</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2022/05/21/20220521-3%E7%A7%8D%E6%96%B9%E6%B3%95%E4%BA%A7%E7%94%9Fgitignore%E6%96%87%E4%BB%B6/" rel="prev" title="3种方法产生gitignore文件">
-                  <i class="fa fa-chevron-left"></i> 3种方法产生gitignore文件
+                <a href="/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/" rel="prev" title="gitlab搭建与使用">
+                  <i class="fa fa-chevron-left"></i> gitlab搭建与使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/" rel="next" title="写好README">
-                  写好README <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -504,7 +495,7 @@
 
 <link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"621238555555de676096e4ec3bbff7ac"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"a64f8b138a3b9f138132e55a493ba3ad"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
