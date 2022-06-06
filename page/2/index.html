@@ -478,7 +478,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-06 21:12:03" itemprop="dateModified" datetime="2022-06-06T21:12:03+08:00">2022-06-06</time>
+      <time title="修改时间：2022-06-06 21:37:12" itemprop="dateModified" datetime="2022-06-06T21:37:12+08:00">2022-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -497,7 +497,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>198</span>
+      <span>196</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -515,18 +515,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当遇到一些特定版本的包，刚好网络暂时无法下载，又急需运行调试时，可以借助同事本地的离线包，手动加入 npm 依赖。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>手动加入 npm 依赖操作如下：</p>
-<ol>
-<li>检查本地项目所在目录下的 node_modules；如果存在，先删除</li>
-<li>检查 package.json 是否存在需要加入的 npm 依赖；如果是，删除</li>
-<li>执行 npm i 安装依赖</li>
-<li>需要加入的依赖包移入 node_modules 目录</li>
-<li>package.json 中加入该 npm 依赖信息</li>
-</ol>
-
+          <p>当遇到一些特定版本的包，刚好网络暂时无法下载，又急需运行调试时，可以借助同事本地的离线包，手动加入 npm 依赖。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/23/20220423-%E5%A6%82%E4%BD%95%E6%89%8B%E5%8A%A8%E5%8A%A0%E5%85%A5npm%E4%BE%9D%E8%B5%96/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -802,7 +799,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-06-06 21:12:00" itemprop="dateModified" datetime="2022-06-06T21:12:00+08:00">2022-06-06</time>
+      <time title="修改时间：2022-06-06 21:37:59" itemprop="dateModified" datetime="2022-06-06T21:37:59+08:00">2022-06-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -839,9 +836,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>广告位埋点需求：H5 页面中记录广告区域内的点击坐标信息。</p>
+          <p>广告位埋点需求：H5 页面中记录广告区域内的点击坐标信息。</p>
 <p>● etStart 按下时间 时间戳</p>
 <p>● downX 按下相对屏幕 x 坐标</p>
 <p>● downY 按下相对屏幕 y 坐标</p>
@@ -852,10 +847,14 @@
 <p>● upY 抬起相对屏幕 y 坐标</p>
 <p>● rUpX 抬起相对广告 x 坐标</p>
 <p>● rUpY 抬起相对屏幕 y 坐标</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> adE = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;ad&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="language-javascript">  adE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousedown&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">etStart</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">downX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">downY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rDownX</span> = e.<span class="property">offsetX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rDownY</span> = e.<span class="property">offsetY</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  adE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">etEnd</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">upX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">upY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rUpX</span> = e.<span class="property">offsetX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rUpY</span> = e.<span class="property">offsetY</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> closeE = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;close&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="language-javascript">  closeE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousedown&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">etStart</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">downX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">downY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rDownX</span> = e.<span class="property">pageX</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetLeft</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rDownY</span> = e.<span class="property">pageY</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetTop</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  closeE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">etEnd</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">upX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">upY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rUpX</span> = e.<span class="property">pageX</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetLeft</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rUpY</span> = e.<span class="property">pageY</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetTop</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/Events">Web 开发技术 &gt; 事件参考</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/06/20220406-H5%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%82%B9%E5%87%BB%E5%9D%90%E6%A0%87%E4%BF%A1%E6%81%AF/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
