@@ -236,23 +236,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue开发工具指南</title>
-    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
-<span id="more"></span>
-
-<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
-<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>M3U8-Downloader视频下载合并转换</title>
     <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
     <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
@@ -274,6 +257,23 @@
       </categories>
       <tags>
         <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发工具指南</title>
+    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
+<span id="more"></span>
+
+<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
+<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -311,64 +311,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>混合App中H5白屏修复及样式兼容</title>
-    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
-    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
-<ul>
-<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
-<li>代码编译错误引起渲染失败(一直白屏)</li>
-</ul>
-<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
-<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
-<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
-<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
-<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
-<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>H5</tag>
-        <tag>混合APP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue开发应用中遇到的问题与总结</title>
-    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
-<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
-<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意</p>
-<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
-</blockquote>
-<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
-<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
-<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
-<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
-<blockquote>
-<p>! 注意</p>
-<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
-<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
-</blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
-<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -842,6 +784,64 @@
       </tags>
   </entry>
   <entry>
+    <title>混合App中H5白屏修复及样式兼容</title>
+    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
+    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
+<ul>
+<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
+<li>代码编译错误引起渲染失败(一直白屏)</li>
+</ul>
+<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
+<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
+<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
+<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
+<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
+<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
+        <tag>混合APP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发应用中遇到的问题与总结</title>
+    <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
+<p>computed，<a href="https://cn.vuejs.org/v2/api/#computed">详见</a></p>
+<h3 id="data-中不能使用-computed-中的数据-computed-中可以使用-data-数据"><a href="#data-中不能使用-computed-中的数据-computed-中可以使用-data-数据" class="headerlink" title="data 中不能使用 computed 中的数据, computed 中可以使用 data 数据"></a>data 中不能使用 computed 中的数据, computed 中可以使用 data 数据</h3><p>归根结底就是一个 Vue 实例在渲染的时候数据解析的顺序问题。官方 v2.6.14 版本源码，<a href="https://vscode.dev/github/vuejs/vue/blob/v2.6.14/src/core/index.js">详见</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// props -&gt; methods -&gt; data -&gt; computed -&gt; watch</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">initState</span>(<span class="params">vm: Component</span>) &#123;</span><br><span class="line">  vm.<span class="property">_watchers</span> = []</span><br><span class="line">  <span class="keyword">const</span> opts = vm.<span class="property">$options</span></span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">props</span>) <span class="title function_">initProps</span>(vm, opts.<span class="property">props</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">methods</span>) <span class="title function_">initMethods</span>(vm, opts.<span class="property">methods</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">data</span>) &#123;</span><br><span class="line">    <span class="title function_">initData</span>(vm)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="title function_">observe</span>((vm.<span class="property">_data</span> = &#123;&#125;), <span class="literal">true</span> <span class="comment">/* asRootData */</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">computed</span>) <span class="title function_">initComputed</span>(vm, opts.<span class="property">computed</span>)</span><br><span class="line">  <span class="keyword">if</span> (opts.<span class="property">watch</span> &amp;&amp; opts.<span class="property">watch</span> !== nativeWatch) &#123;</span><br><span class="line">    <span class="title function_">initWatch</span>(vm, opts.<span class="property">watch</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意</p>
+<p>以上代码的执行顺序，并非是 Vue 风格指南中<a href="https://cn.vuejs.org/v2/style-guide/#%E7%BB%84%E4%BB%B6-%E5%AE%9E%E4%BE%8B%E7%9A%84%E9%80%89%E9%A1%B9%E7%9A%84%E9%A1%BA%E5%BA%8F%E6%8E%A8%E8%8D%90">组件&#x2F;实例的选项的顺序</a></p>
+</blockquote>
+<h2 id="2-vuex-中-mapState-辅助函数"><a href="#2-vuex-中-mapState-辅助函数" class="headerlink" title="2 vuex 中 mapState 辅助函数"></a>2 vuex 中 mapState 辅助函数</h2><p><a href="https://v3.vuex.vuejs.org/zh/guide/state.html#mapstate-%E8%BE%85%E5%8A%A9%E5%87%BD%E6%95%B0">用法详见</a></p>
+<p><code>mapState</code> 函数返回的是一个对象，结合 ES6 的扩展运算符，就能自动实现 computed 中的多个计算属性加入，减少手动一个个的去写。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">  localComputed () &#123; <span class="comment">/* ... */</span> &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 使用对象展开运算符将此对象混入到外部对象中</span></span><br><span class="line">  ...<span class="title function_">mapState</span>(&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用对象展开运算符将此对象<code>混入到外部对象</code>中，这句话就很关键。</p>
+<p>另外，mapGetters，mapActions，mapMutations 与 mapState 的用法有着异曲同工之妙。</p>
+<h2 id="3-vuex中Modules命名空间理解"><a href="#3-vuex中Modules命名空间理解" class="headerlink" title="3 vuex中Modules命名空间理解"></a>3 vuex中Modules命名空间理解</h2><p>默认情况下，模块内部的 action、mutation 和 getter 是注册在<strong>全局命名空间</strong>的——这样使得多个模块能够对同一 mutation 或 action 作出响应。<a href="https://v3.vuex.vuejs.org/zh/guide/modules.html#%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B1%80%E9%83%A8%E7%8A%B6%E6%80%81">用法详见</a></p>
+<blockquote>
+<p>! 注意</p>
+<p>在没有 namespaced: true 指明的模块中，除了 action、mutation 和 getter，其它都是<strong>局部的</strong>，state 是局部的。</p>
+<p>对于模块内部的 action，局部状态通过 <code>context.state</code> 暴露出来，根节点状态则为 <code>context.rootState</code>，这也是为什么 action 的参数不用store实例本身，而是 context 上下文。</p>
+</blockquote>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/boji/p/15929728.html">Vue data 与 computed 的区别</a></p>
+<p>[2] <a href="https://www.cnblogs.com/tugenhua0707/p/9794423.html">理解 Vuex 的辅助函数 mapState, mapActions, mapMutations 用法</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>static与new.target关键字</title>
     <url>/2021/07/16/20220303-static%E4%B8%8Enew.target%E5%85%B3%E9%94%AE%E5%AD%97/</url>
     <content><![CDATA[<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static 在类中定义静态方法。</p>
@@ -1082,22 +1082,29 @@
       </tags>
   </entry>
   <entry>
-    <title>vue+element form多表单校验</title>
-    <url>/2022/03/14/20220314-vue+element-form%E5%A4%9A%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</url>
-    <content><![CDATA[<p>一般项目中会对 Element Form 表单进行二次封装，封装后的通用表单，有时候不能适用一些特殊的表单，可以用到多表单组合一起验证，待都校验通过后再执行后续动作。</p>
+    <title>多个Promise顺序执行</title>
+    <url>/2022/03/15/20220315-%E5%A4%9A%E4%B8%AAPromise%E9%A1%BA%E5%BA%8F%E6%89%A7%E8%A1%8C/</url>
+    <content><![CDATA[<p>一些复杂的表单提交，会涉及到下个选择框的值来自前几个入参值请求 API 所得（几个入参值是接口返回得出参），这种情况下，就满足多个 Promise 顺序执行。</p>
 <span id="more"></span>
 
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>先对每一个表单进行校验，返回一个 Promise 对象，然后使用<code>Promise.all()</code>方法对所有返回的 Promise 对象判断，全部是 fullfilled 的时候执行后续逻辑。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.title1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.content1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules2&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.title2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.content2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;onOk&quot;</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&#x27;MoreForm&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">rules1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">         <span class="attr">rules2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">  	<span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">onOk</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> formValidate = [</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form1&#x27;</span>].<span class="title function_">validate</span>(),</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form2&#x27;</span>].<span class="title function_">validate</span>()</span></span><br><span class="line"><span class="language-javascript">        ]</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Promise</span>.<span class="title function_">all</span>(formValidate).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// todo</span></span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// 校验通过后的处理</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">f1</span> = (<span class="params"></span>) =&gt;</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;p1 running&#x27;</span>)</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="number">1</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">f2</span> = (<span class="params"></span>) =&gt;</span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;p2 running&#x27;</span>)</span><br><span class="line">      <span class="title function_">resolve</span>(<span class="number">2</span>)</span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">  &#125;)</span><br></pre></td></tr></table></figure>
 
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://element.eleme.cn/#/zh-CN/component/form">Element &gt; 组件 &gt; Form 表单</a></p>
+<h3 id="Promise-回调"><a href="#Promise-回调" class="headerlink" title="Promise 回调"></a>Promise 回调</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">f1</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="title function_">f2</span>()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="async-函数"><a href="#async-函数" class="headerlink" title="async 函数"></a>async 函数</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">!(<span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">asyncPromise</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">await</span> <span class="title function_">f1</span>()</span><br><span class="line">  <span class="title function_">f2</span>()</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [f1, f2]</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">runPromiseInsequence</span> = (<span class="params">array, value</span>) =&gt;</span><br><span class="line">  array.<span class="title function_">reduce</span>(<span class="function">(<span class="params">promiseChain, currentFunction</span>) =&gt;</span> promiseChain.<span class="title function_">then</span>(currentFunction), <span class="title class_">Promise</span>.<span class="title function_">resolve</span>(value))</span><br><span class="line"><span class="title function_">runPromiseInsequence</span>(arr, <span class="string">&#x27;init&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [f1, f2]</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">sequencePromise</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> pro = arr.<span class="title function_">shift</span>()</span><br><span class="line">  <span class="keyword">if</span> (pro) &#123;</span><br><span class="line">    <span class="title function_">pro</span>().<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="title function_">sequencePromise</span>(arr)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">sequencePromise</span>(arr)</span><br></pre></td></tr></table></figure>
+
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [f1, f2]</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params">arr</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> res = <span class="title class_">Promise</span>.<span class="title function_">resolve</span>()</span><br><span class="line">  arr.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">    res = res.<span class="title function_">then</span>(item)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">func</span>(arr)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>工作点滴</category>
       </categories>
       <tags>
-        <tag>Vue</tag>
-        <tag>Element</tag>
+        <tag>Promise</tag>
+        <tag>ES6</tag>
       </tags>
   </entry>
   <entry>
@@ -1319,6 +1326,25 @@
       </tags>
   </entry>
   <entry>
+    <title>vue+element form多表单校验</title>
+    <url>/2022/03/14/20220314-vue+element-form%E5%A4%9A%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</url>
+    <content><![CDATA[<p>一般项目中会对 Element Form 表单进行二次封装，封装后的通用表单，有时候不能适用一些特殊的表单，可以用到多表单组合一起验证，待都校验通过后再执行后续动作。</p>
+<span id="more"></span>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>先对每一个表单进行校验，返回一个 Promise 对象，然后使用<code>Promise.all()</code>方法对所有返回的 Promise 对象判断，全部是 fullfilled 的时候执行后续逻辑。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.title1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.content1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules2&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.title2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.content2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;onOk&quot;</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&#x27;MoreForm&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">rules1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">         <span class="attr">rules2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">  	<span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">onOk</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> formValidate = [</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form1&#x27;</span>].<span class="title function_">validate</span>(),</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form2&#x27;</span>].<span class="title function_">validate</span>()</span></span><br><span class="line"><span class="language-javascript">        ]</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Promise</span>.<span class="title function_">all</span>(formValidate).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// todo</span></span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// 校验通过后的处理</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://element.eleme.cn/#/zh-CN/component/form">Element &gt; 组件 &gt; Form 表单</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>Element</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>node版本管理</title>
     <url>/2022/03/17/20220317-node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h2 id="了解-nvm-windows"><a href="#了解-nvm-windows" class="headerlink" title="了解 nvm-windows"></a>了解 nvm-windows</h2><p><a href="https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows">Microsoft</a> &#x2F; <a href="https://docs.npmjs.com/cli/v7/configuring-npm/install#windows-node-version-managers">npm &#x2F;Google 为</a><em>Windows</em>推荐 了 Node.js 版本管理器。<em>原始<a href="https://github.com/nvm-sh/nvm">nvm</a>是一个完全独立的项目，仅适用于 Mac&#x2F;Linux。</em>该项目使用完全不同的理念，而不仅仅是 nvm 的克隆。详细信息列在<a href="https://github.com/coreybutler/nvm-windows#bulb-why-another-version-manager">为什么另一个版本管理器？</a>有<a href="https://github.com/coreybutler/nvm-windows#bulb-whats-the-big-difference">什么大的区别？</a>。</p>
@@ -1380,105 +1406,6 @@
       </categories>
       <tags>
         <tag>win10</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
-    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
-    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
-<span id="more"></span>
-
-<div class="note info"><p>文章转载自程序员鱼皮 </p>
-</div>
-
-<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
-<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
-<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
-<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
-<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
-<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
-<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
-<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
-<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
-<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
-<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
-<p>整体的思想就是从整体到局部，由大到小吧。</p>
-<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
-<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
-<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
-<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
-<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
-<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
-<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
-<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
-<p>所以这也是为什么要多了解和积累一些技术。</p>
-<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
-<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
-<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
-<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
-<ul>
-<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
-<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
-</li>
-<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
-</li>
-</ul>
-<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
-<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
-<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
-]]></content>
-      <categories>
-        <category>经典文章</category>
-      </categories>
-      <tags>
-        <tag>职场</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>七牛云+PicGo+Typora搭建图床</title>
-    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
-<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
-</blockquote>
-<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
-<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
-<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
-<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
-<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
-<p>在自定义源站域名栏绑定域名</p>
-<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
-<blockquote>
-<p>! 注意</p>
-<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
-</blockquote>
-<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
-<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
-<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
-<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
-<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
-<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
-<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
-<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
-<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
-<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
-<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
-<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
-<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
-<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
-<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
-<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
-<p>最后，可以验证一下图片上传。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
-<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
-<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
-<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>七牛云</tag>
-        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -1951,6 +1878,105 @@
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
+    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
+    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自程序员鱼皮 </p>
+</div>
+
+<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
+<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
+<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
+<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
+<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
+<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
+<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
+<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
+<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
+<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
+<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
+<p>整体的思想就是从整体到局部，由大到小吧。</p>
+<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
+<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
+<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
+<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
+<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
+<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
+<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
+<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
+<p>所以这也是为什么要多了解和积累一些技术。</p>
+<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
+<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
+<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
+<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
+<ul>
+<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
+<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
+</li>
+<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
+</li>
+</ul>
+<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
+<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
+<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
+]]></content>
+      <categories>
+        <category>经典文章</category>
+      </categories>
+      <tags>
+        <tag>职场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>七牛云+PicGo+Typora搭建图床</title>
+    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
+<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
+</blockquote>
+<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
+<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
+<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
+<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
+<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
+<p>在自定义源站域名栏绑定域名</p>
+<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
+<blockquote>
+<p>! 注意</p>
+<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
+</blockquote>
+<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
+<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
+<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
+<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
+<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
+<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
+<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
+<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
+<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
+<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
+<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
+<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
+<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
+<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
+<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
+<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
+<p>最后，可以验证一下图片上传。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
+<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
+<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
+<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>七牛云</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -2850,29 +2876,6 @@
       </tags>
   </entry>
   <entry>
-    <title>移动端H5页面禁止长按复制及去掉点击高亮</title>
-    <url>/2022/06/06/20220606-%E7%A7%BB%E5%8A%A8%E7%AB%AFH5%E9%A1%B5%E9%9D%A2%E7%A6%81%E6%AD%A2%E9%95%BF%E6%8C%89%E5%A4%8D%E5%88%B6%E5%8F%8A%E5%8E%BB%E6%8E%89%E7%82%B9%E5%87%BB%E9%AB%98%E4%BA%AE/</url>
-    <content><![CDATA[<p>指定的移动端 H5 页面，长按文字拉起复制面板，对用户体验不友好。活动 H5 页面点击区域闪现高亮。</p>
-<p><img src="https://huatree.top/image-20220606211508208.png" alt="image-20220606211508208"></p>
-<span id="more"></span>
-
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="禁止长按复制"><a href="#禁止长按复制" class="headerlink" title="禁止长按复制"></a>禁止长按复制</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  -webkit-user-select: none; <span class="comment">/* webkit浏览器 */</span></span><br><span class="line">  -webkit-touch-callout: none; <span class="comment">/* 系统默认菜单被禁用 */</span></span><br><span class="line">  -khtml-user-select: none; <span class="comment">/* 早期浏览器 */</span></span><br><span class="line">  -moz-user-select: none; <span class="comment">/* 火狐 */</span></span><br><span class="line">  -ms-user-select: none; <span class="comment">/* IE10 */</span></span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span>,</span><br><span class="line"><span class="selector-tag">textarea</span> &#123;</span><br><span class="line">  -webkit-user-select: auto;</span><br><span class="line">  user-select: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="去掉点击高亮"><a href="#去掉点击高亮" class="headerlink" title="去掉点击高亮"></a>去掉点击高亮</h3><p>默认情况下，当用户点击链接或 JavaScript 可点击元素时，iOS 上的 Safari 会以透明灰色突出显示该区域。使用<code>-webkit-tap-highlight-color</code>CSS 属性，您可以修改或禁用网页上的此默认行为。</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  -webkit-tap-highlight-<span class="attribute">color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  -webkit-tap-highlight-<span class="attribute">color</span>: transparent; <span class="comment">/* For some Androids */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/-webkit-tap-highlight-color">-webkit-tap-highlight-color</a></p>
-<p>[2] <a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Reference/SafariWebContent/AdjustingtheTextSize/AdjustingtheTextSize.html#//apple_ref/doc/uid/TP40006510-SW5">Safari 网页内容指南</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>H5</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>写好README</title>
     <url>/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/</url>
     <content><![CDATA[<p><img src="https://huatree.top/image-20220603172009054.png" alt="image-20220603172009054"></p>
@@ -2917,6 +2920,29 @@
       </categories>
       <tags>
         <tag>README</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>移动端H5页面禁止长按复制及去掉点击高亮</title>
+    <url>/2022/06/06/20220606-%E7%A7%BB%E5%8A%A8%E7%AB%AFH5%E9%A1%B5%E9%9D%A2%E7%A6%81%E6%AD%A2%E9%95%BF%E6%8C%89%E5%A4%8D%E5%88%B6%E5%8F%8A%E5%8E%BB%E6%8E%89%E7%82%B9%E5%87%BB%E9%AB%98%E4%BA%AE/</url>
+    <content><![CDATA[<p>指定的移动端 H5 页面，长按文字拉起复制面板，对用户体验不友好。活动 H5 页面点击区域闪现高亮。</p>
+<p><img src="https://huatree.top/image-20220606211508208.png" alt="image-20220606211508208"></p>
+<span id="more"></span>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="禁止长按复制"><a href="#禁止长按复制" class="headerlink" title="禁止长按复制"></a>禁止长按复制</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  -webkit-user-select: none; <span class="comment">/* webkit浏览器 */</span></span><br><span class="line">  -webkit-touch-callout: none; <span class="comment">/* 系统默认菜单被禁用 */</span></span><br><span class="line">  -khtml-user-select: none; <span class="comment">/* 早期浏览器 */</span></span><br><span class="line">  -moz-user-select: none; <span class="comment">/* 火狐 */</span></span><br><span class="line">  -ms-user-select: none; <span class="comment">/* IE10 */</span></span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span>,</span><br><span class="line"><span class="selector-tag">textarea</span> &#123;</span><br><span class="line">  -webkit-user-select: auto;</span><br><span class="line">  user-select: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="去掉点击高亮"><a href="#去掉点击高亮" class="headerlink" title="去掉点击高亮"></a>去掉点击高亮</h3><p>默认情况下，当用户点击链接或 JavaScript 可点击元素时，iOS 上的 Safari 会以透明灰色突出显示该区域。使用<code>-webkit-tap-highlight-color</code>CSS 属性，您可以修改或禁用网页上的此默认行为。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  -webkit-tap-highlight-<span class="attribute">color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">  -webkit-tap-highlight-<span class="attribute">color</span>: transparent; <span class="comment">/* For some Androids */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/-webkit-tap-highlight-color">-webkit-tap-highlight-color</a></p>
+<p>[2] <a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Reference/SafariWebContent/AdjustingtheTextSize/AdjustingtheTextSize.html#//apple_ref/doc/uid/TP40006510-SW5">Safari 网页内容指南</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>H5</tag>
       </tags>
   </entry>
 </search>
