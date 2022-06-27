@@ -201,6 +201,41 @@
       </tags>
   </entry>
   <entry>
+    <title>npm常用命令</title>
+    <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220507212813517.png" alt="image-20220507212813517"></p>
+<span id="more"></span>
+
+<h2 id="UNMET-PEER-DEPENDENCY-xxx"><a href="#UNMET-PEER-DEPENDENCY-xxx" class="headerlink" title="UNMET PEER DEPENDENCY @xxx"></a>UNMET PEER DEPENDENCY @xxx</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 简单查看项目依赖库的信息</span></span><br><span class="line">npm <span class="built_in">ls</span> --depth 0</span><br><span class="line"><span class="comment"># 查看当前是否有任何（或特定）已安装的依赖包已过时</span></span><br><span class="line">npm outdated</span><br><span class="line"><span class="comment"># 查看某个依赖包的所有版本</span></span><br><span class="line">npm view [pkg name] versions</span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>简单查看项目依赖库的信息，如果遇到 UNMET PEER DEPENDENCY @xxx，会列出来并给出修复提示。</p>
+</div>
+
+<h2 id="package-json-的包依赖关系"><a href="#package-json-的包依赖关系" class="headerlink" title="package.json 的包依赖关系"></a>package.json 的包依赖关系</h2><p><code>^version</code>：与版本兼容，并非指定的版本，具体版本在 package-lock.json 文件可查，也可以在终端输入下面的命令查看</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> [pkg name]</span><br><span class="line"><span class="comment"># npm查看全局安装包</span></span><br><span class="line">npm <span class="built_in">ls</span> --global</span><br></pre></td></tr></table></figure>
+
+<div class="note warning"><p>请不要在您的<code>dependencies</code>对象中放置测试工具或转译器。</p>
+</div>
+
+<h2 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有配置信息</span></span><br><span class="line">npm config <span class="built_in">ls</span> -l</span><br><span class="line"><span class="comment"># 查看镜像源</span></span><br><span class="line">npm get registry</span><br><span class="line"><span class="comment"># 设置镜像源</span></span><br><span class="line">npm config <span class="built_in">set</span> registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.npmjs.com/cli/v8/commands">npm Docs</a></p>
+<p>[2] <a href="https://gitee.com/link?target=https://blog.csdn.net/qq_24956515/article/details/72829051">ng2 依赖库平滑升级方案</a></p>
+<p>[3] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/ls/">npm-ls</a></p>
+<p>[4] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/outdated/">npm-outdated</a></p>
+<p>[5] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/view/">npm view</a></p>
+<p>[6] <a href="https://gitee.com/link?target=https://www.npmjs.cn/files/package.json/%23dependencies">package.json-dependencies</a></p>
+<p>[7] <a href="https://gitee.com/link?target=https://www.npmjs.cn/misc/semver/">npm - semver</a></p>
+<p>[8] <a href="https://www.runoob.com/w3cnote/npm-switch-repo.html">npm 切换镜像站点</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>M3U8-Downloader视频下载合并转换</title>
     <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
     <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
@@ -242,38 +277,40 @@
       </tags>
   </entry>
   <entry>
-    <title>npm常用命令</title>
-    <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220507212813517.png" alt="image-20220507212813517"></p>
-<span id="more"></span>
+    <title>Git常见问题与总结</title>
+    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
 
-<h2 id="UNMET-PEER-DEPENDENCY-xxx"><a href="#UNMET-PEER-DEPENDENCY-xxx" class="headerlink" title="UNMET PEER DEPENDENCY @xxx"></a>UNMET PEER DEPENDENCY @xxx</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 简单查看项目依赖库的信息</span></span><br><span class="line">npm <span class="built_in">ls</span> --depth 0</span><br><span class="line"><span class="comment"># 查看当前是否有任何（或特定）已安装的依赖包已过时</span></span><br><span class="line">npm outdated</span><br><span class="line"><span class="comment"># 查看某个依赖包的所有版本</span></span><br><span class="line">npm view [pkg name] versions</span><br></pre></td></tr></table></figure>
+<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
+<blockquote>
+<p>tops</p>
+<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
+</blockquote>
+<p>具体操作如下</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
 
-<div class="note warning"><p>简单查看项目依赖库的信息，如果遇到 UNMET PEER DEPENDENCY @xxx，会列出来并给出修复提示。</p>
-</div>
+<blockquote>
+<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
+</blockquote>
+<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
 
-<h2 id="package-json-的包依赖关系"><a href="#package-json-的包依赖关系" class="headerlink" title="package.json 的包依赖关系"></a>package.json 的包依赖关系</h2><p><code>^version</code>：与版本兼容，并非指定的版本，具体版本在 package-lock.json 文件可查，也可以在终端输入下面的命令查看</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm <span class="built_in">ls</span> [pkg name]</span><br><span class="line"><span class="comment"># npm查看全局安装包</span></span><br><span class="line">npm <span class="built_in">ls</span> --global</span><br></pre></td></tr></table></figure>
+<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
+<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
+<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
 
-<div class="note warning"><p>请不要在您的<code>dependencies</code>对象中放置测试工具或转译器。</p>
-</div>
+<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看所有配置信息</span></span><br><span class="line">npm config <span class="built_in">ls</span> -l</span><br><span class="line"><span class="comment"># 查看镜像源</span></span><br><span class="line">npm get registry</span><br><span class="line"><span class="comment"># 设置镜像源</span></span><br><span class="line">npm config <span class="built_in">set</span> registry=https://registry.npmmirror.com</span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.npmjs.com/cli/v8/commands">npm Docs</a></p>
-<p>[2] <a href="https://gitee.com/link?target=https://blog.csdn.net/qq_24956515/article/details/72829051">ng2 依赖库平滑升级方案</a></p>
-<p>[3] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/ls/">npm-ls</a></p>
-<p>[4] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/outdated/">npm-outdated</a></p>
-<p>[5] <a href="https://gitee.com/link?target=https://www.npmjs.cn/cli/view/">npm view</a></p>
-<p>[6] <a href="https://gitee.com/link?target=https://www.npmjs.cn/files/package.json/%23dependencies">package.json-dependencies</a></p>
-<p>[7] <a href="https://gitee.com/link?target=https://www.npmjs.cn/misc/semver/">npm - semver</a></p>
-<p>[8] <a href="https://www.runoob.com/w3cnote/npm-switch-repo.html">npm 切换镜像站点</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
+<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
+<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
+<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
+<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
 ]]></content>
       <categories>
         <category>工作点滴</category>
       </categories>
       <tags>
-        <tag>npm</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -802,43 +839,6 @@
       </categories>
       <tags>
         <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git常见问题与总结</title>
-    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
-
-<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
-<blockquote>
-<p>tops</p>
-<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
-</blockquote>
-<p>具体操作如下</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
-</blockquote>
-<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
-<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
-<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
-<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
-<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
-<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
-<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -2069,30 +2069,6 @@
       </tags>
   </entry>
   <entry>
-    <title>你的node-sass安装报错了吗</title>
-    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
-    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
-<span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414170239182.png" alt="image-20220414170239182"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
-<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
-<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414165653097.png" alt="image-20220414165653097"></p>
-<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414170424379.png" alt="image-20220414170424379"></p>
-<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node-sass</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>H5页面中获取点击坐标信息</title>
     <url>/2022/04/06/20220406-H5%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%82%B9%E5%87%BB%E5%9D%90%E6%A0%87%E4%BF%A1%E6%81%AF/</url>
     <content><![CDATA[<p>广告位埋点需求：H5 页面中记录广告区域内的点击坐标信息。</p>
@@ -2117,6 +2093,30 @@
       </categories>
       <tags>
         <tag>H5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你的node-sass安装报错了吗</title>
+    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
+    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
+<span id="more"></span>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414170239182.png" alt="image-20220414170239182"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
+<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
+<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414165653097.png" alt="image-20220414165653097"></p>
+<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414170424379.png" alt="image-20220414170424379"></p>
+<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node-sass</tag>
       </tags>
   </entry>
   <entry>
@@ -2188,6 +2188,72 @@
       </tags>
   </entry>
   <entry>
+    <title>【转载】如何选择投资人，什么样的投资人靠谱，20个衡量指标全面分析</title>
+    <url>/2022/04/25/20220425-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E6%8A%95%E8%B5%84%E4%BA%BA%EF%BC%8C%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%8A%95%E8%B5%84%E4%BA%BA%E9%9D%A0%E8%B0%B1%EF%BC%8C20%E4%B8%AA%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87%E5%85%A8%E9%9D%A2%E5%88%86%E6%9E%90/</url>
+    <content><![CDATA[<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180928/a7b9fa5b102a43fdb61edc28ce1fc0b1.jpeg" alt="top"></p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自<a href="https://www.sohu.com/a/256789627_100286768?spm=smpc.author.fd-d.11.16508991429871920J6U">创投咨询网</a> </p>
+</div>
+
+<h2 id="了解投资人的背景"><a href="#了解投资人的背景" class="headerlink" title="了解投资人的背景"></a>了解投资人的背景</h2><p>如何选择投资机构。是美元机构，还是人民币机构；是一线机构，还是二线及以下的机构。但是首先应该明确一点，必须先确认公司可以拿到钱，再考虑怎么选择机构。如果公司本身融资上都有困难，那也没有什么资格挑三拣四，有机构投资就应该谢天谢地。</p>
+<p>真正的核心是，创业者越聪明（不是指小聪明）、越充分准备、越抓住本质，越不会出现预期结果偏差太大（所谓被坑）的感受。</p>
+<h3 id="直觉"><a href="#直觉" class="headerlink" title="直觉"></a>直觉</h3><p>无论之前创业，融资，还是现在作为投资人去投资，对于人和人沟通，个人觉得直觉还是很重要。</p>
+<p>直觉是质变，之前你的理性和综合经验是量变。当然光有直觉是不行的。</p>
+<h3 id="态度"><a href="#态度" class="headerlink" title="态度"></a>态度</h3><p>在签 TS 之前，要做的是识别 VC 的好坏。他们值得信赖吗？他们会积极帮助公司吗？他们善于倾听吗？他们容易相处吗？还有一个非常重要的是，他们愚蠢吗？征求投资人的对他们开展背景调查的同意。征求同意本身其实就是一种调查。有些投资人会觉得被冒犯，对此觉得反感。这种傲慢的态度对于创业者来说是一个警示信号。有些投资人则会欣然接受你对他们做背景调查，他们认为这是一个好事。这说明你在以后招聘关键人物或者是引入关键合伙人的时候，也会秉持同样谨慎的态度。不过看上去对创业者很好的 VC，不一定真正好，毕竟创业是长征。假设 VC 大笔给钱完全不管，公司黄了也不在意，对于公司创始人而言，除了在这过程中摸到一些好处到自己口袋，还能得到什么？错过时间成本，很可能拱手让出一次成就大事业的机会，等到昔日同伴占下山头，还会觉得这个 VC 很好吗？再假设 VC 在前期慈眉善目，一帆风顺，但等到后期运作时却笑里藏刀隔岸观火暗渡陈仓，把创始人轻松甩出，这样的 VC 是天使还是恶魔，看对谁而言了。</p>
+<h3 id="真诚度"><a href="#真诚度" class="headerlink" title="真诚度"></a>真诚度</h3><p>说话直接, 不行就直接说不行都是好的，创业时间是最大的成本，因此投资方的坦诚接受或拒绝是很重要的品格。其他的创业者可以列自己一定不接受的价值理念，这些因人而异了。</p>
+<h3 id="尊重程度"><a href="#尊重程度" class="headerlink" title="尊重程度"></a>尊重程度</h3><p>是否认为双方足够尊重彼此。心胸格局和能力往往成正比，反之则不一定。</p>
+<h3 id="价值理念匹配度"><a href="#价值理念匹配度" class="headerlink" title="价值理念匹配度"></a>价值理念匹配度</h3><p>对彼此人生态度的相互欣赏。如果没有和你的投资人谈过人生、死亡、爱情、理想，那么你们的关系还差得远呢。投资人和创业者是互相尊重，互相约束，互相成长，互相理解，互相支持，互相信任的一个群体。所以基本上你作为一个创业者觉得自己跟这个投资人有以上的感觉了，那对于你这位投资人就是一个好投资人。投资人的光环不能决定他就是一位好投资人，现在被神化的一些投资人也正是当年一步一个脚印踏踏实实做好每一笔投资以后才有了今天的成绩。</p>
+<h3 id="负责程度"><a href="#负责程度" class="headerlink" title="负责程度"></a>负责程度</h3><p>做事认真讲究，这点从守时、工作流程、文档、信息回复等等都可以判断，认真的投资方可能会让创业者难受和拘束，但他一定会为你负责任。</p>
+<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>在任何问题上都可沟通，可争论。一旦确定投资，投资人和创业者往往要在一起很多年，大家在沟通上是否平等，彼此沟通是否顺畅，是否谈得来很重要。否则，未来的七八年，和投资人沟通成为创业者的负担就痛苦了…投资人脑子应该清楚，谈话问题逻辑性强，甚至感觉谈完之后自己的 bp 很多没讲透。</p>
+<h3 id="基金背景"><a href="#基金背景" class="headerlink" title="基金背景"></a>基金背景</h3><p>看 LP 的背景。如果你有渠道或者资源，最好能够去了解一下。因为 LP 很大程度上会决定这家基金的投资方向，你可以跟业内人士的投资人或者 FA 打听一下。要国内还是国外的投资，对于绝大多数创业者这二者区别不大。部分创业者有很强的开拓国外市场的需求，这时一个有境外资源的资方就会有优势；同理，国内资方在境内资源上优势就稍大一些。总体来说影响不大，无需定向寻找。</p>
+<p>要拿人民币还是拿美元，先看公司上市的终极形态。当然，有时公司为了拿到钱也考虑不到终极形态的问题，但是还是要考虑到，一旦公司拿了非终极形态币种的投资，最后要付出什么样的成本：搭、拆 vie 虽然合规，但是每搭或者拆一次 vie 要 50 万元，这还是小事，公司还得花 6 个月时间等待。即使公司可以不在意 50 万元的金钱成本，6 个月的等待时间依然是得好好掂量掂量的。另一种中外合资企业，但是中外合资的问题在于：拿不到没有 ICP，这意味着公司无法进行线上交易。</p>
+<p>不同的投资机构的资本背景、资金体量、投资逻辑、关注方向、投资金额、轮次、创始人特质偏好等等各不相同，所以即便你的项目很好，也不是每个投资人都会投资。比如说，有的基金原则上就不投资 A 轮以前项目，有的只投天使和 A 轮，有的只看高科技，有的只看泛娱乐。如果你有一个很棒的天使轮机器人项目，而认识的投资人只投 A 轮以后的金融项目，那么他基本上也帮不到你。</p>
+<p>基金的背景。基金大致可以分成美元基金、人民币基金、产业基金、上市公司等，各种背景的投资目的、风格和偏好不太一样。比如美元基金更看重成长性，退出期较长，但拿美元公司必须有 VIE（可变利益实体，Variable Interest Entities，具体解释见什么是 VIE 结构？VIE 结构公司有何特点？）或者 JV（合资企业，Joint Venture）的架构，花费时间较长，而且费用需要公司出；上市公司战略投资为主，关注协同作用，拿了战投的钱基本就是“站队”了（此处可回答“为啥知乎不用百度搜索”），早期不太建议选战投；人民币基金较关注收入和利润。即使不能完全搞清楚基金的背景和投资偏好，也一定要知道自己需要美元还是人民币，基金能不能投相应的币种，不然完全浪费时间。</p>
+<p>人民币风格基金和美元风格基金（注意，这里我们谈的是风格，不是币种），二者的差别主要是源于赚钱思路的不同：人民币风格基金更多想的是今天投了一家创业公司后，未来这家公司的利润持续增长，最终被收购掉，或者上市，基金能够赚取一二级市场的价差。由于任何一个上市公司价值都不会低于十个亿，所以就能够赚到稳定的价值；而美元基金只投行业内的第一不投第二名，原因也非常简单：看纳斯达克、上市公司数据就知道，第一第二名价差非常大，老二非死不可。</p>
+<p><strong>投资人有钱，并且有继续融到钱的能力。特别是早期项目，可能需要的钱不多，看似大家都有。但是，随着公司发展，基本都会需要更多的资金投入。早期投资人会希望伴随公司多走一些路，而不是在下一轮融资就退出，所以在后续资金储备上面很重要。</strong></p>
+<h3 id="职业背景"><a href="#职业背景" class="headerlink" title="职业背景"></a>职业背景</h3><p>之前的职业是做什么的，投资方向是哪个领域，对你目前所做的行业是否有过深入了解。职场履历，虽然不能直接证明一个人到底有多优秀，但是也可以侧面看出来这个人的专业度。专业投资人比较强调，我如何把这个项目贩卖给下一家 A 轮，B 轮，当然这也是非常好的，教会创业者从资本角度考虑问题。而企业家投资人，更能够关注企业本身的成长。侧重点不一样，这点谈不上谁好谁不好。看创业者自身的需要了。专业投资人一般会带给创业者，从资本角度的建议。而企业家投资人，往往带给创业者创业过程中所需要的各种经验，包括需要的各种资源。</p>
+<p><strong>专业性：商业见解和逻辑性</strong>。创业者自己是专家, 很容易看出来对方是不是不懂装懂; 不懂装懂的没必要给他们上课, 上了他也学不进去。既然你是一个创业者，那么在接触投资人的时候是一定要相互交谈的，在初次交谈中，你可以获得对方给你的印象分，从心里对对方有一个最基础的评价，比如对方的言语是否真诚，对方讲话是不是很有商业见解和逻辑性，对方给你的指点是不是很有建设性，虽然有的人善于掩饰，但是在言谈举止之间，你还是可以获得一定的信息来进行一个初步的掌握的。聊天过程中一直尝试为创业者改变模式的, 也应该放弃, 他行他自己上</p>
+<p>对行业的了解不仅降低沟通成本， 而且往往代表这个投资人在相关的行业里是否会带给你与一个对于你行业完全不了解的投资人打交道所花费的，远不仅仅是沟通成本，还直接影响后期他所能够为您提供的资源、甚至重要决策的支持程度等等。而且往往对你行业的了解程度也说明投资人的诚意， 好的投资人在约谈项目前，对行业有详细的调研， 去年，在我们的平台上的一个家政类项目在启动融资时，前后密集收到了十几个投资人的密集约谈，最终在基本类似的 term sheet 中，她选择了最开始聊的一位投资人，原因很简单：这位投资人在跟她谈之前，就从上海特别飞来北京，直接在她线下门店里呆了两天，跟员工聊、跟阿姨聊、跟用户聊、甚至跟小区里的住户聊，最后才约了这位创始人聊。</p>
+<p>这个投资人对你所在的领域是不是真的有 insight，他和你交流的时候是胡侃还是能够有针对性的针对业务细节提问，是不是理解你的商业模式，是不是真正理解出现可能天花板的原因，如果业务上有方向的疑问，他提的问题是不是真的同解决方案有关；好的投资人如果想投一个行业，他一定会对这个行业有深入的分析和研究，正是因为他真心实意想投，所以他才会用心来看这个行业，所以他才敢果断放钱，因为他是真心想赌。</p>
+<h3 id="投资成绩"><a href="#投资成绩" class="headerlink" title="投资成绩"></a>投资成绩</h3><p>是否具备同类项目成功经验，对于创业者的成功是在于项目核心优势明显，经营持续有序。如果不是同类项目，那看是否是类似模式，比如服务模式，商业模式，用户发展路径等。既然你选择自己创业，那么投资人给你的不仅仅是钱这么简单，还有投资人背后的大量资源，那么投资人的之前的一些业绩就显得特别重要了，如果他也是一个投行新人，那么恐怕他能够给你的帮助就变得小之又小了，而如果是一些有经验的，有成绩的，对你来说也会省下很多事情和麻烦，还能给予你比较大的帮助。:看看对方投的过往项目你自己认可不认可, 不认可的话也没有必要继续。看这家基金近期是否有投资案例、人员流动是否频。如果基金的投资经理离职率较高，最近又没有投出的项目，说明这家基金属于没有钱的状态，只看不投，跟他接触纯属浪费时间。</p>
+<p>如果搜到一个机构已经投了十几个项目或者几十个项目，一般来说完全不靠谱的概率就会小很多，毕竟谁也不会和钱过不去，先投一堆项目故意骗人，这个逻辑是不存在的。同理，投的公司是什么公司，后面发展的如何，也可以部分验证这个机构是否和你匹配。比如一个互联网公司，发现投资机构投的都是传统行业的 PE 项目甚至 Pre-A、IPO 项目，那么就有可能不合适。再比如某机构投了几十个项目，但没有一个项目听过，也就是说项目基本都没走太远，那应该谨慎。这样的机构往往在早期投资机构中声誉不佳，这样的话你的下轮融资可能会有难度。</p>
+<p>如果是中小型基金，看<strong>有没有投过类似的项目</strong>。如果有，建议不要去接触。一般来说，只有像红杉这些比较大的基金才会在同一条赛道上布很多企业。中小型基金投过一个，就不会再投其他项目了，因为这种竞争他玩不起。如果你贸然去接触，相当于把你的所有商业信息都透露给他，他可能就会反馈给他已经投过的企业。</p>
+<h3 id="名气、品牌、口碑"><a href="#名气、品牌、口碑" class="headerlink" title="名气、品牌、口碑"></a>名气、品牌、口碑</h3><p><strong>投资人的人品</strong>；看看他投的 portfolio，尽量通过创业者群体，FA 等等渠道打听一下机构&#x2F;具体投资人的情况；投资人可能投的眼光对于一件事情的理解会存在差异，但是，一个靠谱的投资人无论对于创业者还是 FA，是都愿意合作的；创业者经常被直观的投资机构名气、投资人头衔所迷惑而忽略了这一点。风投机构和投资人非常注重经营自己的品牌，因为他们知道好的品牌名声可以更好地帮助他们争取项目、促成交易。但对于创业者而言，重要的不是风投机构的品牌形象，而是应该多听听他们投资的创业者对这个风投机构的看法。做投资人背景调查最好的时机是在他们向你发出了投资意向书、而你还在考虑接受与否的那段时间。不要看重投资人的名气，不要看重投资人在那时那刻对你的热情（许多投资人做商务出身的，搞定你是小菜一碟），看条款，看实际给钱速度，看服务水平。后面两条你不好判断，可以随机选两三个投资人过去投过的项目，去找 CEO，和他见见，深入聊聊。相信我，创业者都会向着创业者的，他们是真正了解这个投资人的人。一定要了解他作为投资人，在业界内的口碑如何，如果在界内很多人都反应这个人不怎么样，那么你最好就不要和他合作了（就算合作也需要小心谨慎），肯定不是你想象中的那么好，至少不适合你，如果口碑特别不错，这样你也能放心。</p>
+<p>一旦建立了投资关系，投资人就上了你的贼船，你们就绑在一起了。以后有很多的风雨需要你们共同面对。这就需要你们能够同舟共济。但能否做到这一点，还要看你们的作风是否和谐。另外投资人的口碑也很重要。投资机构有没有黑历史。有没有不合理的取消过 TS，甚至取消过 SPA，打款速度如何。习惯性取消协议的机构还是慎重考虑</p>
+<p><strong>那些正在处在宣传阶段的投资机构，是创业者重点考虑的对象！因为可能这些机构刚试水天使投资业务，需要打响他们的知名度，投资门槛也可能比知名的机构略低一些。</strong></p>
+<p>找天使投资的时候，口碑好的一定比口碑差的强，无论口碑好的那一方面受到多少中伤，也无论口碑差的那一方发了多少正面新闻。如果一家 VC，签 TS 很快，签投资合同却要内部审核几个月；如果一家 VC 对其能够提供的帮助和资源夸张到天上；如果一家 VC 过去投资的较为成功企业（注意，不要问失败的企业）对他们的评价不高；这恐怕就不会是一家口碑好的 VC。</p>
+<p>我认为不必刻意寻找<strong>明星投资人或者创业导师</strong>。因为对大多数创业者来说，像徐小平这类的投资人身价太高，议价能力太强，创业者很可能被迫出让过多股份或只能得到少量投资。而且他们公务繁忙，很难静下心来对一个项目进行指导；他们的资源也很难向众多拥护者开放。不过，如果明星资方主动找到你，你们谈判的结果又令人满意，那自然可以接受：否则的话，也不必可以寻找，其他的投资人也是不错的选择。</p>
+<p><strong>大公司投资</strong>他们的资源极多，远胜于一般的投资人。如果你担心人才收购或野蛮并购，我只能很遗憾地说，如果 BAT 相中了你，有些结果是很难避免的。BAT 相中你说明你的项目或团队有价值，客观来讲这是一件好事。但初创公司在创业的前两三个 18 个月内，都不应该让大公司以控股方式进来，除非双方业务的协同性是天然的难以分割的，但往往这种情况就是大公司内部孵化了，也轮不到初创团队去做了不是？！</p>
+<h3 id="对你项目的重视程度"><a href="#对你项目的重视程度" class="headerlink" title="对你项目的重视程度"></a>对你项目的重视程度</h3><p><strong>时间：</strong>愿意和你聊的久的, 只要不是没事干那你消遣的，剩下都是相对友好的。热情是投资人一直强调创业者要具有的品质。 投资人本身对于你这个项目的热情，决定了在后期这个投资人能多大程度上帮扶你的项目、为你提供资源。坦白讲，对于早期项目来说，投资的金额并不大，资金本身很多时候不足以成为投资人一直关注你这个项目的原因。但是兴趣和热情可以。另外， 热情也是投资人在你项目发展困难的时候，对你持续保持信心的基础。当然，对于投资人的热情也需要认真分辨。如果这个投资人做决策时间特别短，例如，直接在某个场合高调宣布投资多少，那么创业者也要很谨慎。因为这类 激情决策”，很常发生的事情就是，后期的 term 会很严苛，严苛到创业者不得不知难而退。</p>
+<h3 id="打款速度：出钱快不快"><a href="#打款速度：出钱快不快" class="headerlink" title="打款速度：出钱快不快"></a>打款速度：出钱快不快</h3><p>项目早期发展的时间窗口非常重要，那么资金及时到位的重要性也不言而喻。这里要提醒创业者警醒的是某些“出钱不快”的做法。这方面个人天使往往占优势， 不想基金有各种审核流程，有的甚至协议签署之后再到 LP 那里报批， 时间就会拖得很久。在接受 Term 时， 创业者应该特别关注基金在打钱之前的流程。 Term Sheet 后到打钱之间的时间。 再次强调因为基金管理别人的钱， 和天使投资人投资自己的钱不一样， 后者的流程（如果有的话）， 会快很多！</p>
+<p>关于打款磨叽不磨叽的问题需要提前打听好，可能有投资人给 TS 快，但是不一定打款快，这个问题不仅创业者会遇到，FA 也会遇到。</p>
+<h3 id="投资人对你的要求"><a href="#投资人对你的要求" class="headerlink" title="投资人对你的要求"></a>投资人对你的要求</h3><p>投资人把那么多钱投进来，不是什么都不管的，会附带很多的条件和要求（比如对赌）。这些一般都体现在投资条款中，你需要将一些要害的问题了解清楚，做到心中有数。</p>
+<p>投资人是不是战略投资者</p>
+<p>风险投资人一般只做财务投资，只是想通过投资你的企业实现资本增值，而对掌控企业没有兴趣。但如果你碰到的是战略投资者，那其诉求就不只是挣钱，可能还会有其他的目的。对此，必须了解清楚。</p>
+<p><strong>投资决策风格</strong>如何：趋于保守还是趋于激进，创业者项目目前如果风险较大，存在较多不确定性，你就别浪费时间找只投 C 轮之后或者总是跟投的。是聚焦投一两个领域还是什么领域都投，懂行的投你的概率低，投资方主要看赛道，很容易强者恒强，放弃弱者；什么领域都投的可能相对容易决策，但是后期能力上对你没什么帮助。决策流程是长还是短，也要根据融资的紧迫性来选择。</p>
+<p><strong>投后管理风格</strong>：是严格管控还是自身自灭，也得结合自身能力去匹配。这一点除了问，最好能在投资方已经投过的项目去接触创业者了解下。</p>
+<h3 id="干预度：添不添乱"><a href="#干预度：添不添乱" class="headerlink" title="干预度：添不添乱"></a>干预度：添不添乱</h3><p>投资人都会对于项目的发展提出商务梳理等建议， 这也是投后管理的一部分。 但是，一个不添乱的投资人要谨守的是：可以给建议， 但最终会支持你的决策。他的建议只是参考答案， 而不是标准答案。 这些立场，需要在前期沟通的时候，达成共识。</p>
+<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>你需要询问投资人的在投企业，如果他已经投过你的竞品，就不要再接受他的投资了。一般的个人资方不会干<strong>窃取商业机密</strong>这种缺德的事情，但是 VC 等机构可能会，幸好 VC 的投资记录比较容易查到，你可以避免脚踏两只船的情况。另一种可行的方法是借力天使汇 AngelCrunch 等平台，平台的服务会帮你绕过一些潜在危险，更大的后盾也能帮你更好地维护合法权益。 创始人会担心投过竞争对手的基金会向竞对泄密（不排除这种可能性），而有的机构确实是“投选手”，即同一类型的公司只投一家。而另外有些机构，是以“投赛道”著称，这样的机构在同一领域布局很多家公司，所以投过竞对关系也不大。所以创业者在考虑这个问题的时候要从不同角度考量。</p>
+<p><strong>投资人曾经把创始人踢出团队怎么办？</strong>我的建议是了解故事的始末，如果很难通过其他渠道了解，就和投资人聊聊这件事。如果他踢掉的创始人真的自身存在问题，并且被踢掉创始人的企业现在比以前更健康，这种行为就是理性且可以原谅的。如果那家企业现在分崩离析，你就要警惕了。不要接受奸雄的投资，那是潜在的危机。</p>
+<p><strong>尽量不要签署什么“期间不得接触其他投资机构”这类的保密\排他协议。否则选择了一家风投，基本上就是拒绝了其他风投，意味着你实际上是放弃了其他潜在的机会。意味着你对其他风投关上了大门。所以，你最好要确信自己找到的是最好的投资才能签，否则很可能会失去获得更大投资的机会。除非你已经别无选择。</strong></p>
+<h3 id="能否帮上忙"><a href="#能否帮上忙" class="headerlink" title="能否帮上忙"></a>能否帮上忙</h3><p>如果投资人了解你所处的行业，对你做的事情很赞同，并且有较多的行业资源人脉，甚至在一些经验和某些角度对你所做的事情提出不同的有深度的见解，即便只是仅供参考，那对创业者就是赚了。资源落实的问题还是看机构和人的执行力。有一些 VC，会耍些手段，有些算盘，但最起码他们会帮公司做大（虽然也是为了自己赚钱），这就需要 VC 方面也足够聪明。只会给钱的煤老板是完全帮不到公司的，这是一个很简单的事实，但很多创业者认识不到，这是因为想着赚眼前的钱而不是做大。诚然，并不是每个创业者都有远大理想。</p>
+<h3 id="推动你案子的动力和能力"><a href="#推动你案子的动力和能力" class="headerlink" title="推动你案子的动力和能力"></a>推动你案子的动力和能力</h3><p>看你案子的人可能是投资经理，可能是 VP，也可能是合伙人，but，每个人对于你案子的推动力是不一样的。可能有些投资经理虽然 title 低，但是因为经常在一线跑，对于某些行业理解比合伙人深，知道你的状态好是坏，要是认同你，就会重视你，因此才会玩儿命 sourcing，然后向合伙人在投委会过会时候推荐你；有时候则需要找到 title 更高一点的人帮助你，这些情况其实是需要看每个基金每个投资人而定的，不能一概而论；纠正一个误区，有些创业者认为，跟基金谈，就要见合伙人，什么投资经理分析师 VP 的，反正不能拍板，见了是浪费时间。其实这么想有些片面。最理想的人选是基金里懂这个领域并且推动力强的人，可以是投资经理甚至分析师。相当一部分 VC 机构投资部都 10 人左右，扁平化管理，任何人都可以推项目给合伙人。如果合伙人不懂这个领域，上来就见合伙人，没有引起他的兴趣，等于浪费了这个机构的机会；远不如先找个懂行的投资经理一起揣摩项目，让他为你背书再推荐给合伙人的效果好。</p>
+<h3 id="能否共度难关"><a href="#能否共度难关" class="headerlink" title="能否共度难关"></a>能否共度难关</h3><p>是不是在发展过程中不给你添堵，这点其实不好判断，毕竟需要融资的时候，每个创业者急迫程度不一样，有的可能处于高点，有的可能处于发展中的低点。投资人拿真金白银来投你就是为了高额回报。所以，投资人同创业者交流的时候，创业者也可以抓住机会多问问题。这个问题引申出来的小问题就是投资人会不会在一些条款小细节为难你。TS 暗藏玄机的时候，投资人肯定和你的认知是有偏差的。</p>
+<h3 id="投资人给你的资源"><a href="#投资人给你的资源" class="headerlink" title="投资人给你的资源"></a>投资人给你的资源</h3><p>最好写下来，要让他给你落到实处。好的投资人是真的会帮你介绍许多牛人，帮你解决麻烦的。这里特别提示：那种动不动就说“你说那 XXX 啊，和我太熟了，让他拉你一把”的投资人，你要分辨：</p>
+<p>如果他说的“XXX”是大佬，那么这个投资人大体是在利用大佬来抬高自己，真实情况可能是他不自信，他觉得自己没有真才实学，所以需要狐假虎威；</p>
+<p>如果他说的“XXX”是下面办事的，而且他能说出很多个，那这个投资人可能真的为他的公司做了很多实际的事情，这样的人你一定要珍惜。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>独立判断。任何投资人都不可能获得 100%的正面评价。如果你的调查中没有取得丝毫的负面评价，那么这说明你的调查工作并没做到位。绝大多数的风险投资项目最终都是失败的。有些创业项目因鲁莽的业务重组而失败，有些则是因为资金流断裂而失败。创业项目失败会让人们的情绪变得偏激。这时你要能够去其糟粕取其精华，尽可能还原事实真相。当你获得了一些对投资人的负面评价时，你最好也听听投资人的说辞。兼听则明，偏信则暗，只有这样你才能做出更准确的判断。</p>
+<p>有能力问最基本的问题是最重要的学习能力，很多东西我们几乎没经历过，只能站在经历者的肩膀上提炼，升华！</p>
+]]></content>
+      <categories>
+        <category>经典文章</category>
+      </categories>
+      <tags>
+        <tag>投资理财</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>github使用技巧</title>
     <url>/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
     <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510072148793.png" alt="image-20220510072148793"></p>
@@ -2256,69 +2322,103 @@
       </tags>
   </entry>
   <entry>
-    <title>【转载】如何选择投资人，什么样的投资人靠谱，20个衡量指标全面分析</title>
-    <url>/2022/04/25/20220425-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E6%8A%95%E8%B5%84%E4%BA%BA%EF%BC%8C%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%8A%95%E8%B5%84%E4%BA%BA%E9%9D%A0%E8%B0%B1%EF%BC%8C20%E4%B8%AA%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87%E5%85%A8%E9%9D%A2%E5%88%86%E6%9E%90/</url>
-    <content><![CDATA[<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180928/a7b9fa5b102a43fdb61edc28ce1fc0b1.jpeg" alt="top"></p>
+    <title>docker使用</title>
+    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
+<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
 <span id="more"></span>
 
-<div class="note info"><p>文章转载自<a href="https://www.sohu.com/a/256789627_100286768?spm=smpc.author.fd-d.11.16508991429871920J6U">创投咨询网</a> </p>
+<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
+<ul>
+<li>使用容器开发您的应用程序及其支持组件。</li>
+<li>容器成为分发和测试应用程序的单元。</li>
+<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
+</ul>
+<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
+<p>考虑以下示例场景：</p>
+<ul>
+<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
+<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
+<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
+<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
+</ul>
+<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
+<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
+<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
+<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/architecture.svg" alt="architecture"></p>
+<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
 </div>
 
-<h2 id="了解投资人的背景"><a href="#了解投资人的背景" class="headerlink" title="了解投资人的背景"></a>了解投资人的背景</h2><p>如何选择投资机构。是美元机构，还是人民币机构；是一线机构，还是二线及以下的机构。但是首先应该明确一点，必须先确认公司可以拿到钱，再考虑怎么选择机构。如果公司本身融资上都有困难，那也没有什么资格挑三拣四，有机构投资就应该谢天谢地。</p>
-<p>真正的核心是，创业者越聪明（不是指小聪明）、越充分准备、越抓住本质，越不会出现预期结果偏差太大（所谓被坑）的感受。</p>
-<h3 id="直觉"><a href="#直觉" class="headerlink" title="直觉"></a>直觉</h3><p>无论之前创业，融资，还是现在作为投资人去投资，对于人和人沟通，个人觉得直觉还是很重要。</p>
-<p>直觉是质变，之前你的理性和综合经验是量变。当然光有直觉是不行的。</p>
-<h3 id="态度"><a href="#态度" class="headerlink" title="态度"></a>态度</h3><p>在签 TS 之前，要做的是识别 VC 的好坏。他们值得信赖吗？他们会积极帮助公司吗？他们善于倾听吗？他们容易相处吗？还有一个非常重要的是，他们愚蠢吗？征求投资人的对他们开展背景调查的同意。征求同意本身其实就是一种调查。有些投资人会觉得被冒犯，对此觉得反感。这种傲慢的态度对于创业者来说是一个警示信号。有些投资人则会欣然接受你对他们做背景调查，他们认为这是一个好事。这说明你在以后招聘关键人物或者是引入关键合伙人的时候，也会秉持同样谨慎的态度。不过看上去对创业者很好的 VC，不一定真正好，毕竟创业是长征。假设 VC 大笔给钱完全不管，公司黄了也不在意，对于公司创始人而言，除了在这过程中摸到一些好处到自己口袋，还能得到什么？错过时间成本，很可能拱手让出一次成就大事业的机会，等到昔日同伴占下山头，还会觉得这个 VC 很好吗？再假设 VC 在前期慈眉善目，一帆风顺，但等到后期运作时却笑里藏刀隔岸观火暗渡陈仓，把创始人轻松甩出，这样的 VC 是天使还是恶魔，看对谁而言了。</p>
-<h3 id="真诚度"><a href="#真诚度" class="headerlink" title="真诚度"></a>真诚度</h3><p>说话直接, 不行就直接说不行都是好的，创业时间是最大的成本，因此投资方的坦诚接受或拒绝是很重要的品格。其他的创业者可以列自己一定不接受的价值理念，这些因人而异了。</p>
-<h3 id="尊重程度"><a href="#尊重程度" class="headerlink" title="尊重程度"></a>尊重程度</h3><p>是否认为双方足够尊重彼此。心胸格局和能力往往成正比，反之则不一定。</p>
-<h3 id="价值理念匹配度"><a href="#价值理念匹配度" class="headerlink" title="价值理念匹配度"></a>价值理念匹配度</h3><p>对彼此人生态度的相互欣赏。如果没有和你的投资人谈过人生、死亡、爱情、理想，那么你们的关系还差得远呢。投资人和创业者是互相尊重，互相约束，互相成长，互相理解，互相支持，互相信任的一个群体。所以基本上你作为一个创业者觉得自己跟这个投资人有以上的感觉了，那对于你这位投资人就是一个好投资人。投资人的光环不能决定他就是一位好投资人，现在被神化的一些投资人也正是当年一步一个脚印踏踏实实做好每一笔投资以后才有了今天的成绩。</p>
-<h3 id="负责程度"><a href="#负责程度" class="headerlink" title="负责程度"></a>负责程度</h3><p>做事认真讲究，这点从守时、工作流程、文档、信息回复等等都可以判断，认真的投资方可能会让创业者难受和拘束，但他一定会为你负责任。</p>
-<h3 id="沟通"><a href="#沟通" class="headerlink" title="沟通"></a>沟通</h3><p>在任何问题上都可沟通，可争论。一旦确定投资，投资人和创业者往往要在一起很多年，大家在沟通上是否平等，彼此沟通是否顺畅，是否谈得来很重要。否则，未来的七八年，和投资人沟通成为创业者的负担就痛苦了…投资人脑子应该清楚，谈话问题逻辑性强，甚至感觉谈完之后自己的 bp 很多没讲透。</p>
-<h3 id="基金背景"><a href="#基金背景" class="headerlink" title="基金背景"></a>基金背景</h3><p>看 LP 的背景。如果你有渠道或者资源，最好能够去了解一下。因为 LP 很大程度上会决定这家基金的投资方向，你可以跟业内人士的投资人或者 FA 打听一下。要国内还是国外的投资，对于绝大多数创业者这二者区别不大。部分创业者有很强的开拓国外市场的需求，这时一个有境外资源的资方就会有优势；同理，国内资方在境内资源上优势就稍大一些。总体来说影响不大，无需定向寻找。</p>
-<p>要拿人民币还是拿美元，先看公司上市的终极形态。当然，有时公司为了拿到钱也考虑不到终极形态的问题，但是还是要考虑到，一旦公司拿了非终极形态币种的投资，最后要付出什么样的成本：搭、拆 vie 虽然合规，但是每搭或者拆一次 vie 要 50 万元，这还是小事，公司还得花 6 个月时间等待。即使公司可以不在意 50 万元的金钱成本，6 个月的等待时间依然是得好好掂量掂量的。另一种中外合资企业，但是中外合资的问题在于：拿不到没有 ICP，这意味着公司无法进行线上交易。</p>
-<p>不同的投资机构的资本背景、资金体量、投资逻辑、关注方向、投资金额、轮次、创始人特质偏好等等各不相同，所以即便你的项目很好，也不是每个投资人都会投资。比如说，有的基金原则上就不投资 A 轮以前项目，有的只投天使和 A 轮，有的只看高科技，有的只看泛娱乐。如果你有一个很棒的天使轮机器人项目，而认识的投资人只投 A 轮以后的金融项目，那么他基本上也帮不到你。</p>
-<p>基金的背景。基金大致可以分成美元基金、人民币基金、产业基金、上市公司等，各种背景的投资目的、风格和偏好不太一样。比如美元基金更看重成长性，退出期较长，但拿美元公司必须有 VIE（可变利益实体，Variable Interest Entities，具体解释见什么是 VIE 结构？VIE 结构公司有何特点？）或者 JV（合资企业，Joint Venture）的架构，花费时间较长，而且费用需要公司出；上市公司战略投资为主，关注协同作用，拿了战投的钱基本就是“站队”了（此处可回答“为啥知乎不用百度搜索”），早期不太建议选战投；人民币基金较关注收入和利润。即使不能完全搞清楚基金的背景和投资偏好，也一定要知道自己需要美元还是人民币，基金能不能投相应的币种，不然完全浪费时间。</p>
-<p>人民币风格基金和美元风格基金（注意，这里我们谈的是风格，不是币种），二者的差别主要是源于赚钱思路的不同：人民币风格基金更多想的是今天投了一家创业公司后，未来这家公司的利润持续增长，最终被收购掉，或者上市，基金能够赚取一二级市场的价差。由于任何一个上市公司价值都不会低于十个亿，所以就能够赚到稳定的价值；而美元基金只投行业内的第一不投第二名，原因也非常简单：看纳斯达克、上市公司数据就知道，第一第二名价差非常大，老二非死不可。</p>
-<p><strong>投资人有钱，并且有继续融到钱的能力。特别是早期项目，可能需要的钱不多，看似大家都有。但是，随着公司发展，基本都会需要更多的资金投入。早期投资人会希望伴随公司多走一些路，而不是在下一轮融资就退出，所以在后续资金储备上面很重要。</strong></p>
-<h3 id="职业背景"><a href="#职业背景" class="headerlink" title="职业背景"></a>职业背景</h3><p>之前的职业是做什么的，投资方向是哪个领域，对你目前所做的行业是否有过深入了解。职场履历，虽然不能直接证明一个人到底有多优秀，但是也可以侧面看出来这个人的专业度。专业投资人比较强调，我如何把这个项目贩卖给下一家 A 轮，B 轮，当然这也是非常好的，教会创业者从资本角度考虑问题。而企业家投资人，更能够关注企业本身的成长。侧重点不一样，这点谈不上谁好谁不好。看创业者自身的需要了。专业投资人一般会带给创业者，从资本角度的建议。而企业家投资人，往往带给创业者创业过程中所需要的各种经验，包括需要的各种资源。</p>
-<p><strong>专业性：商业见解和逻辑性</strong>。创业者自己是专家, 很容易看出来对方是不是不懂装懂; 不懂装懂的没必要给他们上课, 上了他也学不进去。既然你是一个创业者，那么在接触投资人的时候是一定要相互交谈的，在初次交谈中，你可以获得对方给你的印象分，从心里对对方有一个最基础的评价，比如对方的言语是否真诚，对方讲话是不是很有商业见解和逻辑性，对方给你的指点是不是很有建设性，虽然有的人善于掩饰，但是在言谈举止之间，你还是可以获得一定的信息来进行一个初步的掌握的。聊天过程中一直尝试为创业者改变模式的, 也应该放弃, 他行他自己上</p>
-<p>对行业的了解不仅降低沟通成本， 而且往往代表这个投资人在相关的行业里是否会带给你与一个对于你行业完全不了解的投资人打交道所花费的，远不仅仅是沟通成本，还直接影响后期他所能够为您提供的资源、甚至重要决策的支持程度等等。而且往往对你行业的了解程度也说明投资人的诚意， 好的投资人在约谈项目前，对行业有详细的调研， 去年，在我们的平台上的一个家政类项目在启动融资时，前后密集收到了十几个投资人的密集约谈，最终在基本类似的 term sheet 中，她选择了最开始聊的一位投资人，原因很简单：这位投资人在跟她谈之前，就从上海特别飞来北京，直接在她线下门店里呆了两天，跟员工聊、跟阿姨聊、跟用户聊、甚至跟小区里的住户聊，最后才约了这位创始人聊。</p>
-<p>这个投资人对你所在的领域是不是真的有 insight，他和你交流的时候是胡侃还是能够有针对性的针对业务细节提问，是不是理解你的商业模式，是不是真正理解出现可能天花板的原因，如果业务上有方向的疑问，他提的问题是不是真的同解决方案有关；好的投资人如果想投一个行业，他一定会对这个行业有深入的分析和研究，正是因为他真心实意想投，所以他才会用心来看这个行业，所以他才敢果断放钱，因为他是真心想赌。</p>
-<h3 id="投资成绩"><a href="#投资成绩" class="headerlink" title="投资成绩"></a>投资成绩</h3><p>是否具备同类项目成功经验，对于创业者的成功是在于项目核心优势明显，经营持续有序。如果不是同类项目，那看是否是类似模式，比如服务模式，商业模式，用户发展路径等。既然你选择自己创业，那么投资人给你的不仅仅是钱这么简单，还有投资人背后的大量资源，那么投资人的之前的一些业绩就显得特别重要了，如果他也是一个投行新人，那么恐怕他能够给你的帮助就变得小之又小了，而如果是一些有经验的，有成绩的，对你来说也会省下很多事情和麻烦，还能给予你比较大的帮助。:看看对方投的过往项目你自己认可不认可, 不认可的话也没有必要继续。看这家基金近期是否有投资案例、人员流动是否频。如果基金的投资经理离职率较高，最近又没有投出的项目，说明这家基金属于没有钱的状态，只看不投，跟他接触纯属浪费时间。</p>
-<p>如果搜到一个机构已经投了十几个项目或者几十个项目，一般来说完全不靠谱的概率就会小很多，毕竟谁也不会和钱过不去，先投一堆项目故意骗人，这个逻辑是不存在的。同理，投的公司是什么公司，后面发展的如何，也可以部分验证这个机构是否和你匹配。比如一个互联网公司，发现投资机构投的都是传统行业的 PE 项目甚至 Pre-A、IPO 项目，那么就有可能不合适。再比如某机构投了几十个项目，但没有一个项目听过，也就是说项目基本都没走太远，那应该谨慎。这样的机构往往在早期投资机构中声誉不佳，这样的话你的下轮融资可能会有难度。</p>
-<p>如果是中小型基金，看<strong>有没有投过类似的项目</strong>。如果有，建议不要去接触。一般来说，只有像红杉这些比较大的基金才会在同一条赛道上布很多企业。中小型基金投过一个，就不会再投其他项目了，因为这种竞争他玩不起。如果你贸然去接触，相当于把你的所有商业信息都透露给他，他可能就会反馈给他已经投过的企业。</p>
-<h3 id="名气、品牌、口碑"><a href="#名气、品牌、口碑" class="headerlink" title="名气、品牌、口碑"></a>名气、品牌、口碑</h3><p><strong>投资人的人品</strong>；看看他投的 portfolio，尽量通过创业者群体，FA 等等渠道打听一下机构&#x2F;具体投资人的情况；投资人可能投的眼光对于一件事情的理解会存在差异，但是，一个靠谱的投资人无论对于创业者还是 FA，是都愿意合作的；创业者经常被直观的投资机构名气、投资人头衔所迷惑而忽略了这一点。风投机构和投资人非常注重经营自己的品牌，因为他们知道好的品牌名声可以更好地帮助他们争取项目、促成交易。但对于创业者而言，重要的不是风投机构的品牌形象，而是应该多听听他们投资的创业者对这个风投机构的看法。做投资人背景调查最好的时机是在他们向你发出了投资意向书、而你还在考虑接受与否的那段时间。不要看重投资人的名气，不要看重投资人在那时那刻对你的热情（许多投资人做商务出身的，搞定你是小菜一碟），看条款，看实际给钱速度，看服务水平。后面两条你不好判断，可以随机选两三个投资人过去投过的项目，去找 CEO，和他见见，深入聊聊。相信我，创业者都会向着创业者的，他们是真正了解这个投资人的人。一定要了解他作为投资人，在业界内的口碑如何，如果在界内很多人都反应这个人不怎么样，那么你最好就不要和他合作了（就算合作也需要小心谨慎），肯定不是你想象中的那么好，至少不适合你，如果口碑特别不错，这样你也能放心。</p>
-<p>一旦建立了投资关系，投资人就上了你的贼船，你们就绑在一起了。以后有很多的风雨需要你们共同面对。这就需要你们能够同舟共济。但能否做到这一点，还要看你们的作风是否和谐。另外投资人的口碑也很重要。投资机构有没有黑历史。有没有不合理的取消过 TS，甚至取消过 SPA，打款速度如何。习惯性取消协议的机构还是慎重考虑</p>
-<p><strong>那些正在处在宣传阶段的投资机构，是创业者重点考虑的对象！因为可能这些机构刚试水天使投资业务，需要打响他们的知名度，投资门槛也可能比知名的机构略低一些。</strong></p>
-<p>找天使投资的时候，口碑好的一定比口碑差的强，无论口碑好的那一方面受到多少中伤，也无论口碑差的那一方发了多少正面新闻。如果一家 VC，签 TS 很快，签投资合同却要内部审核几个月；如果一家 VC 对其能够提供的帮助和资源夸张到天上；如果一家 VC 过去投资的较为成功企业（注意，不要问失败的企业）对他们的评价不高；这恐怕就不会是一家口碑好的 VC。</p>
-<p>我认为不必刻意寻找<strong>明星投资人或者创业导师</strong>。因为对大多数创业者来说，像徐小平这类的投资人身价太高，议价能力太强，创业者很可能被迫出让过多股份或只能得到少量投资。而且他们公务繁忙，很难静下心来对一个项目进行指导；他们的资源也很难向众多拥护者开放。不过，如果明星资方主动找到你，你们谈判的结果又令人满意，那自然可以接受：否则的话，也不必可以寻找，其他的投资人也是不错的选择。</p>
-<p><strong>大公司投资</strong>他们的资源极多，远胜于一般的投资人。如果你担心人才收购或野蛮并购，我只能很遗憾地说，如果 BAT 相中了你，有些结果是很难避免的。BAT 相中你说明你的项目或团队有价值，客观来讲这是一件好事。但初创公司在创业的前两三个 18 个月内，都不应该让大公司以控股方式进来，除非双方业务的协同性是天然的难以分割的，但往往这种情况就是大公司内部孵化了，也轮不到初创团队去做了不是？！</p>
-<h3 id="对你项目的重视程度"><a href="#对你项目的重视程度" class="headerlink" title="对你项目的重视程度"></a>对你项目的重视程度</h3><p><strong>时间：</strong>愿意和你聊的久的, 只要不是没事干那你消遣的，剩下都是相对友好的。热情是投资人一直强调创业者要具有的品质。 投资人本身对于你这个项目的热情，决定了在后期这个投资人能多大程度上帮扶你的项目、为你提供资源。坦白讲，对于早期项目来说，投资的金额并不大，资金本身很多时候不足以成为投资人一直关注你这个项目的原因。但是兴趣和热情可以。另外， 热情也是投资人在你项目发展困难的时候，对你持续保持信心的基础。当然，对于投资人的热情也需要认真分辨。如果这个投资人做决策时间特别短，例如，直接在某个场合高调宣布投资多少，那么创业者也要很谨慎。因为这类 激情决策”，很常发生的事情就是，后期的 term 会很严苛，严苛到创业者不得不知难而退。</p>
-<h3 id="打款速度：出钱快不快"><a href="#打款速度：出钱快不快" class="headerlink" title="打款速度：出钱快不快"></a>打款速度：出钱快不快</h3><p>项目早期发展的时间窗口非常重要，那么资金及时到位的重要性也不言而喻。这里要提醒创业者警醒的是某些“出钱不快”的做法。这方面个人天使往往占优势， 不想基金有各种审核流程，有的甚至协议签署之后再到 LP 那里报批， 时间就会拖得很久。在接受 Term 时， 创业者应该特别关注基金在打钱之前的流程。 Term Sheet 后到打钱之间的时间。 再次强调因为基金管理别人的钱， 和天使投资人投资自己的钱不一样， 后者的流程（如果有的话）， 会快很多！</p>
-<p>关于打款磨叽不磨叽的问题需要提前打听好，可能有投资人给 TS 快，但是不一定打款快，这个问题不仅创业者会遇到，FA 也会遇到。</p>
-<h3 id="投资人对你的要求"><a href="#投资人对你的要求" class="headerlink" title="投资人对你的要求"></a>投资人对你的要求</h3><p>投资人把那么多钱投进来，不是什么都不管的，会附带很多的条件和要求（比如对赌）。这些一般都体现在投资条款中，你需要将一些要害的问题了解清楚，做到心中有数。</p>
-<p>投资人是不是战略投资者</p>
-<p>风险投资人一般只做财务投资，只是想通过投资你的企业实现资本增值，而对掌控企业没有兴趣。但如果你碰到的是战略投资者，那其诉求就不只是挣钱，可能还会有其他的目的。对此，必须了解清楚。</p>
-<p><strong>投资决策风格</strong>如何：趋于保守还是趋于激进，创业者项目目前如果风险较大，存在较多不确定性，你就别浪费时间找只投 C 轮之后或者总是跟投的。是聚焦投一两个领域还是什么领域都投，懂行的投你的概率低，投资方主要看赛道，很容易强者恒强，放弃弱者；什么领域都投的可能相对容易决策，但是后期能力上对你没什么帮助。决策流程是长还是短，也要根据融资的紧迫性来选择。</p>
-<p><strong>投后管理风格</strong>：是严格管控还是自身自灭，也得结合自身能力去匹配。这一点除了问，最好能在投资方已经投过的项目去接触创业者了解下。</p>
-<h3 id="干预度：添不添乱"><a href="#干预度：添不添乱" class="headerlink" title="干预度：添不添乱"></a>干预度：添不添乱</h3><p>投资人都会对于项目的发展提出商务梳理等建议， 这也是投后管理的一部分。 但是，一个不添乱的投资人要谨守的是：可以给建议， 但最终会支持你的决策。他的建议只是参考答案， 而不是标准答案。 这些立场，需要在前期沟通的时候，达成共识。</p>
-<h3 id="安全性"><a href="#安全性" class="headerlink" title="安全性"></a>安全性</h3><p>你需要询问投资人的在投企业，如果他已经投过你的竞品，就不要再接受他的投资了。一般的个人资方不会干<strong>窃取商业机密</strong>这种缺德的事情，但是 VC 等机构可能会，幸好 VC 的投资记录比较容易查到，你可以避免脚踏两只船的情况。另一种可行的方法是借力天使汇 AngelCrunch 等平台，平台的服务会帮你绕过一些潜在危险，更大的后盾也能帮你更好地维护合法权益。 创始人会担心投过竞争对手的基金会向竞对泄密（不排除这种可能性），而有的机构确实是“投选手”，即同一类型的公司只投一家。而另外有些机构，是以“投赛道”著称，这样的机构在同一领域布局很多家公司，所以投过竞对关系也不大。所以创业者在考虑这个问题的时候要从不同角度考量。</p>
-<p><strong>投资人曾经把创始人踢出团队怎么办？</strong>我的建议是了解故事的始末，如果很难通过其他渠道了解，就和投资人聊聊这件事。如果他踢掉的创始人真的自身存在问题，并且被踢掉创始人的企业现在比以前更健康，这种行为就是理性且可以原谅的。如果那家企业现在分崩离析，你就要警惕了。不要接受奸雄的投资，那是潜在的危机。</p>
-<p><strong>尽量不要签署什么“期间不得接触其他投资机构”这类的保密\排他协议。否则选择了一家风投，基本上就是拒绝了其他风投，意味着你实际上是放弃了其他潜在的机会。意味着你对其他风投关上了大门。所以，你最好要确信自己找到的是最好的投资才能签，否则很可能会失去获得更大投资的机会。除非你已经别无选择。</strong></p>
-<h3 id="能否帮上忙"><a href="#能否帮上忙" class="headerlink" title="能否帮上忙"></a>能否帮上忙</h3><p>如果投资人了解你所处的行业，对你做的事情很赞同，并且有较多的行业资源人脉，甚至在一些经验和某些角度对你所做的事情提出不同的有深度的见解，即便只是仅供参考，那对创业者就是赚了。资源落实的问题还是看机构和人的执行力。有一些 VC，会耍些手段，有些算盘，但最起码他们会帮公司做大（虽然也是为了自己赚钱），这就需要 VC 方面也足够聪明。只会给钱的煤老板是完全帮不到公司的，这是一个很简单的事实，但很多创业者认识不到，这是因为想着赚眼前的钱而不是做大。诚然，并不是每个创业者都有远大理想。</p>
-<h3 id="推动你案子的动力和能力"><a href="#推动你案子的动力和能力" class="headerlink" title="推动你案子的动力和能力"></a>推动你案子的动力和能力</h3><p>看你案子的人可能是投资经理，可能是 VP，也可能是合伙人，but，每个人对于你案子的推动力是不一样的。可能有些投资经理虽然 title 低，但是因为经常在一线跑，对于某些行业理解比合伙人深，知道你的状态好是坏，要是认同你，就会重视你，因此才会玩儿命 sourcing，然后向合伙人在投委会过会时候推荐你；有时候则需要找到 title 更高一点的人帮助你，这些情况其实是需要看每个基金每个投资人而定的，不能一概而论；纠正一个误区，有些创业者认为，跟基金谈，就要见合伙人，什么投资经理分析师 VP 的，反正不能拍板，见了是浪费时间。其实这么想有些片面。最理想的人选是基金里懂这个领域并且推动力强的人，可以是投资经理甚至分析师。相当一部分 VC 机构投资部都 10 人左右，扁平化管理，任何人都可以推项目给合伙人。如果合伙人不懂这个领域，上来就见合伙人，没有引起他的兴趣，等于浪费了这个机构的机会；远不如先找个懂行的投资经理一起揣摩项目，让他为你背书再推荐给合伙人的效果好。</p>
-<h3 id="能否共度难关"><a href="#能否共度难关" class="headerlink" title="能否共度难关"></a>能否共度难关</h3><p>是不是在发展过程中不给你添堵，这点其实不好判断，毕竟需要融资的时候，每个创业者急迫程度不一样，有的可能处于高点，有的可能处于发展中的低点。投资人拿真金白银来投你就是为了高额回报。所以，投资人同创业者交流的时候，创业者也可以抓住机会多问问题。这个问题引申出来的小问题就是投资人会不会在一些条款小细节为难你。TS 暗藏玄机的时候，投资人肯定和你的认知是有偏差的。</p>
-<h3 id="投资人给你的资源"><a href="#投资人给你的资源" class="headerlink" title="投资人给你的资源"></a>投资人给你的资源</h3><p>最好写下来，要让他给你落到实处。好的投资人是真的会帮你介绍许多牛人，帮你解决麻烦的。这里特别提示：那种动不动就说“你说那 XXX 啊，和我太熟了，让他拉你一把”的投资人，你要分辨：</p>
-<p>如果他说的“XXX”是大佬，那么这个投资人大体是在利用大佬来抬高自己，真实情况可能是他不自信，他觉得自己没有真才实学，所以需要狐假虎威；</p>
-<p>如果他说的“XXX”是下面办事的，而且他能说出很多个，那这个投资人可能真的为他的公司做了很多实际的事情，这样的人你一定要珍惜。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>独立判断。任何投资人都不可能获得 100%的正面评价。如果你的调查中没有取得丝毫的负面评价，那么这说明你的调查工作并没做到位。绝大多数的风险投资项目最终都是失败的。有些创业项目因鲁莽的业务重组而失败，有些则是因为资金流断裂而失败。创业项目失败会让人们的情绪变得偏激。这时你要能够去其糟粕取其精华，尽可能还原事实真相。当你获得了一些对投资人的负面评价时，你最好也听听投资人的说辞。兼听则明，偏信则暗，只有这样你才能做出更准确的判断。</p>
-<p>有能力问最基本的问题是最重要的学习能力，很多东西我们几乎没经历过，只能站在经历者的肩膀上提炼，升华！</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
+<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
+<li>进入 BIOS 开启虚拟化技术</li>
+<li>win10 全开 Hpyer-V</li>
+</ul>
+<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220512073042362.png" alt="image-20220512073042362"></p>
+<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
+<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220512073743673.png" alt="image-20220512073743673"></p>
+<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
+<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
+<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
+<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
+<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
+<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
+<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
+<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
+
+<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
+<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
+<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
+<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
+</div>
+
+<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
+<p>配置 docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
+
+<p>执行它</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+
+<p>发现报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220513133508101.png" alt="image-20220513133508101"></p>
+<p>为什么？</p>
+<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
+<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
+<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220513133936711.png" alt="image-20220513133936711"></p>
+<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
+<p>再次执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
+<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
+<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
+<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
 ]]></content>
       <categories>
-        <category>经典文章</category>
+        <category>成长经历</category>
       </categories>
       <tags>
-        <tag>投资理财</tag>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -2444,106 +2544,6 @@
       <tags>
         <tag>CI&amp;CD</tag>
         <tag>Jenkins</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>docker使用</title>
-    <url>/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>Docker 是一个用于开发、发布和运行应用程序的开放平台。Docker 使您能够将应用程序与基础架构分离，以便您可以快速交付软件。使用 Docker，您可以像管理应用程序一样管理基础设施。通过利用 Docker 快速交付、测试和部署代码的方法，您可以显着减少编写代码和在生产环境中运行之间的延迟。</p>
-<p><img src="https://www.docker.com/wp-content/uploads/2021/09/Moby-run-900x551.png.webp" alt="top"></p>
-<span id="more"></span>
-
-<h2 id="了解-docker"><a href="#了解-docker" class="headerlink" title="了解 docker"></a>了解 docker</h2><p>Docker 提供工具和平台来管理容器的生命周期：</p>
-<ul>
-<li>使用容器开发您的应用程序及其支持组件。</li>
-<li>容器成为分发和测试应用程序的单元。</li>
-<li>准备就绪后，将应用程序部署到生产环境中，作为容器或编排的服务。无论您的生产环境是本地数据中心、云提供商还是两者的混合，这都是一样的。</li>
-</ul>
-<h2 id="我可以使用-Docker-做什么"><a href="#我可以使用-Docker-做什么" class="headerlink" title="我可以使用 Docker 做什么"></a>我可以使用 Docker 做什么</h2><h3 id="快速、一致地交付您的应用程序"><a href="#快速、一致地交付您的应用程序" class="headerlink" title="快速、一致地交付您的应用程序"></a>快速、一致地交付您的应用程序</h3><p>Docker 通过允许开发人员使用提供应用程序和服务的本地容器在标准化环境中工作来简化开发生命周期。容器非常适合持续集成和持续交付 (CI&#x2F;CD) 工作流程。</p>
-<p>考虑以下示例场景：</p>
-<ul>
-<li>您的开发人员在本地编写代码并使用 Docker 容器与同事分享他们的工作。</li>
-<li>他们使用 Docker 将他们的应用程序推送到测试环境中并执行自动化和手动测试。</li>
-<li>当开发者发现 bug 时，可以在开发环境中修复，重新部署到测试环境中进行测试和验证。</li>
-<li>测试完成后，将修复程序提供给客户就像将更新的映像推送到生产环境一样简单。</li>
-</ul>
-<h3 id="响应式部署和扩展"><a href="#响应式部署和扩展" class="headerlink" title="响应式部署和扩展"></a>响应式部署和扩展</h3><p>Docker 基于容器的平台允许高度可移植的工作负载。Docker 容器可以在开发人员的本地笔记本电脑、数据中心的物理或虚拟机、云提供商或混合环境中运行。</p>
-<p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
-<h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
-<h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/architecture.svg" alt="architecture"></p>
-<div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
-</div>
-
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>我这里示例提供在 win10 操作系统上安装 docker。</p>
-<h3 id="前提需要"><a href="#前提需要" class="headerlink" title="前提需要"></a>前提需要</h3><ul>
-<li>进入 BIOS 开启虚拟化技术</li>
-<li>win10 全开 Hpyer-V</li>
-</ul>
-<h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220512073042362.png" alt="image-20220512073042362"></p>
-<p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
-<p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220512073743673.png" alt="image-20220512073743673"></p>
-<h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
-<p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
-<h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p>您必须等到运行 Linux 发行版的子系统完全停止运行并重新启动，配置设置更新才会出现。这通常在关闭分发 shell 的所有实例后大约需要 8 秒。</p>
-<p>如果您启动发行版（即 Ubuntu），请修改配置文件，关闭发行版，然后重新启动它。您可能会假设您的配置更改已立即生效。目前情况并非如此，因为子系统可能仍在运行。在重新启动之前，您必须等待子系统停止，以便为您的更改提供足够的时间。您可以使用带有以下命令的 PowerShell 检查您的 Linux 发行版 (shell) 在关闭后是否仍在运行：<code>wsl --list --running</code>。如果没有正在运行的发行版，您将收到响应：“没有正在运行的发行版。” 您现在可以重新启动分发以查看应用的配置更新。</p>
-<p>该命令<code>wsl --shutdown</code>是重新启动 WSL 2 发行版的快速路径，但它会关闭所有正在运行的发行版，因此请明智地使用。</p>
-<p>更多配置，详见 WSL <a href="https://docs.microsoft.com/en-us/windows/wsl/wsl-config#configuration-setting-for-wslconfig">中的高级设置配置</a></p>
-<h3 id="修改-docker-WSL2-的镜像存储位置"><a href="#修改-docker-WSL2-的镜像存储位置" class="headerlink" title="修改 docker WSL2 的镜像存储位置"></a>修改 docker WSL2 的镜像存储位置</h3><p>Docker Desktop 默认的镜像存储位置</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">C:\Users\%USERPROFILE%\AppData\Local\Docker\wsl</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打开cmd，查询docker状态，关闭docker</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 执行后可以看到docker开头的有两条内容，如果状态是running，需要先退出Docker Desktop软件</span></span><br><span class="line"><span class="comment"># 退出后，可以再查询一次状态，可以看到状态变成了stopped这样就正确了</span></span><br><span class="line"><span class="comment"># 导出WSL系统</span></span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop D:\Docker\docker-desktop.tar</span><br><span class="line">wsl --<span class="built_in">export</span> docker-desktop-data D:\Docker\docker-desktop-data.tar</span><br><span class="line"><span class="comment"># 注销现有的WSL系统</span></span><br><span class="line">wsl --unregister docker-desktop</span><br><span class="line">wsl --unregister docker-desktop-data</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data已经没有了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 重新创建WSL系统</span></span><br><span class="line">wsl --import docker-desktop D:\Docker\wsl\docker-desktop D:\Docker\docker-desktop.tar --version 2</span><br><span class="line">wsl --import docker-desktop-data D:\Docker\wsl\docker-desktop-data D:\Docker\docker-desktop-data.tar --version 2</span><br><span class="line"><span class="comment"># 查询docker状态，docker-desktop，docker-desktop-data出现了</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 打开Docker Desktop软件，cmd再次执行查询docker状态，此时，状态是running</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 查看容器，一切正常</span></span><br><span class="line">docker ps -a</span><br><span class="line">wsl</span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Docker Desktop 使用<a href="https://docs.docker.com/desktop/windows/">详见</a></p>
-<h3 id="体验-docker"><a href="#体验-docker" class="headerlink" title="体验 docker"></a>体验 docker</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 找个存储位置，这里示例 D:\DockerImages，进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 此时，已挂载到/mnt/d/DockerImages，因为docker desktop的默认存储设置，所以创建的镜像并不会在当前挂在的路径下。当然，存储路径是可以设置的，本文已给出方法，这里不再赘述。</span></span><br></pre></td></tr></table></figure>
-
-<p>示例：本地运行 mysql 镜像，测试 workbranch 连接是否成功。</p>
-<p>workbranch 下载地址，<a href="https://dev.mysql.com/downloads/workbench/">详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps -a</span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span><br><span class="line"><span class="comment"># 查看运行状态</span></span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 打印日志</span></span><br><span class="line">docker logs -f huatree-mysql</span><br><span class="line"><span class="comment"># ctrl + c 退出日志查看</span></span><br><span class="line"><span class="comment"># 运行状态下，无法除该容器</span></span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line"><span class="comment"># 先停掉，再移除该容器</span></span><br><span class="line">docker stop huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line">docker <span class="built_in">rm</span> huatree-mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># 再次运行huatree-mysql容器，这时是写实复制，速度很快</span></span><br><span class="line">docker run --name huatree-mysql -e MYSQL_ROOT_PASSWORD=123456 -p 28001:3306 -d mysql</span><br><span class="line">docker ps -a</span><br><span class="line"><span class="comment"># workbranch上连接该数据库，进行测试，test success!</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="使用-docker-compose"><a href="#使用-docker-compose" class="headerlink" title="使用 docker compose"></a>使用 docker compose</h3><p><a href="https://docs.docker.com/engine/reference/commandline/compose/">官方文档详见</a></p>
-<h4 id="安装-Docker-Compose"><a href="#安装-Docker-Compose" class="headerlink" title="安装 Docker Compose"></a>安装 Docker Compose</h4><p><a href="https://docs.docker.com/compose/install/">官方文档详见</a></p>
-<div class="note success"><p>win 系统，安装 Docker Desktop 时，会默认自动安装好 docker-compose。即在 Docker Desktop for Mac 和 Windows 等桌面系统上，Docker Compose 包含在这些桌面安装中。</p>
-</div>
-
-<p>通过检查版本来验证 Docker Compose 是否已正确安装</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose version</span><br></pre></td></tr></table></figure>
-
-<h4 id="使用-docker-compose-yml"><a href="#使用-docker-compose-yml" class="headerlink" title="使用 docker-compose.yml"></a>使用 docker-compose.yml</h4><p>示例：一次性启用 2 个 mysql 服务</p>
-<p>配置 docker-compose.yml</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">mysql1:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28002</span><span class="string">:3306</span></span><br><span class="line">  <span class="attr">mysql2:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mysql</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MYSQL_ROOT_PASSWORD=123456</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">28003</span><span class="string">:3306</span></span><br></pre></td></tr></table></figure>
-
-<p>执行它</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
-
-<p>发现报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220513133508101.png" alt="image-20220513133508101"></p>
-<p>为什么？</p>
-<p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
-<p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
-<p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
-<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220513133936711.png" alt="image-20220513133936711"></p>
-<p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
-<p>再次执行</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
-
-<p>此时，docker-compose.yml 配置中的 2 个 mysql 服务已启动。用 workbranch 验证一下，test success！</p>
-<p>docker compose 更多命令，<a href="https://docs.docker.com/engine/reference/commandline/compose/#child-commands">详见官方文档</a></p>
-<h3 id="使用-dockerhub"><a href="#使用-dockerhub" class="headerlink" title="使用 dockerhub"></a>使用 dockerhub</h3><p><a href="https://hub.docker.com/">官网详见</a></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 已在官方网站登录过账号的情况，在命令行中再次登录，会自动Login Successed</span></span><br><span class="line">docker login</span><br><span class="line"><span class="comment"># 推送本地镜像到远程docker仓库，后缀追:1.0可以省略，这里以mysql镜像为例</span></span><br><span class="line">docker commit 58c44b9b6eb6 huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看本地镜像</span></span><br><span class="line">docker images</span><br><span class="line"><span class="comment"># 推送huatree/mysql</span></span><br><span class="line">docker push huatree/mysql:1.0</span><br><span class="line"><span class="comment"># 查看远程仓库，huatree/mysql已然出现</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.microsoft.com/en-us/windows/wsl/basic-commands">WSL 的基本命令</a></p>
-<p>[2] <a href="https://blog.csdn.net/m0_67393686/article/details/124097754">【Docker】win10 上修改 docker 的镜像文件存储位置（九）- 通过 WSL2 修改</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -2829,53 +2829,6 @@
       </tags>
   </entry>
   <entry>
-    <title>写好README</title>
-    <url>/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/</url>
-    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220603172009054.png" alt="image-20220603172009054"></p>
-<span id="more"></span>
-
-<h2 id="从何而来"><a href="#从何而来" class="headerlink" title="从何而来"></a>从何而来</h2><p>“README”可能是来自于《爱丽丝漫游仙境》，其中一瓶药水和一个月饼上分别贴着“DRINK ME”（喝我）和“EAT ME”（吃我）的标签。 —— 来自某位读者的提议</p>
-<p>正式命名的日期可以追溯到<strong>至少</strong> 1970 年。不过也有可能是来自更早之前放在打孔卡片上的便签纸，上面潦草地写着的“READ ME!”。</p>
-<h2 id="项目都有它的身影"><a href="#项目都有它的身影" class="headerlink" title="项目都有它的身影"></a>项目都有它的身影</h2><p>为什么？没有 README 意味着开发者需要阅读源码才能理解你的模块。</p>
-<p>对于开发者，项目都是持续集成的，如果没有 README，相隔一段时间，再回来折腾项目，会感觉很陌生。</p>
-<p>对于使用者，如果没有 README，就需要耗费大量的时间去解读项目源码，或者带着复杂的心情直接抛弃，找个有 README 提供的项目替代使用。</p>
-<h2 id="怎么写"><a href="#怎么写" class="headerlink" title="怎么写"></a>怎么写</h2><p>README 的编写质量决定了是否能给人留下好的第一印象。</p>
-<p>README 是使用者首先（或唯一）审视你作品的入口。用户希望模块能满足他们的需要，所以你要清楚的说明你的模块的主要作用和优势。</p>
-<p>你要做的是：</p>
-<ol>
-<li>告诉他们这是什么 (使用场景)</li>
-<li>告诉他们在实际使用中是什么样子</li>
-<li>告诉他们使用的方法</li>
-<li>告诉他们其它相关的细节</li>
-</ol>
-<h2 id="README-清单"><a href="#README-清单" class="headerlink" title="README 清单"></a>README 清单</h2><p>一个有用的清单用来衡量你的 README</p>
-<ul>
-<li>一句话解释模块的目的</li>
-<li>必要的背景资料或链接</li>
-<li>为潜在不熟悉的术语提供到信息来源的链接</li>
-<li>简洁可运行的实例</li>
-<li>安装说明</li>
-<li>详细的 API 文档</li>
-<li>对<a href="https://github.com/hackergrrl/art-of-readme/blob/master/README-zh.md#%E8%AE%A4%E7%9F%A5%E6%BC%8F%E6%96%97">认知漏斗</a>的执行</li>
-<li>前面提到的注意事项和限制</li>
-<li>不要依赖图片传递关键信息</li>
-<li>许可证</li>
-</ul>
-<div class="note info"><p><strong>认知漏斗</strong>， 可以想象成是一个直立的漏斗，最宽的部分相关细节最宽泛，越往下移动细节越具体，只有对你的作品足够感兴趣的人才会关注这部分内容。</p>
-</div>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/hackergrrl/art-of-readme">Art of README</a></p>
-<p>[2] <a href="https://github.com/othneildrew/Best-README-Template">Best-README-Template</a></p>
-<p>[3] <a href="https://github.com/RichardLitt/standard-readme">standard-readme</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>README</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>gitlab搭建与使用</title>
     <url>/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<p>GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。</p>
@@ -2923,6 +2876,53 @@
       </tags>
   </entry>
   <entry>
+    <title>写好README</title>
+    <url>/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220603172009054.png" alt="image-20220603172009054"></p>
+<span id="more"></span>
+
+<h2 id="从何而来"><a href="#从何而来" class="headerlink" title="从何而来"></a>从何而来</h2><p>“README”可能是来自于《爱丽丝漫游仙境》，其中一瓶药水和一个月饼上分别贴着“DRINK ME”（喝我）和“EAT ME”（吃我）的标签。 —— 来自某位读者的提议</p>
+<p>正式命名的日期可以追溯到<strong>至少</strong> 1970 年。不过也有可能是来自更早之前放在打孔卡片上的便签纸，上面潦草地写着的“READ ME!”。</p>
+<h2 id="项目都有它的身影"><a href="#项目都有它的身影" class="headerlink" title="项目都有它的身影"></a>项目都有它的身影</h2><p>为什么？没有 README 意味着开发者需要阅读源码才能理解你的模块。</p>
+<p>对于开发者，项目都是持续集成的，如果没有 README，相隔一段时间，再回来折腾项目，会感觉很陌生。</p>
+<p>对于使用者，如果没有 README，就需要耗费大量的时间去解读项目源码，或者带着复杂的心情直接抛弃，找个有 README 提供的项目替代使用。</p>
+<h2 id="怎么写"><a href="#怎么写" class="headerlink" title="怎么写"></a>怎么写</h2><p>README 的编写质量决定了是否能给人留下好的第一印象。</p>
+<p>README 是使用者首先（或唯一）审视你作品的入口。用户希望模块能满足他们的需要，所以你要清楚的说明你的模块的主要作用和优势。</p>
+<p>你要做的是：</p>
+<ol>
+<li>告诉他们这是什么 (使用场景)</li>
+<li>告诉他们在实际使用中是什么样子</li>
+<li>告诉他们使用的方法</li>
+<li>告诉他们其它相关的细节</li>
+</ol>
+<h2 id="README-清单"><a href="#README-清单" class="headerlink" title="README 清单"></a>README 清单</h2><p>一个有用的清单用来衡量你的 README</p>
+<ul>
+<li>一句话解释模块的目的</li>
+<li>必要的背景资料或链接</li>
+<li>为潜在不熟悉的术语提供到信息来源的链接</li>
+<li>简洁可运行的实例</li>
+<li>安装说明</li>
+<li>详细的 API 文档</li>
+<li>对<a href="https://github.com/hackergrrl/art-of-readme/blob/master/README-zh.md#%E8%AE%A4%E7%9F%A5%E6%BC%8F%E6%96%97">认知漏斗</a>的执行</li>
+<li>前面提到的注意事项和限制</li>
+<li>不要依赖图片传递关键信息</li>
+<li>许可证</li>
+</ul>
+<div class="note info"><p><strong>认知漏斗</strong>， 可以想象成是一个直立的漏斗，最宽的部分相关细节最宽泛，越往下移动细节越具体，只有对你的作品足够感兴趣的人才会关注这部分内容。</p>
+</div>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://github.com/hackergrrl/art-of-readme">Art of README</a></p>
+<p>[2] <a href="https://github.com/othneildrew/Best-README-Template">Best-README-Template</a></p>
+<p>[3] <a href="https://github.com/RichardLitt/standard-readme">standard-readme</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>README</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>移动端H5页面禁止长按复制及去掉点击高亮</title>
     <url>/2022/06/06/20220606-%E7%A7%BB%E5%8A%A8%E7%AB%AFH5%E9%A1%B5%E9%9D%A2%E7%A6%81%E6%AD%A2%E9%95%BF%E6%8C%89%E5%A4%8D%E5%88%B6%E5%8F%8A%E5%8E%BB%E6%8E%89%E7%82%B9%E5%87%BB%E9%AB%98%E4%BA%AE/</url>
     <content><![CDATA[<p>指定的移动端 H5 页面，长按文字拉起复制面板，对用户体验不友好。活动 H5 页面点击区域闪现高亮。</p>
@@ -2943,18 +2943,6 @@
       <tags>
         <tag>CSS</tag>
         <tag>H5</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【转载】请查收：几个使用的CSS小技巧</title>
-    <url>/2022/06/26/20220626-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E8%AF%B7%E6%9F%A5%E6%94%B6%EF%BC%9A%E5%87%A0%E4%B8%AA%E4%BD%BF%E7%94%A8%E7%9A%84CSS%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p>{}</p>
-]]></content>
-      <categories>
-        <category>经典文章</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
       </tags>
   </entry>
 </search>
