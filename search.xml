@@ -3,7 +3,7 @@
   <entry>
     <title>div元素垂直水平居中</title>
     <url>/2021/04/13/20210413-div%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220509055101090.png" alt="image-20220509055101090"></p>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220509055101090.png" alt="image-20220509055101090"></p>
 <span id="more"></span>
 
 <h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h3 id="line-hight"><a href="#line-hight" class="headerlink" title="line-hight"></a>line-hight</h3><p>适用：单行文本垂直居中</p>
@@ -49,10 +49,54 @@
       </tags>
   </entry>
   <entry>
+    <title>搞定uni-app</title>
+    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
+    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220428083519310.png" alt="image-20220428083519310"></p>
+<span id="more"></span>
+
+<blockquote>
+<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
+</blockquote>
+<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
+<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
+<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
+<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
+<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
+<ul>
+<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220430063717154.png" alt="image-20220430063717154"></p>
+<ul>
+<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
+</li>
+<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
+</li>
+</ul>
+<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
+<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
+<p>插件安装需要登录 Dcloud 账号</p>
+</blockquote>
+<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
+
+<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
+<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
+<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>uni-app</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>npm自定义包发布</title>
     <url>/2021/05/07/20210507-npm%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E5%8F%91%E5%B8%83/</url>
     <content><![CDATA[<p>本文以自定义工具函数库为例，讲解工具包项目从发布到 npm 中央仓库、维护及使用的过程。</p>
-<p><img src="https://huatree.top/image-20220427185535158.png" alt="image-20220427185535158"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220427185535158.png" alt="image-20220427185535158"></p>
 <span id="more"></span>
 
 <h2 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h2><p>创建工具包项目</p>
@@ -87,7 +131,7 @@
 <h3 id="测试使用自定义包"><a href="#测试使用自定义包" class="headerlink" title="测试使用自定义包"></a>测试使用自定义包</h3><p><code>test/first.html</code></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../dist/huatree-utils.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    htUtils.test()</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20220427172208754.png" alt="image-20220427172208754"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220427172208754.png" alt="image-20220427172208754"></p>
 <h2 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h2><h3 id="完善-package-json"><a href="#完善-package-json" class="headerlink" title="完善 package.json"></a>完善 package.json</h3><p>name：必须是唯一的名称(在 npm 在线中央仓库中没有同名的)</p>
 <p>main：必须指定为打包生成的 js 文件</p>
 <p>keywords：指定一些方便别的程序员搜索到当前库的关键字</p>
@@ -157,53 +201,50 @@
       </tags>
   </entry>
   <entry>
-    <title>搞定uni-app</title>
-    <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
-    <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
-<p><img src="https://huatree.top/image-20220428083519310.png" alt="image-20220428083519310"></p>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
 <span id="more"></span>
 
 <blockquote>
-<p>uni-app<a href="https://uniapp.dcloud.net.cn/">详见官网</a></p>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
 </blockquote>
-<h2 id="熟悉-uni-app-框架主要特征"><a href="#熟悉-uni-app-框架主要特征" class="headerlink" title="熟悉 uni-app 框架主要特征"></a>熟悉 uni-app 框架主要特征</h2><p><img src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-a90b5f95-90ba-4d30-a6a7-cd4d057327db/423744c0-5673-4a14-adca-14bd986c3f05.jpg" alt="other-01"></p>
-<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="开发工具选择"><a href="#开发工具选择" class="headerlink" title="开发工具选择"></a>开发工具选择</h3><p>工欲善其事，必先利其器。合适的事用合适的工具。<strong>App 的真机运行、日志显示、云打包只能在 HBuilderX 中使用</strong>。使用其他 ide，如 VSCode，只能做 uni-app 的 h5 和各端小程序开发。</p>
-<p>安装编辑器 HbuilderX ，<a href="https://www.dcloud.io/hbuilderx.html">下载地址</a></p>
-<p>HBuilderX 是通用的前端开发工具，但为<code>uni-app</code>做了特别强化。下载 App 开发版，可开箱即用。</p>
-<p>安装微信开发者工具，<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">下载地址</a></p>
-<h3 id="运行-uni-app"><a href="#运行-uni-app" class="headerlink" title="运行 uni-app"></a>运行 uni-app</h3><p>第一次使用 HBuilder，项目&gt;运行&gt;<strong>运行到小程序模拟器&gt;微信开发者工具</strong>，需要注意 3 点：</p>
-<ul>
-<li>需要先配置小程序 ide 的相关路径：工具&gt;设置&gt;运行配置&gt;小程序运行配置&gt;微信开发者工具路径</li>
-</ul>
-<p><img src="https://huatree.top/image-20220430063717154.png" alt="image-20220430063717154"></p>
-<ul>
-<li><p>配置项目根目录下的<code>manifest.json</code>文件&gt;微信小程序配置&gt;微信小程序<code>AppID</code></p>
-</li>
-<li><p>打开微信开发者工具&gt;设置&gt;安全&gt;服务端口</p>
-</li>
-</ul>
-<h2 id="如何学习"><a href="#如何学习" class="headerlink" title="如何学习"></a>如何学习</h2><p><a href="https://uniapp.dcloud.io/resource.html">推荐官网步骤不迷路</a></p>
-<h2 id="HBuilderX-常用插件"><a href="#HBuilderX-常用插件" class="headerlink" title="HBuilderX 常用插件"></a>HBuilderX 常用插件</h2><blockquote>
-<p>插件安装需要登录 Dcloud 账号</p>
-</blockquote>
-<p>在哪儿下载插件安装？<a href="https://ext.dcloud.net.cn/">详见官网</a>，当然，也可以通过 HBuilderX&gt;工具&gt;插件安装打开。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">easy-git <span class="comment"># Git源代码管理工具</span></span><br><span class="line">scss/sass编译</span><br><span class="line">prettier <span class="comment"># 格式化less、sass、vue、stylus(vue内嵌)、ts、yaml代码</span></span><br></pre></td></tr></table></figure>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发工具指南</title>
+    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220508124243345.png" alt="image-20220508124243345"></p>
+<span id="more"></span>
 
-<p>新建项目时，是没有自动<code>git init</code>及<code>.gitignore</code>文件的，第一次需要安装<code>easy-git</code>插件，重启 HBuilderX 才有。</p>
-<h2 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h2><p>[1] <a href="https://gitcode.net/Ksy007/xingyuan-shop">星元商城微信小程序 demo</a></p>
-<p>[2] <a href="https://ask.dcloud.net.cn/article/114">Native.js 示例汇总</a></p>
+<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220508115506971.png" alt="image-20220508115506971"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>
       </categories>
       <tags>
-        <tag>uni-app</tag>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
     <title>npm常用命令</title>
     <url>/2021/09/12/20210912-npm%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220507212813517.png" alt="image-20220507212813517"></p>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220507212813517.png" alt="image-20220507212813517"></p>
 <span id="more"></span>
 
 <h2 id="UNMET-PEER-DEPENDENCY-xxx"><a href="#UNMET-PEER-DEPENDENCY-xxx" class="headerlink" title="UNMET PEER DEPENDENCY @xxx"></a>UNMET PEER DEPENDENCY @xxx</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 简单查看项目依赖库的信息</span></span><br><span class="line">npm <span class="built_in">ls</span> --depth 0</span><br><span class="line"><span class="comment"># 查看当前是否有任何（或特定）已安装的依赖包已过时</span></span><br><span class="line">npm outdated</span><br><span class="line"><span class="comment"># 查看某个依赖包的所有版本</span></span><br><span class="line">npm view [pkg name] versions</span><br></pre></td></tr></table></figure>
@@ -236,81 +277,27 @@
       </tags>
   </entry>
   <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
-<span id="more"></span>
-
-<blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
-</blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue开发工具指南</title>
-    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
-<span id="more"></span>
-
-<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
-<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Git常见问题与总结</title>
-    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
-
-<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
-<blockquote>
-<p>tops</p>
-<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
-</blockquote>
-<p>具体操作如下</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
-</blockquote>
-<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
-
-<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
-<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
-<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
-<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
-<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
-<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
-<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
+    <title>混合App中H5白屏修复及样式兼容</title>
+    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
+    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
+<ul>
+<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
+<li>代码编译错误引起渲染失败(一直白屏)</li>
+</ul>
+<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
+<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
+<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
+<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
+<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
+<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
 ]]></content>
       <categories>
         <category>工作点滴</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>H5</tag>
+        <tag>混合APP</tag>
       </tags>
   </entry>
   <entry>
@@ -784,30 +771,6 @@
       </tags>
   </entry>
   <entry>
-    <title>混合App中H5白屏修复及样式兼容</title>
-    <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
-    <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
-<ul>
-<li>代码编译过长加载的渲染阻塞(白屏时间过长，结果会正常渲染)</li>
-<li>代码编译错误引起渲染失败(一直白屏)</li>
-</ul>
-<p>代码编译过长加载的渲染阻塞，可以通过优化代码解决。代码编译错误引起渲染失败，就得修复代码的 BUG 了。</p>
-<h3 id="是什么原因引起的编译错误"><a href="#是什么原因引起的编译错误" class="headerlink" title="是什么原因引起的编译错误"></a>是什么原因引起的编译错误</h3><p>通过产品反馈的结果来看，少部分用户手机进入混合 App 中 H5 首页时，出现白屏，而多数用户没有这种情况。初步确认是手机系统上的 webview 版本低导致代码不兼容，所以编译错误，渲染失败，就一直卡在白屏了。</p>
-<p>为了进一步验证是 webview 版本过低引起的 BUG，我借用了 2 个 Android 测试机(android 4.4.4，android 12)，并借助<code>chrome://inspect/#devices</code> 调试混合 App 中 H5，发现在 android 4.4.4 版本测试机上，代码报错，出现白屏，而 android 12 版本测试机正常，因此得以验证：混合 App 中 H5 的代码没有兼容到低版本的 webview 。</p>
-<h3 id="开始修复"><a href="#开始修复" class="headerlink" title="开始修复"></a>开始修复</h3><p>查看该 H5 代码，很多都是 ES6 ，需要转译成 ES5，才兼容低版本的 webview。可以通过 Babel 转译，打包项目的时候转译成 ES5。Babel 配置，详见 <a href="https://www.babeljs.cn/docs/">https://www.babeljs.cn/docs/</a></p>
-<h2 id="样式兼容"><a href="#样式兼容" class="headerlink" title="样式兼容"></a>样式兼容</h2><p>低版本的 webview 需要兼容 CSS3。怎么兼容呢，CSS3 的样式属性需要加前缀 -webkit-(安卓，IOS 用的 webview 的内核是这个, 其他前缀不用考虑)。项目那么多 CSS3 样式，难道要手动都加上吗，其实可以走配置的。PostCSS 是一个允许使用插件转换样式的插件，用法详见 <a href="https://github.com/postcss/postcss/blob/main/docs/README-cn.md">https://github.com/postcss/postcss/blob/main/docs/README-cn.md</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.cnblogs.com/JQstronger/p/WebView.html">基于 H5 的混合开发介绍（一）WebView</a></p>
-<p>[2] <a href="https://segmentfault.com/a/1190000021633356">你需要的 App 内 h5 的调试方法</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>H5</tag>
-        <tag>混合APP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue开发应用中遇到的问题与总结</title>
     <url>/2022/03/02/20220302-Vue%E5%BC%80%E5%8F%91%E5%BA%94%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<h2 id="1-data-与-computed-区别"><a href="#1-data-与-computed-区别" class="headerlink" title="1 data 与 computed 区别"></a>1 data 与 computed 区别</h2><p>data，<a href="https://cn.vuejs.org/v2/api/#data">详见</a></p>
@@ -839,6 +802,43 @@
       </categories>
       <tags>
         <tag>Vue</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git常见问题与总结</title>
+    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> [ssh:git url]</span><br><span class="line">$ git checkout -b [branch a]</span><br><span class="line">$ git pull origin [branch a]</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin [branch a]:[branch a]</span><br><span class="line">$ git checkout [branch a]</span><br></pre></td></tr></table></figure>
+
+<h2 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
+<blockquote>
+<p>tops</p>
+<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
+</blockquote>
+<p>具体操作如下</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m [old branch name] [new branch name]</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin [old branch name]</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin [new branch name]</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/[new branch name]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
+</blockquote>
+<h2 id="分支删除"><a href="#分支删除" class="headerlink" title="分支删除"></a>分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d [branch name]</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin [branch name]</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
+<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
+<h2 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard [commit <span class="built_in">id</span>]</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用的查看提交历史命令"><a href="#常用的查看提交历史命令" class="headerlink" title="常用的查看提交历史命令"></a>常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
+<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
+<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
+<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
+<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -1079,6 +1079,25 @@
       </categories>
       <tags>
         <tag>电脑DIY</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>vue+element form多表单校验</title>
+    <url>/2022/03/14/20220314-vue+element-form%E5%A4%9A%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</url>
+    <content><![CDATA[<p>一般项目中会对 Element Form 表单进行二次封装，封装后的通用表单，有时候不能适用一些特殊的表单，可以用到多表单组合一起验证，待都校验通过后再执行后续动作。</p>
+<span id="more"></span>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>先对每一个表单进行校验，返回一个 Promise 对象，然后使用<code>Promise.all()</code>方法对所有返回的 Promise 对象判断，全部是 fullfilled 的时候执行后续逻辑。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.title1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.content1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules2&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.title2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.content2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;onOk&quot;</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&#x27;MoreForm&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">rules1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">         <span class="attr">rules2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">  	<span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">onOk</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> formValidate = [</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form1&#x27;</span>].<span class="title function_">validate</span>(),</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form2&#x27;</span>].<span class="title function_">validate</span>()</span></span><br><span class="line"><span class="language-javascript">        ]</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Promise</span>.<span class="title function_">all</span>(formValidate).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// todo</span></span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// 校验通过后的处理</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://element.eleme.cn/#/zh-CN/component/form">Element &gt; 组件 &gt; Form 表单</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
+        <tag>Element</tag>
       </tags>
   </entry>
   <entry>
@@ -1326,25 +1345,6 @@
       </tags>
   </entry>
   <entry>
-    <title>vue+element form多表单校验</title>
-    <url>/2022/03/14/20220314-vue+element-form%E5%A4%9A%E8%A1%A8%E5%8D%95%E6%A0%A1%E9%AA%8C/</url>
-    <content><![CDATA[<p>一般项目中会对 Element Form 表单进行二次封装，封装后的通用表单，有时候不能适用一些特殊的表单，可以用到多表单组合一起验证，待都校验通过后再执行后续动作。</p>
-<span id="more"></span>
-
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>先对每一个表单进行校验，返回一个 Promise 对象，然后使用<code>Promise.all()</code>方法对所有返回的 Promise 对象判断，全部是 fullfilled 的时候执行后续逻辑。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form1&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules1&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.title1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容1&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content1&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form1.content1&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容1&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-form</span> <span class="attr">ref</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:model</span>=<span class="string">&quot;form2&quot;</span> <span class="attr">:rules</span>=<span class="string">&quot;rules2&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;标题2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;title2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.title2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入标题2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">el-form-item</span> <span class="attr">label</span>=<span class="string">&quot;内容2&quot;</span> <span class="attr">prop</span>=<span class="string">&quot;content2&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">el-input</span> <span class="attr">v-model</span>=<span class="string">&quot;form2.content2&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;请输入内容2&quot;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">el-form-item</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">el-form</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">el-button</span> <span class="attr">type</span>=<span class="string">&quot;primary&quot;</span> @<span class="attr">click</span>=<span class="string">&quot;onOk&quot;</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">el-button</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="attr">name</span>: <span class="string">&#x27;MoreForm&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">form2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: <span class="string">&#x27;&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: <span class="string">&#x27;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">rules1</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title1</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content1</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容1&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;,</span></span><br><span class="line"><span class="language-javascript">         <span class="attr">rules2</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">title2</span>: [</span></span><br><span class="line"><span class="language-javascript">            &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入标题2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">          ],</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">content2</span>: [</span></span><br><span class="line"><span class="language-javascript">              &#123; <span class="attr">required</span>: <span class="literal">true</span>, <span class="attr">message</span>: <span class="string">&#x27;请输入内容2&#x27;</span>, <span class="attr">trigger</span>: <span class="string">&#x27;blur&#x27;</span>&#125;</span></span><br><span class="line"><span class="language-javascript">            ]</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">  	<span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">onOk</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">let</span> formValidate = [</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form1&#x27;</span>].<span class="title function_">validate</span>(),</span></span><br><span class="line"><span class="language-javascript">          <span class="variable language_">this</span>.<span class="property">$refs</span>[<span class="string">&#x27;form2&#x27;</span>].<span class="title function_">validate</span>()</span></span><br><span class="line"><span class="language-javascript">        ]</span></span><br><span class="line"><span class="language-javascript">        <span class="title class_">Promise</span>.<span class="title function_">all</span>(formValidate).<span class="title function_">then</span>(<span class="function">() =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// todo</span></span></span><br><span class="line"><span class="language-javascript">          <span class="comment">// 校验通过后的处理</span></span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">      &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://element.eleme.cn/#/zh-CN/component/form">Element &gt; 组件 &gt; Form 表单</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-        <tag>Element</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>node版本管理</title>
     <url>/2022/03/17/20220317-node%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/</url>
     <content><![CDATA[<h2 id="了解-nvm-windows"><a href="#了解-nvm-windows" class="headerlink" title="了解 nvm-windows"></a>了解 nvm-windows</h2><p><a href="https://docs.microsoft.com/en-us/windows/nodejs/setup-on-windows">Microsoft</a> &#x2F; <a href="https://docs.npmjs.com/cli/v7/configuring-npm/install#windows-node-version-managers">npm &#x2F;Google 为</a><em>Windows</em>推荐 了 Node.js 版本管理器。<em>原始<a href="https://github.com/nvm-sh/nvm">nvm</a>是一个完全独立的项目，仅适用于 Mac&#x2F;Linux。</em>该项目使用完全不同的理念，而不仅仅是 nvm 的克隆。详细信息列在<a href="https://github.com/coreybutler/nvm-windows#bulb-why-another-version-manager">为什么另一个版本管理器？</a>有<a href="https://github.com/coreybutler/nvm-windows#bulb-whats-the-big-difference">什么大的区别？</a>。</p>
@@ -1406,6 +1406,58 @@
       </categories>
       <tags>
         <tag>win10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
+    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
+    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自程序员鱼皮 </p>
+</div>
+
+<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
+<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
+<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
+<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
+<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
+<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
+<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
+<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
+<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
+<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
+<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
+<p>整体的思想就是从整体到局部，由大到小吧。</p>
+<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
+<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
+<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
+<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
+<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
+<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
+<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
+<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
+<p>所以这也是为什么要多了解和积累一些技术。</p>
+<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
+<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
+<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
+<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
+<ul>
+<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
+<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
+</li>
+<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
+</li>
+</ul>
+<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
+<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
+<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
+]]></content>
+      <categories>
+        <category>经典文章</category>
+      </categories>
+      <tags>
+        <tag>职场</tag>
       </tags>
   </entry>
   <entry>
@@ -1881,90 +1933,38 @@
       </tags>
   </entry>
   <entry>
-    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
-    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
-    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
-<span id="more"></span>
-
-<div class="note info"><p>文章转载自程序员鱼皮 </p>
-</div>
-
-<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
-<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
-<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
-<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
-<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
-<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
-<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
-<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
-<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
-<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
-<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
-<p>整体的思想就是从整体到局部，由大到小吧。</p>
-<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
-<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
-<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
-<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
-<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
-<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
-<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
-<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
-<p>所以这也是为什么要多了解和积累一些技术。</p>
-<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
-<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
-<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
-<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
-<ul>
-<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
-<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
-</li>
-<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
-</li>
-</ul>
-<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
-<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
-<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
-]]></content>
-      <categories>
-        <category>经典文章</category>
-      </categories>
-      <tags>
-        <tag>职场</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>七牛云+PicGo+Typora搭建图床</title>
     <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
 <p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
 </blockquote>
 <h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
-<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
+<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401151047795.png" alt="image-20220401151047795"></p>
 <p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
-<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
-<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401151806541.png" alt="image-20220401151806541"></p>
+<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401152045293.png" alt="image-20220401152045293"></p>
 <p>在自定义源站域名栏绑定域名</p>
-<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401153548043.png" alt="image-20220401153548043"></p>
 <blockquote>
 <p>! 注意</p>
 <p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
 </blockquote>
 <h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
-<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401154840145.png" alt="image-20220401154840145"></p>
 <p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
-<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401155255504.png" alt="image-20220401155255504"></p>
 <p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
-<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401155701085.png" alt="image-20220401155701085"></p>
 <h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
-<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401165418098.png" alt="image-20220401165418098"></p>
 <p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
-<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401165507134.png" alt="image-20220401165507134"></p>
 <p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
 <h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
 <h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
-<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401170955343.png" alt="image-20220401170955343"></p>
 <h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
-<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220401172028839.png" alt="image-20220401172028839"></p>
 <p>最后，可以验证一下图片上传。</p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
 <p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
@@ -2069,6 +2069,30 @@
       </tags>
   </entry>
   <entry>
+    <title>你的node-sass安装报错了吗</title>
+    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
+    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
+<span id="more"></span>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414170239182.png" alt="image-20220414170239182"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
+<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
+<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414165653097.png" alt="image-20220414165653097"></p>
+<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220414170424379.png" alt="image-20220414170424379"></p>
+<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node-sass</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>H5页面中获取点击坐标信息</title>
     <url>/2022/04/06/20220406-H5%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%82%B9%E5%87%BB%E5%9D%90%E6%A0%87%E4%BF%A1%E6%81%AF/</url>
     <content><![CDATA[<p>广告位埋点需求：H5 页面中记录广告区域内的点击坐标信息。</p>
@@ -2093,30 +2117,6 @@
       </categories>
       <tags>
         <tag>H5</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你的node-sass安装报错了吗</title>
-    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
-    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
-<span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
-<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
-<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
-<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
-<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
-<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
-<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
-<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node-sass</tag>
       </tags>
   </entry>
   <entry>
@@ -2188,6 +2188,74 @@
       </tags>
   </entry>
   <entry>
+    <title>github使用技巧</title>
+    <url>/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510072148793.png" alt="image-20220510072148793"></p>
+<span id="more"></span>
+
+<h2 id="1-在线查看项目"><a href="#1-在线查看项目" class="headerlink" title="1 在线查看项目"></a>1 在线查看项目</h2><h3 id="1-1-直接在-github-后面加上-1s"><a href="#1-1-直接在-github-后面加上-1s" class="headerlink" title="1.1 直接在 github 后面加上 1s"></a>1.1 直接在 github 后面加上 1s</h3><p>找到需要看的项目的 github 地址。比如：antd-design pro</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>只需要在地址 github 后面加上<code>1s</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github1s.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>与 vs-code 基本一样，速度很快！再也不用担心 github 网速慢的问题了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510053731103.png" alt="image-20220510053731103"></p>
+<h3 id="1-2-github-加前缀-vscode-dev-x2F"><a href="#1-2-github-加前缀-vscode-dev-x2F" class="headerlink" title="1.2 github 加前缀 vscode.dev&#x2F;"></a>1.2 github 加前缀 vscode.dev&#x2F;</h3><p><code>vscode.dev/</code>方式打开时，需要 github 在线授权</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://vscode.dev/github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510054828459.png" alt="image-20220510054828459"></p>
+<h3 id="1-3-github-的后缀-com-换成-dev"><a href="#1-3-github-的后缀-com-换成-dev" class="headerlink" title="1.3 github 的后缀.com 换成.dev"></a>1.3 github 的后缀.com 换成.dev</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.dev/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><strong>快捷键</strong>：在原<code>https://github.com/ant-design/ant-design-pro</code>地址下，按下键盘上的<code>.</code>键位，可快速在线打开项目。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510055416674.png" alt="image-20220510055416674"></p>
+<h3 id="1-4-通过-Chrome-插件-Octotree-GitHub-code-tree"><a href="#1-4-通过-Chrome-插件-Octotree-GitHub-code-tree" class="headerlink" title="1.4 通过 Chrome 插件 Octotree - GitHub code tree"></a>1.4 通过 Chrome 插件 Octotree - GitHub code tree</h3><p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510055737787.png" alt="image-20220510055737787"></p>
+<h2 id="2-在线运行项目"><a href="#2-在线运行项目" class="headerlink" title="2 在线运行项目"></a>2 在线运行项目</h2><p>在项目地址前加上 <code>gitpod.io/#</code> 前缀，此时，可以选择 github 授权。等待几秒钟，它会自动识别项目的类型，并在线安装项目所需的依赖，并打好包。</p>
+<p>例如 vue 项目，gitpod 环境下，会当前项目根目录下创建默认配置<code>.gitpod.yml</code>文件。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This configuration file was automatically generated by Gitpod.</span></span><br><span class="line"><span class="comment"># Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)</span></span><br><span class="line"><span class="comment"># and commit this file to your remote git repository to share the goodness with others.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">init:</span> <span class="string">yarn</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">yarn</span> <span class="string">run</span> <span class="string">build</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Invalid-Host-header-问题解决"><a href="#Invalid-Host-header-问题解决" class="headerlink" title="Invalid Host header 问题解决"></a>Invalid Host header 问题解决</h3><p><strong>出现该问的原因</strong>：因为新版的 webpack-dev-server 出于安全考虑，默认检查 hostname，如果 hostname 不是配置内的就不能访问。</p>
+<p><strong>解决办法：</strong>设置跳过 host 检查。打开你的项目全局搜索 devServer ，在 devServer 里面添加 <code>disableHostCheck: true,</code></p>
+<p>disableHostCheck 设置为 true 的意思就是设置跳过 host 检查。</p>
+<div class="note success"><p>本地运行项目的操作，gitpod 环境下同样适用。</p>
+</div>
+
+<div class="note warning"><p>Gitpod 免费版支持：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 50 小时&#x2F;月</li>
+<li><input checked="" disabled="" type="checkbox"> 公共和私人回购</li>
+<li><input checked="" disabled="" type="checkbox"> 4 个并行工作区</li>
+<li><input checked="" disabled="" type="checkbox"> 30 分钟不活动超时</li>
+</ul>
+</div>
+
+<h2 id="3-项目推送"><a href="#3-项目推送" class="headerlink" title="3 项目推送"></a>3 项目推送</h2><p>在 GitHub 的 Explorer 探索页面中，有一个非常不起眼的按钮，“获取邮件更新”。</p>
+<p>我们可以根据自己的喜好，让 GitHub 定期给我们推送自己感兴趣的优质项目，就可以持续扩大知识面、了解开源动态啦。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510065320331.png" alt="image-20220510065320331"></p>
+<h2 id="4-文件定位查看"><a href="#4-文件定位查看" class="headerlink" title="4 文件定位查看"></a>4 文件定位查看</h2><p>刚开始的时候，相信大多数同学是一级一级的点击项目目录去找文件，发现位置错了后呢，还要回到最初的起点，呆呆地再换一个目录去找。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510070107485.png" alt="image-20220510070107485"></p>
+<p>后来在<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">github 官方文档</a>中发现，我们只需按下 <code>t</code> 键，就可以快速、实时地对仓库内的所有文件进行搜索。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510070309131.png" alt="image-20220510070309131"></p>
+<p>点进某个文件后，还有技巧，按下 <code>L</code> 键，就可以快速跳转到某一行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510070554922.png" alt="image-20220510070554922"></p>
+<p>点击行号，就可以快速复制这行的代码，生成永久链接。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510070627257.png" alt="image-20220510070627257"></p>
+<p>按 <code>b</code> 键还可以快速查看该文件的改动记录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220510070756051.png" alt="image-20220510070756051"></p>
+<p>除了上面这些，GitHub 里还隐藏了许多实用的<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">快捷键</a>，大家可以在官方文档尽情查看。</p>
+<h2 id="5-过滤搜索"><a href="#5-过滤搜索" class="headerlink" title="5 过滤搜索"></a>5 过滤搜索</h2><p>使用 GitHub <a href="https://docs.github.com/cn/search-github/getting-started-with-searching-on-github/about-searching-on-github">高级搜索</a>功能提供的 <code>搜索限定符</code>。进入 advance search 界面（搜索结果页左下角），利用可视化表单也能实现高级搜索。但这个界面展示的搜索条件有限，其实还有更多的搜索限定语法，比如按代码库名称、描述搜索，对仓库中的内容进行搜索等，这些都可以在 GitHub 官方文档查阅。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://mp.weixin.qq.com/s/P7odF1arZ1siCKvhwp6fqA">GitHub 这 5 个骚操作，99%的人不知道！</a></p>
+<p>[2] <a href="https://code.visualstudio.com/blogs/2021/10/20/vscode-dev">vscode.dev</a></p>
+<p>[3] <a href="https://www.gitpod.io/">Gitpod</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【转载】如何选择投资人，什么样的投资人靠谱，20个衡量指标全面分析</title>
     <url>/2022/04/25/20220425-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E6%8A%95%E8%B5%84%E4%BA%BA%EF%BC%8C%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%8A%95%E8%B5%84%E4%BA%BA%E9%9D%A0%E8%B0%B1%EF%BC%8C20%E4%B8%AA%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87%E5%85%A8%E9%9D%A2%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<p><img src="http://5b0988e595225.cdn.sohucs.com/images/20180928/a7b9fa5b102a43fdb61edc28ce1fc0b1.jpeg" alt="top"></p>
@@ -2254,71 +2322,128 @@
       </tags>
   </entry>
   <entry>
-    <title>github使用技巧</title>
-    <url>/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220510072148793.png" alt="image-20220510072148793"></p>
+    <title>Docker+Jenkins+GitHub</title>
+    <url>/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/</url>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220511175224561.png" alt="image-20220511175224561"></p>
 <span id="more"></span>
 
-<h2 id="1-在线查看项目"><a href="#1-在线查看项目" class="headerlink" title="1 在线查看项目"></a>1 在线查看项目</h2><h3 id="1-1-直接在-github-后面加上-1s"><a href="#1-1-直接在-github-后面加上-1s" class="headerlink" title="1.1 直接在 github 后面加上 1s"></a>1.1 直接在 github 后面加上 1s</h3><p>找到需要看的项目的 github 地址。比如：antd-design pro</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p>只需要在地址 github 后面加上<code>1s</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github1s.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p>与 vs-code 基本一样，速度很快！再也不用担心 github 网速慢的问题了。</p>
-<p><img src="https://huatree.top/image-20220510053731103.png" alt="image-20220510053731103"></p>
-<h3 id="1-2-github-加前缀-vscode-dev-x2F"><a href="#1-2-github-加前缀-vscode-dev-x2F" class="headerlink" title="1.2 github 加前缀 vscode.dev&#x2F;"></a>1.2 github 加前缀 vscode.dev&#x2F;</h3><p><code>vscode.dev/</code>方式打开时，需要 github 在线授权</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://vscode.dev/github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://huatree.top/image-20220510054828459.png" alt="image-20220510054828459"></p>
-<h3 id="1-3-github-的后缀-com-换成-dev"><a href="#1-3-github-的后缀-com-换成-dev" class="headerlink" title="1.3 github 的后缀.com 换成.dev"></a>1.3 github 的后缀.com 换成.dev</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">https://github.dev/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
-
-<p><strong>快捷键</strong>：在原<code>https://github.com/ant-design/ant-design-pro</code>地址下，按下键盘上的<code>.</code>键位，可快速在线打开项目。</p>
-<p><img src="https://huatree.top/image-20220510055416674.png" alt="image-20220510055416674"></p>
-<h3 id="1-4-通过-Chrome-插件-Octotree-GitHub-code-tree"><a href="#1-4-通过-Chrome-插件-Octotree-GitHub-code-tree" class="headerlink" title="1.4 通过 Chrome 插件 Octotree - GitHub code tree"></a>1.4 通过 Chrome 插件 Octotree - GitHub code tree</h3><p><img src="https://huatree.top/image-20220510055737787.png" alt="image-20220510055737787"></p>
-<h2 id="2-在线运行项目"><a href="#2-在线运行项目" class="headerlink" title="2 在线运行项目"></a>2 在线运行项目</h2><p>在项目地址前加上 <code>gitpod.io/#</code> 前缀，此时，可以选择 github 授权。等待几秒钟，它会自动识别项目的类型，并在线安装项目所需的依赖，并打好包。</p>
-<p>例如 vue 项目，gitpod 环境下，会当前项目根目录下创建默认配置<code>.gitpod.yml</code>文件。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This configuration file was automatically generated by Gitpod.</span></span><br><span class="line"><span class="comment"># Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)</span></span><br><span class="line"><span class="comment"># and commit this file to your remote git repository to share the goodness with others.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">init:</span> <span class="string">yarn</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">yarn</span> <span class="string">run</span> <span class="string">build</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Invalid-Host-header-问题解决"><a href="#Invalid-Host-header-问题解决" class="headerlink" title="Invalid Host header 问题解决"></a>Invalid Host header 问题解决</h3><p><strong>出现该问的原因</strong>：因为新版的 webpack-dev-server 出于安全考虑，默认检查 hostname，如果 hostname 不是配置内的就不能访问。</p>
-<p><strong>解决办法：</strong>设置跳过 host 检查。打开你的项目全局搜索 devServer ，在 devServer 里面添加 <code>disableHostCheck: true,</code></p>
-<p>disableHostCheck 设置为 true 的意思就是设置跳过 host 检查。</p>
-<div class="note success"><p>本地运行项目的操作，gitpod 环境下同样适用。</p>
+<div class="note warning"><p>本文教程基于<strong>Windows 10 系统</strong>Docker+Jenkins+GitHub 实现 CI&amp;CD。</p>
 </div>
 
-<div class="note warning"><p>Gitpod 免费版支持：</p>
+<h2 id="在-Docker-中运行-Jenkins"><a href="#在-Docker-中运行-Jenkins" class="headerlink" title="在 Docker 中运行 Jenkins"></a>在 Docker 中运行 Jenkins</h2><p>将 Jenkins 作为 Docker 容器并从 <a href="https://hub.docker.com/r/jenkinsci/blueocean/"><code>jenkinsci/blueocean</code></a> Docker 镜像中运行。</p>
+<p>Docker 操作，详见<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
+<h3 id="使用-Docker-Engine-运行-Jenkins"><a href="#使用-Docker-Engine-运行-Jenkins" class="headerlink" title="使用 Docker Engine 运行 Jenkins"></a>使用 Docker Engine 运行 Jenkins</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入cmd终端</span></span><br><span class="line"><span class="comment"># 查看当前wsl版本</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为Docker中的一个容器(记住，如果本地没有镜像，这个命令会自动下载)</span></span><br><span class="line">docker run \</span><br><span class="line">  --name huatree-jenkins \</span><br><span class="line">  --<span class="built_in">rm</span> \</span><br><span class="line">  --restart \</span><br><span class="line">  -u root \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -v jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  -v /home/huatree/document:/home \</span><br><span class="line">  jenkinsci/blueocean</span><br><span class="line"><span class="comment"># 如果需要退出当前容器的运行状态，输入快捷键ctrl + c</span></span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p><code>wsl</code>：windows10 子系统 Linux，这里用的是微软商店中下载的 Debian，升级到 wsl2</p>
+<p><code>\</code>：linux 环境空格输出</p>
+<p><code>--name</code>：为容器分配名称</p>
+<p><code>--rm</code>：容器退出时自动移除，可以不写，后面用<code>docker rm</code>移除该容器便可。</p>
+<p><code>--restart</code>：容器退出时应用的重启策略</p>
+<p><code>-u</code>：即<code>--user</code>，用户名或 UID（格式：&lt;name|uid&gt;[:&lt;group|gid&gt;]）</p>
+<p><code>-p</code>：即<code>--publish</code>，将容器的端口发布到主机</p>
+<p><code>-v</code>：即<code>--volume</code>，绑定挂载卷</p>
+<p><code>-v jenkins-data:/var/jenkins_home</code>：将容器中的 <code>/var/jenkins_home</code> 目录映射到 Docker <a href="https://docs.docker.com/engine/admin/volumes/volumes/">volume</a> ，并将其命名为 <code>jenkins-data</code>。如果该卷不存在, 那么 <code>docker run</code> 命令会自动为你创建卷。</p>
+<p><code>-v /var/run/docker.sock:/var/run/docker.sock</code>：在前台运行并将其日志直接发送到您的终端，<a href="https://docs.docker.com/config/daemon/">详见官网文档</a></p>
+<p><code>docker run</code> 命令更多参数使用信息，<a href="https://docs.docker.com/engine/reference/commandline/run/">详见官方文档</a></p>
+<h3 id="使用-Docker-Compose-运行-Jenkins"><a href="#使用-Docker-Compose-运行-Jenkins" class="headerlink" title="使用 Docker Compose 运行 Jenkins"></a>使用 Docker Compose 运行 Jenkins</h3><p>当然，每次<code>docker run...</code>，不方便，可以在需要的路径下配置<code>compose.yaml</code>文件，并在当前路径下的命令行输入<code>docker compose up</code>，它会读取<code>compose.yaml</code>文件，自动执行命令。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">jenkins:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jenkinsci/blueocean</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">jenkins-data:/var/jenkins_home</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/huatree/document:/home</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">jenkins-data:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>更多<code>compse.yaml</code>参数配置，<a href="https://docs.docker.com/compose/compose-file/">详见官方文档</a></p>
+<p><code>Dhudson.model.DirectoryBrowserSupport.CSP=空格</code>：确定为 Jenkins 提供的静态文件发送的内容安全策略标头。有关更多详细信息，请参阅<a href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">配置内容安全策略</a></p>
+<p><code>Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</code>：允许本地目录验证。<a href="https://plugins.jenkins.io/git/#plugin-content-allow-local-checkout">更多信息详见</a></p>
+<h2 id="访问-Jenkins-x2F-Blue-Ocean-Docker-容器"><a href="#访问-Jenkins-x2F-Blue-Ocean-Docker-容器" class="headerlink" title="访问 Jenkins&#x2F;Blue Ocean Docker 容器"></a>访问 Jenkins&#x2F;Blue Ocean Docker 容器</h2><h3 id="解锁-Jenkins"><a href="#解锁-Jenkins" class="headerlink" title="解锁 Jenkins"></a>解锁 Jenkins</h3><p>当你第一次访问一个新的 Jenkins 实例时, 要求你使用自动生成的密码对其进行解锁。</p>
+<p>当在终端&#x2F;命令提示窗口出现两组星号时, 浏览 <code>http://localhost:8080</code> 并等待 <strong>解锁 Jenkins</strong> 页面出现。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516093617699.png" alt="image-20220516093617699"></p>
+<p>再次从终端&#x2F;命令提示窗口, 复制自动生成的字母数字密码(在两组星号之间)。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516093715354.png" alt="image-20220516093715354"></p>
+<p>在<strong>解锁 Jenkins</strong> 页面, 粘贴该密码到 <strong>管理员密码</strong> 字段并点击 <strong>继续</strong>，进入新手入门页面。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516094041627.png" alt="image-20220516094041627"></p>
+<h3 id="使用插件自定义-Jenkins"><a href="#使用插件自定义-Jenkins" class="headerlink" title="使用插件自定义 Jenkins"></a>使用插件自定义 Jenkins</h3><p>在<strong>解锁 Jenkins</strong> 后，<strong>自定义 Jenkins</strong> 页面出现，可以选择默认的<strong>安装推荐的插件</strong>。后续可以在插件管理页面进行维护（卸载&#x2F;更新&#x2F;添加）。</p>
+<p>安装向导显示了正在配置的 Jenkins 的进程，以及建议安装的插件。这个过程肯需要几分钟。</p>
+<h3 id="创建第一个管理员用户"><a href="#创建第一个管理员用户" class="headerlink" title="创建第一个管理员用户"></a>创建第一个管理员用户</h3><p>最后, Jenkins 要求创建你的第一个管理员用户。</p>
+<p>当 <strong>创建第一个管理员用户</strong> 页面出现, 在相应的字段中指定你的详细消息并点击 <strong>保存并完成</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516095217292.png" alt="image-20220516095217292"></p>
+<p>当 <strong>实例配置</strong> 页面出现，根据需要是否配置 <strong>Jenkins URL</strong>，并点击 <strong>保存并完成</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516095453149.png" alt="image-20220516095453149"></p>
+<p>当 <strong>Jenkins 已就绪</strong> 页面出现, 点击 <strong>开始使用 Jenkins</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516095803705.png" alt="image-20220516095803705"></p>
+<p>等待一会儿，Jenkins 主页出现。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516102328899.png" alt="image-20220516102328899"></p>
+<h3 id="停止和重启-Jenkins"><a href="#停止和重启-Jenkins" class="headerlink" title="停止和重启 Jenkins"></a>停止和重启 Jenkins</h3><p>在其他时候，如果不用了，你可以通过在终端&#x2F;命令提示窗口输入 <code>Ctrl-C</code>停止 Jenkins&#x2F;Blue Ocean Docker 容器。想用时，执行<code>docker compose start</code>。</p>
+<p>另一种场景：正常启动了 Jenkins，关掉命令行工具，该容器并没有停止运行。如果想停止，则终端执行命令<code>docker compose stop</code>。</p>
+<h2 id="Fork-和-clone-GitHub-示例仓库"><a href="#Fork-和-clone-GitHub-示例仓库" class="headerlink" title="Fork 和 clone GitHub 示例仓库"></a>Fork 和 clone GitHub 示例仓库</h2><p>通过将应用程序源代码所在的示例仓库 fork 到你自己的 Github 账号中， 并 clone 到本地， 你就可以获取一个”Welcome to React”简单 Node.js 和 React 应用程序。</p>
+<p>将示例仓库 <a href="https://github.com/jenkins-docs/simple-node-js-react-npm-app"><code>simple-node-js-react-npm-app</code></a> fork 到你的账户的 Github 仓库中。接着，将你的 GitHub 账户中的 <code>simple-node-js-react-npm-app</code> 仓库 clone 到你本地的如下目录：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/home/huatree/document/github/simple-node-js-react-npm-app</span><br></pre></td></tr></table></figure>
+
+<p><code>/home/huatree/document</code>是上面<code>compose.yaml</code>的内容，从你主机上的<code>/home/huatree/document</code>目录映射到 Jenkins 容器的 <code>/home</code>。</p>
+<h2 id="在-Jenkins-中创建流水线项目"><a href="#在-Jenkins-中创建流水线项目" class="headerlink" title="在 Jenkins 中创建流水线项目"></a>在 Jenkins 中创建流水线项目</h2><p>回到浏览器打开的 Jenkin 页面，再次登录并点<strong>欢迎来到 Jenkins!<strong>下的</strong>create new jobs</strong> 。 如果没有看到上述内容，请点击左侧的 <strong>新建任务</strong> 。</p>
+<p>在 <strong>输入一个任务名称</strong> 域, 填写你的新的流水线项目的名称 (比如<code>simple-node-js-react-npm-app</code>)</p>
+<p>向下滚动并单击 <strong>流水线</strong>, 然后点击页面末尾的 <strong>确定</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516105037672.png" alt="image-20220516105037672"></p>
+<p>在 <strong>General&gt;描述</strong> 字域为你的流水线项目做一个简短的描述(比如. <code>An entry-level Pipeline demonstrating how to use Jenkins to build a simple Node.js and React application with npm.</code>)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516105429577.png" alt="image-20220516105429577"></p>
+<p>在<strong>流水线</strong>栏，在<strong>定义</strong>域，选择 <strong>Pipeline script from SCM</strong> 选项。此选项指示 Jenkins 从源代码管理（SCM）仓库获取你的流水线， 这里的仓库就是你 clone 到本地的 Git 仓库。</p>
+<p>在 <strong>SCM</strong> 域中，选择 <strong>Git</strong>。有关<code>GitSCM</code>更多信息，<a href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/">详见</a></p>
+<p>在 <strong>Repository URL</strong> 域中，可以有如下填写操作：</p>
+<p>如果填写 clone 到本地的仓库<strong>映射路径</strong>：<code>/home/github/simple-node-js-react-npm-app</code>，<strong>Credentials</strong>项就默认即可，无需添加凭据，因为<code>compose.yaml</code>文件已经配置了如下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br></pre></td></tr></table></figure>
+
+<p>如果填写的是远程仓库路径：如<code>git@github.com:huatree/simple-node-js-react-npm-app.git</code>，则在<strong>Credentials</strong>域中，添加<strong>凭据</strong>，选择类型为<code>SSH Username with private key</code>，然后复制粘贴本地的.ssh 目录下的<strong>私钥</strong>，点击<strong>确定</strong>，再选中配置好的凭据。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516105841594.png" alt="image-20220516105841594"></p>
+<p>其他项默认即可（后续可根据需要自行修改配置），点击 <strong>保存</strong> 保存你的流水线项目。你现在可以开始创建你的 <code>Jenkinsfile</code>，这些文件会被添加到你的本地仓库。</p>
+<h3 id="将你的初始流水线创建为-Jenkinsfile"><a href="#将你的初始流水线创建为-Jenkinsfile" class="headerlink" title="将你的初始流水线创建为 Jenkinsfile"></a>将你的初始流水线创建为 Jenkinsfile</h3><p>在<code>simple-node-js-react-npm-app</code>项目根目录下创建<code>Jenkinsfile</code>文件，内容如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">  agent &#123;</span><br><span class="line">    docker &#123;</span><br><span class="line">      image <span class="string">&#x27;node:10&#x27;</span></span><br><span class="line">      args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  stages &#123;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多<code>Jenkinsfile</code>配置，<a href="https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/">详见官方文档</a></p>
+<p>保存并提交你编辑的 <code>Jenkinsfile</code> 到你本地的 <code>simple-node-js-react-npm-app</code> Git 仓库，推送到远程<code>simple-node-js-react-npm-app</code>仓库。</p>
+<p>回到浏览器 Jenkins 主页面，左侧选择<strong>打开 Blue Ocean</strong>，弹出框提示”该任务还未运行“，点击<strong>运行</strong>。等待一会儿，出现报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516113556323.png" alt="image-20220516113556323"></p>
+<p>此时，需要安装<code>Docker</code>和<code>Docker Pipeline</code>2 个插件。转到 Jenkins 根页面 &gt; 插件管理 &gt; 可用并搜索插件。安装好后，重启 Jenkins 服务生效，再次运行即可。</p>
+<p>如果 Jenkins 成功构建了你的应用，Blue Ocean 的界面就会变绿。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516122621742.png" alt="image-20220516122621742"></p>
+<h3 id="向流水线添加-Test-阶段"><a href="#向流水线添加-Test-阶段" class="headerlink" title="向流水线添加 Test 阶段"></a>向流水线添加 Test 阶段</h3><p>回到文本编辑器&#x2F;IDE，打开<code>Jenkinsfile</code>，如下编辑</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">    agent &#123;</span><br><span class="line">        docker &#123;</span><br><span class="line">            image <span class="string">&#x27;node:lts-buster-slim&#x27;</span></span><br><span class="line">            args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    environment &#123;</span><br><span class="line">        <span class="variable constant_">CI</span> = <span class="string">&#x27;true&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    stages &#123;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Test&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/test.sh&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Deliver&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span></span><br><span class="line">                input <span class="attr">message</span>: <span class="string">&#x27;Finished using the web site? (Click &quot;Proceed&quot; to continue)&#x27;</span></span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/kill.sh&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>package.json</code></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cross-env CI=true react-scripts test --env=jsdom&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>jenkins/scripts/test.th</code></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 去掉npm install --save-dev cross-env的注释</span></span><br><span class="line">npm install --save-dev cross-env</span><br></pre></td></tr></table></figure>
+
+<p>再次提交并推送到远程仓库，运行构建，结果如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516124427698.png" alt="image-20220516124427698"></p>
+<h3 id="给流水线添加最终交付阶段"><a href="#给流水线添加最终交付阶段" class="headerlink" title="给流水线添加最终交付阶段"></a>给流水线添加最终交付阶段</h3><p>回到文本编辑器&#x2F;IDE，打开<code>Jenkinsfile</code>，如下编辑</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">  agent &#123;</span><br><span class="line">    docker &#123;</span><br><span class="line">      image <span class="string">&#x27;node:10&#x27;</span></span><br><span class="line">      args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  environment &#123;</span><br><span class="line">    <span class="variable constant_">CI</span> = <span class="string">&#x27;true&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  stages &#123;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Test&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/test.sh&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Deliver&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span></span><br><span class="line">        input <span class="attr">message</span>: <span class="string">&#x27;Finished using the web site? (Click &quot;proceed&quot; to continue)&#x27;</span></span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/kill.sh&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>提交并推送到远程仓库，点击<strong>立即构建或运行</strong>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516130020852.png" alt="image-20220516130020852"></p>
+<p>观察 “Deliver” 阶段 (必要的时候点击它), 然后点击 绿色的 <strong><code>./jenkins/scripts/deliver.sh</code></strong> 步骤扩展它的内容并向下滚动直到看见 <code>http://localhost:3000</code> 链接，访问它。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516130125776.png" alt="image-20220516130125776"></p>
+<p>点击 <code>http://localhost:3000</code> 链接在一个新的浏览器选项卡查看你的 Node.js 和 React 应用的运行(在开发模式下) 。 你会 看到一个标题为 <strong>Welcome to React</strong> 的网页&#x2F;站点。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516130201358.png" alt="image-20220516130201358"></p>
+<p>当你查看完页面&#x2F;站点, 点击 <strong>继续</strong> 按钮以完成流水线的执行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220516130920146.png" alt="image-20220516130920146"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>做得好！您刚刚使用 Jenkins 通过 npm 构建了一个简单的 Node.js 和 React 应用程序！</p>
+<p>您在上面创建的 “Build”, “Test” 和 “Deliver” 阶段是使用 Jenkins 中的 Maven 构建更复杂的 Node.js 和 React 应用程序以及与其他技术栈集成的 Node.js 和 React 应用程序的基础。</p>
+<p>由于 Jenkins 具有极高的可扩展性，因此可以对其进行修改和配置，以处理构建协调和自动化的几乎任何方面。</p>
+<p>要详细了解 Jenkins 可以做什么，请查看：</p>
 <ul>
-<li><input checked="" disabled="" type="checkbox"> 50 小时&#x2F;月</li>
-<li><input checked="" disabled="" type="checkbox"> 公共和私人回购</li>
-<li><input checked="" disabled="" type="checkbox"> 4 个并行工作区</li>
-<li><input checked="" disabled="" type="checkbox"> 30 分钟不活动超时</li>
+<li><a href="https://www.jenkins.io/doc/tutorials">教程概览</a> 页面中的其他介绍教程。</li>
+<li><a href="https://www.jenkins.io/doc/book">用户手册</a> 使用 Jenkins 的更多细节，例如 <a href="https://www.jenkins.io/doc/book/pipeline">Pipelines</a> (尤其是 <a href="https://www.jenkins.io/doc/book/pipeline/syntax">Pipeline 语法</a>) 和 <a href="https://www.jenkins.io/doc/book/blueocean">Blue Ocean</a> 界面。</li>
+<li><a href="https://www.jenkins.io/node">Jenkins blog</a> 资讯，其他教程和更新。</li>
 </ul>
-</div>
-
-<h2 id="3-项目推送"><a href="#3-项目推送" class="headerlink" title="3 项目推送"></a>3 项目推送</h2><p>在 GitHub 的 Explorer 探索页面中，有一个非常不起眼的按钮，“获取邮件更新”。</p>
-<p>我们可以根据自己的喜好，让 GitHub 定期给我们推送自己感兴趣的优质项目，就可以持续扩大知识面、了解开源动态啦。</p>
-<p><img src="https://huatree.top/image-20220510065320331.png" alt="image-20220510065320331"></p>
-<h2 id="4-文件定位查看"><a href="#4-文件定位查看" class="headerlink" title="4 文件定位查看"></a>4 文件定位查看</h2><p>刚开始的时候，相信大多数同学是一级一级的点击项目目录去找文件，发现位置错了后呢，还要回到最初的起点，呆呆地再换一个目录去找。</p>
-<p><img src="https://huatree.top/image-20220510070107485.png" alt="image-20220510070107485"></p>
-<p>后来在<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">github 官方文档</a>中发现，我们只需按下 <code>t</code> 键，就可以快速、实时地对仓库内的所有文件进行搜索。</p>
-<p><img src="https://huatree.top/image-20220510070309131.png" alt="image-20220510070309131"></p>
-<p>点进某个文件后，还有技巧，按下 <code>L</code> 键，就可以快速跳转到某一行。</p>
-<p><img src="https://huatree.top/image-20220510070554922.png" alt="image-20220510070554922"></p>
-<p>点击行号，就可以快速复制这行的代码，生成永久链接。</p>
-<p><img src="https://huatree.top/image-20220510070627257.png" alt="image-20220510070627257"></p>
-<p>按 <code>b</code> 键还可以快速查看该文件的改动记录。</p>
-<p><img src="https://huatree.top/image-20220510070756051.png" alt="image-20220510070756051"></p>
-<p>除了上面这些，GitHub 里还隐藏了许多实用的<a href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">快捷键</a>，大家可以在官方文档尽情查看。</p>
-<h2 id="5-过滤搜索"><a href="#5-过滤搜索" class="headerlink" title="5 过滤搜索"></a>5 过滤搜索</h2><p>使用 GitHub <a href="https://docs.github.com/cn/search-github/getting-started-with-searching-on-github/about-searching-on-github">高级搜索</a>功能提供的 <code>搜索限定符</code>。进入 advance search 界面（搜索结果页左下角），利用可视化表单也能实现高级搜索。但这个界面展示的搜索条件有限，其实还有更多的搜索限定语法，比如按代码库名称、描述搜索，对仓库中的内容进行搜索等，这些都可以在 GitHub 官方文档查阅。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://mp.weixin.qq.com/s/P7odF1arZ1siCKvhwp6fqA">GitHub 这 5 个骚操作，99%的人不知道！</a></p>
-<p>[2] <a href="https://code.visualstudio.com/blogs/2021/10/20/vscode-dev">vscode.dev</a></p>
-<p>[3] <a href="https://www.gitpod.io/">Gitpod</a></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.jenkins.io/zh/doc/tutorials/build-a-node-js-and-react-app-with-npm/#%E4%BD%BF%E7%94%A8npm%E6%9E%84%E5%BB%BAnode-js%E5%92%8Creact%E5%BA%94%E7%94%A8">使用 npm 构建 Node.js 和 React 应用</a></p>
+<p>[2] <a href="https://stackoverflow.com/questions/62253474/jenkins-invalid-agent-type-docker-specified-must-be-one-of-any-label-none">Jenkins. Invalid agent type “docker” specified. Must be one of [any, label, none]</a></p>
+<p>[3] <a href="https://issues.jenkins.io/browse/JENKINS-68571?jql=text%20~%20%22ALLOW_LOCAL_CHECKOUT%22">ALLOW_LOCAL_CHECKOUT set but local checkout not available</a></p>
+<p>[4] <a href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/#pipeline-scm-step">Pipeline: SCM Step</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>
       </categories>
       <tags>
-        <tag>github</tag>
+        <tag>CI&amp;CD</tag>
+        <tag>Jenkins</tag>
       </tags>
   </entry>
   <entry>
@@ -2346,7 +2471,7 @@
 <p>Docker 的可移植性和轻量级特性还使得动态管理工作负载、根据业务需求近乎实时地扩展或拆除应用程序和服务变得容易。</p>
 <h3 id="在相同硬件上运行更多工作负载"><a href="#在相同硬件上运行更多工作负载" class="headerlink" title="在相同硬件上运行更多工作负载"></a>在相同硬件上运行更多工作负载</h3><p>Docker 是轻量级和快速的。它为基于管理程序的虚拟机提供了一种可行且经济高效的替代方案，因此您可以使用更多计算容量来实现业务目标。Docker 非常适合高密度环境以及需要用更少资源完成更多工作的中小型部署。</p>
 <h2 id="Docker-架构"><a href="#Docker-架构" class="headerlink" title="Docker 架构"></a>Docker 架构</h2><p>Docker 使用客户端-服务器架构。Docker<em>客户端与 Docker**守护进程</em>对话，后者负责构建、运行和分发 Docker 容器的繁重工作。Docker 客户端和守护程序<em>可以</em> 在同一系统上运行，或者您可以将 Docker 客户端连接到远程 Docker 守护程序。Docker 客户端和守护程序使用 REST API，通过 UNIX 套接字或网络接口进行通信。另一个 Docker 客户端是 Docker Compose，它允许您使用由一组容器组成的应用程序。</p>
-<p><img src="https://huatree.top/architecture.svg" alt="architecture"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/architecture.svg" alt="architecture"></p>
 <div class="note success"><p>更多信息，详见<a href="https://docs.docker.com/get-started/overview/">官方文档</a></p>
 </div>
 
@@ -2356,10 +2481,10 @@
 <li>win10 全开 Hpyer-V</li>
 </ul>
 <h3 id="安装-docker-desktop"><a href="#安装-docker-desktop" class="headerlink" title="安装 docker desktop"></a>安装 docker desktop</h3><p>接着，官方下载 docker 支持 win10 的<code>.exe</code>文件进行安装，直接点击 Ok，等待安装完成。</p>
-<p><img src="https://huatree.top/image-20220512073042362.png" alt="image-20220512073042362"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220512073042362.png" alt="image-20220512073042362"></p>
 <p>首次安装 docker，安装完成后，会提示重启电脑，执行便是。</p>
 <p>首次打开 Docker Desktop 可能会提示 WSL 安装问题。根据提示内容，WSL 2 安装不完整。WSL 2 Linux 内核现在使用单独的 MSI 更新包安装。请单击链接并按照说明安装内核更新:<a href="https://aka.ms/wsl2kernel">https://aka.ms/wsl2kernel</a>。安装Linux内核后，按“Restart”。</p>
-<p><img src="https://huatree.top/image-20220512073743673.png" alt="image-20220512073743673"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220512073743673.png" alt="image-20220512073743673"></p>
 <h3 id="安装-WSL2"><a href="#安装-WSL2" class="headerlink" title="安装 WSL2"></a>安装 WSL2</h3><p>安装过程，详见<a href="https://docs.microsoft.com/en-us/windows/wsl/install">官方文档</a></p>
 <p>在启动 WSL 2 时，可能会报错<a href="https://github.com/microsoft/WSL/issues/4194">“参考的对象类型不支持尝试的操作”</a>，<a href="http://www.manongjc.com/detail/26-njvboaeyuinjsdq.html">解决方法详见</a></p>
 <h4 id="wslconfig-配置"><a href="#wslconfig-配置" class="headerlink" title=".wslconfig 配置"></a>.wslconfig 配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 非必须配置，可以使用默认(即无需配置)</span></span><br><span class="line">[wsl2]</span><br><span class="line">memory=4GB</span><br><span class="line">processors=5</span><br><span class="line">localhostForwarding=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
@@ -2396,12 +2521,12 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 
 <p>发现报错</p>
-<p><img src="https://huatree.top/image-20220513133508101.png" alt="image-20220513133508101"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220513133508101.png" alt="image-20220513133508101"></p>
 <p>为什么？</p>
 <p>新的 Compose V2 支持该<code>compose</code>命令作为 Docker CLI 的一部分，现已推出。</p>
 <p>Compose V2 将 compose 功能集成到 Docker 平台中，继续支持之前的大部分<code>docker-compose</code>功能和标志。您可以通过将连字符 ( <code>-</code>) 替换为空格来运行 Compose V2，使用<code>docker compose</code>, 而不是<code>docker-compose</code>。<a href="https://docs.docker.com/compose/#compose-v2-and-the-new-docker-compose-command">官方文档详见</a></p>
 <p>如果想保留使用<code>docker-compose</code>，需要在 Docker Desktop 上进行相关设置，如下</p>
-<p><img src="https://huatree.top/image-20220513133936711.png" alt="image-20220513133936711"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220513133936711.png" alt="image-20220513133936711"></p>
 <p>当然，还是推荐<code>docker compose</code>，与时俱进。</p>
 <p>再次执行</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker compose up -d</span><br><span class="line"><span class="comment"># 查看docker状态</span></span><br><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
@@ -2422,134 +2547,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Docker+Jenkins+GitHub</title>
-    <url>/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220511175224561.png" alt="image-20220511175224561"></p>
-<span id="more"></span>
-
-<div class="note warning"><p>本文教程基于<strong>Windows 10 系统</strong>Docker+Jenkins+GitHub 实现 CI&amp;CD。</p>
-</div>
-
-<h2 id="在-Docker-中运行-Jenkins"><a href="#在-Docker-中运行-Jenkins" class="headerlink" title="在 Docker 中运行 Jenkins"></a>在 Docker 中运行 Jenkins</h2><p>将 Jenkins 作为 Docker 容器并从 <a href="https://hub.docker.com/r/jenkinsci/blueocean/"><code>jenkinsci/blueocean</code></a> Docker 镜像中运行。</p>
-<p>Docker 操作，详见<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
-<h3 id="使用-Docker-Engine-运行-Jenkins"><a href="#使用-Docker-Engine-运行-Jenkins" class="headerlink" title="使用 Docker Engine 运行 Jenkins"></a>使用 Docker Engine 运行 Jenkins</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入cmd终端</span></span><br><span class="line"><span class="comment"># 查看当前wsl版本</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为Docker中的一个容器(记住，如果本地没有镜像，这个命令会自动下载)</span></span><br><span class="line">docker run \</span><br><span class="line">  --name huatree-jenkins \</span><br><span class="line">  --<span class="built_in">rm</span> \</span><br><span class="line">  --restart \</span><br><span class="line">  -u root \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -v jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  -v /home/huatree/document:/home \</span><br><span class="line">  jenkinsci/blueocean</span><br><span class="line"><span class="comment"># 如果需要退出当前容器的运行状态，输入快捷键ctrl + c</span></span><br></pre></td></tr></table></figure>
-
-<p>说明：</p>
-<p><code>wsl</code>：windows10 子系统 Linux，这里用的是微软商店中下载的 Debian，升级到 wsl2</p>
-<p><code>\</code>：linux 环境空格输出</p>
-<p><code>--name</code>：为容器分配名称</p>
-<p><code>--rm</code>：容器退出时自动移除，可以不写，后面用<code>docker rm</code>移除该容器便可。</p>
-<p><code>--restart</code>：容器退出时应用的重启策略</p>
-<p><code>-u</code>：即<code>--user</code>，用户名或 UID（格式：&lt;name|uid&gt;[:&lt;group|gid&gt;]）</p>
-<p><code>-p</code>：即<code>--publish</code>，将容器的端口发布到主机</p>
-<p><code>-v</code>：即<code>--volume</code>，绑定挂载卷</p>
-<p><code>-v jenkins-data:/var/jenkins_home</code>：将容器中的 <code>/var/jenkins_home</code> 目录映射到 Docker <a href="https://docs.docker.com/engine/admin/volumes/volumes/">volume</a> ，并将其命名为 <code>jenkins-data</code>。如果该卷不存在, 那么 <code>docker run</code> 命令会自动为你创建卷。</p>
-<p><code>-v /var/run/docker.sock:/var/run/docker.sock</code>：在前台运行并将其日志直接发送到您的终端，<a href="https://docs.docker.com/config/daemon/">详见官网文档</a></p>
-<p><code>docker run</code> 命令更多参数使用信息，<a href="https://docs.docker.com/engine/reference/commandline/run/">详见官方文档</a></p>
-<h3 id="使用-Docker-Compose-运行-Jenkins"><a href="#使用-Docker-Compose-运行-Jenkins" class="headerlink" title="使用 Docker Compose 运行 Jenkins"></a>使用 Docker Compose 运行 Jenkins</h3><p>当然，每次<code>docker run...</code>，不方便，可以在需要的路径下配置<code>compose.yaml</code>文件，并在当前路径下的命令行输入<code>docker compose up</code>，它会读取<code>compose.yaml</code>文件，自动执行命令。</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">jenkins:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jenkinsci/blueocean</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">jenkins-data:/var/jenkins_home</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/huatree/document:/home</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">jenkins-data:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>更多<code>compse.yaml</code>参数配置，<a href="https://docs.docker.com/compose/compose-file/">详见官方文档</a></p>
-<p><code>Dhudson.model.DirectoryBrowserSupport.CSP=空格</code>：确定为 Jenkins 提供的静态文件发送的内容安全策略标头。有关更多详细信息，请参阅<a href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">配置内容安全策略</a></p>
-<p><code>Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</code>：允许本地目录验证。<a href="https://plugins.jenkins.io/git/#plugin-content-allow-local-checkout">更多信息详见</a></p>
-<h2 id="访问-Jenkins-x2F-Blue-Ocean-Docker-容器"><a href="#访问-Jenkins-x2F-Blue-Ocean-Docker-容器" class="headerlink" title="访问 Jenkins&#x2F;Blue Ocean Docker 容器"></a>访问 Jenkins&#x2F;Blue Ocean Docker 容器</h2><h3 id="解锁-Jenkins"><a href="#解锁-Jenkins" class="headerlink" title="解锁 Jenkins"></a>解锁 Jenkins</h3><p>当你第一次访问一个新的 Jenkins 实例时, 要求你使用自动生成的密码对其进行解锁。</p>
-<p>当在终端&#x2F;命令提示窗口出现两组星号时, 浏览 <code>http://localhost:8080</code> 并等待 <strong>解锁 Jenkins</strong> 页面出现。</p>
-<p><img src="https://huatree.top/image-20220516093617699.png" alt="image-20220516093617699"></p>
-<p>再次从终端&#x2F;命令提示窗口, 复制自动生成的字母数字密码(在两组星号之间)。</p>
-<p><img src="https://huatree.top/image-20220516093715354.png" alt="image-20220516093715354"></p>
-<p>在<strong>解锁 Jenkins</strong> 页面, 粘贴该密码到 <strong>管理员密码</strong> 字段并点击 <strong>继续</strong>，进入新手入门页面。</p>
-<p><img src="https://huatree.top/image-20220516094041627.png" alt="image-20220516094041627"></p>
-<h3 id="使用插件自定义-Jenkins"><a href="#使用插件自定义-Jenkins" class="headerlink" title="使用插件自定义 Jenkins"></a>使用插件自定义 Jenkins</h3><p>在<strong>解锁 Jenkins</strong> 后，<strong>自定义 Jenkins</strong> 页面出现，可以选择默认的<strong>安装推荐的插件</strong>。后续可以在插件管理页面进行维护（卸载&#x2F;更新&#x2F;添加）。</p>
-<p>安装向导显示了正在配置的 Jenkins 的进程，以及建议安装的插件。这个过程肯需要几分钟。</p>
-<h3 id="创建第一个管理员用户"><a href="#创建第一个管理员用户" class="headerlink" title="创建第一个管理员用户"></a>创建第一个管理员用户</h3><p>最后, Jenkins 要求创建你的第一个管理员用户。</p>
-<p>当 <strong>创建第一个管理员用户</strong> 页面出现, 在相应的字段中指定你的详细消息并点击 <strong>保存并完成</strong>。</p>
-<p><img src="https://huatree.top/image-20220516095217292.png" alt="image-20220516095217292"></p>
-<p>当 <strong>实例配置</strong> 页面出现，根据需要是否配置 <strong>Jenkins URL</strong>，并点击 <strong>保存并完成</strong>。</p>
-<p><img src="https://huatree.top/image-20220516095453149.png" alt="image-20220516095453149"></p>
-<p>当 <strong>Jenkins 已就绪</strong> 页面出现, 点击 <strong>开始使用 Jenkins</strong>。</p>
-<p><img src="https://huatree.top/image-20220516095803705.png" alt="image-20220516095803705"></p>
-<p>等待一会儿，Jenkins 主页出现。</p>
-<p><img src="https://huatree.top/image-20220516102328899.png" alt="image-20220516102328899"></p>
-<h3 id="停止和重启-Jenkins"><a href="#停止和重启-Jenkins" class="headerlink" title="停止和重启 Jenkins"></a>停止和重启 Jenkins</h3><p>在其他时候，如果不用了，你可以通过在终端&#x2F;命令提示窗口输入 <code>Ctrl-C</code>停止 Jenkins&#x2F;Blue Ocean Docker 容器。想用时，执行<code>docker compose start</code>。</p>
-<p>另一种场景：正常启动了 Jenkins，关掉命令行工具，该容器并没有停止运行。如果想停止，则终端执行命令<code>docker compose stop</code>。</p>
-<h2 id="Fork-和-clone-GitHub-示例仓库"><a href="#Fork-和-clone-GitHub-示例仓库" class="headerlink" title="Fork 和 clone GitHub 示例仓库"></a>Fork 和 clone GitHub 示例仓库</h2><p>通过将应用程序源代码所在的示例仓库 fork 到你自己的 Github 账号中， 并 clone 到本地， 你就可以获取一个”Welcome to React”简单 Node.js 和 React 应用程序。</p>
-<p>将示例仓库 <a href="https://github.com/jenkins-docs/simple-node-js-react-npm-app"><code>simple-node-js-react-npm-app</code></a> fork 到你的账户的 Github 仓库中。接着，将你的 GitHub 账户中的 <code>simple-node-js-react-npm-app</code> 仓库 clone 到你本地的如下目录：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/home/huatree/document/github/simple-node-js-react-npm-app</span><br></pre></td></tr></table></figure>
-
-<p><code>/home/huatree/document</code>是上面<code>compose.yaml</code>的内容，从你主机上的<code>/home/huatree/document</code>目录映射到 Jenkins 容器的 <code>/home</code>。</p>
-<h2 id="在-Jenkins-中创建流水线项目"><a href="#在-Jenkins-中创建流水线项目" class="headerlink" title="在 Jenkins 中创建流水线项目"></a>在 Jenkins 中创建流水线项目</h2><p>回到浏览器打开的 Jenkin 页面，再次登录并点<strong>欢迎来到 Jenkins!<strong>下的</strong>create new jobs</strong> 。 如果没有看到上述内容，请点击左侧的 <strong>新建任务</strong> 。</p>
-<p>在 <strong>输入一个任务名称</strong> 域, 填写你的新的流水线项目的名称 (比如<code>simple-node-js-react-npm-app</code>)</p>
-<p>向下滚动并单击 <strong>流水线</strong>, 然后点击页面末尾的 <strong>确定</strong></p>
-<p><img src="https://huatree.top/image-20220516105037672.png" alt="image-20220516105037672"></p>
-<p>在 <strong>General&gt;描述</strong> 字域为你的流水线项目做一个简短的描述(比如. <code>An entry-level Pipeline demonstrating how to use Jenkins to build a simple Node.js and React application with npm.</code>)</p>
-<p><img src="https://huatree.top/image-20220516105429577.png" alt="image-20220516105429577"></p>
-<p>在<strong>流水线</strong>栏，在<strong>定义</strong>域，选择 <strong>Pipeline script from SCM</strong> 选项。此选项指示 Jenkins 从源代码管理（SCM）仓库获取你的流水线， 这里的仓库就是你 clone 到本地的 Git 仓库。</p>
-<p>在 <strong>SCM</strong> 域中，选择 <strong>Git</strong>。有关<code>GitSCM</code>更多信息，<a href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/">详见</a></p>
-<p>在 <strong>Repository URL</strong> 域中，可以有如下填写操作：</p>
-<p>如果填写 clone 到本地的仓库<strong>映射路径</strong>：<code>/home/github/simple-node-js-react-npm-app</code>，<strong>Credentials</strong>项就默认即可，无需添加凭据，因为<code>compose.yaml</code>文件已经配置了如下内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br></pre></td></tr></table></figure>
-
-<p>如果填写的是远程仓库路径：如<code>git@github.com:huatree/simple-node-js-react-npm-app.git</code>，则在<strong>Credentials</strong>域中，添加<strong>凭据</strong>，选择类型为<code>SSH Username with private key</code>，然后复制粘贴本地的.ssh 目录下的<strong>私钥</strong>，点击<strong>确定</strong>，再选中配置好的凭据。</p>
-<p><img src="https://huatree.top/image-20220516105841594.png" alt="image-20220516105841594"></p>
-<p>其他项默认即可（后续可根据需要自行修改配置），点击 <strong>保存</strong> 保存你的流水线项目。你现在可以开始创建你的 <code>Jenkinsfile</code>，这些文件会被添加到你的本地仓库。</p>
-<h3 id="将你的初始流水线创建为-Jenkinsfile"><a href="#将你的初始流水线创建为-Jenkinsfile" class="headerlink" title="将你的初始流水线创建为 Jenkinsfile"></a>将你的初始流水线创建为 Jenkinsfile</h3><p>在<code>simple-node-js-react-npm-app</code>项目根目录下创建<code>Jenkinsfile</code>文件，内容如下：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">  agent &#123;</span><br><span class="line">    docker &#123;</span><br><span class="line">      image <span class="string">&#x27;node:10&#x27;</span></span><br><span class="line">      args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  stages &#123;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>更多<code>Jenkinsfile</code>配置，<a href="https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/">详见官方文档</a></p>
-<p>保存并提交你编辑的 <code>Jenkinsfile</code> 到你本地的 <code>simple-node-js-react-npm-app</code> Git 仓库，推送到远程<code>simple-node-js-react-npm-app</code>仓库。</p>
-<p>回到浏览器 Jenkins 主页面，左侧选择<strong>打开 Blue Ocean</strong>，弹出框提示”该任务还未运行“，点击<strong>运行</strong>。等待一会儿，出现报错</p>
-<p><img src="https://huatree.top/image-20220516113556323.png" alt="image-20220516113556323"></p>
-<p>此时，需要安装<code>Docker</code>和<code>Docker Pipeline</code>2 个插件。转到 Jenkins 根页面 &gt; 插件管理 &gt; 可用并搜索插件。安装好后，重启 Jenkins 服务生效，再次运行即可。</p>
-<p>如果 Jenkins 成功构建了你的应用，Blue Ocean 的界面就会变绿。</p>
-<p><img src="https://huatree.top/image-20220516122621742.png" alt="image-20220516122621742"></p>
-<h3 id="向流水线添加-Test-阶段"><a href="#向流水线添加-Test-阶段" class="headerlink" title="向流水线添加 Test 阶段"></a>向流水线添加 Test 阶段</h3><p>回到文本编辑器&#x2F;IDE，打开<code>Jenkinsfile</code>，如下编辑</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">    agent &#123;</span><br><span class="line">        docker &#123;</span><br><span class="line">            image <span class="string">&#x27;node:lts-buster-slim&#x27;</span></span><br><span class="line">            args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    environment &#123;</span><br><span class="line">        <span class="variable constant_">CI</span> = <span class="string">&#x27;true&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    stages &#123;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Test&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/test.sh&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Deliver&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span></span><br><span class="line">                input <span class="attr">message</span>: <span class="string">&#x27;Finished using the web site? (Click &quot;Proceed&quot; to continue)&#x27;</span></span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/kill.sh&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>修改<code>package.json</code></p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line"><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cross-env CI=true react-scripts test --env=jsdom&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>修改<code>jenkins/scripts/test.th</code></p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 去掉npm install --save-dev cross-env的注释</span></span><br><span class="line">npm install --save-dev cross-env</span><br></pre></td></tr></table></figure>
-
-<p>再次提交并推送到远程仓库，运行构建，结果如下</p>
-<p><img src="https://huatree.top/image-20220516124427698.png" alt="image-20220516124427698"></p>
-<h3 id="给流水线添加最终交付阶段"><a href="#给流水线添加最终交付阶段" class="headerlink" title="给流水线添加最终交付阶段"></a>给流水线添加最终交付阶段</h3><p>回到文本编辑器&#x2F;IDE，打开<code>Jenkinsfile</code>，如下编辑</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">  agent &#123;</span><br><span class="line">    docker &#123;</span><br><span class="line">      image <span class="string">&#x27;node:10&#x27;</span></span><br><span class="line">      args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  environment &#123;</span><br><span class="line">    <span class="variable constant_">CI</span> = <span class="string">&#x27;true&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  stages &#123;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Test&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/test.sh&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Deliver&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span></span><br><span class="line">        input <span class="attr">message</span>: <span class="string">&#x27;Finished using the web site? (Click &quot;proceed&quot; to continue)&#x27;</span></span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/kill.sh&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>提交并推送到远程仓库，点击<strong>立即构建或运行</strong>。</p>
-<p><img src="https://huatree.top/image-20220516130020852.png" alt="image-20220516130020852"></p>
-<p>观察 “Deliver” 阶段 (必要的时候点击它), 然后点击 绿色的 <strong><code>./jenkins/scripts/deliver.sh</code></strong> 步骤扩展它的内容并向下滚动直到看见 <code>http://localhost:3000</code> 链接，访问它。</p>
-<p><img src="https://huatree.top/image-20220516130125776.png" alt="image-20220516130125776"></p>
-<p>点击 <code>http://localhost:3000</code> 链接在一个新的浏览器选项卡查看你的 Node.js 和 React 应用的运行(在开发模式下) 。 你会 看到一个标题为 <strong>Welcome to React</strong> 的网页&#x2F;站点。</p>
-<p><img src="https://huatree.top/image-20220516130201358.png" alt="image-20220516130201358"></p>
-<p>当你查看完页面&#x2F;站点, 点击 <strong>继续</strong> 按钮以完成流水线的执行。</p>
-<p><img src="https://huatree.top/image-20220516130920146.png" alt="image-20220516130920146"></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>做得好！您刚刚使用 Jenkins 通过 npm 构建了一个简单的 Node.js 和 React 应用程序！</p>
-<p>您在上面创建的 “Build”, “Test” 和 “Deliver” 阶段是使用 Jenkins 中的 Maven 构建更复杂的 Node.js 和 React 应用程序以及与其他技术栈集成的 Node.js 和 React 应用程序的基础。</p>
-<p>由于 Jenkins 具有极高的可扩展性，因此可以对其进行修改和配置，以处理构建协调和自动化的几乎任何方面。</p>
-<p>要详细了解 Jenkins 可以做什么，请查看：</p>
-<ul>
-<li><a href="https://www.jenkins.io/doc/tutorials">教程概览</a> 页面中的其他介绍教程。</li>
-<li><a href="https://www.jenkins.io/doc/book">用户手册</a> 使用 Jenkins 的更多细节，例如 <a href="https://www.jenkins.io/doc/book/pipeline">Pipelines</a> (尤其是 <a href="https://www.jenkins.io/doc/book/pipeline/syntax">Pipeline 语法</a>) 和 <a href="https://www.jenkins.io/doc/book/blueocean">Blue Ocean</a> 界面。</li>
-<li><a href="https://www.jenkins.io/node">Jenkins blog</a> 资讯，其他教程和更新。</li>
-</ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://www.jenkins.io/zh/doc/tutorials/build-a-node-js-and-react-app-with-npm/#%E4%BD%BF%E7%94%A8npm%E6%9E%84%E5%BB%BAnode-js%E5%92%8Creact%E5%BA%94%E7%94%A8">使用 npm 构建 Node.js 和 React 应用</a></p>
-<p>[2] <a href="https://stackoverflow.com/questions/62253474/jenkins-invalid-agent-type-docker-specified-must-be-one-of-any-label-none">Jenkins. Invalid agent type “docker” specified. Must be one of [any, label, none]</a></p>
-<p>[3] <a href="https://issues.jenkins.io/browse/JENKINS-68571?jql=text%20~%20%22ALLOW_LOCAL_CHECKOUT%22">ALLOW_LOCAL_CHECKOUT set but local checkout not available</a></p>
-<p>[4] <a href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/#pipeline-scm-step">Pipeline: SCM Step</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>CI&amp;CD</tag>
-        <tag>Jenkins</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>使用浏览器配合手机调试&amp;使用Proxy劫持（3类真机调试技巧）</title>
     <url>/2022/05/15/20220515-%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E9%85%8D%E5%90%88%E6%89%8B%E6%9C%BA%E8%B0%83%E8%AF%95&amp;%E4%BD%BF%E7%94%A8Proxy%E5%8A%AB%E6%8C%81%EF%BC%883%E7%B1%BB%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95%E6%8A%80%E5%B7%A7%EF%BC%89/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220515130434086.png" alt="image-20220515130434086"></p>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220515130434086.png" alt="image-20220515130434086"></p>
 <span id="more"></span>
 
 <h2 id="Chrome-Android-x2F-Safari-IOS"><a href="#Chrome-Android-x2F-Safari-IOS" class="headerlink" title="Chrome+Android&#x2F;Safari+IOS"></a>Chrome+Android&#x2F;Safari+IOS</h2><p>适用场景：开发环境真机调试</p>
@@ -2684,7 +2684,7 @@
     <title>今天你的jsdelivr挂了吗</title>
     <url>/2022/05/17/20220517-%E4%BB%8A%E5%A4%A9%E4%BD%A0%E7%9A%84jsdelivr%E6%8C%82%E4%BA%86%E5%90%97/</url>
     <content><![CDATA[<p>今天 jsdelivr 一挂，好多博客都卡。一些静态资源博客，用的都是框架，如 hexo，<code>hexo g -d</code>一顿操作上去，访问博客，半出不来页面。咋回事？<code>F12</code>看看<code>network</code>，都集中卡在前缀为<code>https://cdn.jsdelivr.net</code>。</p>
-<p><img src="https://huatree.top/image-20220517124323708.png" alt="image-20220517124323708"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220517124323708.png" alt="image-20220517124323708"></p>
 <span id="more"></span>
 
 <div class="note danger"><p>必要时可细致检查个人站点前端主题、插件、脚本等内容中对 jsdelivr 的引用，以避免由于 jsdelivr 不可及导致的加载卡顿和前端无法正常加载的情况。</p>
@@ -2718,7 +2718,7 @@
     <title>github同步并自动部署gitee-pages</title>
     <url>/2022/05/18/20220518-github%E5%90%8C%E6%AD%A5%E5%B9%B6%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2gitee-pages/</url>
     <content><![CDATA[<p>由于 Gitee Pages 的访问速度很快，很多朋友会选择 Gitee Pages 部署项目（如：个人博客、开源项目国内镜像站点）。但是它不像 GitHub Pages 那样，一提交代码就能自动更新 Pages，因为 Gitee 的自动部署属于 Gitee Pages Pro 的服务。</p>
-<p><img src="https://huatree.top/image-20220519001003845.png" alt="image-20220519001003845"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220519001003845.png" alt="image-20220519001003845"></p>
 <span id="more"></span>
 
 <h2 id="提出需求"><a href="#提出需求" class="headerlink" title="提出需求"></a>提出需求</h2><ul>
@@ -2727,7 +2727,7 @@
 <li><input checked="" disabled="" type="checkbox"> push 到 github 公仓时，激活自动部署 gitee 公仓静态资源</li>
 </ul>
 <h2 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h2><p>本文以<strong>hexo</strong>框架搭建的 blog 为例，实现提出的需求。</p>
-<h3 id="流程图分析"><a href="#流程图分析" class="headerlink" title="流程图分析"></a>流程图分析</h3><p><img src="https://huatree.top/image-20220518230609385.png" alt="image-20220518230609385"></p>
+<h3 id="流程图分析"><a href="#流程图分析" class="headerlink" title="流程图分析"></a>流程图分析</h3><p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220518230609385.png" alt="image-20220518230609385"></p>
 <h3 id="仓库说明"><a href="#仓库说明" class="headerlink" title="仓库说明"></a>仓库说明</h3><div class="note success"><p>github 上的仓库，如果要作为 github pages 使用，创建的远程仓库就得公开，即 public。gitee 上的仓库没有要求，公仓、私仓都可以作为 gitee pages 使用。</p>
 </div>
 
@@ -2739,7 +2739,7 @@
 <p>创建 Gitee Pages 站点，<a href="https://gitee.com/help/articles/4136#article-header0">详见官方文档</a></p>
 <h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><h4 id="配置密钥"><a href="#配置密钥" class="headerlink" title="配置密钥"></a>配置密钥</h4><p>在命令行终端或 Git Bash 使用命令 <code>ssh-keygen -t rsa -C &quot;youremail@example.com&quot;</code> 生成 SSH Key，注意替换为自己的邮箱。生成的 <code>id_rsa</code> 是私钥，<code>id_rsa.pub</code> 是公钥。(注意此处不要设置密码，生成的公私钥用于下面 GitHub &#x2F; Gitee 的配置，以保证公私钥成对，否则从 GitHub sync Gitee 的同步将会失败。)</p>
 <p>在 GitHub 项目的<code>Settings &gt; Secrets&gt;Actions</code>路径下配置好命名为 <code>GITEE_RSA_PRIVATE_KEY</code> 和 <code>GITEE_PASSWORD</code> 的两个密钥。其中：<code>GITEE_RSA_PRIVATE_KEY</code> 存放 <code>id_rsa</code> <strong>私钥</strong>；<code>GITEE_PASSWORD</code> 存放 Gitee 帐号的密码。（注意此处，是在 GitHub 项目即远程仓库的 Settings 中设置，而不是 GitHub 的个人用户 Settings。）</p>
-<p><img src="https://huatree.top/image-20220518232245555.png" alt="image-20220518232245555"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220518232245555.png" alt="image-20220518232245555"></p>
 <p>在 GitHub 的个人设置页面<a href="https://github.com/settings/keys">Settings &gt; SSH and GPG keys</a>配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
 <p>在 Gitee 的个人设置页面<a href="https://gitee.com/profile/sshkeys">安全设置 &gt; SSH 公钥</a>配置 SSH <strong>公钥</strong>（即：<code>id_rsa.pub</code>），命名随意，或者默认不填。</p>
 <h4 id="关注-Gitee-公众号"><a href="#关注-Gitee-公众号" class="headerlink" title="关注 Gitee 公众号"></a>关注 Gitee 公众号</h4><p>关注 Gitee 微信官方公众号，并绑定个人 Gitee 帐号，用于接收帐号登录通知、以及绕过短信验证码校验。</p>
@@ -2760,15 +2760,15 @@
 </div>
 
 <h4 id="查看运行结果"><a href="#查看运行结果" class="headerlink" title="查看运行结果"></a>查看运行结果</h4><p>在 github 平台的 huatree.blog 仓库的<code>Actions</code>面板中查看。</p>
-<p><img src="https://huatree.top/image-20220518234128162.png" alt="image-20220518234128162"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220518234128162.png" alt="image-20220518234128162"></p>
 <p>稍等片刻，手机上会出现 Gitee 微信官方公众号的登录信息提示</p>
-<p><img src="https://huatree.top/image-20220518234644661.png" alt="image-20220518234644661"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220518234644661.png" alt="image-20220518234644661"></p>
 <h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>访问<a href="https://huatree.github.io/">https://huatree.github.io/</a>和<a href="https://huatree.gitee.io/">https://huatree.gitee.io/</a>，对比部署后的页面是否同步。如果不同步，可能原因如下：</p>
 <ol>
 <li><p>gitee pages 的部署官方提示，1 分钟内不可连续部署。</p>
 </li>
 <li><p>gitee pages 部署失败，并不是自动部署的配置出错或没执行，而是部署的内容违规了。</p>
-<p><img src="https://huatree.top/image-20220519182047703.png" alt="image-20220519182047703"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220519182047703.png" alt="image-20220519182047703"></p>
 </li>
 </ol>
 <p>出现内容违规情况，需根据官方要求修改提示指出的源文件（即 github 平台私仓<code>huatree.blog</code>下的源文件，并非公仓下的静态资源。静态资源是源文件打包后的结果，改动源文件，再打包部署，对应的静态资源自然得以更新）。</p>
@@ -2787,7 +2787,7 @@
     <title>3种方法产生gitignore文件</title>
     <url>/2022/05/21/20220521-3%E7%A7%8D%E6%96%B9%E6%B3%95%E4%BA%A7%E7%94%9Fgitignore%E6%96%87%E4%BB%B6/</url>
     <content><![CDATA[<p>当项目不方便管理，偶尔有定制性需求，有冗余的内容……我们可以拥有<code>gitignore</code>陪伴。</p>
-<p><img src="https://huatree.top/image-20220521130010640.png" alt="image-20220521130010640"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220521130010640.png" alt="image-20220521130010640"></p>
 <span id="more"></span>
 
 <h2 id="github-x2F-gitignore"><a href="#github-x2F-gitignore" class="headerlink" title="github&#x2F;gitignore"></a>github&#x2F;gitignore</h2><p>这是 GitHub 的<a href="http://git-scm.com/docs/gitignore"><code>.gitignore</code></a>文件模板集合。在创建新的存储库和文件时，我们使用此列表来填充<code>.gitignore</code>GitHub.com 界面中可用的模板选择器。</p>
@@ -2829,56 +2829,9 @@
       </tags>
   </entry>
   <entry>
-    <title>gitlab搭建与使用</title>
-    <url>/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。</p>
-<p><img src="https://huatree.top/image-20220521203606016.png" alt="image-20220521203606016"></p>
-<span id="more"></span>
-
-<div class="note info"><p>GitHub 如果使用私有仓库，是需要付费的；而 GitLab 可以在上面搭建私人的免费仓库。</p>
-</div>
-
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>GitLab 有社区版（免费）和企业版（收费）。本文示例以 GitLab 社区版为准。</p>
-<h3 id="Docker-Compose-安装-GitLab"><a href="#Docker-Compose-安装-GitLab" class="headerlink" title="Docker Compose 安装 GitLab"></a>Docker Compose 安装 GitLab</h3><p>需用到 Docker，有关更多详细信息，请参阅<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
-<p>使用<code>docker-gitlab</code>仓库中的<a href="https://github.com/sameersbn/docker-gitlab/blob/master/docker-compose.yml">docker-compose.yml</a>。复制到本地<code>compose.yaml</code>中，修改如下部分内容：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13980:80&#x27;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13922:22&#x27;</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_PORT=13980</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_SSH_PORT=13922</span></span><br></pre></td></tr></table></figure>
-
-<p>接着，在该文件所在目录下打开终端，输入<code>docker compsoe up</code>。运行成功后，浏览器打开如下 URL：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:13980</span><br><span class="line"><span class="comment"># 会自动定位到</span></span><br><span class="line">http://127.0.0.1:13980/users/sign_in</span><br></pre></td></tr></table></figure>
-
-<p><code>127.0.0.1</code>可替换成<code>localhost</code>。</p>
-<p>默认管理员账号为 <strong>root</strong>，根据页面提示<code>Please create a password for your new account.</code>设置<code>New password</code>。</p>
-<p><img src="https://huatree.top/image-20220521191137698.png" alt="image-20220521191137698"></p>
-<p>点击<strong>Change your password</strong>，跳转到登录页面，使用<code>root</code>和刚设置的密码登录。</p>
-<p><img src="https://huatree.top/image-20220521191623991.png" alt="image-20220521191623991"></p>
-<p>初次登录成功后的页面如下</p>
-<p><img src="https://huatree.top/image-20220521192006609.png" alt="image-20220521192006609"></p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>根据实际情况，可切换中文页面方便使用：</p>
-<p>点击右上角头像 &gt; Preferences &gt; Localization &gt; 设置简体中文并点击保存，切换其他页面生效。</p>
-<h3 id="GitLab-的权限控制"><a href="#GitLab-的权限控制" class="headerlink" title="GitLab 的权限控制"></a>GitLab 的权限控制</h3><p>以默认的<code>GitLab Instance/Monitoring</code>仓库为例剖析。进入该页面，点击<strong>邀请成员</strong>，弹窗如下所示。</p>
-<p><img src="https://huatree.top/image-20220521195929833.png" alt="image-20220521195929833"></p>
-<p>相关角色详细信息，点击<strong>了解更多</strong>。</p>
-<p>更多权限与角色信息，<a href="https://docs.gitlab.com/ee/user/permissions.html#permissions-and-roles">详见官方文档</a></p>
-<p>管理员使用 GitLab 一般会考虑的点：</p>
-<ul>
-<li>以组为单元，设置管理员</li>
-<li>熟悉 Merge Request，写好 git commit</li>
-<li>及时回收权限，或者设置过期时间</li>
-</ul>
-<p>有人可能会问，GitHub 有没有 GitLab 群组的感觉呢。答案是有的，与 GitHub 的<a href="https://github.com/organizations/plan">organizations</a>项对应。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.gitlab.com/ee/install/docker.html">GitLab Docker images</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>gitlab</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>写好README</title>
     <url>/2022/06/03/20220603-%E5%86%99%E5%A5%BDREADME/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220603172009054.png" alt="image-20220603172009054"></p>
+    <content><![CDATA[<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220603172009054.png" alt="image-20220603172009054"></p>
 <span id="more"></span>
 
 <h2 id="从何而来"><a href="#从何而来" class="headerlink" title="从何而来"></a>从何而来</h2><p>“README”可能是来自于《爱丽丝漫游仙境》，其中一瓶药水和一个月饼上分别贴着“DRINK ME”（喝我）和“EAT ME”（吃我）的标签。 —— 来自某位读者的提议</p>
@@ -2923,10 +2876,57 @@
       </tags>
   </entry>
   <entry>
+    <title>gitlab搭建与使用</title>
+    <url>/2022/05/21/20220521-gitlab%E6%90%AD%E5%BB%BA%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<p>GitLab 让开发团队对他们的代码仓库拥有更多的控制，相对于 GitHub，它有不少的特色：允许免费设置仓库权限；可以设置获取到团队整体的改进进度。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220521203606016.png" alt="image-20220521203606016"></p>
+<span id="more"></span>
+
+<div class="note info"><p>GitHub 如果使用私有仓库，是需要付费的；而 GitLab 可以在上面搭建私人的免费仓库。</p>
+</div>
+
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>GitLab 有社区版（免费）和企业版（收费）。本文示例以 GitLab 社区版为准。</p>
+<h3 id="Docker-Compose-安装-GitLab"><a href="#Docker-Compose-安装-GitLab" class="headerlink" title="Docker Compose 安装 GitLab"></a>Docker Compose 安装 GitLab</h3><p>需用到 Docker，有关更多详细信息，请参阅<a href="/2022/05/11/20220511-docker%E4%BD%BF%E7%94%A8/" title="docker使用">docker使用</a>。</p>
+<p>使用<code>docker-gitlab</code>仓库中的<a href="https://github.com/sameersbn/docker-gitlab/blob/master/docker-compose.yml">docker-compose.yml</a>。复制到本地<code>compose.yaml</code>中，修改如下部分内容：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13980:80&#x27;</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">&#x27;13922:22&#x27;</span></span><br><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_PORT=13980</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">GITLAB_SSH_PORT=13922</span></span><br></pre></td></tr></table></figure>
+
+<p>接着，在该文件所在目录下打开终端，输入<code>docker compsoe up</code>。运行成功后，浏览器打开如下 URL：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">http://127.0.0.1:13980</span><br><span class="line"><span class="comment"># 会自动定位到</span></span><br><span class="line">http://127.0.0.1:13980/users/sign_in</span><br></pre></td></tr></table></figure>
+
+<p><code>127.0.0.1</code>可替换成<code>localhost</code>。</p>
+<p>默认管理员账号为 <strong>root</strong>，根据页面提示<code>Please create a password for your new account.</code>设置<code>New password</code>。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220521191137698.png" alt="image-20220521191137698"></p>
+<p>点击<strong>Change your password</strong>，跳转到登录页面，使用<code>root</code>和刚设置的密码登录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220521191623991.png" alt="image-20220521191623991"></p>
+<p>初次登录成功后的页面如下</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220521192006609.png" alt="image-20220521192006609"></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>根据实际情况，可切换中文页面方便使用：</p>
+<p>点击右上角头像 &gt; Preferences &gt; Localization &gt; 设置简体中文并点击保存，切换其他页面生效。</p>
+<h3 id="GitLab-的权限控制"><a href="#GitLab-的权限控制" class="headerlink" title="GitLab 的权限控制"></a>GitLab 的权限控制</h3><p>以默认的<code>GitLab Instance/Monitoring</code>仓库为例剖析。进入该页面，点击<strong>邀请成员</strong>，弹窗如下所示。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220521195929833.png" alt="image-20220521195929833"></p>
+<p>相关角色详细信息，点击<strong>了解更多</strong>。</p>
+<p>更多权限与角色信息，<a href="https://docs.gitlab.com/ee/user/permissions.html#permissions-and-roles">详见官方文档</a></p>
+<p>管理员使用 GitLab 一般会考虑的点：</p>
+<ul>
+<li>以组为单元，设置管理员</li>
+<li>熟悉 Merge Request，写好 git commit</li>
+<li>及时回收权限，或者设置过期时间</li>
+</ul>
+<p>有人可能会问，GitHub 有没有 GitLab 群组的感觉呢。答案是有的，与 GitHub 的<a href="https://github.com/organizations/plan">organizations</a>项对应。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://docs.gitlab.com/ee/install/docker.html">GitLab Docker images</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>gitlab</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>移动端H5页面禁止长按复制及去掉点击高亮</title>
     <url>/2022/06/06/20220606-%E7%A7%BB%E5%8A%A8%E7%AB%AFH5%E9%A1%B5%E9%9D%A2%E7%A6%81%E6%AD%A2%E9%95%BF%E6%8C%89%E5%A4%8D%E5%88%B6%E5%8F%8A%E5%8E%BB%E6%8E%89%E7%82%B9%E5%87%BB%E9%AB%98%E4%BA%AE/</url>
     <content><![CDATA[<p>指定的移动端 H5 页面，长按文字拉起复制面板，对用户体验不友好。活动 H5 页面点击区域闪现高亮。</p>
-<p><img src="https://huatree.top/image-20220606211508208.png" alt="image-20220606211508208"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/huatree/huatree.picbed/blog/image-20220606211508208.png" alt="image-20220606211508208"></p>
 <span id="more"></span>
 
 <h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="禁止长按复制"><a href="#禁止长按复制" class="headerlink" title="禁止长按复制"></a>禁止长按复制</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  -webkit-user-select: none; <span class="comment">/* webkit浏览器 */</span></span><br><span class="line">  -webkit-touch-callout: none; <span class="comment">/* 系统默认菜单被禁用 */</span></span><br><span class="line">  -khtml-user-select: none; <span class="comment">/* 早期浏览器 */</span></span><br><span class="line">  -moz-user-select: none; <span class="comment">/* 火狐 */</span></span><br><span class="line">  -ms-user-select: none; <span class="comment">/* IE10 */</span></span><br><span class="line">  user-select: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span>,</span><br><span class="line"><span class="selector-tag">textarea</span> &#123;</span><br><span class="line">  -webkit-user-select: auto;</span><br><span class="line">  user-select: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2943,6 +2943,18 @@
       <tags>
         <tag>CSS</tag>
         <tag>H5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【转载】请查收：几个使用的CSS小技巧</title>
+    <url>/2022/06/26/20220626-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E8%AF%B7%E6%9F%A5%E6%94%B6%EF%BC%9A%E5%87%A0%E4%B8%AA%E4%BD%BF%E7%94%A8%E7%9A%84CSS%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<p>{}</p>
+]]></content>
+      <categories>
+        <category>经典文章</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
       </tags>
   </entry>
 </search>
