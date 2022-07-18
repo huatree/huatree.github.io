@@ -157,6 +157,30 @@
       </tags>
   </entry>
   <entry>
+    <title>M3U8-Downloader视频下载合并转换</title>
+    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
+<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
+<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
+<span id="more"></span>
+
+<blockquote>
+<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
+</blockquote>
+<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
+<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
+<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>生活滋味</category>
+      </categories>
+      <tags>
+        <tag>工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>搞定uni-app</title>
     <url>/2021/07/01/20210701-%E6%90%9E%E5%AE%9Auni-app/</url>
     <content><![CDATA[<p>官方描述，<code>uni-app</code> 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、Web（响应式）、以及各种小程序（微信&#x2F;支付宝&#x2F;百度&#x2F;头条&#x2F;飞书&#x2F;QQ&#x2F;快手&#x2F;钉钉&#x2F;淘宝）、快应用等多个平台。</p>
@@ -236,30 +260,6 @@
       </tags>
   </entry>
   <entry>
-    <title>M3U8-Downloader视频下载合并转换</title>
-    <url>/2021/09/25/20210925-M3U8-Downloader%E8%A7%86%E9%A2%91%E4%B8%8B%E8%BD%BD%E5%90%88%E5%B9%B6%E8%BD%AC%E6%8D%A2/</url>
-    <content><![CDATA[<p>TS 视频或者 M3U8 怎么合并呢？这里教你下载各大平台的 M3U8 视频点播源和直播源并且无损合并 MP4。</p>
-<p>TS 视频流就是 HLS 协议中的一个几秒钟的片段，M3U8 文件是这些片段的一个目录一个索引文件。弄清楚这些就好理解接下来为啥要合并 TS 视频了。</p>
-<p><img src="https://tools.heisir.cn/HLSDownload/resource/HLSDownloadShow-3-1.gif" alt="top"></p>
-<span id="more"></span>
-
-<blockquote>
-<p><a href="https://github.com/HeiSir2014/M3U8-Downloader">M3U8-Downloader</a>为开源软件，跨平台，完全免费。支持多线程、断点续传、加密视频下载缓存。适用于各大直播平台和点播平台。</p>
-</blockquote>
-<p>HTTP Live Streaming（缩写是 HLS）是一个由苹果公司提出的基于 HTTP 的流媒体网络传输协议。是苹果公司 QuickTime X 和 iPhone 软件系统的一部分。 它的工作原理是把整个流分成一个个小的基于 HTTP 的文件来下载，每次只下载一些。当媒体流正在播放时，客户端可以选择从许多不同的备用源中以不同的速率下载同样的资源，允许流媒体会话适应不同的数据速率。</p>
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p><a href="https://tools.heisir.cn/HLSDownload/">详见官网</a></p>
-<h2 id="TS-文件合并"><a href="#TS-文件合并" class="headerlink" title="TS 文件合并"></a>TS 文件合并</h2><p>M3U8-Downloader 新版本支持 TS 文件自动合并，无需手动命令合并。</p>
-<h3 id="旧版本"><a href="#旧版本" class="headerlink" title="旧版本"></a>旧版本</h3><p><strong>Windows</strong>：在所保存的<code>.ts</code>文件目录下，打开<code>cmd</code>，输入如下命令：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">copy/b *.ts mergedFileName.mp4</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>生活滋味</category>
-      </categories>
-      <tags>
-        <tag>工具</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git常见问题与总结</title>
     <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
     <content><![CDATA[<p>在实际开发中遇到的一些 Git 常现的问题与总结。</p>
@@ -268,6 +268,10 @@
 
 <div class="note warning"><p>文章中的<code>origin</code>是<code>git remote add origin &lt;url&gt;</code>添加远程仓库的别名。</p>
 </div>
+
+<h2 id="操作仓库前的必要检查与配置"><a href="#操作仓库前的必要检查与配置" class="headerlink" title="操作仓库前的必要检查与配置"></a>操作仓库前的必要检查与配置</h2><h3 id="文件名大小写"><a href="#文件名大小写" class="headerlink" title="文件名大小写"></a>文件名大小写</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看是否忽略文件名大小写</span></span><br><span class="line">git config --global -l</span><br><span class="line">git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 配置成不能忽略文件名大小写(windows系统下，安装git时会默认配置core.ignorecase=true，因为windows的文件名本身不区分大小写)</span></span><br><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git config &lt;--<span class="built_in">local</span>&gt; core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文件名过长导致的错误"><a href="#文件名过长导致的错误" class="headerlink" title="文件名过长导致的错误"></a>文件名过长导致的错误</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先查看默认的配置</span></span><br><span class="line">git config --global -l</span><br><span class="line">git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 如果没查到core.longpaths配置项或core.longpaths=false时，需要如下配置</span></span><br><span class="line">git config --global core.longpaths <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> &lt;ssh:git url&gt;</span><br><span class="line">$ git checkout -b &lt;branch a&gt;</span><br><span class="line">$ git pull origin &lt;branch a&gt;</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin &lt;branch a&gt;:&lt;branch a&gt;</span><br><span class="line">$ git checkout &lt;branch a&gt;</span><br></pre></td></tr></table></figure>
 
@@ -308,23 +312,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue开发工具指南</title>
-    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
-<span id="more"></span>
-
-<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
-<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Vue</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>混合App中H5白屏修复及样式兼容</title>
     <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
     <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
@@ -346,6 +333,23 @@
       <tags>
         <tag>H5</tag>
         <tag>混合APP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue开发工具指南</title>
+    <url>/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p><img src="https://huatree.top/image-20220508124243345.png" alt="image-20220508124243345"></p>
+<span id="more"></span>
+
+<h2 id="谷歌-F12-状态栏未出现-Vue-Devtools"><a href="#谷歌-F12-状态栏未出现-Vue-Devtools" class="headerlink" title="谷歌 F12 状态栏未出现 Vue Devtools"></a>谷歌 F12 状态栏未出现 Vue Devtools</h2><p>在 Vue Devtools 插件加入的情况下，如果是文件地址直接打开的 <code>.html</code> 文件，需要检查该插件是否<code>允许访问文件地址</code>，如下图所示：</p>
+<p><img src="https://huatree.top/image-20220508115506971.png" alt="image-20220508115506971"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://devtools.vuejs.org/">Vue Devtools</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>Vue</tag>
       </tags>
   </entry>
   <entry>
@@ -853,6 +857,36 @@
       </tags>
   </entry>
   <entry>
+    <title>static与new.target关键字</title>
+    <url>/2021/07/16/20220303-static%E4%B8%8Enew.target%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+    <content><![CDATA[<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static 在类中定义静态方法。</p>
+<h3 id="什么时候能用"><a href="#什么时候能用" class="headerlink" title="什么时候能用"></a>什么时候能用</h3><p>看方法里，有没用到this，没用到就可以考虑用静态方法。静态方法通常用于创建实用程序函数，例如，创建或克隆对象。</p>
+<h3 id="什么时候不能用"><a href="#什么时候不能用" class="headerlink" title="什么时候不能用"></a>什么时候不能用</h3><p>不能在类的实例上调用。</p>
+<h3 id="怎么调用"><a href="#怎么调用" class="headerlink" title="怎么调用"></a>怎么调用</h3><p>以下几种情况都可调用：</p>
+<ol>
+<li><p>静态方法调用直接在类上进行。</p>
+</li>
+<li><p>静态方法调用同一个类中的其他静态方法，可使用 <code>this</code> 关键字</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Static method has been called&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">anotherStaticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">staticMethod</span>() + <span class="string">&#x27; from another static method&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">anotherStaticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called from another static method&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非静态方法中，不能直接使用 <code>this</code> 关键字来访问静态方法。而是要用类名来调用：<code>CLASSNAME.STATIC_METHOD_NAME()</code> ，或者用构造函数的属性来调用该方法： <code>this.constructor.STATIC_METHOD_NAME()</code>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">constructor</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;static method has been called.&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="new-target"><a href="#new-target" class="headerlink" title="new.target"></a>new.target</h2><p>**<code>new.target</code>**属性允许检测函数或构造方法是否是通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">new</a>运算符被调用的。在普通函数（没有被 new 的函数）调用中，<code>new.target</code> 的值是<code>undefined</code></p>
+<p>注意，在类的构造方法中，<code>new.target</code>指向直接被<code>new</code>执行的构造函数。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_ inherited__">A</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="title function_">A</span>(); <span class="comment">// logs &quot;A&quot;</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="title function_">B</span>(); <span class="comment">// logs &quot;B&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span> <span class="keyword">extends</span> <span class="title class_ inherited__">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="title function_">C</span>(); <span class="comment">// logs class C&#123;constructor()&#123;console.log(new.target);&#125;&#125;</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="title function_">D</span>(); <span class="comment">// logs class D extends C&#123;constructor()&#123;super();&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/static">mdn web docs - static</a></p>
+<p>[2] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target">mdn web docs - new.target</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从npm script到node调试</title>
     <url>/2022/03/04/20220304-%E4%BB%8Enpm-script%E5%88%B0node%E8%B0%83%E8%AF%95/</url>
     <content><![CDATA[<h2 id="npm-script"><a href="#npm-script" class="headerlink" title="npm script"></a>npm script</h2><h3 id="初体验"><a href="#初体验" class="headerlink" title="初体验"></a>初体验</h3><p>package.json</p>
@@ -939,36 +973,6 @@
         <tag>node</tag>
         <tag>webpack</tag>
         <tag>debug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>static与new.target关键字</title>
-    <url>/2021/07/16/20220303-static%E4%B8%8Enew.target%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<h2 id="static"><a href="#static" class="headerlink" title="static"></a>static</h2><p>static 在类中定义静态方法。</p>
-<h3 id="什么时候能用"><a href="#什么时候能用" class="headerlink" title="什么时候能用"></a>什么时候能用</h3><p>看方法里，有没用到this，没用到就可以考虑用静态方法。静态方法通常用于创建实用程序函数，例如，创建或克隆对象。</p>
-<h3 id="什么时候不能用"><a href="#什么时候不能用" class="headerlink" title="什么时候不能用"></a>什么时候不能用</h3><p>不能在类的实例上调用。</p>
-<h3 id="怎么调用"><a href="#怎么调用" class="headerlink" title="怎么调用"></a>怎么调用</h3><p>以下几种情况都可调用：</p>
-<ol>
-<li><p>静态方法调用直接在类上进行。</p>
-</li>
-<li><p>静态方法调用同一个类中的其他静态方法，可使用 <code>this</code> 关键字</p>
- <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;Static method has been called&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">anotherStaticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="title function_">staticMethod</span>() + <span class="string">&#x27; from another static method&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="title class_">StaticMethodCall</span>.<span class="title function_">anotherStaticMethod</span>();</span><br><span class="line"><span class="comment">// &#x27;Static method has been called from another static method&#x27;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>非静态方法中，不能直接使用 <code>this</code> 关键字来访问静态方法。而是要用类名来调用：<code>CLASSNAME.STATIC_METHOD_NAME()</code> ，或者用构造函数的属性来调用该方法： <code>this.constructor.STATIC_METHOD_NAME()</code>.</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">StaticMethodCall</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">StaticMethodCall</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">constructor</span>.<span class="title function_">staticMethod</span>());</span><br><span class="line">    <span class="comment">// &#x27;static method has been called.&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">static</span> <span class="title function_">staticMethod</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;static method has been called.&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="new-target"><a href="#new-target" class="headerlink" title="new.target"></a>new.target</h2><p>**<code>new.target</code>**属性允许检测函数或构造方法是否是通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new">new</a>运算符被调用的。在普通函数（没有被 new 的函数）调用中，<code>new.target</code> 的值是<code>undefined</code></p>
-<p>注意，在类的构造方法中，<code>new.target</code>指向直接被<code>new</code>执行的构造函数。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>.<span class="property">name</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> <span class="keyword">extends</span> <span class="title class_ inherited__">A</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="title function_">A</span>(); <span class="comment">// logs &quot;A&quot;</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="keyword">new</span> <span class="title function_">B</span>(); <span class="comment">// logs &quot;B&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">new</span>.<span class="property">target</span>); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">D</span> <span class="keyword">extends</span> <span class="title class_ inherited__">C</span> &#123; </span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span>) &#123; </span><br><span class="line">    <span class="variable language_">super</span>(); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="keyword">new</span> <span class="title function_">C</span>(); <span class="comment">// logs class C&#123;constructor()&#123;console.log(new.target);&#125;&#125;</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="keyword">new</span> <span class="title function_">D</span>(); <span class="comment">// logs class D extends C&#123;constructor()&#123;super();&#125;&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Classes/static">mdn web docs - static</a></p>
-<p>[2] <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/new.target">mdn web docs - new.target</a></p>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -1420,55 +1424,50 @@
       </tags>
   </entry>
   <entry>
-    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
-    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
-    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
-<span id="more"></span>
-
-<div class="note info"><p>文章转载自程序员鱼皮 </p>
-</div>
-
-<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
-<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
-<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
-<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
-<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
-<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
-<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
-<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
-<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
-<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
-<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
-<p>整体的思想就是从整体到局部，由大到小吧。</p>
-<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
-<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
-<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
-<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
-<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
-<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
-<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
-<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
-<p>所以这也是为什么要多了解和积累一些技术。</p>
-<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
-<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
-<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
-<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
-<ul>
-<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
-<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
-</li>
-<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
-</li>
-</ul>
-<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
-<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
-<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
+    <title>七牛云+PicGo+Typora搭建图床</title>
+    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
+    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
+<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
+</blockquote>
+<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
+<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
+<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
+<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
+<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
+<p>在自定义源站域名栏绑定域名</p>
+<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
+<blockquote>
+<p>! 注意</p>
+<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
+</blockquote>
+<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
+<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
+<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
+<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
+<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
+<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
+<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
+<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
+<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
+<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
+<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
+<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
+<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
+<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
+<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
+<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
+<p>最后，可以验证一下图片上传。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
+<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
+<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
+<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
 ]]></content>
       <categories>
-        <category>经典文章</category>
+        <category>成长经历</category>
       </categories>
       <tags>
-        <tag>职场</tag>
+        <tag>七牛云</tag>
+        <tag>图床</tag>
       </tags>
   </entry>
   <entry>
@@ -1944,50 +1943,82 @@
       </tags>
   </entry>
   <entry>
-    <title>七牛云+PicGo+Typora搭建图床</title>
-    <url>/2022/04/01/20220401-%E4%B8%83%E7%89%9B%E4%BA%91+PicGo+Typora%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</url>
-    <content><![CDATA[<h2 id="配置七牛云"><a href="#配置七牛云" class="headerlink" title="配置七牛云"></a>配置七牛云</h2><blockquote>
-<p>文章中涉及的域名来自<a href="https://cloud.tencent.com/">腾讯云</a></p>
-</blockquote>
-<h3 id="为什么选择七牛云"><a href="#为什么选择七牛云" class="headerlink" title="为什么选择七牛云"></a>为什么选择七牛云</h3><p>注册用户送免费 10G 空间，它不香吗？要知道，gitee 也才送 5 个 G。</p>
-<h3 id="新建存储空间"><a href="#新建存储空间" class="headerlink" title="新建存储空间"></a>新建存储空间</h3><p><img src="https://huatree.top/image-20220401151047795.png" alt="image-20220401151047795"></p>
-<p>根据要求填写，存储区域如果选择国内的，后面的自定义域名填写时，就必须保证该域名是已通过审核状态。</p>
-<p><img src="https://huatree.top/image-20220401151806541.png" alt="image-20220401151806541"></p>
-<h3 id="绑定自定义域名"><a href="#绑定自定义域名" class="headerlink" title="绑定自定义域名"></a>绑定自定义域名</h3><p><img src="https://huatree.top/image-20220401152045293.png" alt="image-20220401152045293"></p>
-<p>在自定义源站域名栏绑定域名</p>
-<p><img src="https://huatree.top/image-20220401153548043.png" alt="image-20220401153548043"></p>
-<blockquote>
-<p>! 注意</p>
-<p>如果是国内服务器，输入域名时必须是已通过备案域名</p>
-</blockquote>
-<h4 id="配置域名映射（CNAME）"><a href="#配置域名映射（CNAME）" class="headerlink" title="配置域名映射（CNAME）"></a>配置域名映射（CNAME）</h4><p>绑定域名成功后，复制 CNAME，到域名申请的所在平台，配置域名的 CNAME。</p>
-<p><img src="https://huatree.top/image-20220401154840145.png" alt="image-20220401154840145"></p>
-<p>这里域名申请平台，以腾讯云为例，点击管理解析，进入记录管理页</p>
-<p><img src="https://huatree.top/image-20220401155255504.png" alt="image-20220401155255504"></p>
-<p>点击快速添加解析，选择网站解析-域名映射，咱贴在七牛云那儿复制的 CNAME 值</p>
-<p><img src="https://huatree.top/image-20220401155701085.png" alt="image-20220401155701085"></p>
-<h4 id="配置-HTTPS"><a href="#配置-HTTPS" class="headerlink" title="配置 HTTPS"></a>配置 HTTPS</h4><p>进入空间管理-域名管理，找到自定义源站域名栏</p>
-<p><img src="https://huatree.top/image-20220401165418098.png" alt="image-20220401165418098"></p>
-<p>访问控制，开启 https，上传新 SSL 证书，SSL 证书可通过申请过域名的平台免费获取。</p>
-<p><img src="https://huatree.top/image-20220401165507134.png" alt="image-20220401165507134"></p>
-<p>证书下载时，选择 Nginx。点击 “上传自有证书”，使用编辑器打开后续文件，并复制 .pem 后缀的文件内容到证书内容 （公钥），复制 .key 后缀结尾的内容到 证书私钥就行了。最后，别忘了回来选择刚上传的证书。</p>
-<h2 id="配置-PicGo"><a href="#配置-PicGo" class="headerlink" title="配置 PicGo"></a>配置 PicGo</h2><h3 id="下载安装-PicGo"><a href="#下载安装-PicGo" class="headerlink" title="下载安装 PicGo"></a>下载安装 PicGo</h3><p>选择稳定版本，<a href="https://github.com/Molunerfinn/picgo/releases">下载详见</a>。</p>
-<h3 id="界面配置"><a href="#界面配置" class="headerlink" title="界面配置"></a>界面配置</h3><p>选择七牛云图床，AccessKey&#x2F;SecretKey 值可从七牛云&gt;个人中心&gt;密钥管理复制。设定存储空间名来自七牛云-空间管理中的空间名称。设定访问网址来自七牛云-空间管理-文件管理中的外链域名。确认存储区域值来自七牛云存储区域对应 ID 值，<a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">详见</a>。</p>
-<p><img src="https://huatree.top/image-20220401170955343.png" alt="image-20220401170955343"></p>
-<h2 id="配置-Typora"><a href="#配置-Typora" class="headerlink" title="配置 Typora"></a>配置 Typora</h2><p>进入文件-偏好设置，选择 PicGo 及其安装路径。</p>
-<p><img src="https://huatree.top/image-20220401172028839.png" alt="image-20220401172028839"></p>
-<p>最后，可以验证一下图片上传。</p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://gitee.com/help/articles/4125">Gitee 使用配额说明</a></p>
-<p>[2] <a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo 指南</a></p>
-<p>[3] <a href="https://developer.qiniu.com/kodo/1671/region-endpoint-fq">七牛云-存储区域</a></p>
-<p>[4] <a href="https://support.typora.io/Upload-Image/#picgoapp-chinese-language-only">Typora 上传图片说明</a></p>
+    <title>【转载】刚入职新公司，代码看懵逼了咋办</title>
+    <url>/2022/03/25/20220325-%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E%E5%88%9A%E5%85%A5%E8%81%8C%E6%96%B0%E5%85%AC%E5%8F%B8%EF%BC%8C%E4%BB%A3%E7%A0%81%E7%9C%8B%E6%87%B5%E9%80%BC%E4%BA%86%E5%92%8B%E5%8A%9E/</url>
+    <content><![CDATA[<p>我今天刚刚入职一家公司实习，需要熟悉已有的项目代码。因为是第一次接触已上线的工程代码、且代码量超级大，所以把我看懵逼了。想问下应该怎么快速熟悉代码呢？这个问题可太真实了，让我瞬间回想起自己进第一家公司实习时的 “恐惧” 。</p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自程序员鱼皮 </p>
+</div>
+
+<p>面对前人堆积的屎山代码、复杂的业务流程图，我当时心里只有一个念头：我要回家！</p>
+<p>不过随着自己读过的、写过的代码越来越多，感觉上手新项目也越来越迅速了。下面给大家分享我的一点经验：如果给我一个新项目，我会怎么看？</p>
+<h2 id="如何快速上手新项目"><a href="#如何快速上手新项目" class="headerlink" title="如何快速上手新项目"></a>如何快速上手新项目</h2><p>我觉得可以遵循以下几个步骤：</p>
+<h3 id="获取项目相关信息"><a href="#获取项目相关信息" class="headerlink" title="获取项目相关信息"></a>获取项目相关信息</h3><p>进入一家新公司后，如果遇到不负责任的同事呢，可能直接甩给你项目地址，然后就让你自己研究了。这就好比产品经理直接甩给你一个需求让你直接上线一样，怎么实现我不管。</p>
+<p>这种情况下，我们首先要做的事情是尽可能多地获取项目相关信息，来帮助自己了解项目。比如项目介绍文档、项目功能说明文档、业务流程图、项目历史迭代情况、项目架构文档、技术选型背景等等。</p>
+<p>像我的话，就会询问同事：这个项目背景是什么呀？这个项目有没有啥文档呀？之类的。</p>
+<p>不过有些公司或项目可能过于敏捷，平时光做需求，不写文档，逻辑全靠口口相传！</p>
+<p>也没关系，请同事给你介绍一下项目的业务和技术信息就好。</p>
+<p>刚进公司有问题一定不能憋着，要多问，让自己尽可能多地了解项目代码之外的东西。</p>
+<h3 id="了解业务流程"><a href="#了解业务流程" class="headerlink" title="了解业务流程"></a>了解业务流程</h3><p>技术是为业务服务的，千万不要连自己项目是干嘛的、有什么功能、为什么要做这个功能都不知道，就去看代码、想着快速把需求完成。最好不要把自己当成临时工，而是要当成项目的 <strong>负责人</strong> 。</p>
+<p>我的话一般会先阅读文档或者请同事来给我介绍项目的 <strong>背景</strong> ，即为什么要做这个东西；然后对着产品本身（可能是网页或者 APP）来体验项目的功能；最后再重点关注自己要做的业务、负责的功能模块，了解它的历史、业务逻辑等。</p>
+<p>整体的思想就是从整体到局部，由大到小吧。</p>
+<p>这里为什么我反复强调要了解项目的背景呢？聪明的朋友一定能想到。因为你刚进一家新公司或者一个新项目，如果自己啥都不懂，别人说啥你就做啥，就很有可能出现这个项目 &#x2F; 功能本身根本没有任何意义、你只是帮忙收拾了个烂摊子的情况。。。</p>
+<h3 id="阅读项目文档"><a href="#阅读项目文档" class="headerlink" title="阅读项目文档"></a>阅读项目文档</h3><p>阅读公司的项目过程其实和阅读开源项目是一样的，基本上项目的代码仓库都会有一个 <code>README.md</code> 文件。</p>
+<p>这个文件往往会介绍项目的背景、功能、技术栈、如何启动、如何贡献代码等等。</p>
+<p>我会先整体扫一遍文档的 <strong>目录</strong> ，然后优先关注项目的技术栈以及如何启动。</p>
+<p>一般 GitHub 等项目平台都会帮你生成文档目录，可以很快地跳转。也可以把文档下载到本地，用 Typora 之类的 Markdown 编辑器打开，从而清晰地看到文档的目录。</p>
+<p>因为如果你了解了项目用到的技术，而你正好会用这个技术的话，心里就多了几分底气，项目的架构也能大致了解了，后面再去看代码就轻松地一批。</p>
+<p>举个例子，看到技术栈中出现了 Ant Design Pro，我正好用过！我就知道这个项目大概率使用了 React、Ant Design、Webpack、Dva、Umi 等技术了，它的代码结构如何、配置文件在哪里、页面文件在哪里、如何启动也差不多能 get 到。</p>
+<p>像我平时在 GitHub 上找开源项目时，除了功能外，就是关注技术栈，如果项目文档中提到的技术我都会用，那么我就很有自信这个项目我肯定能学的动、学得懂。</p>
+<p>所以这也是为什么要多了解和积累一些技术。</p>
+<p>补充一下，如果作者没在文档中写明技术栈怎么办？这里有个小技巧，去看项目的依赖管理文件，比如前端的 <code>package.json</code> 、Java 的 <code>pom.xml</code> 或 <code>build.gradle</code> 等。</p>
+<h3 id="先把项目跑起来"><a href="#先把项目跑起来" class="headerlink" title="先把项目跑起来"></a>先把项目跑起来</h3><p>关于这点没什么好说的，先把代码拉下来、安装依赖、按照文档把项目跑起来，才能更好地了解和调试项目。</p>
+<p>比较麻烦的点可能就是环境的搭建，比如本地安装 MySQL、Nginx 代理之类的。不过现在很多公司也会采用开发机、或者远程开发环境的模式，直接连接某个远程库就好了，能省很多事儿，也可以请教一下同事怎么搭建环境比较方便。</p>
+<h3 id="阅读代码"><a href="#阅读代码" class="headerlink" title="阅读代码"></a>阅读代码</h3><p>终于到了读代码的环节，建议大家遵循两个原则：</p>
+<ul>
+<li><p>由整体到局部：先了解整个项目的目录结构，每个目录都是做什么的，比如在哪里写页面？在哪里改配置？在哪里改接口？怎么切换环境等。</p>
+<p>还要了解项目的模块划分，比如哪些代码是用户模块、哪些代码是订单模块，可以通过 JetBrains 等开发工具来自动生成 UML 类图，更清晰地了解。</p>
+</li>
+<li><p>结合业务：读代码的时候尽量不要裸读、按顺序读，而是可以配合系统去定位代码。比如阅读用户登录功能的后端代码时，可以在前端执行一次登录，然后在浏览器 F12 网络请求中找到登录对应的后端请求，再到代码中全局搜索这个请求即可。阅读用户下订单的代码时，可以先在前端模拟一次下单操作，了解整个过程，从而更好地理解请求之间的顺序和依赖关系。</p>
+</li>
+</ul>
+<h3 id="上手开发"><a href="#上手开发" class="headerlink" title="上手开发"></a>上手开发</h3><p>最后也是最关键的一点，读代码不能只读代码，一定要多上手去写、去执行、去调试。</p>
+<p>必要时可以专门新建一个分支，在这个分支里无论怎么 “为所欲为” 都不会影响到正常已上线的代码。可以自己复制代码去执行一遍、自己给代码流程加上一些日志来帮助理解数据流转过程、或者 Debug 调试等。</p>
+<p>其实刚进一家新公司时通常不会给你安排太复杂的工作，基本就是增删改查、或者给你一个小页面小功能去做，帮助你熟悉代码。有些时候，哪怕你不理解整个项目的架构，通过复制同事已经写过的代码也能完成工作。不过还是建议大家，为了长远的发展，不要只局限于自己负责的小功能，可以多了解系统的上下游和整体架构，提高自己的全局观。</p>
 ]]></content>
       <categories>
-        <category>成长经历</category>
+        <category>经典文章</category>
       </categories>
       <tags>
-        <tag>七牛云</tag>
-        <tag>图床</tag>
+        <tag>职场</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>H5页面中获取点击坐标信息</title>
+    <url>/2022/04/06/20220406-H5%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%82%B9%E5%87%BB%E5%9D%90%E6%A0%87%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<p>广告位埋点需求：H5 页面中记录广告区域内的点击坐标信息。</p>
+<p>● etStart 按下时间 时间戳</p>
+<p>● downX 按下相对屏幕 x 坐标</p>
+<p>● downY 按下相对屏幕 y 坐标</p>
+<p>● rDownX 按下相对广告 x 坐标</p>
+<p>● rDownY 按下相对广告 y 坐标</p>
+<p>● etEnd 抬起时间 时间戳</p>
+<p>● upX 抬起相对屏幕 x 坐标</p>
+<p>● upY 抬起相对屏幕 y 坐标</p>
+<p>● rUpX 抬起相对广告 x 坐标</p>
+<p>● rUpY 抬起相对屏幕 y 坐标</p>
+<span id="more"></span>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> adE = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;ad&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="language-javascript">  adE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousedown&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">etStart</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">downX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">downY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rDownX</span> = e.<span class="property">offsetX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rDownY</span> = e.<span class="property">offsetY</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  adE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">etEnd</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">upX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">upY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rUpX</span> = e.<span class="property">offsetX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rUpY</span> = e.<span class="property">offsetY</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> closeE = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;close&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="language-javascript">  closeE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousedown&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">etStart</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">downX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">downY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rDownX</span> = e.<span class="property">pageX</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetLeft</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rDownY</span> = e.<span class="property">pageY</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetTop</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  closeE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">etEnd</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">upX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">upY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rUpX</span> = e.<span class="property">pageX</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetLeft</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rUpY</span> = e.<span class="property">pageY</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetTop</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/Events">Web 开发技术 &gt; 事件参考</a></p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>H5</tag>
       </tags>
   </entry>
   <entry>
@@ -2080,57 +2111,6 @@
       </tags>
   </entry>
   <entry>
-    <title>H5页面中获取点击坐标信息</title>
-    <url>/2022/04/06/20220406-H5%E9%A1%B5%E9%9D%A2%E4%B8%AD%E8%8E%B7%E5%8F%96%E7%82%B9%E5%87%BB%E5%9D%90%E6%A0%87%E4%BF%A1%E6%81%AF/</url>
-    <content><![CDATA[<p>广告位埋点需求：H5 页面中记录广告区域内的点击坐标信息。</p>
-<p>● etStart 按下时间 时间戳</p>
-<p>● downX 按下相对屏幕 x 坐标</p>
-<p>● downY 按下相对屏幕 y 坐标</p>
-<p>● rDownX 按下相对广告 x 坐标</p>
-<p>● rDownY 按下相对广告 y 坐标</p>
-<p>● etEnd 抬起时间 时间戳</p>
-<p>● upX 抬起相对屏幕 x 坐标</p>
-<p>● upY 抬起相对屏幕 y 坐标</p>
-<p>● rUpX 抬起相对广告 x 坐标</p>
-<p>● rUpY 抬起相对屏幕 y 坐标</p>
-<span id="more"></span>
-
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> adE = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;ad&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="language-javascript">  adE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousedown&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">etStart</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">downX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">downY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rDownX</span> = e.<span class="property">offsetX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rDownY</span> = e.<span class="property">offsetY</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  adE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">etEnd</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">upX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">upY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rUpX</span> = e.<span class="property">offsetX</span></span></span><br><span class="line"><span class="language-javascript">    adCoord.<span class="property">rUpY</span> = e.<span class="property">offsetY</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">var</span> closeE = <span class="variable language_">document</span>.<span class="title function_">getElementsByClassName</span>(<span class="string">&#x27;close&#x27;</span>)[<span class="number">0</span>]</span></span><br><span class="line"><span class="language-javascript">  closeE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mousedown&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">etStart</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">downX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">downY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rDownX</span> = e.<span class="property">pageX</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetLeft</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rDownY</span> = e.<span class="property">pageY</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetTop</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript">  closeE.<span class="title function_">addEventListener</span>(<span class="string">&#x27;mouseup&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">etEnd</span> = <span class="title class_">Date</span>.<span class="title function_">now</span>()</span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">upX</span> = e.<span class="property">screenX</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">upY</span> = e.<span class="property">screenY</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rUpX</span> = e.<span class="property">pageX</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetLeft</span></span></span><br><span class="line"><span class="language-javascript">    closeCoord.<span class="property">rUpY</span> = e.<span class="property">pageY</span> - closeE.<span class="property">offsetParent</span>.<span class="property">offsetTop</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>[1] <a href="https://developer.mozilla.org/zh-CN/docs/Web/Events">Web 开发技术 &gt; 事件参考</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>H5</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>你的node-sass安装报错了吗</title>
-    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
-    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
-<span id="more"></span>
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
-<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
-<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
-<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
-<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
-<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
-<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
-<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>npm</tag>
-        <tag>node-sass</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>移动端1px问题</title>
     <url>/2022/04/18/20220418-%E7%A7%BB%E5%8A%A8%E7%AB%AF1px%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><h3 id="UI设计稿"><a href="#UI设计稿" class="headerlink" title="UI设计稿"></a>UI设计稿</h3><p>移动端H5开发中，UI设计稿中边框为1px，前端在开发过程中如果出现border:1px（或width: 1px，height: 1px，…），测试会发现在HiDPI或Retina屏机型中，1px会比较粗。</p>
@@ -2174,6 +2154,30 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>你的node-sass安装报错了吗</title>
+    <url>/2022/04/14/20220414-%E4%BD%A0%E7%9A%84node-sass%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99%E4%BA%86%E5%90%97/</url>
+    <content><![CDATA[<p>如何解决node-sass安装失败问题？我们从npm安装包的原理出发。</p>
+<span id="more"></span>
+
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>当我们在 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，可能安装 node-sass 包时会报错(项目需用到 node-sass 的情况)</p>
+<p><img src="https://huatree.top/image-20220414170239182.png" alt="image-20220414170239182"></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>报错给了提示，图中的这段信息告诉我们，我当时开发环境安装的 node-sass 中 win32-x64-64 目录下 <code>binding.node</code> 这个文件失效，需要下载替换。</p>
+<h3 id="手动替换文件"><a href="#手动替换文件" class="headerlink" title="手动替换文件"></a>手动替换文件</h3><p>可以在 Github 中下载<a href="https://github.com/sass/node-sass/releases">node-sass 的 binary 对应版本文件</a>来替换。</p>
+<p>比如我报错信息上是<strong>win32-x64-64</strong>版本，那我就找到该版本下载：</p>
+<p><img src="https://huatree.top/image-20220414165653097.png" alt="image-20220414165653097"></p>
+<p>该文件下载成功后，替换掉报错提示的缓存目录下的文件</p>
+<p><img src="https://huatree.top/image-20220414170424379.png" alt="image-20220414170424379"></p>
+<p>再次 VSCode IDE 或其他编辑器中，项目所在目录下执行<code>npm i</code>，此时已成功安装 node-sass 包。</p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>npm</tag>
+        <tag>node-sass</tag>
       </tags>
   </entry>
   <entry>
