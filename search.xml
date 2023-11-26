@@ -8050,4 +8050,84 @@
         <tag>window</tag>
       </tags>
   </entry>
+  <entry>
+    <title>解决git push时卡在total</title>
+    <url>/2023/11/26/20231126-%E8%A7%A3%E5%86%B3git-push%E6%97%B6%E5%8D%A1%E5%9C%A8total/</url>
+    <content><![CDATA[<p>整个事情的发生是这样的：有段时间没更新文章了，突然最近有点东西需要记录分享下，就写了篇文章，依旧之前的老套路调教下 hexo，啊呸，依旧推送到云服务器上的 git 仓库，这次，我挂彩了。在我正装待发时（git push）,出现了意想不到的情况：它不工作了，它定在了<code>&quot;Total 5 (delta 2), reused 0 (delta 0), pack-reused 0&quot;</code>！欲知后事如何，请啃完全文。</p>
+<span id="more"></span>
+
+<h2 id="分析问题"><a href="#分析问题" class="headerlink" title="分析问题"></a>分析问题</h2><p>直接无脑上搜索了，搜了半天，出来个这个：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --<span class="built_in">local</span> sendpack.sideband <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>抱着死马当活马医的心态，直接在项目根目录下上此命令。很平静啊，没有意思反应，我停留了片刻，这是正常现象，git 的配置设置，命令敲完不输出提示内容。当我再次<code>git push</code>，哇，情况好转了，至少不会卡在<code>Total 5 (delta 2), reused 0 (delta 0), pack-reused 0</code>了。此时，控制台抛出了错误提示，看到希望了。</p>
+<p>错误提示内容：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">error: remote unpack failed: unable to create temporary object directory To 120.48.58.244:/home/gitRepo/yujian.git</span><br></pre></td></tr></table></figure>
+
+<p>很好，简单翻译下：无法常见临时目录。很明显嘛，这啥……看不懂！又一次无脑上搜索，找啊找啊找解决方法。边找边想，脑袋里闪现 2 个思路：权限、存储限制。</p>
+<p>权限这块，之前都能正常推送到远程仓库，这个思路直接砍掉。</p>
+<p>存储，联想到 g 推送是报错内容：<code>unable to create temporary object directory</code>，这不就是版本答案吗。</p>
+<p>我悟了！云服务器存储不够了，我飞快的调出平时不常用的 Xshell 7，麻了，还要更新才能用，带着激动的心情，更新好后进入云服务系统 linux debian，直接查水表，看看是不是系统剩余存储不够了。好家伙，我直接好家伙，居然被榨的一点剩余空间都没有了……呜呜呜。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">df</span> -h</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://huatree.top/image-20231126203833416.png" alt="image-20231126203833416"></p>
+<p><img src="https://huatree.top/image-20231126210753216.jpg" alt="4e77750f5a92165a888db911018d790"></p>
+<p><img src="https://huatree.top/image-20231126210835587.jpg" alt="b152c9c27e5362b9036721b697c0095"></p>
+<p><img src="https://huatree.top/image-20231126210853075.jpg" alt="df70a99b5f581871edcac29f008a450"></p>
+<h2 id="x2F-etc-x2F-coredumps"><a href="#x2F-etc-x2F-coredumps" class="headerlink" title="&#x2F;etc&#x2F;coredumps"></a>&#x2F;etc&#x2F;coredumps</h2><p>目录 <code>/etc/coredumps</code> 通常用于存放核心转储文件（core dumps）的配置文件，而不是存放核心转储文件本身的目录。核心转储文件是在程序崩溃时生成的二进制文件，它包含了程序在崩溃时的内存和寄存器状态等信息，有助于开发人员分析崩溃原因。</p>
+<p>如果你发现 <code>/etc/coredumps</code> 下存放的是核心转储文件而不是配置文件，那么这可能是一个误操作或者系统异常的结果。在正常情况下，核心转储文件通常存放在运行程序的工作目录（或其他指定的目录）中。</p>
+<p>请在执行删除操作之前，确保你理解这些文件的作用以及删除可能产生的影响。如果你不确定是否可以删除 <code>/etc/coredumps</code> 目录中的文件，建议先备份这个目录或者咨询系统管理员。</p>
+<p>我又查看了下<code>/etc/coredumps</code>目录中的文件，纠结了一会儿，果断删除，大不了重来过（重装系统，最坏的打算，提前备份好重要文件及配置）。</p>
+<h3 id="删除-x2F-etc-x2F-coredumps"><a href="#删除-x2F-etc-x2F-coredumps" class="headerlink" title="删除&#x2F;etc&#x2F;coredumps"></a>删除&#x2F;etc&#x2F;coredumps</h3><p>rm 直接干</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">rm</span> -f /etc/coredumps/*</span><br></pre></td></tr></table></figure>
+
+<p>出错误了：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">-bash: /bin/rm: Argument list too long</span><br></pre></td></tr></table></figure>
+
+<p>这错误是因为命令行参数列表太长，导致 <code>rm</code> 命令无法处理这么多文件。有几种方法可以解决这个问题：</p>
+<h4 id="使用-find-命令删除"><a href="#使用-find-命令删除" class="headerlink" title="使用 find 命令删除"></a>使用 <code>find</code> 命令删除</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">find coredumps/ -<span class="built_in">type</span> f -<span class="built_in">exec</span> <span class="built_in">rm</span> -f &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<p>这个命令会使用 <code>find</code> 来查找 <code>coredumps/</code> 目录下的所有文件，并逐一删除它们。</p>
+<h4 id="使用-xargs"><a href="#使用-xargs" class="headerlink" title="使用 xargs"></a>使用 <code>xargs</code></h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">find coredumps/ -<span class="built_in">type</span> f | xargs <span class="built_in">rm</span> -f</span><br></pre></td></tr></table></figure>
+
+<p>这个命令使用 <code>find</code> 找到文件，然后将它们传递给 <code>xargs</code>，<code>xargs</code> 再将它们传递给 <code>rm</code>。</p>
+<h4 id="使用-find-的-delete-选项"><a href="#使用-find-的-delete-选项" class="headerlink" title="使用 find 的 -delete 选项"></a>使用 <code>find</code> 的 <code>-delete</code> 选项</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">find coredumps/ -<span class="built_in">type</span> f -delete</span><br></pre></td></tr></table></figure>
+
+<p>这个命令直接在 <code>find</code> 中使用 <code>-delete</code> 选项，而不是使用 <code>-exec</code> 来调用 <code>rm</code>。</p>
+<p>这三种方法都可以避免命令行参数列表过长的问题。请根据你的需求选择其中一种。在运行这些命令之前，请确保你确实想要删除这些文件，因为删除后是无法恢复的。</p>
+<p>最终，选择了第一种，就看它顺眼：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">find coredumps/ -<span class="built_in">type</span> f -<span class="built_in">exec</span> <span class="built_in">rm</span> -f &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<p>文件 list 太多了，此时等待了下 5 分钟左右，成功删除<code>/etc/coredumps</code>目录中的所有文件。</p>
+<h2 id="限制-core-dump-file-大小"><a href="#限制-core-dump-file-大小" class="headerlink" title="限制 core dump file 大小"></a>限制 core dump file 大小</h2><p>在 Linux 系统上，我们可以使用 ulimit 命令来设置核心转储文件（core dump file）的大小限制。以下是一些步骤和示例，演示如何设置核心转储文件的大小限制。</p>
+<h3 id="通过修改-x2F-etc-x2F-security-x2F-limits-conf"><a href="#通过修改-x2F-etc-x2F-security-x2F-limits-conf" class="headerlink" title="通过修改 &#x2F;etc&#x2F;security&#x2F;limits.conf"></a>通过修改 &#x2F;etc&#x2F;security&#x2F;limits.conf</h3><ol>
+<li><p>打开 <code>/etc/security/limits.conf</code> 文件。</p>
+<p> 这里我用的 xftp 7，直接找到文件编辑保存。</p>
+</li>
+<li><p>在文件的末尾添加以下行，表示设置所有用户的核心转储文件大小限制；</p>
+ <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">*    soft    core    102400</span><br></pre></td></tr></table></figure>
+
+<p> 102400：表示 100MB，1MB&#x3D;1024KB</p>
+</li>
+<li><p>如果希望核心转储文件被完全禁用，直接：</p>
+ <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">*    soft    core    0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>验证设置是否生效。</p>
+<p> 使用 <code>ulimit -c</code> 再次检查核心转储文件大小限制，确保它已经被正确设置。</p>
+</li>
+<li><p>重新登录或重新启动云服务器的 linux debian，以使更改生效。</p>
+</li>
+</ol>
+<p>这样，我们就可以通过 ulimit 命令或修改 <code>/etc/security/limits.conf</code> 文件来设置核心转储文件的大小限制。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><code>git push</code>走一遍，OK，成功了！我们成功啦！感谢看到这里的伙伴们，我们下篇文章见。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="https://blog.csdn.net/wota5037/article/details/81872836?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-4-81872836-blog-72813870.235%5Ev38%5Epc_relevant_sort_base2&spm=1001.2101.3001.4242.3&utm_relevant_index=7">git push 一直卡住</a></p>
+<p>[2] <a href="https://blog.csdn.net/ouyang_peng/article/details/81431208">【Git 学习】解决 git push 操作的时候出错，提示 error: unpack failed: unable to create temporary object directory</a></p>
+<p>[3] <a href="https://blog.csdn.net/Hjingeng/article/details/105216116">浅谈 linux 中&#x2F;dev&#x2F;vda1 文件满了解决方法</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
 </search>
