@@ -8150,6 +8150,11 @@
 <p><strong>检查默认站点</strong></p>
 <p>启动Apache和MySQL</p>
 <p><img src="https://huatree.top/image-20240126144424508.png" alt="image-20240126144424508"></p>
+<p>这里，启动MySQL是可能会失败：启动后会自动关闭。可能原因，是之前有安装过MySQL，需删掉注册表中的记录。</p>
+<p>检查MySQL服务是否正在运行，如果是，需要先关闭，Windows系统中，<code>win + R</code>输入：<code>services.msc</code>打开本地服务列表，找到MySQL，停止服务。</p>
+<p>Windows系统中，管理员权限打开CMD，执行下面的命令彻底删除MySQL服务：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sc delete mysql</span><br></pre></td></tr></table></figure>
+
 <p>在浏览器中输入localhost或者127.0.01，站点创建成功，这表明安装成功</p>
 <p><img src="https://huatree.top/image-20240126144136574.png" alt="image-20240126144136574"></p>
 <h3 id="部署环境"><a href="#部署环境" class="headerlink" title="部署环境"></a>部署环境</h3><p>将github上克隆的DVWA文件夹复制到phpStudy指定的默认站点路径下：</p>
@@ -8193,6 +8198,80 @@
       <tags>
         <tag>Web</tag>
         <tag>PHP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ssh链接github端口22被拒绝</title>
+    <url>/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/</url>
+    <content><![CDATA[<p>如果你电脑上的git能在大部分地方进行同步，但是在某处地方的网络下无法同步，并且运行<code>git clone</code>，<code>git pull</code>或<code>git push</code>长久没有反映，最后出现<code>ssh: connect to host github.com port 22: Connection timed out</code>，很可能是你的网络供应商（比如广电网）在出口防火墙上屏蔽了22端口，这意味着你将无法访问其他主机的22端口。</p>
+<span id="more"></span>****
+
+<h2 id="使用GitHub的443端口"><a href="#使用GitHub的443端口" class="headerlink" title="使用GitHub的443端口"></a>使用GitHub的443端口</h2><p>像往常一样，本地clone远程github仓库，突然会提示如下错误：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh: connect to host github.com port 22: Connection timed out.</span><br><span class="line">fatal: Could not <span class="built_in">read</span> from remote repository. </span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights and the repository exists.</span><br></pre></td></tr></table></figure>
+
+<p>大意是22端口被拒接访问，对此，github提供了一种解决方案，允许你使用443端口进行ssh连接，因为443端口是访问https网站所必须的，大部分防火墙都会允许通过，但如果使用代理服务器可能产生干扰。</p>
+<p>我们可以通过 <code>ssh -T</code> 测试，是否有成功提示，如果成功，则可以使用这个解决方案。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh -T -p 443 git@ssh.github.com</span><br></pre></td></tr></table></figure>
+
+<p>如果成功，接下来本地配置一下，让你每次ssh连接github都通过443端口。</p>
+<p>在<code>.ssh/config</code>内，添加以下内容：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">Port 443</span><br><span class="line">User git</span><br></pre></td></tr></table></figure>
+
+<p>Windows系统，可以在桌面空白处单击鼠标右键，选择<code>Git Bash here</code>，然后在窗口中输入<code>ll -d ~/.ssh</code>也可以查询到<code>.ssh目录</code>的位置。如果<code>~/.ssh</code>目录下没有config文件，新建一个即可。</p>
+<p>修改完<code>~/.ssh/config</code>文件后，使用<code>ssh -T git@github.com</code>来测试和GitHub的网络通信是否正常，如果提示<code>Hi xxxxx! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 就表示一切正常了。</p>
+<p><strong>这个方案有效的前提是</strong>：执行命令<code>ssh -T -p 443 git@ssh.github.com</code>后不再提示<code>connection refused</code>，所以要尝试这个方案的小伙伴先执行这条命令测试下。</p>
+<h2 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h2><p>既然和GitHub建立ssh连接的时候提示<code>connection refused</code>，那我们就详细看看建立ssh连接的过程中发生了什么，可以使用<code>ssh -v</code>命令，<code>-v</code>表示verbose，会打出详细日志。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh -vT git@github.com</span><br><span class="line">OpenSSH_9.0p1, OpenSSL 1.1.1o  3 May 2022</span><br><span class="line">debug1: Reading configuration data /etc/ssh/ssh_config</span><br><span class="line">debug1: Connecting to github.com [::1] port 22.</span><br><span class="line">debug1: connect to address ::1 port 22: Connection refused</span><br><span class="line">debug1: Connecting to github.com [127.0.0.1] port 22.</span><br><span class="line">debug1: connect to address 127.0.0.1 port 22: Connection refused</span><br><span class="line">ssh: connect to host github.com port 22: Connection refused</span><br></pre></td></tr></table></figure>
+
+<p>从上面的信息马上就发现了诡异的地方，连接<a href="https://link.zhihu.com/?target=http://github.com">http://github.com</a>的地址居然是<code>::1</code>和<code>127.0.0.1</code>。前者是IPV6的localhost地址，后者是IPV4的localhost地址。</p>
+<p>到这里问题就很明确了，是DNS解析出问题了，导致<a href="https://link.zhihu.com/?target=http://github.com">http://github.com</a>域名被解析成了localhost的ip地址，就自然连不上GitHub了。</p>
+<p>Windows下执行<code>ipconfig /flushdns</code> 清楚DNS缓存后也没用，最后修改hosts文件，增加一条github.com的域名映射搞定。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">20.205.243.166 github.com</span><br></pre></td></tr></table></figure>
+
+<p>查找<a href="https://link.zhihu.com/?target=http://github.com">http://github.com</a>的ip地址可以使用<a href="https://link.zhihu.com/?target=https://www.ipaddress.com/">https://www.ipaddress.com/</a>来查询，也可以使用<code>nslookup</code>命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nslookup github.com 8.8.8.8</span><br></pre></td></tr></table></figure>
+
+<p><code>nslookup</code>是域名解析工具，<code>8.8.8.8</code>是Google的DNS服务器地址。直接使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nslookup github.com</span><br></pre></td></tr></table></figure>
+
+<p>就会使用本机已经设置好的DNS服务器进行域名解析，<code>ipconfig /all</code>可以查看本机DNS服务器地址。</p>
+<p>这个问题其实就是DNS解析被污染了，有2种可能：</p>
+<ul>
+<li>DNS解析被运营商劫持了</li>
+<li>使用了科学上网工具</li>
+</ul>
+<h2 id="git-pull或git-push出现Permission-denied-publickey"><a href="#git-pull或git-push出现Permission-denied-publickey" class="headerlink" title="git pull或git push出现Permission denied (publickey)"></a>git pull或git push出现Permission denied (publickey)</h2><p>先检测下</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">git@github.com: Permission denied (publickey).</span><br></pre></td></tr></table></figure>
+
+<p>可能SSH密钥过期了，去<a href="https://docs.github.com/zh/authentication/troubleshooting-ssh/deleted-or-missing-ssh-keys">github官方文档</a>查下，真相了：作为安全预防措施，GitHub 会自动删除一年内未使用过的 SSH 密钥。</p>
+<p>通过命令 ssh-keygen 生成 SSH Key</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t ed25519 -C <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>中间通过三次<strong>回车键</strong>确定</p>
+<p>查看生成的 SSH 公钥和私钥</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> ~/.ssh/</span><br></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">id_ed25519  id_ed25519.pub</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>私钥文件 <code>id_ed25519</code></li>
+<li>公钥文件 <code>id_ed25519.pub</code></li>
+</ul>
+<p>复制公钥文件内容到github的设置中，<a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account#adding-a-new-ssh-key-to-your-account">详见</a>。</p>
+<p>测试SSH连接，<a href="https://docs.github.com/zh/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection">详见</a></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="https://segmentfault.com/a/1190000040896781">解决 ssh: connect to host github.com port 22: Connection timed out</a></p>
+<p>[2] <a href="https://zhuanlan.zhihu.com/p/521340971">坑：ssh: connect to host github.com port 22: Connection refused</a></p>
+<p>[3] <a href="https://docs.github.com/zh/authentication">GitHub 文档 - 身份验证</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>ssh</tag>
       </tags>
   </entry>
 </search>
