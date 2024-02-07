@@ -8274,4 +8274,61 @@
         <tag>ssh</tag>
       </tags>
   </entry>
+  <entry>
+    <title>NexT主题配置</title>
+    <url>/2023/09/01/20230901-NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>本文基于<em>hexo-theme-next</em>主题插件配置的扫盲分享，节省你走弯路的时间。</p>
+<span id="more"></span>
+
+<h2 id="链接站内文章"><a href="#链接站内文章" class="headerlink" title="链接站内文章"></a>链接站内文章</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% post_link 文章对应的文件名 %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="指定站点设置的年份"><a href="#指定站点设置的年份" class="headerlink" title="指定站点设置的年份"></a>指定站点设置的年份</h2><p>配置<code>_config.next.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">footer:</span></span><br><span class="line">  <span class="comment"># Specify the year when the site was setup. If not defined, current year will be used.</span></span><br><span class="line">  <span class="attr">since:</span> <span class="number">2021</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="添加本地搜索服务"><a href="#添加本地搜索服务" class="headerlink" title="添加本地搜索服务"></a>添加本地搜索服务</h2><p>安装npm包</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+
+<p>配置<code>_config.next.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>配置<code>_config.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local Search</span></span><br><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br><span class="line">  <span class="attr">limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="开启不蒜子统计"><a href="#开启不蒜子统计" class="headerlink" title="开启不蒜子统计"></a>开启不蒜子统计</h2><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">busuanzi_count:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="主题自定义样式"><a href="#主题自定义样式" class="headerlink" title="主题自定义样式"></a>主题自定义样式</h2><p>配置<code>_config.next.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line"> <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br></pre></td></tr></table></figure>
+
+<p><code>source/_data/styles.styl</code>为样式文件路径</p>
+<h2 id="添加评论系统gitalk"><a href="#添加评论系统gitalk" class="headerlink" title="添加评论系统gitalk"></a>添加评论系统gitalk</h2><p><a href="https://blog.csdn.net/a171232886/article/details/121206824">详见</a></p>
+<h2 id="站点页脚备案信息"><a href="#站点页脚备案信息" class="headerlink" title="站点页脚备案信息"></a>站点页脚备案信息</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">footer:  </span><br><span class="line"> beian:</span><br><span class="line">    enable: true</span><br><span class="line">    icp: 蜀ICP备2022016364号-1</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置最近文章"><a href="#配置最近文章" class="headerlink" title="配置最近文章"></a>配置最近文章</h2><p><code>source/_data</code>路径下新建sidebar.njk文件，内容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;# RecentPosts #&#125;</span><br><span class="line">&#123;% if theme.recent_posts %&#125;</span><br><span class="line">  &lt;div class=&quot;links-of-recent-posts site-overview-item animated&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;links-of-recent-posts-title&quot;&gt;</span><br><span class="line">      &#123;% if theme.recent_posts.icon %&#125;</span><br><span class="line">      &lt;i class=&quot;&#123;&#123; theme.recent_posts.icon &#125;&#125; fa-fw&quot;&gt;&lt;/i&gt;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">      &#123;&#123; theme.recent_posts.title &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;ul class=&quot;links-of-recent-posts-list&quot;&gt;</span><br><span class="line">      &#123;% set posts = site.posts.sort(&#x27;date&#x27;, &#x27;desc&#x27;).toArray() %&#125;</span><br><span class="line">      &#123;% for post in posts.slice(&#x27;0&#x27;, theme.recent_posts.max_count) %&#125;</span><br><span class="line">        &lt;li class=&quot;links-of-recent-posts-item&quot;&gt;</span><br><span class="line">          &#123;&#123; next_url(post.path, post.title, &#123;title: post.path&#125;) &#125;&#125;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>source/_data/styles.styl</code>增加样式：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 近期文章</span></span><br><span class="line"><span class="selector-class">.links-of-recent-posts</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">0.8125em</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.links-of-recent-posts-title</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">1.03em</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: <span class="number">600</span>;</span><br><span class="line">  <span class="attribute">margin-top</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.links-of-recent-posts-list</span> &#123;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置<code>_config.next.yml</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line"> <span class="attr">sidebar:</span> <span class="string">source/_data/sidebar.njk</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 最近文章</span></span><br><span class="line"><span class="attr">recent_posts:</span></span><br><span class="line"><span class="comment"># 块标题</span></span><br><span class="line">  <span class="attr">title:</span> <span class="string">最近文章</span></span><br><span class="line"><span class="comment"># 图标</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">fa</span> <span class="string">fa-history</span></span><br><span class="line"><span class="comment"># 最多多少文章链接</span></span><br><span class="line">  <span class="attr">max_count:</span> <span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>以更新时间倒叙排序，修改<code>source/_data/sidebar.njk</code>文件内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;# RecentPosts #&#125;</span><br><span class="line">&#123;% if theme.recent_posts %&#125;</span><br><span class="line">  &lt;div class=&quot;links-of-recent-posts site-overview-item animated&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;links-of-recent-posts-title&quot;&gt;</span><br><span class="line">      &#123;% if theme.recent_posts.icon %&#125;</span><br><span class="line">      &lt;i class=&quot;&#123;&#123; theme.recent_posts.icon &#125;&#125; fa-fw&quot;&gt;&lt;/i&gt;</span><br><span class="line">      &#123;% endif %&#125;</span><br><span class="line">      &#123;&#123; theme.recent_posts.title &#125;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;ul class=&quot;links-of-recent-posts-list&quot;&gt;</span><br><span class="line">      &#123;% set posts = site.posts.sort(&#x27;updated&#x27;, &#x27;desc&#x27;).toArray() %&#125;</span><br><span class="line">      &#123;% for post in posts.slice(&#x27;0&#x27;, theme.recent_posts.max_count) %&#125;</span><br><span class="line">        &lt;li class=&quot;links-of-recent-posts-item&quot;&gt;</span><br><span class="line">          &#123;&#123; next_url(post.path, post.title, &#123;title: post.path&#125;) &#125;&#125;</span><br><span class="line">        &lt;/li&gt;</span><br><span class="line">      &#123;% endfor %&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="http://theme-next.iissnan.com/">NexT 官方文档</a></p>
+<p>[2] <a href="https://theme-next.js.org/docs/">NexT Theme for Hexo Docs</a></p>
+<p>[3] <a href="https://github.com/iissnan/hexo-theme-next/issues/978">请问博主，next或者hexo，链接站内文章的方法？</a></p>
+<p>[4] <a href="https://gitalk.github.io/">GITALK - 一个基于 Github Issue 和 Preact 开发的评论插件</a></p>
+<p>[5] <a href="https://nunjucks.bootcss.com/index.html">Nunjucks</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
 </search>
