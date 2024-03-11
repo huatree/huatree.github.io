@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="JavaScript真的挺无语的，怪不得看了那么多的介绍文章还是一头雾水，直到自己终于弄懂了一点点之后才深有体会：先从整体说起吧，发现没有基础做依据，那都是空中楼阁；先从基础开始介绍吧，又发现基础是个蛇头咬蛇尾的圆环，无从下手，应该先整体介绍。于是介绍本身就成了一个死循环。。。">
 <meta property="og:type" content="article">
@@ -28,31 +29,31 @@
 <meta property="og:site_name" content="醉梦的网络日志">
 <meta property="og:description" content="JavaScript真的挺无语的，怪不得看了那么多的介绍文章还是一头雾水，直到自己终于弄懂了一点点之后才深有体会：先从整体说起吧，发现没有基础做依据，那都是空中楼阁；先从基础开始介绍吧，又发现基础是个蛇头咬蛇尾的圆环，无从下手，应该先整体介绍。于是介绍本身就成了一个死循环。。。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://huatree.top/image-20230819140318738.png">
-<meta property="og:image" content="https://huatree.top/image-20230819140433456.png">
-<meta property="og:image" content="https://huatree.top/image-20230819141336724.png">
-<meta property="og:image" content="https://huatree.top/image-20230819141417425.png">
-<meta property="og:image" content="https://huatree.top/image-20230819142105214.png">
-<meta property="og:image" content="https://huatree.top/image-20230819142320288.png">
-<meta property="og:image" content="https://huatree.top/image-20230819155326568.png">
-<meta property="og:image" content="https://huatree.top/image-20230819160149157.png">
-<meta property="og:image" content="https://huatree.top/image-20230819164038834.png">
-<meta property="og:image" content="https://huatree.top/image-20230819164504341.png">
-<meta property="og:image" content="https://huatree.top/image-20230819165535056.png">
-<meta property="og:image" content="https://huatree.top/image-20230819170445848.png">
-<meta property="og:image" content="https://huatree.top/image-20230819171012052.png">
-<meta property="og:image" content="https://huatree.top/image-20230819171455539.png">
-<meta property="og:image" content="https://huatree.top/image-20230819171706281.png">
-<meta property="og:image" content="https://huatree.top/image-20230819172949924.png">
-<meta property="og:image" content="https://huatree.top/image-20230819180215179.png">
-<meta property="og:image" content="https://huatree.top/image-20230819140318738.png">
-<meta property="og:image" content="https://huatree.top/image-20230819180717861.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819140318738.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819140433456.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819141336724.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819141417425.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819142105214.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819142320288.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819155326568.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819160149157.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819164038834.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819164504341.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819165535056.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819170445848.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819171012052.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819171455539.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819171706281.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819172949924.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819180215179.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819140318738.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230819180717861.png">
 <meta property="article:published_time" content="2023-08-19T05:48:13.000Z">
-<meta property="article:modified_time" content="2023-08-19T12:00:45.525Z">
+<meta property="article:modified_time" content="2024-03-11T12:38:02.826Z">
 <meta property="article:author" content="醉梦">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://huatree.top/image-20230819140318738.png">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20230819140318738.png">
 
 
 <link rel="canonical" href="https://www.huatree.top/2023/08/19/20230819-%E5%BD%BB%E5%BA%95%E6%90%9E%E6%B8%85%E6%A5%9A-JavaScript-%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/">
@@ -180,7 +181,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -212,6 +213,9 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+        <li class="links-of-blogroll-item">
           <a href="https://jspang.com/" title="https:&#x2F;&#x2F;jspang.com&#x2F;" rel="noopener" target="_blank">JSPang</a>
         </li>
     </ul>
@@ -229,11 +233,7 @@
       
       
         <li class="links-of-recent-posts-item">
-          <a href="/2023/09/01/20230901-NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" title="2023&#x2F;09&#x2F;01&#x2F;20230901-NexT主题配置&#x2F;">NexT主题配置</a>
-        </li>
-      
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/01/26/20240126-DVWA-Web%E6%B8%97%E9%80%8F%E4%B9%8B%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BA/" title="2024&#x2F;01&#x2F;26&#x2F;20240126-DVWA-Web渗透之搭建靶场&#x2F;">DVWA-Web渗透之搭建靶场</a>
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
         </li>
       
         <li class="links-of-recent-posts-item">
@@ -241,11 +241,15 @@
         </li>
       
         <li class="links-of-recent-posts-item">
+          <a href="/2024/03/03/20240303-DVWA-Web%E6%B8%97%E9%80%8F%E5%AE%9E%E8%B7%B5/" title="2024&#x2F;03&#x2F;03&#x2F;20240303-DVWA-Web渗透实践&#x2F;">DVWA-Web渗透实践</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
           <a href="/2023/11/26/20231126-%E8%A7%A3%E5%86%B3git-push%E6%97%B6%E5%8D%A1%E5%9C%A8total/" title="2023&#x2F;11&#x2F;26&#x2F;20231126-解决git-push时卡在total&#x2F;">解决git push时卡在total</a>
         </li>
       
         <li class="links-of-recent-posts-item">
-          <a href="/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" title="2021&#x2F;01&#x2F;29&#x2F;20210129-Git必知必会&#x2F;">Git必知必会</a>
+          <a href="/2024/01/26/20240126-DVWA-Web%E6%B8%97%E9%80%8F%E4%B9%8B%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BA/" title="2024&#x2F;01&#x2F;26&#x2F;20240126-DVWA-Web渗透之搭建靶场&#x2F;">DVWA-Web渗透之搭建靶场</a>
         </li>
       
     </ul>
@@ -312,9 +316,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-08-19 13:48:13 / 修改时间：20:00:45" itemprop="dateCreated datePublished" datetime="2023-08-19T13:48:13+08:00">2023-08-19</time>
+      <time title="创建时间：2023-08-19 13:48:13" itemprop="dateCreated datePublished" datetime="2023-08-19T13:48:13+08:00">2023-08-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -380,30 +390,30 @@
 <p>经常听说，JavaScript 的世界是基于 Object 的，这句话对但是又不对，为啥这么说呢？我们来看看 Object 的结构：（使用 console.dir() 可以看到细节 ）</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Object</span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819140318738.png" alt="image-20230819140318738"></p>
+<p><img src="https://cdn.huatree.top/image-20230819140318738.png" alt="image-20230819140318738"></p>
 <p>首先请注意一下那个 <em>f</em> 的标识，这表示 Object 其实是一个函数（从 JavaScript 的语法角度来看），我们来验证一下：</p>
-<p><img src="https://huatree.top/image-20230819140433456.png" alt="image-20230819140433456"></p>
+<p><img src="https://cdn.huatree.top/image-20230819140433456.png" alt="image-20230819140433456"></p>
 <p>这到底是怎么回事呢？后面细说，先把找到源头才好理解。</p>
 <p>这个 Object 并不是源头，因为还有 prototype 和 __proto__， 我们先看看 Object.prototype 的结构：</p>
 <h3 id="Object-prototype"><a href="#Object-prototype" class="headerlink" title="Object.prototype"></a>Object.prototype</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819141336724.png" alt="image-20230819141336724"></p>
+<p><img src="https://cdn.huatree.top/image-20230819141336724.png" alt="image-20230819141336724"></p>
 <p>可以看到，Object.prototype 才是源头，因为 Object.prototype 没有 prototype（当然没有），<code>__proto__</code> 也是 null，我们来验证一下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Object</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">__proto__</span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819141417425.png" alt="image-20230819141417425"></p>
+<p><img src="https://cdn.huatree.top/image-20230819141417425.png" alt="image-20230819141417425"></p>
 <h3 id="Object-proto"><a href="#Object-proto" class="headerlink" title="Object.__proto __"></a>Object.<code>__proto __</code></h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Object</span>.<span class="property">__proto__</span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819142105214.png" alt="image-20230819142105214"></p>
+<p><img src="https://cdn.huatree.top/image-20230819142105214.png" alt="image-20230819142105214"></p>
 <p>这是啥？是不是很头晕，这个其实指向的是Function的原型，我们来验证一下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Object</span>.<span class="property">__proto__</span> === <span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819142320288.png" alt="image-20230819142320288"></p>
+<p><img src="https://cdn.huatree.top/image-20230819142320288.png" alt="image-20230819142320288"></p>
 <p>这是咋回事？后面再解释。</p>
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>是不是有点晕，让我们来梳理一下思路：</p>
-<p><img src="https://huatree.top/image-20230819155326568.png" alt="image-20230819155326568"></p>
+<p><img src="https://cdn.huatree.top/image-20230819155326568.png" alt="image-20230819155326568"></p>
 <p>如果看上面的图有点晕的话，可以先看下面的图，红线说的是构造函数的关系，可以先跳过。（终于画出来了那种绕圈圈的图，向着专业又迈出了一步）</p>
-<p><img src="https://huatree.top/image-20230819160149157.png" alt="image-20230819160149157"></p>
+<p><img src="https://cdn.huatree.top/image-20230819160149157.png" alt="image-20230819160149157"></p>
 <ul>
 <li>思路一：<br>Object有两个属性，一个是对象原型，一个是函数原型。</li>
 <li>思路二：<br>Object有两个指针，一个指向对象原型，一个指向函数原型。</li>
@@ -412,11 +422,11 @@
 <h2 id="构建一颗大树-——-对象的继承关系"><a href="#构建一颗大树-——-对象的继承关系" class="headerlink" title="构建一颗大树 —— 对象的继承关系"></a>构建一颗大树 —— 对象的继承关系</h2><p>找到源头之后，我们就可以构建一颗大树了。</p>
 <p>构建原则：xxx.prototype.<code>__proto__</code> &#x3D;&#x3D;&#x3D; Object.prototype</p>
 <p>即：Object.prototype 看做父类，然后把其“子类”画出来。</p>
-<p><img src="https://huatree.top/image-20230819164038834.png" alt="image-20230819164038834"></p>
+<p><img src="https://cdn.huatree.top/image-20230819164038834.png" alt="image-20230819164038834"></p>
 <p>这下是不是清晰多了呢？我们来验证一下：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Array</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819164504341.png" alt="image-20230819164504341"></p>
+<p><img src="https://cdn.huatree.top/image-20230819164504341.png" alt="image-20230819164504341"></p>
 <p>好长好长，差点截不下来。剩下的自己下来测试验证啦。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">String</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Number</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">BigInt</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Boolean</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Symbol</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Date</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">RegExp</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Math</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br></pre></td></tr></table></figure>
 
@@ -433,14 +443,14 @@
 <p>因为从 JavaScript 的语法的角度来看，Object、String、Number、Array、Function等都是函数，Object.prototype、String.prototype 等才是对象。<br>我们从函数的角度来构造另一颗大树。</p>
 <p>依据：xxx.<code>__proto__</code> &#x3D;&#x3D;&#x3D; Function.prototype</p>
 <p>即：把Function.prototype看做父类，把他的子类（__proto__指向他的）都画出来。</p>
-<p><img src="https://huatree.top/image-20230819165535056.png" alt="image-20230819165535056"></p>
+<p><img src="https://cdn.huatree.top/image-20230819165535056.png" alt="image-20230819165535056"></p>
 <p>这里加上“()”，明确一下，然后我们来看一下具体的结构：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Function</span>.<span class="property"><span class="keyword">prototype</span></span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819170445848.png" alt="image-20230819170445848"></p>
+<p><img src="https://cdn.huatree.top/image-20230819170445848.png" alt="image-20230819170445848"></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">String</span>);</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819171012052.png" alt="image-20230819171012052"></p>
+<p><img src="https://cdn.huatree.top/image-20230819171012052.png" alt="image-20230819171012052"></p>
 <p>剩下的自行验证。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Number</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Boolean</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">BigInt</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Symbol</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Date</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">RegExp</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">dir</span>(<span class="title class_">Array</span>);</span><br></pre></td></tr></table></figure>
 
@@ -454,9 +464,9 @@
 <p>这和我们经常用到表述方式有点不一样，也正是这个原因，导致理解和表达的时候非常混乱。</p>
 <p>我们还是来验证一下：</p>
 <p><strong>函数：</strong></p>
-<p><img src="https://huatree.top/image-20230819171455539.png" alt="image-20230819171455539"></p>
+<p><img src="https://cdn.huatree.top/image-20230819171455539.png" alt="image-20230819171455539"></p>
 <p><strong>对象：</strong></p>
-<p><img src="https://huatree.top/image-20230819171706281.png" alt="image-20230819171706281"></p>
+<p><img src="https://cdn.huatree.top/image-20230819171706281.png" alt="image-20230819171706281"></p>
 <p>这里有一个特例，Function.prototype 是一个函数，而且是所有函数的源头。</p>
 <p>所以说，从 JavaScript 的语法角度来看，函数就是函数，对象就是对象，不存在Object既是对象又是函数的情况。</p>
 <p>那么到底是什么关系呢？我们定义一套函数来具体分析一下。</p>
@@ -467,7 +477,7 @@
 <p>我们打印来看看结构：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Base</span>();</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Man</span>();</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://huatree.top/image-20230819172949924.png" alt="image-20230819172949924"></p>
+<p><img src="https://cdn.huatree.top/image-20230819172949924.png" alt="image-20230819172949924"></p>
 <ul>
 <li>构造函数 constructor<br>打印结果很清晰的表达了，构造函数就是我们定义的class。</li>
 <li>属性<br>属性比较简单，统统都挂在 this 上面，而且是同一个级别。</li>
@@ -481,13 +491,13 @@
 <li>prototype：<br>prototype 是自己的原型，其原型可以是函数，也可以是对象。有各自的继承体系。</li>
 <li><strong>proto</strong> ：<br><strong>proto</strong> 指向上一级原型，并不是自己的，只是一个指针，方便使用父级的方法和属性。<br>可以指向对象，也可以指向函数。</li>
 </ul>
-<p><img src="https://huatree.top/image-20230819180215179.png" alt="image-20230819180215179"></p>
+<p><img src="https://cdn.huatree.top/image-20230819180215179.png" alt="image-20230819180215179"></p>
 <h2 id="组合-VS-继承"><a href="#组合-VS-继承" class="headerlink" title="组合 VS 继承"></a>组合 VS 继承</h2><p>一提到面向对象，大家一般都会想到封装、继承、和多态。但是 JavaScript 却不是这个思路。<br>上面那颗大树看起来是继承的关系，Object.prototype 是基类，派生出来 Object.prototype、Function.prototype、string.prototype等。</p>
 <p>但是其实这里面隐藏了组合的方式。</p>
 <p>我们展开Object 来看看，就会发现自己进入了一个迷宫。</p>
-<p><img src="https://huatree.top/image-20230819140318738.png" alt="image-20230819140318738"></p>
+<p><img src="https://cdn.huatree.top/image-20230819140318738.png" alt="image-20230819140318738"></p>
 <h3 id="object-的“特殊”的结构"><a href="#object-的“特殊”的结构" class="headerlink" title="object 的“特殊”的结构"></a>object 的“特殊”的结构</h3><p>看上面的图我们会发现，Object 并不像我们想象的那么简单，有很多的方法，我们随便找几个点开看看：</p>
-<p><img src="https://huatree.top/image-20230819180717861.png" alt="image-20230819180717861"></p>
+<p><img src="https://cdn.huatree.top/image-20230819180717861.png" alt="image-20230819180717861"></p>
 <p>每一个函数都有自己的原型链（__proto__），是不是有一种进入迷宫的感觉？我当初看的到时候就被吓退了，这都是个啥？</p>
 <p>但是我们换个思路来理解，就清晰多了，那就是：组合代替继承！</p>
 <p>Object 其实是由若干个函数组合而成。</p>
@@ -626,13 +636,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">321k</span>
+    <span title="站点总字数">343k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:52</span>
+    <span title="站点阅读时长">5:12</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -659,6 +669,9 @@
 
   
   <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -667,6 +680,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
   

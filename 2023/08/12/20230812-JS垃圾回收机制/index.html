@@ -18,8 +18,9 @@
 
 <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="JavaScript是门魅力无限的语言，关于它的GC（垃圾回收）方面，你了解多少呢？想来大部分人是因为面试才去看一些面试题从而了解的垃圾回收。 当然，我们可不仅仅是为了面试，其目的是一次性彻底搞懂 GC！假如你对其中某块内容不太理解，不要着急，先读完整篇文章了解内容再回过头来仔细看一遍就会清晰很多，干货满满，先赞后看哦。">
 <meta property="og:type" content="article">
@@ -28,21 +29,21 @@
 <meta property="og:site_name" content="醉梦的网络日志">
 <meta property="og:description" content="JavaScript是门魅力无限的语言，关于它的GC（垃圾回收）方面，你了解多少呢？想来大部分人是因为面试才去看一些面试题从而了解的垃圾回收。 当然，我们可不仅仅是为了面试，其目的是一次性彻底搞懂 GC！假如你对其中某块内容不太理解，不要着急，先读完整篇文章了解内容再回过头来仔细看一遍就会清晰很多，干货满满，先赞后看哦。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://huatree.top/image-20230813014556183.png">
-<meta property="og:image" content="https://huatree.top/image-20230812223723276.png">
-<meta property="og:image" content="https://huatree.top/image-20230812225242377.png">
-<meta property="og:image" content="https://huatree.top/image-20230812230749988.png">
-<meta property="og:image" content="https://huatree.top/image-20230812235903208.png">
-<meta property="og:image" content="https://huatree.top/image-20230813010050238.png">
-<meta property="og:image" content="https://huatree.top/image-20230813010230686.png">
-<meta property="og:image" content="https://huatree.top/image-20230813011227539.png">
-<meta property="og:image" content="https://huatree.top/image-20230813012453685.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813014556183.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812223723276.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812225242377.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812230749988.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812235903208.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813010050238.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813010230686.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813011227539.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813012453685.png">
 <meta property="article:published_time" content="2023-08-12T08:02:26.000Z">
-<meta property="article:modified_time" content="2023-08-12T17:50:13.088Z">
+<meta property="article:modified_time" content="2024-03-11T12:38:02.824Z">
 <meta property="article:author" content="醉梦">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://huatree.top/image-20230813014556183.png">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20230813014556183.png">
 
 
 <link rel="canonical" href="https://www.huatree.top/2023/08/12/20230812-JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
@@ -170,7 +171,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -202,6 +203,9 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+        <li class="links-of-blogroll-item">
           <a href="https://jspang.com/" title="https:&#x2F;&#x2F;jspang.com&#x2F;" rel="noopener" target="_blank">JSPang</a>
         </li>
     </ul>
@@ -219,11 +223,7 @@
       
       
         <li class="links-of-recent-posts-item">
-          <a href="/2023/09/01/20230901-NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/" title="2023&#x2F;09&#x2F;01&#x2F;20230901-NexT主题配置&#x2F;">NexT主题配置</a>
-        </li>
-      
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/01/26/20240126-DVWA-Web%E6%B8%97%E9%80%8F%E4%B9%8B%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BA/" title="2024&#x2F;01&#x2F;26&#x2F;20240126-DVWA-Web渗透之搭建靶场&#x2F;">DVWA-Web渗透之搭建靶场</a>
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
         </li>
       
         <li class="links-of-recent-posts-item">
@@ -231,11 +231,15 @@
         </li>
       
         <li class="links-of-recent-posts-item">
+          <a href="/2024/03/03/20240303-DVWA-Web%E6%B8%97%E9%80%8F%E5%AE%9E%E8%B7%B5/" title="2024&#x2F;03&#x2F;03&#x2F;20240303-DVWA-Web渗透实践&#x2F;">DVWA-Web渗透实践</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
           <a href="/2023/11/26/20231126-%E8%A7%A3%E5%86%B3git-push%E6%97%B6%E5%8D%A1%E5%9C%A8total/" title="2023&#x2F;11&#x2F;26&#x2F;20231126-解决git-push时卡在total&#x2F;">解决git push时卡在total</a>
         </li>
       
         <li class="links-of-recent-posts-item">
-          <a href="/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" title="2021&#x2F;01&#x2F;29&#x2F;20210129-Git必知必会&#x2F;">Git必知必会</a>
+          <a href="/2024/01/26/20240126-DVWA-Web%E6%B8%97%E9%80%8F%E4%B9%8B%E6%90%AD%E5%BB%BA%E9%9D%B6%E5%9C%BA/" title="2024&#x2F;01&#x2F;26&#x2F;20240126-DVWA-Web渗透之搭建靶场&#x2F;">DVWA-Web渗透之搭建靶场</a>
         </li>
       
     </ul>
@@ -310,7 +314,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-08-13 01:50:13" itemprop="dateModified" datetime="2023-08-13T01:50:13+08:00">2023-08-13</time>
+      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -356,7 +360,7 @@
     <div class="post-body" itemprop="articleBody">
         <p>JavaScript是门魅力无限的语言，关于它的GC（垃圾回收）方面，你了解多少呢？想来大部分人是因为面试才去看一些面试题从而了解的垃圾回收。</p>
 <p>当然，我们可不仅仅是为了面试，其目的是一次性彻底搞懂 GC！假如你对其中某块内容不太理解，不要着急，先读完整篇文章了解内容再回过头来仔细看一遍就会清晰很多，干货满满，先赞后看哦。</p>
-<p><img src="https://huatree.top/image-20230813014556183.png" alt="image-20230813014556183"></p>
+<p><img src="https://cdn.huatree.top/image-20230813014556183.png" alt="image-20230813014556183"></p>
 <span id="more"></span>
 
 <h2 id="操作系统中的存储结构"><a href="#操作系统中的存储结构" class="headerlink" title="操作系统中的存储结构"></a>操作系统中的存储结构</h2><ul>
@@ -418,15 +422,15 @@
 </tbody></table>
 </li>
 <li><p>大多数程序(例如谷歌浏览器的安装文件)都保存在硬盘上，当要执行的时候才加载到内存，操作系统会为该应用程序创建一个新的进程，并为它分配必要的资源，如内存空间、文件描述符等。还会为其开辟一个线程以运行程序。如下图：</p>
-<p><img src="https://huatree.top/image-20230812223723276.png" alt="image-20230812223723276"></p>
+<p><img src="https://cdn.huatree.top/image-20230812223723276.png" alt="image-20230812223723276"></p>
 </li>
 <li><p>在上图中，操作系统会为每个应用程序创建一个进程，并且每个应用程序都占据着一定的内存空间。</p>
 </li>
 <li><p>进程又能创建线程，并且每个进程最少拥有一个线程，称为主线程，如下图：</p>
-<p><img src="https://huatree.top/image-20230812225242377.png" alt="image-20230812225242377"></p>
+<p><img src="https://cdn.huatree.top/image-20230812225242377.png" alt="image-20230812225242377"></p>
 </li>
 <li><p>一个谷歌浏览器拥有多个线程,用于运行每一个浏览器页面。</p>
-<p><img src="https://huatree.top/image-20230812230749988.png" alt="image-20230812230749988"></p>
+<p><img src="https://cdn.huatree.top/image-20230812230749988.png" alt="image-20230812230749988"></p>
 </li>
 <li><p>根据速度和价格，各种不同的存储可以按层次来分类，如上图所示。层次越高，价格越贵，速度越快。</p>
 </li>
@@ -462,7 +466,7 @@
 <p>如上所示，我们假设它是一个完整的程序代码。</p>
 <p>我们知道 <code>JavaScript</code> 的引用数据类型是保存在堆内存中的，然后在栈内存中保存一个对堆内存中实际对象的引用，所以，<code>JavaScript</code> 中对引用数据类型的操作都是操作对象的引用而不是实际的对象。可以简单理解为，栈内存中保存了一个地址，这个地址和堆内存中的实际值是相关的</p>
 <p>那上面代码首先我们声明了一个变量 <code>test</code>，它引用了对象 <code>&#123;name: &#39;isboyjc&#39;&#125;</code>，接着我们把这个变量重新赋值了一个数组对象，也就变成了该变量引用了一个数组，那么之前的对象引用关系就没有了，如下图：</p>
-<p><img src="https://huatree.top/image-20230812235903208.png" alt="image-20230812235903208"></p>
+<p><img src="https://cdn.huatree.top/image-20230812235903208.png" alt="image-20230812235903208"></p>
 <p>没有了引用关系，也就是无用的对象，这个时候假如任由它搁置，一个两个还好，多了的话内存也会受不了，所以就需要被清理（回收）</p>
 <p>用官方一点的话说，程序的运行需要内存，只要程序提出要求，操作系统或者运行时就必须提供内存，那么对于持续运行的服务进程，必须要及时释放内存，否则，内存占用越来越高，轻则影响系统性能，重则就会导致进程崩溃。</p>
 <h3 id="怎么回收"><a href="#怎么回收" class="headerlink" title="怎么回收"></a>怎么回收</h3><p>大多数内存管理的问题都在这个阶段。在这里最艰难的任务是找到“哪些被分配的内存确实已经不再需要了”。它往往要求开发人员来确定在程序中哪一块内存不再需要并且释放它。</p>
@@ -516,9 +520,9 @@
 <p>标记清除算法的优点只有一个，那就是实现比较简单，打标记也无非打与不打两种情况，这使得一位二进制位（0和1）就可以为其标记，非常简单。</p>
 <p><strong>缺点：</strong></p>
 <p>标记清除算法有一个很大的缺点，就是在清除之后，剩余的对象内存位置是不变的，也会导致空闲内存空间是不连续的，出现了 <code>内存碎片</code>，并且由于剩余空闲内存不是一整块，它是由不同大小内存组成的内存列表，这就牵扯出了内存分配的问题。如下图：</p>
-<p><img src="https://huatree.top/image-20230813010050238.png" alt="image-20230813010050238"></p>
+<p><img src="https://cdn.huatree.top/image-20230813010050238.png" alt="image-20230813010050238"></p>
 <p>假设我们新建对象分配内存时需要大小为 <code>size</code>，由于空闲内存是间断的、不连续的，则需要对空闲内存列表进行一次单向遍历找出大于等于 <code>size</code> 的块才能为其分配。如下图：</p>
-<p><img src="https://huatree.top/image-20230813010230686.png" alt="image-20230813010230686"></p>
+<p><img src="https://cdn.huatree.top/image-20230813010230686.png" alt="image-20230813010230686"></p>
 <p>那如何找到合适的块呢？我们可以采取下面三种分配策略</p>
 <ul>
 <li><code>First-fit</code>，找到大于等于 <code>size</code> 的块立即返回</li>
@@ -533,14 +537,14 @@
 </ul>
 <p>归根结底，标记清除算法的缺点在于清除之后剩余的对象位置不变而导致的空闲内存不连续，所以只要解决这一点，两个缺点都可以完美解决了</p>
 <p>而 <strong>标记整理（Mark-Compact）算法</strong>就可以有效地解决，它的标记阶段和标记清除算法没有什么不同，只是标记结束后，标记整理算法会将活着的对象（即不需要清理的对象）向内存的一端移动，最后清理掉边界的内存。如下图：</p>
-<p><img src="https://huatree.top/image-20230813011227539.png" alt="image-20230813011227539"></p>
+<p><img src="https://cdn.huatree.top/image-20230813011227539.png" alt="image-20230813011227539"></p>
 <h2 id="V8对GC的优化"><a href="#V8对GC的优化" class="headerlink" title="V8对GC的优化"></a>V8对GC的优化</h2><p>我们在上面也说过，现在大多数浏览器都是基于标记清除算法，V8 亦是，当然 V8 肯定也对其进行了一些优化加工处理，那接下来我们主要就来看 V8 中对垃圾回收机制的优化。</p>
 <h3 id="分代式垃圾回收"><a href="#分代式垃圾回收" class="headerlink" title="分代式垃圾回收"></a>分代式垃圾回收</h3><p>试想一下，我们上面所说的垃圾清理算法在每次垃圾回收时都要检查内存中所有的对象，这样的话对于一些大、老、存活时间长的对象来说同新、小、存活时间短的对象一个频率的检查很不好，因为前者需要时间长并且不需要频繁进行清理，后者恰好相反，怎么优化这点呢？分代式就来了。</p>
 <p><code>V8</code> 的垃圾回收策略主要是基于 <code>分代式垃圾回收策略</code>，其根据<strong>对象的存活时间</strong>将内存的垃圾回收进行不同的分代，然后对不同的分代采用不同的垃圾回收算法。</p>
 <h4 id="新老生代"><a href="#新老生代" class="headerlink" title="新老生代"></a>新老生代</h4><p>V8 的垃圾回收策略主要基于分代式垃圾回收机制，V8 中将堆内存分为新生代和老生代两区域，采用不同的垃圾回收器也就是不同的策略管理垃圾回收</p>
 <p>新生代的对象为存活时间较短的对象，简单来说就是新产生的对象，通常只支持 <code>1～8M</code> 的容量，而老生代的对象为存活时间较长或常驻内存的对象，简单来说就是经历过新生代垃圾回收后还存活下来的对象，容量通常比较大</p>
 <p>V8 整个堆内存的大小就等于新生代加上老生代的内存。如下图：</p>
-<p><img src="https://huatree.top/image-20230813012453685.png" alt="image-20230813012453685"></p>
+<p><img src="https://cdn.huatree.top/image-20230813012453685.png" alt="image-20230813012453685"></p>
 <p>对于新老两块内存区域的垃圾回收，V8 采用了两个垃圾回收器来管控，我们暂且将管理新生代的垃圾回收器叫做新生代垃圾回收器，同样的，我们称管理老生代的垃圾回收器叫做老生代垃圾回收器好了。</p>
 <p>了解更多，<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ISId8v-0NZIhfZsfy7cfww">详见</a></p>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="怎么理解内存泄漏？"><a href="#怎么理解内存泄漏？" class="headerlink" title="怎么理解内存泄漏？"></a>怎么理解内存泄漏？</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/bQhDdjmkyZMxRgip4vaElA">详见</a></p>
@@ -663,13 +667,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">321k</span>
+    <span title="站点总字数">343k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:52</span>
+    <span title="站点阅读时长">5:12</span>
   </span>
 </div>
 <div class="busuanzi-count">
@@ -696,6 +700,9 @@
 
   
   <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
 <script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
 
   
@@ -704,6 +711,7 @@
 
 
 
+  <script src="/js/third-party/fancybox.js"></script>
 
 
   
