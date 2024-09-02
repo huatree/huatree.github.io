@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="汇总 uniapp 开发过程中遇到的一些问题与对应解决的解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uniapp开发问题汇总">
+<meta property="og:url" content="https://www.huatree.top/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="汇总 uniapp 开发过程中遇到的一些问题与对应解决的解决方案。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.huatree.top/image-20240703224606640.png">
+<meta property="article:published_time" content="2022-12-03T14:02:19.000Z">
+<meta property="article:modified_time" content="2024-07-03T14:50:03.406Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="uniapp">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20240703224606640.png">
+
+
+<link rel="canonical" href="https://www.huatree.top/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/","path":"2022/12/03/20221203-uniapp开发问题汇总/","title":"uniapp开发问题汇总"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>uniapp开发问题汇总 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F-props-%E4%BC%A0%E5%80%BC%EF%BC%8C%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E4%B8%A2%E5%A4%B1"><span class="nav-text">运行小程序 props 传值，对象方法丢失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-%E7%BB%84%E4%BB%B6-load%E3%80%81-error-%E4%BA%8B%E4%BB%B6%E5%90%8D%E4%B8%8D%E8%83%BD%E6%98%AF-onLoad%E3%80%81onError"><span class="nav-text">image 组件@load、@error 事件名不能是 onLoad、onError</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87-document-%E8%8E%B7%E5%8F%96-DOM-%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF"><span class="nav-text">小程序无法通过 document 获取 DOM 节点信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC"><span class="nav-text">页面路由跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#swiper-%E7%BB%84%E4%BB%B6-change-%E4%BB%8E%E7%AC%AC-2-%E4%B8%AA%E5%BC%80%E5%A7%8B%E6%89%A7%E8%A1%8C%E7%9A%84"><span class="nav-text">swiper 组件@change 从第 2 个开始执行的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%AD%90%E7%BB%84%E4%BB%B6-props-%E5%80%BC%E6%9D%A5%E8%87%AA%E7%88%B6%E7%BB%84%E4%BB%B6-computed-%E5%AE%9A%E4%B9%89%E7%9A%84%E5%80%BC%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%8A%A5-warn-%E5%9C%BA%E6%99%AF"><span class="nav-text">小程序中子组件 props 值来自父组件 computed 定义的值控制台报 warn 场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-text">具体代码分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E9%A1%B5%E9%9D%A2%E7%BB%84%E4%BB%B6%E7%9B%B4%E6%8E%A5%E7%94%A8%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E6%97%A0%E6%95%88"><span class="nav-text">非页面组件直接用页面生命周期钩子函数无效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E7%82%B9%E5%87%BB-icon-%E5%9B%BE%E6%A0%87%E4%BD%BF-input-%E7%BB%84%E4%BB%B6%E8%81%9A%E7%84%A6"><span class="nav-text">通过点击 icon 图标使 input 组件聚焦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniapp-debugger-H5"><span class="nav-text">uniapp debugger H5</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="uniapp开发问题汇总 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          uniapp开发问题汇总
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-03 22:02:19" itemprop="dateCreated datePublished" datetime="2022-12-03T22:02:19+08:00">2022-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-07-03 22:50:03" itemprop="dateModified" datetime="2024-07-03T22:50:03+08:00">2024-07-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B7%A5%E4%BD%9C%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">工作点滴</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>汇总 uniapp 开发过程中遇到的一些问题与对应解决的解决方案。</p>
+<span id="more"></span>
+
+<h2 id="运行小程序-props-传值，对象方法丢失"><a href="#运行小程序-props-传值，对象方法丢失" class="headerlink" title="运行小程序 props 传值，对象方法丢失"></a>运行小程序 props 传值，对象方法丢失</h2><p>自定义组件父子组件 prop 传递的变量为对象时，对象内部含有函数属性，该函数属性会直接被删除。</p>
+<p>因为为 uniapp 在传递数据的时候使用的是<code>JSON.parse(JSON.stringify(obj1))</code>这样传递的，无法传递函数。</p>
+<p>了解更多，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40445661/article/details/118539610">详见</a></p>
+<h2 id="image-组件-load、-error-事件名不能是-onLoad、onError"><a href="#image-组件-load、-error-事件名不能是-onLoad、onError" class="headerlink" title="image 组件@load、@error 事件名不能是 onLoad、onError"></a>image 组件@load、@error 事件名不能是 onLoad、onError</h2><p>如果是 onLoad、onError，编译会报错。</p>
+<h2 id="小程序无法通过-document-获取-DOM-节点信息"><a href="#小程序无法通过-document-获取-DOM-节点信息" class="headerlink" title="小程序无法通过 document 获取 DOM 节点信息"></a>小程序无法通过 document 获取 DOM 节点信息</h2><p>如果有获取元素距离顶部的间距这样一个场景，小程序无法通过 document 来获取相关信息，需要用到<code>uni.createSelectorQuery()</code>。用法以下几点需要注意：</p>
+<ul>
+<li>使用 uni.createSelectorQuery() 需要指定的 DOM 节点已渲染完成后。</li>
+<li>支付宝小程序不支持 in(component)，使用无效果</li>
+</ul>
+<p>提取公共的方法，兼容实现方案以下几种：</p>
+<p><strong>mixin</strong></p>
+<p>&#x2F;&#x2F; common.mixin.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getElemRect</span>(<span class="params">selector, all</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> query =  uni.<span class="title function_">createSelectorQuery</span>()</span><br><span class="line">      <span class="comment">// #ifndef MP-ALIPAY</span></span><br><span class="line">      .<span class="title function_">in</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="comment">// #endif</span></span><br><span class="line">    query[all ? <span class="string">&#x27;selectAll&#x27;</span> : <span class="string">&#x27;select&#x27;</span>](selector)</span><br><span class="line">      .<span class="title function_">boundingClientRect</span>(<span class="function"><span class="params">rect</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (all &amp; <span class="title class_">Array</span>.<span class="title function_">isArray</span>(rect) &amp;&amp; rect.<span class="property">length</span>) &#123;</span><br><span class="line">          <span class="title function_">resolve</span>(rect);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!all &amp;&amp; rect) &#123;</span><br><span class="line">          <span class="title function_">resolve</span>(rect);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="title function_">exec</span>();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>utils</strong></p>
+<p>&#x2F;&#x2F; utils.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">getElemRect</span>(<span class="params">selector, all</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> query = uni</span><br><span class="line">            .<span class="title function_">createSelectorQuery</span>()</span><br><span class="line">            <span class="comment">// #ifndef MP-ALIPAY</span></span><br><span class="line">            .<span class="title function_">in</span>(<span class="variable language_">this</span>);</span><br><span class="line">        <span class="comment">// #endif</span></span><br><span class="line">        query[all ? <span class="string">&#x27;selectAll&#x27;</span> : <span class="string">&#x27;select&#x27;</span>](selector)</span><br><span class="line">            .<span class="title function_">boundingClientRect</span>(<span class="function">(<span class="params">rect</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (all &amp; <span class="title class_">Array</span>.<span class="title function_">isArray</span>(rect) &amp;&amp; rect.<span class="property">length</span>) &#123;</span><br><span class="line">                    <span class="title function_">resolve</span>(rect);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!all &amp;&amp; rect) &#123;</span><br><span class="line">                    <span class="title function_">resolve</span>(rect);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .<span class="title function_">exec</span>();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; component.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; getElemRect &#125; from &#x27;utils.js&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    methods: &#123;</span><br><span class="line">        getElemRect</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面路由跳转"><a href="#页面路由跳转" class="headerlink" title="页面路由跳转"></a>页面路由跳转</h2><p>使用 uni.navigateTo(OBJECT)时，url 可以是相对路径，也可以是绝对路径，注意文件目录层级关系。</p>
+<h2 id="swiper-组件-change-从第-2-个开始执行的"><a href="#swiper-组件-change-从第-2-个开始执行的" class="headerlink" title="swiper 组件@change 从第 2 个开始执行的"></a>swiper 组件@change 从第 2 个开始执行的</h2><p>不推荐在 change 事件中触发业务场景（如轮播卡片曝光事件），会漏掉第一个。</p>
+<h2 id="小程序中子组件-props-值来自父组件-computed-定义的值控制台报-warn-场景"><a href="#小程序中子组件-props-值来自父组件-computed-定义的值控制台报-warn-场景" class="headerlink" title="小程序中子组件 props 值来自父组件 computed 定义的值控制台报 warn 场景"></a>小程序中子组件 props 值来自父组件 computed 定义的值控制台报 warn 场景</h2><p>如果父组件 computed 定义的值不具备动态绑定更新特征，而是自变量赋值，子组件 props 引用，小程序控制台可能就会打印警告日志。</p>
+<h3 id="具体代码分析"><a href="#具体代码分析" class="headerlink" title="具体代码分析"></a>具体代码分析</h3><p>&#x2F;&#x2F; 父组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;Demo&quot;&gt;</span><br><span class="line">        &lt;image class=&quot;img&quot; :src=&quot;imgUrl&quot; mode=&quot;scaleToFill&quot; @load=&quot;onLoadImg&quot; @error=&quot;onErrorImg&quot;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;Card :margins=&quot;margins&quot; /&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Card from &#x27;./Card.vue&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    components: &#123; Card &#125;,</span><br><span class="line">    name: &#x27;Demo&#x27;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            imgUrl: &#x27;&#x27;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">        margins() &#123;</span><br><span class="line">            let result = &#123;</span><br><span class="line">                top: 0,</span><br><span class="line">                right: 0,</span><br><span class="line">                bottom: 0,</span><br><span class="line">                left: 0</span><br><span class="line">            &#125;;</span><br><span class="line">            if (this.imgUrl) &#123;</span><br><span class="line">                result.bottom = -50;</span><br><span class="line">            &#125;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onErrorImg() &#123;</span><br><span class="line">            this.imgUrl = &#x27;https://img.zcool.cn/community/015153563ec9e66ac7259e0fc2d030.jpg@3000w_1l_0o_100sh.jpg&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">.img &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 200rpx;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; 子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;Card&quot;&gt;</span><br><span class="line">        &lt;view&gt;&#123;&#123; margins &#125;&#125;&lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &#x27;Card&#x27;,</span><br><span class="line">    props: &#123;</span><br><span class="line">        margins: &#123;</span><br><span class="line">            type: Object,</span><br><span class="line">            default: () =&gt; (&#123;&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>微信小程序控制台日志：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Component] property <span class="string">&quot;margins&quot;</span> of <span class="string">&quot;pagesA/demo/Card&quot;</span> received type-uncompatible value: expected &lt;Object&gt; but got non-object value. Used null instead.</span><br></pre></td></tr></table></figure>
+
+<p>以下方案可以解决</p>
+<p>子组件 props 类型兼容（不推荐，可能会存在类型漏掉的情况）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &#x27;Card&#x27;,</span><br><span class="line">    props: &#123;</span><br><span class="line">        margins: &#123;</span><br><span class="line">            type: [Object, null],</span><br><span class="line">            default: () =&gt; (&#123;&#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>父组件 computed 中不具备动态绑定更新特征的值，换成 data</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;Demo&quot;&gt;</span><br><span class="line">        &lt;image class=&quot;img&quot; :src=&quot;imgUrl&quot; mode=&quot;scaleToFill&quot; @load=&quot;onLoadImg&quot; @error=&quot;onErrorImg&quot;&gt;&lt;/image&gt;</span><br><span class="line">        &lt;Card :margins=&quot;margins&quot; /&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Card from &#x27;./Card.vue&#x27;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    components: &#123; Card &#125;,</span><br><span class="line">    name: &#x27;Demo&#x27;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            imgUrl: &#x27;&#x27;,</span><br><span class="line">            margins: &#123;&#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onErrorImg() &#123;</span><br><span class="line">            this.imgUrl = &#x27;https://img.zcool.cn/community/015153563ec9e66ac7259e0fc2d030.jpg@3000w_1l_0o_100sh.jpg&#x27;;</span><br><span class="line">        &#125;,</span><br><span class="line">        getMargins() &#123;</span><br><span class="line">            let result = &#123;</span><br><span class="line">                top: 0,</span><br><span class="line">                right: 0,</span><br><span class="line">                bottom: 0,</span><br><span class="line">                left: 0</span><br><span class="line">            &#125;;</span><br><span class="line">            if (this.imgUrl) &#123;</span><br><span class="line">                result.bottom = -50;</span><br><span class="line">            &#125;</span><br><span class="line">            this.margins = result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">.img &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 200rpx;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="非页面组件直接用页面生命周期钩子函数无效"><a href="#非页面组件直接用页面生命周期钩子函数无效" class="headerlink" title="非页面组件直接用页面生命周期钩子函数无效"></a>非页面组件直接用页面生命周期钩子函数无效</h2><p>非页面组件不具备页面组件的生命周期钩子函数，但是可以同组件通信事件绑定<code>hook:页面生命周期钩子函数名</code>实现</p>
+<p>&#x2F;&#x2F; 子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &#x27;Card&#x27;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        this.$root.$emit(&#x27;hook:onHide&#x27;, () =&gt; &#123;</span><br><span class="line">            // 执行业务场景函数</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>打印 this，控制台 this 日志中，vue2 当前是支持 hook 调用页面生命周期钩子函数的。</p>
+<hr>
+<h2 id="通过点击-icon-图标使-input-组件聚焦"><a href="#通过点击-icon-图标使-input-组件聚焦" class="headerlink" title="通过点击 icon 图标使 input 组件聚焦"></a>通过点击 icon 图标使 input 组件聚焦</h2><p>点击 icon 图标，让 input 组件聚焦，只需要点击图标时，改变 input 组件框的 focus 属性值。</p>
+<p>但是，发现一个问题：这个方法只能触发一次。是因为当点击图标以后，focus 的值已经变成 true 了，所以当我们再次点击图标的时候，就不会出现效果了。</p>
+<p>解决办法：获取软键盘的位置，如果软键盘的位置变为 0 ，就让 focus 的值变为 false，成功解决问题。</p>
+<p>下面是具体的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;y-input u-flex&quot;&gt;</span><br><span class="line">        &lt;input class=&quot;input&quot; type=&quot;text&quot; :focus=&quot;focus&quot; @blur=&quot;onInputBlur&quot; /&gt;</span><br><span class="line">        &lt;u-icon name=&quot;edit-pen-fill&quot; color=&quot;#2979ff&quot; size=&quot;60&quot; @click=&quot;onEdit&quot;&gt;&lt;/u-icon&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &#x27;y-input&#x27;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            focus: false</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onEdit() &#123;</span><br><span class="line">            this.focus = true;</span><br><span class="line">            uni.onKeyboardHeightChange((res) =&gt; &#123;</span><br><span class="line">                if (res.height === 0) this.focus = false;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        onInputBlur() &#123;</span><br><span class="line">            this.focus = false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">.input &#123;</span><br><span class="line">    height: 60rpx;</span><br><span class="line">    border: 4rpx solid #e5e5e5;</span><br><span class="line">    border-radius: 16rpx;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="uniapp-debugger-H5"><a href="#uniapp-debugger-H5" class="headerlink" title="uniapp debugger H5"></a>uniapp debugger H5</h2><p>JavaScript或typescript脚本中单行注入<strong>debugger</strong>关键词。本地运行，如<code>yarn serve</code>。</p>
+<p>谷歌浏览器访问控制台打印出的域名，打开调试工具，会触发谷歌自带的debugger调试功能。</p>
+<p>如果遇到不能触发debugger调试，需要检查<strong>框架忽略列表项</strong>，取消或自定义一些规则来触发debugger调试。</p>
+<p><img data-src="https://cdn.huatree.top/image-20240703224606640.png" alt="image-20240703224606640"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="uniapp开发问题汇总">https://www.huatree.top/2022/12/03/20221203-uniapp开发问题汇总/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Vue/" rel="tag"># Vue</a>
+              <a href="/tags/uniapp/" rel="tag"># uniapp</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/03/20221203-%E7%BD%91%E7%AB%99%E9%83%BD%E5%8F%98%E7%81%B0%E8%89%B2%E4%BA%86%EF%BC%8C%E5%AE%83%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F/" rel="prev" title="网站都变灰色了，它是怎么实现的？">
+                  <i class="fa fa-chevron-left"></i> 网站都变灰色了，它是怎么实现的？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/12/07/20221207-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" rel="next" title="前端模块化的前世今生">
+                  前端模块化的前世今生 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"e83ab2a91b597f21424833e47700bc8a"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

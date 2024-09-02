@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="如果您不能很好的应用 Git，那么这里为您提供一个非常棒的 Git 在线练习工具 Git Online，您可以更直观的看到您所使用的命令会产生什么效果。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git必知必会">
+<meta property="og:url" content="https://www.huatree.top/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="如果您不能很好的应用 Git，那么这里为您提供一个非常棒的 Git 在线练习工具 Git Online，您可以更直观的看到您所使用的命令会产生什么效果。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165232917.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165251266.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165301540.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165310068.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165319670.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165331246.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165341838.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165349980.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165358667.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165407304.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165414857.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165421894.jpg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230927165441537.jpg">
+<meta property="article:published_time" content="2021-01-29T08:56:13.000Z">
+<meta property="article:modified_time" content="2024-03-11T12:38:02.798Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20230927165232917.jpg">
+
+
+<link rel="canonical" href="https://www.huatree.top/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/","path":"2021/01/29/20210129-Git必知必会/","title":"Git必知必会"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git必知必会 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%85%A5%E9%97%A8"><span class="nav-text">1 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%AE%89%E8%A3%85"><span class="nav-text">1.1 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-git-status-git-commit%E7%AD%89%E4%B8%AD%E6%96%87%E4%BF%A1%E6%81%AF%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98"><span class="nav-text">1.2 git status, git commit等中文信息乱码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E6%9C%AC%E5%9C%B0git%E4%B8%8E%E8%BF%9C%E7%A8%8Bgithub%E4%BF%9D%E6%8C%81%E7%99%BB%E5%BD%95%E8%81%94%E9%80%9A"><span class="nav-text">1.3 本地git与远程github保持登录联通</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E6%9C%AC%E5%9C%B0%E5%88%9B%E5%BB%BAgit%E9%A1%B9%E7%9B%AE%E4%B8%8E%E8%BF%9C%E7%A8%8B%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E5%85%B3%E8%81%94"><span class="nav-text">1.4 本地创建git项目与远程项目进行关联</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%BF%9B%E9%98%B6"><span class="nav-text">2 进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-git%E4%BC%98%E5%8A%BF"><span class="nav-text">2.1 git优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-git%E4%B8%89%E7%A7%8D%E7%8A%B6%E6%80%81"><span class="nav-text">2.2 git三种状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%92%8C%E9%82%AE%E7%AE%B1"><span class="nav-text">2.3 设置用户和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E5%B0%86%E6%9F%90%E4%B8%AA%E7%9B%AE%E5%BD%95%E7%BA%B3%E5%85%A5-git-%E7%AE%A1%E7%90%86"><span class="nav-text">2.4 将某个目录纳入 git 管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-git-log"><span class="nav-text">2.5 git log</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-%E5%88%A0%E9%99%A4%E7%94%A8%E6%88%B7%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-text">2.6 删除用户配置信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-%E5%B7%B2%E6%8F%90%E4%BA%A4%E7%9A%84%E6%96%87%E4%BB%B6-%E4%BF%AE%E6%94%B9%E5%90%8E-%E6%92%A4%E9%94%80%E5%9B%9E%E6%BB%9A"><span class="nav-text">2.7 已提交的文件-修改后-撤销回滚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%96%87%E4%BB%B6-gt-%E6%9A%82%E5%AD%98%E5%8C%BA%E5%90%8E%EF%BC%9A%E6%92%A4%E9%94%80-add-%E6%93%8D%E4%BD%9C"><span class="nav-text">2.8 工作区文件 -&gt; 暂存区后：撤销 add 操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-9-%E6%8F%90%E4%BA%A4%E9%97%AE%E9%A2%98%E4%B8%8E%E7%94%A8%E6%88%B7%E9%82%AE%E7%AE%B1%E9%85%8D%E7%BD%AE"><span class="nav-text">2.9 提交问题与用户邮箱配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-10-%E5%88%A0%E9%99%A4%E5%B7%B2%E6%8F%90%E4%BA%A4%E5%88%B0%E5%AF%B9%E8%B1%A1%E5%8C%BA%EF%BC%88%E5%8D%B3%E5%88%86%E6%94%AF%E5%8C%BA%EF%BC%89%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-text">2.10 删除已提交到对象区（即分支区）的文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-11-%E6%92%A4%E9%94%80%E5%B7%B2%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6%E7%9A%84%E5%88%A0%E9%99%A4"><span class="nav-text">2.11 撤销已提交文件的删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-12-%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6"><span class="nav-text">2.12 重命名文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-13-%E6%B3%A8%E9%87%8A%E9%87%8D%E5%86%99%E6%8F%90%E4%BA%A4%E8%AF%B4%E6%98%8E"><span class="nav-text">2.13 注释重写提交说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-14-%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%EF%BC%9A-gitignore"><span class="nav-text">2.14 忽略文件：.gitignore</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-15-%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="nav-text">2.15 通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-16-%E5%88%86%E6%94%AF"><span class="nav-text">2.16 分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-17-%E5%88%86%E6%94%AF-%E6%8F%90%E4%BA%A4%E9%93%BE%EF%BC%88%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6%E4%B8%8E%E5%86%B2%E7%AA%81%EF%BC%89"><span class="nav-text">2.17 分支-提交链（分支合并与冲突）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF"><span class="nav-text">3 常见错误</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-ssh-connect-to-host-github-com-port-22-Connection-timed-out"><span class="nav-text">3.1 ssh: connect to host github.com port 22: Connection timed out</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%97%A5%E5%B8%B8%E6%8A%80%E8%83%BD"><span class="nav-text">4 日常技能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-git-add-%E5%90%8E%E7%9A%84%E5%88%A0%E9%99%A4%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-text">4.1 git add . 后的删除暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-git%E7%9A%84%E5%88%86%E6%94%AF%E6%8E%A8%E9%80%81%E8%AE%BE%E7%BD%AEdev%E9%BB%98%E8%AE%A4%E9%A1%B9"><span class="nav-text">4.2 git的分支推送设置dev默认项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-git%E4%B8%AD%E7%9A%84CRLF%E5%92%8CLF"><span class="nav-text">4.3  git中的CRLF和LF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-GitHub-Desktop%E5%B7%A5%E5%85%B7"><span class="nav-text">4.4 GitHub Desktop工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5-%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6%E5%9B%BE"><span class="nav-text">4.5 查看分支合并图</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git必知必会 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git必知必会
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-01-29 16:56:13" itemprop="dateCreated datePublished" datetime="2021-01-29T16:56:13+08:00">2021-01-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index"><span itemprop="name">成长经历</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>如果您不能很好的应用 Git，那么这里为您提供一个非常棒的 Git 在线练习工具 <a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_CN">Git Online</a>，您可以更直观的看到您所使用的命令会产生什么效果。</p>
+<span id="more"></span>
+
+<h2 id="1-入门"><a href="#1-入门" class="headerlink" title="1 入门"></a>1 入门</h2><p>git命令行操作跟Linux一样</p>
+<h3 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h3><ol>
+<li><p>Use git from git bash only…, 其他默认下一步</p>
+</li>
+<li><p>查看环境变量配置, 没有则手动配置, path: E:\programs\Git\bin</p>
+</li>
+<li><p>配置git, 桌面右键git bash…, 配置用户名和邮箱</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name hua</span><br><span class="line">git config --global user.email &quot;2827890646@qq.com&quot;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>该配置文件在本地计算机c:\user\用户\.gitconfig</p>
+<h3 id="1-2-git-status-git-commit等中文信息乱码问题"><a href="#1-2-git-status-git-commit等中文信息乱码问题" class="headerlink" title="1.2 git status, git commit等中文信息乱码问题"></a>1.2 git status, git commit等中文信息乱码问题</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global gui.encoding utf-8</span><br><span class="line">git config --global i18n.commitencoding utf-8</span><br><span class="line">git config --global core.quotepath false</span><br><span class="line">git config --global svn.pathnameecoding utf-8</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-3-本地git与远程github保持登录联通"><a href="#1-3-本地git与远程github保持登录联通" class="headerlink" title="1.3 本地git与远程github保持登录联通"></a>1.3 本地git与远程github保持登录联通</h3><p>git 的远程仓库托管网站目前就<a target="_blank" rel="noopener" href="https://github.com/" title="github">github</a>一个常用</p>
+<p>为了在本地和远程仓库之间进行操作, 可采取免密钥登录,配置 .ssh 先在本地配置, 然后把公钥发送给远程仓库github.</p>
+<ol>
+<li><p>在本地git命令行中输入:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 2827890646@qq.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后一直回车, 出现下图则表示成功</p>
+<p><img src="https://cdn.huatree.top/image-20230927165232917.jpg" alt="image-20230927165232917"></p>
+</li>
+<li><p>发送给远程github</p>
+<ol>
+<li><p>github -&gt; settings -&gt; SSH and … -&gt; New SSH -&gt; title &amp; key</p>
+<p><img src="https://cdn.huatree.top/image-20230927165251266.jpg" alt="image-20230927165251266"></p>
+</li>
+<li><p>复制本地公钥到key中, 删掉最后的回车占位符</p>
+</li>
+<li><p>如果本地和远程成功通信, 则在本地.&#x2F;ssh目录中自动生成<strong>known-hosts</strong>文件</p>
+</li>
+<li><p>测试本地仓库与远程仓库的登录连通性, git命令行:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+</ol>
+<h3 id="1-4-本地创建git项目与远程项目进行关联"><a href="#1-4-本地创建git项目与远程项目进行关联" class="headerlink" title="1.4 本地创建git项目与远程项目进行关联"></a>1.4 本地创建git项目与远程项目进行关联</h3><p>本地创建git项目与远程项目进行关联时，要保持本地电脑PC端github账号登录状态。（一般是本地电脑，这个跟ssh配置有关。ssh配置指向其他地址，则其他地址上的github账号保持登录状态即可）[参考本地git与远程github保持登录联通](#1.3 本地git与远程github保持登录联通)</p>
+<ol>
+<li><p>先创建一个目录demo</p>
+</li>
+<li><p>进入该目录,鼠标右键点击git bash…, 打开git命令端, 输入 <code>git init</code>, 会自动在demo目录下生成 <strong>.git</strong>目录(该目录是隐藏的).</p>
+</li>
+<li><p>github上创建一个Repository.</p>
+<p><img src="https://cdn.huatree.top/image-20230927165301540.jpg" alt="image-20230927165301540"></p>
+</li>
+<li><p>第一次发布项目(本地 -&gt; 远程)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add . // 文件 -&gt; 暂存区, &quot;.&quot; 表示当前目录下的所有文件提交暂存区</span><br><span class="line">git commit -m &quot;第一次提交&quot;  // 暂存区 -&gt; 本地分支(默认为master)</span><br><span class="line">git remote add origin &lt;远程项目所在的ssh地址(或http协议地址)&gt;</span><br><span class="line">git push -u origin master // 本地分支 -&gt; 远程项目</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第一次下载项目(远程 -&gt; 本地)</p>
+<p>本地创建一个目录, 进入该目录, 打开git命令终端, 输入下面命令:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:yanse/mygitdemo.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>非第一次提交(本地 -&gt; 远程)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;第二次提交&quot;</span><br><span class="line">git push origin master // 注意: 这里去掉了 -u (其实可以简写成git push)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新(远程 -&gt; 本地)</p>
+<ol>
+<li><p>在远程项目中修改文件.</p>
+<p><img src="https://cdn.huatree.top/image-20230927165310068.jpg" alt="image-20230927165310068"></p>
+</li>
+<li><p>本地项目中, git命令行输入 <code>git pull</code> 即可更新.</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="2-进阶"><a href="#2-进阶" class="headerlink" title="2 进阶"></a>2 进阶</h2><h3 id="2-1-git优势"><a href="#2-1-git优势" class="headerlink" title="2.1 git优势"></a>2.1 git优势</h3><ol>
+<li>本地版本控制；</li>
+<li>重写提交说明</li>
+<li>每次操作都可以回滚，还原；</li>
+<li>分支系统，分布式。</li>
+</ol>
+<h3 id="2-2-git三种状态"><a href="#2-2-git三种状态" class="headerlink" title="2.2 git三种状态"></a>2.2 git三种状态</h3><ol>
+<li>已修改（modified）</li>
+<li>已暂存（staged）</li>
+<li>已提交（committed）</li>
+</ol>
+<h3 id="2-3-设置用户和邮箱"><a href="#2-3-设置用户和邮箱" class="headerlink" title="2.3 设置用户和邮箱"></a>2.3 设置用户和邮箱</h3><p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。这些变量存储再三个不同的位置：</p>
+<ol>
+<li><strong>&#x2F;etc&#x2F;gitconfig</strong> 文件：包含系统上每一个用户及他们仓库的通用配置。如果在执行 git config 时带上 <strong>–system</strong> 选项，那么它就会读写该文件中的配置变量。（由于它是系统配置文件，因此您需要管理员吧或超级用户权限来修改它。）</li>
+<li><strong>~&#x2F;.gitconfig 或 ~&#x2F;.config&#x2F;git&#x2F;config</strong> 文件：只针对当前用户。您可以传递 <strong>–global</strong> 选项让 Git 读写此文件，这会对您的系统上所有的仓库生效。</li>
+<li>当前使用仓库的 Git 目录中的 config 文件（即 <strong>.git&#x2F;config</strong>）：针对该仓库。您可以传递 <strong>–local</strong> 选项让 Git 强制读写此文件，虽然默认情况下的就是它。（当然，您需要进入某个 Git 仓库中才能让该选项生效。）</li>
+</ol>
+<p>每一个级别会覆盖上一个级别的配置，所以，**.git&#x2F;config** 的配置变量会覆盖 <strong>&#x2F;etc&#x2F;gitconfig</strong> 中的配置变量。</p>
+<h3 id="2-4-将某个目录纳入-git-管理"><a href="#2-4-将某个目录纳入-git-管理" class="headerlink" title="2.4 将某个目录纳入 git 管理"></a>2.4 将某个目录纳入 git 管理</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init // 此时，git 命令行中显示master，项目目录下自动生成 .git 文件夹。（.git：负责版本控制的目录）</span><br><span class="line">git rm --cached &lt;file&gt; // 暂存区 -&gt; 工作区</span><br><span class="line">git commit // 进入 vi 操作界面，写提交的备注，适合较长的备注（简写：git commit -m &quot;备注内容&quot;）</span><br></pre></td></tr></table></figure>
+
+<p>已提交到对象区（分支区），然后修改该已提交的文件，此时，这个文件会退回到工作区；如果还想提交的话，再经历一次操作：工作区 - &gt; 暂存区 -&gt; 对象区（分支区）；如果想撤销修改，可执行git命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-git-log"><a href="#2-5-git-log" class="headerlink" title="2.5 git log"></a>2.5 git log</h3><ol>
+<li><p>查看提交日志，会发现如下内容：</p>
+<p><img src="https://cdn.huatree.top/image-20230927165319670.jpg" alt="image-20230927165319670"></p>
+<p>commit 后面的那一串字符：<strong>sha1</strong> 计算的结果。</p>
+<p>sha1、md5：加密算法、随机数，用于区分是哪一次提交。</p>
+</li>
+<li><p>自定义查看日志</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log -2 // 2：指最近的2次提交</span><br><span class="line">git log --pretty=online</span><br><span class="line">git log --pretty=format:&quot;%h -%an, %ar : %s&quot;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-6-删除用户配置信息"><a href="#2-6-删除用户配置信息" class="headerlink" title="2.6 删除用户配置信息"></a>2.6 删除用户配置信息</h3><ol>
+<li><p>找到 .gitconfig 文件直接删掉（最直接）</p>
+</li>
+<li><p>或通过命令删除</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global(或 --system 或 --local) --unset user.name</span><br><span class="line">git config --global(或 --system 或 --local) --unset user.email</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-7-已提交的文件-修改后-撤销回滚"><a href="#2-7-已提交的文件-修改后-撤销回滚" class="headerlink" title="2.7 已提交的文件-修改后-撤销回滚"></a>2.7 已提交的文件-修改后-撤销回滚</h3><p><img src="https://cdn.huatree.top/image-20230927165331246.jpg" alt="image-20230927165331246"></p>
+<p>如果某个文件，已提交，并对其进行了修改，可以放弃修改（还原到已提交状态）。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-8-工作区文件-gt-暂存区后：撤销-add-操作"><a href="#2-8-工作区文件-gt-暂存区后：撤销-add-操作" class="headerlink" title="2.8 工作区文件 -&gt; 暂存区后：撤销 add 操作"></a>2.8 工作区文件 -&gt; 暂存区后：撤销 add 操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>小结</p>
+<p><img src="https://cdn.huatree.top/image-20230927165341838.jpg" alt="image-20230927165341838"></p>
+<h3 id="2-9-提交问题与用户邮箱配置"><a href="#2-9-提交问题与用户邮箱配置" class="headerlink" title="2.9 提交问题与用户邮箱配置"></a>2.9 提交问题与用户邮箱配置</h3><p>场景：第一个邮箱用户git提交了文件，第二个邮箱用户（把第一个邮箱用户改成第二个的）在同一个本地环境（跟第一个用户环境保持一致，就用第一个的项目，说白了就是改了个邮箱用户名而已，其他都没变）的项目中进行git提交操作（如新建了一个文件，修改了文件后提交到对象区）。此时，git log查看到，之前的配置没变，记录此次的配置。</p>
+<p><img src="https://cdn.huatree.top/image-20230927165349980.jpg" alt="image-20230927165349980"></p>
+<h3 id="2-10-删除已提交到对象区（即分支区）的文件"><a href="#2-10-删除已提交到对象区（即分支区）的文件" class="headerlink" title="2.10 删除已提交到对象区（即分支区）的文件"></a>2.10 删除已提交到对象区（即分支区）的文件</h3><ol>
+<li><p>git rm 操作删除：删除 -&gt; 在暂存区</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<p>删除之后的文件会被放到暂存区，如果想彻底删除，在输入 git 命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;彻底删除&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作系统删除 rm ：删除 -&gt; 工作区</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm &lt;file&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;彻底删除&quot;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-11-撤销已提交文件的删除"><a href="#2-11-撤销已提交文件的删除" class="headerlink" title="2.11 撤销已提交文件的删除"></a>2.11 撤销已提交文件的删除</h3><ol>
+<li>对象区（分支区）- <code>git rm &lt; file &gt;</code> -&gt;</li>
+<li>暂存区 - <code>git reset HEAD &lt; file &gt;</code> -&gt; (注意：这里抛出了delete信息)</li>
+<li>工作区 - <code>git checkout -- &lt; file &gt;</code></li>
+</ol>
+<h3 id="2-12-重命名文件"><a href="#2-12-重命名文件" class="headerlink" title="2.12 重命名文件"></a>2.12 重命名文件</h3><ol>
+<li><p>git命令的文件重命名</p>
+<p>git 文件的重命名的内部执行流程：首先新建一个文件，把源文件内容拷贝进去，然后再删掉源文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git mv &lt;file1&gt; &lt;file2&gt;</span><br><span class="line">git status // renamed: &lt;file1&gt; -&gt; &lt;file2&gt;</span><br><span class="line">git reset HEAD &lt;file1&gt; // new file: &lt;file2&gt;, deleted: &lt;file1&gt;</span><br><span class="line">git checkout -- &lt;file1&gt;</span><br><span class="line">ls // &lt;file1&gt;、&lt;file2&gt;都在</span><br><span class="line">git status // new file: &lt;file2&gt;，可提交 -&gt; 对象区， 也可撤销 -&gt; 工作区</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作系统命令的文件重命名</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mv &lt;file1&gt; &lt;file2&gt;</span><br><span class="line">git status // deleted: &lt;file1&gt;, untracked files: &lt;file2&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作系统命令的重命名&quot;</span><br><span class="line">git status // 每次操作可以用此命令查看文件的状态，定位文件所在哪个区，需执行的可操作提示</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="2-13-注释重写提交说明"><a href="#2-13-注释重写提交说明" class="headerlink" title="2.13 注释重写提交说明"></a>2.13 注释重写提交说明</h3><p><strong>git log</strong> &#x2F;&#x2F; 出现冒号，按 q 退出模式</p>
+<p><img src="https://cdn.huatree.top/image-20230927165358667.jpg" alt="image-20230927165358667"></p>
+<p>修改最近一次提交的备注信息：<code>git commit --amend -m &quot;备注内容&quot;</code></p>
+<p><img src="https://cdn.huatree.top/image-20230927165407304.jpg" alt="image-20230927165407304"></p>
+<h3 id="2-14-忽略文件：-gitignore"><a href="#2-14-忽略文件：-gitignore" class="headerlink" title="2.14 忽略文件：.gitignore"></a>2.14 忽略文件：.gitignore</h3><p>git 项目中，提交前，先忽略不需要提交的文件，再把剩下的提交到对象区（分支区）。</p>
+<p>在 git 项目根目录下创建 <strong>.gitignore</strong> 文件，编辑内容 <code>vi .gitignore</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a.properties // 列出忽略提交的文件即可</span><br></pre></td></tr></table></figure>
+
+<p>保存该 <strong>.gitignore</strong> 文件，接着，退出 vi 编辑模式，返回 git 命令行，输入 git status</p>
+<p>查看文件状态，该项目列表中已经没有了 a.properties 文件，它被忽略了。</p>
+<h3 id="2-15-通配符"><a href="#2-15-通配符" class="headerlink" title="2.15 通配符"></a>2.15 通配符</h3><p>使用场景：如 <strong>.gitignore</strong> 文件编写需要排除的文件。以下是常见的通配符：</p>
+<ol>
+<li>*：匹配任意字符。</li>
+<li>*.xxx：匹配后缀 .xxx 的文件中。</li>
+<li>!<a target="_blank" rel="noopener" href="http://xx.xxx/" title="xx.xxx">xx.xxx</a>：在后缀 .xxx 的文件中，排除 <a target="_blank" rel="noopener" href="http://xx.xxx/" title="xx.xxx">xx.xxx</a> 文件，结合 *.xxx 使用。</li>
+<li>dir(目录)&#x2F; ：忽略 dir 中的所有文件。</li>
+<li>dir(目录)&#x2F;<em>&#x2F;</em>.xxx：能够忽略如 dir&#x2F;t1&#x2F;a.xxx, dir&#x2F;t2&#x2F;b.xxx，但不能忽略含2级以上的目录中的 *.xxx文件（如：dir&#x2F;a&#x2F;b&#x2F;j.xxx），这跟通配符 &lt;*&gt; 有关。</li>
+<li>dir&#x2F;**&#x2F;*.xxx：忽略任意级别目录中的 *.xxx文件。</li>
+<li>git 项目中创建的<strong>空目录</strong>，默认自动忽略，git status 查不到此目录信息。</li>
+</ol>
+<h3 id="2-16-分支"><a href="#2-16-分支" class="headerlink" title="2.16 分支"></a>2.16 分支</h3><ol>
+<li><p>查看分支：<code>git branch</code></p>
+</li>
+<li><p>创建分支：<code>git branch &lt;分支名&gt;</code></p>
+</li>
+<li><p>切换分支：<code>git checkout &lt;分支名&gt;</code></p>
+</li>
+<li><p>删除分支：<code>git branch -d &lt;分支名&gt;</code></p>
+<ol>
+<li><p>自己不能删除自己（当前分支），可切换主分支master，再删除当前分支。</p>
+</li>
+<li><p>如果要被删除的分支，包含“未合并”的内容，切换到master进行删除会报错。建议先合并再通过master删除。</p>
+<p><img src="https://cdn.huatree.top/image-20230927165414857.jpg" alt="image-20230927165414857"></p>
+</li>
+</ol>
+</li>
+<li><p>创建新分支并切换到该分支：<code>git checkout -b &lt;分知名&gt;</code>，结合 <strong>4.</strong> 进行操作：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 场景：git项目已存在文件</span><br><span class="line">git checkout -b new_branch</span><br><span class="line">git rm *.xxx // 删除 *.xxx 文件</span><br><span class="line">git commit -m &quot;delete files: *.xxx&quot; // 在 new_branch 分支中没有了 *.xxx文件</span><br><span class="line">git checkout master // 分支new_branch 删除的 *.xxx 文件在主分支 master 中仍存在，此时没有受到 new_branch 操作影响，注意这里，已经切换到了 master</span><br><span class="line">git branch -d new_branch // 报错，没删掉 new_branch 分支，并且提示 new_branch 需要合并（merge）到master，才能通过master删掉 new_branch。</span><br><span class="line">git merge new_branch // new_branch 合并到 master，注意观察 new_branch 之前删除的 *.xxx在 master 中没有了。</span><br><span class="line">git branch -d new_branch // 成功删除分支 new_branch</span><br></pre></td></tr></table></figure>
+
+<p><strong>Tips</strong></p>
+<p>强行删除分支：<code>git branch -D &lt;分支名&gt;</code></p>
+</li>
+<li><p>查看分支最近提交（commit）的 <strong>sha1</strong>值：<code>git branch -v</code></p>
+<p><strong>细节问题</strong></p>
+<ol>
+<li>如果在非主分支中，file1 文件进行了写操作（即增删改），但此操作局限在工作区中进行（没有add、commit）。在 master 中能够看到该操作。</li>
+<li>如果在非主分支中，file1 文件进行了写操作（即增删改），并且add，commit。在 master 中无法观察改操作，看不到 file1 文件。（问点：非主分支主动合并 master，或主分支 master 合并非主分支，观察 file1 状态）</li>
+<li>如果在非主分支中， file1 文件进行了写操作（即增删改），但此操作局限在工作区中进行（没有add，commit）。在 master 中删除该非主分支，可直接删除。</li>
+<li>如果在非主分支中，file1 文件进行了写操作（即增删改），并且add，commit。在 master 中无法删除该非主分支。</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-17-分支-提交链（分支合并与冲突）"><a href="#2-17-分支-提交链（分支合并与冲突）" class="headerlink" title="2.17 分支-提交链（分支合并与冲突）"></a>2.17 分支-提交链（分支合并与冲突）</h3><p><img src="https://cdn.huatree.top/image-20230927165421894.jpg" alt="image-20230927165421894"></p>
+<p>分支名（master）：指向当前的提交（commit）</p>
+<p>HEAD：指向当前分支（HEAD -&gt; 分支名）</p>
+<p><img src="https://cdn.huatree.top/image-20230927165441537.jpg" alt="image-20230927165441537"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// 场景：git 空项目，分支合并</span><br><span class="line">git init</span><br><span class="line">git checkout -b dev // 当前分支 dev，指向：HEAD -&gt; dev</span><br><span class="line">cd .git</span><br><span class="line">ls // HEAD位置：.git -&gt; HEAD</span><br><span class="line">cat HEAD // ref：refs/heads/dev</span><br><span class="line">cd ..</span><br><span class="line">cd ..</span><br><span class="line">git log // 查看 sha1 值 HEAD -&gt; dev，master</span><br><span class="line">vi a.txt //编辑内容：a，保存，退出 vi 模式，返回 git 命令</span><br><span class="line">git add .</span><br><span class="line">git commit -m “dev1”</span><br><span class="line">git log // 观察 dev 的 sha1 值 -&gt; dev1，此时，分支 dev 领先 master 一步</span><br><span class="line">vi a.txt // 修改内容</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;dev2&quot;</span><br><span class="line">git log // 观察 dev 的 sha1 值 -&gt; dev2，此时，分支 dev 已经领先 master 两步了</span><br><span class="line">.....未完待续</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-常见错误"><a href="#3-常见错误" class="headerlink" title="3 常见错误"></a>3 常见错误</h2><h3 id="3-1-ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#3-1-ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="3.1 ssh: connect to host github.com port 22: Connection timed out"></a>3.1 ssh: connect to host <a target="_blank" rel="noopener" href="http://github.com/" title="github.com">github.com</a> port 22: Connection timed out</h3><p>解决方法:</p>
+<p>打开目录.ssh</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<p>查看是否存在 id_rsa   id_rsa.pun  known_hosts 三个文件, 如果没有则参考ssh本地关联远程github</p>
+<ol>
+<li><p>vi config(进入vi编辑界面)</p>
+</li>
+<li><p>insert模式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User YourEmail@qq.com</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">port 433</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>其中,YourEmail为申请github账号所绑定的邮箱.</p>
+<p>保存之后再次执行”ssh -T <a href="mailto:git@github.com" title="git@github.com">git@github.com</a>“时, 会出现如下提示, 一路回车”yes”即可.</p>
+<h2 id="4-日常技能"><a href="#4-日常技能" class="headerlink" title="4 日常技能"></a>4 日常技能</h2><h3 id="4-1-git-add-后的删除暂存区"><a href="#4-1-git-add-后的删除暂存区" class="headerlink" title="4.1 git add . 后的删除暂存区"></a>4.1 git add . 后的删除暂存区</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r -f --cached .</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-git的分支推送设置dev默认项"><a href="#4-2-git的分支推送设置dev默认项" class="headerlink" title="4.2 git的分支推送设置dev默认项"></a>4.2 git的分支推送设置dev默认项</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push --set-upstream origin dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-3-git中的CRLF和LF"><a href="#4-3-git中的CRLF和LF" class="headerlink" title="4.3  git中的CRLF和LF"></a>4.3  git中的CRLF和LF</h3><blockquote>
+<p>说明：参考官方文档，有详细叙述（切记网上瞎搜索，浪费时间，还不一定是对的）</p>
+</blockquote>
+<h3 id="4-4-GitHub-Desktop工具"><a href="#4-4-GitHub-Desktop工具" class="headerlink" title="4.4 GitHub Desktop工具"></a>4.4 GitHub Desktop工具</h3><p>可解决分支删不掉的问题</p>
+<h3 id="4-5-查看分支合并图"><a href="#4-5-查看分支合并图" class="headerlink" title="4.5 查看分支合并图"></a>4.5 查看分支合并图</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/" title="Git必知必会">https://www.huatree.top/2021/01/29/20210129-Git必知必会/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/04/02/20230402-yarn%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next" title="yarn常用命令">
+                  yarn常用命令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"04825a7db16841552f95ab1b4a53c705"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Docker+Jenkins+GitHub">
+<meta property="og:url" content="https://www.huatree.top/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220511175224561.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516093617699.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516093715354.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516094041627.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516095217292.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516095453149.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516095803705.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516102328899.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516105037672.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516105429577.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516105841594.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516113556323.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516122621742.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516124427698.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516130020852.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516130125776.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516130201358.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220516130920146.png">
+<meta property="article:published_time" content="2022-05-14T05:48:36.000Z">
+<meta property="article:modified_time" content="2024-03-11T12:38:02.808Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="CI&amp;CD">
+<meta property="article:tag" content="Jenkins">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20220511175224561.png">
+
+
+<link rel="canonical" href="https://www.huatree.top/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/","path":"2022/05/14/20220514-Docker + Jenkins + GitHub/","title":"Docker+Jenkins+GitHub"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Docker+Jenkins+GitHub | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-Docker-%E4%B8%AD%E8%BF%90%E8%A1%8C-Jenkins"><span class="nav-text">在 Docker 中运行 Jenkins</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Docker-Engine-%E8%BF%90%E8%A1%8C-Jenkins"><span class="nav-text">使用 Docker Engine 运行 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Docker-Compose-%E8%BF%90%E8%A1%8C-Jenkins"><span class="nav-text">使用 Docker Compose 运行 Jenkins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE-Jenkins-x2F-Blue-Ocean-Docker-%E5%AE%B9%E5%99%A8"><span class="nav-text">访问 Jenkins&#x2F;Blue Ocean Docker 容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%94%81-Jenkins"><span class="nav-text">解锁 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%8F%92%E4%BB%B6%E8%87%AA%E5%AE%9A%E4%B9%89-Jenkins"><span class="nav-text">使用插件自定义 Jenkins</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7"><span class="nav-text">创建第一个管理员用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%9C%E6%AD%A2%E5%92%8C%E9%87%8D%E5%90%AF-Jenkins"><span class="nav-text">停止和重启 Jenkins</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fork-%E5%92%8C-clone-GitHub-%E7%A4%BA%E4%BE%8B%E4%BB%93%E5%BA%93"><span class="nav-text">Fork 和 clone GitHub 示例仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-Jenkins-%E4%B8%AD%E5%88%9B%E5%BB%BA%E6%B5%81%E6%B0%B4%E7%BA%BF%E9%A1%B9%E7%9B%AE"><span class="nav-text">在 Jenkins 中创建流水线项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E4%BD%A0%E7%9A%84%E5%88%9D%E5%A7%8B%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%88%9B%E5%BB%BA%E4%B8%BA-Jenkinsfile"><span class="nav-text">将你的初始流水线创建为 Jenkinsfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%91%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%B7%BB%E5%8A%A0-Test-%E9%98%B6%E6%AE%B5"><span class="nav-text">向流水线添加 Test 阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%B7%BB%E5%8A%A0%E6%9C%80%E7%BB%88%E4%BA%A4%E4%BB%98%E9%98%B6%E6%AE%B5"><span class="nav-text">给流水线添加最终交付阶段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Docker+Jenkins+GitHub | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Docker+Jenkins+GitHub
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-14 13:48:36" itemprop="dateCreated datePublished" datetime="2022-05-14T13:48:36+08:00">2022-05-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index"><span itemprop="name">成长经历</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>6.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="https://cdn.huatree.top/image-20220511175224561.png" alt="image-20220511175224561"></p>
+<span id="more"></span>
+
+<div class="note warning"><p>本文教程基于<strong>Windows 10 系统</strong>Docker+Jenkins+GitHub 实现 CI&amp;CD。</p>
+</div>
+
+<h2 id="在-Docker-中运行-Jenkins"><a href="#在-Docker-中运行-Jenkins" class="headerlink" title="在 Docker 中运行 Jenkins"></a>在 Docker 中运行 Jenkins</h2><p>将 Jenkins 作为 Docker 容器并从 <a target="_blank" rel="noopener" href="https://hub.docker.com/r/jenkinsci/blueocean/"><code>jenkinsci/blueocean</code></a> Docker 镜像中运行。</p>
+<h3 id="使用-Docker-Engine-运行-Jenkins"><a href="#使用-Docker-Engine-运行-Jenkins" class="headerlink" title="使用 Docker Engine 运行 Jenkins"></a>使用 Docker Engine 运行 Jenkins</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入cmd终端</span></span><br><span class="line"><span class="comment"># 查看当前wsl版本</span></span><br><span class="line">wsl -l -v</span><br><span class="line"><span class="comment"># 进入wsl</span></span><br><span class="line">wsl</span><br><span class="line"><span class="comment"># 使用下面的 docker run 命令运行 jenkinsci/blueocean 镜像作为Docker中的一个容器(记住，如果本地没有镜像，这个命令会自动下载)</span></span><br><span class="line">docker run \</span><br><span class="line">  --name huatree-jenkins \</span><br><span class="line">  --<span class="built_in">rm</span> \</span><br><span class="line">  --restart \</span><br><span class="line">  -u root \</span><br><span class="line">  -p 8080:8080 \</span><br><span class="line">  -v jenkins-data:/var/jenkins_home \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  -v /home/huatree/document:/home \</span><br><span class="line">  jenkinsci/blueocean</span><br><span class="line"><span class="comment"># 如果需要退出当前容器的运行状态，输入快捷键ctrl + c</span></span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<p><code>wsl</code>：windows10 子系统 Linux，这里用的是微软商店中下载的 Debian，升级到 wsl2</p>
+<p><code>\</code>：linux 环境空格输出</p>
+<p><code>--name</code>：为容器分配名称</p>
+<p><code>--rm</code>：容器退出时自动移除，可以不写，后面用<code>docker rm</code>移除该容器便可。</p>
+<p><code>--restart</code>：容器退出时应用的重启策略</p>
+<p><code>-u</code>：即<code>--user</code>，用户名或 UID（格式：&lt;name|uid&gt;[:&lt;group|gid&gt;]）</p>
+<p><code>-p</code>：即<code>--publish</code>，将容器的端口发布到主机</p>
+<p><code>-v</code>：即<code>--volume</code>，绑定挂载卷</p>
+<p><code>-v jenkins-data:/var/jenkins_home</code>：将容器中的 <code>/var/jenkins_home</code> 目录映射到 Docker <a target="_blank" rel="noopener" href="https://docs.docker.com/engine/admin/volumes/volumes/">volume</a> ，并将其命名为 <code>jenkins-data</code>。如果该卷不存在, 那么 <code>docker run</code> 命令会自动为你创建卷。</p>
+<p><code>-v /var/run/docker.sock:/var/run/docker.sock</code>：在前台运行并将其日志直接发送到您的终端，<a target="_blank" rel="noopener" href="https://docs.docker.com/config/daemon/">详见官网文档</a></p>
+<p><code>docker run</code> 命令更多参数使用信息，<a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/run/">详见官方文档</a></p>
+<h3 id="使用-Docker-Compose-运行-Jenkins"><a href="#使用-Docker-Compose-运行-Jenkins" class="headerlink" title="使用 Docker Compose 运行 Jenkins"></a>使用 Docker Compose 运行 Jenkins</h3><p>当然，每次<code>docker run...</code>，不方便，可以在需要的路径下配置<code>compose.yaml</code>文件，并在当前路径下的命令行输入<code>docker compose up</code>，它会读取<code>compose.yaml</code>文件，自动执行命令。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">jenkins:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">jenkinsci/blueocean</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">jenkins-data:/var/jenkins_home</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/var/run/docker.sock:/var/run/docker.sock</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">/home/huatree/document:/home</span></span><br><span class="line">    <span class="attr">user:</span> <span class="string">root</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">8080</span><span class="string">:8080</span></span><br><span class="line">    <span class="attr">stdin_open:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">tty:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">jenkins-data:</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>更多<code>compse.yaml</code>参数配置，<a target="_blank" rel="noopener" href="https://docs.docker.com/compose/compose-file/">详见官方文档</a></p>
+<p><code>Dhudson.model.DirectoryBrowserSupport.CSP=空格</code>：确定为 Jenkins 提供的静态文件发送的内容安全策略标头。有关更多详细信息，请参阅<a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book/system-administration/security/configuring-content-security-policy/">配置内容安全策略</a></p>
+<p><code>Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</code>：允许本地目录验证。<a target="_blank" rel="noopener" href="https://plugins.jenkins.io/git/#plugin-content-allow-local-checkout">更多信息详见</a></p>
+<h2 id="访问-Jenkins-x2F-Blue-Ocean-Docker-容器"><a href="#访问-Jenkins-x2F-Blue-Ocean-Docker-容器" class="headerlink" title="访问 Jenkins&#x2F;Blue Ocean Docker 容器"></a>访问 Jenkins&#x2F;Blue Ocean Docker 容器</h2><h3 id="解锁-Jenkins"><a href="#解锁-Jenkins" class="headerlink" title="解锁 Jenkins"></a>解锁 Jenkins</h3><p>当你第一次访问一个新的 Jenkins 实例时, 要求你使用自动生成的密码对其进行解锁。</p>
+<p>当在终端&#x2F;命令提示窗口出现两组星号时, 浏览 <code>http://localhost:8080</code> 并等待 <strong>解锁 Jenkins</strong> 页面出现。</p>
+<p><img src="https://cdn.huatree.top/image-20220516093617699.png" alt="image-20220516093617699"></p>
+<p>再次从终端&#x2F;命令提示窗口, 复制自动生成的字母数字密码(在两组星号之间)。</p>
+<p><img src="https://cdn.huatree.top/image-20220516093715354.png" alt="image-20220516093715354"></p>
+<p>在<strong>解锁 Jenkins</strong> 页面, 粘贴该密码到 <strong>管理员密码</strong> 字段并点击 <strong>继续</strong>，进入新手入门页面。</p>
+<p><img src="https://cdn.huatree.top/image-20220516094041627.png" alt="image-20220516094041627"></p>
+<h3 id="使用插件自定义-Jenkins"><a href="#使用插件自定义-Jenkins" class="headerlink" title="使用插件自定义 Jenkins"></a>使用插件自定义 Jenkins</h3><p>在<strong>解锁 Jenkins</strong> 后，<strong>自定义 Jenkins</strong> 页面出现，可以选择默认的<strong>安装推荐的插件</strong>。后续可以在插件管理页面进行维护（卸载&#x2F;更新&#x2F;添加）。</p>
+<p>安装向导显示了正在配置的 Jenkins 的进程，以及建议安装的插件。这个过程肯需要几分钟。</p>
+<h3 id="创建第一个管理员用户"><a href="#创建第一个管理员用户" class="headerlink" title="创建第一个管理员用户"></a>创建第一个管理员用户</h3><p>最后, Jenkins 要求创建你的第一个管理员用户。</p>
+<p>当 <strong>创建第一个管理员用户</strong> 页面出现, 在相应的字段中指定你的详细消息并点击 <strong>保存并完成</strong>。</p>
+<p><img src="https://cdn.huatree.top/image-20220516095217292.png" alt="image-20220516095217292"></p>
+<p>当 <strong>实例配置</strong> 页面出现，根据需要是否配置 <strong>Jenkins URL</strong>，并点击 <strong>保存并完成</strong>。</p>
+<p><img src="https://cdn.huatree.top/image-20220516095453149.png" alt="image-20220516095453149"></p>
+<p>当 <strong>Jenkins 已就绪</strong> 页面出现, 点击 <strong>开始使用 Jenkins</strong>。</p>
+<p><img src="https://cdn.huatree.top/image-20220516095803705.png" alt="image-20220516095803705"></p>
+<p>等待一会儿，Jenkins 主页出现。</p>
+<p><img src="https://cdn.huatree.top/image-20220516102328899.png" alt="image-20220516102328899"></p>
+<h3 id="停止和重启-Jenkins"><a href="#停止和重启-Jenkins" class="headerlink" title="停止和重启 Jenkins"></a>停止和重启 Jenkins</h3><p>在其他时候，如果不用了，你可以通过在终端&#x2F;命令提示窗口输入 <code>Ctrl-C</code>停止 Jenkins&#x2F;Blue Ocean Docker 容器。想用时，执行<code>docker compose start</code>。</p>
+<p>另一种场景：正常启动了 Jenkins，关掉命令行工具，该容器并没有停止运行。如果想停止，则终端执行命令<code>docker compose stop</code>。</p>
+<h2 id="Fork-和-clone-GitHub-示例仓库"><a href="#Fork-和-clone-GitHub-示例仓库" class="headerlink" title="Fork 和 clone GitHub 示例仓库"></a>Fork 和 clone GitHub 示例仓库</h2><p>通过将应用程序源代码所在的示例仓库 fork 到你自己的 Github 账号中， 并 clone 到本地， 你就可以获取一个”Welcome to React”简单 Node.js 和 React 应用程序。</p>
+<p>将示例仓库 <a target="_blank" rel="noopener" href="https://github.com/jenkins-docs/simple-node-js-react-npm-app"><code>simple-node-js-react-npm-app</code></a> fork 到你的账户的 Github 仓库中。接着，将你的 GitHub 账户中的 <code>simple-node-js-react-npm-app</code> 仓库 clone 到你本地的如下目录：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/huatree/document/github/simple-node-js-react-npm-app</span><br></pre></td></tr></table></figure>
+
+<p><code>/home/huatree/document</code>是上面<code>compose.yaml</code>的内容，从你主机上的<code>/home/huatree/document</code>目录映射到 Jenkins 容器的 <code>/home</code>。</p>
+<h2 id="在-Jenkins-中创建流水线项目"><a href="#在-Jenkins-中创建流水线项目" class="headerlink" title="在 Jenkins 中创建流水线项目"></a>在 Jenkins 中创建流水线项目</h2><p>回到浏览器打开的 Jenkin 页面，再次登录并点<strong>欢迎来到 Jenkins!<strong>下的</strong>create new jobs</strong> 。 如果没有看到上述内容，请点击左侧的 <strong>新建任务</strong> 。</p>
+<p>在 <strong>输入一个任务名称</strong> 域, 填写你的新的流水线项目的名称 (比如<code>simple-node-js-react-npm-app</code>)</p>
+<p>向下滚动并单击 <strong>流水线</strong>, 然后点击页面末尾的 <strong>确定</strong></p>
+<p><img src="https://cdn.huatree.top/image-20220516105037672.png" alt="image-20220516105037672"></p>
+<p>在 <strong>General&gt;描述</strong> 字域为你的流水线项目做一个简短的描述(比如. <code>An entry-level Pipeline demonstrating how to use Jenkins to build a simple Node.js and React application with npm.</code>)</p>
+<p><img src="https://cdn.huatree.top/image-20220516105429577.png" alt="image-20220516105429577"></p>
+<p>在<strong>流水线</strong>栏，在<strong>定义</strong>域，选择 <strong>Pipeline script from SCM</strong> 选项。此选项指示 Jenkins 从源代码管理（SCM）仓库获取你的流水线， 这里的仓库就是你 clone 到本地的 Git 仓库。</p>
+<p>在 <strong>SCM</strong> 域中，选择 <strong>Git</strong>。有关<code>GitSCM</code>更多信息，<a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/">详见</a></p>
+<p>在 <strong>Repository URL</strong> 域中，可以有如下填写操作：</p>
+<p>如果填写 clone 到本地的仓库<strong>映射路径</strong>：<code>/home/github/simple-node-js-react-npm-app</code>，<strong>Credentials</strong>项就默认即可，无需添加凭据，因为<code>compose.yaml</code>文件已经配置了如下内容：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">environment:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">JAVA_OPTS=-Dhudson.model.DirectoryBrowserSupport.CSP=</span> <span class="string">-Dhudson.plugins.git.GitSCM.ALLOW_LOCAL_CHECKOUT=true</span></span><br></pre></td></tr></table></figure>
+
+<p>如果填写的是远程仓库路径：如<code>git@github.com:huatree/simple-node-js-react-npm-app.git</code>，则在<strong>Credentials</strong>域中，添加<strong>凭据</strong>，选择类型为<code>SSH Username with private key</code>，然后复制粘贴本地的.ssh 目录下的<strong>私钥</strong>，点击<strong>确定</strong>，再选中配置好的凭据。</p>
+<p><img src="https://cdn.huatree.top/image-20220516105841594.png" alt="image-20220516105841594"></p>
+<p>其他项默认即可（后续可根据需要自行修改配置），点击 <strong>保存</strong> 保存你的流水线项目。你现在可以开始创建你的 <code>Jenkinsfile</code>，这些文件会被添加到你的本地仓库。</p>
+<h3 id="将你的初始流水线创建为-Jenkinsfile"><a href="#将你的初始流水线创建为-Jenkinsfile" class="headerlink" title="将你的初始流水线创建为 Jenkinsfile"></a>将你的初始流水线创建为 Jenkinsfile</h3><p>在<code>simple-node-js-react-npm-app</code>项目根目录下创建<code>Jenkinsfile</code>文件，内容如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">  agent &#123;</span><br><span class="line">    docker &#123;</span><br><span class="line">      image <span class="string">&#x27;node:10&#x27;</span></span><br><span class="line">      args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  stages &#123;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更多<code>Jenkinsfile</code>配置，<a target="_blank" rel="noopener" href="https://www.jenkins.io/zh/doc/book/pipeline/jenkinsfile/">详见官方文档</a></p>
+<p>保存并提交你编辑的 <code>Jenkinsfile</code> 到你本地的 <code>simple-node-js-react-npm-app</code> Git 仓库，推送到远程<code>simple-node-js-react-npm-app</code>仓库。</p>
+<p>回到浏览器 Jenkins 主页面，左侧选择<strong>打开 Blue Ocean</strong>，弹出框提示”该任务还未运行“，点击<strong>运行</strong>。等待一会儿，出现报错</p>
+<p><img src="https://cdn.huatree.top/image-20220516113556323.png" alt="image-20220516113556323"></p>
+<p>此时，需要安装<code>Docker</code>和<code>Docker Pipeline</code>2 个插件。转到 Jenkins 根页面 &gt; 插件管理 &gt; 可用并搜索插件。安装好后，重启 Jenkins 服务生效，再次运行即可。</p>
+<p>如果 Jenkins 成功构建了你的应用，Blue Ocean 的界面就会变绿。</p>
+<p><img src="https://cdn.huatree.top/image-20220516122621742.png" alt="image-20220516122621742"></p>
+<h3 id="向流水线添加-Test-阶段"><a href="#向流水线添加-Test-阶段" class="headerlink" title="向流水线添加 Test 阶段"></a>向流水线添加 Test 阶段</h3><p>回到文本编辑器&#x2F;IDE，打开<code>Jenkinsfile</code>，如下编辑</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">    agent &#123;</span><br><span class="line">        docker &#123;</span><br><span class="line">            image <span class="string">&#x27;node:lts-buster-slim&#x27;</span></span><br><span class="line">            args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    environment &#123;</span><br><span class="line">        <span class="variable constant_">CI</span> = <span class="string">&#x27;true&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    stages &#123;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Test&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/test.sh&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Deliver&#x27;</span></span>) &#123;</span><br><span class="line">            steps &#123;</span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span></span><br><span class="line">                input <span class="attr">message</span>: <span class="string">&#x27;Finished using the web site? (Click &quot;Proceed&quot; to continue)&#x27;</span></span><br><span class="line">                sh <span class="string">&#x27;./jenkins/scripts/kill.sh&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改<code>package.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;test&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cross-env CI=true react-scripts test --env=jsdom&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>修改<code>jenkins/scripts/test.th</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去掉npm install --save-dev cross-env的注释</span></span><br><span class="line">npm install --save-dev cross-env</span><br></pre></td></tr></table></figure>
+
+<p>再次提交并推送到远程仓库，运行构建，结果如下</p>
+<p><img src="https://cdn.huatree.top/image-20220516124427698.png" alt="image-20220516124427698"></p>
+<h3 id="给流水线添加最终交付阶段"><a href="#给流水线添加最终交付阶段" class="headerlink" title="给流水线添加最终交付阶段"></a>给流水线添加最终交付阶段</h3><p>回到文本编辑器&#x2F;IDE，打开<code>Jenkinsfile</code>，如下编辑</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">pipeline &#123;</span><br><span class="line">  agent &#123;</span><br><span class="line">    docker &#123;</span><br><span class="line">      image <span class="string">&#x27;node:10&#x27;</span></span><br><span class="line">      args <span class="string">&#x27;-p 3000:3000&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  environment &#123;</span><br><span class="line">    <span class="variable constant_">CI</span> = <span class="string">&#x27;true&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">  stages &#123;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Build&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;npm install&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Test&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/test.sh&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">stage</span>(<span class="params"><span class="string">&#x27;Deliver&#x27;</span></span>) &#123;</span><br><span class="line">      steps &#123;</span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/deliver.sh&#x27;</span></span><br><span class="line">        input <span class="attr">message</span>: <span class="string">&#x27;Finished using the web site? (Click &quot;proceed&quot; to continue)&#x27;</span></span><br><span class="line">        sh <span class="string">&#x27;./jenkins/scripts/kill.sh&#x27;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>提交并推送到远程仓库，点击<strong>立即构建或运行</strong>。</p>
+<p><img src="https://cdn.huatree.top/image-20220516130020852.png" alt="image-20220516130020852"></p>
+<p>观察 “Deliver” 阶段 (必要的时候点击它), 然后点击 绿色的 <strong><code>./jenkins/scripts/deliver.sh</code></strong> 步骤扩展它的内容并向下滚动直到看见 <code>http://localhost:3000</code> 链接，访问它。</p>
+<p><img src="https://cdn.huatree.top/image-20220516130125776.png" alt="image-20220516130125776"></p>
+<p>点击 <code>http://localhost:3000</code> 链接在一个新的浏览器选项卡查看你的 Node.js 和 React 应用的运行(在开发模式下) 。 你会 看到一个标题为 <strong>Welcome to React</strong> 的网页&#x2F;站点。</p>
+<p><img src="https://cdn.huatree.top/image-20220516130201358.png" alt="image-20220516130201358"></p>
+<p>当你查看完页面&#x2F;站点, 点击 <strong>继续</strong> 按钮以完成流水线的执行。</p>
+<p><img src="https://cdn.huatree.top/image-20220516130920146.png" alt="image-20220516130920146"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>做得好！您刚刚使用 Jenkins 通过 npm 构建了一个简单的 Node.js 和 React 应用程序！</p>
+<p>您在上面创建的 “Build”, “Test” 和 “Deliver” 阶段是使用 Jenkins 中的 Maven 构建更复杂的 Node.js 和 React 应用程序以及与其他技术栈集成的 Node.js 和 React 应用程序的基础。</p>
+<p>由于 Jenkins 具有极高的可扩展性，因此可以对其进行修改和配置，以处理构建协调和自动化的几乎任何方面。</p>
+<p>要详细了解 Jenkins 可以做什么，请查看：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/tutorials">教程概览</a> 页面中的其他介绍教程。</li>
+<li><a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book">用户手册</a> 使用 Jenkins 的更多细节，例如 <a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book/pipeline">Pipelines</a> (尤其是 <a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book/pipeline/syntax">Pipeline 语法</a>) 和 <a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/book/blueocean">Blue Ocean</a> 界面。</li>
+<li><a target="_blank" rel="noopener" href="https://www.jenkins.io/node">Jenkins blog</a> 资讯，其他教程和更新。</li>
+</ul>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.jenkins.io/zh/doc/tutorials/build-a-node-js-and-react-app-with-npm/#%E4%BD%BF%E7%94%A8npm%E6%9E%84%E5%BB%BAnode-js%E5%92%8Creact%E5%BA%94%E7%94%A8">使用 npm 构建 Node.js 和 React 应用</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/62253474/jenkins-invalid-agent-type-docker-specified-must-be-one-of-any-label-none">Jenkins. Invalid agent type “docker” specified. Must be one of [any, label, none]</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://issues.jenkins.io/browse/JENKINS-68571?jql=text%20~%20%22ALLOW_LOCAL_CHECKOUT%22">ALLOW_LOCAL_CHECKOUT set but local checkout not available</a></p>
+<p>[4] <a target="_blank" rel="noopener" href="https://www.jenkins.io/doc/pipeline/steps/workflow-scm-step/#pipeline-scm-step">Pipeline: SCM Step</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2022/05/14/20220514-Docker%20+%20Jenkins%20+%20GitHub/" title="Docker+Jenkins+GitHub">https://www.huatree.top/2022/05/14/20220514-Docker + Jenkins + GitHub/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/CI-CD/" rel="tag"># CI&CD</a>
+              <a href="/tags/Jenkins/" rel="tag"># Jenkins</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/05/13/20220513-Docker.3.1-%E5%B0%86%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E5%AE%B9%E5%99%A8%E5%8C%96/" rel="prev" title="Docker.3.1-将应用程序容器化">
+                  <i class="fa fa-chevron-left"></i> Docker.3.1-将应用程序容器化
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/14/20220514-Docker.3.2-%E6%9B%B4%E6%96%B0%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" rel="next" title="Docker.3.2-更新应用程序">
+                  Docker.3.2-更新应用程序 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"daf67834eefd9e1434d2945dd3b8cd8a"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

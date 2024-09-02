@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="JavaScript是门魅力无限的语言，关于它的GC（垃圾回收）方面，你了解多少呢？想来大部分人是因为面试才去看一些面试题从而了解的垃圾回收。 当然，我们可不仅仅是为了面试，其目的是一次性彻底搞懂 GC！假如你对其中某块内容不太理解，不要着急，先读完整篇文章了解内容再回过头来仔细看一遍就会清晰很多，干货满满，先赞后看哦。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS垃圾回收机制">
+<meta property="og:url" content="https://www.huatree.top/2023/08/12/20230812-JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="JavaScript是门魅力无限的语言，关于它的GC（垃圾回收）方面，你了解多少呢？想来大部分人是因为面试才去看一些面试题从而了解的垃圾回收。 当然，我们可不仅仅是为了面试，其目的是一次性彻底搞懂 GC！假如你对其中某块内容不太理解，不要着急，先读完整篇文章了解内容再回过头来仔细看一遍就会清晰很多，干货满满，先赞后看哦。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813014556183.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812223723276.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812225242377.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812230749988.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230812235903208.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813010050238.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813010230686.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813011227539.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20230813012453685.png">
+<meta property="article:published_time" content="2023-08-12T08:02:26.000Z">
+<meta property="article:modified_time" content="2024-03-11T12:38:02.824Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20230813014556183.png">
+
+
+<link rel="canonical" href="https://www.huatree.top/2023/08/12/20230812-JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2023/08/12/20230812-JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/","path":"2023/08/12/20230812-JS垃圾回收机制/","title":"JS垃圾回收机制"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JS垃圾回收机制 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-text">操作系统中的存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-text">内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-text">内存生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JS%E6%80%8E%E4%B9%88%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E7%9A%84"><span class="nav-text">JS怎么分配内存的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6-Garbage-Collection"><span class="nav-text">垃圾回收(Garbage Collection)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E4%BA%A7%E7%94%9F-amp-%E4%B8%BA%E4%BD%95%E5%9B%9E%E6%94%B6"><span class="nav-text">垃圾产生&amp;为何回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E5%9B%9E%E6%94%B6"><span class="nav-text">怎么回收</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%AE%97%E6%B3%95"><span class="nav-text">引用计数算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95"><span class="nav-text">标记清除算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#V8%E5%AF%B9GC%E7%9A%84%E4%BC%98%E5%8C%96"><span class="nav-text">V8对GC的优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E4%BB%A3%E5%BC%8F%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-text">分代式垃圾回收</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E8%80%81%E7%94%9F%E4%BB%A3"><span class="nav-text">新老生代</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-amp-A"><span class="nav-text">Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E7%90%86%E8%A7%A3%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%EF%BC%9F"><span class="nav-text">怎么理解内存泄漏？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%B1%82%E9%9D%A2%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96%EF%BC%9F"><span class="nav-text">怎么解决内存泄漏，代码层面如何优化？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2023/08/12/20230812-JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="JS垃圾回收机制 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JS垃圾回收机制
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-08-12 16:02:26" itemprop="dateCreated datePublished" datetime="2023-08-12T16:02:26+08:00">2023-08-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index"><span itemprop="name">成长经历</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.9k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>7 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>JavaScript是门魅力无限的语言，关于它的GC（垃圾回收）方面，你了解多少呢？想来大部分人是因为面试才去看一些面试题从而了解的垃圾回收。</p>
+<p>当然，我们可不仅仅是为了面试，其目的是一次性彻底搞懂 GC！假如你对其中某块内容不太理解，不要着急，先读完整篇文章了解内容再回过头来仔细看一遍就会清晰很多，干货满满，先赞后看哦。</p>
+<p><img src="https://cdn.huatree.top/image-20230813014556183.png" alt="image-20230813014556183"></p>
+<span id="more"></span>
+
+<h2 id="操作系统中的存储结构"><a href="#操作系统中的存储结构" class="headerlink" title="操作系统中的存储结构"></a>操作系统中的存储结构</h2><ul>
+<li><p><code>CPU</code> 只能从内存中加载指令，因此执行程序必须位于内存。通用计算机运行的大多数程序通常位于可读写内存，称为内存，也称为 <code>随机访问内存</code>（也被称为RAM：Random Access Memory）。</p>
+</li>
+<li><p>内存由一个很大的字节数组来组成,每个字节都有各自的地址，<code>CPU</code> 根据程序计数器的值从内存中提取指令，这些指令可能引起对特定内存地址的额外加载与存储。</p>
+</li>
+<li><p>在理想状态下，程序和数据都应永久驻留在内存中。由于以下两个原因,这是不可能的：</p>
+<ol>
+<li>内存通常太少，不能永久保存所有需要的内存和数据；</li>
+<li>内存是 <code>易失性</code> 的存储设备，停电时就会失去所有内容；</li>
+</ol>
+</li>
+<li><p>最为常用的外存设备为磁盘和硬盘，它能存储程序和数据。</p>
+<p>内存区别于储存：</p>
+<table>
+<thead>
+<tr>
+<th align="center">Key</th>
+<th align="center">内存</th>
+<th align="center">储存</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Basis</td>
+<td align="center">内存是临时存储数据的。一旦系统断电，数据就会消失。</td>
+<td align="center">存储器在永久基础上存储数据。即使系统电源关闭，数据也会持续存在。</td>
+</tr>
+<tr>
+<td align="center">Speed</td>
+<td align="center">内存的速度比存储快。</td>
+<td align="center">与内存相比，存储的速度较慢。</td>
+</tr>
+<tr>
+<td align="center">组成部分</td>
+<td align="center">内存是由寄存器组成的，速度非常快。</td>
+<td align="center">存储器是由磁条&#x2F;部件组成的，比存储器慢。</td>
+</tr>
+<tr>
+<td align="center">Size</td>
+<td align="center">与存储相比，内存大小相当小，一般以MB或几GB为单位。</td>
+<td align="center">存储的大小非常大，以GB或几个TB为单位。</td>
+</tr>
+<tr>
+<td align="center">数据访问</td>
+<td align="center">内存是一个可以即时访问数据的组件。</td>
+<td align="center">存储器不能像内存那样快速改变或访问数据。</td>
+</tr>
+<tr>
+<td align="center">Types</td>
+<td align="center">内存的类型有–缓存内存、主内存和辅助内存。</td>
+<td align="center">存储类型包括–HDD、SSD、CD、DVD、软盘、磁带、蓝光光盘等。</td>
+</tr>
+<tr>
+<td align="center">Cost</td>
+<td align="center">记忆的成本相对较高。</td>
+<td align="center">存储器的成本比内存模块要低。</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>大多数程序(例如谷歌浏览器的安装文件)都保存在硬盘上，当要执行的时候才加载到内存，操作系统会为该应用程序创建一个新的进程，并为它分配必要的资源，如内存空间、文件描述符等。还会为其开辟一个线程以运行程序。如下图：</p>
+<p><img src="https://cdn.huatree.top/image-20230812223723276.png" alt="image-20230812223723276"></p>
+</li>
+<li><p>在上图中，操作系统会为每个应用程序创建一个进程，并且每个应用程序都占据着一定的内存空间。</p>
+</li>
+<li><p>进程又能创建线程，并且每个进程最少拥有一个线程，称为主线程，如下图：</p>
+<p><img src="https://cdn.huatree.top/image-20230812225242377.png" alt="image-20230812225242377"></p>
+</li>
+<li><p>一个谷歌浏览器拥有多个线程,用于运行每一个浏览器页面。</p>
+<p><img src="https://cdn.huatree.top/image-20230812230749988.png" alt="image-20230812230749988"></p>
+</li>
+<li><p>根据速度和价格，各种不同的存储可以按层次来分类，如上图所示。层次越高，价格越贵，速度越快。</p>
+</li>
+</ul>
+<h2 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h2><p>在前面的内容中我们对内存进行了介绍，那么接下来我们认识一下内存管理。</p>
+<p>像 C 语言这样的底层语言一般都有底层的内存管理接口，比如 <code>malloc()</code>和<code>free()</code>。相反，JavaScript 是在创建变量（对象，字符串等）时自动进行了分配内存，并且在不使用它们时“自动”释放。释放的过程称为垃圾回收。这个“自动”是混乱的根源，并让 JavaScript（和其他高级语言）开发者错误的感觉他们可以不关心内存管理。</p>
+<p>然而，内存的读取和释放，决定了程序性能。</p>
+<h3 id="内存生命周期"><a href="#内存生命周期" class="headerlink" title="内存生命周期"></a>内存生命周期</h3><p>不管什么程序语言，内存生命周期基本是一致的：</p>
+<ol>
+<li>分配你所需要的内存</li>
+<li>使用分配到的内存（读、写）</li>
+<li>不需要时将其释放\归还</li>
+</ol>
+<p>所有语言第二部分都是明确的。第一和第三部分在底层语言中是明确的，但在像 JavaScript 这些高级语言中，大部分都是隐含的。</p>
+<p>通过下面的代码我们来简单分析一下整个内存管理的生命周期：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 分配内存</span></span><br><span class="line"><span class="keyword">const</span> foo = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;moment&quot;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="string">&quot;18&quot;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 使用内存</span></span><br><span class="line">foo.<span class="property">name</span> = <span class="string">&quot;xun&quot;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(foo);</span><br><span class="line"><span class="comment">// 内存回收</span></span><br><span class="line">foo = <span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>JavaScript 的内存分配：</strong>为了不让程序员费心分配内存，JavaScript 在定义变量时就完成了内存分配。</p>
+<p><strong>使用内存：</strong>实际上是对分配内存进行读取与写入的操作。读取与写入可能是写入一个变量或者一个对象的属性值，甚至传递函数的参数。</p>
+<p> <strong>内存回收：</strong>当内存不再需要使用时释放。</p>
+<h4 id="JS怎么分配内存的"><a href="#JS怎么分配内存的" class="headerlink" title="JS怎么分配内存的"></a>JS怎么分配内存的</h4><p>在JavaScript中，不同的数据类型分配不同的内存，而存放这些数据的内存又可以分为两部分：<code>栈内存</code> 和 <code>堆内存</code>。</p>
+<p>在 <code>JavaScript</code> 中有<strong>7</strong>种原始类型，它们分别是 空值(<code>null</code>)、未定义(<code>undefined</code>)、布尔值(<code>boolean</code>)、数字(<code>number</code>)、字符串(<code>string</code>)、 任意精度整数(<code>Bigint</code>)、符号(<code>symbol</code>)，这些类型都会被存放到栈内存中。</p>
+<p>JavaScript中的引用类型，比如 <code>Object</code>、<code>Array</code>,它们是存在堆内存的，JavaScript不允许直接操作堆内存，我们操作对象时，操作的实际是对象的引用，而不是实际对象，这就相当于 <code>C语言</code> 中的指针，这个指针指向了堆里面的实际的对象。函数也是引用类型，当我们定义一个函数时，会在堆内存中开辟一块内存空间，将函数体代码以字符串的形式存进去。然后将这块内存的地址赋值给函数名，函数名和引用地址会存在栈上。</p>
+<p>栈存储无论分配新的空间还是释放空间(压栈和退栈)都很简单，访问栈里的变量也快速，但其缺点是每次压栈的空间大小是固定的，因此里面的变量的数目及其数据结构大小也是固定的。</p>
+<p>压栈和退栈是随着函数调用同步进行的，当函数结构后期栈空间会被立即释放，里面的变量的数据无法保留。如果要保留，让函数外面的继续，比如闭包，必须将其存入堆内存中，闭包中的变量也是存在堆内存中，堆存储的特点是不会随函数的结束而自动让数据消失。</p>
+<p>堆在分配和释放空间时要做相当多的工作，比如分配时寻找合适大小的空间，对不用的空间做垃圾扫描和垃圾回收，甚至要将碎片化的空闲空间整合在一起。此外访问堆里的数据也要比栈更慢。所有这些都让堆储存的运行代价很高，影响性能。</p>
+<h2 id="垃圾回收-Garbage-Collection"><a href="#垃圾回收-Garbage-Collection" class="headerlink" title="垃圾回收(Garbage Collection)"></a>垃圾回收(Garbage Collection)</h2><p>程序工作过程中会产生很多 <code>垃圾</code>，这些垃圾是程序不用的内存或者是之前用过了，以后不会再用的内存空间，而 <code>GC</code> 就是负责回收垃圾的，因为他工作在引擎内部，所以对于我们前端来说，<code>GC</code> 过程是相对比较无感的，这一套引擎执行而对我们又相对无感的操作也就是常说的 <code>垃圾回收</code>。</p>
+<h3 id="垃圾产生-amp-为何回收"><a href="#垃圾产生-amp-为何回收" class="headerlink" title="垃圾产生&amp;为何回收"></a>垃圾产生&amp;为何回收</h3><p>我们知道写代码时创建一个基本类型、对象、函数……都是需要占用内存的，但是我们并不关注这些，因为这是引擎为我们分配的，我们不需要显式手动的去分配内存。</p>
+<p>但是，你有没有想过，当我们不再需要某个东西时会发生什么？JavaScript 引擎又是如何发现并清理它的呢？</p>
+<p>我们举个简单的例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;isboyjc&quot;</span></span><br><span class="line">&#125;;</span><br><span class="line">test = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+
+<p>如上所示，我们假设它是一个完整的程序代码。</p>
+<p>我们知道 <code>JavaScript</code> 的引用数据类型是保存在堆内存中的，然后在栈内存中保存一个对堆内存中实际对象的引用，所以，<code>JavaScript</code> 中对引用数据类型的操作都是操作对象的引用而不是实际的对象。可以简单理解为，栈内存中保存了一个地址，这个地址和堆内存中的实际值是相关的</p>
+<p>那上面代码首先我们声明了一个变量 <code>test</code>，它引用了对象 <code>&#123;name: &#39;isboyjc&#39;&#125;</code>，接着我们把这个变量重新赋值了一个数组对象，也就变成了该变量引用了一个数组，那么之前的对象引用关系就没有了，如下图：</p>
+<p><img src="https://cdn.huatree.top/image-20230812235903208.png" alt="image-20230812235903208"></p>
+<p>没有了引用关系，也就是无用的对象，这个时候假如任由它搁置，一个两个还好，多了的话内存也会受不了，所以就需要被清理（回收）</p>
+<p>用官方一点的话说，程序的运行需要内存，只要程序提出要求，操作系统或者运行时就必须提供内存，那么对于持续运行的服务进程，必须要及时释放内存，否则，内存占用越来越高，轻则影响系统性能，重则就会导致进程崩溃。</p>
+<h3 id="怎么回收"><a href="#怎么回收" class="headerlink" title="怎么回收"></a>怎么回收</h3><p>大多数内存管理的问题都在这个阶段。在这里最艰难的任务是找到“哪些被分配的内存确实已经不再需要了”。它往往要求开发人员来确定在程序中哪一块内存不再需要并且释放它。</p>
+<p>高级语言解释器嵌入了“垃圾回收器”，它的主要工作是跟踪内存的分配和使用，以便当分配的内存不再使用时，自动释放它。这只能是一个近似的过程，因为要知道是否仍然需要某块内存是无法判定的（无法通过某种算法解决）。</p>
+<p>如上文所述自动寻找是否一些内存“不再需要”的问题是无法判定的。因此，垃圾回收实现只能有限制的解决一般问题。</p>
+<p>在 JavaScript 内存管理中有一个概念叫做 <code>可达性</code>，就是那些以某种方式可访问或者说可用的值，它们被保证存储在内存中，反之不可访问则需回收</p>
+<p>至于如何回收，其实就是怎样发现这些不可达的对象（垃圾）它并给予清理的问题， <code>JavaScript</code> 垃圾回收机制的原理说白了也就是定期找出那些不再用到的内存（变量），然后释放其内存</p>
+<p>你可能还会好奇为什么不是实时的找出无用内存并释放呢？其实很简单，实时开销太大了</p>
+<p>我们都可以 Get 到这之中的重点，那就是怎样找出所谓的垃圾？</p>
+<p>这个流程就涉及到了一些算法策略，有很多种方式，我们简单介绍两个最常见的：</p>
+<ul>
+<li>引用计数算法</li>
+<li>标记清除算法</li>
+</ul>
+<h2 id="引用计数算法"><a href="#引用计数算法" class="headerlink" title="引用计数算法"></a>引用计数算法</h2><p>引用计数（Reference Counting），这是最初级的垃圾收集算法，它把 <code>对象是否不再需要</code> 简化定义为 <code>对象有没有其他对象引用到它</code>，如果没有引用指向该对象（零引用），对象将被垃圾回收机制回收，目前很少使用这种算法了，因为它的问题很多，不过我们还是需要了解一下。</p>
+<p>它的策略是跟踪记录每个变量值被使用的次数。</p>
+<ul>
+<li>当声明了一个变量并且将一个引用类型赋值给该变量的时候这个值的引用次数就为 1；</li>
+<li>如果同一个值又被赋给另一个变量，那么引用数加 1；</li>
+<li>如果该变量的值被其他的值覆盖了，则引用次数减 1；</li>
+<li>当这个值的引用次数变为 0 的时候，说明没有变量在使用，这个值没法被访问了，回收空间，垃圾回收器会在运行的时候清理掉引用次数为 0 的值占用的内存；</li>
+</ul>
+<p>我们来看看下面这个列子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="title class_">Object</span>()  <span class="comment">// 此对象的引用计数为 1（a引用）</span></span><br><span class="line"><span class="keyword">let</span> b = a       <span class="comment">// 此对象的引用计数是 2（a,b引用）</span></span><br><span class="line">a = <span class="literal">null</span>        <span class="comment">// 此对象的引用计数为 1（b引用）</span></span><br><span class="line">b = <span class="literal">null</span>         <span class="comment">// 此对象的引用计数为 0（无引用）</span></span><br><span class="line">...          <span class="comment">// GC 回收此对象</span></span><br></pre></td></tr></table></figure>
+
+<p>这种方式是不是很简单？确实很简单，不过在引用计数这种算法出现没多久，就遇到了一个很严重的问题——循环引用，即对象 A 有一个指针指向对象 B，而对象 B 也引用了对象 A ，如下面这个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> A = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">  <span class="keyword">let</span> B = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line">  </span><br><span class="line">  A.<span class="property">b</span> = B</span><br><span class="line">  B.<span class="property">a</span> = A</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如上所示，对象 A 和 B 通过各自的属性相互引用着，按照上文的引用计数策略，它们的引用数量都是 2，但是，在函数 <code>test</code> 执行完成之后，对象 A 和 B 是要被清理的，但使用引用计数则不会被清理，因为它们的引用数量不会变成 0，假如此函数在程序中被多次调用，那么就会造成大量的内存不会被释放。</p>
+<p>我们再用标记清除的角度看一下，当函数结束后，两个对象都不在作用域中，A 和 B 都会被当作非活动对象来清除掉，相比之下，引用计数则不会释放，也就会造成大量无用内存占用，这也是后来放弃引用计数，使用标记清除的原因之一。</p>
+<p> JavaScript高级程序设计第四版 4.3.2 小节有提到的。在 IE8 以及更早版本的 IE 中，<code>BOM</code> 和 <code>DOM</code> 对象并非是原生 <code>JavaScript</code> 对象，它是由 <code>C++</code> 实现的 <code>组件对象模型对象（COM，Component Object Model）</code>，而 <code>COM</code> 对象使用 引用计数算法来实现垃圾回收，所以即使浏览器使用的是标记清除算法，只要涉及到 <code>COM</code> 对象的循环引用，就还是无法被回收掉，就比如两个互相引用的 <code>DOM</code> 对象等等，而想要解决循环引用，需要将引用地址置为 <code>null</code> 来切断变量与之前引用值的关系，如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// COM对象</span></span><br><span class="line"><span class="keyword">let</span> ele = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;xxx&quot;</span>)</span><br><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="title class_">Object</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 造成循环引用</span></span><br><span class="line">obj.<span class="property">ele</span> = ele</span><br><span class="line">ele.<span class="property">obj</span> = obj</span><br><span class="line"></span><br><span class="line"><span class="comment">// 切断引用关系</span></span><br><span class="line">obj.<span class="property">ele</span> = <span class="literal">null</span></span><br><span class="line">ele.<span class="property">obj</span> = <span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>不过在 IE9 及以后的 <code>BOM</code> 与 <code>DOM</code> 对象都改成了 <code>JavaScript</code> 对象，也就避免了上面的问题。</p>
+<p><strong>优点：</strong></p>
+<p>引用计数在引用值为 0 时，也就是在变成垃圾的那一刻就会被回收，所以它可以立即回收垃圾。</p>
+<p><strong>缺点：</strong></p>
+<p>引用计数的缺点想必大家也都很明朗了，首先它需要一个计数器，而此计数器需要占很大的位置，因为我们也不知道被引用数量的上限，还有就是无法解决循环引用无法回收的问题，这也是最严重的。</p>
+<h2 id="标记清除算法"><a href="#标记清除算法" class="headerlink" title="标记清除算法"></a>标记清除算法</h2><p>标记清除（Mark-Sweep），目前在 <code>JavaScript引擎</code> 里这种算法是最常用的，到目前为止的大多数浏览器的 <code>JavaScript引擎</code> 都在采用标记清除算法，只是各大浏览器厂商还对此算法进行了优化加工，且不同浏览器的 <code>JavaScript引擎</code> 在运行垃圾回收的频率上有所差异。</p>
+<p>就像它的名字一样，此算法分为 <code>标记</code> 和 <code>清除</code> 两个阶段，标记阶段即为所有活动对象做上标记，清除阶段则把没有标记（也就是非活动对象）销毁。</p>
+<p>你可能会疑惑怎么给变量加标记？其实有很多种办法，比如当变量进入执行环境时，反转某一位（通过一个二进制字符来表示标记），又或者可以维护进入环境变量和离开环境变量这样两个列表，可以自由的把变量从一个列表转移到另一个列表，当前还有很多其他办法。其实，怎样标记对我们来说并不重要，重要的是其策略</p>
+<p>引擎在执行 GC（使用标记清除算法）时，需要从出发点去遍历内存中所有的对象去打标记，而这个出发点有很多，我们称之为一组 <code>根</code> 对象，而所谓的根对象，其实在浏览器环境中包括又不止于 <code>全局Window对象</code>、<code>文档DOM树</code> 等。</p>
+<p>整个标记清除算法大致过程就像下面这样</p>
+<ul>
+<li>垃圾收集器在运行时会给内存中的所有变量都加上一个标记，假设内存中所有对象都是垃圾，全标记为0；</li>
+<li>然后从各个根对象开始遍历，把不是垃圾的节点改成1；</li>
+<li>清理所有标记为0的垃圾，销毁并回收它们所占用的内存空间；</li>
+<li>最后，把所有内存中对象标记修改为0，等待下一轮垃圾回收；</li>
+</ul>
+<p><strong>优点：</strong></p>
+<p>标记清除算法的优点只有一个，那就是实现比较简单，打标记也无非打与不打两种情况，这使得一位二进制位（0和1）就可以为其标记，非常简单。</p>
+<p><strong>缺点：</strong></p>
+<p>标记清除算法有一个很大的缺点，就是在清除之后，剩余的对象内存位置是不变的，也会导致空闲内存空间是不连续的，出现了 <code>内存碎片</code>，并且由于剩余空闲内存不是一整块，它是由不同大小内存组成的内存列表，这就牵扯出了内存分配的问题。如下图：</p>
+<p><img src="https://cdn.huatree.top/image-20230813010050238.png" alt="image-20230813010050238"></p>
+<p>假设我们新建对象分配内存时需要大小为 <code>size</code>，由于空闲内存是间断的、不连续的，则需要对空闲内存列表进行一次单向遍历找出大于等于 <code>size</code> 的块才能为其分配。如下图：</p>
+<p><img src="https://cdn.huatree.top/image-20230813010230686.png" alt="image-20230813010230686"></p>
+<p>那如何找到合适的块呢？我们可以采取下面三种分配策略</p>
+<ul>
+<li><code>First-fit</code>，找到大于等于 <code>size</code> 的块立即返回</li>
+<li><code>Best-fit</code>，遍历整个空闲列表，返回大于等于 <code>size</code> 的最小分块</li>
+<li><code>Worst-fit</code>，遍历整个空闲列表，找到最大的分块，然后切成两部分，一部分 <code>size</code> 大小，并将该部分返回</li>
+</ul>
+<p>这三种策略里面 <code>Worst-fit</code> 的空间利用率看起来是最合理，但实际上切分之后会造成更多的小块，形成内存碎片，所以不推荐使用，对于 <code>First-fit</code> 和 <code>Best-fit</code> 来说，考虑到分配的速度和效率 <code>First-fit</code> 是更为明智的选择</p>
+<p>综上所述，标记清除算法或者说策略就有两个很明显的缺点</p>
+<ul>
+<li><strong>内存碎片化</strong>，空闲内存块是不连续的，容易出现很多空闲内存块，还可能会出现分配所需内存过大的对象时找不到合适的块</li>
+<li><strong>分配速度慢</strong>，因为即便是使用 <code>First-fit</code> 策略，其操作仍是一个 <code>O(n)</code> 的操作，最坏情况是每次都要遍历到最后，同时因为碎片化，大对象的分配效率会更慢</li>
+</ul>
+<p>归根结底，标记清除算法的缺点在于清除之后剩余的对象位置不变而导致的空闲内存不连续，所以只要解决这一点，两个缺点都可以完美解决了</p>
+<p>而 <strong>标记整理（Mark-Compact）算法</strong>就可以有效地解决，它的标记阶段和标记清除算法没有什么不同，只是标记结束后，标记整理算法会将活着的对象（即不需要清理的对象）向内存的一端移动，最后清理掉边界的内存。如下图：</p>
+<p><img src="https://cdn.huatree.top/image-20230813011227539.png" alt="image-20230813011227539"></p>
+<h2 id="V8对GC的优化"><a href="#V8对GC的优化" class="headerlink" title="V8对GC的优化"></a>V8对GC的优化</h2><p>我们在上面也说过，现在大多数浏览器都是基于标记清除算法，V8 亦是，当然 V8 肯定也对其进行了一些优化加工处理，那接下来我们主要就来看 V8 中对垃圾回收机制的优化。</p>
+<h3 id="分代式垃圾回收"><a href="#分代式垃圾回收" class="headerlink" title="分代式垃圾回收"></a>分代式垃圾回收</h3><p>试想一下，我们上面所说的垃圾清理算法在每次垃圾回收时都要检查内存中所有的对象，这样的话对于一些大、老、存活时间长的对象来说同新、小、存活时间短的对象一个频率的检查很不好，因为前者需要时间长并且不需要频繁进行清理，后者恰好相反，怎么优化这点呢？分代式就来了。</p>
+<p><code>V8</code> 的垃圾回收策略主要是基于 <code>分代式垃圾回收策略</code>，其根据<strong>对象的存活时间</strong>将内存的垃圾回收进行不同的分代，然后对不同的分代采用不同的垃圾回收算法。</p>
+<h4 id="新老生代"><a href="#新老生代" class="headerlink" title="新老生代"></a>新老生代</h4><p>V8 的垃圾回收策略主要基于分代式垃圾回收机制，V8 中将堆内存分为新生代和老生代两区域，采用不同的垃圾回收器也就是不同的策略管理垃圾回收</p>
+<p>新生代的对象为存活时间较短的对象，简单来说就是新产生的对象，通常只支持 <code>1～8M</code> 的容量，而老生代的对象为存活时间较长或常驻内存的对象，简单来说就是经历过新生代垃圾回收后还存活下来的对象，容量通常比较大</p>
+<p>V8 整个堆内存的大小就等于新生代加上老生代的内存。如下图：</p>
+<p><img src="https://cdn.huatree.top/image-20230813012453685.png" alt="image-20230813012453685"></p>
+<p>对于新老两块内存区域的垃圾回收，V8 采用了两个垃圾回收器来管控，我们暂且将管理新生代的垃圾回收器叫做新生代垃圾回收器，同样的，我们称管理老生代的垃圾回收器叫做老生代垃圾回收器好了。</p>
+<p>了解更多，<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ISId8v-0NZIhfZsfy7cfww">详见</a></p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="怎么理解内存泄漏？"><a href="#怎么理解内存泄漏？" class="headerlink" title="怎么理解内存泄漏？"></a>怎么理解内存泄漏？</h3><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/bQhDdjmkyZMxRgip4vaElA">详见</a></p>
+<h3 id="怎么解决内存泄漏，代码层面如何优化？"><a href="#怎么解决内存泄漏，代码层面如何优化？" class="headerlink" title="怎么解决内存泄漏，代码层面如何优化？"></a>怎么解决内存泄漏，代码层面如何优化？</h3><ol>
+<li><p>减少查找</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i, str = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">packageDomGlobal</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">        str += i</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种情况。我们采用局部变量来保存保存相关数据</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">packageDomLocal</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">        str += i</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>减少变量声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种情况，循环体中没有抽离出值不变的数据</span></span><br><span class="line"><span class="keyword">var</span> <span class="title function_">test</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> arr = [<span class="string">&#x27;czs&#x27;</span>, <span class="number">25</span>, <span class="string">&#x27;I love FrontEnd&#x27;</span>];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种情况，循环体中抽离出值不变的数据</span></span><br><span class="line"><span class="keyword">var</span> <span class="title function_">test</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">let</span> arr = [<span class="string">&#x27;czs&#x27;</span>, <span class="number">25</span>, <span class="string">&#x27;I love FrontEnd&#x27;</span>];</span><br><span class="line">  <span class="keyword">const</span> length = arr.<span class="property">length</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++)&#123;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(arr[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 Performance + Memory 分析内存与性能</p>
+</li>
+</ol>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Memory_management">内存管理</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/ISId8v-0NZIhfZsfy7cfww">「硬核JS」你真的了解垃圾回收机制吗</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/5sZfht1fbVVrUTQE84NNTQ">一文让你彻底搞懂JS垃圾回收机制</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2023/08/12/20230812-JS%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6/" title="JS垃圾回收机制">https://www.huatree.top/2023/08/12/20230812-JS垃圾回收机制/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/06/21/20230621-uniapp%E6%96%87%E6%9C%AC%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E7%89%88%E7%9A%84%E5%9D%91/" rel="prev" title="uniapp文本复制到剪切版的坑">
+                  <i class="fa fa-chevron-left"></i> uniapp文本复制到剪切版的坑
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/08/17/20230817-%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%98%AF%E5%89%8D%E7%AB%AFleader%EF%BC%8C%E4%BD%A0%E4%BC%9A%E5%81%9A%E5%93%AA%E4%BA%9B%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE%EF%BC%9F/" rel="next" title="面试官：如果你是前端leader，你会做哪些前端基础建设？">
+                  面试官：如果你是前端leader，你会做哪些前端基础建设？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"f17f37c21b817fd04ece65adcca54b00"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

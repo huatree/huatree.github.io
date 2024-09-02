@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="随着前端项目越来越庞大，代码复杂性不断增加，对于模块化的需求越来越大。模块化是工程化基础，只有将代码模块化，拆分为合理单元，才具备调度整合的能力。下面就来看看模块化的概念，以及不同模块化方案的使用方式和优缺点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端模块化的前世今生">
+<meta property="og:url" content="https://www.huatree.top/2022/12/07/20221207-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="随着前端项目越来越庞大，代码复杂性不断增加，对于模块化的需求越来越大。模块化是工程化基础，只有将代码模块化，拆分为合理单元，才具备调度整合的能力。下面就来看看模块化的概念，以及不同模块化方案的使用方式和优缺点。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.huatree.top/image-20221218134024614.jpeg">
+<meta property="og:image" content="https://cdn.huatree.top/image-20221218132523096.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20221218132540177.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20221218132554323.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20221218132618187.png">
+<meta property="article:published_time" content="2022-12-07T00:13:56.000Z">
+<meta property="article:modified_time" content="2024-03-11T12:38:02.820Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="前端">
+<meta property="article:tag" content="模块化">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20221218134024614.jpeg">
+
+
+<link rel="canonical" href="https://www.huatree.top/2022/12/07/20221207-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2022/12/07/20221207-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/","path":"2022/12/07/20221207-前端模块化的前世今生/","title":"前端模块化的前世今生"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>前端模块化的前世今生 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A8%A1%E5%9D%97%E6%A6%82%E8%BF%B0"><span class="nav-text">1. 模块概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%A6%82%E5%BF%B5"><span class="nav-text">（1）概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E6%A8%A1%E5%BC%8F"><span class="nav-text">（2）模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E7%B1%BB%E5%9E%8B"><span class="nav-text">（3）类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-IIFE"><span class="nav-text">2. IIFE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-CommonJS"><span class="nav-text">3. CommonJS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%A6%82%E5%BF%B5-1"><span class="nav-text">（1）概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A0-%E5%AE%9A%E4%B9%89"><span class="nav-text">① 定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1-%E8%AF%AD%E6%B3%95"><span class="nav-text">② 语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A2-%E7%89%B9%E7%82%B9"><span class="nav-text">③ 特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A3-%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">④ 优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BD%BF%E7%94%A8"><span class="nav-text">（2）使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A0-%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%87%BA"><span class="nav-text">① 模块导出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1-%E6%A8%A1%E5%9D%97%E5%AF%BC%E5%85%A5"><span class="nav-text">② 模块导入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A2-%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-text">③ 加载过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E7%A4%BA%E4%BE%8B"><span class="nav-text">（3）示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-AMD"><span class="nav-text">4. AMD</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%A6%82%E5%BF%B5-2"><span class="nav-text">（1）概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A0-%E8%AF%AD%E6%B3%95"><span class="nav-text">① 语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-text">② 兼容性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A2-%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-text">③ 优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BD%BF%E7%94%A8-1"><span class="nav-text">（2）使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A0-%E5%BC%95%E5%85%A5-RequireJS"><span class="nav-text">① 引入 RequireJS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1-%E5%AE%9A%E4%B9%89-AMD-%E6%A8%A1%E5%9D%97"><span class="nav-text">② 定义 AMD 模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-CMD"><span class="nav-text">5. CMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-UMD"><span class="nav-text">6. UMD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-ES-%E6%A8%A1%E5%9D%97"><span class="nav-text">7. ES 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E6%A6%82%E5%BF%B5-3"><span class="nav-text">（1）概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E8%AF%AD%E6%B3%95"><span class="nav-text">（2）语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A0-%E5%AF%BC%E5%87%BA"><span class="nav-text">① 导出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1-%E5%AF%BC%E5%85%A5"><span class="nav-text">② 导入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A2-%E5%8A%A8%E6%80%81%E5%AF%BC%E5%85%A5"><span class="nav-text">③ 动态导入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A3-%E5%85%B6%E4%BB%96%E7%94%A8%E6%B3%95"><span class="nav-text">④ 其他用法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%BF%E7%94%A8"><span class="nav-text">（3）在浏览器使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EF%BC%884%EF%BC%89%E5%9C%A8-Node-js-%E4%BD%BF%E7%94%A8"><span class="nav-text">（4）在 Node.js 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2022/12/07/20221207-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="前端模块化的前世今生 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          前端模块化的前世今生
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-07 08:13:56" itemprop="dateCreated datePublished" datetime="2022-12-07T08:13:56+08:00">2022-12-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">经典文章</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>15k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>14 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>随着前端项目越来越庞大，代码复杂性不断增加，对于模块化的需求越来越大。模块化是工程化基础，只有将代码模块化，拆分为合理单元，才具备调度整合的能力。下面就来看看模块化的概念，以及不同模块化方案的使用方式和优缺点。</p>
+<p><img src="https://cdn.huatree.top/image-20221218134024614.jpeg" alt="image-20221218134024614"></p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自CUGGZ | 前端充电宝（微信公众号）</p>
+</div>
+
+<h2 id="1-模块概述"><a href="#1-模块概述" class="headerlink" title="1. 模块概述"></a><strong>1. 模块概述</strong></h2><h3 id="（1）概念"><a href="#（1）概念" class="headerlink" title="（1）概念"></a>（1）概念</h3><p>由于代码之间会发生大量交互，如果结构不合理，这些代码就会变得难以维护、难以测试、难以调试。而使用模块化就解决了这些问题，模块化的<strong>特点</strong>如下：</p>
+<ul>
+<li><strong>可重用性：</strong> 当应用被组织成模块时，可以方便在其他地方重用这些模块，避免编写重复代码，从而加快开发流程；</li>
+<li><strong>可读性：</strong> 当应用变得越来越复杂时，如果在一个文件中编写所有功能，代码会变得难以阅读。如果使用模块设计应用，每个功能都分布在各自的模块中，代码就会更加清晰、易读；</li>
+<li><strong>可维护性：</strong> 软件的美妙之处在于进化，从长远来看，我们需要不断为应用增加新的功能。当应用被结构化为模块时，可以轻松添加或删除功能。除此之外，修复错误也是软件维护的一部分，使用模块就可以更快速地定位问题。</li>
+</ul>
+<p>模块化是一种将系统分离成独立功能部分的方法，可以将系统分割成独立的功能部分，严格定义模块接口，模块间具有透明性。通过将代码进行模块化分隔，每个文件彼此独立，开发者更容易开发和维护代码，模块之间又能够互相调用和通信，这就是现代化开发的基本模式。</p>
+<h3 id="（2）模式"><a href="#（2）模式" class="headerlink" title="（2）模式"></a>（2）模式</h3><p>JavaScript 模块包含三个部分：</p>
+<ul>
+<li><strong>导入：</strong> 在使用模块时，需要将所需模块作为依赖项导入。例如，如果想要创建一个 React 组件，就需导入 react 模块。要使用像 Lodash 这样的工具库，就需要安装并导入它作为依赖项；</li>
+<li><strong>代码：</strong> 模块具体代码；</li>
+<li><strong>导出：</strong> 模块接口，从模块中导出的内容可供导入模块的任何地方使用。</li>
+</ul>
+<h3 id="（3）类型"><a href="#（3）类型" class="headerlink" title="（3）类型"></a>（3）类型</h3><p>模块化的贯彻执行离不开相应的约定，即规范。这是能够进行模块化工作的重中之重。实现模块化的规范有很多，比如：AMD、RequireJS、CMD、SeaJS、UMD、CommonJS、ES6 Module。除此之外，IIFE（立即执行函数）也是实现模块化的一种方案。</p>
+<p>本文将介绍其中的六个：</p>
+<ul>
+<li><strong>IIFE：</strong> 立即调用函数表达式</li>
+<li><strong>AMD：</strong> 异步模块加载机制</li>
+<li><strong>CMD：</strong> 通用模块定义</li>
+<li><strong>UMD：</strong> 统一模块定义</li>
+<li><strong>CommonJS：</strong> Node.js 采用该规范</li>
+<li><strong>ES 模块：</strong> JavaScript 内置模块系统</li>
+</ul>
+<h2 id="2-IIFE"><a href="#2-IIFE" class="headerlink" title="2. IIFE"></a><strong>2. IIFE</strong></h2><p>在 ECMAScript 6 之前，模块并没有被内置到 JavaScript 中，因为 JavaScript 最初是为小型浏览器脚本设计的。这种模块化的缺乏，导致在代码的不同部分使用了共享全局变量。</p>
+<p>比如，对于以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&#x27;JavaScript&#x27;</span></span><br><span class="line"><span class="keyword">var</span> age = <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<p>当上面的代码运行时，<code>name</code> 和 <code>age</code> 变量会被添加到全局对象中。因此，应用中的所有 JavaScript 脚本都可以访问全局变量 <code>name</code> 和 <code>age</code>，这就很容易导致代码错误，因为在其他不相关的单元中也可以访问和修改这些全局变量。除此之外，向全局对象添加变量会使全局命名空间变得混乱并增加了命名冲突的机会。</p>
+<p>所以，我们就需要一种封装变量和函数的方法，并且只对外公开定义的接口。因此，为了实现模块化并避免使用全局变量，可以使用如下方式来创建模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 声明私有变量和函数</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="comment">// 声明公共变量和函数</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>上面的代码就是一个返回对象的闭包，这就是我们常说的 IIFE（Immediately Invoked Function Expression），即立即调用函数表达式。在该函数中，就创建了一个局部范围。这样就避免了使用全局变量（IIFE 是匿名函数），并且代码单元被封装和隔离。</p>
+<p>可以这样来使用 IIFE 作为一个模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="variable language_">module</span> = (<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> age = <span class="number">20</span></span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">&#x27;JavaScript&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> fn1 = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name, age)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> fn2 = <span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    age,</span><br><span class="line">    fn1,</span><br><span class="line">    fn2</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">age</span> <span class="comment">// 20</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="title function_">fn1</span>() <span class="comment">// JavaScript 20</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="title function_">fn2</span>(<span class="number">128</span>, <span class="number">64</span>) <span class="comment">// 192</span></span><br></pre></td></tr></table></figure>
+
+<p>在这段代码中，<code>module</code> 就是我们定义的一个模块，它里面定义了两个私有变量 <code>age</code> 和 <code>name</code>，同时定义了两个方法 <code>fn1</code> 和 <code>fn2</code>，其中 <code>fn1</code> 中使用 <code>module</code> 中定义的私有变量，<code>fn2</code> 接收外部传入参数。最后，module 向外部暴露了<code>age</code>、<code>fn1</code>、<code>fn2</code>。这样就形成了一个模块。</p>
+<p>当试图在 <code>module</code> 外部直接调用<code>fn1</code>时，就会报错：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">fn1</span>() <span class="comment">// Uncaught ReferenceError: fn1 is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>当试图在 <code>module</code> 外部打印其内部的私有变量<code>name</code>时，得到的结果是 <code>undefined</code>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">name</span> <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的 IIFE 的例子是遵循模块模式的，具备其中的三部分，其中 age、name、fn1、fn2 就是模块内部的代码实现，返回的 age、fn1、fn2 就是导出的内容，即接口。调用 <code>module</code> 方法和变量就是导入使用。</p>
+<h2 id="3-CommonJS"><a href="#3-CommonJS" class="headerlink" title="3. CommonJS"></a><strong>3. CommonJS</strong></h2><h3 id="（1）概念-1"><a href="#（1）概念-1" class="headerlink" title="（1）概念"></a>（1）概念</h3><h4 id="①-定义"><a href="#①-定义" class="headerlink" title="① 定义"></a>① 定义</h4><p>CommonJS 是社区提出的一种 JavaScript 模块化规范，它是为浏览器之外的 JavaScript 运行环境提供的模块规范，Node.js 就采用了这个规范。</p>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li>浏览器不支持使用 CommonJS 规范；</li>
+<li>Node.js 不仅支持使用 CommonJS 来实现模块，还支持最新的 ES 模块。</li>
+</ul>
+</blockquote>
+<p>CommonJS 规范加载模块是同步的，只有加载完成才能继续执行后面的操作。不过由于 Node.js 主要运行在服务端，而所需加载的模块文件一般保存在本地硬盘，所以加载比较快，而无需考虑使用异步的方式。</p>
+<h4 id="②-语法"><a href="#②-语法" class="headerlink" title="② 语法"></a>② 语法</h4><p>CommonJS 规范规定每个文件就是一个模块，有独立的作用域，对于其他模块不可见，这样就不会污染全局作用域。在 CommonJS 中，可以分别使用 <code>export</code> 和 <code>require</code> 来导出和导入模块。在每个模块内部，都有一个 <code>module</code> 对象，表示当前模块。通过它来导出 API，它有以下属性：</p>
+<ul>
+<li><code>exports</code>：模块导出值。</li>
+<li><code>filename</code>：模块文件名，使用绝对路径；</li>
+<li><code>id</code>：模块识别符，通常是使用绝对路径的模块文件名；</li>
+<li><code>loaded</code>：布尔值，表示模块是否已经完成加载；</li>
+<li><code>parent</code>：对象，表示调用该模块的模块；</li>
+<li><code>children</code>：数组，表示该模块要用到的其他模块；</li>
+</ul>
+<h4 id="③-特点"><a href="#③-特点" class="headerlink" title="③ 特点"></a>③ 特点</h4><p>CommonJS 规范具有以下特点：</p>
+<ul>
+<li>文件即模块，文件内所有代码都运行在独立的作用域，因此不会污染全局空间；</li>
+<li>模块可以被多次引用、加载。第一次被加载时，<strong>会被缓存</strong>，之后都从缓存中直接读取结果。</li>
+<li>加载某个模块，就是引入该模块的 <code>module.exports</code> 属性，该属性<strong>输出的是值拷贝</strong>，一旦这个值被输出，模块内再发生变化不会影响到输出的值。</li>
+<li>模块加载顺序按照代码引入的顺序。</li>
+</ul>
+<h4 id="④-优缺点"><a href="#④-优缺点" class="headerlink" title="④ 优缺点"></a>④ 优缺点</h4><p>CommonJS 的优点：</p>
+<ul>
+<li>使用简单</li>
+<li>很多工具系统和包都是使用 CommonJS 构建的；</li>
+<li>在 Node.js 中使用，Node.js 是流行的 JavaScript 运行时环境。</li>
+</ul>
+<p>CommonJS 的缺点</p>
+<ul>
+<li>可以在 JavaScript 文件中包含一个模块；</li>
+<li>如果想在 Web 浏览器中使用它，则需要额外的工具；</li>
+<li>本质上是同步的，在某些情况下不适合在 Web 浏览器中使用。</li>
+</ul>
+<h3 id="（2）使用"><a href="#（2）使用" class="headerlink" title="（2）使用"></a>（2）使用</h3><p>在 CommonJS 中，可以通过 require 函数来导入模块，它会读取、执行 JavaScript 文件，并返回该模块的 exports 对象，该对象只有在模块脚本运行完才会生成。</p>
+<h4 id="①-模块导出"><a href="#①-模块导出" class="headerlink" title="① 模块导出"></a>① 模块导出</h4><p>可以通过以下两种方式来导出模块内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>.<span class="property">TestModule</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;exports&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">TestModule</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;exports&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>则合两种方式的导出结果是一样的，<code>module.exports</code>和<code>exports</code>的区别可以理解为：<code>exports</code>是<code>module.exports</code>的引用，如果在<code>exports</code>调用之前调用了<code>exports=...</code>，那么就无法再通过<code>exports</code>来导出模块内容，除非通过<code>exports=module.exports</code>重新设置<code>exports</code>的引用指向。</p>
+<p>当然，可以先定义函数，再导出：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">testModule</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;exports&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = testModule</span><br></pre></td></tr></table></figure>
+
+<p>这是仅导出一个函数的情况，使用时就是这样的：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">testModule = <span class="built_in">require</span>(<span class="string">&#x27;./MyModule&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="title function_">testModule</span>()</span><br></pre></td></tr></table></figure>
+
+<p>如果是导出多个函数，就可以这样：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">testModule1</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;exports1&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">testModule2</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;exports2&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>导入多个函数并使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">;(&#123; testModule1, testModule2 &#125; = <span class="built_in">require</span>(<span class="string">&#x27;./MyModule&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="title function_">testModule1</span>()</span><br><span class="line"><span class="title function_">testModule2</span>()</span><br></pre></td></tr></table></figure>
+
+<h4 id="②-模块导入"><a href="#②-模块导入" class="headerlink" title="② 模块导入"></a>② 模块导入</h4><p>可以通过以下方式来导入模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable language_">module</span> = <span class="built_in">require</span>(<span class="string">&#x27;./MyModule&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>注意，如果 <code>require</code> 的路径没有后缀，会自动按照<code>.js</code>、<code>.json</code>和<code>.node</code>的顺序进行补齐查找。</p>
+<h4 id="③-加载过程"><a href="#③-加载过程" class="headerlink" title="③ 加载过程"></a>③ 加载过程</h4><p>在 CommonJS 中，<code>require</code> 的加载过程如下：</p>
+<ol>
+<li>优先从缓存中加载；</li>
+<li>如果缓存中没有，检查是否是核心模块，如果是直接加载；</li>
+<li>如果不是核心模块，检查是否是文件模块，解析路径，根据解析出的路径定位文件，然后执行并加载；</li>
+<li>如果以上都不是，沿当前路径向上逐级递归，直到根目录的<code>node_modules</code>目录。</li>
+</ol>
+<h3 id="（3）示例"><a href="#（3）示例" class="headerlink" title="（3）示例"></a>（3）示例</h3><p>下面来看一个购物车的例子，主要功能是将商品添加到购物车，并计算购物车商品总价格：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cart.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> items = [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">addItem</span> (name, price)</span><br><span class="line">    item.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">price</span>: price</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">total</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> items.<span class="title function_">reduce</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> a + b.<span class="property">price</span>;</span><br><span class="line">    &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">exports</span>.<span class="property">addItem</span> = addItem;</span><br></pre></td></tr></table></figure>
+
+<p>这里通过两种方式在 exports 对象上定义了两个方法：addItem 和 total，分别用来添加购物车和计算总价。</p>
+<p>下面在控制台测试一下上面定义的模块：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> cart = <span class="built_in">require</span>(<span class="string">&#x27;./cart&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这里使用相对路径来导入 cart 模块，打印 cart 模块，结果如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cart <span class="comment">// &#123; total: [Function], addItem: [Function: addItem] &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>向购物车添加一些商品，并计算当前购物车商品的总价格：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cart.<span class="title function_">addItem</span>(<span class="string">&#x27;book&#x27;</span>, <span class="number">60</span>)</span><br><span class="line">cart.<span class="title function_">total</span>() <span class="comment">// 60</span></span><br><span class="line"></span><br><span class="line">cart.<span class="title function_">addItem</span>(<span class="string">&#x27;pen&#x27;</span>, <span class="number">6</span>)</span><br><span class="line">cart.<span class="title function_">total</span>() <span class="comment">// 66</span></span><br></pre></td></tr></table></figure>
+
+<p>这就是创建模块的基本方法，我们可以创建一些方法，并且只公开希望其他文件使用的部分代码。该部分成为 API，即应用程序接口。</p>
+<p>这里有一个问题，只有一个购物车，即只有一个模块实例。下面来在控制台执行以下代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">second_cart = <span class="built_in">require</span>(<span class="string">&#x27;./cart&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>那这时会创建一个新的购物车吗？事实并非如此，打印当前购物车的商品总金额，它仍然是 66：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">second_cart.<span class="title function_">total</span>() <span class="comment">// 66</span></span><br></pre></td></tr></table></figure>
+
+<p>当我们㤇创建多个实例时，就需要再模块内创建一个构造函数，下面来重写 <code>cart.js</code> 文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cart.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Cart</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">items</span> = []</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Cart</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">addItem</span> = <span class="keyword">function</span> (<span class="params">name, price</span>) &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">push</span>(&#123;</span><br><span class="line">    <span class="attr">name</span>: name,</span><br><span class="line">    <span class="attr">price</span>: price</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Cart</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">total</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">items</span>.<span class="title function_">reduce</span>(<span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b.<span class="property">price</span></span><br><span class="line">  &#125;, <span class="number">0</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">export</span> = <span class="title class_">Cart</span></span><br></pre></td></tr></table></figure>
+
+<p>现在，当需要使用此模块时，返回的是 Cart 构造函数，而不是具有 cart 函数作为一个属性的对象。下面来导入这个模块，并创建两个购物车实例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Cart</span> = <span class="built_in">require</span>(<span class="string">&#x27;./second_cart&#x27;</span>)</span><br><span class="line"></span><br><span class="line">cart1 = <span class="keyword">new</span> <span class="title class_">Cart</span>()</span><br><span class="line">cart2 = <span class="keyword">new</span> <span class="title class_">Cart</span>()</span><br><span class="line"></span><br><span class="line">cart1.<span class="title function_">addItem</span>(<span class="string">&#x27;book&#x27;</span>, <span class="number">50</span>)</span><br><span class="line">cart1.<span class="title function_">total</span>() <span class="comment">// 50</span></span><br><span class="line">cart2.<span class="title function_">total</span>() <span class="comment">// 50</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-AMD"><a href="#4-AMD" class="headerlink" title="4. AMD"></a><strong>4. AMD</strong></h2><h3 id="（1）概念-2"><a href="#（1）概念-2" class="headerlink" title="（1）概念"></a>（1）概念</h3><p>CommonJS 的缺点之一是它是同步的，AMD 旨在通过规范中定义的 API 异步加载模块及其依赖项来解决这个问题。AMD 全称为 Asynchronous Module Definition，即<strong>异步模块加载机制</strong>。它规定了如何定义模块，如何对外输出，如何引入依赖。</p>
+<p>AMD 规范重要特性就是异步加载。所谓异步加载，就是指同时并发加载所依赖的模块，当所有依赖模块都加载完成之后，再执行当前模块的回调函数。这种加载方式和浏览器环境的性能需求刚好吻合。</p>
+<h4 id="①-语法"><a href="#①-语法" class="headerlink" title="① 语法"></a>① 语法</h4><p>AMD 规范定义了一个全局函数 define，通过它就可以定义和引用模块，它有 3 个参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>(id?, dependencies?, factory);</span><br></pre></td></tr></table></figure>
+
+<p>其包含三个参数：</p>
+<ul>
+<li><code>id</code>：可选，指模块路径。如果没有提供该参数，模块名称默认为模块加载器请求的指定脚本的路径。</li>
+<li><code>dependencies</code>：可选，指模块数组。它定义了所依赖的模块。依赖模块必须根据模块的工厂函数优先级执行，并且执行的结果应该按照依赖数组中的位置顺序以参数的形式传入工厂函数中。</li>
+<li><code>factory</code>：为模块初始化要执行的函数或对象。如果是函数，那么该函数是单例模式，只会被执行一次；如果是对象，此对象应该为模块的输出值。</li>
+</ul>
+<p>除此之外，要想使用此模块，就需要使用规范中定义的 require 函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(dependencies?, callback);</span><br></pre></td></tr></table></figure>
+
+<p>其包含两个参数：</p>
+<ul>
+<li><code>dependencies</code>：依赖项数组；</li>
+<li><code>callback</code>：加载模块时执行的回调函数。</li>
+</ul>
+<p>有关 AMD API 的更详细说明，可以查看 GitHub 上的 AMD API 规范：<a target="_blank" rel="noopener" href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md%E3%80%82">https://github.com/amdjs/amdjs-api/blob/master/AMD.md。</a></p>
+<h4 id="②-兼容性"><a href="#②-兼容性" class="headerlink" title="② 兼容性"></a>② 兼容性</h4><p>该规范的浏览器兼容性如下：</p>
+<p><img src="https://cdn.huatree.top/image-20221218132523096.png" alt="image-20221218132523096"></p>
+<h4 id="③-优缺点"><a href="#③-优缺点" class="headerlink" title="③ 优缺点"></a>③ 优缺点</h4><p>AMD 的<strong>优点</strong>：</p>
+<ul>
+<li>异步加载导致更好的启动时间；</li>
+<li>能够将模块拆分为多个文件；</li>
+<li>支持构造函数；</li>
+<li>无需额外工具即可在浏览器中工作。</li>
+</ul>
+<p>AMD 的<strong>缺点</strong>：</p>
+<ul>
+<li>语法很复杂，学习成本高；</li>
+<li>需要一个像 RequireJS 这样的加载器库来使用 AMD。</li>
+</ul>
+<h3 id="（2）使用-1"><a href="#（2）使用-1" class="headerlink" title="（2）使用"></a>（2）使用</h3><p>当然，上面只是 AMD 规范的理论，要想理解这个理论在代码中是如何工作的，就需要来看看 AMD 的实际实现。RequireJS 就是 AMD 规范的一种实现，它被描述为“JavaScript 文件和模块加载器”。下面就来看看 RequireJS 是如何使用的。</p>
+<h4 id="①-引入-RequireJS"><a href="#①-引入-RequireJS" class="headerlink" title="① 引入 RequireJS"></a>① 引入 RequireJS</h4><p>可以通过 npm 来安装 RequireJS：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i requirejs</span><br></pre></td></tr></table></figure>
+
+<p>也可以在 html 文件引入 <code>require.js</code> 文件：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">data-main</span>=<span class="string">&quot;js/config&quot;</span> <span class="attr">src</span>=<span class="string">&quot;js/require.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这里 <code>script</code>标签有两个属性：</p>
+<ul>
+<li><code>data-main=&quot;js/config&quot;</code>：这是 RequireJS 的入口，也是配置它的地方；</li>
+<li><code>src=&quot;js/require.js&quot;</code>：加载脚本的正常方式，会加载 <code>require.js</code> 文件。</li>
+</ul>
+<p>在 <code>script</code> 标签下添加以下代码来初始化 RequireJS：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="built_in">require</span>([<span class="string">&#x27;config&#x27;</span>], <span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//...</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当页面加载完配置文件之后， <code>require()</code> 中的代码就会运行。这个 <code>script</code> 标签是一个异步调用，这意味着当 RequireJS 通过 <code>src=&quot;js/require.js</code> 加载时，它将异步加载 <code>data-main</code> 属性中指定的配置文件。因此，该标签下的任何 JavaScript 代码都可以在 RequireJS 获取时执行配置文件。</p>
+<p>那 AMD 中的 <code>require()</code> 和 CommonJS 中的 <code>require()</code> 有什么区别呢？</p>
+<ul>
+<li>AMD <code>require(</code>) 接受一个依赖数组和一个回调函数，CommonJS <code>require()</code> 接受一个模块 ID；</li>
+<li>AMD <code>require()</code> 是异步的，而 CommonJS <code>require()</code> 是同步的。</li>
+</ul>
+<h4 id="②-定义-AMD-模块"><a href="#②-定义-AMD-模块" class="headerlink" title="② 定义 AMD 模块"></a>② 定义 AMD 模块</h4><p>下面是 AMD 中的一个基本模块定义：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>([<span class="string">&#x27;dependency1&#x27;</span>, <span class="string">&#x27;dependency2&#x27;</span>], <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 模块内容</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这个模块定义清楚地显示了其包含两个依赖项和一个函数。</p>
+<p>下面来定义一个名为<code>addition.js</code>的文件，其包含一个执行加法操作的函数，但是没有依赖项：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// addition.js</span></span><br><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">function</span> (<span class="params">a, b</span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(a + b)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>再来定义一个名为 <code>calculator.js</code> 的文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>([<span class="string">&#x27;addition&#x27;</span>], <span class="keyword">function</span> (<span class="params">addition</span>) &#123;</span><br><span class="line">  <span class="title function_">addition</span>(<span class="number">7</span>, <span class="number">9</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>当 RequireJS 看到上面的代码块时，它会去寻找依赖项，并通过将它们作为参数传递给函数来自动将其注入到模块中。</p>
+<p>RequireJS 会自动为 <code>addition.js</code> 和 <code>calculator.js</code> 文件创建一个 <code>&lt;script&gt;</code> 标签，并将其放在 HTML <code>&lt;head&gt;</code> 元素中，等待它们加载，然后运行函数，这类似于 <code>require()</code> 的行为。</p>
+<p><img src="https://cdn.huatree.top/image-20221218132540177.png" alt="image-20221218132540177"></p>
+<p>下面来更新一下 <code>index.html</code> 文件：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.html</span></span><br><span class="line"><span class="built_in">require</span>([<span class="string">&#x27;config&#x27;</span>], <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="built_in">require</span>([<span class="string">&#x27;calculator&#x27;</span>])</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>当浏览器加载 <code>index.html</code> 文件时，RequireJS 会尝试查找 <code>calculator.js</code> 模块，但是没有找到，所以浏览器也不会有任何反应。那该如何解决这个问题呢？我们必须提供配置文件来告诉 RequireJS 在哪里可以找到 <code>calculator.js</code>（和其他模块），因为它是引用的入口。</p>
+<p>下面是配置文件的基本结构：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">requirejs.<span class="title function_">config</span>(&#123;</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;string&#x27;</span>,</span><br><span class="line">  <span class="attr">paths</span>: &#123;&#125;,</span><br><span class="line">  <span class="attr">shim</span>: &#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这里有三个属性值：</p>
+<ul>
+<li><code>baseURL</code>：告诉 RequireJS 在哪里可以找到模块；</li>
+<li><code>path</code>：这些是与 define() 一起使用的模块的名称。在路径中，可以使用文件的 CDN，这时 RequireJS 将尝试在本地可用的模块之前加载模块的 CDN 版本；</li>
+<li><code>shim</code>：允许加载未编写为 AMD 模块的库，并允许以正确的顺序加载它们</li>
+</ul>
+<p>我们的配置文件如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">requirejs.<span class="title function_">config</span>(&#123;</span><br><span class="line">  <span class="attr">baseURL</span>: <span class="string">&#x27;js&#x27;</span>,</span><br><span class="line">  <span class="attr">paths</span>: &#123;</span><br><span class="line">    <span class="comment">// 这种情况下，模块位于 customScripts 文件中</span></span><br><span class="line">    <span class="attr">addition</span>: <span class="string">&#x27;customScripts/addition&#x27;</span>,</span><br><span class="line">    <span class="attr">calculator</span>: <span class="string">&#x27;customScripts/calculator&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>配置完成之后，重新加载浏览器，就会收到浏览器的弹窗：</p>
+<p><img src="https://cdn.huatree.top/image-20221218132554323.png" alt="image-20221218132554323"></p>
+<p>这就是在 AMD 中使用 RequireJS 定义模块的方法之一。我们还可以通过指定其路径名来定义模块，该路径名是模块文件在项目目录中的位置。下面给出一个例子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>(<span class="string">&#x27;path/to/module&#x27;</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 模块内容</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>当然，RequireJS 并不鼓励这种方法，因为当我们将模块移动到项目中的另一个位置时，就需要手动更改模块中的路径名。</p>
+<p>在使用 AMD 定义模块时需要注意：</p>
+<ul>
+<li>在依赖项数组中列出的任何内容都必须与工厂函数中的分配相匹配；</li>
+<li>尽量不要将异步代码与同步代码混用。当在 index.html 上编写其他 JavaScript 代码时就是这种情况。</li>
+</ul>
+<h2 id="5-CMD"><a href="#5-CMD" class="headerlink" title="5. CMD"></a><strong>5. CMD</strong></h2><p>CMD 全称为 Common Module Definition，即通用模块定义。CMD 规范整合了 CommonJS 和 AMD 规范的特点。sea.js 是 CMD 规范的一个实现 。</p>
+<p>CMD 定义模块也是通过一个全局函数 <code>define</code> 来实现的，但只有一个参数，该参数既可以是函数也可以是对象：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>(factory)</span><br></pre></td></tr></table></figure>
+
+<p>如果这个参数是对象，那么模块导出的就是对象；如果这个参数为函数，那么这个函数会被传入 3 个参数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span> (<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) &#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>这三个参数分别如下：（1）<code>require</code>：一个函数，通过调用它可以引用其他模块，也可以调用 <code>require.async</code> 函数来异步调用模块；（2）<code>exports</code>：一个对象，当定义模块的时候，需要通过向参数 <code>exports</code> 添加属性来导出模块 API；（3）<code>module</code> 是一个对象，它包含 3 个属性：</p>
+<ul>
+<li><code>uri</code>：模块完整的 URI 路径；</li>
+<li><code>dependencies</code>：模块依赖；</li>
+<li><code>exports</code>：模块需要被导出的 API，作用同第二个参数 <code>exports</code>。</li>
+</ul>
+<p>下面来看一个例子，定义一个 <code>increment</code> 模块，引用 <code>math</code> 模块的 <code>add</code> 函数，经过封装后导出成 <code>increment</code> 函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">define</span>(<span class="keyword">function</span> (<span class="params"><span class="built_in">require</span>, <span class="built_in">exports</span>, <span class="variable language_">module</span></span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> add = <span class="built_in">require</span>(<span class="string">&#x27;math&#x27;</span>).<span class="property">add</span></span><br><span class="line">  <span class="built_in">exports</span>.<span class="property">increment</span> = <span class="keyword">function</span> (<span class="params">val</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">add</span>(val, <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="variable language_">module</span>.<span class="property">id</span> = <span class="string">&#x27;increment&#x27;</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>CMD 最大的特点就是懒加载，不需要在定义模块的时候声明依赖，可以在模块执行时动态加载依赖。除此之外，CMD 同时支持<strong>同步加载模块</strong>和<strong>异步加载模块</strong>。</p>
+<p><strong>AMD 和 CMD 的两个主要区别如下：</strong></p>
+<ul>
+<li>AMD 需要异步加载模块，而 CMD 在加载模块时，可以同步加载（<code>require</code>），也可以异步加载（<code>require.async</code>）。</li>
+<li>CMD 遵循依赖就近原则，AMD 遵循依赖前置原则。也就是说，在 AMD 中，需要把模块所需要的依赖都提前在依赖数组中声明。而在 CMD 中，只需要在具体代码逻辑内，使用依赖前，把依赖的模块 <code>require</code> 进来。</li>
+</ul>
+<h2 id="6-UMD"><a href="#6-UMD" class="headerlink" title="6. UMD"></a><strong>6. UMD</strong></h2><p>UMD 全程为 Universal Module Definition，即<strong>统一模块定义</strong>。其实 UMD 并不是一个模块管理规范，而是带有前后端同构思想的模块封装工具。</p>
+<p>UMD 是一组同时支持 AMD 和 CommonJS 的模式，它旨在使代码无论执行代码的环境如何都能正常工作，通过 UMD 可以在合适的环境选择对应的模块规范。比如在 Node.js 环境中采用 CommonJS 模块管理，在浏览器环境且支持 AMD 的情况下采用 AMD 模块，否则导出为全局函数。</p>
+<p>一个 UMD 模块由两部分组成：</p>
+<ul>
+<li>**立即调用函数表达式 (IIFE)**：它会检查使用模块的环境。其有两个参数：<code>root</code> 和 <code>factory</code>。<code>root</code> 是对全局范围的 this 引用，而 <code>factory</code> 是定义模块的函数。</li>
+<li><strong>匿名函数：</strong> 创建模块，此匿名函数被传递任意数量的参数以指定模块的依赖关系。</li>
+</ul>
+<p>UMD 的代码实现如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">;(<span class="keyword">function</span> (<span class="params">root, factory</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">&#x27;function&#x27;</span> &amp;&amp; define.<span class="property">amd</span>) &#123;</span><br><span class="line">    <span class="title function_">define</span>([], factory)</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">exports</span> === <span class="string">&#x27;object&#x27;</span>) &#123;</span><br><span class="line">    <span class="variable language_">module</span>.<span class="property">exports</span>, (<span class="variable language_">module</span>.<span class="property">exports</span> = <span class="title function_">factory</span>())</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    root.<span class="property">returnExports</span> = <span class="title function_">factory</span>()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(<span class="variable language_">this</span>, <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 模块内容定义</span></span><br><span class="line">  <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>它的执行过程如下：</p>
+<ol>
+<li>先判断是否支持 Node.js 模块格式（exports 是否存在），存在则使用 Node.js 模块格式；</li>
+<li>再判断是否支持 AMD（define 是否存在），存在则使用 AMD 方式加载模块；</li>
+<li>若两个都不存在，则将模块公开到全局（Window 或 Global）。</li>
+</ol>
+<p><strong>UMD 的特点如下：</strong>① UMD 的优点：</p>
+<ul>
+<li>小而简洁；</li>
+<li>适用于服务器端和客户端。</li>
+</ul>
+<p>② UMD 的缺点：</p>
+<ul>
+<li>不容易正确配置。</li>
+</ul>
+<h2 id="7-ES-模块"><a href="#7-ES-模块" class="headerlink" title="7. ES 模块"></a><strong>7. ES 模块</strong></h2><h3 id="（1）概念-3"><a href="#（1）概念-3" class="headerlink" title="（1）概念"></a>（1）概念</h3><p>通过上面的例子，你可能会发现，使用 UMD、AMD、CMD 的代码会变得难以编写和理解。于是在 2015 年，负责 ECMAScript 规范的 TC39 委员会将模块添加为 JavaScript 的内置功能，这些模块称为 ECMAScript 模块，简称 ES 模块。</p>
+<p>模块和经典 JavaScript 脚本略有不同：</p>
+<ul>
+<li>模块默认启用<strong>严格模式，</strong>比如分配给未声明的变量会报错：</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span></span><br><span class="line">  a = 5</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>模块有一个词法顶级作用域。这意味着，例如，运行 var foo &#x3D; 42; 在模块内不会创建名为 foo 的全局变量，可通过浏览器中的 window.foo 访问，尽管在经典 JavaScript 脚本中会出现这种情况；</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">let</span> person = <span class="string">&#x27;Alok&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">alert</span>(<span class="params">person</span>)</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/* Error: person is not defined */</span></span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>模块中的 this 并不引用全局 this，而是 undefined。（如果需要访问全局 this，可以使用 globalThis）；</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">alert</span>(<span class="params"><span class="variable language_">this</span></span>)</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/* 全局对象 */</span></span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">alert</span>(<span class="params"><span class="variable language_">this</span></span>)</span></span><br><span class="line"><span class="language-javascript">  &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">/* undefined */</span></span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新的静态导入和导出语法仅在模块中可用，并不适用于经典脚本。</li>
+<li>顶层 await 在模块中可用，但在经典 JavaScript 脚本中不可用；</li>
+<li>await 不能在模块中的任何地方用作变量名，经典脚本中的变量可以在异步函数之外命名为 await；</li>
+<li>JavaScript 会提升 import 语句。因此，可以在模块中的任何位置定义它们。</li>
+</ul>
+<p>CommonJS 和 AMD 都是在运行时确定依赖关系，即运行时加载，CommonJS 加载的是拷贝。而 ES 模块是在编译时就确定依赖关系，所有加载的其实都是引用，这样做的好处是可以执行静态分析和类型检查。</p>
+<h3 id="（2）语法"><a href="#（2）语法" class="headerlink" title="（2）语法"></a>（2）语法</h3><h4 id="①-导出"><a href="#①-导出" class="headerlink" title="① 导出"></a>① 导出</h4><p>当导出模块代码时，需要在其前面添加 export 关键词。导出内容可以是变量、函数或类。任何未导出的代码都是模块私有的，无法在该模块之被外访问。ES 模块支持两种类型的导出：</p>
+<ul>
+<li><strong>命名导出：</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> first = <span class="string">&#x27;JavaScript&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当然，我们也可以先定义需要导出的变量&#x2F;函数，最后统一导出这些变量&#x2F;函数：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> first = <span class="string">&#x27;JavaScript&#x27;</span></span><br><span class="line"><span class="keyword">const</span> second = <span class="string">&#x27;TypeScript&#x27;</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123; first, second, func &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>默认导出：</strong></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> func</span><br></pre></td></tr></table></figure>
+
+<p>当然，也可以直接默认导出：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> <span class="title function_">func</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>默认导出可以省略变量&#x2F;函数&#x2F;类名，在导入时可以为其指定任意名称：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 导入</span></span><br><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">&#x27;./module&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> 导入默认模块时不需要大括号，导出默认的变量或方法可以有名字，但是对外是无效的。<code>export default</code> 在一个模块文件中只能使用一次。</p>
+<p>可以使用 as 关键字来重命名需要暴露出的变量或方法，经过重命名后同一变量可以多次暴露出去：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> first = <span class="string">&#x27;test&#x27;</span></span><br><span class="line"><span class="keyword">export</span> &#123; first <span class="keyword">as</span> second &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="②-导入"><a href="#②-导入" class="headerlink" title="② 导入"></a>② 导入</h4><p>使用<strong>命名导出</strong>的模块，可以通过以下方式来导入：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; first, second, func &#125; <span class="keyword">from</span> <span class="string">&#x27;./module&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>使用<strong>默认导出</strong>的模块，可以通过以下方式来引入，导入名称可以自定义，无论导出的名称是什么：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> customName <span class="keyword">from</span> <span class="string">&#x27;./module.js&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>导入模块位置可以是相对路径也可以是绝对路径，<code>.js</code>扩展名是可以省略的，如果不带路径而只是模块名，则需要通过配置文件告诉引擎查找的位置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; firstName, lastName &#125; <span class="keyword">from</span> <span class="string">&#x27;./module&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以使用 as 关键字来将导入的变量&#x2F;函数重命名：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; fn <span class="keyword">as</span> fn1 &#125; <span class="keyword">from</span> <span class="string">&#x27;./profile&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>在 ES 模块中，默认导入和命名导入是可以同时使用的，比如在 React 组件中：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; usestate, useEffect &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">Comp</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">React.Fragment</span>&gt;</span>...<span class="tag">&lt;/<span class="name">React.Fragment</span>&gt;</span></span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">Comp</span></span><br></pre></td></tr></table></figure>
+
+<p>可以使用 as 关键字来加载整个模块，用于从另一个模块中导入所有命名导出，会忽略默认导出：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> circle <span class="keyword">from</span> <span class="string">&#x27;./circle&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;圆面积：&#x27;</span> + circle.<span class="title function_">area</span>(<span class="number">4</span>))</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;圆周长：&#x27;</span> + circle.<span class="title function_">circumference</span>(<span class="number">14</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="③-动态导入"><a href="#③-动态导入" class="headerlink" title="③ 动态导入"></a>③ 动态导入</h4><p>上面我们介绍的都是静态导入，使用静态 import 时，整个模块需要先下载并执行，然后主代码才能执行。有时我们不想预先加载模块，而是按需加载，仅在需要时才加载。这可以提高初始加载时的性能，动态 import 使这成为可能：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  ;(<span class="keyword">async</span> () =&gt; &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> moduleSpecifier = <span class="string">&#x27;./lib.mjs&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> &#123; repeat, shout &#125; = <span class="keyword">await</span> <span class="title function_">import</span>(moduleSpecifier)</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">repeat</span>(<span class="string">&#x27;hello&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// → &#x27;hello hello&#x27;</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">shout</span>(<span class="string">&#x27;Dynamic import in action&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// → &#x27;DYNAMIC IMPORT IN ACTION!&#x27;</span></span></span><br><span class="line"><span class="language-javascript">  &#125;)()</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>与静态导入不同，动态导入可以在常规脚本中使用。</p>
+<h4 id="④-其他用法"><a href="#④-其他用法" class="headerlink" title="④ 其他用法"></a>④ 其他用法</h4><p>可以使用以下方式来先导入后导出模块内容：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> &#123; foo, bar &#125; <span class="keyword">from</span> <span class="string">&#x27;./module&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码就等同于：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; foo, bar &#125; <span class="keyword">from</span> <span class="string">&#x27;./module&#x27;</span></span><br><span class="line"><span class="keyword">export</span> &#123; foo, boo &#125;</span><br></pre></td></tr></table></figure>
+
+<p>另一个与模块相关的新功能是<code>import.meta</code>，它是一个给 JavaScript 模块暴露特定上下文的元数据属性的对象。它包含了这个模块的信息，比如说这个模块的 URL。</p>
+<p>默认情况下，图像是相对于 HTML 文档中的当前 URL 加载的。<code>import.meta.url</code>可以改为加载相对于当前模块的图像：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">loadThumbnail</span>(<span class="params">relativePath</span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> url = <span class="keyword">new</span> <span class="title function_">URL</span>(relativePath, <span class="keyword">import</span>.<span class="property">meta</span>.<span class="property">url</span>)</span><br><span class="line">  <span class="keyword">const</span> image = <span class="keyword">new</span> <span class="title class_">Image</span>()</span><br><span class="line">  image.<span class="property">src</span> = url</span><br><span class="line">  <span class="keyword">return</span> image</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> thumbnail = <span class="title function_">loadThumbnail</span>(<span class="string">&#x27;../img/thumbnail.png&#x27;</span>)</span><br><span class="line">container.<span class="title function_">append</span>(thumbnail)</span><br></pre></td></tr></table></figure>
+
+<h3 id="（3）在浏览器使用"><a href="#（3）在浏览器使用" class="headerlink" title="（3）在浏览器使用"></a>（3）在浏览器使用</h3><p>目前主流浏览器都支持 ES 模块：</p>
+<p><img src="https://cdn.huatree.top/image-20221218132618187.png" alt="image-20221218132618187"></p>
+<p>如果想在浏览器中使用原生 ES 模块方案，只需要在 script 标签上添加 <code>type=&quot;module&quot;</code> 属性。通过该属性，浏览器知道这个文件是以模块化的方式运行的。而对于不支持的浏览器，需要通过 <code>nomodule</code> 属性来指定某脚本为 fallback 方案：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">  <span class="keyword">import</span> module1 <span class="keyword">from</span> <span class="string">&#x27;./module1&#x27;</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">nomodule</span> <span class="attr">src</span>=<span class="string">&quot;fallback.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>支持 <code>type=&quot;module&quot;</code> 的浏览器会忽略带有 <code>nomodule</code> 属性的脚本。使用 <code>type=&quot;module&quot;</code> 的另一个作用就是进行 ES Next 兼容性的嗅探。因为支持 ES 模块化的浏览器，都支持 ES Promise 等特性。</p>
+<p>由于默认情况下模块是延迟的，因此可能还希望以延迟方式加载 nomodule 脚本：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">nomodule</span> <span class="attr">defer</span> <span class="attr">src</span>=<span class="string">&quot;fallback.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="（4）在-Node-js-使用"><a href="#（4）在-Node-js-使用" class="headerlink" title="（4）在 Node.js 使用"></a>（4）在 Node.js 使用</h3><p>上面提到，Node.js 使用的是 CommonJS 模块规范，它也是支持 ES 模块的。在 Node.js 13 之前，ES 模块是一项实验性技术，因此，可以通过使用 <code>.mjs</code> 扩展名保存模块并通过标志访问它来使用模块。</p>
+<p>从 Node.js 13 开始，可以通过以下两种方式使用模块:</p>
+<ul>
+<li>使用 <code>.mjs</code> 扩展名保存模块；</li>
+<li>在最近的文件夹中创建一个 <code>type=&quot;module&quot;</code> 的 <code>package.json</code> 文件。</li>
+</ul>
+<p>那如何在小于等于 12 版本的 Node.js 中使用 ES 模块呢？可以在执行脚本启动时加上 <code>--experimental-modules</code>，不过这一用法要求相应的文件后缀名必须为 <code>.mjs</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node --experimental-modules module1.mjs</span><br><span class="line">import module1 from <span class="string">&#x27;./module1.mjs&#x27;</span></span><br><span class="line">module1</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://v8.dev/features/modules">V8 JavaScript modules</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://blog.logrocket.com/javascript-reference-guide-js-modules/">JavaScript Reference Guide: JS module ecosystem</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2022/12/07/20221207-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" title="前端模块化的前世今生">https://www.huatree.top/2022/12/07/20221207-前端模块化的前世今生/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+              <a href="/tags/%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="tag"># 模块化</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" rel="prev" title="uniapp开发问题汇总">
+                  <i class="fa fa-chevron-left"></i> uniapp开发问题汇总
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/12/18/20221218-win11%E6%9B%B4%E6%96%B0%E5%90%8E%E6%A1%8C%E9%9D%A2%E5%A4%9A%E4%BA%86%E5%85%AD%E4%B8%AA%E5%9B%BE%E6%A0%87%EF%BC%9F/" rel="next" title="win11更新后桌面多了六个图标？">
+                  win11更新后桌面多了六个图标？ <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"22f4485a847f95dc6f4aafa24b2b13f1"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

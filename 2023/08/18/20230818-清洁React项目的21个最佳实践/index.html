@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="React 对于如何构建事物非常没有主见。这正是我们有责任保持项目整洁和可维护的原因。 今天，我们将讨论一些改善 React 应用程序健康状况的最佳实践。这些规则被广泛接受。因此，掌握这些知识是势在必行的。 一切都将通过代码进行演示，所以请系好安全带！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="清洁React项目的21个最佳实践">
+<meta property="og:url" content="https://www.huatree.top/2023/08/18/20230818-%E6%B8%85%E6%B4%81React%E9%A1%B9%E7%9B%AE%E7%9A%8421%E4%B8%AA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="React 对于如何构建事物非常没有主见。这正是我们有责任保持项目整洁和可维护的原因。 今天，我们将讨论一些改善 React 应用程序健康状况的最佳实践。这些规则被广泛接受。因此，掌握这些知识是势在必行的。 一切都将通过代码进行演示，所以请系好安全带！">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-18T14:20:16.000Z">
+<meta property="article:modified_time" content="2023-08-18T15:13:47.389Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="React">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://www.huatree.top/2023/08/18/20230818-%E6%B8%85%E6%B4%81React%E9%A1%B9%E7%9B%AE%E7%9A%8421%E4%B8%AA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2023/08/18/20230818-%E6%B8%85%E6%B4%81React%E9%A1%B9%E7%9B%AE%E7%9A%8421%E4%B8%AA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/","path":"2023/08/18/20230818-清洁React项目的21个最佳实践/","title":"清洁React项目的21个最佳实践"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>清洁React项目的21个最佳实践 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BD%BF%E7%94%A8JSX%E7%AE%80%E5%86%99"><span class="nav-text">1. 使用JSX简写</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BD%BF%E7%94%A8%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-text">2. 使用三元运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-1"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#goods"><span class="nav-text">goods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%A9%E7%94%A8%E5%AF%B9%E8%B1%A1%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="nav-text">3. 利用对象字面量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-2"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-1"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E4%BD%BF%E7%94%A8%E7%89%87%E6%AE%B5"><span class="nav-text">4. 使用片段</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-3"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-2"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E4%B8%8D%E8%A6%81%E5%9C%A8render%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-text">5. 不要在render中定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-4"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-3"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E4%BD%BF%E7%94%A8useMemo"><span class="nav-text">6. 使用useMemo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-5"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-4"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1%E8%A7%A3%E6%9E%84"><span class="nav-text">7. 使用对象解构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-6"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-5"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B%E7%9A%84props%E4%B8%8D%E9%9C%80%E8%A6%81%E8%8A%B1%E6%8B%AC%E5%8F%B7"><span class="nav-text">8. 字符串类型的props不需要花括号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-7"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-6"><span class="nav-text">good</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E4%BB%8EJSX%E4%B8%AD%E6%8F%90%E5%8F%96JS%E4%BB%A3%E7%A0%81"><span class="nav-text">9. 从JSX中提取JS代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-8"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-7"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E4%BD%BF%E7%94%A8%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text">10. 使用模板字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-9"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-8"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E6%8C%89%E9%A1%BA%E5%BA%8F%E5%AF%BC%E5%85%A5"><span class="nav-text">11. 按顺序导入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-10"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-9"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E4%BD%BF%E7%94%A8%E9%9A%90%E5%BC%8F%E8%BF%94%E5%9B%9E"><span class="nav-text">12. 使用隐式返回</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-11"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-10"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E7%BB%84%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="nav-text">13. 组件命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-12"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-11"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E4%BF%9D%E7%95%99%E7%9A%84prop%E5%91%BD%E5%90%8D"><span class="nav-text">14. 保留的prop命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-13"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-12"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E5%BC%95%E5%8F%B7"><span class="nav-text">15. 引号</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-14"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-13"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-prop%E5%91%BD%E5%90%8D"><span class="nav-text">16. prop命名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-15"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-14"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-%E6%8A%8A%E5%A4%9A%E8%A1%8C%E7%9A%84JSX%E7%94%A8%E6%8B%AC%E5%8F%B7%E5%8C%85%E8%A3%B9"><span class="nav-text">17. 把多行的JSX用括号包裹</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-16"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-15"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-%E4%BD%BF%E7%94%A8%E8%87%AA%E9%97%AD%E5%90%88%E6%A0%87%E7%AD%BE"><span class="nav-text">18. 使用自闭合标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-17"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-16"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-%E6%96%B9%E6%B3%95%E5%90%8D%E4%B8%AD%E4%B8%8D%E8%A6%81%E4%BD%BF%E7%94%A8%E4%B8%8B%E5%88%92%E7%BA%BF"><span class="nav-text">19. 方法名中不要使用下划线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-18"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-17"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-alt%E5%B1%9E%E6%80%A7"><span class="nav-text">20. alt属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-19"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-18"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-%E4%BC%98%E9%9B%85%E5%9C%B0%E4%BD%BF%E7%94%A8CSS"><span class="nav-text">21. 优雅地使用CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bad-20"><span class="nav-text">bad</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-19"><span class="nav-text">good</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2023/08/18/20230818-%E6%B8%85%E6%B4%81React%E9%A1%B9%E7%9B%AE%E7%9A%8421%E4%B8%AA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="清洁React项目的21个最佳实践 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          清洁React项目的21个最佳实践
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-08-18 22:20:16 / 修改时间：23:13:47" itemprop="dateCreated datePublished" datetime="2023-08-18T22:20:16+08:00">2023-08-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index"><span itemprop="name">成长经历</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>6 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>React 对于如何构建事物非常没有主见。这正是我们有责任保持项目整洁和可维护的原因。</p>
+<p>今天，我们将讨论一些改善 React 应用程序健康状况的最佳实践。这些规则被广泛接受。因此，掌握这些知识是势在必行的。</p>
+<p>一切都将通过代码进行演示，所以请系好安全带！</p>
+<span id="more"></span>
+
+<h2 id="1-使用JSX简写"><a href="#1-使用JSX简写" class="headerlink" title="1. 使用JSX简写"></a>1. 使用JSX简写</h2><p>尝试使用 JSX 简写来传递布尔变量。假设您想要控制导航栏组件的标题可见性。</p>
+<h3 id="bad"><a href="#bad" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Navbar</span> <span class="attr">showTitle</span>=<span class="string">&#123;true&#125;</span> /&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="good"><a href="#good" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span>(</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Navbar</span> <span class="attr">showTitle</span> /&gt;</span></span>  </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-使用三元运算符"><a href="#2-使用三元运算符" class="headerlink" title="2. 使用三元运算符"></a>2. 使用三元运算符</h2><p>假设您想根据角色显示用户的详细信息。</p>
+<h3 id="bad-1"><a href="#bad-1" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; role &#125; = user;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(role === <span class="variable constant_">ADMIN</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">AdminUser</span> /&gt;</span></span></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">NormalUser</span> /&gt;</span></span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
+
+<h3 id="goods"><a href="#goods" class="headerlink" title="goods"></a>goods</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; role &#125; = user;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> role === <span class="variable constant_">ADMIN</span> ? <span class="language-xml"><span class="tag">&lt;<span class="name">AdminUser</span> /&gt;</span></span> : <span class="language-xml"><span class="tag">&lt;<span class="name">NormalUser</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-利用对象字面量"><a href="#3-利用对象字面量" class="headerlink" title="3. 利用对象字面量"></a>3. 利用对象字面量</h2><p>对象字面量可以帮助我们的代码更具可读性。假设您想根据角色显示三种类型的用户。您不能使用三元，因为选项数量超过两个。</p>
+<h3 id="bad-2"><a href="#bad-2" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;role&#125; = user</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span>(role)&#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="attr">ADMIN</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">AdminUser</span> /&gt;</span></span></span><br><span class="line">  <span class="keyword">case</span> <span class="attr">EMPLOYEE</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">EmployeeUser</span> /&gt;</span></span></span><br><span class="line">  <span class="keyword">case</span> <span class="attr">USER</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">NormalUser</span> /&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-1"><a href="#good-1" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123;role&#125; = user</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> components = &#123;</span><br><span class="line">  <span class="attr">ADMIN</span>: <span class="title class_">AdminUser</span>,</span><br><span class="line">  <span class="attr">EMPLOYEE</span>: <span class="title class_">EmployeeUser</span>,</span><br><span class="line">  <span class="attr">USER</span>: <span class="title class_">NormalUser</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">Component</span> = components[role];</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">Componenent</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>现在看起来好多了。</p>
+<h2 id="4-使用片段"><a href="#4-使用片段" class="headerlink" title="4. 使用片段"></a>4. 使用片段</h2><p>尽量使用<code>Fragment</code>而不是<code>div</code>. 它可以保持代码整洁，并且也有利于性能，因为在虚拟 DOM 中创建的节点少了一个。</p>
+<h3 id="bad-3"><a href="#bad-3" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Component1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Component2</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Component3</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-2"><a href="#good-2" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Component1</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Component2</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">Component3</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-不要在render中定义函数"><a href="#5-不要在render中定义函数" class="headerlink" title="5. 不要在render中定义函数"></a>5. 不要在render中定义函数</h2><p>不要在render中定义函数。尽量使render中的逻辑最小化。</p>
+<h3 id="bad-4"><a href="#bad-4" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> dispatch(ACTION_TO_SEND_DATA)&#125;&gt;    // NOTICE HERE</span></span><br><span class="line"><span class="language-xml">      This is a bad example </span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>  </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-3"><a href="#good-3" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">submitData</span> = (<span class="params"></span>) =&gt; <span class="title function_">dispatch</span>(<span class="variable constant_">ACTION_TO_SEND_DATA</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;submitData&#125;</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml">    This is a good example </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>  </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-使用useMemo"><a href="#6-使用useMemo" class="headerlink" title="6. 使用useMemo"></a>6. 使用useMemo</h2><p><code>React.PureComponent</code> 和 <code>useMemo</code> 可以显著提高应用程序的性能。它们帮助我们避免不必要的渲染。</p>
+<h3 id="bad-5"><a href="#bad-5" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span>, &#123; useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> <span class="title function_">TestMemo</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> [userName, setUserName] = <span class="title function_">useState</span>(<span class="string">&quot;faisal&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> [count, setCount] = <span class="title function_">useState</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">increment</span> = (<span class="params"></span>) =&gt; <span class="title function_">setCount</span>(<span class="function">(<span class="params">count</span>) =&gt;</span> count + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">ChildrenComponent</span> <span class="attr">userName</span>=<span class="string">&#123;userName&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;increment&#125;</span>&gt;</span> Increment <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">ChildrenComponent</span> =(<span class="params">&#123; userName &#125;</span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;rendered&quot;</span>, userName);</span><br><span class="line">  <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;userName&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>尽管 <code>ChildComponent</code> 的值与 <code>count</code> 无关,但它应该只渲染一次。但是,每次点击按钮时它都会重新渲染。</p>
+<h3 id="good-4"><a href="#good-4" class="headerlink" title="good"></a>good</h3><p>将 <code>ChildrenComponent</code> 改为：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> ,&#123;useState&#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ChildrenComponent</span> = <span class="title class_">React</span>.<span class="title function_">memo</span>(<span class="function">(<span class="params">&#123;userName&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;rendered&#x27;</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;userName&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>现在,无论单击按钮多少次,它都只会在必要时重新渲染。</p>
+<h2 id="7-使用对象解构"><a href="#7-使用对象解构" class="headerlink" title="7. 使用对象解构"></a>7. 使用对象解构</h2><p>充分利用对象解构。假设你需要显示一个用户的详细信息。</p>
+<h3 id="bad-6"><a href="#bad-6" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;user.name&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;user.age&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;user.profession&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span>  </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-5"><a href="#good-5" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; name, age, profession &#125; = user;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;name&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;age&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;profession&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/&gt;</span></span>  </span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-字符串类型的props不需要花括号"><a href="#8-字符串类型的props不需要花括号" class="headerlink" title="8. 字符串类型的props不需要花括号"></a>8. 字符串类型的props不需要花括号</h2><p>当向子组件传递字符串类型的props时。</p>
+<h3 id="bad-7"><a href="#bad-7" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Navbar</span> <span class="attr">title</span>=<span class="string">&#123;</span>&quot;<span class="attr">My</span> <span class="attr">Special</span> <span class="attr">App</span>&quot;&#125; /&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-6"><a href="#good-6" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">Navbar</span> <span class="attr">title</span>=<span class="string">&quot;My Special App&quot;</span> /&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-从JSX中提取JS代码"><a href="#9-从JSX中提取JS代码" class="headerlink" title="9. 从JSX中提取JS代码"></a>9. 从JSX中提取JS代码</h3><p>如果JS代码没有渲染或UI功能目的，请将其从JSX中提取出来。</p>
+<h3 id="bad-8"><a href="#bad-8" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;posts.map(post =&gt; (</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">        <span class="attr">onClick</span>=<span class="string">&#123;event</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-xml">          console.log(event.target, &#x27;clicked!&#x27;); // &lt;- 不好的</span></span><br><span class="line"><span class="language-xml">        &#125;&#125;</span></span><br><span class="line"><span class="language-xml">        key=&#123;post.id&#125;</span></span><br><span class="line"><span class="language-xml">      &gt;</span></span><br><span class="line"><span class="language-xml">        &#123;post.title&#125;  </span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    ))&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">);</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="good-7"><a href="#good-7" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">onClickHandler</span> = event =&gt; &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(event.<span class="property">target</span>, <span class="string">&#x27;clicked!&#x27;</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;posts.map(post =&gt; (</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">onClick</span>=<span class="string">&#123;onClickHandler&#125;</span> <span class="attr">key</span>=<span class="string">&#123;post.id&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        &#123;post.title&#125;</span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml">    ))&#125;</span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="10-使用模板字符串"><a href="#10-使用模板字符串" class="headerlink" title="10. 使用模板字符串"></a>10. 使用模板字符串</h2><p>使用模板字符串构建大型字符串。避免使用字符串连接。它很漂亮,也很简洁。</p>
+<h3 id="bad-9"><a href="#bad-9" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> userDetails = user.<span class="property">name</span> + <span class="string">&quot;&#x27;s profession is&quot;</span> + user.<span class="property">profession</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">section</span>&gt;</span>&#123;userDetails&#125;<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-8"><a href="#good-8" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> userDetails = <span class="string">`<span class="subst">$&#123;user.name&#125;</span>&#x27;s profession is <span class="subst">$&#123;user.profession&#125;</span>`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> (</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">section</span>&gt;</span>&#123;userDetails&#125;<span class="tag">&lt;/<span class="name">section</span>&gt;</span></span></span><br><span class="line">); </span><br></pre></td></tr></table></figure>
+
+<h2 id="11-按顺序导入"><a href="#11-按顺序导入" class="headerlink" title="11. 按顺序导入"></a>11. 按顺序导入</h2><p>尽量按一定顺序导入东西。这提高了代码的可读性。</p>
+<h3 id="bad-10"><a href="#bad-10" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ErrorImg</span> <span class="keyword">from</span> <span class="string">&#x27;../../assets/images/error.png&#x27;</span>; </span><br><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;styled-components/native&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> colors <span class="keyword">from</span> <span class="string">&#x27;../../styles/colors&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">PropTypes</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-9"><a href="#good-9" class="headerlink" title="good"></a>good</h3><p>一个经验法则是保持导入顺序如下:</p>
+<ul>
+<li>内置的</li>
+<li>外部的</li>
+<li>内部的</li>
+</ul>
+<p>所以上面的例子变为：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">React</span> <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">PropTypes</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;prop-types&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> styled <span class="keyword">from</span> <span class="string">&#x27;styled-components/native&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ErrorImg</span> <span class="keyword">from</span> <span class="string">&#x27;../../assets/images/error.png&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> colors <span class="keyword">from</span> <span class="string">&#x27;../../styles/colors&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-使用隐式返回"><a href="#12-使用隐式返回" class="headerlink" title="12. 使用隐式返回"></a>12. 使用隐式返回</h2><p>在编写漂亮的代码时,使用 JavaScript 的隐式<code>return</code>特性。假设你的函数进行一个简单的计算并返回结果。</p>
+<h3 id="bad-11"><a href="#bad-11" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; &#123;</span><br><span class="line">  <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-10"><a href="#good-10" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">add</span> = (<span class="params">a, b</span>) =&gt; a + b;</span><br></pre></td></tr></table></figure>
+
+<h2 id="13-组件命名"><a href="#13-组件命名" class="headerlink" title="13. 组件命名"></a>13. 组件命名</h2><p>组件始终使用PascalCase，实例使用camelCase。</p>
+<h3 id="bad-12"><a href="#bad-12" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> reservationCard <span class="keyword">from</span> <span class="string">&#x27;./ReservationCard&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">ReservationItem</span> = <span class="language-xml"><span class="tag">&lt;<span class="name">ReservationCard</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-11"><a href="#good-11" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="title class_">ReservationCard</span> <span class="keyword">from</span> <span class="string">&#x27;./ReservationCard&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> reservationItem = <span class="language-xml"><span class="tag">&lt;<span class="name">ReservationCard</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="14-保留的prop命名"><a href="#14-保留的prop命名" class="headerlink" title="14. 保留的prop命名"></a>14. 保留的prop命名</h2><p>不要在组件之间传递props时使用DOM组件的prop名称，因为其他人可能不期望这些名称。</p>
+<h3 id="bad-13"><a href="#bad-13" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">MyComponent</span> style=<span class="string">&quot;dark&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">MyComponent</span> <span class="attr">className</span>=<span class="string">&quot;dark&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="good-12"><a href="#good-12" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">MyComponent</span> variant=<span class="string">&quot;fancy&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="15-引号"><a href="#15-引号" class="headerlink" title="15. 引号"></a>15. 引号</h2><p>对 JSX 属性使用双引号，对所有其他 JS 使用单引号。</p>
+<h3 id="bad-14"><a href="#bad-14" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Foo</span> bar=<span class="string">&#x27;bar&#x27;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Foo</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">left:</span> &quot;<span class="attr">20px</span>&quot; &#125;&#125; /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="good-13"><a href="#good-13" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Foo</span> bar=<span class="string">&quot;bar&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">Foo</span> <span class="attr">style</span>=<span class="string">&#123;&#123;</span> <span class="attr">left:</span> &#x27;<span class="attr">20px</span>&#x27; &#125;&#125; /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="16-prop命名"><a href="#16-prop命名" class="headerlink" title="16. prop命名"></a>16. prop命名</h2><p>始终使用camelCase作为prop名称，如果prop值为React组件，则使用PascalCase。</p>
+<h3 id="bad-15"><a href="#bad-15" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Component</span></span><br><span class="line">  <span class="title class_">UserName</span>=<span class="string">&quot;hello&quot;</span></span><br><span class="line">  phone_number=&#123;<span class="number">12345678</span>&#125; </span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-14"><a href="#good-14" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">MyComponent</span></span><br><span class="line">  userName=<span class="string">&quot;hello&quot;</span> </span><br><span class="line">  phoneNumber=&#123;<span class="number">12345678</span>&#125;</span><br><span class="line">  <span class="title class_">Component</span>=&#123;<span class="title class_">SomeComponent</span>&#125; </span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="17-把多行的JSX用括号包裹"><a href="#17-把多行的JSX用括号包裹" class="headerlink" title="17. 把多行的JSX用括号包裹"></a>17. 把多行的JSX用括号包裹</h2><p>如果组件跨多行,请始终将其包装在括号中。</p>
+<h3 id="bad-16"><a href="#bad-16" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">MyComponent</span> <span class="attr">variant</span>=<span class="string">&quot;long&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">           <span class="tag">&lt;<span class="name">MyChild</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">MyComponent</span>&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-15"><a href="#good-15" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyComponent</span> <span class="attr">variant</span>=<span class="string">&quot;long&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">MyChild</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">MyComponent</span>&gt;</span></span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h2 id="18-使用自闭合标签"><a href="#18-使用自闭合标签" class="headerlink" title="18. 使用自闭合标签"></a>18. 使用自闭合标签</h2><p>如果您的组件没有任何子组件，请使用自闭合标签。它提高了可读性。</p>
+<h3 id="bad-17"><a href="#bad-17" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">SomeComponent</span> variant=<span class="string">&quot;stuff&quot;</span>&gt;&lt;/<span class="title class_">SomeComponent</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-16"><a href="#good-16" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">SomeComponent</span> variant=<span class="string">&quot;stuff&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="19-方法名中不要使用下划线"><a href="#19-方法名中不要使用下划线" class="headerlink" title="19. 方法名中不要使用下划线"></a>19. 方法名中不要使用下划线</h2><p>不要在任何内部React方法中使用下划线。</p>
+<h3 id="bad-18"><a href="#bad-18" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">_onClickHandler</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// do stuff</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-17"><a href="#good-17" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">onClickHandler</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="comment">// do stuff</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="20-alt属性"><a href="#20-alt属性" class="headerlink" title="20. alt属性"></a>20. alt属性</h2><p>在<code>&lt;img&gt;</code>标签中始终包含alt属性。并且不要在alt属性中使用<code>picture</code>或<code>image</code>,因为屏幕阅读器已经将<code>img</code>元素宣布为图像。不需要包含它们。</p>
+<h3 id="bad-19"><a href="#bad-19" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;hello.jpg&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;hello.jpg&quot;</span> <span class="attr">alt</span>=<span class="string">&quot;Picture of me waving hello&quot;</span> /&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="good-18"><a href="#good-18" class="headerlink" title="good"></a>good</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">&quot;hello.jpg&quot;</span> alt=<span class="string">&quot;Me waving hello&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="21-优雅地使用CSS"><a href="#21-优雅地使用CSS" class="headerlink" title="21. 优雅地使用CSS"></a>21. 优雅地使用CSS</h2><p>写行内样式太麻烦了，且不易维护。由于在 <code>React</code> 中 <code>CSS</code> 没有像 <code>Vue</code> 中的作用域 <code>(scoped)</code> 概念， 如果使用直接引入的方式那么所有的 <code>CSS</code> 样式都是作用域全局的，这样就使 <code>CSS</code> 异常的混乱，有可能导致页面样式相互影响。</p>
+<h3 id="bad-20"><a href="#bad-20" class="headerlink" title="bad"></a>bad</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> bodyStyle = &#123;</span><br><span class="line">  <span class="attr">height</span>: <span class="string">&quot;10px&quot;</span>  </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">style</span>=<span class="string">&#123;bodyStyle&#125;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="good-19"><a href="#good-19" class="headerlink" title="good"></a>good</h3><p>在 <code>react-scripts@2.0.0</code> 或者更高的版本中已经支持 <code>CSS</code> 的模块化了 (也就不需要手动去修改 <code>webpack.config.js</code> 中的配置了)，你只需要以 <code>[name].module.css</code> 方式命名就可以了。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* index.module.css */</span></span><br><span class="line"><span class="selector-class">.body</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">10px</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>组件里面使用：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> styles <span class="keyword">from</span> <span class="string">&#x27;./index.module.css&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="language-xml"><span class="tag">&lt;<span class="name">section</span> <span class="attr">className</span>=<span class="string">&#123;styles.body&#125;</span> /&gt;</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>就是这样啦。如果您已经做到了这一步，那么恭喜您！我希望您从本文中学到一两件事。</p>
+<p>我希望您有一个美好的一天！:D</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://dev.to/mohammadfaisal/21-best-practices-for-a-clean-react-project-jdf">21 Best Practices for a Clean React Project</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2023/08/18/20230818-%E6%B8%85%E6%B4%81React%E9%A1%B9%E7%9B%AE%E7%9A%8421%E4%B8%AA%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" title="清洁React项目的21个最佳实践">https://www.huatree.top/2023/08/18/20230818-清洁React项目的21个最佳实践/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/React/" rel="tag"># React</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/17/20230817-%E9%9D%A2%E8%AF%95%E5%AE%98%EF%BC%9A%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%98%AF%E5%89%8D%E7%AB%AFleader%EF%BC%8C%E4%BD%A0%E4%BC%9A%E5%81%9A%E5%93%AA%E4%BA%9B%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE%EF%BC%9F/" rel="prev" title="面试官：如果你是前端leader，你会做哪些前端基础建设？">
+                  <i class="fa fa-chevron-left"></i> 面试官：如果你是前端leader，你会做哪些前端基础建设？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/08/19/20230819-%E5%BD%BB%E5%BA%95%E6%90%9E%E6%B8%85%E6%A5%9A-JavaScript-%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/" rel="next" title="彻底搞清楚 JavaScript 的原型和原型链">
+                  彻底搞清楚 JavaScript 的原型和原型链 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"6dc21934d823889afbc93e19b5f8bd36"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

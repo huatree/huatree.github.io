@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="闭包，是指有权访问另一个函数作用域中变量的函数。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="理解闭包与内存泄漏">
+<meta property="og:url" content="https://www.huatree.top/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="闭包，是指有权访问另一个函数作用域中变量的函数。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image-static.segmentfault.com/485/175/485175884-601524fcd3995">
+<meta property="og:image" content="https://image-static.segmentfault.com/588/769/588769328-601527b237cfa">
+<meta property="og:image" content="https://image-static.segmentfault.com/149/143/1491432555-6015288b58394">
+<meta property="og:image" content="https://image-static.segmentfault.com/341/767/3417675909-60152a90a21c6">
+<meta property="og:image" content="https://image-static.segmentfault.com/329/036/3290363206-6015354b85cdf">
+<meta property="article:published_time" content="2023-05-24T22:22:13.000Z">
+<meta property="article:modified_time" content="2024-04-24T22:52:41.183Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-static.segmentfault.com/485/175/485175884-601524fcd3995">
+
+
+<link rel="canonical" href="https://www.huatree.top/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/","path":"2023/05/25/20230525-理解闭包与内存泄漏/","title":"理解闭包与内存泄漏"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>理解闭包与内存泄漏 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-text">闭包的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E6%88%90%E9%97%AD%E5%8C%85%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="nav-text">形成闭包的条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F"><span class="nav-text">内存泄漏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E5%AD%98-dump"><span class="nav-text">内存 dump</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2"><span class="nav-text">常见的内存泄露</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E5%BE%AA%E7%8E%AF%E5%BC%95%E7%94%A8"><span class="nav-text">闭包循环引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E5%A4%8D%E6%B3%A8%E5%86%8C%E4%BA%8B%E4%BB%B6"><span class="nav-text">重复注册事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%8F%E5%A4%96%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-text">意外的全局变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6%E6%9C%AA%E5%8F%8A%E6%97%B6%E9%94%80%E6%AF%81"><span class="nav-text">事件未及时销毁</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="理解闭包与内存泄漏 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          理解闭包与内存泄漏
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-05-25 06:22:13" itemprop="dateCreated datePublished" datetime="2023-05-25T06:22:13+08:00">2023-05-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-04-25 06:52:41" itemprop="dateModified" datetime="2024-04-25T06:52:41+08:00">2024-04-25</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%BB%8F%E5%85%B8%E6%96%87%E7%AB%A0/" itemprop="url" rel="index"><span itemprop="name">经典文章</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>10k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>9 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>闭包，是指<strong>有权访问另一个函数作用域中变量的函数</strong>。</p>
+<span id="more"></span>
+
+<div class="note info"><p>文章转载自<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000039132414">前海拾贝</a></p>
+</div>
+
+<h2 id="闭包的定义"><a href="#闭包的定义" class="headerlink" title="闭包的定义"></a>闭包的定义</h2><p>从定义上我们可以知道，<strong>闭包是函数</strong>，并且是<strong>被另一个函数包裹的函数</strong>。所以需要<strong>用一个函数去包裹另一个函数</strong>，即<strong>在函数内部定义函数</strong>。<strong>被包裹的函数</strong>则称为<strong>闭包函数</strong>，<strong>包裹的函数(外部的函数)则为闭包函数提供了一个闭包作用域</strong>，所以<strong>形成的闭包作用域的名称为外部函数的名称</strong>。</p>
+<p>我们先来看一个常见的闭包例子，如:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> foo;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// outer函数内部为闭包函数提供一个闭包作用域(outer)</span></span><br><span class="line">    <span class="keyword">let</span> bar = <span class="string">&quot;bar&quot;</span>;</span><br><span class="line">    <span class="keyword">let</span> inner = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(bar);</span><br><span class="line">        <span class="keyword">debugger</span>; <span class="comment">// 打一个debuuger断点，以便查看闭包作用域</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;inner function run.&quot;</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> inner;</span><br><span class="line">&#125;</span><br><span class="line">foo = <span class="title function_">outer</span>(); <span class="comment">// 执行外部函数返回内部函数</span></span><br><span class="line"><span class="title function_">foo</span>(); <span class="comment">// 执行内部函数</span></span><br></pre></td></tr></table></figure>
+
+<p>我们在浏览器上执行该段代码后，会停在断点位置，此时我们可以看到形成的闭包作用域如图所示：</p>
+<p><img data-src="https://image-static.segmentfault.com/485/175/485175884-601524fcd3995" alt="img01"></p>
+<p>从图中我们可以看到，<strong>形成的闭包作用域名称为外部的 outer 函数提供的作用域</strong>，闭包作用域内有一个变量 bar 可以被闭包函数访问到。</p>
+<h2 id="形成闭包的条件"><a href="#形成闭包的条件" class="headerlink" title="形成闭包的条件"></a>形成闭包的条件</h2><p>从上面的闭包例子在，看起来形成的闭包的条件就是，一个函数被另一个函数包裹，并且返回这个被包裹的函数供外部持有。其实，<strong>闭包函数是否被外部变量持有并不重要</strong>，形成闭包的必要条件就是，<strong>闭包函数(被包裹的函数)中必须要使用到外部函数中的变量</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// outer函数内部为闭包函数提供一个闭包作用域(outer)</span></span><br><span class="line">    <span class="keyword">let</span> bar = <span class="string">&quot;bar&quot;</span>;</span><br><span class="line">    <span class="keyword">let</span> inner = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(bar);</span><br><span class="line">        <span class="keyword">debugger</span>;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;inner function run.&quot;</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">inner</span>(); <span class="comment">// 直接在外部函数中执行闭包函数inner</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">outer</span>();</span><br></pre></td></tr></table></figure>
+
+<p>我们稍微修改一下上面的例子，<strong>外部函数 outer 不将内部函数 inner 返回，而是直接在 outer 内执行</strong>。</p>
+<p><img data-src="https://image-static.segmentfault.com/588/769/588769328-601527b237cfa" alt="img02"></p>
+<p>从执行结果可以看到，仍然形成了闭包，所以说<strong>这个被包裹的闭包函数是否被外部持有并不是形成闭包的条件</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// outer函数内部为闭包函数提供一个闭包作用域(outer)</span></span><br><span class="line">    <span class="keyword">let</span> bar = <span class="string">&quot;bar&quot;</span>;</span><br><span class="line">    <span class="keyword">let</span> inner = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// console.log(bar); // 注释该行，内部inner函数不再使用外部outer函数中的变量</span></span><br><span class="line">        <span class="keyword">debugger</span>;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;inner function run.&quot;</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">inner</span>(); <span class="comment">// 直接在外部函数中执行闭包函数inner</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">outer</span>();</span><br></pre></td></tr></table></figure>
+
+<p>我们再修改一下上面的例子，将<code>console.log(bar)</code>这行代码注释掉，这样<strong>inner 函数中将不再使用外部 outer 函数中的变量</strong>。</p>
+<p><img data-src="https://image-static.segmentfault.com/149/143/1491432555-6015288b58394" alt="img03"></p>
+<p>从执行结果上可以看到，<strong>没有形成闭包</strong>。所以形成闭包的必要条件就是，<strong>被包裹的闭包函数必须使用外部函数中的变量</strong>。</p>
+<p>当然上面的结论也太过绝对了些，因为<strong>外部函数可以同时包裹多个闭包函数</strong>，也就是说，**(外部)函数内部定义了多个函数<strong>，这种情况下，就不需要每个闭包函数都使用到外部函数中的变量，因为</strong>闭包作用域是内部所有闭包函数共享的<strong>，</strong>只要有一个内部函数使用到了外部函数中的变量即可形成闭包**。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// outer函数内部为闭包函数提供一个闭包作用域(outer)</span></span><br><span class="line">    <span class="keyword">let</span> bar = <span class="string">&quot;bar&quot;</span>;</span><br><span class="line">    <span class="keyword">let</span> unused = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(bar); <span class="comment">// 再创建一个闭包函数，并在其中使用外部函数中的变量</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> inner = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// console.log(bar); // 注释该行，内部inner函数不再使用外部outer函数中的变量</span></span><br><span class="line">        <span class="keyword">debugger</span>;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;inner function run.&quot;</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="title function_">inner</span>(); <span class="comment">// 直接在外部函数中执行闭包函数inner</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">outer</span>();</span><br></pre></td></tr></table></figure>
+
+<p>我们继续修改一下上面的例子，在 outer 函数内部再创建一个 unused 函数，<strong>这个函数只是定义但不会执行</strong>，同时<strong>unused 函数内部使用了外部 outer 函数中的变量</strong>，inner 函数仍然不使用外部 outer 函数中的变量。</p>
+<p><img data-src="https://image-static.segmentfault.com/341/767/3417675909-60152a90a21c6" alt="img04"></p>
+<p>从执行结果可以看到，<strong>又形成了闭包</strong>。所以形成的闭包条件就是，<strong>存在内部函数中使用外部函数中定义的变量</strong>。</p>
+<h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><p>内存泄漏常常与闭包紧紧联系在一起，很容易让人误以为闭包就会导致内存泄漏。其实<strong>闭包只是让内存常驻</strong>，而<strong>滥用闭包才会导致内存泄漏</strong>。<br>内存泄漏，从广义上说就是，<strong>内存在使用完毕之后</strong>，<strong>对于不再要的内存没有及时释放或者无法释放</strong>。<strong>不再需要的</strong>内存使用完毕之后肯定需要释放掉，否则这个块内存就浪费掉了，相当于内存泄漏了。<strong>但是在实际中，往往不会通过判断该内存或变量是否不再需要使用来判断</strong>。因为内存测试工具很难判断该内存是否不再需要。所以我们通常会<strong>重复多次执行某段逻辑链路</strong>，然后<strong>每隔一段时间进行一次内存 dump</strong>，然后<strong>判断内存是否存在不断增长的趋势</strong>，如果存在，则可用怀疑存在内存泄漏的可能。</p>
+<h2 id="内存-dump"><a href="#内存-dump" class="headerlink" title="内存 dump"></a>内存 dump</h2><p>浏览器中抓取内存的 dump 相对来说简单些，<strong>直接通过谷歌浏览器的调试工具找到 memory 对应的 tab 页面</strong>，然后<strong>点击 Load</strong>即可开始抓取内存 dump，如：</p>
+<p><img data-src="https://image-static.segmentfault.com/329/036/3290363206-6015354b85cdf" alt="img05"></p>
+<p>在 NodeJS 中，我们也可以通过引入 heapdump 来抓取内存 dump，直接通过 npm 安装 heapdump 模块即可。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install heapdump</span><br></pre></td></tr></table></figure>
+
+<p>安装完成之后，即可直接在应用程序中使用了，用法非常简单，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 应用code部分</span></span><br><span class="line"></span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<p>应用程序执行完成后，会在<strong>应用根目录</strong>中生成 start.heapsnapshot 和 end.heapsnapshot 两个内存 dump 文件，我们可以<strong>通过判断两个文件的大小变化来判断是否存在内存泄漏</strong>。</p>
+<p>当然<strong>并不是说内存 dump 文件的大小不断增大就存在内存泄漏</strong>，如果应用的访问量确实在一直增大，那么内存曲线只增不减也属于正常情况，<strong>我们只能根据具体情况判断是否存在内存泄漏的可能</strong>。</p>
+<h2 id="常见的内存泄露"><a href="#常见的内存泄露" class="headerlink" title="常见的内存泄露"></a>常见的内存泄露</h2><h3 id="闭包循环引用"><a href="#闭包循环引用" class="headerlink" title="闭包循环引用"></a>闭包循环引用</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"><span class="keyword">let</span> foo = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> bar = foo;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">unused</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// 未使用到的函数</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar is <span class="subst">$&#123;bar&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    foo = &#123;</span><br><span class="line">        <span class="comment">// 给foo变量重新赋值</span></span><br><span class="line">        <span class="attr">bigData</span>: <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">100000</span>).<span class="title function_">join</span>(<span class="string">&quot;this_is_a_big_data&quot;</span>), <span class="comment">// 如果这个对象携带的数据非常大，将会造成非常大的内存泄漏</span></span><br><span class="line">        <span class="attr">inner</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`inner method run`</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="title function_">outer</span>();</span><br><span class="line">&#125;</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，执行了 1000 次 outer 函数，start.heapsnapshot 文件的大小为 2.4M，而 end.heapsnapshot 文件的大小为 4.1M，所以可能存在内存泄漏。<br>前面讲解闭包的过程中，我们已经可以知道 outer 函数内部是存在闭包的，因为<strong>outer 函数内部定义了 unused 和 inner 两个函数</strong>，虽然 inner 函数中没有使用到 outer 函数中的变量，但是<strong>unused 函数内部使用到了 outer 函数中的 bar 变量</strong>，故形成闭包，<strong>inner 函数也会共享 outer 函数提供的闭包作用域</strong>。<br>由于闭包的存在，<strong>bar 变量不能释放</strong>，即相当于<strong>inner 函数隐式持有了 bar 变量</strong>，所以存在**…–&gt;foo–&gt;inner–&gt;bar–&gt;foo(赋值给 bar 的 foo，即上一次的 foo)…<strong>。<br>这里 inner 隐式持有 bar 变量怎么理解呢？因为</strong>inner 是一个闭包函数<strong>，</strong>可以使用 outer 提供的闭包作用域中的 bar 变量<strong>，由于闭包的关系，bar 变量不能释放，所以</strong>bar 变量一直在内存中<strong>，而</strong>bar 变量又指向了上一次赋值给 bar 的 foo 对象**，所以会存在这样一个引用关系。</p>
+<p>那怎么解决呢？由于 bar 变量常驻内存不能释放，所以我们可以<strong>在 outer 函数执行完毕的时候手动释放</strong>，即<strong>将 bar 变量置为 null</strong>，这样<strong>之前赋值给 bar 的 foo 对象就没有被其他变量引用了</strong>，就会被回收了。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"><span class="keyword">let</span> foo = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> bar = foo;</span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">unused</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// 未使用到的函数</span></span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar is <span class="subst">$&#123;bar&#125;</span>`</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    foo = &#123;</span><br><span class="line">        <span class="comment">// 给foo变量重新赋值</span></span><br><span class="line">        <span class="attr">bigData</span>: <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">100000</span>).<span class="title function_">join</span>(<span class="string">&quot;this_is_a_big_data&quot;</span>), <span class="comment">// 如果这个对象携带的数据非常大，将会造成非常大的内存泄漏</span></span><br><span class="line">        <span class="attr">inner</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`inner method run`</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">    bar = <span class="literal">null</span>; <span class="comment">// 手动释放bar变量，解除bar变量对上一次foo对象的引用</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="title function_">outer</span>();</span><br><span class="line">&#125;</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<p>手动释放 bar 变量是一种相对比较好的解决方式。关键在于<strong>要解除闭包解除 bar 变量对上一次 foo 变量的引用</strong>。所以我们可以<strong>让 unused 方法内不使用 bar 变量</strong>，或者<strong>将 bar 变量的定义放在一个块级作用域中</strong>，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"><span class="keyword">let</span> foo = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">outer</span>(<span class="params"></span>) &#123;</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 将bar变量定义在一个块级作用域内，这样outer函数中就没有定义变量了，自然inner也不会形成闭包</span></span><br><span class="line">        <span class="keyword">let</span> bar = foo;</span><br><span class="line">        <span class="keyword">function</span> <span class="title function_">unused</span>(<span class="params"></span>) &#123;</span><br><span class="line">            <span class="comment">// 未使用到的函数</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`bar is <span class="subst">$&#123;bar&#125;</span>`</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    foo = &#123;</span><br><span class="line">        <span class="comment">// 给foo变量重新赋值</span></span><br><span class="line">        <span class="attr">bigData</span>: <span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">100000</span>).<span class="title function_">join</span>(<span class="string">&quot;this_is_a_big_data&quot;</span>), <span class="comment">// 如果这个对象携带的数据非常大，将会造成非常大的内存泄漏</span></span><br><span class="line">        <span class="attr">inner</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`inner method run`</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="title function_">outer</span>();</span><br><span class="line">&#125;</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="重复注册事件"><a href="#重复注册事件" class="headerlink" title="重复注册事件"></a>重复注册事件</h3><p>比如页面一进入就重复注册 1000 个同名事件(一次模拟每次进入页面都注册一次事件)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&quot;events&quot;</span>);</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Page</span> <span class="keyword">extends</span> <span class="title class_ inherited__">events.EventEmitter</span> &#123;</span><br><span class="line">    <span class="title function_">onShow</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">on</span>(<span class="string">&quot;ok&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">                <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;on ok signal.&quot;</span>);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">onDestory</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> page = <span class="keyword">new</span> <span class="title class_">Page</span>();</span><br><span class="line">page.<span class="title function_">setMaxListeners</span>(<span class="number">0</span>); <span class="comment">// 设置可以注册多个同名事件</span></span><br><span class="line">page.<span class="title function_">onShow</span>();</span><br><span class="line">page.<span class="title function_">onDestory</span>();</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<p>这个例子中 Page 页面一进入就会同时注册 1000 个同名的 ok 事件，start.heapsnapshot 文件的大小为 2.4M，而 end.heapsnapshot 文件的大小为 2.5M，所以可能存在内存泄漏。<br>解决方式就是，<strong>在页面离开的时候移除所有事件</strong>，或者<strong>在页面创建的时候仅注册一次事件</strong>，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&quot;events&quot;</span>);</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Page</span> <span class="keyword">extends</span> <span class="title class_ inherited__">events.EventEmitter</span> &#123;</span><br><span class="line">    <span class="title function_">onCreate</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">on</span>(<span class="string">&quot;ok&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// 仅在页面创建的时候注册一次事件，避免重复注册事件</span></span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;on ok signal.&quot;</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">onShow</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="comment">// for (let i = 0; i &lt; 1000; i++) &#123;</span></span><br><span class="line">        <span class="comment">//     this.on(&quot;ok&quot;, () =&gt; &#123;</span></span><br><span class="line">        <span class="comment">//         console.log(&quot;on ok signal.&quot;);</span></span><br><span class="line">        <span class="comment">//     &#125;);</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">onLeave</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">removeAllListeners</span>(<span class="string">&quot;ok&quot;</span>); <span class="comment">// 或者在离开页面的时候移除所有ok事件</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> page = <span class="keyword">new</span> <span class="title class_">Page</span>();</span><br><span class="line">page.<span class="title function_">setMaxListeners</span>(<span class="number">0</span>); <span class="comment">// 设置可以注册多个同名事件</span></span><br><span class="line">page.<span class="title function_">onCreate</span>();</span><br><span class="line">page.<span class="title function_">onShow</span>();</span><br><span class="line">page.<span class="title function_">onLeave</span>();</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="意外的全局变量"><a href="#意外的全局变量" class="headerlink" title="意外的全局变量"></a>意外的全局变量</h3><p>这是我们常常简单的内存泄漏例子，实际上内存工具很难判断意外的全局变量是否存在内存泄漏，除非应用程序不断的往这个全局变量中加入数据，否则<strong>对于一个恒定不变的意外全局变量内存测试工具是无法判断出是否存在内存泄漏的</strong>，所以我们<strong>尽量不要随意使用全局变量来保存数据</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createBigData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> bigData = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">        bigData.<span class="title function_">push</span>(<span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">10000</span>).<span class="title function_">join</span>(<span class="string">&quot;this_is_a_big_data&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bigData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    foo = <span class="title function_">createBigData</span>(); <span class="comment">// 意外的全局变量导致内存泄漏</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">    <span class="title function_">fn</span>();</span><br><span class="line">&#125;</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<p>该例子执行后，end.heapsnapshot 文件的大小为 2.5M 也变成了 2.5M，<strong>执行 fn 函数的时候意外产生了一个全局变量 foo</strong>，并赋值为了一个很大的数据，如果 foo 变量用完后我们不再需要，那么我们就要主动释放，否则常驻内存造成内存泄漏，如果这个全局变量我们后续还需要使用到，那么就不算内存泄漏。<br>解决方法就是，将 foo 定义成局部变量，如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createBigData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> bigData = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">        bigData.<span class="title function_">push</span>(<span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">10000</span>).<span class="title function_">join</span>(<span class="string">&quot;this_is_a_big_data&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bigData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// foo = createBigData(); // 意外的全局变量导致内存泄漏</span></span><br><span class="line">    <span class="keyword">const</span> foo = <span class="title function_">createBigData</span>(); <span class="comment">// 将foo定义为局部变量，避免内存泄漏</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">    <span class="title function_">fn</span>();</span><br><span class="line">&#125;</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件未及时销毁"><a href="#事件未及时销毁" class="headerlink" title="事件未及时销毁"></a>事件未及时销毁</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&quot;events&quot;</span>);</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createBigData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> bigData = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">        bigData.<span class="title function_">push</span>(<span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">100000</span>).<span class="title function_">join</span>(<span class="string">&quot;this_is_a_big_data&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bigData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Page</span> <span class="keyword">extends</span> <span class="title class_ inherited__">events.EventEmitter</span> &#123;</span><br><span class="line">    <span class="title function_">onCreate</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> data = <span class="title function_">createBigData</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">handler</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">update</span>(data);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">on</span>(<span class="string">&quot;ok&quot;</span>, <span class="variable language_">this</span>.<span class="property">handler</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">update</span>(<span class="params">data</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;开始更新数据了&quot;</span>); <span class="comment">// 接收到ok信号，可以开始更新数据了</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">onDestory</span>(<span class="params"></span>) &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> page = <span class="keyword">new</span> <span class="title class_">Page</span>();</span><br><span class="line">page.<span class="title function_">onCreate</span>();</span><br><span class="line">page.<span class="title function_">onDestory</span>();</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<p>此例中页面 onCreate 的时候会注册一个 ok 事件，事件处理函数为 this.handler，this.handler 的定义会形成一个闭包，导致 data 无法释放，从而内存溢出。<br>解决办法就是<strong>移除事件</strong>并<strong>清空 this.handler</strong>，因为 this.handler 这个闭包函数被两个变量持有，一个是<strong>page 对象的 handler 属性持有</strong>，另一个是<strong>事件处理器由于注册事件后被事件处理器所持有</strong>。所以需要释放 this.handler 并且移除事件监听。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> heapdump = <span class="built_in">require</span>(<span class="string">&quot;heapdump&quot;</span>);</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;start.heapsnapshot&quot;</span>); <span class="comment">// 记录应用开始时的内存dump</span></span><br><span class="line"><span class="keyword">const</span> events = <span class="built_in">require</span>(<span class="string">&quot;events&quot;</span>);</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">createBigData</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> bigData = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">100</span>; j++) &#123;</span><br><span class="line">        bigData.<span class="title function_">push</span>(<span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">100000</span>).<span class="title function_">join</span>(<span class="string">&quot;this_is_a_big_data&quot;</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> bigData;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Page</span> <span class="keyword">extends</span> <span class="title class_ inherited__">events.EventEmitter</span> &#123;</span><br><span class="line">    <span class="title function_">onCreate</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> data = <span class="title function_">createBigData</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">handler</span> = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="title function_">update</span>(data);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">on</span>(<span class="string">&quot;ok&quot;</span>, <span class="variable language_">this</span>.<span class="property">handler</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">update</span>(<span class="params">data</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;开始更新数据了&quot;</span>); <span class="comment">// 接收到ok信号，可以开始更新数据了</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">onDestory</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="title function_">removeListener</span>(<span class="string">&quot;ok&quot;</span>, <span class="variable language_">this</span>.<span class="property">handler</span>); <span class="comment">// 移除ok事件，解决事件处理器对this.handler闭包函数的引用</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">handler</span> = <span class="literal">null</span>; <span class="comment">//解除page对象对this.handler闭包函数的引用</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> page = <span class="keyword">new</span> <span class="title class_">Page</span>();</span><br><span class="line">page.<span class="title function_">onCreate</span>();</span><br><span class="line">page.<span class="title function_">onDestory</span>();</span><br><span class="line">heapdump.<span class="title function_">writeSnapshot</span>(<span class="string">&quot;end.heapsnapshot&quot;</span>); <span class="comment">// 记录应用结束时的内存dump</span></span><br></pre></td></tr></table></figure>
+
+<p>解除 page 对象和事件处理器对象对 this.handler 闭包函数的引用后，this.handler 闭包函数就会被释放，从而解除闭包，data 也会得到释放。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="理解闭包与内存泄漏">https://www.huatree.top/2023/05/25/20230525-理解闭包与内存泄漏/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/05/08/20230508-%E4%B8%BA%E4%BB%80%E4%B9%88Node%E5%BA%94%E7%94%A8%E9%9C%80%E8%A6%81PM2/" rel="prev" title="为什么Node应用需要PM2">
+                  <i class="fa fa-chevron-left"></i> 为什么Node应用需要PM2
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/06/21/20230621-uniapp%E6%96%87%E6%9C%AC%E5%A4%8D%E5%88%B6%E5%88%B0%E5%89%AA%E5%88%87%E7%89%88%E7%9A%84%E5%9D%91/" rel="next" title="uniapp文本复制到剪切版的坑">
+                  uniapp文本复制到剪切版的坑 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"f1ec8e1737c3fe954020dcdc4e59cfcc"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

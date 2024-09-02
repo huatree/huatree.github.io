@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在实际开发中遇到的一些 Git 常现的问题与总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git常见问题与总结">
+<meta property="og:url" content="https://www.huatree.top/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="在实际开发中遇到的一些 Git 常现的问题与总结。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://git-scm.com/images/branching-illustration@2x.png">
+<meta property="article:published_time" content="2021-12-20T08:28:42.000Z">
+<meta property="article:modified_time" content="2023-07-01T06:59:47.550Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://git-scm.com/images/branching-illustration@2x.png">
+
+
+<link rel="canonical" href="https://www.huatree.top/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/","path":"2021/12/20/20211220-Git常见问题与总结/","title":"Git常见问题与总结"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Git常见问题与总结 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%93%8D%E4%BD%9C%E4%BB%93%E5%BA%93%E5%89%8D%E7%9A%84%E5%BF%85%E8%A6%81%E6%A3%80%E6%9F%A5%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-text">1 操作仓库前的必要检查与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="nav-text">文件名大小写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E5%90%8D%E8%BF%87%E9%95%BF%E5%AF%BC%E8%87%B4%E7%9A%84%E9%94%99%E8%AF%AF"><span class="nav-text">文件名过长导致的错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%80%8E%E4%B9%88%E6%AF%94%E8%BE%83%E4%BC%98%E9%9B%85%E7%9A%84%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-text">2 怎么比较优雅的获取远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%88%86%E6%94%AF%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-text">3 分支重命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%88%86%E6%94%AF%E5%88%A0%E9%99%A4"><span class="nav-text">4 分支删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%89%93%E6%A0%87%E7%AD%BE"><span class="nav-text">5 打标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%8F%91%E7%89%88%EF%BC%8C%E5%B8%B8%E7%94%A8%E9%99%84%E6%B3%A8%E6%A0%87%E7%AD%BE"><span class="nav-text">记录项目的发版，常用附注标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tag-%E4%B8%8E-release"><span class="nav-text">tag 与 release</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-git-flow"><span class="nav-text">6 git flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E5%9B%9E%E9%80%80%E4%BB%A3%E7%A0%81%E5%88%B0%E6%8C%87%E5%AE%9A%E7%89%88%E6%9C%AC"><span class="nav-text">7 回退代码到指定版本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E5%B8%B8%E7%94%A8%E7%9A%84%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4"><span class="nav-text">8 常用的查看提交历史命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E6%92%A4%E9%94%80%E6%8C%87%E5%AE%9A%E7%9A%84%E6%8F%90%E4%BA%A4%E5%86%85%E5%AE%B9"><span class="nav-text">9 撤销指定的提交内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E4%BB%A3%E7%A0%81%E4%B8%B4%E6%97%B6%E4%BF%9D%E5%AD%98"><span class="nav-text">10 代码临时保存</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95%E6%8C%87%E4%BB%A4"><span class="nav-text">记录指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E8%AE%BE%E7%BD%AE%E9%BB%98%E8%AE%A4%E5%88%86%E6%94%AF"><span class="nav-text">11 设置默认分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E5%8F%96%E6%B6%88%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="nav-text">12 取消暂存区的更改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-%E6%81%A2%E5%A4%8D%E8%AF%AF%E5%88%A0%E5%88%86%E6%94%AF"><span class="nav-text">13 恢复误删分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Git常见问题与总结 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git常见问题与总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-20 16:28:42" itemprop="dateCreated datePublished" datetime="2021-12-20T16:28:42+08:00">2021-12-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-01 14:59:47" itemprop="dateModified" datetime="2023-07-01T14:59:47+08:00">2023-07-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B7%A5%E4%BD%9C%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">工作点滴</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在实际开发中遇到的一些 Git 常现的问题与总结。</p>
+<p><img src="https://git-scm.com/images/branching-illustration@2x.png" alt="top"></p>
+<span id="more"></span>
+
+<div class="note warning"><p>文章中的<code>origin</code>是<code>git remote add origin &lt;url&gt;</code>添加远程仓库的别名。</p>
+</div>
+
+<h2 id="1-操作仓库前的必要检查与配置"><a href="#1-操作仓库前的必要检查与配置" class="headerlink" title="1 操作仓库前的必要检查与配置"></a>1 操作仓库前的必要检查与配置</h2><h3 id="文件名大小写"><a href="#文件名大小写" class="headerlink" title="文件名大小写"></a>文件名大小写</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看是否忽略文件名大小写</span></span><br><span class="line">$ git config --global -l</span><br><span class="line">$ git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 配置成不能忽略文件名大小写(windows系统下，安装git时会默认配置core.ignorecase=true，因为windows的文件名本身不区分大小写)</span></span><br><span class="line">$ git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">$ git config &lt;--<span class="built_in">local</span>&gt; core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="文件名过长导致的错误"><a href="#文件名过长导致的错误" class="headerlink" title="文件名过长导致的错误"></a>文件名过长导致的错误</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先查看默认的配置</span></span><br><span class="line">$ git config --global -l</span><br><span class="line">$ git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 如果没查到core.longpaths配置项或core.longpaths=false时，需要如下配置</span></span><br><span class="line">$ git config --global core.longpaths <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-怎么比较优雅的获取远程仓库"><a href="#2-怎么比较优雅的获取远程仓库" class="headerlink" title="2 怎么比较优雅的获取远程仓库"></a>2 怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> &lt;ssh:git url&gt;</span><br><span class="line">$ git checkout -b &lt;branch a&gt;</span><br><span class="line">$ git pull origin &lt;branch a&gt;</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin &lt;branch a&gt;:&lt;branch a&gt;</span><br><span class="line">$ git checkout &lt;branch a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-分支重命名"><a href="#3-分支重命名" class="headerlink" title="3 分支重命名"></a>3 分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
+<blockquote>
+<p>tops</p>
+<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
+</blockquote>
+<p>具体操作如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m &lt;old branch name&gt; &lt;new branch name&gt;</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin &lt;old branch name&gt;</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin &lt;new branch name&gt;</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/&lt;new branch name&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
+</blockquote>
+<h2 id="4-分支删除"><a href="#4-分支删除" class="headerlink" title="4 分支删除"></a>4 分支删除</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d &lt;branch name&gt;</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-打标签"><a href="#5-打标签" class="headerlink" title="5 打标签"></a>5 打标签</h2><h3 id="记录项目的发版，常用附注标签"><a href="#记录项目的发版，常用附注标签" class="headerlink" title="记录项目的发版，常用附注标签"></a>记录项目的发版，常用附注标签</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 打附注标签</span></span><br><span class="line">$ git tag -a &lt;tag name&gt; -m &lt;<span class="string">&quot;msg&quot;</span>&gt;</span><br><span class="line"><span class="comment"># 打附注标签(指定commit id)</span></span><br><span class="line">$ git tag -a &lt;tag name&gt; -m &lt;<span class="string">&quot;msg&quot;</span>&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推送本地仓库标签到远程仓库</span></span><br><span class="line">$ git push origin &lt;tag name&gt;</span><br><span class="line"><span class="comment"># 列出所有标签</span></span><br><span class="line">$ git tag -l</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ git tag</span><br><span class="line"><span class="comment"># 列出标签(带匹配模式)</span></span><br><span class="line">$ git tag -l <span class="string">&#x27;v-*&#x27;</span></span><br><span class="line"><span class="comment"># 删除本地仓库标签</span></span><br><span class="line">$ git tag -d &lt;tag name&gt;</span><br><span class="line"><span class="comment"># 再删除远程仓库标签</span></span><br><span class="line">$ git push -d origin &lt;tag name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="tag-与-release"><a href="#tag-与-release" class="headerlink" title="tag 与 release"></a>tag 与 release</h3><p>tag 是 git 提供的功能，release 是如 github、gitee、gitlab 等代码托管平台基于 git tag 的锦上添花，对 git 的 tag 功能的增强。</p>
+<h2 id="6-git-flow"><a href="#6-git-flow" class="headerlink" title="6 git flow"></a>6 git flow</h2><p><a target="_blank" rel="noopener" href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
+<h2 id="7-回退代码到指定版本"><a href="#7-回退代码到指定版本" class="headerlink" title="7 回退代码到指定版本"></a>7 回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-常用的查看提交历史命令"><a href="#8-常用的查看提交历史命令" class="headerlink" title="8 常用的查看提交历史命令"></a>8 常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="9-撤销指定的提交内容"><a href="#9-撤销指定的提交内容" class="headerlink" title="9 撤销指定的提交内容"></a>9 撤销指定的提交内容</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git show &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line">git revert -m &lt;number&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 如果需要回复之前撤销过的指定的提交内容，再次revert</span></span><br><span class="line">git revert &lt;commit <span class="built_in">id</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>-m</code> 选项接收的参数是一个数字，数字取值为 1 和 2，也就是 Merge 行里面列出来的第一个还是第二个，其含义用来保留某个分支。</p>
+<p><code>git revert</code>是用一次新的commit来回滚之前的commit。</p>
+<h2 id="10-代码临时保存"><a href="#10-代码临时保存" class="headerlink" title="10 代码临时保存"></a>10 代码临时保存</h2><p>如果你正在写开发新分支的需求，别的分支线上突然有 bug 需要修复，你或许只能被迫先提交写的代码，这种情况可以用以下命令操作：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 工作区的代码临时保存</span></span><br><span class="line">$ git stash</span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># 恢复临时保存的代码到工作区（当你在切回自己的分支时，用指令恢复之前的代码就OK）</span></span><br><span class="line">$ git stash apply</span><br></pre></td></tr></table></figure>
+
+<p>如果有未跟踪的文件，需要先<code>git add &lt;file&gt;</code>，再<code>git stash</code>。因为<code>git stash</code>只临时保存已跟踪的文件。</p>
+<h3 id="记录指令"><a href="#记录指令" class="headerlink" title="记录指令"></a>记录指令</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存未commit的代码</span></span><br><span class="line">$ git stash</span><br><span class="line"><span class="comment"># 保存未commit的代码并备注</span></span><br><span class="line">$ git stash save</span><br><span class="line"><span class="comment"># 查看stash所有列表</span></span><br><span class="line">$ git stash list</span><br><span class="line"><span class="comment"># 删除所有记录</span></span><br><span class="line">$ git stash clear</span><br><span class="line"><span class="comment"># 查看并应用最后一次的记录</span></span><br><span class="line">$ git stash apply</span><br><span class="line"><span class="comment"># 删除记录并恢复到工作区</span></span><br><span class="line">$ git stash pop</span><br><span class="line"><span class="comment"># 删除最近一次记录</span></span><br><span class="line">$ git stash drop</span><br><span class="line"><span class="comment"># 删除指定记录</span></span><br><span class="line">$ git stash drop stash@&#123;&lt;number&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-stash">详见<code>git stash</code>更多信息</a></p>
+<h2 id="11-设置默认分支"><a href="#11-设置默认分支" class="headerlink" title="11 设置默认分支"></a>11 设置默认分支</h2><p>一般不推荐全局设置默认分支，可根据项目需要设置默认分支。如 hexo + github 搭建的静态博客，静态资源所在的分支名一般命名为<code>gh-pages</code>，设置其为默认分支。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="built_in">local</span> init.defaultBranch gh-pages</span><br></pre></td></tr></table></figure>
+
+<h2 id="12-取消暂存区的更改"><a href="#12-取消暂存区的更改" class="headerlink" title="12 取消暂存区的更改"></a>12 取消暂存区的更改</h2><p>更改的文件不会还原到未更改的状态，只是把已更改的文件从暂存区移到了工作区，这个移到，美其名曰撤销。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 撤销暂存区的某个文件到工作区</span></span><br><span class="line">$ git restore --staged &lt;file&gt;...</span><br><span class="line"><span class="comment"># 取消暂存所有更改</span></span><br><span class="line">$ git restore --staged .</span><br></pre></td></tr></table></figure>
+
+<h2 id="13-恢复误删分支"><a href="#13-恢复误删分支" class="headerlink" title="13 恢复误删分支"></a>13 恢复误删分支</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 结合工具GitLens过滤出误删分支的Author，找到最近的一次commit id</span></span><br><span class="line"><span class="comment"># 基于这个commit id，新建分支</span></span><br><span class="line">$ git checkout -b &lt;new branch&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推到远程仓库</span></span><br><span class="line">$ git push origin &lt;new branch&gt;</span><br></pre></td></tr></table></figure>
+
+<p>不用担心是谁创建的恢复分支，因为你并没有 commit，只是依赖指定的 commit id 创建分支，不会有个人信息记录。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
+<p>[4] <a target="_blank" rel="noopener" href="https://git-scm.com/docs/git-reset">git reset</a></p>
+<p>[5] <a target="_blank" rel="noopener" href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
+<p>[6] <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42600398/article/details/113527932">git 中 tag 和 release 的区别</a></p>
+<p>[7] <a target="_blank" rel="noopener" href="https://blog.csdn.net/liuxiao723846/article/details/122691779">Git 之 revert</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/" title="Git常见问题与总结">https://www.huatree.top/2021/12/20/20211220-Git常见问题与总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/11/26/20211126-Vue%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7%E6%8C%87%E5%8D%97/" rel="prev" title="Vue开发工具指南">
+                  <i class="fa fa-chevron-left"></i> Vue开发工具指南
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/02/19/20220219-%E7%B2%BE%E8%AF%BB%E3%80%8ACSS%E9%87%8D%E6%9E%84%EF%BC%9A%E6%A0%B7%E5%BC%8F%E8%A1%A8%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E3%80%8B/" rel="next" title="精读《CSS重构：样式表性能调优》">
+                  精读《CSS重构：样式表性能调优》 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"839e21146d73550ea54a39614f06c6d9"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>

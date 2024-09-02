@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="github使用技巧">
+<meta property="og:url" content="https://www.huatree.top/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510072148793.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510053731103.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510054828459.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510055416674.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510055737787.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510065320331.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510070107485.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510070309131.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510070554922.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510070627257.png">
+<meta property="og:image" content="https://cdn.huatree.top/image-20220510070756051.png">
+<meta property="article:published_time" content="2022-05-09T21:15:36.000Z">
+<meta property="article:modified_time" content="2024-03-11T12:38:02.806Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="github">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20220510072148793.png">
+
+
+<link rel="canonical" href="https://www.huatree.top/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/","path":"2022/05/10/20220510-github使用技巧/","title":"github使用技巧"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>github使用技巧 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-简介"><a href="/about/" rel="section"><i class="fa fa-fw fa-vcard fa-fw"></i>简介</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B%E9%A1%B9%E7%9B%AE"><span class="nav-text">1 在线查看项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E7%9B%B4%E6%8E%A5%E5%9C%A8-github-%E5%90%8E%E9%9D%A2%E5%8A%A0%E4%B8%8A-1s"><span class="nav-text">1.1 直接在 github 后面加上 1s</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-github-%E5%8A%A0%E5%89%8D%E7%BC%80-vscode-dev-x2F"><span class="nav-text">1.2 github 加前缀 vscode.dev&#x2F;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-github-%E7%9A%84%E5%90%8E%E7%BC%80-com-%E6%8D%A2%E6%88%90-dev"><span class="nav-text">1.3 github 的后缀.com 换成.dev</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E9%80%9A%E8%BF%87-Chrome-%E6%8F%92%E4%BB%B6-Octotree-GitHub-code-tree"><span class="nav-text">1.4 通过 Chrome 插件 Octotree - GitHub code tree</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%9C%A8%E7%BA%BF%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE"><span class="nav-text">2 在线运行项目</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Invalid-Host-header-%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-text">Invalid Host header 问题解决</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E9%A1%B9%E7%9B%AE%E6%8E%A8%E9%80%81"><span class="nav-text">3 项目推送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%96%87%E4%BB%B6%E5%AE%9A%E4%BD%8D%E6%9F%A5%E7%9C%8B"><span class="nav-text">4 文件定位查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%BF%87%E6%BB%A4%E6%90%9C%E7%B4%A2"><span class="nav-text">5 过滤搜索</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2022/12/03/20221203-uniapp%E5%BC%80%E5%8F%91%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/" title="2022&#x2F;12&#x2F;03&#x2F;20221203-uniapp开发问题汇总&#x2F;">uniapp开发问题汇总</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/05/25/20230525-%E7%90%86%E8%A7%A3%E9%97%AD%E5%8C%85%E4%B8%8E%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" title="2023&#x2F;05&#x2F;25&#x2F;20230525-理解闭包与内存泄漏&#x2F;">理解闭包与内存泄漏</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/05/20240205-ssh%E9%93%BE%E6%8E%A5github%E7%AB%AF%E5%8F%A322%E8%A2%AB%E6%8B%92%E7%BB%9D/" title="2024&#x2F;02&#x2F;05&#x2F;20240205-ssh链接github端口22被拒绝&#x2F;">ssh链接github端口22被拒绝</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="github使用技巧 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          github使用技巧
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-05-10 05:15:36" itemprop="dateCreated datePublished" datetime="2022-05-10T05:15:36+08:00">2022-05-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%88%90%E9%95%BF%E7%BB%8F%E5%8E%86/" itemprop="url" rel="index"><span itemprop="name">成长经历</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.7k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="https://cdn.huatree.top/image-20220510072148793.png" alt="image-20220510072148793"></p>
+<span id="more"></span>
+
+<h2 id="1-在线查看项目"><a href="#1-在线查看项目" class="headerlink" title="1 在线查看项目"></a>1 在线查看项目</h2><h3 id="1-1-直接在-github-后面加上-1s"><a href="#1-1-直接在-github-后面加上-1s" class="headerlink" title="1.1 直接在 github 后面加上 1s"></a>1.1 直接在 github 后面加上 1s</h3><p>找到需要看的项目的 github 地址。比如：antd-design pro</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>只需要在地址 github 后面加上<code>1s</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github1s.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p>与 vs-code 基本一样，速度很快！再也不用担心 github 网速慢的问题了。</p>
+<p><img src="https://cdn.huatree.top/image-20220510053731103.png" alt="image-20220510053731103"></p>
+<h3 id="1-2-github-加前缀-vscode-dev-x2F"><a href="#1-2-github-加前缀-vscode-dev-x2F" class="headerlink" title="1.2 github 加前缀 vscode.dev&#x2F;"></a>1.2 github 加前缀 vscode.dev&#x2F;</h3><p><code>vscode.dev/</code>方式打开时，需要 github 在线授权</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://vscode.dev/github.com/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.huatree.top/image-20220510054828459.png" alt="image-20220510054828459"></p>
+<h3 id="1-3-github-的后缀-com-换成-dev"><a href="#1-3-github-的后缀-com-换成-dev" class="headerlink" title="1.3 github 的后缀.com 换成.dev"></a>1.3 github 的后缀.com 换成.dev</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.dev/ant-design/ant-design-pro</span><br></pre></td></tr></table></figure>
+
+<p><strong>快捷键</strong>：在原<code>https://github.com/ant-design/ant-design-pro</code>地址下，按下键盘上的<code>.</code>键位，可快速在线打开项目。</p>
+<p><img src="https://cdn.huatree.top/image-20220510055416674.png" alt="image-20220510055416674"></p>
+<h3 id="1-4-通过-Chrome-插件-Octotree-GitHub-code-tree"><a href="#1-4-通过-Chrome-插件-Octotree-GitHub-code-tree" class="headerlink" title="1.4 通过 Chrome 插件 Octotree - GitHub code tree"></a>1.4 通过 Chrome 插件 Octotree - GitHub code tree</h3><p><img src="https://cdn.huatree.top/image-20220510055737787.png" alt="image-20220510055737787"></p>
+<h2 id="2-在线运行项目"><a href="#2-在线运行项目" class="headerlink" title="2 在线运行项目"></a>2 在线运行项目</h2><p>在项目地址前加上 <code>gitpod.io/#</code> 前缀，此时，可以选择 github 授权。等待几秒钟，它会自动识别项目的类型，并在线安装项目所需的依赖，并打好包。</p>
+<p>例如 vue 项目，gitpod 环境下，会当前项目根目录下创建默认配置<code>.gitpod.yml</code>文件。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># This configuration file was automatically generated by Gitpod.</span></span><br><span class="line"><span class="comment"># Please adjust to your needs (see https://www.gitpod.io/docs/config-gitpod-file)</span></span><br><span class="line"><span class="comment"># and commit this file to your remote git repository to share the goodness with others.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">tasks:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">init:</span> <span class="string">yarn</span> <span class="string">install</span> <span class="string">&amp;&amp;</span> <span class="string">yarn</span> <span class="string">run</span> <span class="string">build</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Invalid-Host-header-问题解决"><a href="#Invalid-Host-header-问题解决" class="headerlink" title="Invalid Host header 问题解决"></a>Invalid Host header 问题解决</h3><p><strong>出现该问的原因</strong>：因为新版的 webpack-dev-server 出于安全考虑，默认检查 hostname，如果 hostname 不是配置内的就不能访问。</p>
+<p><strong>解决办法：</strong>设置跳过 host 检查。打开你的项目全局搜索 devServer ，在 devServer 里面添加 <code>disableHostCheck: true,</code></p>
+<p>disableHostCheck 设置为 true 的意思就是设置跳过 host 检查。</p>
+<div class="note success"><p>本地运行项目的操作，gitpod 环境下同样适用。</p>
+</div>
+
+<div class="note warning"><p>Gitpod 免费版支持：</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 50 小时&#x2F;月</li>
+<li><input checked="" disabled="" type="checkbox"> 公共和私人回购</li>
+<li><input checked="" disabled="" type="checkbox"> 4 个并行工作区</li>
+<li><input checked="" disabled="" type="checkbox"> 30 分钟不活动超时</li>
+</ul>
+</div>
+
+<h2 id="3-项目推送"><a href="#3-项目推送" class="headerlink" title="3 项目推送"></a>3 项目推送</h2><p>在 GitHub 的 Explorer 探索页面中，有一个非常不起眼的按钮，“获取邮件更新”。</p>
+<p>我们可以根据自己的喜好，让 GitHub 定期给我们推送自己感兴趣的优质项目，就可以持续扩大知识面、了解开源动态啦。</p>
+<p><img src="https://cdn.huatree.top/image-20220510065320331.png" alt="image-20220510065320331"></p>
+<h2 id="4-文件定位查看"><a href="#4-文件定位查看" class="headerlink" title="4 文件定位查看"></a>4 文件定位查看</h2><p>刚开始的时候，相信大多数同学是一级一级的点击项目目录去找文件，发现位置错了后呢，还要回到最初的起点，呆呆地再换一个目录去找。</p>
+<p><img src="https://cdn.huatree.top/image-20220510070107485.png" alt="image-20220510070107485"></p>
+<p>后来在<a target="_blank" rel="noopener" href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">github 官方文档</a>中发现，我们只需按下 <code>t</code> 键，就可以快速、实时地对仓库内的所有文件进行搜索。</p>
+<p><img src="https://cdn.huatree.top/image-20220510070309131.png" alt="image-20220510070309131"></p>
+<p>点进某个文件后，还有技巧，按下 <code>L</code> 键，就可以快速跳转到某一行。</p>
+<p><img src="https://cdn.huatree.top/image-20220510070554922.png" alt="image-20220510070554922"></p>
+<p>点击行号，就可以快速复制这行的代码，生成永久链接。</p>
+<p><img src="https://cdn.huatree.top/image-20220510070627257.png" alt="image-20220510070627257"></p>
+<p>按 <code>b</code> 键还可以快速查看该文件的改动记录。</p>
+<p><img src="https://cdn.huatree.top/image-20220510070756051.png" alt="image-20220510070756051"></p>
+<p>除了上面这些，GitHub 里还隐藏了许多实用的<a target="_blank" rel="noopener" href="https://docs.github.com/cn/get-started/using-github/keyboard-shortcuts">快捷键</a>，大家可以在官方文档尽情查看。</p>
+<h2 id="5-过滤搜索"><a href="#5-过滤搜索" class="headerlink" title="5 过滤搜索"></a>5 过滤搜索</h2><p>使用 GitHub <a target="_blank" rel="noopener" href="https://docs.github.com/cn/search-github/getting-started-with-searching-on-github/about-searching-on-github">高级搜索</a>功能提供的 <code>搜索限定符</code>。进入 advance search 界面（搜索结果页左下角），利用可视化表单也能实现高级搜索。但这个界面展示的搜索条件有限，其实还有更多的搜索限定语法，比如按代码库名称、描述搜索，对仓库中的内容进行搜索等，这些都可以在 GitHub 官方文档查阅。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/P7odF1arZ1siCKvhwp6fqA">GitHub 这 5 个骚操作，99%的人不知道！</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://code.visualstudio.com/blogs/2021/10/20/vscode-dev">vscode.dev</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://www.gitpod.io/">Gitpod</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2022/05/10/20220510-github%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="github使用技巧">https://www.huatree.top/2022/05/10/20220510-github使用技巧/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/github/" rel="tag"># github</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/04/25/20220425-%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E6%8A%95%E8%B5%84%E4%BA%BA%EF%BC%8C%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E6%8A%95%E8%B5%84%E4%BA%BA%E9%9D%A0%E8%B0%B1%EF%BC%8C20%E4%B8%AA%E8%A1%A1%E9%87%8F%E6%8C%87%E6%A0%87%E5%85%A8%E9%9D%A2%E5%88%86%E6%9E%90/" rel="prev" title="如何选择投资人，什么样的投资人靠谱，20个衡量指标全面分析">
+                  <i class="fa fa-chevron-left"></i> 如何选择投资人，什么样的投资人靠谱，20个衡量指标全面分析
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/05/11/20220511-Docker.1-%E4%BA%86%E8%A7%A3/" rel="next" title="Docker.1-了解">
+                  Docker.1-了解 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">359k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:26</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"d0804ae958249046613e6dc6f04b1392"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
