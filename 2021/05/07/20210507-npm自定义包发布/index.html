@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://cdn.huatree.top/image-20220427185535158.png">
 <meta property="og:image" content="https://cdn.huatree.top/image-20220427172208754.png">
 <meta property="article:published_time" content="2021-05-07T01:36:26.000Z">
-<meta property="article:modified_time" content="2024-03-11T12:38:02.800Z">
+<meta property="article:modified_time" content="2024-10-05T07:12:10.504Z">
 <meta property="article:author" content="醉梦">
 <meta property="article:tag" content="npm">
 <meta name="twitter:card" content="summary">
@@ -149,7 +149,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87"><span class="nav-text">项目准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Node-%E5%92%8C-Git"><span class="nav-text">安装 Node 和 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-git-%E5%92%8C%E9%85%8D%E7%BD%AE%E5%BF%BD%E7%95%A5%E9%A1%B9"><span class="nav-text">初始化 git 和配置忽略项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-text">下载依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-webpack"><span class="nav-text">配置 webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%85%A5%E5%8F%A3-JS-%E4%B8%AD%E5%AF%BC%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="nav-text">在入口 JS 中导出功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%89%93%E5%8C%85%E5%91%BD%E4%BB%A4"><span class="nav-text">配置打包命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85"><span class="nav-text">测试使用自定义包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B"><span class="nav-text">发布流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E5%96%84-package-json"><span class="nav-text">完善 package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-%E9%85%8D%E7%BD%AE"><span class="nav-text">npm 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C-npm-%E4%B8%AD%E5%A4%AE%E4%BB%93%E5%BA%93%E8%B4%A6%E5%8F%B7"><span class="nav-text">注册 npm 中央仓库账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E4%BB%93%E5%BA%93"><span class="nav-text">发布仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E7%BB%B4%E6%8A%A4"><span class="nav-text">仓库维护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81%E5%90%8E%E5%86%8D%E5%8F%91%E5%B8%83"><span class="nav-text">更新代码后再发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E5%B7%B2%E5%8F%91%E5%B8%83%E7%9A%84%E5%BA%93"><span class="nav-text">强制删除已发布的库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-text">使用自定义工具包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#issues"><span class="nav-text">issues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5ht-m-utils%E6%8A%A5%E9%94%99%EF%BC%9AReferenceError-self-is-not-defined"><span class="nav-text">引入ht-m-utils报错：ReferenceError: self is not defined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Warning-To-load-an-ES-module-set-%E2%80%9Ctype%E2%80%9C-%E2%80%9Cmodule%E2%80%9C-in-the-package-json-or-use-the-mjs-extension"><span class="nav-text">Warning: To load an ES module, set “type“: “module“ in the package.json or use the .mjs extension</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87"><span class="nav-text">项目准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Node-%E5%92%8C-Git"><span class="nav-text">安装 Node 和 Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"><span class="nav-text">创建项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-git-%E5%92%8C%E9%85%8D%E7%BD%AE%E5%BF%BD%E7%95%A5%E9%A1%B9"><span class="nav-text">初始化 git 和配置忽略项</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%BE%9D%E8%B5%96%E5%8C%85"><span class="nav-text">下载依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-webpack"><span class="nav-text">配置 webpack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%85%A5%E5%8F%A3-JS-%E4%B8%AD%E5%AF%BC%E5%87%BA%E5%8A%9F%E8%83%BD"><span class="nav-text">在入口 JS 中导出功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%89%93%E5%8C%85%E5%91%BD%E4%BB%A4"><span class="nav-text">配置打包命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85"><span class="nav-text">测试使用自定义包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B"><span class="nav-text">发布流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%8C%E5%96%84-package-json"><span class="nav-text">完善 package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#npm-%E9%85%8D%E7%BD%AE"><span class="nav-text">npm 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E5%86%8C-npm-%E4%B8%AD%E5%A4%AE%E4%BB%93%E5%BA%93%E8%B4%A6%E5%8F%B7"><span class="nav-text">注册 npm 中央仓库账号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7"><span class="nav-text">添加用户</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E4%BB%93%E5%BA%93"><span class="nav-text">发布仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%93%E5%BA%93%E7%BB%B4%E6%8A%A4"><span class="nav-text">仓库维护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81%E5%90%8E%E5%86%8D%E5%8F%91%E5%B8%83"><span class="nav-text">更新代码后再发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E5%B7%B2%E5%8F%91%E5%B8%83%E7%9A%84%E5%BA%93"><span class="nav-text">强制删除已发布的库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B7%A5%E5%85%B7%E5%8C%85"><span class="nav-text">使用自定义工具包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%8F%91%E5%B8%83"><span class="nav-text">取消发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-text">包重命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#issues"><span class="nav-text">issues</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5ht-m-utils%E6%8A%A5%E9%94%99%EF%BC%9AReferenceError-self-is-not-defined"><span class="nav-text">引入ht-m-utils报错：ReferenceError: self is not defined</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Warning-To-load-an-ES-module-set-%E2%80%9Ctype%E2%80%9C-%E2%80%9Cmodule%E2%80%9C-in-the-package-json-or-use-the-mjs-extension"><span class="nav-text">Warning: To load an ES module, set “type“: “module“ in the package.json or use the .mjs extension</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5"><span class="nav-text">相关链接</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -225,6 +225,10 @@
       
       
         <li class="links-of-recent-posts-item">
+          <a href="/2021/05/07/20210507-npm%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E5%8F%91%E5%B8%83/" title="2021&#x2F;05&#x2F;07&#x2F;20210507-npm自定义包发布&#x2F;">npm自定义包发布</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
           <a href="/2024/09/09/20240909-%E5%BE%AE%E5%89%8D%E7%AB%AF%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" title="2024&#x2F;09&#x2F;09&#x2F;20240909-微前端那些事儿&#x2F;">微前端那些事儿</a>
         </li>
       
@@ -238,10 +242,6 @@
       
         <li class="links-of-recent-posts-item">
           <a href="/2024/03/31/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2024&#x2F;03&#x2F;31&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
-        </li>
-      
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/03/09/20240309-%E9%A1%BE%E6%9D%91%E5%85%AC%E5%9B%AD%E7%9A%84%E6%97%A9%E6%A8%B1/" title="2024&#x2F;03&#x2F;09&#x2F;20240309-顾村公园的早樱&#x2F;">顾村公园的早樱</a>
         </li>
       
     </ul>
@@ -316,7 +316,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-03-11 20:38:02" itemprop="dateModified" datetime="2024-03-11T20:38:02+08:00">2024-03-11</time>
+      <time title="修改时间：2024-10-05 15:12:10" itemprop="dateModified" datetime="2024-10-05T15:12:10+08:00">2024-10-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -342,14 +342,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.8k</span>
+      <span>4.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>4 分钟</span>
     </span>
 </div>
 
@@ -361,7 +361,7 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>本文以自定义工具函数库为例，讲解工具包项目从发布到 npm 中央仓库、维护及使用的过程。</p>
-<p><img src="https://cdn.huatree.top/image-20220427185535158.png" alt="image-20220427185535158"></p>
+<p><img data-src="https://cdn.huatree.top/image-20220427185535158.png" alt="image-20220427185535158"></p>
 <span id="more"></span>
 
 <h2 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h2><p>创建工具包项目</p>
@@ -396,7 +396,7 @@
 <h3 id="测试使用自定义包"><a href="#测试使用自定义包" class="headerlink" title="测试使用自定义包"></a>测试使用自定义包</h3><p><code>test/first.html</code></p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../dist/huatree-utils.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    htUtils.test()</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.huatree.top/image-20220427172208754.png" alt="image-20220427172208754"></p>
+<p><img data-src="https://cdn.huatree.top/image-20220427172208754.png" alt="image-20220427172208754"></p>
 <h2 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h2><h3 id="完善-package-json"><a href="#完善-package-json" class="headerlink" title="完善 package.json"></a>完善 package.json</h3><p>name：必须是唯一的名称(在 npm 在线中央仓库中没有同名的)</p>
 <p>main：必须指定为打包生成的 js 文件</p>
 <p>keywords：指定一些方便别的程序员搜索到当前库的关键字</p>
@@ -459,6 +459,14 @@
 <p>模块化引入并使用(CommonJS 方式)</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; test &#125; = <span class="built_in">require</span>(<span class="string">&#x27;ht-utils&#x27;</span>)</span><br><span class="line"><span class="title function_">test</span>()</span><br></pre></td></tr></table></figure>
 
+<h2 id="取消发布"><a href="#取消发布" class="headerlink" title="取消发布"></a>取消发布</h2><p>发布的包（如A）72小时内，可以取消发布（从注册表中删除包）。取消发布后，如果需要再次发布此包，需要使用新的版本号，并且24小时后才可发布该包的任何新版本。</p>
+<h2 id="包重命名"><a href="#包重命名" class="headerlink" title="包重命名"></a>包重命名</h2><p>采用弃用包的某个版本方案解决。</p>
+<p>没有任何专用的方法可以做到这一点。一种常见的技术是使用 <code>npm-deprecate</code> 来给出一个警告，指示新的包名称。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm deprecate my-project-name@<span class="string">&quot;&lt;= latest-version&quot;</span> <span class="string">&quot;This project has been renamed. Install using new-project-name instead.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm deprecate my-thing@<span class="string">&quot;&lt;= 0.2.3&quot;</span> <span class="string">&quot;This project has been renamed. Install using my-new-thing instead.&quot;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h2><h3 id="引入ht-m-utils报错：ReferenceError-self-is-not-defined"><a href="#引入ht-m-utils报错：ReferenceError-self-is-not-defined" class="headerlink" title="引入ht-m-utils报错：ReferenceError: self is not defined"></a>引入ht-m-utils报错：ReferenceError: self is not defined</h3><p>ht-m-utils项目中，需修改配置webpack.config.js，加入<code>globalObject: &#39;this&#39;</code></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">globalObject</span>: <span class="string">&#x27;this&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -468,6 +476,8 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44505553/article/details/108830616?ydreferer=aHR0cHM6Ly93d3cuYmFpZHUuY29tL2xpbms/dXJsPWJ6czhsRHBEVjJCOGNpTkp3LTAzTVp5dW9ZNkNEaUFhRG9KdzBhTHlMR2tGSW9GNWY2QTlLVGpYVWEtOHBVWFlOM2l1Zmc0YnVBSnZPcWp1a0hQZ3VFYk9EN2xiczcxZjE5VUxMSFVqNmNPJndkPSZlcWlkPWNkMTliNTVlMDBmYzBmZjEwMDAwMDAwMzY0MzJhNWNl">了解更多</a></p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a target="_blank" rel="noopener" href="https://www.cnblogs.com/CyLee/p/10563519.html">npm 发布包和删除包（2019 最新攻略）</a></p>
 <p>[2] <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hP4y1G7Z6">Web 前端自定义工具函数库</a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/28371669/renaming-a-published-npm-module">Renaming a published NPM module</a></p>
+<p>[4] <a target="_blank" rel="noopener" href="https://docs.npmjs.com/cli/v10/commands/npm-deprecate">npm-deprecate</a></p>
 
     </div>
 
@@ -574,13 +584,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">363k</span>
+    <span title="站点总字数">364k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">5:30</span>
+    <span title="站点阅读时长">5:31</span>
   </span>
 </div>
 <div class="busuanzi-count">

@@ -281,7 +281,7 @@
     <title>npm自定义包发布</title>
     <url>/2021/05/07/20210507-npm%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8C%85%E5%8F%91%E5%B8%83/</url>
     <content><![CDATA[<p>本文以自定义工具函数库为例，讲解工具包项目从发布到 npm 中央仓库、维护及使用的过程。</p>
-<p><img src="https://cdn.huatree.top/image-20220427185535158.png" alt="image-20220427185535158"></p>
+<p><img data-src="https://cdn.huatree.top/image-20220427185535158.png" alt="image-20220427185535158"></p>
 <span id="more"></span>
 
 <h2 id="项目准备"><a href="#项目准备" class="headerlink" title="项目准备"></a>项目准备</h2><p>创建工具包项目</p>
@@ -316,7 +316,7 @@
 <h3 id="测试使用自定义包"><a href="#测试使用自定义包" class="headerlink" title="测试使用自定义包"></a>测试使用自定义包</h3><p><code>test/first.html</code></p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;../dist/huatree-utils.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line">    htUtils.test()</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="https://cdn.huatree.top/image-20220427172208754.png" alt="image-20220427172208754"></p>
+<p><img data-src="https://cdn.huatree.top/image-20220427172208754.png" alt="image-20220427172208754"></p>
 <h2 id="发布流程"><a href="#发布流程" class="headerlink" title="发布流程"></a>发布流程</h2><h3 id="完善-package-json"><a href="#完善-package-json" class="headerlink" title="完善 package.json"></a>完善 package.json</h3><p>name：必须是唯一的名称(在 npm 在线中央仓库中没有同名的)</p>
 <p>main：必须指定为打包生成的 js 文件</p>
 <p>keywords：指定一些方便别的程序员搜索到当前库的关键字</p>
@@ -379,6 +379,14 @@
 <p>模块化引入并使用(CommonJS 方式)</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; test &#125; = <span class="built_in">require</span>(<span class="string">&#x27;ht-utils&#x27;</span>)</span><br><span class="line"><span class="title function_">test</span>()</span><br></pre></td></tr></table></figure>
 
+<h2 id="取消发布"><a href="#取消发布" class="headerlink" title="取消发布"></a>取消发布</h2><p>发布的包（如A）72小时内，可以取消发布（从注册表中删除包）。取消发布后，如果需要再次发布此包，需要使用新的版本号，并且24小时后才可发布该包的任何新版本。</p>
+<h2 id="包重命名"><a href="#包重命名" class="headerlink" title="包重命名"></a>包重命名</h2><p>采用弃用包的某个版本方案解决。</p>
+<p>没有任何专用的方法可以做到这一点。一种常见的技术是使用 <code>npm-deprecate</code> 来给出一个警告，指示新的包名称。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm deprecate my-project-name@<span class="string">&quot;&lt;= latest-version&quot;</span> <span class="string">&quot;This project has been renamed. Install using new-project-name instead.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm deprecate my-thing@<span class="string">&quot;&lt;= 0.2.3&quot;</span> <span class="string">&quot;This project has been renamed. Install using my-new-thing instead.&quot;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="issues"><a href="#issues" class="headerlink" title="issues"></a>issues</h2><h3 id="引入ht-m-utils报错：ReferenceError-self-is-not-defined"><a href="#引入ht-m-utils报错：ReferenceError-self-is-not-defined" class="headerlink" title="引入ht-m-utils报错：ReferenceError: self is not defined"></a>引入ht-m-utils报错：ReferenceError: self is not defined</h3><p>ht-m-utils项目中，需修改配置webpack.config.js，加入<code>globalObject: &#39;this&#39;</code></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">output</span>: &#123;</span><br><span class="line">    <span class="attr">globalObject</span>: <span class="string">&#x27;this&#x27;</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -388,6 +396,8 @@
 <p><a href="https://blog.csdn.net/weixin_44505553/article/details/108830616?ydreferer=aHR0cHM6Ly93d3cuYmFpZHUuY29tL2xpbms/dXJsPWJ6czhsRHBEVjJCOGNpTkp3LTAzTVp5dW9ZNkNEaUFhRG9KdzBhTHlMR2tGSW9GNWY2QTlLVGpYVWEtOHBVWFlOM2l1Zmc0YnVBSnZPcWp1a0hQZ3VFYk9EN2xiczcxZjE5VUxMSFVqNmNPJndkPSZlcWlkPWNkMTliNTVlMDBmYzBmZjEwMDAwMDAwMzY0MzJhNWNl">了解更多</a></p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="https://www.cnblogs.com/CyLee/p/10563519.html">npm 发布包和删除包（2019 最新攻略）</a></p>
 <p>[2] <a href="https://www.bilibili.com/video/BV1hP4y1G7Z6">Web 前端自定义工具函数库</a></p>
+<p>[3] <a href="https://stackoverflow.com/questions/28371669/renaming-a-published-npm-module">Renaming a published NPM module</a></p>
+<p>[4] <a href="https://docs.npmjs.com/cli/v10/commands/npm-deprecate">npm-deprecate</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>
