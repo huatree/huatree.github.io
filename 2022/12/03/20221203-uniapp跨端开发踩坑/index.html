@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-dhEpx5xRpv">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"www.huatree.top","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="在参与的电商项目中，遇到的一些奇葩兼容问题，记录对应的解决方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="uniapp跨端开发踩坑">
+<meta property="og:url" content="https://www.huatree.top/2022/12/03/20221203-uniapp%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/index.html">
+<meta property="og:site_name" content="醉梦的网络日志">
+<meta property="og:description" content="在参与的电商项目中，遇到的一些奇葩兼容问题，记录对应的解决方案。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.huatree.top/image-20240703224606640.png">
+<meta property="article:published_time" content="2022-12-03T14:02:19.000Z">
+<meta property="article:modified_time" content="2025-02-09T05:48:58.351Z">
+<meta property="article:author" content="醉梦">
+<meta property="article:tag" content="uniapp">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.huatree.top/image-20240703224606640.png">
+
+
+<link rel="canonical" href="https://www.huatree.top/2022/12/03/20221203-uniapp%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://www.huatree.top/2022/12/03/20221203-uniapp%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/","path":"2022/12/03/20221203-uniapp跨端开发踩坑/","title":"uniapp跨端开发踩坑"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>uniapp跨端开发踩坑 | 醉梦的网络日志</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">醉梦的网络日志</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">最好的状态就是一点点向喜欢的东西靠近</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-开源"><a href="/projects/" rel="section"><i class="fa fa-brands fa-codepen fa-fw"></i>开源</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F-props-%E4%BC%A0%E5%80%BC%EF%BC%8C%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95%E4%B8%A2%E5%A4%B1"><span class="nav-text">运行小程序 props 传值，对象方法丢失</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#image-%E7%BB%84%E4%BB%B6-load%E3%80%81-error-%E4%BA%8B%E4%BB%B6%E5%90%8D%E4%B8%8D%E8%83%BD%E6%98%AF-onLoad%E3%80%81onError"><span class="nav-text">image 组件@load、@error 事件名不能是 onLoad、onError</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%97%A0%E6%B3%95%E9%80%9A%E8%BF%87-document-%E8%8E%B7%E5%8F%96-DOM-%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF"><span class="nav-text">小程序无法通过 document 获取 DOM 节点信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC"><span class="nav-text">页面路由跳转</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#swiper-%E7%BB%84%E4%BB%B6-change-%E4%BB%8E%E7%AC%AC-2-%E4%B8%AA%E5%BC%80%E5%A7%8B%E6%89%A7%E8%A1%8C%E7%9A%84"><span class="nav-text">swiper 组件@change 从第 2 个开始执行的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B8%AD%E5%AD%90%E7%BB%84%E4%BB%B6-props-%E5%80%BC%E6%9D%A5%E8%87%AA%E7%88%B6%E7%BB%84%E4%BB%B6-computed-%E5%AE%9A%E4%B9%89%E7%9A%84%E5%80%BC%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%8A%A5-warn-%E5%9C%BA%E6%99%AF"><span class="nav-text">小程序中子组件 props 值来自父组件 computed 定义的值控制台报 warn 场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="nav-text">具体代码分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E9%A1%B5%E9%9D%A2%E7%BB%84%E4%BB%B6%E7%9B%B4%E6%8E%A5%E7%94%A8%E9%A1%B5%E9%9D%A2%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E9%92%A9%E5%AD%90%E5%87%BD%E6%95%B0%E6%97%A0%E6%95%88"><span class="nav-text">非页面组件直接用页面生命周期钩子函数无效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E7%82%B9%E5%87%BB-icon-%E5%9B%BE%E6%A0%87%E4%BD%BF-input-%E7%BB%84%E4%BB%B6%E8%81%9A%E7%84%A6"><span class="nav-text">通过点击 icon 图标使 input 组件聚焦</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#uniapp-debugger-H5"><span class="nav-text">uniapp debugger H5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B6%88%E6%81%AF%E8%AE%A2%E9%98%85%E7%82%B9%E5%87%BB%E6%B2%A1%E6%9C%89%E5%87%BA%E7%8E%B0%E5%BC%B9%E6%A1%86"><span class="nav-text">微信小程序消息订阅点击没有出现弹框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E7%89%87%E6%B8%B2%E6%9F%93%E5%87%BA%E7%8E%B0%E6%8B%89%E4%BC%B8%E5%88%B0%E6%AD%A3%E5%B8%B8%E8%BF%87%E6%B8%A1%EF%BC%8C%E4%BD%93%E9%AA%8C%E4%B8%8D%E5%A5%BD"><span class="nav-text">图片渲染出现拉伸到正常过渡，体验不好</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list-%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BB%84%E4%BB%B6%E5%B0%81%E8%A3%85%E6%97%B6%E9%81%87%E5%88%B0-v-for-%E9%81%8D%E5%8E%86%E6%8F%92%E6%A7%BD%EF%BC%8C%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%B2%A1%E7%94%9F%E6%95%88"><span class="nav-text">list 类型的组件封装时遇到 v-for 遍历插槽，微信小程序没生效</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%89%93%E5%8C%85%E4%BD%93%E7%A7%AF%E8%BF%87%E5%A4%A7"><span class="nav-text">微信小程序打包体积过大</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89-tabbar-%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%AD%A3%E5%B8%B8%EF%BC%8C%E6%94%AF%E4%BB%98%E5%AE%9D%E5%8E%9F%E7%94%9F%E4%B8%8D%E9%9A%90%E8%97%8F%E4%B8%94%E4%B8%8A%E8%BE%B9%E6%A1%86%E7%BA%BF%E5%8E%BB%E4%B8%8D%E6%8E%89"><span class="nav-text">自定义 tabbar 微信小程序正常，支付宝原生不隐藏且上边框线去不掉</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%80%91%E5%B8%83%E6%B5%81%E5%AE%9E%E7%8E%B0%E5%85%BC%E5%AE%B9-h5-%E5%92%8C%E5%B0%8F%E7%A8%8B%E5%BA%8F"><span class="nav-text">瀑布流实现兼容 h5 和小程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%80%91%E5%B8%83%E6%B5%81%E5%8A%A0%E5%85%A5%E7%8C%9C%E4%BD%A0%E5%96%9C%E6%AC%A2%E5%8D%A1%E7%89%87"><span class="nav-text">瀑布流加入猜你喜欢卡片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B9%E5%87%BA%E6%A1%86%E5%B1%95%E7%A4%BA%E6%97%B6%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2%E9%A1%B5%E9%9D%A2%E5%8F%AF%E6%BB%91%E5%8A%A8"><span class="nav-text">弹出框展示时如何阻止页面可滑动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E9%98%B2-xss-%E6%94%BB%E5%87%BB%E5%AE%89%E5%85%A8%E4%BC%98%E5%8C%96%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%B6%89%E5%8F%8A-h5"><span class="nav-text">预防 xss 攻击安全优化，主要涉及 h5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#app-%E7%AB%AF%E5%86%85%E6%89%93%E5%BC%80-h5-%E6%97%B6%EF%BC%8C%E9%9A%90%E8%97%8F-h5-%E6%A0%87%E9%A2%98"><span class="nav-text">app 端内打开 h5 时，隐藏 h5 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ios-%E6%89%8B%E6%9C%BA%E4%B8%8A%EF%BC%8C%E9%95%BF%E6%8C%89%E5%9B%BE%E7%89%87%E5%87%BA%E7%8E%B0%E9%BB%98%E8%AE%A4%E6%8B%96%E6%8B%BD"><span class="nav-text">ios 手机上，长按图片出现默认拖拽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue3-%E6%94%AF%E6%8C%81%E7%9A%84%E6%89%8B%E6%9C%BA%E7%89%88%E6%9C%AC%E6%9C%80%E4%BD%8E%E5%88%B0%E5%A4%9A%E5%B0%91"><span class="nav-text">vue3 支持的手机版本最低到多少</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#swiper-%E7%BB%84%E4%BB%B6%E8%87%AA%E5%8A%A8%E8%BD%AE%E6%92%AD%E6%97%B6-onChange-%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91%E9%97%AE%E9%A2%98"><span class="nav-text">swiper 组件自动轮播时 onChange 事件触发问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2%E8%83%8C%E6%99%AF%E8%89%B2"><span class="nav-text">设置页面背景色</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E6%B5%81%E4%BF%A1%E6%81%AF%E7%94%B5%E8%AF%9D%E9%AB%98%E4%BA%AE%EF%BC%8C%E7%82%B9%E5%87%BB%E7%94%B5%E8%AF%9D%E6%8B%89%E5%BC%B9%E6%A1%86"><span class="nav-text">物流信息电话高亮，点击电话拉弹框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%8A%95%E6%94%BEH5%E8%BF%9B%E8%A1%8C%E7%9A%84%E8%81%94%E7%99%BB%E6%93%8D%E4%BD%9C%EF%BC%8C%E9%9C%80%E8%A6%81%E8%BF%94%E5%9B%9E%E5%B0%8F%E7%A8%8B%E5%BA%8F%E9%A1%B5%E9%9D%A2%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0"><span class="nav-text">微信小程序投放H5进行的联登操作，需要返回小程序页面怎么实现</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="醉梦"
+      src="/images/avatar-huatree.jpg">
+  <p class="site-author-name" itemprop="name">醉梦</p>
+  <div class="site-description" itemprop="description">黎明尚在，未来可戚</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">88</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/huatree" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;huatree" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license site-overview-item animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll site-overview-item animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      友情链接
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://codepen.io/" title="https:&#x2F;&#x2F;codepen.io&#x2F;" rel="noopener" target="_blank">codepen</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://davidwalsh.name/" title="https:&#x2F;&#x2F;davidwalsh.name&#x2F;" rel="noopener" target="_blank">David Walsh</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://simpleprogrammer.com/" title="https:&#x2F;&#x2F;simpleprogrammer.com&#x2F;" rel="noopener" target="_blank">Simple Programmer</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.smashingmagazine.com/2024/08/mastering-typography-in-logo-design/" title="https:&#x2F;&#x2F;www.smashingmagazine.com&#x2F;2024&#x2F;08&#x2F;mastering-typography-in-logo-design&#x2F;" rel="noopener" target="_blank">Smashing Magazine</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.ruanyifeng.com/blog/" title="https:&#x2F;&#x2F;www.ruanyifeng.com&#x2F;blog&#x2F;" rel="noopener" target="_blank">阮一峰的网络日志</a>
+        </li>
+    </ul>
+  </div>
+
+
+  <div class="links-of-recent-posts site-overview-item animated">
+    <div class="links-of-recent-posts-title">
+      
+      <i class="fa fa-history fa-fw"></i>
+      
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+      
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2025/02/09/20240331-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E4%B9%8BmacOS/" title="2025&#x2F;02&#x2F;09&#x2F;20240331-前端开发环境之macOS&#x2F;">前端开发环境之macOS</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/09/09/20240909-%E5%BE%AE%E5%89%8D%E7%AB%AF%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF/" title="2024&#x2F;09&#x2F;09&#x2F;20240909-微前端那些事儿&#x2F;">微前端那些事儿</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/11/12/20241112-%E5%AE%9E%E7%94%A8%E7%9A%84CSS%E6%8A%80%E8%83%BD/" title="2024&#x2F;11&#x2F;12&#x2F;20241112-实用的CSS技能&#x2F;">实用的CSS技能</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/12/09/20241209-%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%88%86%E6%9E%90/" title="2024&#x2F;12&#x2F;09&#x2F;20241209-前端性能优化分析&#x2F;">前端性能优化分析</a>
+        </li>
+      
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/08/20/20230820-Windows%E5%BF%85%E5%A4%87%E7%9A%8413%E4%B8%AACMD%E5%91%BD%E4%BB%A4/" title="2023&#x2F;08&#x2F;20&#x2F;20230820-Windows必备的13个CMD命令&#x2F;">Windows必备的13个CMD命令</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.huatree.top/2022/12/03/20221203-uniapp%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar-huatree.jpg">
+      <meta itemprop="name" content="醉梦">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="醉梦的网络日志">
+      <meta itemprop="description" content="黎明尚在，未来可戚">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="uniapp跨端开发踩坑 | 醉梦的网络日志">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          uniapp跨端开发踩坑
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-12-03 22:02:19" itemprop="dateCreated datePublished" datetime="2022-12-03T22:02:19+08:00">2022-12-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2025-02-09 13:48:58" itemprop="dateModified" datetime="2025-02-09T13:48:58+08:00">2025-02-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E5%B7%A5%E4%BD%9C%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">工作点滴</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>14k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>13 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>在参与的电商项目中，遇到的一些奇葩兼容问题，记录对应的解决方案。</p>
+<span id="more"></span>
+
+<h2 id="运行小程序-props-传值，对象方法丢失"><a href="#运行小程序-props-传值，对象方法丢失" class="headerlink" title="运行小程序 props 传值，对象方法丢失"></a>运行小程序 props 传值，对象方法丢失</h2><p>自定义组件父子组件 prop 传递的变量为对象时，对象内部含有函数属性，该函数属性会直接被删除。</p>
+<p>因为为 uniapp 在传递数据的时候使用的是<code>JSON.parse(JSON.stringify(obj1))</code>这样传递的，无法传递函数。</p>
+<p>了解更多，<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_40445661/article/details/118539610">详见</a></p>
+<h2 id="image-组件-load、-error-事件名不能是-onLoad、onError"><a href="#image-组件-load、-error-事件名不能是-onLoad、onError" class="headerlink" title="image 组件@load、@error 事件名不能是 onLoad、onError"></a>image 组件@load、@error 事件名不能是 onLoad、onError</h2><p>如果是 onLoad、onError，编译会报错。</p>
+<h2 id="小程序无法通过-document-获取-DOM-节点信息"><a href="#小程序无法通过-document-获取-DOM-节点信息" class="headerlink" title="小程序无法通过 document 获取 DOM 节点信息"></a>小程序无法通过 document 获取 DOM 节点信息</h2><p>如果有获取元素距离顶部的间距这样一个场景，小程序无法通过 document 来获取相关信息，需要用到<code>uni.createSelectorQuery()</code>。用法以下几点需要注意：</p>
+<ul>
+<li>使用 uni.createSelectorQuery() 需要指定的 DOM 节点已渲染完成后。</li>
+<li>支付宝小程序不支持 in(component)，使用无效果</li>
+</ul>
+<p>提取公共的方法，兼容实现方案以下几种：</p>
+<p><strong>mixin：</strong></p>
+<p>&#x2F;&#x2F; common.mixin.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">getElemRect</span>(<span class="params">selector, all</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> query =  uni.<span class="title function_">createSelectorQuery</span>()</span><br><span class="line">      <span class="comment">// #ifndef MP-ALIPAY</span></span><br><span class="line">      .<span class="title function_">in</span>(<span class="variable language_">this</span>);</span><br><span class="line">    <span class="comment">// #endif</span></span><br><span class="line">    query[all ? <span class="string">&#x27;selectAll&#x27;</span> : <span class="string">&#x27;select&#x27;</span>](selector)</span><br><span class="line">      .<span class="title function_">boundingClientRect</span>(<span class="function"><span class="params">rect</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (all &amp; <span class="title class_">Array</span>.<span class="title function_">isArray</span>(rect) &amp;&amp; rect.<span class="property">length</span>) &#123;</span><br><span class="line">          <span class="title function_">resolve</span>(rect);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!all &amp;&amp; rect) &#123;</span><br><span class="line">          <span class="title function_">resolve</span>(rect);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">      .<span class="title function_">exec</span>();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>utils：</strong></p>
+<p>&#x2F;&#x2F; utils.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">getElemRect</span>(<span class="params">selector, all</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> query = uni</span><br><span class="line">            .<span class="title function_">createSelectorQuery</span>()</span><br><span class="line">            <span class="comment">// #ifndef MP-ALIPAY</span></span><br><span class="line">            .<span class="title function_">in</span>(<span class="variable language_">this</span>);</span><br><span class="line">        <span class="comment">// #endif</span></span><br><span class="line">        query[all ? <span class="string">&quot;selectAll&quot;</span> : <span class="string">&quot;select&quot;</span>](selector)</span><br><span class="line">            .<span class="title function_">boundingClientRect</span>(<span class="function">(<span class="params">rect</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (all &amp; <span class="title class_">Array</span>.<span class="title function_">isArray</span>(rect) &amp;&amp; rect.<span class="property">length</span>) &#123;</span><br><span class="line">                    <span class="title function_">resolve</span>(rect);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (!all &amp;&amp; rect) &#123;</span><br><span class="line">                    <span class="title function_">resolve</span>(rect);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .<span class="title function_">exec</span>();</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; component.vue</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; getElemRect &#125; from &quot;utils.js&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    methods: &#123;</span><br><span class="line">        getElemRect,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="页面路由跳转"><a href="#页面路由跳转" class="headerlink" title="页面路由跳转"></a>页面路由跳转</h2><p>使用 uni.navigateTo(OBJECT)时，url 可以是相对路径，也可以是绝对路径，注意文件目录层级关系。</p>
+<h2 id="swiper-组件-change-从第-2-个开始执行的"><a href="#swiper-组件-change-从第-2-个开始执行的" class="headerlink" title="swiper 组件@change 从第 2 个开始执行的"></a>swiper 组件@change 从第 2 个开始执行的</h2><p>不推荐在 change 事件中触发业务场景（如轮播卡片曝光事件），会漏掉第一个。</p>
+<h2 id="小程序中子组件-props-值来自父组件-computed-定义的值控制台报-warn-场景"><a href="#小程序中子组件-props-值来自父组件-computed-定义的值控制台报-warn-场景" class="headerlink" title="小程序中子组件 props 值来自父组件 computed 定义的值控制台报 warn 场景"></a>小程序中子组件 props 值来自父组件 computed 定义的值控制台报 warn 场景</h2><p>如果父组件 computed 定义的值不具备动态绑定更新特征，而是自变量赋值，子组件 props 引用，小程序控制台可能就会打印警告日志。</p>
+<h3 id="具体代码分析"><a href="#具体代码分析" class="headerlink" title="具体代码分析"></a>具体代码分析</h3><p>&#x2F;&#x2F; 父组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;Demo&quot;&gt;</span><br><span class="line">        &lt;image</span><br><span class="line">            class=&quot;img&quot;</span><br><span class="line">            :src=&quot;imgUrl&quot;</span><br><span class="line">            mode=&quot;scaleToFill&quot;</span><br><span class="line">            @load=&quot;onLoadImg&quot;</span><br><span class="line">            @error=&quot;onErrorImg&quot;</span><br><span class="line">        &gt;&lt;/image&gt;</span><br><span class="line">        &lt;Card :margins=&quot;margins&quot; /&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Card from &quot;./Card.vue&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    components: &#123; Card &#125;,</span><br><span class="line">    name: &quot;Demo&quot;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            imgUrl: &quot;&quot;,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">        margins() &#123;</span><br><span class="line">            let result = &#123;</span><br><span class="line">                top: 0,</span><br><span class="line">                right: 0,</span><br><span class="line">                bottom: 0,</span><br><span class="line">                left: 0,</span><br><span class="line">            &#125;;</span><br><span class="line">            if (this.imgUrl) &#123;</span><br><span class="line">                result.bottom = -50;</span><br><span class="line">            &#125;</span><br><span class="line">            return result;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onErrorImg() &#123;</span><br><span class="line">            this.imgUrl =</span><br><span class="line">                &quot;https://img.zcool.cn/community/015153563ec9e66ac7259e0fc2d030.jpg@3000w_1l_0o_100sh.jpg&quot;;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">.img &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 200rpx;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;&#x2F; 子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;Card&quot;&gt;</span><br><span class="line">        &lt;view&gt;&#123;&#123; margins &#125;&#125;&lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &quot;Card&quot;,</span><br><span class="line">    props: &#123;</span><br><span class="line">        margins: &#123;</span><br><span class="line">            type: Object,</span><br><span class="line">            default: () =&gt; (&#123;&#125;),</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>微信小程序控制台日志：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[Component] property <span class="string">&quot;margins&quot;</span> of <span class="string">&quot;pagesA/demo/Card&quot;</span> received type-uncompatible value: expected &lt;Object&gt; but got non-object value. Used null instead.</span><br></pre></td></tr></table></figure>
+
+<p>以下方案可以解决</p>
+<p>子组件 props 类型兼容（不推荐，可能会存在类型漏掉的情况）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &quot;Card&quot;,</span><br><span class="line">    props: &#123;</span><br><span class="line">        margins: &#123;</span><br><span class="line">            type: [Object, null],</span><br><span class="line">            default: () =&gt; (&#123;&#125;),</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>父组件 computed 中不具备动态绑定更新特征的值，换成 data</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;Demo&quot;&gt;</span><br><span class="line">        &lt;image</span><br><span class="line">            class=&quot;img&quot;</span><br><span class="line">            :src=&quot;imgUrl&quot;</span><br><span class="line">            mode=&quot;scaleToFill&quot;</span><br><span class="line">            @load=&quot;onLoadImg&quot;</span><br><span class="line">            @error=&quot;onErrorImg&quot;</span><br><span class="line">        &gt;&lt;/image&gt;</span><br><span class="line">        &lt;Card :margins=&quot;margins&quot; /&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import Card from &quot;./Card.vue&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">    components: &#123; Card &#125;,</span><br><span class="line">    name: &quot;Demo&quot;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            imgUrl: &quot;&quot;,</span><br><span class="line">            margins: &#123;&#125;,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onErrorImg() &#123;</span><br><span class="line">            this.imgUrl =</span><br><span class="line">                &quot;https://img.zcool.cn/community/015153563ec9e66ac7259e0fc2d030.jpg@3000w_1l_0o_100sh.jpg&quot;;</span><br><span class="line">        &#125;,</span><br><span class="line">        getMargins() &#123;</span><br><span class="line">            let result = &#123;</span><br><span class="line">                top: 0,</span><br><span class="line">                right: 0,</span><br><span class="line">                bottom: 0,</span><br><span class="line">                left: 0,</span><br><span class="line">            &#125;;</span><br><span class="line">            if (this.imgUrl) &#123;</span><br><span class="line">                result.bottom = -50;</span><br><span class="line">            &#125;</span><br><span class="line">            this.margins = result;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">.img &#123;</span><br><span class="line">    display: block;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 200rpx;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="非页面组件直接用页面生命周期钩子函数无效"><a href="#非页面组件直接用页面生命周期钩子函数无效" class="headerlink" title="非页面组件直接用页面生命周期钩子函数无效"></a>非页面组件直接用页面生命周期钩子函数无效</h2><p>非页面组件不具备页面组件的生命周期钩子函数，但是可以同组件通信事件绑定<code>hook:页面生命周期钩子函数名</code>实现</p>
+<p>&#x2F;&#x2F; 子组件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &quot;Card&quot;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        this.$root.$emit(&quot;hook:onHide&quot;, () =&gt; &#123;</span><br><span class="line">            // 执行业务场景函数</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>打印 this，控制台 this 日志中，vue2 当前是支持 hook 调用页面生命周期钩子函数的。</p>
+<hr>
+<h2 id="通过点击-icon-图标使-input-组件聚焦"><a href="#通过点击-icon-图标使-input-组件聚焦" class="headerlink" title="通过点击 icon 图标使 input 组件聚焦"></a>通过点击 icon 图标使 input 组件聚焦</h2><p>点击 icon 图标，让 input 组件聚焦，只需要点击图标时，改变 input 组件框的 focus 属性值。</p>
+<p>但是，发现一个问题：这个方法只能触发一次。是因为当点击图标以后，focus 的值已经变成 true 了，所以当我们再次点击图标的时候，就不会出现效果了。</p>
+<p>解决办法：获取软键盘的位置，如果软键盘的位置变为 0 ，就让 focus 的值变为 false，成功解决问题。</p>
+<p>下面是具体的代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;y-input u-flex&quot;&gt;</span><br><span class="line">        &lt;input class=&quot;input&quot; type=&quot;text&quot; :focus=&quot;focus&quot; @blur=&quot;onInputBlur&quot; /&gt;</span><br><span class="line">        &lt;u-icon</span><br><span class="line">            name=&quot;edit-pen-fill&quot;</span><br><span class="line">            color=&quot;#2979ff&quot;</span><br><span class="line">            size=&quot;60&quot;</span><br><span class="line">            @click=&quot;onEdit&quot;</span><br><span class="line">        &gt;&lt;/u-icon&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &quot;y-input&quot;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            focus: false,</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        onEdit() &#123;</span><br><span class="line">            this.focus = true;</span><br><span class="line">            uni.onKeyboardHeightChange((res) =&gt; &#123;</span><br><span class="line">                if (res.height === 0) this.focus = false;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        onInputBlur() &#123;</span><br><span class="line">            this.focus = false;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">.input &#123;</span><br><span class="line">    height: 60rpx;</span><br><span class="line">    border: 4rpx solid #e5e5e5;</span><br><span class="line">    border-radius: 16rpx;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="uniapp-debugger-H5"><a href="#uniapp-debugger-H5" class="headerlink" title="uniapp debugger H5"></a>uniapp debugger H5</h2><p>JavaScript 或 typescript 脚本中单行注入<strong>debugger</strong>关键词。本地运行，如<code>yarn serve</code>。</p>
+<p>谷歌浏览器访问控制台打印出的域名，打开调试工具，会触发谷歌自带的 debugger 调试功能。</p>
+<p>如果遇到不能触发 debugger 调试，需要检查<strong>框架忽略列表项</strong>，取消或自定义一些规则来触发 debugger 调试。</p>
+<p><img data-src="https://cdn.huatree.top/image-20240703224606640.png" alt="image-20240703224606640"></p>
+<h2 id="微信小程序消息订阅点击没有出现弹框"><a href="#微信小程序消息订阅点击没有出现弹框" class="headerlink" title="微信小程序消息订阅点击没有出现弹框"></a>微信小程序消息订阅点击没有出现弹框</h2><p>用点击事件 click，tap 生效。touch 不生效。</p>
+<p><strong>相关链接：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/subscribe-message.html#%E8%AE%A2%E9%98%85%E6%B6%88%E6%81%AF%E8%AF%AD%E9%9F%B3%E6%8F%90%E9%86%92">小程序订阅消息（用户通过弹窗订阅）开发指南</a></p>
+<h2 id="图片渲染出现拉伸到正常过渡，体验不好"><a href="#图片渲染出现拉伸到正常过渡，体验不好" class="headerlink" title="图片渲染出现拉伸到正常过渡，体验不好"></a>图片渲染出现拉伸到正常过渡，体验不好</h2><p>image 标签 mode 用了 widthFix 或 heightFix 导致，需要加 css：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 如果是 widthFix */</span></span><br><span class="line"><span class="selector-class">.img</span> &#123;</span><br><span class="line">    <span class="attribute">height</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 如果是 heightFix */</span></span><br><span class="line"><span class="selector-class">.img</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>heightFix: App 和 H5 平台 HBuilderX 2.9.3+ 支持、微信小程序需要基础库 2.10.3，支付宝小程序不支持。</p>
+<h2 id="list-类型的组件封装时遇到-v-for-遍历插槽，微信小程序没生效"><a href="#list-类型的组件封装时遇到-v-for-遍历插槽，微信小程序没生效" class="headerlink" title="list 类型的组件封装时遇到 v-for 遍历插槽，微信小程序没生效"></a>list 类型的组件封装时遇到 v-for 遍历插槽，微信小程序没生效</h2><p>uniapp 小程序插槽不支持遍历，因为插槽的具名需要唯一值，且小程序不支持插槽具名是变量值。</p>
+<h2 id="微信小程序打包体积过大"><a href="#微信小程序打包体积过大" class="headerlink" title="微信小程序打包体积过大"></a>微信小程序打包体积过大</h2><p>小程序分包异步化</p>
+<p><strong>相关链接：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7251833062618513466#heading-5">微信小程序第三方库的分包异步化实践</a></p>
+<h2 id="自定义-tabbar-微信小程序正常，支付宝原生不隐藏且上边框线去不掉"><a href="#自定义-tabbar-微信小程序正常，支付宝原生不隐藏且上边框线去不掉" class="headerlink" title="自定义 tabbar 微信小程序正常，支付宝原生不隐藏且上边框线去不掉"></a>自定义 tabbar 微信小程序正常，支付宝原生不隐藏且上边框线去不掉</h2><p>使用 uview-ui 的 Tabbar 底部导航栏组件。如果不是 tab 页面，不执行 uni.switchTab。需要更改组件代码：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 切换tab</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">switchTab</span>(<span class="params">index</span>) &#123;</span><br><span class="line">    <span class="comment">// 防止同一个页面tab重复触发点击</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">list</span>[index].<span class="property">pagePath</span> === <span class="variable language_">this</span>.<span class="property">pageUrl</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="comment">// 发出事件和修改v-model绑定的值</span></span><br><span class="line">    <span class="variable language_">this</span>.$emit(<span class="string">&quot;change&quot;</span>, index);</span><br><span class="line">    <span class="comment">// 如果有配置pagePath属性，使用uni.switchTab进行跳转</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">list</span>[index].<span class="property">pagePath</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果不是tab页面，不执行uni.switchTab</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="variable language_">this</span>.<span class="property">list</span>[index].<span class="property">pageType</span> !== <span class="string">&quot;tab&quot;</span>) <span class="keyword">return</span>;</span><br><span class="line">        uni.<span class="title function_">switchTab</span>(&#123;</span><br><span class="line">            <span class="attr">url</span>: <span class="variable language_">this</span>.<span class="property">list</span>[index].<span class="property">pagePath</span>,</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 如果配置了papgePath属性，将不会双向绑定v-model传入的value值</span></span><br><span class="line">        <span class="comment">// 因为这个模式下，不再需要v-model绑定的value值了，而是通过getCurrentPages()适配</span></span><br><span class="line">        <span class="variable language_">this</span>.$emit(<span class="string">&quot;input&quot;</span>, index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>支付宝小程序有基础库版本限制条件，可参考官方解决方案：<a target="_blank" rel="noopener" href="https://opendocs.alipay.com/mini/03jry7">自定义 tabbar</a>。</p>
+<p><strong>相关链接：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://open.alipay.com/portal/forum/post/163901025">uniapp 自定义 tabbar 微信小程序正常，支付宝原生不隐藏</a></p>
+<h2 id="瀑布流实现兼容-h5-和小程序"><a href="#瀑布流实现兼容-h5-和小程序" class="headerlink" title="瀑布流实现兼容 h5 和小程序"></a>瀑布流实现兼容 h5 和小程序</h2><p><strong>相关链接：</strong></p>
+<p>[1] <a target="_blank" rel="noopener" href="https://z-paging.com/">z-paging</a></p>
+<p>[2] <a target="_blank" rel="noopener" href="https://v1.uviewui.com/components/waterfall.html">uview waterfall</a></p>
+<h2 id="瀑布流加入猜你喜欢卡片"><a href="#瀑布流加入猜你喜欢卡片" class="headerlink" title="瀑布流加入猜你喜欢卡片"></a>瀑布流加入猜你喜欢卡片</h2><p>实现思路：</p>
+<ul>
+<li>猜你喜欢卡片作为被点击 item 的属性值扩展</li>
+<li>列分配 item 处理时，增加坐标、列数组长度属性值</li>
+</ul>
+<p>代码如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;view class=&quot;c-waterfall-shell&quot;&gt;</span><br><span class="line">        &lt;view :id=&quot;selectId(0)&quot; class=&quot;column left&quot;&gt;</span><br><span class="line">            &lt;slot name=&quot;left&quot; :leftList=&quot;colList[0]&quot; :extra=&quot;extra&quot;&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/view&gt;</span><br><span class="line">        &lt;view :id=&quot;selectId(1)&quot; class=&quot;column right&quot;&gt;</span><br><span class="line">            &lt;slot name=&quot;right&quot; :rightList=&quot;colList[1]&quot; :extra=&quot;extra&quot;&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;/view&gt;</span><br><span class="line">    &lt;/view&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import selectorQueryMixin from &quot;@/utils/mixin/selectorQuery.mixin&quot;;</span><br><span class="line"></span><br><span class="line">const column = 2; // 列数</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * cWaterfallShell 瀑布流</span><br><span class="line"> * @property &#123;Boolean&#125; isOnHide 页面隐藏</span><br><span class="line"> * @property &#123;Number&#125; addTime 单位ms。每次向结构插入数据的时间间隔，间隔越长，越能保证两列高度相近，但是对用户体验越不好</span><br><span class="line"> * @property &#123;Array&#125; list 待渲染的数据</span><br><span class="line"> * @property &#123;Object&#125; extra 额外的props</span><br><span class="line"> * @event &#123;Function&#125; renderFinished 渲染完成</span><br><span class="line"> */</span><br><span class="line">export default &#123;</span><br><span class="line">    name: &quot;cWaterfallShell&quot;,</span><br><span class="line">    emits: [&quot;renderFinished&quot;],</span><br><span class="line">    mixins: [selectorQueryMixin],</span><br><span class="line">    props: &#123;</span><br><span class="line">        isOnHide: &#123;</span><br><span class="line">            type: Boolean,</span><br><span class="line">            default: false,</span><br><span class="line">        &#125;,</span><br><span class="line">        addTime: &#123;</span><br><span class="line">            type: Number,</span><br><span class="line">            default: 100,</span><br><span class="line">        &#125;,</span><br><span class="line">        list: &#123;</span><br><span class="line">            type: Array,</span><br><span class="line">            default: () =&gt; [],</span><br><span class="line">        &#125;,</span><br><span class="line">        extra: &#123;</span><br><span class="line">            type: Object,</span><br><span class="line">            default: () =&gt; (&#123;&#125;),</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            restNum: 0, // 剩余量</span><br><span class="line">            id: this.$u.guid(),</span><br><span class="line">            colHeight: [], // 列高</span><br><span class="line">            colList: [], // 瀑布流</span><br><span class="line">            currentListIndex: 0, // 加入下一个瀑布流时当前的list索引</span><br><span class="line">            nextColIndex: 0, // 下一个加入瀑布流列的索引</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    computed: &#123;</span><br><span class="line">        colKey() &#123;</span><br><span class="line">            return (i) =&gt; `$&#123;i&#125;.$&#123;this.waterfallKey&#125;`;</span><br><span class="line">        &#125;,</span><br><span class="line">        selectId() &#123;</span><br><span class="line">            return (column) =&gt; &#123;</span><br><span class="line">                return `$&#123;this.id&#125;-$&#123;column&#125;`;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    watch: &#123;</span><br><span class="line">        list: &#123;</span><br><span class="line">            handler: function (nVal, oVal) &#123;</span><br><span class="line">                if (nVal.length &gt; 0 &amp;&amp; nVal.length &gt; oVal.length) &#123;</span><br><span class="line">                    this.splitData();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            deep: true,</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">    mounted() &#123;</span><br><span class="line">        this.touchOff();</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        // 清除数据</span><br><span class="line">        clear() &#123;</span><br><span class="line">            this.colList = new Array(column).fill(1).map(() =&gt; []);</span><br><span class="line">            this.colHeight = new Array(column).fill(0);</span><br><span class="line">            this.currentListIndex = 0;</span><br><span class="line">            this.nextColIndex = 0;</span><br><span class="line">        &#125;,</span><br><span class="line">        // 触发重新排列</span><br><span class="line">        touchOff() &#123;</span><br><span class="line">            // 初始化</span><br><span class="line">            if (this.colHeight.length === 0) &#123;</span><br><span class="line">                this.clear();</span><br><span class="line">            &#125;</span><br><span class="line">            if (this.list.length &gt; 0) &#123;</span><br><span class="line">                this.splitData();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        // 一个个往列表追加</span><br><span class="line">        append() &#123;</span><br><span class="line">            const item = this.list[this.currentListIndex++];</span><br><span class="line">            // 坐标</span><br><span class="line">            item.axis = [</span><br><span class="line">                this.nextColIndex,</span><br><span class="line">                this.colList[this.nextColIndex].length,</span><br><span class="line">            ];</span><br><span class="line">            let colSize = this.colList.map((item) =&gt; item.length);</span><br><span class="line">            colSize[this.nextColIndex] += 1;</span><br><span class="line">            // 列数组长度</span><br><span class="line">            item.colSize = colSize;</span><br><span class="line">            this.colList[this.nextColIndex].push(item);</span><br><span class="line">        &#125;,</span><br><span class="line">        // 拼接上原有数据</span><br><span class="line">        async splitData() &#123;</span><br><span class="line">            for (let i = 0; i &lt; column; i++) &#123;</span><br><span class="line">                const rect = await this.getRect(&quot;#&quot; + this.selectId(i));</span><br><span class="line">                this.colHeight[i] = rect.height || 0;</span><br><span class="line">            &#125;</span><br><span class="line">            if (this.isOnHide) &#123;</span><br><span class="line">                // console.log(&#x27;&gt;&gt;&gt; isOnHide&#x27;, this.colHeight, this.colList, this.list);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            const minH = Math.min(...this.colHeight);</span><br><span class="line">            this.nextColIndex = this.colHeight.indexOf(minH);</span><br><span class="line">            if (this.nextColIndex &lt; 0) &#123;</span><br><span class="line">                this.nextColIndex = 0;</span><br><span class="line">            &#125;</span><br><span class="line">            if (this.list.length - this.restNum === this.currentListIndex) &#123;</span><br><span class="line">                // 防止list为[]时，重复执行渲染完成事件</span><br><span class="line">                if (this.list.length &gt; 0) this.$emit(&quot;renderFinished&quot;, true);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            this.append();</span><br><span class="line">            this.$nextTick(() =&gt; &#123;</span><br><span class="line">                setTimeout(() =&gt; &#123;</span><br><span class="line">                    this.splitData();</span><br><span class="line">                &#125;, this.addTime);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        // 加入猜你喜欢</span><br><span class="line">        spliceList(&#123; currentIndex, axis, guessList, restNum &#125;) &#123;</span><br><span class="line">            this.restNum = restNum;</span><br><span class="line">            this.colList[axis[0]][axis[1]].guessList = guessList;</span><br><span class="line">            this.currentListIndex = currentIndex + 2;</span><br><span class="line">            this.list[currentIndex + 1].colSize?.forEach((elem, index) =&gt; &#123;</span><br><span class="line">                this.colList[index].splice(elem);</span><br><span class="line">            &#125;);</span><br><span class="line">            this.loadNextVirtualPage();</span><br><span class="line">        &#125;,</span><br><span class="line">        // 加载下一个模拟分页数据</span><br><span class="line">        loadNextVirtualPage(pageSize = 20) &#123;</span><br><span class="line">            if (this.restNum &gt; pageSize) &#123;</span><br><span class="line">                this.restNum -= pageSize;</span><br><span class="line">                this.$nextTick(() =&gt; &#123;</span><br><span class="line">                    this.splitData();</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125; else if (this.restNum &gt; 0) &#123;</span><br><span class="line">                this.restNum = 0;</span><br><span class="line">                this.$nextTick(() =&gt; &#123;</span><br><span class="line">                    this.splitData();</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">.c-waterfall-shell &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: row;</span><br><span class="line">    align-items: flex-start;</span><br><span class="line">    justify-content: space-between;</span><br><span class="line">    width: 100%;</span><br><span class="line">    padding: 0 24rpx;</span><br><span class="line">&#125;</span><br><span class="line">.column &#123;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    width: 50%;</span><br><span class="line">    height: auto;</span><br><span class="line">&#125;</span><br><span class="line">.left &#123;</span><br><span class="line">    padding-right: 8rpx;</span><br><span class="line">&#125;</span><br><span class="line">.right &#123;</span><br><span class="line">    padding-left: 8rpx;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="弹出框展示时如何阻止页面可滑动"><a href="#弹出框展示时如何阻止页面可滑动" class="headerlink" title="弹出框展示时如何阻止页面可滑动"></a>弹出框展示时如何阻止页面可滑动</h2><p>点击的标签上加入<code>@touchmove.stop.prevent</code></p>
+<h2 id="预防-xss-攻击安全优化，主要涉及-h5"><a href="#预防-xss-攻击安全优化，主要涉及-h5" class="headerlink" title="预防 xss 攻击安全优化，主要涉及 h5"></a>预防 xss 攻击安全优化，主要涉及 h5</h2><p>使用外部 cdn，通过 js 引入</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载 script 标签脚本资源</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">loadScriptBy</span>(<span class="params">cdn</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> script = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;script&quot;</span>);</span><br><span class="line">        <span class="keyword">const</span> t = <span class="title class_">Date</span>.<span class="title function_">now</span>().<span class="title function_">toString</span>().<span class="title function_">slice</span>(<span class="number">0</span>, -<span class="number">4</span>);</span><br><span class="line">        cdn = cdn.<span class="title function_">indexOf</span>(<span class="string">&quot;?&quot;</span>) &gt; -<span class="number">1</span> ? <span class="string">`<span class="subst">$&#123;cdn&#125;</span>&amp;t=<span class="subst">$&#123;t&#125;</span>`</span> : <span class="string">`<span class="subst">$&#123;cdn&#125;</span>?t=<span class="subst">$&#123;t&#125;</span>`</span>;</span><br><span class="line">        script.<span class="property">type</span> = <span class="string">&quot;text/javascript&quot;</span>;</span><br><span class="line">        script.<span class="property">src</span> = cdn;</span><br><span class="line">        script.<span class="property">onload</span> = resolve;</span><br><span class="line">        script.<span class="property">onerror</span> = reject;</span><br><span class="line">        <span class="variable language_">document</span>.<span class="property">head</span>.<span class="title function_">appendChild</span>(script);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="app-端内打开-h5-时，隐藏-h5-标题"><a href="#app-端内打开-h5-时，隐藏-h5-标题" class="headerlink" title="app 端内打开 h5 时，隐藏 h5 标题"></a>app 端内打开 h5 时，隐藏 h5 标题</h2><p>使用空字符占位符实现</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>&lt;%= &#x27;\u200B&#x27; %&gt;<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="ios-手机上，长按图片出现默认拖拽"><a href="#ios-手机上，长按图片出现默认拖拽" class="headerlink" title="ios 手机上，长按图片出现默认拖拽"></a>ios 手机上，长按图片出现默认拖拽</h2><p>uniapp 的版本有关，需要更改 uniapp 封装的组件 image props 值。通过打补丁的方式<code>patch-package</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// node_modules/@dcloudio/uni-h5/src/core/view/components/image/index.vue</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export &#123;</span><br><span class="line">    props: &#123;</span><br><span class="line">        draggable: &#123;</span><br><span class="line">            type: Boolean,</span><br><span class="line">            default: false // 默认时true</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="vue3-支持的手机版本最低到多少"><a href="#vue3-支持的手机版本最低到多少" class="headerlink" title="vue3 支持的手机版本最低到多少"></a>vue3 支持的手机版本最低到多少</h2><p>vue3 支持的范围是：Android &gt; 4.4（具体因系统 webview 版本而异，原生安卓系统升级过系统 webview 一般 5.0 即可，国产安卓系统未使用 x5 内核时一般需 7.0 以上）, ios &gt;&#x3D; 10</p>
+<p>Android &lt; 4.4，配置 X5 内核支持，首次需要联网下载，可以配置下载 X5 内核成功后启动应用。<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/migration-to-vue3.html#vue3-%E6%94%AF%E6%8C%81%E7%9A%84%E6%89%8B%E6%9C%BA%E7%89%88%E6%9C%AC%E6%9C%80%E4%BD%8E%E5%88%B0%E5%A4%9A%E5%B0%91">详见</a></p>
+<h2 id="swiper-组件自动轮播时-onChange-事件触发问题"><a href="#swiper-组件自动轮播时-onChange-事件触发问题" class="headerlink" title="swiper 组件自动轮播时 onChange 事件触发问题"></a>swiper 组件自动轮播时 onChange 事件触发问题</h2><ul>
+<li>首次展示不触发</li>
+<li>h5 中，非可见区域，也会触发 onChange</li>
+</ul>
+<h2 id="设置页面背景色"><a href="#设置页面背景色" class="headerlink" title="设置页面背景色"></a>设置页面背景色</h2><p>page 相当于 body 节点，设置页面背景颜色，使用 scoped 会导致失效。<a target="_blank" rel="noopener" href="https://uniapp.dcloud.net.cn/tutorial/syntax-css.html#%E9%80%89%E6%8B%A9%E5%99%A8">详见</a></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style lang=&quot;scss&quot;&gt;</span><br><span class="line"><span class="comment">/* good */</span></span><br><span class="line">page &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ff4b14</span>; <span class="comment">/* 并不会影响到其他页面组件背景色 */</span></span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>当然，设置页面高度 100vh，再定义样式背景色，也可以实现，结合实际业务场景选择。</p>
+<h2 id="物流信息电话高亮，点击电话拉弹框"><a href="#物流信息电话高亮，点击电话拉弹框" class="headerlink" title="物流信息电话高亮，点击电话拉弹框"></a>物流信息电话高亮，点击电话拉弹框</h2><p>需用到 uview-ui u-parse</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;u-parse :html=&quot;selectPhoneNumber(info)&quot; @linkpress=&quot;handlePhone&quot; /&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export &#123;</span><br><span class="line">    data() &#123;</span><br><span class="line">        return &#123;</span><br><span class="line">            currentPhone: &#x27;&#x27;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    methods: &#123;</span><br><span class="line">        selectPhoneNumber(str) &#123;</span><br><span class="line">            const regx = /([\d]&#123;11&#125;|[\d]&#123;3,4&#125;-[\d]&#123;7,8&#125;)/g;</span><br><span class="line">            const result = str.split(regx).map((el) =&gt; &#123;</span><br><span class="line">                let temp = el;</span><br><span class="line">                if (regx.test(el)) &#123;</span><br><span class="line">                    temp = `&lt;a style=&quot;color:#FE4854;text-decoration:none;&quot; href=&quot;$&#123;el&#125;&quot;&gt;$&#123;el&#125;&lt;/a&gt;`;</span><br><span class="line">                &#125;</span><br><span class="line">                return temp;</span><br><span class="line">            &#125;);</span><br><span class="line">            return result.join(&quot;&quot;);</span><br><span class="line">        &#125;,</span><br><span class="line">        handlePhone(e) &#123;</span><br><span class="line">            e.ignore();</span><br><span class="line">            this.currentPhone = e.href;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="微信小程序投放H5进行的联登操作，需要返回小程序页面怎么实现"><a href="#微信小程序投放H5进行的联登操作，需要返回小程序页面怎么实现" class="headerlink" title="微信小程序投放H5进行的联登操作，需要返回小程序页面怎么实现"></a>微信小程序投放H5进行的联登操作，需要返回小程序页面怎么实现</h2><p>需要用navigateBack回退到小程序中。</p>
+<p>小程序投放的h5链接是通过web-view实现的。web-view网页中可使用JSSDK 1.3.2提供的接口返回小程序页面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wx.<span class="property">miniProgram</span>.<span class="title function_">navigateBack</span>()</span><br></pre></td></tr></table></figure>
+
+<p><strong>相关链接：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/component/web-view.html#%E7%9B%B8%E5%85%B3%E6%8E%A5%E5%8F%A3-1">weixin miniprogram web-view</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>Buy me a coffee</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="醉梦 微信">
+        <span>微信</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>醉梦
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://www.huatree.top/2022/12/03/20221203-uniapp%E8%B7%A8%E7%AB%AF%E5%BC%80%E5%8F%91%E8%B8%A9%E5%9D%91/" title="uniapp跨端开发踩坑">https://www.huatree.top/2022/12/03/20221203-uniapp跨端开发踩坑/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="followme">
+  <span>欢迎关注我的其它发布渠道</span>
+
+  <div class="social-list">
+
+      <div class="social-item">
+        <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+          <span class="icon">
+            <i class="fab fa-weixin"></i>
+          </span>
+
+          <span class="label">WeChat</span>
+        </a>
+      </div>
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/uniapp/" rel="tag"># uniapp</a>
+              <a href="/tags/vue/" rel="tag"># vue</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/12/03/20221203-%E7%BD%91%E7%AB%99%E9%83%BD%E5%8F%98%E7%81%B0%E8%89%B2%E4%BA%86%EF%BC%8C%E5%AE%83%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F/" rel="prev" title="网站都变灰色了，它是怎么实现的？">
+                  <i class="fa fa-chevron-left"></i> 网站都变灰色了，它是怎么实现的？
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/12/07/20221207-%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" rel="next" title="前端模块化的前世今生">
+                  前端模块化的前世今生 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">蜀ICP备2022016364号-1 </a>
+  </div>
+
+<div class="copyright">
+  &copy; 2019 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">醉梦</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">373k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5:39</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://unpkg.com/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/gitalk@1.7.2/dist/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"huatree","repo":"huatree.gitalk.io","client_id":"f058094b28cadc38c8bf","client_secret":"b5259994ff1994db4b3b6124a3fe83fe2e0e9711","admin_user":"huatree","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN","id":"location.pathname","js":{"url":"https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js","integrity":"sha256-Pmj85ojLaPOWwRtlMJwmezB/Qg8BzvJp5eTzvXaYAfA="},"path_md5":"2fba609321b4888e82d1480e27969b86"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
