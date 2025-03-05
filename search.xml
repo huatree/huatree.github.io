@@ -2311,6 +2311,9 @@
 <h3 id="一个静态方法改变了某个静态属性，其他静态方法或类外部任何地方访问这个属性都会发生改变？"><a href="#一个静态方法改变了某个静态属性，其他静态方法或类外部任何地方访问这个属性都会发生改变？" class="headerlink" title="一个静态方法改变了某个静态属性，其他静态方法或类外部任何地方访问这个属性都会发生改变？"></a>一个静态方法改变了某个静态属性，其他静态方法或类外部任何地方访问这个属性都会发生改变？</h3><p>是。这个非静态方法，new object有区别。</p>
 <h3 id="静态属性或方法分配内存空间的时间早于对象空间的分配？"><a href="#静态属性或方法分配内存空间的时间早于对象空间的分配？" class="headerlink" title="静态属性或方法分配内存空间的时间早于对象空间的分配？"></a>静态属性或方法分配内存空间的时间早于对象空间的分配？</h3><p>是。静态属性或方法分配内存空间会一直在，直到程序执行结束才被释放。</p>
 ]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
       <tags>
         <tag>typescript</tag>
       </tags>
@@ -9272,6 +9275,9 @@
 <li><a href="https://unpkg.com/browse/tailwindcss@3.4.17/">https://unpkg.com/browse/tailwindcss@3.4.17/</a></li>
 </ul>
 ]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
       <tags>
         <tag>CSS</tag>
       </tags>
@@ -9333,9 +9339,65 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>前端性能优化是一个综合且持续的过程，需要开发者结合具体的业务场景和用户需求，灵活运用各种优化技巧和工具。通过不断的监控、分析和改进，可以显著提升网站的性能，进而提供更好的用户体验，增强网站的竞争力。希望本文的分析能为开发者在前端性能优化的道路上提供帮助和启发。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p><a href="https://segmentfault.com/a/1190000044386614">【万字长文】前端性能优化实践 | 京东云技术团队</a></p>
 ]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
       <tags>
         <tag>前端</tag>
         <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前端Monorepo架构</title>
+    <url>/2024/12/12/20241212-%E5%89%8D%E7%AB%AFMonorepo%E6%9E%B6%E6%9E%84/</url>
+    <content><![CDATA[<p>前端 Monorepo 架构是一种将多个相关项目集中在一个代码仓库中进行管理的方式，适用于大规模项目或多个子项目共用依赖的情况。</p>
+<span id="more"></span>
+
+<h2 id="前端-Monorepo-架构的优势"><a href="#前端-Monorepo-架构的优势" class="headerlink" title="前端 Monorepo 架构的优势"></a>前端 Monorepo 架构的优势</h2><p>Monorepo 架构相比传统的多仓库（Multirepo）模式，具有以下显著优势：</p>
+<ul>
+<li><strong>代码复用与共享</strong>：多个项目可以共享公共代码、组件、工具函数等，减少重复开发。</li>
+<li><strong>统一依赖管理</strong>：所有项目依赖统一管理，避免版本不一致问题，同时减少重复安装。</li>
+<li><strong>简化开发流程</strong>：通过集中化管理工具链（如 ESLint、TypeScript 等），减少配置成本。</li>
+<li><strong>高效构建</strong>：减少重复构建，利用缓存机制加速构建过程。</li>
+<li><strong>便于协作</strong>：团队成员可以在一个仓库中同时开发多个项目，提高协作效率。</li>
+<li><strong>节约成本</strong>：减少磁盘空间占用，降低维护成本。</li>
+</ul>
+<h2 id="前端-Monorepo-的应用场景"><a href="#前端-Monorepo-的应用场景" class="headerlink" title="前端 Monorepo 的应用场景"></a>前端 Monorepo 的应用场景</h2><p>Monorepo 架构适用于以下场景：</p>
+<ul>
+<li><strong>中大型企业项目</strong>：多个前端项目共享业务逻辑或 UI 组件时，Monorepo 可以有效管理公共代码。</li>
+<li><strong>组件库开发</strong>：将组件库单独管理，便于维护代码、文档和测试。</li>
+<li><strong>跨平台项目</strong>：如 Web、移动端和桌面端共享公共业务逻辑。</li>
+<li><strong>微前端架构</strong>：通过 Monorepo 管理微前端模块，提升开发灵活性与可维护性。</li>
+</ul>
+<h2 id="常见的-Monorepo-工具"><a href="#常见的-Monorepo-工具" class="headerlink" title="常见的 Monorepo 工具"></a>常见的 Monorepo 工具</h2><p>以下是目前主流的 Monorepo 管理工具：</p>
+<ul>
+<li><strong>Lerna</strong>：较早期的 Monorepo 解决方案，配合 npm&#x2F;yarn&#x2F;pnpm 使用。</li>
+<li><strong>Nx</strong>：适用于前后端大型项目，提供强大的工具链支持。</li>
+<li><strong>Turborepo</strong>：由 Vercel 开发，优化了依赖管理和构建速度。</li>
+<li><strong>pnpm workspaces</strong>：pnpm 提供的原生 Monorepo 支持，适用于现代前端框架。</li>
+</ul>
+<h2 id="Monorepo-架构的实践案例"><a href="#Monorepo-架构的实践案例" class="headerlink" title="Monorepo 架构的实践案例"></a>Monorepo 架构的实践案例</h2><p>以下是一个典型的 Monorepo 架构实践案例：</p>
+<p><strong>项目结构</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">my-monorepo/</span><br><span class="line">├── packages/</span><br><span class="line">│   ├── app1/          <span class="comment"># 应用1</span></span><br><span class="line">│   │   ├── src/</span><br><span class="line">│   │   ├── package.json</span><br><span class="line">│   │   └── ...</span><br><span class="line">│   ├── app2/          <span class="comment"># 应用2</span></span><br><span class="line">│   │   ├── src/</span><br><span class="line">│   │   ├── package.json</span><br><span class="line">│   │   └── ...</span><br><span class="line">│   └── shared-components/  <span class="comment"># 共享组件库</span></span><br><span class="line">│       ├── src/</span><br><span class="line">│       ├── package.json</span><br><span class="line">│       └── ...</span><br><span class="line">├── package.json</span><br><span class="line">└── yarn.lock</span><br></pre></td></tr></table></figure>
+
+<p><strong>依赖管理</strong></p>
+<p>使用 <code>pnpm</code> 或 <code>Turborepo</code> 管理依赖，通过工作区（Workspace）功能实现本地包的直接引用。</p>
+<p><strong>构建与部署</strong></p>
+<p>通过统一的构建工具（如 Webpack、Vite）和 CI&#x2F;CD 流程（如 GitHub Actions），自动化测试和部署。</p>
+<h2 id="Monorepo-架构的挑战"><a href="#Monorepo-架构的挑战" class="headerlink" title="Monorepo 架构的挑战"></a>Monorepo 架构的挑战</h2><p>尽管 Monorepo 带来了诸多优势，但也存在一些挑战：</p>
+<ul>
+<li><strong>仓库体积</strong>：项目较多时，仓库体积可能较大，影响克隆和操作效率。</li>
+<li><strong>权限管理</strong>：代码权限颗粒度较粗，可能增加非项目负责人修改代码的风险。</li>
+<li><strong>学习成本</strong>：对于新团队成员，可能需要时间适应 Monorepo 的开发模式。</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>前端 Monorepo 架构通过集中管理多个项目，解决了传统多仓库模式下的代码共享、依赖管理和开发协作问题。它适用于中大型项目、组件库开发和微前端架构等场景。通过选择合适的工具（如 Turborepo、pnpm）和合理的项目结构设计，可以有效提升开发效率和代码质量。</p>
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="https://juejin.cn/post/7215886869199896637">带你了解更全面的 Monorepo - 优劣、踩坑、选型</a></p>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
       </tags>
   </entry>
 </search>
