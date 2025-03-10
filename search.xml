@@ -9400,4 +9400,69 @@
         <tag>前端</tag>
       </tags>
   </entry>
+  <entry>
+    <title>浏览器存储方式</title>
+    <url>/2020/03/09/20200309-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p>前端浏览器存储方式主要有以下几种：Cookie、LocalStorage、SessionStorage、IndexedDB 和 Cache Storage。</p>
+<span id="more"></span>
+
+<p>以下是它们的介绍及应用场景：</p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><ul>
+<li><strong>特点</strong>：Cookie 是最早的客户端存储方式，数据存储在浏览器中，每次 HTTP 请求都会自动携带到服务器。容量较小，一般为 4KB。</li>
+<li><strong>应用场景</strong>：<ul>
+<li>用于保存用户登录状态、会话信息。</li>
+<li>存储少量需要传递到服务器的数据，如用户偏好设置。</li>
+</ul>
+</li>
+</ul>
+<h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h2><ul>
+<li><strong>特点</strong>：LocalStorage 是一种持久化的键值对存储方式，数据存储在浏览器中，直到手动清除。容量较大，一般为 5MB。</li>
+<li><strong>应用场景</strong>：<ul>
+<li>存储用户偏好设置，如主题模式、语言选择。</li>
+<li>缓存 API 请求结果，减少重复请求。</li>
+<li>存储应用状态，如购物车数据。</li>
+</ul>
+</li>
+</ul>
+<h2 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h2><ul>
+<li><strong>特点</strong>：与 LocalStorage 类似，但数据仅在当前会话期间有效，关闭标签页后数据自动清除。</li>
+<li><strong>应用场景</strong>：<ul>
+<li>存储临时数据，如表单填写过程中的中间状态。</li>
+<li>保存分页表格的滚动条位置。</li>
+</ul>
+</li>
+</ul>
+<h2 id="IndexedDB"><a href="#IndexedDB" class="headerlink" title="IndexedDB"></a>IndexedDB</h2><ul>
+<li><strong>特点</strong>：IndexedDB 是一种客户端数据库，可以存储大量结构化数据，支持事务处理和复杂查询。</li>
+<li><strong>应用场景</strong>：<ul>
+<li>离线应用数据存储，如离线阅读、电子邮件客户端。</li>
+<li>缓存大量数据，支持复杂查询。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Cache-Storage"><a href="#Cache-Storage" class="headerlink" title="Cache Storage"></a>Cache Storage</h2><ul>
+<li><strong>特点</strong>：Cache Storage 是一种用于缓存 HTTP 响应的存储方式，主要用于离线应用。</li>
+<li><strong>应用场景</strong>：<ul>
+<li>在 PWA（渐进式 Web 应用）中缓存静态资源，提供更快的页面加载速度和离线体验。</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><strong>Cookie</strong>：适合在客户端和服务器之间传递少量数据。</li>
+<li><strong>LocalStorage</strong>：适合存储长期数据，如用户偏好和应用状态。</li>
+<li><strong>SessionStorage</strong>：适合存储临时数据，如表单数据。</li>
+<li><strong>IndexedDB</strong>：适合存储大量结构化数据，支持复杂查询。</li>
+<li><strong>Cache Storage</strong>：适合缓存静态资源，提升离线体验。</li>
+</ul>
+<p>在实际开发中，可以根据具体需求选择合适的存储方式，有时甚至需要结合多种存储技术。</p>
+]]></content>
+      <categories>
+        <category>工作点滴</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>存储</tag>
+        <tag>浏览器</tag>
+      </tags>
+  </entry>
 </search>
