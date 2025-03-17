@@ -7801,7 +7801,7 @@
 <h2 id="搭建cli脚手架下载模版"><a href="#搭建cli脚手架下载模版" class="headerlink" title="搭建cli脚手架下载模版"></a>搭建cli脚手架下载模版</h2><p>搭建类似<strong>「vue-cli」</strong>, <strong>「vite」</strong>, <strong>「create-react-app」</strong>类的<strong>「cli命令行」</strong>脚手架来快速选择和下载封装好的模版，比<strong>「git」</strong>拉代码要方便。</p>
 <p>了解更多，详见：<a href="https://juejin.cn/post/7236021829000446011">从入门到精通，100行代码构建你的前端CLI脚手架之路</a></p>
 <h2 id="git操作规范"><a href="#git操作规范" class="headerlink" title="git操作规范"></a>git操作规范</h2><p><strong>「git」</strong>操作规范也很重要，流程不规范很容易出现比较复杂的问题，要根据公司现有情况和业界比较好的实践方案制定一套适合自己公司的<strong>「git flow」</strong>开发规范，用各种限制方案来避免出现问题。</p>
-<p>了解更多，<a href="https://www.huatree.top/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/?highlight=git#6-git-flow">详见</a></p>
+<p>了解更多，<a href="https://wyh.huatree.top/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/?highlight=git#6-git-flow">详见</a></p>
 <h2 id="规范和使用文档输出文档站点"><a href="#规范和使用文档输出文档站点" class="headerlink" title="规范和使用文档输出文档站点"></a>规范和使用文档输出文档站点</h2><p>代码规范和git提交规范以及各个封装的库使用说明要输出成文档部署到线上，方便新同事快速熟悉和使用。</p>
 <p>这个是很重要的，做了再多的基建和规范，如果没有一个公共的文档来查阅，就没办法快速熟悉，所以要一个线上的规范文档，把所有的规范都写进去。</p>
 <h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="https://juejin.cn/post/7101596844181962788">【前端工程化】配置React+ts企业级代码规范及样式格式和git提交规范</a></p>
