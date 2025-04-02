@@ -9015,6 +9015,9 @@
 <p>github 仓库链接：<a href="https://github.com/Pana/nrm">https://github.com/Pana/nrm</a></p>
 <p><strong>注意</strong><br>当前 nrm 版本需要 node &gt;&#x3D; 18</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm i -g nrm</span><br><span class="line">nrm use taobao</span><br><span class="line">npm get registry</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mac-系统更新重启卡在-WIFI-界面"><a href="#Mac-系统更新重启卡在-WIFI-界面" class="headerlink" title="Mac 系统更新重启卡在 WIFI 界面"></a>Mac 系统更新重启卡在 WIFI 界面</h2><p>因为网络开了代理模式，如 VPN，导致系统更新后，重启进入 WIFI 引导界面，无论选择哪个 WIFI 链接，状态都会一直处在连接中。</p>
+<p>可以通过快捷键<code>command + option + esc</code>，弹出程序控制界面，强制退出引导助理程序。</p>
 ]]></content>
       <categories>
         <category>成长经历</category>
