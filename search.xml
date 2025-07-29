@@ -1,235 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git必知必会</title>
-    <url>/2021/01/29/20210129-Git%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A/</url>
-    <content><![CDATA[<p>如果您不能很好的应用 Git，那么这里为您提供一个非常棒的 Git 在线练习工具 <a href="https://learngitbranching.js.org/?locale=zh_CN">Git Online</a>，您可以更直观的看到您所使用的命令会产生什么效果。</p>
-<span id="more"></span>
-
-<h2 id="1-入门"><a href="#1-入门" class="headerlink" title="1 入门"></a>1 入门</h2><p>git命令行操作跟Linux一样</p>
-<h3 id="1-1-安装"><a href="#1-1-安装" class="headerlink" title="1.1 安装"></a>1.1 安装</h3><ol>
-<li><p>Use git from git bash only…, 其他默认下一步</p>
-</li>
-<li><p>查看环境变量配置, 没有则手动配置, path: E:\programs\Git\bin</p>
-</li>
-<li><p>配置git, 桌面右键git bash…, 配置用户名和邮箱</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name hua</span><br><span class="line">git config --global user.email &quot;2827890646@qq.com&quot;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>该配置文件在本地计算机c:\user\用户\.gitconfig</p>
-<h3 id="1-2-git-status-git-commit等中文信息乱码问题"><a href="#1-2-git-status-git-commit等中文信息乱码问题" class="headerlink" title="1.2 git status, git commit等中文信息乱码问题"></a>1.2 git status, git commit等中文信息乱码问题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global gui.encoding utf-8</span><br><span class="line">git config --global i18n.commitencoding utf-8</span><br><span class="line">git config --global core.quotepath false</span><br><span class="line">git config --global svn.pathnameecoding utf-8</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-3-本地git与远程github保持登录联通"><a href="#1-3-本地git与远程github保持登录联通" class="headerlink" title="1.3 本地git与远程github保持登录联通"></a>1.3 本地git与远程github保持登录联通</h3><p>git 的远程仓库托管网站目前就<a href="https://github.com/" title="github">github</a>一个常用</p>
-<p>为了在本地和远程仓库之间进行操作, 可采取免密钥登录,配置 .ssh 先在本地配置, 然后把公钥发送给远程仓库github.</p>
-<ol>
-<li><p>在本地git命令行中输入:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C 2827890646@qq.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>然后一直回车, 出现下图则表示成功</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165232917.jpg" alt="image-20230927165232917"></p>
-</li>
-<li><p>发送给远程github</p>
-<ol>
-<li><p>github -&gt; settings -&gt; SSH and … -&gt; New SSH -&gt; title &amp; key</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165251266.jpg" alt="image-20230927165251266"></p>
-</li>
-<li><p>复制本地公钥到key中, 删掉最后的回车占位符</p>
-</li>
-<li><p>如果本地和远程成功通信, 则在本地.&#x2F;ssh目录中自动生成<strong>known-hosts</strong>文件</p>
-</li>
-<li><p>测试本地仓库与远程仓库的登录连通性, git命令行:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-</ol>
-<h3 id="1-4-本地创建git项目与远程项目进行关联"><a href="#1-4-本地创建git项目与远程项目进行关联" class="headerlink" title="1.4 本地创建git项目与远程项目进行关联"></a>1.4 本地创建git项目与远程项目进行关联</h3><p>本地创建git项目与远程项目进行关联时，要保持本地电脑PC端github账号登录状态。（一般是本地电脑，这个跟ssh配置有关。ssh配置指向其他地址，则其他地址上的github账号保持登录状态即可）[参考本地git与远程github保持登录联通](#1.3 本地git与远程github保持登录联通)</p>
-<ol>
-<li><p>先创建一个目录demo</p>
-</li>
-<li><p>进入该目录,鼠标右键点击git bash…, 打开git命令端, 输入 <code>git init</code>, 会自动在demo目录下生成 <strong>.git</strong>目录(该目录是隐藏的).</p>
-</li>
-<li><p>github上创建一个Repository.</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165301540.jpg" alt="image-20230927165301540"></p>
-</li>
-<li><p>第一次发布项目(本地 -&gt; 远程)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add . // 文件 -&gt; 暂存区, &quot;.&quot; 表示当前目录下的所有文件提交暂存区</span><br><span class="line">git commit -m &quot;第一次提交&quot;  // 暂存区 -&gt; 本地分支(默认为master)</span><br><span class="line">git remote add origin &lt;远程项目所在的ssh地址(或http协议地址)&gt;</span><br><span class="line">git push -u origin master // 本地分支 -&gt; 远程项目</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>第一次下载项目(远程 -&gt; 本地)</p>
-<p>本地创建一个目录, 进入该目录, 打开git命令终端, 输入下面命令:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:yanse/mygitdemo.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>非第一次提交(本地 -&gt; 远程)</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;第二次提交&quot;</span><br><span class="line">git push origin master // 注意: 这里去掉了 -u (其实可以简写成git push)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新(远程 -&gt; 本地)</p>
-<ol>
-<li><p>在远程项目中修改文件.</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165310068.jpg" alt="image-20230927165310068"></p>
-</li>
-<li><p>本地项目中, git命令行输入 <code>git pull</code> 即可更新.</p>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="2-进阶"><a href="#2-进阶" class="headerlink" title="2 进阶"></a>2 进阶</h2><h3 id="2-1-git优势"><a href="#2-1-git优势" class="headerlink" title="2.1 git优势"></a>2.1 git优势</h3><ol>
-<li>本地版本控制；</li>
-<li>重写提交说明</li>
-<li>每次操作都可以回滚，还原；</li>
-<li>分支系统，分布式。</li>
-</ol>
-<h3 id="2-2-git三种状态"><a href="#2-2-git三种状态" class="headerlink" title="2.2 git三种状态"></a>2.2 git三种状态</h3><ol>
-<li>已修改（modified）</li>
-<li>已暂存（staged）</li>
-<li>已提交（committed）</li>
-</ol>
-<h3 id="2-3-设置用户和邮箱"><a href="#2-3-设置用户和邮箱" class="headerlink" title="2.3 设置用户和邮箱"></a>2.3 设置用户和邮箱</h3><p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。这些变量存储再三个不同的位置：</p>
-<ol>
-<li><strong>&#x2F;etc&#x2F;gitconfig</strong> 文件：包含系统上每一个用户及他们仓库的通用配置。如果在执行 git config 时带上 <strong>–system</strong> 选项，那么它就会读写该文件中的配置变量。（由于它是系统配置文件，因此您需要管理员吧或超级用户权限来修改它。）</li>
-<li><strong>~&#x2F;.gitconfig 或 ~&#x2F;.config&#x2F;git&#x2F;config</strong> 文件：只针对当前用户。您可以传递 <strong>–global</strong> 选项让 Git 读写此文件，这会对您的系统上所有的仓库生效。</li>
-<li>当前使用仓库的 Git 目录中的 config 文件（即 <strong>.git&#x2F;config</strong>）：针对该仓库。您可以传递 <strong>–local</strong> 选项让 Git 强制读写此文件，虽然默认情况下的就是它。（当然，您需要进入某个 Git 仓库中才能让该选项生效。）</li>
-</ol>
-<p>每一个级别会覆盖上一个级别的配置，所以，**.git&#x2F;config** 的配置变量会覆盖 <strong>&#x2F;etc&#x2F;gitconfig</strong> 中的配置变量。</p>
-<h3 id="2-4-将某个目录纳入-git-管理"><a href="#2-4-将某个目录纳入-git-管理" class="headerlink" title="2.4 将某个目录纳入 git 管理"></a>2.4 将某个目录纳入 git 管理</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init // 此时，git 命令行中显示master，项目目录下自动生成 .git 文件夹。（.git：负责版本控制的目录）</span><br><span class="line">git rm --cached &lt;file&gt; // 暂存区 -&gt; 工作区</span><br><span class="line">git commit // 进入 vi 操作界面，写提交的备注，适合较长的备注（简写：git commit -m &quot;备注内容&quot;）</span><br></pre></td></tr></table></figure>
-
-<p>已提交到对象区（分支区），然后修改该已提交的文件，此时，这个文件会退回到工作区；如果还想提交的话，再经历一次操作：工作区 - &gt; 暂存区 -&gt; 对象区（分支区）；如果想撤销修改，可执行git命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-5-git-log"><a href="#2-5-git-log" class="headerlink" title="2.5 git log"></a>2.5 git log</h3><ol>
-<li><p>查看提交日志，会发现如下内容：</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165319670.jpg" alt="image-20230927165319670"></p>
-<p>commit 后面的那一串字符：<strong>sha1</strong> 计算的结果。</p>
-<p>sha1、md5：加密算法、随机数，用于区分是哪一次提交。</p>
-</li>
-<li><p>自定义查看日志</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log -2 // 2：指最近的2次提交</span><br><span class="line">git log --pretty=online</span><br><span class="line">git log --pretty=format:&quot;%h -%an, %ar : %s&quot;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="2-6-删除用户配置信息"><a href="#2-6-删除用户配置信息" class="headerlink" title="2.6 删除用户配置信息"></a>2.6 删除用户配置信息</h3><ol>
-<li><p>找到 .gitconfig 文件直接删掉（最直接）</p>
-</li>
-<li><p>或通过命令删除</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global(或 --system 或 --local) --unset user.name</span><br><span class="line">git config --global(或 --system 或 --local) --unset user.email</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="2-7-已提交的文件-修改后-撤销回滚"><a href="#2-7-已提交的文件-修改后-撤销回滚" class="headerlink" title="2.7 已提交的文件-修改后-撤销回滚"></a>2.7 已提交的文件-修改后-撤销回滚</h3><p><img data-src="https://cdn.huatree.top/image-20230927165331246.jpg" alt="image-20230927165331246"></p>
-<p>如果某个文件，已提交，并对其进行了修改，可以放弃修改（还原到已提交状态）。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git checkout -- &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-8-工作区文件-gt-暂存区后：撤销-add-操作"><a href="#2-8-工作区文件-gt-暂存区后：撤销-add-操作" class="headerlink" title="2.8 工作区文件 -&gt; 暂存区后：撤销 add 操作"></a>2.8 工作区文件 -&gt; 暂存区后：撤销 add 操作</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-<p>小结</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165341838.jpg" alt="image-20230927165341838"></p>
-<h3 id="2-9-提交问题与用户邮箱配置"><a href="#2-9-提交问题与用户邮箱配置" class="headerlink" title="2.9 提交问题与用户邮箱配置"></a>2.9 提交问题与用户邮箱配置</h3><p>场景：第一个邮箱用户git提交了文件，第二个邮箱用户（把第一个邮箱用户改成第二个的）在同一个本地环境（跟第一个用户环境保持一致，就用第一个的项目，说白了就是改了个邮箱用户名而已，其他都没变）的项目中进行git提交操作（如新建了一个文件，修改了文件后提交到对象区）。此时，git log查看到，之前的配置没变，记录此次的配置。</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165349980.jpg" alt="image-20230927165349980"></p>
-<h3 id="2-10-删除已提交到对象区（即分支区）的文件"><a href="#2-10-删除已提交到对象区（即分支区）的文件" class="headerlink" title="2.10 删除已提交到对象区（即分支区）的文件"></a>2.10 删除已提交到对象区（即分支区）的文件</h3><ol>
-<li><p>git rm 操作删除：删除 -&gt; 在暂存区</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git rm &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-<p>删除之后的文件会被放到暂存区，如果想彻底删除，在输入 git 命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;彻底删除&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>操作系统删除 rm ：删除 -&gt; 工作区</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">rm &lt;file&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;彻底删除&quot;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="2-11-撤销已提交文件的删除"><a href="#2-11-撤销已提交文件的删除" class="headerlink" title="2.11 撤销已提交文件的删除"></a>2.11 撤销已提交文件的删除</h3><ol>
-<li>对象区（分支区）- <code>git rm &lt; file &gt;</code> -&gt;</li>
-<li>暂存区 - <code>git reset HEAD &lt; file &gt;</code> -&gt; (注意：这里抛出了delete信息)</li>
-<li>工作区 - <code>git checkout -- &lt; file &gt;</code></li>
-</ol>
-<h3 id="2-12-重命名文件"><a href="#2-12-重命名文件" class="headerlink" title="2.12 重命名文件"></a>2.12 重命名文件</h3><ol>
-<li><p>git命令的文件重命名</p>
-<p>git 文件的重命名的内部执行流程：首先新建一个文件，把源文件内容拷贝进去，然后再删掉源文件。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git mv &lt;file1&gt; &lt;file2&gt;</span><br><span class="line">git status // renamed: &lt;file1&gt; -&gt; &lt;file2&gt;</span><br><span class="line">git reset HEAD &lt;file1&gt; // new file: &lt;file2&gt;, deleted: &lt;file1&gt;</span><br><span class="line">git checkout -- &lt;file1&gt;</span><br><span class="line">ls // &lt;file1&gt;、&lt;file2&gt;都在</span><br><span class="line">git status // new file: &lt;file2&gt;，可提交 -&gt; 对象区， 也可撤销 -&gt; 工作区</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>操作系统命令的文件重命名</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mv &lt;file1&gt; &lt;file2&gt;</span><br><span class="line">git status // deleted: &lt;file1&gt;, untracked files: &lt;file2&gt;</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;操作系统命令的重命名&quot;</span><br><span class="line">git status // 每次操作可以用此命令查看文件的状态，定位文件所在哪个区，需执行的可操作提示</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="2-13-注释重写提交说明"><a href="#2-13-注释重写提交说明" class="headerlink" title="2.13 注释重写提交说明"></a>2.13 注释重写提交说明</h3><p><strong>git log</strong> &#x2F;&#x2F; 出现冒号，按 q 退出模式</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165358667.jpg" alt="image-20230927165358667"></p>
-<p>修改最近一次提交的备注信息：<code>git commit --amend -m &quot;备注内容&quot;</code></p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165407304.jpg" alt="image-20230927165407304"></p>
-<h3 id="2-14-忽略文件：-gitignore"><a href="#2-14-忽略文件：-gitignore" class="headerlink" title="2.14 忽略文件：.gitignore"></a>2.14 忽略文件：.gitignore</h3><p>git 项目中，提交前，先忽略不需要提交的文件，再把剩下的提交到对象区（分支区）。</p>
-<p>在 git 项目根目录下创建 <strong>.gitignore</strong> 文件，编辑内容 <code>vi .gitignore</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">a.properties // 列出忽略提交的文件即可</span><br></pre></td></tr></table></figure>
-
-<p>保存该 <strong>.gitignore</strong> 文件，接着，退出 vi 编辑模式，返回 git 命令行，输入 git status</p>
-<p>查看文件状态，该项目列表中已经没有了 a.properties 文件，它被忽略了。</p>
-<h3 id="2-15-通配符"><a href="#2-15-通配符" class="headerlink" title="2.15 通配符"></a>2.15 通配符</h3><p>使用场景：如 <strong>.gitignore</strong> 文件编写需要排除的文件。以下是常见的通配符：</p>
-<ol>
-<li>*：匹配任意字符。</li>
-<li>*.xxx：匹配后缀 .xxx 的文件中。</li>
-<li>!<a href="http://xx.xxx/" title="xx.xxx">xx.xxx</a>：在后缀 .xxx 的文件中，排除 <a href="http://xx.xxx/" title="xx.xxx">xx.xxx</a> 文件，结合 *.xxx 使用。</li>
-<li>dir(目录)&#x2F; ：忽略 dir 中的所有文件。</li>
-<li>dir(目录)&#x2F;<em>&#x2F;</em>.xxx：能够忽略如 dir&#x2F;t1&#x2F;a.xxx, dir&#x2F;t2&#x2F;b.xxx，但不能忽略含2级以上的目录中的 *.xxx文件（如：dir&#x2F;a&#x2F;b&#x2F;j.xxx），这跟通配符 &lt;*&gt; 有关。</li>
-<li>dir&#x2F;**&#x2F;*.xxx：忽略任意级别目录中的 *.xxx文件。</li>
-<li>git 项目中创建的<strong>空目录</strong>，默认自动忽略，git status 查不到此目录信息。</li>
-</ol>
-<h3 id="2-16-分支"><a href="#2-16-分支" class="headerlink" title="2.16 分支"></a>2.16 分支</h3><ol>
-<li><p>查看分支：<code>git branch</code></p>
-</li>
-<li><p>创建分支：<code>git branch &lt;分支名&gt;</code></p>
-</li>
-<li><p>切换分支：<code>git checkout &lt;分支名&gt;</code></p>
-</li>
-<li><p>删除分支：<code>git branch -d &lt;分支名&gt;</code></p>
-<ol>
-<li><p>自己不能删除自己（当前分支），可切换主分支master，再删除当前分支。</p>
-</li>
-<li><p>如果要被删除的分支，包含“未合并”的内容，切换到master进行删除会报错。建议先合并再通过master删除。</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165414857.jpg" alt="image-20230927165414857"></p>
-</li>
-</ol>
-</li>
-<li><p>创建新分支并切换到该分支：<code>git checkout -b &lt;分知名&gt;</code>，结合 <strong>4.</strong> 进行操作：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 场景：git项目已存在文件</span><br><span class="line">git checkout -b new_branch</span><br><span class="line">git rm *.xxx // 删除 *.xxx 文件</span><br><span class="line">git commit -m &quot;delete files: *.xxx&quot; // 在 new_branch 分支中没有了 *.xxx文件</span><br><span class="line">git checkout master // 分支new_branch 删除的 *.xxx 文件在主分支 master 中仍存在，此时没有受到 new_branch 操作影响，注意这里，已经切换到了 master</span><br><span class="line">git branch -d new_branch // 报错，没删掉 new_branch 分支，并且提示 new_branch 需要合并（merge）到master，才能通过master删掉 new_branch。</span><br><span class="line">git merge new_branch // new_branch 合并到 master，注意观察 new_branch 之前删除的 *.xxx在 master 中没有了。</span><br><span class="line">git branch -d new_branch // 成功删除分支 new_branch</span><br></pre></td></tr></table></figure>
-
-<p><strong>Tips</strong></p>
-<p>强行删除分支：<code>git branch -D &lt;分支名&gt;</code></p>
-</li>
-<li><p>查看分支最近提交（commit）的 <strong>sha1</strong>值：<code>git branch -v</code></p>
-<p><strong>细节问题</strong></p>
-<ol>
-<li>如果在非主分支中，file1 文件进行了写操作（即增删改），但此操作局限在工作区中进行（没有add、commit）。在 master 中能够看到该操作。</li>
-<li>如果在非主分支中，file1 文件进行了写操作（即增删改），并且add，commit。在 master 中无法观察改操作，看不到 file1 文件。（问点：非主分支主动合并 master，或主分支 master 合并非主分支，观察 file1 状态）</li>
-<li>如果在非主分支中， file1 文件进行了写操作（即增删改），但此操作局限在工作区中进行（没有add，commit）。在 master 中删除该非主分支，可直接删除。</li>
-<li>如果在非主分支中，file1 文件进行了写操作（即增删改），并且add，commit。在 master 中无法删除该非主分支。</li>
-</ol>
-</li>
-</ol>
-<h3 id="2-17-分支-提交链（分支合并与冲突）"><a href="#2-17-分支-提交链（分支合并与冲突）" class="headerlink" title="2.17 分支-提交链（分支合并与冲突）"></a>2.17 分支-提交链（分支合并与冲突）</h3><p><img data-src="https://cdn.huatree.top/image-20230927165421894.jpg" alt="image-20230927165421894"></p>
-<p>分支名（master）：指向当前的提交（commit）</p>
-<p>HEAD：指向当前分支（HEAD -&gt; 分支名）</p>
-<p><img data-src="https://cdn.huatree.top/image-20230927165441537.jpg" alt="image-20230927165441537"></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 场景：git 空项目，分支合并</span><br><span class="line">git init</span><br><span class="line">git checkout -b dev // 当前分支 dev，指向：HEAD -&gt; dev</span><br><span class="line">cd .git</span><br><span class="line">ls // HEAD位置：.git -&gt; HEAD</span><br><span class="line">cat HEAD // ref：refs/heads/dev</span><br><span class="line">cd ..</span><br><span class="line">cd ..</span><br><span class="line">git log // 查看 sha1 值 HEAD -&gt; dev，master</span><br><span class="line">vi a.txt //编辑内容：a，保存，退出 vi 模式，返回 git 命令</span><br><span class="line">git add .</span><br><span class="line">git commit -m “dev1”</span><br><span class="line">git log // 观察 dev 的 sha1 值 -&gt; dev1，此时，分支 dev 领先 master 一步</span><br><span class="line">vi a.txt // 修改内容</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;dev2&quot;</span><br><span class="line">git log // 观察 dev 的 sha1 值 -&gt; dev2，此时，分支 dev 已经领先 master 两步了</span><br><span class="line">.....未完待续</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-常见错误"><a href="#3-常见错误" class="headerlink" title="3 常见错误"></a>3 常见错误</h2><h3 id="3-1-ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#3-1-ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="3.1 ssh: connect to host github.com port 22: Connection timed out"></a>3.1 ssh: connect to host <a href="http://github.com/" title="github.com">github.com</a> port 22: Connection timed out</h3><p>解决方法:</p>
-<p>打开目录.ssh</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
-
-<p>查看是否存在 id_rsa   id_rsa.pun  known_hosts 三个文件, 如果没有则参考ssh本地关联远程github</p>
-<ol>
-<li><p>vi config(进入vi编辑界面)</p>
-</li>
-<li><p>insert模式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">User YourEmail@qq.com</span><br><span class="line">Hostname ssh.github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">port 433</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>其中,YourEmail为申请github账号所绑定的邮箱.</p>
-<p>保存之后再次执行”ssh -T <a href="mailto:git@github.com" title="git@github.com">git@github.com</a>“时, 会出现如下提示, 一路回车”yes”即可.</p>
-<h2 id="4-日常技能"><a href="#4-日常技能" class="headerlink" title="4 日常技能"></a>4 日常技能</h2><h3 id="4-1-git-add-后的删除暂存区"><a href="#4-1-git-add-后的删除暂存区" class="headerlink" title="4.1 git add . 后的删除暂存区"></a>4.1 git add . 后的删除暂存区</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">rm</span> -r -f --cached .</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-2-git的分支推送设置dev默认项"><a href="#4-2-git的分支推送设置dev默认项" class="headerlink" title="4.2 git的分支推送设置dev默认项"></a>4.2 git的分支推送设置dev默认项</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push --set-upstream origin dev</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-3-git中的CRLF和LF"><a href="#4-3-git中的CRLF和LF" class="headerlink" title="4.3  git中的CRLF和LF"></a>4.3  git中的CRLF和LF</h3><blockquote>
-<p>说明：参考官方文档，有详细叙述（切记网上瞎搜索，浪费时间，还不一定是对的）</p>
-</blockquote>
-<h3 id="4-4-GitHub-Desktop工具"><a href="#4-4-GitHub-Desktop工具" class="headerlink" title="4.4 GitHub Desktop工具"></a>4.4 GitHub Desktop工具</h3><p>可解决分支删不掉的问题</p>
-<h3 id="4-5-查看分支合并图"><a href="#4-5-查看分支合并图" class="headerlink" title="4.5 查看分支合并图"></a>4.5 查看分支合并图</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>成长经历</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>div元素垂直水平居中</title>
     <url>/2021/04/13/20210413-div%E5%85%83%E7%B4%A0%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD/</url>
     <content><![CDATA[<p><img data-src="https://cdn.huatree.top/image-20220509055101090.png" alt="image-20220509055101090"></p>
@@ -9775,6 +9546,148 @@
       <tags>
         <tag>前端</tag>
         <tag>web</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git常用命令</title>
+    <url>/2021/01/29/20210129-Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<p>如果您不能很好的应用 Git，那么这里为您提供一个非常棒的 Git 在线练习工具 <a href="https://learngitbranching.js.org/?locale=zh_CN">Git Online</a>，您可以更直观的看到您所使用的命令会产生什么效果。</p>
+<span id="more"></span>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="mac-通过-Homebrew-安装-推荐"><a href="#mac-通过-Homebrew-安装-推荐" class="headerlink" title="[mac] 通过 Homebrew 安装(推荐)"></a>[mac] 通过 Homebrew 安装(推荐)</h3><p><strong>安装前检查：</strong></p>
+<p>检查本地是否自带 git。如果有，查看 git 安装路径，分析安装方式，选择性更新 git</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git -v</span><br></pre></td></tr></table></figure>
+
+<p>检查本地 homebrew 是否自带。如果有，则更新下</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew -v</span><br></pre></td></tr></table></figure>
+
+<p><strong>开始安装：</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，根据提示将 Homebrew 添加到环境变量中（M 系列芯片需手动添加）</p>
+<p>安装 git</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+
+<p><strong>检查是否安装成功：</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> git</span><br></pre></td></tr></table></figure>
+
+<p><strong>更新 Homebrew 软件索引：</strong></p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+<p><strong>升级 Git：</strong></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew upgrade git</span><br></pre></td></tr></table></figure>
+
+<p>其他安装方式，<a href="https://git-scm.com/downloads/mac">详见</a></p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li><p>系统自带的 Git 路径为 <code>/usr/bin/git</code>，Homebrew 安装的路径为：</p>
+<ul>
+<li>Apple Silicon（M1&#x2F;M2）：<code>/opt/homebrew/bin/git</code></li>
+<li>Intel： <code>/usr/local/bin/git</code></li>
+</ul>
+</li>
+<li><p>如果你执行 <code>which git</code> 仍显示为 <code>/usr/bin/git</code>，说明未生效。请重新打开终端，或手动设置 PATH：</p>
+  <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;export PATH=&quot;/opt/homebrew/bin:$PATH&quot;&#x27;</span> &gt;&gt; ~/.zshrc</span><br><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="配置账号"><a href="#配置账号" class="headerlink" title="配置账号"></a>配置账号</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name hua</span><br><span class="line">git config --global user.email [your email]</span><br></pre></td></tr></table></figure>
+
+<p>生成的配置信息在<code>用户根目录/.gitconfig</code></p>
+<p><strong>Tips:</strong>:</p>
+<p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。这些变量存储再三个不同的位置：</p>
+<ol>
+<li><strong>&#x2F;etc&#x2F;gitconfig</strong> 文件：包含系统上每一个用户及他们仓库的通用配置。如果在执行 git config 时带上 <strong>–system</strong> 选项，那么它就会读写该文件中的配置变量。（由于它是系统配置文件，因此您需要管理员吧或超级用户权限来修改它。）</li>
+<li><strong>~&#x2F;.gitconfig 或 ~&#x2F;.config&#x2F;git&#x2F;config</strong> 文件：只针对当前用户。您可以传递 <strong>–global</strong> 选项让 Git 读写此文件，这会对您的系统上所有的仓库生效。</li>
+<li>当前使用仓库的 Git 目录中的 config 文件（即 <strong>.git&#x2F;config</strong>）：针对该仓库。您可以传递 <strong>–local</strong> 选项让 Git 强制读写此文件，虽然默认情况下的就是它。（当然，您需要进入某个 Git 仓库中才能让该选项生效。）</li>
+</ol>
+<p>每一个级别会覆盖上一个级别的配置，所以，**.git&#x2F;config** 的配置变量会覆盖 <strong>&#x2F;etc&#x2F;gitconfig</strong> 中的配置变量。</p>
+<h2 id="日常技能"><a href="#日常技能" class="headerlink" title="日常技能"></a>日常技能</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看分支合并图</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br><span class="line"><span class="comment"># 删除暂存区</span></span><br><span class="line">git <span class="built_in">rm</span> -r -f --cached .</span><br><span class="line"><span class="comment"># 设置当前分支默认推送的远程分支</span></span><br><span class="line">git push -u origin [match branch]</span><br><span class="line"><span class="comment"># 修改最近一次提交的备注信息</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;update remark&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h3><p>查看提交日志，会发现如下内容：</p>
+<p><img data-src="https://cdn.huatree.top/image-20230927165319670.jpg" alt="image-20230927165319670"></p>
+<p>commit 后面的那一串字符：<strong>sha1</strong> 计算的结果。</p>
+<p>sha1、md5：加密算法、随机数，用于区分是哪一次提交。</p>
+<p>自定义查看提交记录日志：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log -2 // 2：指最近的2次提交</span><br><span class="line">git log --pretty=online</span><br><span class="line">git log --pretty=format:&quot;%h -%an, %ar : %s&quot;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp; A"></a>Q&amp; A</h2><h3 id="mac-brew-update-更新太慢"><a href="#mac-brew-update-更新太慢" class="headerlink" title="[mac] brew update 更新太慢"></a>[mac] brew update 更新太慢</h3><p>使用 USTC 国内镜像（推荐）</p>
+<p>修改终端配置文件</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<p>粘贴以下内容到文件末尾</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Homebrew 国内镜像加速（USTC）</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_BREW_GIT_REMOTE=<span class="string">&quot;https://mirrors.ustc.edu.cn/brew.git&quot;</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_CORE_GIT_REMOTE=<span class="string">&quot;https://mirrors.ustc.edu.cn/homebrew-core.git&quot;</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_BOTTLE_DOMAIN=<span class="string">&quot;https://mirrors.ustc.edu.cn/homebrew-bottles&quot;</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_API_DOMAIN=<span class="string">&quot;https://mirrors.ustc.edu.cn/homebrew-bottles/api&quot;</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_NO_ENV_HINTS=1</span><br></pre></td></tr></table></figure>
+
+<p>保存并生效配置</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
+
+<h3 id="win-git-status-git-commit-等中文信息乱码问题"><a href="#win-git-status-git-commit-等中文信息乱码问题" class="headerlink" title="[win] git status, git commit 等中文信息乱码问题"></a>[win] git status, git commit 等中文信息乱码问题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global gui.encoding utf-8</span><br><span class="line">git config --global i18n.commitencoding utf-8</span><br><span class="line">git config --global core.quotepath false</span><br><span class="line">git config --global svn.pathnameecoding utf-8</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除用户配置信息"><a href="#删除用户配置信息" class="headerlink" title="删除用户配置信息"></a>删除用户配置信息</h3><ol>
+<li><p>找到 .gitconfig 文件直接删掉（最直接）</p>
+</li>
+<li><p>或通过命令删除</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global(或 --system 或 --local) --unset user.name</span><br><span class="line">git config --global(或 --system 或 --local) --unset user.email</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="第一次发布项目-本地-gt-远程"><a href="#第一次发布项目-本地-gt-远程" class="headerlink" title="第一次发布项目(本地 -&gt; 远程)"></a>第一次发布项目(本地 -&gt; 远程)</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add . // 文件 -&gt; 暂存区, <span class="string">&quot;.&quot;</span> 表示当前目录下的所有文件提交暂存区</span><br><span class="line">git commit -m <span class="string">&quot;第一次提交&quot;</span>  // 暂存区 -&gt; 本地分支(默认为master)</span><br><span class="line">git remote add origin &lt;远程项目所在的ssh地址(或http协议地址)&gt;</span><br><span class="line">git push -u origin master // 本地分支 -&gt; 远程项目</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地-git-与远程-github-保持登录联通"><a href="#本地-git-与远程-github-保持登录联通" class="headerlink" title="本地 git 与远程 github 保持登录联通"></a>本地 git 与远程 github 保持登录联通</h3><p>git 的远程仓库托管网站，推荐 github</p>
+<p>为了在本地和远程仓库之间进行操作, 可采取免密钥登录,配置 .ssh 先在本地配置, 然后把公钥发送给远程仓库 github</p>
+<p>在本地 git 命令行中输入:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C [email]</span><br></pre></td></tr></table></figure>
+
+<p>然后一直回车, 出现下图则表示成功</p>
+<p><img data-src="https://cdn.huatree.top/image-20230927165232917.jpg" alt="image-20230927165232917"></p>
+<p>发送给 github</p>
+<ol>
+<li><p>github -&gt; settings -&gt; SSH and … -&gt; New SSH -&gt; title &amp; key</p>
+<p> <img data-src="https://cdn.huatree.top/image-20230927165251266.jpg" alt="image-20230927165251266"></p>
+</li>
+<li><p>复制本地<strong>公钥</strong>(xx.pub)到 key 中，删掉最后的回车占位符</p>
+</li>
+<li><p>如果本地和远程成功通信，则在本地.&#x2F;ssh 目录中自动生成<strong>known-hosts</strong>文件</p>
+</li>
+<li><p>测试本地仓库与远程仓库的登录连通性</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="本地创建-git-项目与远程项目进行关联"><a href="#本地创建-git-项目与远程项目进行关联" class="headerlink" title="本地创建 git 项目与远程项目进行关联"></a>本地创建 git 项目与远程项目进行关联</h3><p>本地创建 git 项目与远程项目进行关联时，要保持本地电脑 PC 端 github 账号登录状态。（一般是本地电脑，这个跟 ssh 配置有关。ssh 配置指向其他地址，则其他地址上的 github 账号保持登录状态即可）<a href="#%E6%9C%AC%E5%9C%B0-git-%E4%B8%8E%E8%BF%9C%E7%A8%8B-github-%E4%BF%9D%E6%8C%81%E7%99%BB%E5%BD%95%E8%81%94%E9%80%9A">参考本地 git 与远程 github 保持登录联通</a></p>
+<ol>
+<li><p>先创建一个目录 demo</p>
+</li>
+<li><p>进入该目录,鼠标右键点击 git bash…, 打开 git 命令端, 输入 <code>git init</code>, 会自动在 demo 目录下生成 <strong>.git</strong>目录(该目录是隐藏的).</p>
+</li>
+<li><p>github 上创建一个 Repository.</p>
+<p> <img data-src="https://cdn.huatree.top/image-20230927165301540.jpg" alt="image-20230927165301540"></p>
+</li>
+</ol>
+<h3 id="ssh-connect-to-host-github-com-port-22-Connection-timed-out"><a href="#ssh-connect-to-host-github-com-port-22-Connection-timed-out" class="headerlink" title="ssh: connect to host github.com port 22: Connection timed out"></a>ssh: connect to host github.com port 22: Connection timed out</h3><p>查看是否存在 id_rsa id_rsa.pun known_hosts 三个文件，如果没有则参考 ssh 本地关联远程 github</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.ssh</span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>继续使用 SSH，但换端口（443）：</strong></p>
+<p>编辑 SSH 配置：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure>
+
+<p>添加已下内容：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  User git</span><br><span class="line">  Port 443</span><br><span class="line">  PreferredAuthentications publickey</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
+
+<p>测试连接：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<p>如果看到 <code>Hi username! You&#39;ve successfully authenticated...</code> 就说明成功了</p>
+<h3 id="gitignore-配置"><a href="#gitignore-配置" class="headerlink" title=".gitignore 配置"></a><strong>.gitignore</strong> 配置</h3><p>使用场景：如 <strong>.gitignore</strong> 文件编写需要排除的文件。以下是常见的通配符：</p>
+<ol>
+<li><code>*</code>：匹配任意字符。</li>
+<li><code>*.xxx</code>：匹配后缀 <code>.xxx</code>的文件中。</li>
+<li><code>!xx.xxx</code>：在后缀 <code>.xxx</code> 的文件中，排除 <code>xx.xxx</code> 文件，结合 <code>*.xxx</code> 使用。</li>
+<li><code>dir(目录)/</code>：忽略 <code>dir</code> 中的所有文件。</li>
+<li><code>dir(目录)/*/*.xxx</code>：能够忽略如 <code>dir/t1/a.xxx</code>, <code>dir/t2/b.xxx</code>，但不能忽略含 2 级以上的目录中的 <code>*.xxx</code>（如：<code>dir/a/b/j.xxx</code>）文件，这跟通配符 <code>*</code> 有关。</li>
+<li><code>dir/**/*.xxx</code>：忽略任意级别目录中的 <code>*.xxx</code>文件。</li>
+<li>git 项目中创建的<strong>空目录</strong>，默认自动忽略，git status 查不到此目录信息。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>成长经历</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
 </search>
