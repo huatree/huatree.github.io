@@ -454,79 +454,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git常见问题与总结</title>
-    <url>/2021/12/20/20211220-Git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E4%B8%8E%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>在实际开发中遇到的一些 Git 常现的问题与总结。</p>
-<p><img data-src="https://git-scm.com/images/branching-illustration@2x.png" alt="top"></p>
-<span id="more"></span>
-
-<div class="note warning"><p>文章中的<code>origin</code>是<code>git remote add origin &lt;url&gt;</code>添加远程仓库的别名。</p>
-</div>
-
-<h2 id="1-操作仓库前的必要检查与配置"><a href="#1-操作仓库前的必要检查与配置" class="headerlink" title="1 操作仓库前的必要检查与配置"></a>1 操作仓库前的必要检查与配置</h2><h3 id="文件名大小写"><a href="#文件名大小写" class="headerlink" title="文件名大小写"></a>文件名大小写</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看是否忽略文件名大小写</span></span><br><span class="line">$ git config --global -l</span><br><span class="line">$ git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 配置成不能忽略文件名大小写(windows系统下，安装git时会默认配置core.ignorecase=true，因为windows的文件名本身不区分大小写)</span></span><br><span class="line">$ git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">$ git config &lt;--<span class="built_in">local</span>&gt; core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="文件名过长导致的错误"><a href="#文件名过长导致的错误" class="headerlink" title="文件名过长导致的错误"></a>文件名过长导致的错误</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先查看默认的配置</span></span><br><span class="line">$ git config --global -l</span><br><span class="line">$ git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 如果没查到core.longpaths配置项或core.longpaths=false时，需要如下配置</span></span><br><span class="line">$ git config --global core.longpaths <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="2-怎么比较优雅的获取远程仓库"><a href="#2-怎么比较优雅的获取远程仓库" class="headerlink" title="2 怎么比较优雅的获取远程仓库"></a>2 怎么比较优雅的获取远程仓库</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">$ git <span class="built_in">clone</span> &lt;ssh:git url&gt;</span><br><span class="line">$ git checkout -b &lt;branch a&gt;</span><br><span class="line">$ git pull origin &lt;branch a&gt;</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">$ git fetch origin &lt;branch a&gt;:&lt;branch a&gt;</span><br><span class="line">$ git checkout &lt;branch a&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="3-分支重命名"><a href="#3-分支重命名" class="headerlink" title="3 分支重命名"></a>3 分支重命名</h2><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
-<blockquote>
-<p>tops</p>
-<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
-</blockquote>
-<p>具体操作如下</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">$ git branch -m &lt;old branch name&gt; &lt;new branch name&gt;</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">$ git push -d origin &lt;old branch name&gt;</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">$ git push origin &lt;new branch name&gt;</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">$ git branch --set-upstream-to origin/&lt;new branch name&gt;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
-</blockquote>
-<h2 id="4-分支删除"><a href="#4-分支删除" class="headerlink" title="4 分支删除"></a>4 分支删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">$ git branch -d &lt;branch name&gt;</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">$ git push -d origin &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="5-打标签"><a href="#5-打标签" class="headerlink" title="5 打标签"></a>5 打标签</h2><h3 id="记录项目的发版，常用附注标签"><a href="#记录项目的发版，常用附注标签" class="headerlink" title="记录项目的发版，常用附注标签"></a>记录项目的发版，常用附注标签</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打附注标签</span></span><br><span class="line">$ git tag -a &lt;tag name&gt; -m &lt;<span class="string">&quot;msg&quot;</span>&gt;</span><br><span class="line"><span class="comment"># 打附注标签(指定commit id)</span></span><br><span class="line">$ git tag -a &lt;tag name&gt; -m &lt;<span class="string">&quot;msg&quot;</span>&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推送本地仓库标签到远程仓库</span></span><br><span class="line">$ git push origin &lt;tag name&gt;</span><br><span class="line"><span class="comment"># 列出所有标签</span></span><br><span class="line">$ git tag -l</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$ git tag</span><br><span class="line"><span class="comment"># 列出标签(带匹配模式)</span></span><br><span class="line">$ git tag -l <span class="string">&#x27;v-*&#x27;</span></span><br><span class="line"><span class="comment"># 删除本地仓库标签</span></span><br><span class="line">$ git tag -d &lt;tag name&gt;</span><br><span class="line"><span class="comment"># 再删除远程仓库标签</span></span><br><span class="line">$ git push -d origin &lt;tag name&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="tag-与-release"><a href="#tag-与-release" class="headerlink" title="tag 与 release"></a>tag 与 release</h3><p>tag 是 git 提供的功能，release 是如 github、gitee、gitlab 等代码托管平台基于 git tag 的锦上添花，对 git 的 tag 功能的增强。</p>
-<h2 id="6-git-flow"><a href="#6-git-flow" class="headerlink" title="6 git flow"></a>6 git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
-<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
-<h2 id="7-回退代码到指定版本"><a href="#7-回退代码到指定版本" class="headerlink" title="7 回退代码到指定版本"></a>7 回退代码到指定版本</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">$ git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">$ git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">$ git reset --soft &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">$ git reset --hard &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">$ git push -f origin master</span><br></pre></td></tr></table></figure>
-
-<h2 id="8-常用的查看提交历史命令"><a href="#8-常用的查看提交历史命令" class="headerlink" title="8 常用的查看提交历史命令"></a>8 常用的查看提交历史命令</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示分支图</span></span><br><span class="line">$ git <span class="built_in">log</span> --graph</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=oneline</span><br><span class="line">$ git <span class="built_in">log</span> --pretty=format:<span class="string">&quot;%h - %an, %ar : %s&quot;</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="9-撤销指定的提交内容"><a href="#9-撤销指定的提交内容" class="headerlink" title="9 撤销指定的提交内容"></a>9 撤销指定的提交内容</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git show &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line">git revert -m &lt;number&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 如果需要回复之前撤销过的指定的提交内容，再次revert</span></span><br><span class="line">git revert &lt;commit <span class="built_in">id</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p><code>-m</code> 选项接收的参数是一个数字，数字取值为 1 和 2，也就是 Merge 行里面列出来的第一个还是第二个，其含义用来保留某个分支。</p>
-<p><code>git revert</code>是用一次新的commit来回滚之前的commit。</p>
-<h2 id="10-代码临时保存"><a href="#10-代码临时保存" class="headerlink" title="10 代码临时保存"></a>10 代码临时保存</h2><p>如果你正在写开发新分支的需求，别的分支线上突然有 bug 需要修复，你或许只能被迫先提交写的代码，这种情况可以用以下命令操作：</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 工作区的代码临时保存</span></span><br><span class="line">$ git stash</span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># 恢复临时保存的代码到工作区（当你在切回自己的分支时，用指令恢复之前的代码就OK）</span></span><br><span class="line">$ git stash apply</span><br></pre></td></tr></table></figure>
-
-<p>如果有未跟踪的文件，需要先<code>git add &lt;file&gt;</code>，再<code>git stash</code>。因为<code>git stash</code>只临时保存已跟踪的文件。</p>
-<h3 id="记录指令"><a href="#记录指令" class="headerlink" title="记录指令"></a>记录指令</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 保存未commit的代码</span></span><br><span class="line">$ git stash</span><br><span class="line"><span class="comment"># 保存未commit的代码并备注</span></span><br><span class="line">$ git stash save</span><br><span class="line"><span class="comment"># 查看stash所有列表</span></span><br><span class="line">$ git stash list</span><br><span class="line"><span class="comment"># 删除所有记录</span></span><br><span class="line">$ git stash clear</span><br><span class="line"><span class="comment"># 查看并应用最后一次的记录</span></span><br><span class="line">$ git stash apply</span><br><span class="line"><span class="comment"># 删除记录并恢复到工作区</span></span><br><span class="line">$ git stash pop</span><br><span class="line"><span class="comment"># 删除最近一次记录</span></span><br><span class="line">$ git stash drop</span><br><span class="line"><span class="comment"># 删除指定记录</span></span><br><span class="line">$ git stash drop stash@&#123;&lt;number&gt;&#125;</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://git-scm.com/docs/git-stash">详见<code>git stash</code>更多信息</a></p>
-<h2 id="11-设置默认分支"><a href="#11-设置默认分支" class="headerlink" title="11 设置默认分支"></a>11 设置默认分支</h2><p>一般不推荐全局设置默认分支，可根据项目需要设置默认分支。如 hexo + github 搭建的静态博客，静态资源所在的分支名一般命名为<code>gh-pages</code>，设置其为默认分支。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --<span class="built_in">local</span> init.defaultBranch gh-pages</span><br></pre></td></tr></table></figure>
-
-<h2 id="12-取消暂存区的更改"><a href="#12-取消暂存区的更改" class="headerlink" title="12 取消暂存区的更改"></a>12 取消暂存区的更改</h2><p>更改的文件不会还原到未更改的状态，只是把已更改的文件从暂存区移到了工作区，这个移到，美其名曰撤销。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 撤销暂存区的某个文件到工作区</span></span><br><span class="line">$ git restore --staged &lt;file&gt;...</span><br><span class="line"><span class="comment"># 取消暂存所有更改</span></span><br><span class="line">$ git restore --staged .</span><br></pre></td></tr></table></figure>
-
-<h2 id="13-恢复误删分支"><a href="#13-恢复误删分支" class="headerlink" title="13 恢复误删分支"></a>13 恢复误删分支</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 结合工具GitLens过滤出误删分支的Author，找到最近的一次commit id</span></span><br><span class="line"><span class="comment"># 基于这个commit id，新建分支</span></span><br><span class="line">$ git checkout -b &lt;new branch&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推到远程仓库</span></span><br><span class="line">$ git push origin &lt;new branch&gt;</span><br></pre></td></tr></table></figure>
-
-<p>不用担心是谁创建的恢复分支，因为你并没有 commit，只是依赖指定的 commit id 创建分支，不会有个人信息记录。</p>
-<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
-<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
-<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
-<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
-<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
-<p>[6] <a href="https://blog.csdn.net/weixin_42600398/article/details/113527932">git 中 tag 和 release 的区别</a></p>
-<p>[7] <a href="https://blog.csdn.net/liuxiao723846/article/details/122691779">Git 之 revert</a></p>
-]]></content>
-      <categories>
-        <category>工作点滴</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>混合App中H5白屏修复及样式兼容</title>
     <url>/2022/02/22/20220222-%E6%B7%B7%E5%90%88App%E4%B8%ADH5%E7%99%BD%E5%B1%8F%E4%BF%AE%E5%A4%8D%E5%8F%8A%E6%A0%B7%E5%BC%8F%E5%85%BC%E5%AE%B9/</url>
     <content><![CDATA[<h2 id="白屏修复"><a href="#白屏修复" class="headerlink" title="白屏修复"></a>白屏修复</h2><p>混合 App 中 H5 首次加载出现白屏有以下可能：</p>
@@ -9600,7 +9527,7 @@
 <li>当前使用仓库的 Git 目录中的 config 文件（即 <strong>.git&#x2F;config</strong>）：针对该仓库。您可以传递 <strong>–local</strong> 选项让 Git 强制读写此文件，虽然默认情况下的就是它。（当然，您需要进入某个 Git 仓库中才能让该选项生效。）</li>
 </ol>
 <p>每一个级别会覆盖上一个级别的配置，所以，**.git&#x2F;config** 的配置变量会覆盖 <strong>&#x2F;etc&#x2F;gitconfig</strong> 中的配置变量。</p>
-<h2 id="日常技能"><a href="#日常技能" class="headerlink" title="日常技能"></a>日常技能</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看分支合并图</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br><span class="line"><span class="comment"># 删除暂存区</span></span><br><span class="line">git <span class="built_in">rm</span> -r -f --cached .</span><br><span class="line"><span class="comment"># 设置当前分支默认推送的远程分支</span></span><br><span class="line">git push -u origin [match branch]</span><br><span class="line"><span class="comment"># 修改最近一次提交的备注信息</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;update remark&quot;</span></span><br><span class="line"><span class="comment"># 重复 fix bug，不更新提交信息</span></span><br><span class="line">git commit --amend</span><br><span class="line"><span class="comment"># feature 分支(非主/公共分支)，合并自身分支多个提交记录成一个有意义的提交记录，合理利用 fixup</span></span><br><span class="line">git rebase -i HEAD~[number]</span><br></pre></td></tr></table></figure>
+<h2 id="日常技能"><a href="#日常技能" class="headerlink" title="日常技能"></a>日常技能</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看分支合并图</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br><span class="line"><span class="comment"># 删除暂存区</span></span><br><span class="line">git <span class="built_in">rm</span> -r -f --cached .</span><br><span class="line"><span class="comment"># 设置当前分支默认推送的远程分支</span></span><br><span class="line">git push -u origin [match branch]</span><br><span class="line"><span class="comment"># 修改最近一次提交的备注信息</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;update remark&quot;</span></span><br><span class="line"><span class="comment"># 重复 fix bug，不更新提交信息</span></span><br><span class="line">git commit --amend</span><br><span class="line"><span class="comment"># feature 分支(非主/公共分支)，合并自身分支多个提交记录成一个有意义的提交记录，合理利用 fixup</span></span><br><span class="line">git rebase -i HEAD~[number]</span><br><span class="line"><span class="comment"># 删除本地分支</span></span><br><span class="line">git branch -d &lt;branch name&gt;</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">git push -d origin &lt;branch name&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h3><p>查看提交日志，会发现如下内容：</p>
 <p><img data-src="https://cdn.huatree.top/image-20230927165319670.jpg" alt="image-20230927165319670"></p>
@@ -9609,6 +9536,47 @@
 <p>自定义查看提交记录日志：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git log -2 // 2：指最近的2次提交</span><br><span class="line">git log --pretty=online</span><br><span class="line">git log --pretty=format:&quot;%h -%an, %ar : %s&quot;</span><br></pre></td></tr></table></figure>
 
+<h3 id="文件名大小写"><a href="#文件名大小写" class="headerlink" title="文件名大小写"></a>文件名大小写</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看是否忽略文件名大小写</span></span><br><span class="line">git config --global -l</span><br><span class="line">git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 配置成不能忽略文件名大小写(windows系统下，安装git时会默认配置core.ignorecase=true，因为windows的文件名本身不区分大小写)</span></span><br><span class="line">git config --global core.ignorecase <span class="literal">false</span></span><br><span class="line">git config &lt;--<span class="built_in">local</span>&gt; core.ignorecase <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="分支重命名"><a href="#分支重命名" class="headerlink" title="分支重命名"></a>分支重命名</h3><p>VSCode 中打开控制台，输入 <code>git branch --help</code>，弹出 <code>branch</code>相关网页，根据提示操作。</p>
+<blockquote>
+<p>tops</p>
+<p>安装 git 时，本地安装目录中会存在相关 git-doc 资料，路径如<code>E:\Program Files\Git\mingw64\share\doc\git-doc</code><br>win 系列的系统，cmd 命令中输入 <code>git branch --help</code>也有效。</p>
+</blockquote>
+<p>具体操作如下</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 本地分支重命名</span></span><br><span class="line">git branch -m &lt;old branch name&gt; &lt;new branch name&gt;</span><br><span class="line"><span class="comment"># 删除远程需要重命名的分支</span></span><br><span class="line">git push -d origin &lt;old branch name&gt;</span><br><span class="line"><span class="comment"># 推送新命名分分支</span></span><br><span class="line">git push origin &lt;new branch name&gt;</span><br><span class="line"><span class="comment"># 修改本地分支与远程分支关联</span></span><br><span class="line">git branch --set-upstream-to origin/&lt;new branch name&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>! 注意<br>当前本地分支与远程分支对应保持一致</p>
+</blockquote>
+<h3 id="打标签"><a href="#打标签" class="headerlink" title="打标签"></a>打标签</h3><p>记录项目的发版，常用附注标签</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 打附注标签</span></span><br><span class="line">git tag -a &lt;tag name&gt; -m &lt;<span class="string">&quot;msg&quot;</span>&gt;</span><br><span class="line"><span class="comment"># 打附注标签(指定commit id)</span></span><br><span class="line">git tag -a &lt;tag name&gt; -m &lt;<span class="string">&quot;msg&quot;</span>&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推送本地仓库标签到远程仓库</span></span><br><span class="line">git push origin &lt;tag name&gt;</span><br><span class="line"><span class="comment"># 列出所有标签</span></span><br><span class="line">git tag -l</span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">git tag</span><br><span class="line"><span class="comment"># 列出标签(带匹配模式)</span></span><br><span class="line">git tag -l <span class="string">&#x27;v-*&#x27;</span></span><br><span class="line"><span class="comment"># 删除本地仓库标签</span></span><br><span class="line">git tag -d &lt;tag name&gt;</span><br><span class="line"><span class="comment"># 再删除远程仓库标签</span></span><br><span class="line">git push -d origin &lt;tag name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="代码临时保存"><a href="#代码临时保存" class="headerlink" title="代码临时保存"></a>代码临时保存</h3><p>如果你正在写开发新分支的需求，别的分支线上突然有 bug 需要修复，你或许只能被迫先提交写的代码，这种情况可以用以下命令操作：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 工作区的代码临时保存</span></span><br><span class="line">git stash</span><br><span class="line">git status</span><br><span class="line"><span class="comment"># 恢复临时保存的代码到工作区（当你在切回自己的分支时，用指令恢复之前的代码就OK）</span></span><br><span class="line">git stash apply</span><br></pre></td></tr></table></figure>
+
+<p>如果有未跟踪的文件，需要先<code>git add &lt;file&gt;</code>，再<code>git stash</code>。因为<code>git stash</code>只临时保存已跟踪的文件。</p>
+<p>记录指令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 保存未commit的代码</span></span><br><span class="line">git stash</span><br><span class="line"><span class="comment"># 保存未commit的代码并备注</span></span><br><span class="line">git stash save</span><br><span class="line"><span class="comment"># 查看stash所有列表</span></span><br><span class="line">git stash list</span><br><span class="line"><span class="comment"># 删除所有记录</span></span><br><span class="line">git stash clear</span><br><span class="line"><span class="comment"># 查看并应用最后一次的记录</span></span><br><span class="line">git stash apply</span><br><span class="line"><span class="comment"># 删除记录并恢复到工作区</span></span><br><span class="line">git stash pop</span><br><span class="line"><span class="comment"># 删除最近一次记录</span></span><br><span class="line">git stash drop</span><br><span class="line"><span class="comment"># 删除指定记录</span></span><br><span class="line">git stash drop stash@&#123;&lt;number&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://git-scm.com/docs/git-stash">详见<code>git stash</code>更多信息</a></p>
+<h3 id="回退代码到指定版本"><a href="#回退代码到指定版本" class="headerlink" title="回退代码到指定版本"></a>回退代码到指定版本</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 确定需要回退的分支，如 master</span></span><br><span class="line">git branch</span><br><span class="line"><span class="comment"># 查看所有的历史版本，获取你 git commit 的某个历史版本的 id</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"><span class="comment"># 回退本地仓库(恢复上一次提交，保留暂存区的改动)</span></span><br><span class="line">git reset --soft &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 如果想丢掉工作区的改动，则用 --hard</span></span><br><span class="line">git reset --hard &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推送到远程仓库某个分支</span></span><br><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="撤销指定的提交内容"><a href="#撤销指定的提交内容" class="headerlink" title="撤销指定的提交内容"></a>撤销指定的提交内容</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git show &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line">git revert -m &lt;number&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 如果需要回复之前撤销过的指定的提交内容，再次revert</span></span><br><span class="line">git revert &lt;commit <span class="built_in">id</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>-m</code> 选项接收的参数是一个数字，数字取值为 1 和 2，也就是 Merge 行里面列出来的第一个还是第二个，其含义用来保留某个分支。</p>
+<p><code>git revert</code>是用一次新的 commit 来回滚之前的 commit。</p>
+<h3 id="设置默认分支"><a href="#设置默认分支" class="headerlink" title="设置默认分支"></a>设置默认分支</h3><p>一般不推荐全局设置默认分支，可根据项目需要设置默认分支。如 hexo + github 搭建的静态博客，静态资源所在的分支名一般命名为<code>gh-pages</code>，设置其为默认分支。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --<span class="built_in">local</span> init.defaultBranch gh-pages</span><br></pre></td></tr></table></figure>
+
+<h3 id="取消暂存区的更改"><a href="#取消暂存区的更改" class="headerlink" title="取消暂存区的更改"></a>取消暂存区的更改</h3><p>更改的文件不会还原到未更改的状态，只是把已更改的文件从暂存区移到了工作区，这个移到，美其名曰撤销。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 撤销暂存区的某个文件到工作区</span></span><br><span class="line">git restore --staged &lt;file&gt;...</span><br><span class="line"><span class="comment"># 取消暂存所有更改</span></span><br><span class="line">git restore --staged .</span><br></pre></td></tr></table></figure>
+
+<h3 id="恢复误删分支"><a href="#恢复误删分支" class="headerlink" title="恢复误删分支"></a>恢复误删分支</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 结合工具GitLens过滤出误删分支的Author，找到最近的一次commit id</span></span><br><span class="line"><span class="comment"># 基于这个commit id，新建分支</span></span><br><span class="line">git checkout -b &lt;new branch&gt; &lt;commit <span class="built_in">id</span>&gt;</span><br><span class="line"><span class="comment"># 推到远程仓库</span></span><br><span class="line">git push origin &lt;new branch&gt;</span><br></pre></td></tr></table></figure>
+
+<p>不用担心是谁创建的恢复分支，因为你并没有 commit，只是依赖指定的 commit id 创建分支，不会有个人信息记录。</p>
+<h2 id="git-flow"><a href="#git-flow" class="headerlink" title="git flow"></a>git flow</h2><p><a href="https://nvie.com/posts/a-successful-git-branching-model/">一个成功的 Git 分支模型</a></p>
+<p><a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">GitLab 流程</a></p>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q &amp; A"></a>Q &amp; A</h2><h3 id="mac-brew-update-更新太慢"><a href="#mac-brew-update-更新太慢" class="headerlink" title="[mac] brew update 更新太慢"></a>[mac] brew update 更新太慢</h3><p>使用 USTC 国内镜像（推荐）</p>
 <p>修改终端配置文件</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim ~/.zshrc</span><br></pre></td></tr></table></figure>
@@ -9619,20 +9587,20 @@
 <p>保存并生效配置</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.zshrc</span><br></pre></td></tr></table></figure>
 
-<h3 id="win-git-status-git-commit-等中文信息乱码问题"><a href="#win-git-status-git-commit-等中文信息乱码问题" class="headerlink" title="[win] git status, git commit 等中文信息乱码问题"></a>[win] git status, git commit 等中文信息乱码问题</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global gui.encoding utf-8</span><br><span class="line">git config --global i18n.commitencoding utf-8</span><br><span class="line">git config --global core.quotepath false</span><br><span class="line">git config --global svn.pathnameecoding utf-8</span><br></pre></td></tr></table></figure>
+<h3 id="win-git-status-git-commit-等中文信息乱码问题"><a href="#win-git-status-git-commit-等中文信息乱码问题" class="headerlink" title="[win] git status, git commit 等中文信息乱码问题"></a>[win] git status, git commit 等中文信息乱码问题</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global gui.encoding utf-8</span><br><span class="line">git config --global i18n.commitencoding utf-8</span><br><span class="line">git config --global core.quotepath <span class="literal">false</span></span><br><span class="line">git config --global svn.pathnameecoding utf-8</span><br></pre></td></tr></table></figure>
 
 <h3 id="删除用户配置信息"><a href="#删除用户配置信息" class="headerlink" title="删除用户配置信息"></a>删除用户配置信息</h3><ol>
 <li><p>找到 .gitconfig 文件直接删掉（最直接）</p>
 </li>
 <li><p>或通过命令删除</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global(或 --system 或 --local) --unset user.name</span><br><span class="line">git config --global(或 --system 或 --local) --unset user.email</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global(或 --system 或 --<span class="built_in">local</span>) --<span class="built_in">unset</span> user.name</span><br><span class="line">git config --global(或 --system 或 --<span class="built_in">local</span>) --<span class="built_in">unset</span> user.email</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="第一次发布项目-本地-gt-远程"><a href="#第一次发布项目-本地-gt-远程" class="headerlink" title="第一次发布项目(本地 -&gt; 远程)"></a>第一次发布项目(本地 -&gt; 远程)</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add . // 文件 -&gt; 暂存区, <span class="string">&quot;.&quot;</span> 表示当前目录下的所有文件提交暂存区</span><br><span class="line">git commit -m <span class="string">&quot;第一次提交&quot;</span>  // 暂存区 -&gt; 本地分支(默认为master)</span><br><span class="line">git remote add origin &lt;远程项目所在的ssh地址(或http协议地址)&gt;</span><br><span class="line">git push -u origin master // 本地分支 -&gt; 远程项目</span><br></pre></td></tr></table></figure>
 
 <h3 id="本地-git-与远程-github-保持登录联通"><a href="#本地-git-与远程-github-保持登录联通" class="headerlink" title="本地 git 与远程 github 保持登录联通"></a>本地 git 与远程 github 保持登录联通</h3><p>git 的远程仓库托管网站，推荐 github</p>
 <p>为了在本地和远程仓库之间进行操作, 可采取免密钥登录,配置 .ssh 先在本地配置, 然后把公钥发送给远程仓库 github</p>
 <p>在本地 git 命令行中输入:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C [email]</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C [email]</span><br></pre></td></tr></table></figure>
 
 <p>然后一直回车, 出现下图则表示成功</p>
 <p><img data-src="https://cdn.huatree.top/image-20230927165232917.jpg" alt="image-20230927165232917"></p>
@@ -9646,7 +9614,7 @@
 <li><p>如果本地和远程成功通信，则在本地.&#x2F;ssh 目录中自动生成<strong>known-hosts</strong>文件</p>
 </li>
 <li><p>测试本地仓库与远程仓库的登录连通性</p>
- <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
+ <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="本地创建-git-项目与远程项目进行关联"><a href="#本地创建-git-项目与远程项目进行关联" class="headerlink" title="本地创建 git 项目与远程项目进行关联"></a>本地创建 git 项目与远程项目进行关联</h3><p>本地创建 git 项目与远程项目进行关联时，要保持本地电脑 PC 端 github 账号登录状态。（一般是本地电脑，这个跟 ssh 配置有关。ssh 配置指向其他地址，则其他地址上的 github 账号保持登录状态即可）<a href="#%E6%9C%AC%E5%9C%B0-git-%E4%B8%8E%E8%BF%9C%E7%A8%8B-github-%E4%BF%9D%E6%8C%81%E7%99%BB%E5%BD%95%E8%81%94%E9%80%9A">参考本地 git 与远程 github 保持登录联通</a></p>
 <ol>
@@ -9682,6 +9650,17 @@
 <li><code>dir/**/*.xxx</code>：忽略任意级别目录中的 <code>*.xxx</code>文件。</li>
 <li>git 项目中创建的<strong>空目录</strong>，默认自动忽略，git status 查不到此目录信息。</li>
 </ol>
+<h3 id="文件名过长导致的错误"><a href="#文件名过长导致的错误" class="headerlink" title="文件名过长导致的错误"></a>文件名过长导致的错误</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 先查看默认的配置</span></span><br><span class="line">git config --global -l</span><br><span class="line">git config &lt;--<span class="built_in">local</span>&gt; -l</span><br><span class="line"><span class="comment"># 如果没查到core.longpaths配置项或core.longpaths=false时，需要如下配置</span></span><br><span class="line">git config --global core.longpaths <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="怎么比较优雅的获取远程仓库"><a href="#怎么比较优雅的获取远程仓库" class="headerlink" title="怎么比较优雅的获取远程仓库"></a>怎么比较优雅的获取远程仓库</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># clone 远程仓库的默认分支到本地</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;ssh:git url&gt;</span><br><span class="line">git checkout -b &lt;branch a&gt;</span><br><span class="line">git pull origin &lt;branch a&gt;</span><br><span class="line"><span class="comment"># 上2行命令结果与下面一样</span></span><br><span class="line">git fetch origin &lt;branch a&gt;:&lt;branch a&gt;</span><br><span class="line">git checkout &lt;branch a&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h2><p>[1] <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a></p>
+<p>[2] <a href="https://docs.gitlab.com/ee/topics/gitlab_flow.html">Introduction to GitLab Flow</a></p>
+<p>[3] <a href="https://training.github.com/downloads/zh_CN/github-git-cheat-sheet/">git 速查清单</a></p>
+<p>[4] <a href="https://git-scm.com/docs/git-reset">git reset</a></p>
+<p>[5] <a href="https://ndpsoftware.com/git-cheatsheet.html#loc=index;">git 备忘单</a></p>
+<p>[6] <a href="https://blog.csdn.net/weixin_42600398/article/details/113527932">git 中 tag 和 release 的区别</a></p>
+<p>[7] <a href="https://blog.csdn.net/liuxiao723846/article/details/122691779">Git 之 revert</a></p>
 ]]></content>
       <categories>
         <category>成长经历</category>
