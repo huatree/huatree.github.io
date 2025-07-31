@@ -9592,7 +9592,7 @@
 <h2 id="配置账号"><a href="#配置账号" class="headerlink" title="配置账号"></a>配置账号</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name hua</span><br><span class="line">git config --global user.email [your email]</span><br></pre></td></tr></table></figure>
 
 <p>生成的配置信息在<code>用户根目录/.gitconfig</code></p>
-<p><strong>Tips:</strong>:</p>
+<p><strong>Tips:</strong></p>
 <p>Git 自带一个 git config 的工具来帮助设置控制 Git 外观和行为的配置变量。这些变量存储再三个不同的位置：</p>
 <ol>
 <li><strong>&#x2F;etc&#x2F;gitconfig</strong> 文件：包含系统上每一个用户及他们仓库的通用配置。如果在执行 git config 时带上 <strong>–system</strong> 选项，那么它就会读写该文件中的配置变量。（由于它是系统配置文件，因此您需要管理员吧或超级用户权限来修改它。）</li>
@@ -9600,7 +9600,7 @@
 <li>当前使用仓库的 Git 目录中的 config 文件（即 <strong>.git&#x2F;config</strong>）：针对该仓库。您可以传递 <strong>–local</strong> 选项让 Git 强制读写此文件，虽然默认情况下的就是它。（当然，您需要进入某个 Git 仓库中才能让该选项生效。）</li>
 </ol>
 <p>每一个级别会覆盖上一个级别的配置，所以，**.git&#x2F;config** 的配置变量会覆盖 <strong>&#x2F;etc&#x2F;gitconfig</strong> 中的配置变量。</p>
-<h2 id="日常技能"><a href="#日常技能" class="headerlink" title="日常技能"></a>日常技能</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看分支合并图</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br><span class="line"><span class="comment"># 删除暂存区</span></span><br><span class="line">git <span class="built_in">rm</span> -r -f --cached .</span><br><span class="line"><span class="comment"># 设置当前分支默认推送的远程分支</span></span><br><span class="line">git push -u origin [match branch]</span><br><span class="line"><span class="comment"># 修改最近一次提交的备注信息</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;update remark&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="日常技能"><a href="#日常技能" class="headerlink" title="日常技能"></a>日常技能</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看分支合并图</span></span><br><span class="line">git <span class="built_in">log</span> --oneline --graph --decorate --all</span><br><span class="line"><span class="comment"># 删除暂存区</span></span><br><span class="line">git <span class="built_in">rm</span> -r -f --cached .</span><br><span class="line"><span class="comment"># 设置当前分支默认推送的远程分支</span></span><br><span class="line">git push -u origin [match branch]</span><br><span class="line"><span class="comment"># 修改最近一次提交的备注信息</span></span><br><span class="line">git commit --amend -m <span class="string">&quot;update remark&quot;</span></span><br><span class="line"><span class="comment"># 重复 fix bug，不更新提交信息</span></span><br><span class="line">git commit --amend</span><br><span class="line"><span class="comment"># feature 分支(非主/公共分支)，合并自身分支多个提交记录成一个有意义的提交记录，合理利用 fixup</span></span><br><span class="line">git rebase -i HEAD~[number]</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看提交记录"><a href="#查看提交记录" class="headerlink" title="查看提交记录"></a>查看提交记录</h3><p>查看提交日志，会发现如下内容：</p>
 <p><img data-src="https://cdn.huatree.top/image-20230927165319670.jpg" alt="image-20230927165319670"></p>
@@ -9665,7 +9665,7 @@
 <p>编辑 SSH 配置：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim ~/.ssh/config</span><br></pre></td></tr></table></figure>
 
-<p>添加已下内容：</p>
+<p>添加以下内容：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Host github.com</span><br><span class="line">  Hostname ssh.github.com</span><br><span class="line">  User git</span><br><span class="line">  Port 443</span><br><span class="line">  PreferredAuthentications publickey</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa</span><br></pre></td></tr></table></figure>
 
 <p>测试连接：</p>
