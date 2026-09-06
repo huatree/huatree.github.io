@@ -1678,7 +1678,7 @@ pre code {
 }
 .reading-progress-bar {
   --progress: 0;
-  background: #37c6c0;
+  background: #87daff;
   height: 3px;
   position: fixed;
   z-index: 50;
@@ -2727,7 +2727,7 @@ mark.search-keyword {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #d4f1b8;
+  background: #116a24;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2785,11 +2785,11 @@ mark.search-keyword {
   display: none;
 }
 ::selection {
-  background: #37c6c0;
+  background: #87daff;
   color: #000;
 }
 ::-moz-selection {
-  background: #37c6c0;
+  background: #87daff;
   color: #000;
 }
 .post-button .btn {
